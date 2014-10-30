@@ -1,14 +1,12 @@
 class Bob {
+  def isSilence(str: String) = str.forall(_.isWhitespace)
+  def isQuestion(str: String) = str.endsWith("?")
+  def isYell(str: String) = str.exists(_.isUpper) && !str.exists(_.isLower)
 
-  def getLetters(input: String) = input filter (_.isLetter)
-  def isSilence(input: String) = input.trim.isEmpty
-  def isQuestion(input: String) = input endsWith "?"
-  def isYell(input: String) = !getLetters(input).isEmpty && getLetters(input).forall(_.isUpper)
-
-  def hey(input: String): String = {
-    if (isSilence(input)) "Fine. Be that way!"
-    else if (isYell(input)) "Whoa, chill out!"
-    else if (isQuestion(input)) "Sure."
-    else "Whatever."
+  def hey(str: String): String = str match {
+    case s if isSilence(s) => "Fine. Be that way!"
+    case s if isYell(s) => "Whoa, chill out!"
+    case s if isQuestion(s) => "Sure."
+    case _ => "Whatever."
   }
 }
