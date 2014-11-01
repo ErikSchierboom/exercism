@@ -1,4 +1,10 @@
 object Hamming {
-  def compute(strand1: String, strand2: String): Int =
-    (0 until Math.min(strand1.length, strand2.length)).foldLeft(0)((acc, i) => if (strand1(i) == strand2(i)) acc else acc + 1)
+  def compute(strand1: String, strand2: String): Int = {
+    val sharedLength = Math.min(strand1.length, strand2.length)
+
+    def compareNucleotide(index: Int) = if (strand1(index) == strand2(index)) 0 else 1
+    def compareNucleotides(sum: Int, index: Int) = sum + compareNucleotide(index)
+
+    (0 until sharedLength).foldLeft(0)(compareNucleotides)
+  }
 }

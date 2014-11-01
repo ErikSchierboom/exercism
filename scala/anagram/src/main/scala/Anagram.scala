@@ -1,7 +1,5 @@
 class Anagram(val value: String) {
-  def matches(strings: Seq[String]): Seq[String] = {
-    val anagrams = value.toLowerCase.permutations.toSet.intersect(strings.map(_.toLowerCase).toSet) - value
+  lazy val permutations = value.toLowerCase.permutations.toSet - value
 
-    strings.filter(s => anagrams.contains(s.toLowerCase)).toSeq
-  }
+  def matches(strings: Seq[String]): Seq[String] = strings.filter(s => permutations.contains(s.toLowerCase))
 }

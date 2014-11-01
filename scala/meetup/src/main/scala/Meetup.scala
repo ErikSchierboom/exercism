@@ -1,16 +1,16 @@
 import java.util.{Calendar, GregorianCalendar}
 
 case class Meetup(month: Int, year: Int) {
-  
+
+  lazy val dates = (1 to numberOfDaysInMonth).map(createDateForDay)
+  lazy val daysMap = dates.groupBy(Meetup.Day.fromDate)
+  lazy val teenthDaysMap = (13 to 19).groupBy(createDay)
+
   def createDateForDay(day: Int) = new GregorianCalendar(year, month - 1, day)
   def createDay(day: Int) = Meetup.Day.fromDate(createDateForDay(day))
 
   def firstDayOfMonth = createDateForDay(1)
   def numberOfDaysInMonth = firstDayOfMonth.getActualMaximum(Calendar.DAY_OF_MONTH)
-
-  def dates = (1 to numberOfDaysInMonth).map(createDateForDay)
-  def daysMap = dates.groupBy(Meetup.Day.fromDate)
-  def teenthDaysMap = (13 to 19).groupBy(createDay)
 
   def teenth(day: Meetup.Day): GregorianCalendar = dates(teenthDaysMap(day)(0) - 1)
   def first(day: Meetup.Day): GregorianCalendar = daysMap(day)(0)
