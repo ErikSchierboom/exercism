@@ -1,4 +1,4 @@
-﻿namespace anagram
+﻿namespace Exercism.anagram
 {
     using System;
     using System.Collections.Generic;

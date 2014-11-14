@@ -1,4 +1,4 @@
-﻿namespace rna_transcription
+﻿namespace Exercism
 {
     using System.Collections.Generic;
     using System.Linq;

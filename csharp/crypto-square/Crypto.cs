@@ -1,4 +1,4 @@
-﻿namespace crypto_square
+﻿namespace Exercism
 {
     using System;
     using System.Collections.Generic;
@@ -9,7 +9,7 @@
         public Crypto(string input)
         {
             this.NormalizePlaintext = GetNormalizedPlaintext(input);
-            this.Size = CalculateSize();
+            this.Size = this.CalculateSize();
         }
 
         public int Size { get; private set; }

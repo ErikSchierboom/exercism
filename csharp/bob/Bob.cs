@@ -1,4 +1,4 @@
-﻿namespace bob
+﻿namespace Exercism.bob
 {
     using System.Linq;
 

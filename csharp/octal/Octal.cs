@@ -1,4 +1,4 @@
-﻿namespace octal
+﻿namespace Exercism.octal
 {
     using System;
     using System.Collections.Generic;

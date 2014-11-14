@@ -1,4 +1,4 @@
-﻿namespace simple_cipher
+﻿namespace Exercism
 {
     using System;
     using System.Linq;

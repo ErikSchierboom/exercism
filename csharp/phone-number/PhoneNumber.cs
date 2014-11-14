@@ -1,4 +1,4 @@
-﻿namespace phone_number
+﻿namespace Exercism
 {
     using System.Linq;
 

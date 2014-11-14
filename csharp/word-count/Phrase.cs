@@ -1,4 +1,4 @@
-﻿namespace word_count
+﻿namespace Exercism
 {
     using System.Collections.Generic;
     using System.Linq;

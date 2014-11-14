@@ -1,4 +1,4 @@
-﻿namespace grade_school
+﻿namespace Exercism
 {
     using System.Collections.Generic;
 

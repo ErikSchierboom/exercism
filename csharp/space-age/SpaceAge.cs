@@ -1,4 +1,4 @@
-﻿namespace space_age
+﻿namespace Exercism
 {
     public class SpaceAge
     {
@@ -22,42 +22,42 @@
 
         public double OnEarth()
         {
-            return SecondsWithPlanetPeriod(EarthPeriod);
+            return this.SecondsWithPlanetPeriod(EarthPeriod);
         }
 
         public double OnMercury()
         {
-            return SecondsWithPlanetPeriod(MercuryPeriod);
+            return this.SecondsWithPlanetPeriod(MercuryPeriod);
         }
 
         public double OnVenus()
         {
-            return SecondsWithPlanetPeriod(VenusPeriod);
+            return this.SecondsWithPlanetPeriod(VenusPeriod);
         }
 
         public double OnMars()
         {
-            return SecondsWithPlanetPeriod(MarsPeriod);
+            return this.SecondsWithPlanetPeriod(MarsPeriod);
         }
 
         public double OnJupiter()
         {
-            return SecondsWithPlanetPeriod(JupiterPeriod);
+            return this.SecondsWithPlanetPeriod(JupiterPeriod);
         }
 
         public double OnSaturn()
         {
-            return SecondsWithPlanetPeriod(SaturnPeriod);
+            return this.SecondsWithPlanetPeriod(SaturnPeriod);
         }
 
         public double OnUranus()
         {
-            return SecondsWithPlanetPeriod(UranusPeriod);
+            return this.SecondsWithPlanetPeriod(UranusPeriod);
         }
 
         public double OnNeptune()
         {
-            return SecondsWithPlanetPeriod(NeptunePeriod);
+            return this.SecondsWithPlanetPeriod(NeptunePeriod);
         }
 
         private double SecondsWithPlanetPeriod(double period)

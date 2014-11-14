@@ -1,4 +1,4 @@
-﻿namespace sum_of_multiples
+﻿namespace Exercism
 {
     using System.Collections.Generic;
     using System.Linq;

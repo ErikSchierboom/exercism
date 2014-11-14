@@ -1,4 +1,4 @@
-﻿namespace sieve
+﻿namespace Exercism.sieve
 {
     using System.Collections.Generic;
     using System.Linq;

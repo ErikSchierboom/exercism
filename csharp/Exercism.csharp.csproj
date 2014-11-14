@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FEF69435-D885-45DD-A446-04FD3BD3F593}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Exercism</RootNamespace>
+    <AssemblyName>Exercism.csharp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="nunit.framework, Version=2.6.3.13283, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="accumulate\AccumulateTest.cs" />
+    <Compile Include="accumulate\EnumerableExtensions.cs" />
+    <Compile Include="allergies\Allergies.cs" />
+    <Compile Include="allergies\AllergiesTest.cs" />
+    <Compile Include="anagram\Anagram.cs" />
+    <Compile Include="anagram\AnagramTest.cs" />
+    <Compile Include="atbash-cipher\Atbash.cs" />
+    <Compile Include="atbash-cipher\AtbashTest.cs" />
+    <Compile Include="binary\Binary.cs" />
+    <Compile Include="binary\BinaryTest.cs" />
+    <Compile Include="bob\Bob.cs" />
+    <Compile Include="bob\BobTest.cs" />
+    <Compile Include="crypto-square\Crypto.cs" />
+    <Compile Include="crypto-square\CryptoSquareTest.cs" />
+    <Compile Include="etl\ETL.cs" />
+    <Compile Include="etl\ETLTest.cs" />
+    <Compile Include="gigasecond\Gigasecond.cs" />
+    <Compile Include="gigasecond\GigasecondTest.cs" />
+    <Compile Include="grade-school\GradeSchoolTest.cs" />
+    <Compile Include="grade-school\School.cs" />
+    <Compile Include="hamming\Hamming.cs" />
+    <Compile Include="hamming\HammingTest.cs" />
+    <Compile Include="leap\LeapTest.cs" />
+    <Compile Include="leap\Year.cs" />
+    <Compile Include="luhn\Luhn.cs" />
+    <Compile Include="luhn\LuhnTest.cs" />
+    <Compile Include="meetup\Meetup.cs" />
+    <Compile Include="meetup\MeetupTest.cs" />
+    <Compile Include="nucleotide-count\DNA.cs" />
+    <Compile Include="nucleotide-count\NucleotideCountTest.cs" />
+    <Compile Include="octal\Octal.cs" />
+    <Compile Include="octal\OctalTest.cs" />
+    <Compile Include="phone-number\PhoneNumber.cs" />
+    <Compile Include="phone-number\PhoneNumberTest.cs" />
+    <Compile Include="prime-factors\PrimeFactors.cs" />
+    <Compile Include="prime-factors\PrimeFactorsTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="raindrops\Raindrops.cs" />
+    <Compile Include="raindrops\RaindropsTest.cs" />
+    <Compile Include="rna-transcription\Complement.cs" />
+    <Compile Include="rna-transcription\ComplementTest.cs" />
+    <Compile Include="robot-name\Robot.cs" />
+    <Compile Include="robot-name\RobotNameTest.cs" />
+    <Compile Include="roman-numerals\IntExtensions.cs" />
+    <Compile Include="roman-numerals\RomanNumeralsTest.cs" />
+    <Compile Include="scrabble-score\Scrabble.cs" />
+    <Compile Include="scrabble-score\ScrabbleScoreTest.cs" />
+    <Compile Include="sieve\Sieve.cs" />
+    <Compile Include="sieve\SieveTest.cs" />
+    <Compile Include="simple-cipher\Cipher.cs" />
+    <Compile Include="simple-cipher\SimpleCipherTest.cs" />
+    <Compile Include="space-age\SpaceAge.cs" />
+    <Compile Include="space-age\SpaceAgeTest.cs" />
+    <Compile Include="strain\EnumerableExtensions.cs" />
+    <Compile Include="strain\StrainTest.cs" />
+    <Compile Include="sum-of-multiples\SumOfMultiples.cs" />
+    <Compile Include="sum-of-multiples\SumOfMultiplesTest.cs" />
+    <Compile Include="triangle\Triangle.cs" />
+    <Compile Include="triangle\TriangleTest.cs" />
+    <Compile Include="trinary\Trinary.cs" />
+    <Compile Include="trinary\TrinaryTest.cs" />
+    <Compile Include="twelve-days\TwelveDaysSong.cs" />
+    <Compile Include="twelve-days\TwelveDaysTest.cs" />
+    <Compile Include="word-count\Phrase.cs" />
+    <Compile Include="word-count\WordCountTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="accumulate\README.md" />
+    <None Include="allergies\README.md" />
+    <None Include="anagram\README.md" />
+    <None Include="atbash-cipher\README.md" />
+    <None Include="binary\README.md" />
+    <None Include="bob\README.md" />
+    <None Include="crypto-square\README.md" />
+    <None Include="etl\README.md" />
+    <None Include="gigasecond\README.md" />
+    <None Include="grade-school\README.md" />
+    <None Include="hamming\README.md" />
+    <None Include="leap\README.md" />
+    <None Include="luhn\README.md" />
+    <None Include="meetup\README.md" />
+    <None Include="nucleotide-count\README.md" />
+    <None Include="octal\README.md" />
+    <None Include="packages.config" />
+    <None Include="phone-number\README.md" />
+    <None Include="prime-factors\README.md" />
+    <None Include="raindrops\README.md" />
+    <None Include="rna-transcription\README.md" />
+    <None Include="robot-name\README.md" />
+    <None Include="roman-numerals\README.md" />
+    <None Include="scrabble-score\README.md" />
+    <None Include="sieve\README.md" />
+    <None Include="simple-cipher\README.md" />
+    <None Include="space-age\README.md" />
+    <None Include="strain\README.md" />
+    <None Include="sum-of-multiples\README.md" />
+    <None Include="triangle\README.md" />
+    <None Include="trinary\README.md" />
+    <None Include="twelve-days\README.md" />
+    <None Include="word-count\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

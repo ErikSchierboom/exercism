@@ -1,4 +1,4 @@
-﻿namespace etl
+﻿namespace Exercism.etl
 {
     using System.Collections.Generic;
     using System.Linq;

@@ -1,4 +1,4 @@
-﻿namespace atbash_cipher
+﻿namespace Exercism
 {
     using System.Collections.Generic;
     using System.Linq;

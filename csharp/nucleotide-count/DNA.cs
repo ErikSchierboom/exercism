@@ -1,4 +1,4 @@
-﻿namespace nucleotide_count
+﻿namespace Exercism
 {
     using System;
     using System.Collections.Generic;

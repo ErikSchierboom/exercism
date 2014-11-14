@@ -1,4 +1,4 @@
-﻿namespace prime_factors
+﻿namespace Exercism
 {
     using System.Collections.Generic;
 

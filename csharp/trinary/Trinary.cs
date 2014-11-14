@@ -1,4 +1,4 @@
-﻿namespace trinary
+﻿namespace Exercism.trinary
 {
     using System;
     using System.Collections.Generic;

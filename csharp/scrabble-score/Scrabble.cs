@@ -1,4 +1,4 @@
-﻿namespace scrabble_score
+﻿namespace Exercism
 {
     using System.Collections.Generic;
     using System.Linq;

@@ -1,4 +1,4 @@
-﻿namespace robot_name
+﻿namespace Exercism
 {
     using System;
     using System.Collections.Generic;

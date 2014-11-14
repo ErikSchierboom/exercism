@@ -1,4 +1,4 @@
-﻿namespace hamming
+﻿namespace Exercism.hamming
 {
     using System;
 

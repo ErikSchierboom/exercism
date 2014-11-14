@@ -1,4 +1,4 @@
-﻿namespace leap
+﻿namespace Exercism.leap
 {
     public static class Year
     {

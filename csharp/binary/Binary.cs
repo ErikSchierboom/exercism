@@ -1,4 +1,4 @@
-﻿namespace binary
+﻿namespace Exercism.binary
 {
     using System;
     using System.Linq;

@@ -1,4 +1,4 @@
-﻿namespace strain
+﻿namespace Exercism.strain
 {
     using System;
     using System.Collections.Generic;

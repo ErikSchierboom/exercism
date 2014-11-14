@@ -1,4 +1,4 @@
-﻿namespace meetup
+﻿namespace Exercism.meetup
 {
     using System;
     using System.Linq;

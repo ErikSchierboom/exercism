@@ -1,4 +1,4 @@
-﻿namespace accumulate
+﻿namespace Exercism.accumulate
 {
     using System;
     using System.Collections.Generic;
