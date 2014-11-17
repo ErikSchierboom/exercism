@@ -54,8 +54,12 @@
     <Compile Include="binary\BinaryTest.cs" />
     <Compile Include="bob\Bob.cs" />
     <Compile Include="bob\BobTest.cs" />
+    <Compile Include="clock\Clock.cs" />
+    <Compile Include="clock\ClockTest.cs" />
     <Compile Include="crypto-square\Crypto.cs" />
     <Compile Include="crypto-square\CryptoSquareTest.cs" />
+    <Compile Include="difference-of-squares\DifferenceOfSquaresTests.cs" />
+    <Compile Include="difference-of-squares\Squares.cs" />
     <Compile Include="etl\ETL.cs" />
     <Compile Include="etl\ETLTest.cs" />
     <Compile Include="gigasecond\Gigasecond.cs" />
@@ -66,6 +70,8 @@
     <Compile Include="hamming\HammingTest.cs" />
     <Compile Include="leap\LeapTest.cs" />
     <Compile Include="leap\Year.cs" />
+    <Compile Include="linked-list\Deque.cs" />
+    <Compile Include="linked-list\LinkedListTest.cs" />
     <Compile Include="luhn\Luhn.cs" />
     <Compile Include="luhn\LuhnTest.cs" />
     <Compile Include="meetup\Meetup.cs" />
@@ -76,9 +82,13 @@
     <Compile Include="octal\OctalTest.cs" />
     <Compile Include="phone-number\PhoneNumber.cs" />
     <Compile Include="phone-number\PhoneNumberTest.cs" />
+    <Compile Include="pig-latin\PigLatin.cs" />
+    <Compile Include="pig-latin\PigLatinTest.cs" />
     <Compile Include="prime-factors\PrimeFactors.cs" />
     <Compile Include="prime-factors\PrimeFactorsTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="pythagorean-triplet\PythagoreanTripletTest.cs" />
+    <Compile Include="pythagorean-triplet\Triplet.cs" />
     <Compile Include="raindrops\Raindrops.cs" />
     <Compile Include="raindrops\RaindropsTest.cs" />
     <Compile Include="rna-transcription\Complement.cs" />
@@ -89,6 +99,10 @@
     <Compile Include="roman-numerals\RomanNumeralsTest.cs" />
     <Compile Include="scrabble-score\Scrabble.cs" />
     <Compile Include="scrabble-score\ScrabbleScoreTest.cs" />
+    <Compile Include="secret-handshake\SecretHandshake.cs" />
+    <Compile Include="secret-handshake\SecretHandshakeTests.cs" />
+    <Compile Include="series\Series.cs" />
+    <Compile Include="series\SeriesTest.cs" />
     <Compile Include="sieve\Sieve.cs" />
     <Compile Include="sieve\SieveTest.cs" />
     <Compile Include="simple-cipher\Cipher.cs" />
@@ -107,6 +121,8 @@
     <Compile Include="twelve-days\TwelveDaysTest.cs" />
     <Compile Include="word-count\Phrase.cs" />
     <Compile Include="word-count\WordCountTest.cs" />
+    <Compile Include="wordy\WordProblem.cs" />
+    <Compile Include="wordy\WordyTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="accumulate\README.md" />
@@ -115,24 +131,31 @@
     <None Include="atbash-cipher\README.md" />
     <None Include="binary\README.md" />
     <None Include="bob\README.md" />
+    <None Include="clock\README.md" />
     <None Include="crypto-square\README.md" />
+    <None Include="difference-of-squares\README.md" />
     <None Include="etl\README.md" />
     <None Include="gigasecond\README.md" />
     <None Include="grade-school\README.md" />
     <None Include="hamming\README.md" />
     <None Include="leap\README.md" />
+    <None Include="linked-list\README.md" />
     <None Include="luhn\README.md" />
     <None Include="meetup\README.md" />
     <None Include="nucleotide-count\README.md" />
     <None Include="octal\README.md" />
     <None Include="packages.config" />
     <None Include="phone-number\README.md" />
+    <None Include="pig-latin\README.md" />
     <None Include="prime-factors\README.md" />
+    <None Include="pythagorean-triplet\README.md" />
     <None Include="raindrops\README.md" />
     <None Include="rna-transcription\README.md" />
     <None Include="robot-name\README.md" />
     <None Include="roman-numerals\README.md" />
     <None Include="scrabble-score\README.md" />
+    <None Include="secret-handshake\README.md" />
+    <None Include="series\README.md" />
     <None Include="sieve\README.md" />
     <None Include="simple-cipher\README.md" />
     <None Include="space-age\README.md" />
@@ -142,6 +165,7 @@
     <None Include="trinary\README.md" />
     <None Include="twelve-days\README.md" />
     <None Include="word-count\README.md" />
+    <None Include="wordy\README.md" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
