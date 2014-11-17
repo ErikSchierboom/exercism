@@ -2,7 +2,6 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Globalization;
     using System.Linq;
 
     public class Trinary
@@ -30,7 +29,7 @@
 
         private IEnumerable<int> GetDigits()
         {
-            return this.value.Select(c => int.Parse(c.ToString(CultureInfo.InvariantCulture)));
+            return this.value.Select(c => c - '0');
         }
     }
 }
