@@ -5,7 +5,7 @@ namespace Exercism.wordy
 
     public class WordProblem
     {
-        private static readonly Regex EquationRegex = new Regex(@"(?<left>-?\d+) (?<operation>-?plus|minus|divided by|multiplied by) (?=(?<right>-?\d+))");
+        private static readonly Regex EquationRegex = new Regex(@"(?<left>-?\d+) (?<operation>-?plus|minus|divided by|multiplied by) (?=(?<right>-?\d+))", RegexOptions.Compiled);
 
         public static int Solve(string question)
         {

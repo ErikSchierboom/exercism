@@ -1,11 +1,12 @@
-using System;
-using System.Linq;
-
 namespace Exercism
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
     public class Squares
     {
-        private readonly int number;
+        private readonly IEnumerable<int> numbers;
 
         public Squares(int number)
         {
@@ -14,22 +15,30 @@ namespace Exercism
                 throw new ArgumentException("Negative numbers are not allowed.", "number");
             }
 
-            this.number = number;
+            this.numbers = Enumerable.Range(1, number);
         }
 
-        public int SumOfSquares()
+        public long SumOfSquares()
         {
-            return Enumerable.Range(1, this.number).Sum(i => i * i);
+            return this.numbers.Sum(i => i * i);
         }
 
-        public int SquareOfSums()
+        public long SquareOfSums()
         {
-            return (int)Math.Pow(Enumerable.Range(1, this.number).Sum(), 2);
+            var sum = this.numbers.Sum();
+            return sum * sum;
         }
 
-        public int DifferenceOfSquares()
+        public long DifferenceOfSquares()
         {
-            return this.SquareOfSums() - this.SumOfSquares();
+            var aggregate = this.numbers.Aggregate(new[] { 0, 0 }, (acc, i) =>
+            {
+                acc[0] += i;
+                acc[1] += i * i;
+                return acc;
+            });
+
+            return aggregate[0] * aggregate[0] - aggregate[1];
         }
     }
 }

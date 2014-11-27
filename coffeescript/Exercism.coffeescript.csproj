@@ -58,32 +58,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="example\example.coffee" />
-    <Content Include="example\example.js">
-      <DependentUpon>example.coffee</DependentUpon>
-    </Content>
-    <Content Include="example\example.min.js">
-      <DependentUpon>example.js</DependentUpon>
-    </Content>
     <Content Include="example\example_test.spec.coffee" />
-    <Content Include="example\example_test.spec.js">
-      <DependentUpon>example_test.spec.coffee</DependentUpon>
-    </Content>
-    <Content Include="example\example_test.spec.min.js">
-      <DependentUpon>example_test.spec.js</DependentUpon>
-    </Content>
     <Content Include="test.bat" />
-    <Content Include="example\example.js.map">
-      <DependentUpon>example.js</DependentUpon>
-    </Content>
-    <Content Include="example\example.min.js.map">
-      <DependentUpon>example.min.js</DependentUpon>
-    </Content>
-    <Content Include="example\example_test.spec.js.map">
-      <DependentUpon>example_test.spec.js</DependentUpon>
-    </Content>
-    <Content Include="example\example_test.spec.min.js.map">
-      <DependentUpon>example_test.spec.min.js</DependentUpon>
-    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

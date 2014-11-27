@@ -49,7 +49,39 @@
   </Choose>
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
-    <Content Include="packages.config" />
+    <Compile Include="beer-song\BeerSong.fs" />
+    <Compile Include="beer-song\BeerSongTest.fs" />
+    <None Include="beer-song\README.md" />
+    <Compile Include="bob\Bob.fs" />
+    <Compile Include="bob\BobTest.fs" />
+    <None Include="bob\README.md" />
+    <Compile Include="sum-of-multiples\SumOfMultiples.fs" />
+    <Compile Include="sum-of-multiples\SumOfMultiplesTest.fs" />
+    <None Include="sum-of-multiples\README.md" />
+    <Compile Include="difference-of-squares\DifferenceOfSquares.fs" />
+    <Compile Include="difference-of-squares\DifferenceOfSquaresTest.fs" />
+    <None Include="difference-of-squares\README.md" />
+    <Compile Include="space-age\SpaceAge.fs" />
+    <Compile Include="space-age\SpaceAgeTest.fs" />
+    <None Include="space-age\README.md" />
+    <Compile Include="gigasecond\Gigasecond.fs" />
+    <Compile Include="gigasecond\GigasecondTest.fs" />
+    <None Include="gigasecond\README.md" />
+    <Compile Include="triangle\Triangle.fs" />
+    <Compile Include="triangle\TriangleTest.fs" />
+    <None Include="triangle\README.md" />
+    <Compile Include="robot-name\RobotName.fs" />
+    <Compile Include="robot-name\RobotNameTest.fs" />
+    <None Include="robot-name\README.md" />
+    <Compile Include="bank-account\BankAccount.fs" />
+    <Compile Include="bank-account\BankAccountTest.fs" />
+    <None Include="bank-account\README.md" />
+    <Compile Include="grains\Grains.fs" />
+    <Compile Include="grains\GrainsTest.fs" />
+    <None Include="grains\README.md" />
+    <Compile Include="leap\LeapYear.fs" />
+    <Compile Include="leap\LeapYearTests.fs" />
+    <None Include="leap\README.md" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
@@ -63,10 +95,6 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="example\Example.fs" />
-    <Compile Include="example\ExampleTest.fs" />
   </ItemGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
