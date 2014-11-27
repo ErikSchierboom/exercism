@@ -1,9 +1,7 @@
 case class Binary(str: String) {
-  private def isValid = str.forall(c => c == '0' || c == '1')
-
-  private def digitToDecimal(digitWithDecimal: (Char, Int)) = digitWithDecimal._1.asDigit * (1 << digitWithDecimal._2)
-  private def digitsToDecimals = str.reverse.zipWithIndex.map(digitToDecimal)
-  private def digitsToDecimal = digitsToDecimals.sum
-
-  def toDecimal = if (isValid) digitsToDecimal else 0
+  def toDecimal = str.foldLeft[Option[Int]](Some(0)) {
+    case (Some(acc), '0') => Some(acc * 2)
+    case (Some(acc), '1') => Some(acc * 2 + 1)
+    case _ => None
+  }.getOrElse(0)
 }
