@@ -25,23 +25,15 @@ case class Robot(bearing: Bearing, coordinates: (Int, Int)) {
   }
 
   def simulate(instructions: String) = {
-    instructions.map(Instruction.apply).foldLeft(this.copy()) {
+    instructions.foldLeft(this) {
       case (robot, instruction) => instruction match {
-        case Instruction.Advance => robot.advance
-        case Instruction.Left => robot.turnLeft
-        case Instruction.Right => robot.turnRight
+        case 'A' => robot.advance
+        case 'L' => robot.turnLeft
+        case 'R' => robot.turnRight
+        case x => sys.error("Invalid instruction: " + x)
       }
     }
   }
-}
-
-object Instruction extends Enumeration {
-  type Instruction = Value
-  val Advance = Value('A'.toInt, "Advance")
-  val Left = Value('L'.toInt, "Left")
-  val Right = Value('R'.toInt, "Right")
-
-  def apply(c: Char): Value = Instruction.apply(c.toInt)
 }
 
 object Bearing extends Enumeration {
