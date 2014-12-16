@@ -1,22 +1,20 @@
 module Robot (robotName, mkRobot, resetName) where
 
-import System.Random (newStdGen, randomRs)
+import System.Random (randomRIO)
 
 data Robot = Robot { name :: String }
 
 mkRobot :: IO Robot
-mkRobot = do return Robot { name = "test" }
+mkRobot = generateName >>= \name -> return (Robot name)
 
 robotName :: Robot -> IO String
-robotName robot = do return $ name robot
+robotName robot = return $ name robot
 
-resetName :: Robot -> IO ()
-resetName robot = undefined
+resetName :: Robot -> IO String
+resetName robot = generateName >>= \name -> return name
 
 generateName :: IO String
-generateName = do
-	gen <- newStdGen
-	letters <- (take 2 (randomRs ('A','Z') gen))
-	gen' <- newStdGen
-	numbers <- (take 3 (randomRs ('0','9') gen'))
-	return (letters ++ numbers)
+generateName = mapM randomRIO pattern
+  where pattern = [letter, letter, digit, digit, digit]
+        letter = ('A', 'Z')
+        digit = ('0', '9')
