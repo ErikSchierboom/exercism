@@ -12,7 +12,7 @@
             {
                 while (number % factor != 0)
                 {
-                    factor++;
+                    factor += factor == 2 ? 1 : 2;
                 }
 
                 number /= factor;
