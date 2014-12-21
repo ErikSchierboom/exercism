@@ -2,21 +2,18 @@ module Robot (robotName, mkRobot, resetName) where
 
 import System.Random (randomRIO)
 import Data.IORef
+import Control.Applicative
 
 data Robot = Robot { name :: IORef String }
 
 mkRobot :: IO Robot
-mkRobot = do newName <- generateName
-             nameRef <- newIORef newName
-             return (Robot nameRef)
+mkRobot = Robot <$> (generateName >>= newIORef)
 
 robotName :: Robot -> IO String
-robotName robot = do name' <- readIORef (name robot)
-                     return name'
+robotName = readIORef . name
 
 resetName :: Robot -> IO ()
-resetName robot = do newName <- generateName
-                     writeIORef (name robot) newName
+resetName robot = generateName >>= writeIORef (name robot)
 
 generateName :: IO String
 generateName = mapM randomRIO pattern
