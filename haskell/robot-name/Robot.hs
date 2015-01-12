@@ -2,7 +2,7 @@ module Robot (robotName, mkRobot, resetName) where
 
 import System.Random (randomRIO)
 import Data.IORef
-import Control.Applicative
+import Control.Applicative  
 
 data Robot = Robot { name :: IORef String }
 
