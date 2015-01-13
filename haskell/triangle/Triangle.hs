@@ -7,8 +7,7 @@ data TriangleType = Equilateral | Isosceles | Scalene | Illogical
 
 triangleType :: Int -> Int -> Int -> TriangleType
 triangleType x y z 
-    | isEmpty = Illogical
-    | inInvalid = Illogical
+    | isEmpty || inInvalid = Illogical
     | otherwise = case equalSides of 2 -> Isosceles
                                      1 -> Equilateral
                                      _ -> Scalene 

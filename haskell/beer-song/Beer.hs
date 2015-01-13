@@ -7,4 +7,4 @@ verse 2 = "2 bottles of beer on the wall, 2 bottles of beer.\nTake one down and 
 verse number = show number ++ " bottles of beer on the wall, " ++ show number ++ " bottles of beer.\nTake one down and pass it around, " ++ show (number - 1) ++" bottles of beer on the wall.\n"
 
 sing :: Int -> Int -> String
-sing start stop = concat $ map (\number -> verse number ++ "\n") [start, start - 1..stop]
+sing start stop = unlines $ map verse [start, start - 1..stop]

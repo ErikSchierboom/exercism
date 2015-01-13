@@ -4,7 +4,7 @@ import System.Random (randomRIO)
 import Data.IORef
 import Control.Applicative  
 
-data Robot = Robot { name :: IORef String }
+newtype Robot = Robot { name :: IORef String }
 
 mkRobot :: IO Robot
 mkRobot = Robot <$> (generateName >>= newIORef)
