@@ -1,13 +1,11 @@
 module Roman (numerals) where
 
-import Data.List (find)
-
 numerals :: Int -> String
-numerals number = numerals' number "" where
-    numerals' remainder acc = 
-        case find ((<= remainder) . fst) numeralThresholds of
-            Just (threshold, numeral) -> numerals' (remainder - threshold) (acc ++ numeral)
-            Nothing -> acc
+numerals number = numerals' number "" numeralThresholds where
+    numerals' _ acc [] = acc
+    numerals' remainder acc thresholds@((threshold, numeral):xs) 
+        | threshold <= remainder = numerals' (remainder - threshold) (acc ++ numeral) thresholds
+        | otherwise = numerals' remainder acc xs
 
 numeralThresholds :: [(Int, String)]
 numeralThresholds = [(1000, "M"),
