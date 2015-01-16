@@ -1,14 +1,13 @@
 module Binary (toDecimal) where
 
-import Data.Maybe (fromMaybe)
-
 toDecimal :: String -> Int
-toDecimal binary = fromMaybe 0 $ parseDigits binary
+toDecimal digits = parseDigits digits 0
 
-parseDigits :: String -> Maybe Int
-parseDigits = foldl parseDigit $ Just 0
-
-parseDigit :: Maybe Int -> Char -> Maybe Int
-parseDigit (Just acc) '0' = Just $ acc * 2
-parseDigit (Just acc) '1' = Just $ acc * 2 + 1
-parseDigit _ _ = Nothing
+parseDigits :: String -> Int -> Int
+parseDigits "" value = value
+parseDigits (digit:remainder) value =
+    value `seq`
+    case digit of
+		'0' -> parseDigits remainder (value * 2)
+		'1' -> parseDigits remainder (value * 2 + 1)
+		_   -> 0
