@@ -4,16 +4,16 @@ import System.Random (randomRIO)
 import Data.IORef
 import Control.Applicative  
 
-newtype Robot = Robot { name :: IORef String }
+newtype Robot = Robot { unRobot :: IORef String }
 
 mkRobot :: IO Robot
 mkRobot = Robot <$> (generateName >>= newIORef)
 
 robotName :: Robot -> IO String
-robotName = readIORef . name
+robotName = readIORef . unRobot
 
 resetName :: Robot -> IO ()
-resetName robot = generateName >>= writeIORef (name robot)
+resetName robot = generateName >>= writeIORef (unRobot robot)
 
 generateName :: IO String
 generateName = mapM randomRIO pattern

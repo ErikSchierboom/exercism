@@ -1,14 +1,14 @@
 module PrimeFactors (primeFactors) where
 
 primeFactors :: Int -> [Int]
-primeFactors number = primeFactors' number primeFactors'' []
+primeFactors number = primeFactorsLoop number possiblePrimes
 
-primeFactors' :: Int -> [Int] -> [Int] -> [Int]
-primeFactors' remainder possibleFactors factorsFound
+primeFactorsLoop :: Int -> [Int] -> [Int]
+primeFactorsLoop remainder possibleFactors
 	| remainder <= 1 = []
-	| remainder `mod` factor == 0 = factor : primeFactors' (remainder `div` factor) possibleFactors factorsFound
-	| otherwise = primeFactors' remainder (tail possibleFactors) factorsFound
+	| remainder `mod` factor == 0 = factor : primeFactorsLoop (remainder `div` factor) possibleFactors
+	| otherwise = primeFactorsLoop remainder (tail possibleFactors)
     where factor = head possibleFactors
 
-primeFactors'' :: [Int]
-primeFactors'' = 2 : 3 : [n + k | n <- [6, 12 ..], k <- [-1, 1]]
+possiblePrimes :: [Int]
+possiblePrimes = 2 : 3 : [n + k | n <- [6, 12 ..], k <- [-1, 1]]
