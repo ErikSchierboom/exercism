@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Text;
+using Exercism.tournament;
 using NUnit.Framework;
 
 [TestFixture]
@@ -81,14 +82,12 @@ Courageous Californians        |  2 |  0 |  0 |  2 |  0
     }
     
     [Test]
-    [Ignore]
     public void Test_ignore_bad_lines()
     {
         Assert.That(RunTally(input2).Trim(), Is.EqualTo(expected2));
     }
     
     [Test]
-    [Ignore]
     public void Test_incomplete_competition()
     {
         Assert.That(RunTally(input3).Trim(), Is.EqualTo(expected3));

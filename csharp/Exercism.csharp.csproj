@@ -113,6 +113,8 @@
     <Compile Include="strain\StrainTest.cs" />
     <Compile Include="sum-of-multiples\SumOfMultiples.cs" />
     <Compile Include="sum-of-multiples\SumOfMultiplesTest.cs" />
+    <Compile Include="tournament\Tournament.cs" />
+    <Compile Include="tournament\TournamentTest.cs" />
     <Compile Include="triangle\Triangle.cs" />
     <Compile Include="triangle\TriangleTest.cs" />
     <Compile Include="trinary\Trinary.cs" />
@@ -161,6 +163,7 @@
     <None Include="space-age\README.md" />
     <None Include="strain\README.md" />
     <None Include="sum-of-multiples\README.md" />
+    <None Include="tournament\README.md" />
     <None Include="triangle\README.md" />
     <None Include="trinary\README.md" />
     <None Include="twelve-days\README.md" />
