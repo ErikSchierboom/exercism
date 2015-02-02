@@ -14,4 +14,4 @@ canAttack :: (Int, Int) -> (Int, Int) -> Bool
 canAttack (row1, col1) (row2, col2) = canAttackHorizontally || canAttackVertically || canAttackDiagonally where
     canAttackHorizontally = row1 == row2
     canAttackVertically = col1 == col2
-    canAttackDiagonally = abs(row1 - row2) == abs(col1 - col2)
+    canAttackDiagonally = abs (row1 - row2) == abs (col1 - col2)
