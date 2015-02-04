@@ -8,6 +8,7 @@ This repository contains my work on the programming exercises on [exercism.io](h
 - C#
 - F#
 - Scala
+- Java
 
 ### In progress
 - Haskell
