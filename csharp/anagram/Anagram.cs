@@ -1,4 +1,4 @@
-﻿namespace Exercism.anagram
+﻿namespace Exercism
 {
     using System;
     using System.Collections.Generic;
@@ -6,60 +6,28 @@
 
     public class Anagram
     {
-        private readonly HashSet<string> anagrams;
+        private readonly string target;
+        private readonly string normalizedTarget;
 
-        public Anagram(string word)
+        public Anagram(string target)
         {
-            this.anagrams = GenerateAnagrams(word);
+            this.target = target;
+            this.normalizedTarget = NormalizeWord(target);
         }
 
-        public IEnumerable<string> Match(IEnumerable<string> input)
+        public IEnumerable<string> Match(IEnumerable<string> sources)
         {
-            return input.ToSet().Intersect(this.anagrams, StringComparer.InvariantCultureIgnoreCase).ToList();
+            return sources.Where(this.IsAnagram);
         }
 
-        private static HashSet<string> GenerateAnagrams(string word)
+        private bool IsAnagram(string source)
         {
-            return word.ToCharArray()
-                       .Permutations()
-                       .Select(chars => new string(chars.ToArray()))
-                       .Except(new[] { word })
-                       .ToSet();
-        }
-    }
-
-    public static class EnumerableExtension
-    {
-        public static IEnumerable<IEnumerable<T>> Permutations<T>(this IEnumerable<T> input)
-        {
-            return PermutationsLoop(input.ToList(), new List<T>());
+            return NormalizeWord(source) == this.normalizedTarget && !string.Equals(source, this.target, StringComparison.InvariantCultureIgnoreCase);
         }
 
-        private static IEnumerable<IEnumerable<T>> PermutationsLoop<T>(IList<T> remainder, IList<T> accumulator)
+        private static string NormalizeWord(string word)
         {
-            if (remainder.Count == 0)
-            {
-                yield return accumulator;
-            }
-            else
-            {
-                for (var i = 0; i < remainder.Count; i++)
-                {
-                    var newAccumulator = new List<T>(accumulator) { remainder[i] };
-                    var newRemainder = new List<T>(remainder);
-                    newRemainder.RemoveAt(i);
-
-                    foreach (var permutations in PermutationsLoop(newRemainder, newAccumulator))
-                    {
-                        yield return permutations;
-                    }
-                }
-            }
-        }
-
-        public static HashSet<T> ToSet<T>(this IEnumerable<T> input)
-        {
-            return new HashSet<T>(input);
+            return new string(word.ToLowerInvariant().OrderBy(c => c).ToArray());
         }
     }
 }

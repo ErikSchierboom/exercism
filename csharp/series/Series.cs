@@ -1,9 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace Exercism.series
+namespace Exercism
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+
     public class Series
     {
         private readonly IList<int> digits;

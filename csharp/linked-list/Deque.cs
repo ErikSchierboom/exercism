@@ -11,7 +11,7 @@ namespace Exercism
 
             this.last = new Element { Value = value, Prev = previousLast };
             this.first = this.first ?? this.last;
-            
+
             if (previousLast != null)
             {
                 previousLast.Next = this.last;

@@ -2,37 +2,35 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
 
     public class DNA
     {
-        private static readonly HashSet<char> ValidNucleotides = new HashSet<char> { 'A', 'T', 'C', 'G' };
+        private readonly Dictionary<char, int> nucleotideCounts = new Dictionary<char, int> { { 'A', 0 }, { 'T', 0 }, { 'C', 0 }, { 'G', 0 } };
 
         public DNA(string strand)
         {
-            this.NucleotideCounts = strand.GroupBy(c => c).ToDictionary(c => c.Key, c => c.Count());
-
-            this.AddKeysForMissingNucleotides();
+            foreach (var nucleotide in strand)
+            {
+                this.nucleotideCounts[nucleotide]++;
+            }
         }
 
-        public Dictionary<char, int> NucleotideCounts { get; private set; }
+        public Dictionary<char, int> NucleotideCounts
+        {
+            get
+            {
+                return this.nucleotideCounts;
+            }
+        }
 
         public int Count(char c)
         {
-            if (ValidNucleotides.Contains(c))
+            if (this.nucleotideCounts.ContainsKey(c))
             {
-                return this.NucleotideCounts[c];
+                return this.nucleotideCounts[c];
             }
 
             throw new InvalidNucleotideException();
-        }
-
-        private void AddKeysForMissingNucleotides()
-        {
-            foreach (var missingNucleotide in ValidNucleotides.Except(this.NucleotideCounts.Keys))
-            {
-                this.NucleotideCounts[missingNucleotide] = 0;
-            }
         }
     }
 

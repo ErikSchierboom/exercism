@@ -1,7 +1,7 @@
-using NUnit.Framework;
-
-namespace Exercism.series
+namespace Exercism
 {
+    using NUnit.Framework;
+
     [TestFixture]
     public class SeriesTest
     {

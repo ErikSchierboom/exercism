@@ -1,4 +1,4 @@
-﻿namespace Exercism.allergies
+﻿namespace Exercism
 {
     using System.Collections.Generic;
 

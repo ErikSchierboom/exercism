@@ -1,6 +1,6 @@
 using NUnit.Framework;
 
-namespace Exercism.anagram
+namespace Exercism
 {
     [TestFixture]
     public class AnagramTest

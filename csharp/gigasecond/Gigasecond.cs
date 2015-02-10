@@ -1,4 +1,4 @@
-﻿namespace Exercism.gigasecond
+﻿namespace Exercism
 {
     using System;
 

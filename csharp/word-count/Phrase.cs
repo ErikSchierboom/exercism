@@ -21,9 +21,7 @@
 
         private static IEnumerable<string> GetWords(string phrase)
         {
-            return Regex.Matches(phrase, @"\w+('\w+)*")
-                .Cast<Match>()
-                .Select(m => m.Value);
+            return Regex.Matches(phrase, @"\w+('\w+)*").Cast<Match>().Select(m => m.Value);
         }
     }
 }

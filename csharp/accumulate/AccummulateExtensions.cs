@@ -1,9 +1,9 @@
-﻿namespace Exercism.accumulate
+﻿namespace Exercism
 {
     using System;
     using System.Collections.Generic;
 
-    public static class EnumerableExtensions
+    public static class AccummulateExtensions
     {
         public static IEnumerable<TResult> Accumulate<TSource, TResult>(this IEnumerable<TSource> value, Func<TSource, TResult> selector)
         {

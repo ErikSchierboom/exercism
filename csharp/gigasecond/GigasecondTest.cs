@@ -1,9 +1,8 @@
-using System;
-
-using NUnit.Framework;
-
-namespace Exercism.gigasecond
+namespace Exercism
 {
+    using System;
+    using NUnit.Framework;
+
     [TestFixture]
     public class GigasecondTest
     {

@@ -1,40 +1,36 @@
-﻿namespace Exercism.octal
+﻿namespace Exercism
 {
-    using System;
-    using System.Collections.Generic;
     using System.Linq;
 
     public class Octal
     {
-        private static readonly HashSet<char> ValidDigits = new HashSet<char> { '0', '1', '2', '3', '4', '5', '6', '7' };
+        private const int InvalidOctalValue = 0;
 
-        private readonly char[] digits;
+        private readonly int octalValue;
 
-        public Octal(string value)
+        public Octal(string octalString)
         {
-            this.digits = value.ToCharArray();
+            this.octalValue = CalculateOctalValue(octalString);
+        }
+
+        private static int CalculateOctalValue(string binaryString)
+        {
+            if (IsValidOctalString(binaryString))
+            {
+                return binaryString.Aggregate(0, (acc, digit) => acc * 8 + digit - '0');
+            }
+
+            return InvalidOctalValue;
+        }
+
+        private static bool IsValidOctalString(string binary)
+        {
+            return binary.All(c => c >= '0' && c <= '7');
         }
 
         public int ToDecimal()
         {
-            if (!this.digits.All(ValidDigits.Contains))
-            {
-                return 0;
-            }
-
-            return this.digits.Reverse()
-                              .Select(OctalToDecimal)
-                              .Sum();
-        }
-
-        private static int OctalToDecimal(char c, int i)
-        {
-            return DigitToInt(c) * (int)Math.Pow(8, i);
-        }
-
-        private static int DigitToInt(char c)
-        {
-            return c - '0';
+            return this.octalValue;
         }
     }
 }

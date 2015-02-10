@@ -1,15 +1,17 @@
-namespace Exercism.clock
+namespace Exercism
 {
-    public class Clock
+    using System;
+
+    public class Clock : IEquatable<Clock>, IComparable<Clock>
     {
         private readonly int hours;
         private readonly int minutes;
+        private readonly int totalMinutes;
 
         public Clock(int hours, int minutes = 0)
         {
-            var totalMinutes = hours * 60 + minutes;
-
-            this.hours = Mod(totalMinutes / 60.0, 24);
+            this.totalMinutes = hours * 60 + minutes;
+            this.hours = Mod(this.totalMinutes / 60.0, 24);
             this.minutes = Mod(minutes, 60);
         }
 
@@ -26,6 +28,36 @@ namespace Exercism.clock
         public override string ToString()
         {
             return string.Format("{0:00}:{1:00}", this.hours, this.minutes);
+        }
+
+        public bool Equals(Clock other)
+        {
+            if (other == null)
+            {
+                return false;
+            }
+
+            return this.totalMinutes.Equals(other.totalMinutes);
+        }
+
+        public int CompareTo(Clock other)
+        {
+            if (other == null)
+            {
+                return 1;
+            }
+
+            return this.totalMinutes.CompareTo(other.totalMinutes);
+        }
+
+        public override bool Equals(object obj)
+        {
+            return this.Equals(obj as Clock);
+        }
+
+        public override int GetHashCode()
+        {
+            return this.totalMinutes.GetHashCode();
         }
 
         private static int Mod(double x, double y)

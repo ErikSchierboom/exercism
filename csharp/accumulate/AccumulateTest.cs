@@ -1,11 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
-using NUnit.Framework;
-
-namespace Exercism.accumulate
+namespace Exercism
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using NUnit.Framework;
+
     [TestFixture]
     public class AccumulateTest
     {

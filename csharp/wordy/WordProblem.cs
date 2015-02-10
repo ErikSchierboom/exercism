@@ -1,4 +1,4 @@
-namespace Exercism.wordy
+namespace Exercism
 {
     using System;
     using System.Text.RegularExpressions;

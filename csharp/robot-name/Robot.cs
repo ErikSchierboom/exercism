@@ -8,19 +8,36 @@
     {
         private const string Letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         private const string Numbers = "0123456789";
-
         private static readonly Random Random = new Random();
+        private static readonly HashSet<string> IssuedNames = new HashSet<string>();
 
         public Robot()
         {
-            this.Name = GenerateName();
+            this.Name = this.GenerateNewName();
         }
 
         public string Name { get; private set; }
 
         public void Reset()
         {
-            this.Name = GenerateName();
+            this.Name = this.GenerateNewName();
+        }
+
+        private string GenerateNewName()
+        {
+            string name;
+
+            lock (this)
+            {
+                do
+                {
+                    name = GenerateName();
+                } while (IssuedNames.Contains(name));
+
+                IssuedNames.Add(name);
+            }
+
+            return name;
         }
 
         private static string GenerateName()

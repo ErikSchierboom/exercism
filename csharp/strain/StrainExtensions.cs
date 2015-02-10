@@ -1,9 +1,9 @@
-﻿namespace Exercism.strain
+﻿namespace Exercism
 {
     using System;
     using System.Collections.Generic;
 
-    public static class EnumerableExtensions
+    public static class StrainExtensions
     {
         public static IEnumerable<T> Keep<T>(this IEnumerable<T> value, Predicate<T> predicate)
         {

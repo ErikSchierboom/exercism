@@ -1,4 +1,4 @@
-﻿namespace Exercism.raindrops
+﻿namespace Exercism
 {
     using System.Globalization;
 

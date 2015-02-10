@@ -1,6 +1,5 @@
-﻿namespace Exercism.binary
+﻿namespace Exercism
 {
-    using System;
     using System.Linq;
 
     public class Binary
@@ -18,15 +17,10 @@
         {
             if (IsValidBinaryString(binaryString))
             {
-                return binaryString.Reverse().Select(DigitValue).Sum();
+                return binaryString.Aggregate(0, (acc, digit) => acc * 2 + digit - '0');
             }
 
             return InvalidBinaryDecimalValue;
-        }
-
-        private static int DigitValue(char digit, int index)
-        {
-            return digit == '0' ? 0 : (int)Math.Pow(2, index);
         }
 
         private static bool IsValidBinaryString(string binary)

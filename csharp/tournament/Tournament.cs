@@ -1,4 +1,4 @@
-﻿namespace Exercism.tournament
+﻿namespace Exercism
 {
     using System;
     using System.Collections.Generic;

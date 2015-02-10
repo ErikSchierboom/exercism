@@ -1,4 +1,4 @@
-﻿namespace Exercism.triangle
+﻿namespace Exercism
 {
     using System;
 

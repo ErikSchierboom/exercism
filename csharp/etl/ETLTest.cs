@@ -1,9 +1,8 @@
-using System.Collections.Generic;
-
-using NUnit.Framework;
-
-namespace Exercism.etl
+namespace Exercism
 {
+    using System.Collections.Generic;
+    using NUnit.Framework;
+
     [TestFixture]
     public class ETLTest
     {

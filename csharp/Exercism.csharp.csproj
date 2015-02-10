@@ -43,7 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="accumulate\AccumulateTest.cs" />
-    <Compile Include="accumulate\EnumerableExtensions.cs" />
+    <Compile Include="accumulate\AccummulateExtensions.cs" />
     <Compile Include="allergies\Allergies.cs" />
     <Compile Include="allergies\AllergiesTest.cs" />
     <Compile Include="anagram\Anagram.cs" />
@@ -109,7 +109,7 @@
     <Compile Include="simple-cipher\SimpleCipherTest.cs" />
     <Compile Include="space-age\SpaceAge.cs" />
     <Compile Include="space-age\SpaceAgeTest.cs" />
-    <Compile Include="strain\EnumerableExtensions.cs" />
+    <Compile Include="strain\StrainExtensions.cs" />
     <Compile Include="strain\StrainTest.cs" />
     <Compile Include="sum-of-multiples\SumOfMultiples.cs" />
     <Compile Include="sum-of-multiples\SumOfMultiplesTest.cs" />

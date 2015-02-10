@@ -1,4 +1,4 @@
-﻿namespace Exercism.luhn
+﻿namespace Exercism
 {
     using System.Collections.Generic;
     using System.Globalization;
