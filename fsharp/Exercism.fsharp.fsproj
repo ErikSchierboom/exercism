@@ -49,9 +49,29 @@
   </Choose>
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
+    <Compile Include="accumulate\Accumulate.fs" />
+    <Compile Include="accumulate\AccumulateTests.fs" />
+    <Compile Include="allergies\Allergies.fs" />
+    <Compile Include="allergies\AllergiesTests.fs" />
     <Compile Include="beer-song\BeerSong.fs" />
     <Compile Include="beer-song\BeerSongTest.fs" />
+    <Compile Include="etl\ETL.fs" />
+    <Compile Include="etl\ETLTests.fs" />
+    <Compile Include="octal\Octal.fs" />
+    <Compile Include="octal\OctalTests.fs" />
+    <Compile Include="pig-latin\PigLatin.fs" />
+    <Compile Include="pig-latin\PigLatinTests.fs" />
+    <Compile Include="rna-transcription\RNATranscription.fs" />
+    <Compile Include="rna-transcription\RNATranscriptionTests.fs" />
+    <Compile Include="roman-numerals\RomanNumeral.fs" />
+    <Compile Include="roman-numerals\RomanNumeralTests.fs" />
+    <Compile Include="trinary\Trinary.fs" />
+    <Compile Include="trinary\TrinaryTests.fs" />
+    <Compile Include="word-count\WordCount.fs" />
+    <Compile Include="word-count\WordCountTests.fs" />
     <None Include="beer-song\README.md" />
+    <Compile Include="binary\Binary.fs" />
+    <Compile Include="binary\BinaryTests.fs" />
     <Compile Include="bob\Bob.fs" />
     <Compile Include="bob\BobTest.fs" />
     <None Include="bob\README.md" />
@@ -82,6 +102,8 @@
     <Compile Include="leap\LeapYear.fs" />
     <Compile Include="leap\LeapYearTests.fs" />
     <None Include="leap\README.md" />
+    <Compile Include="hamming\Hamming.fs" />
+    <Compile Include="hamming\HammingTests.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
