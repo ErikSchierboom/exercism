@@ -4,7 +4,7 @@ checkDigit :: Integral a => a -> a
 checkDigit = flip mod 10
 
 addends :: Integral a => a -> [a]
-addends num = reverse $ map addend $ zipWithIndex $ digits num
+addends = reverse . map addend . zipWithIndex . digits
 
 addend :: Integral a => (a, Int) -> a
 addend (digit, index) 
@@ -13,7 +13,7 @@ addend (digit, index)
     | otherwise = digit * 2
 
 checksum :: Integral a => a -> a
-checksum num = sum (addends num) `mod` 10
+checksum = flip mod 10 . sum . addends
 
 isValid :: Integral a => a -> Bool
 isValid = (0 ==) . checksum
@@ -29,4 +29,4 @@ digits 0 = []
 digits num = num `mod` 10 : digits (num `div` 10)
 
 zipWithIndex :: [a] -> [(a, Int)]
-zipWithIndex xs = zip xs [0..length xs - 1]
+zipWithIndex xs = zip xs [0..]

@@ -1,29 +1,26 @@
 module BankAccount (BankAccount, openAccount, closeAccount, getBalance, incrementBalance) where
 
-import Data.IORef
-import Control.Applicative
+import Control.Applicative ((<$>))
+import Control.Concurrent.STM (TVar, newTVar, readTVar, writeTVar, atomically)
 
 type Balance = Maybe Int
-newtype BankAccount = BankAccount { unBankAccount :: IORef Balance }
+newtype BankAccount = BankAccount { unBankAccount :: TVar Balance }
 
 openAccount :: IO BankAccount
-openAccount = BankAccount <$> newIORef (Just 0)
+openAccount = atomically $ BankAccount <$> newTVar (Just 0)
 
 getBalance :: BankAccount -> IO Balance
-getBalance = readIORef . unBankAccount
+getBalance = atomically . readTVar . unBankAccount
 
 closeAccount :: BankAccount -> IO ()
-closeAccount = flip setBalance Nothing
+closeAccount = atomically . flip writeTVar Nothing . unBankAccount
 
 incrementBalance :: BankAccount -> Int -> IO Balance
-incrementBalance bankAccount amount = do
-	currentBalance <- getBalance bankAccount
+incrementBalance bankAccount amount = atomically $ do
+	currentBalance <- readTVar $ unBankAccount bankAccount
 	case currentBalance of
 		Just balance -> do
-			let newBalance = Just(balance + amount)
-			setBalance bankAccount newBalance
+			let newBalance = Just $! balance + amount
+			writeTVar (unBankAccount bankAccount) newBalance
 			return newBalance
 		Nothing -> return Nothing
-
-setBalance :: BankAccount -> Balance -> IO ()
-setBalance = writeIORef . unBankAccount

@@ -1,19 +1,20 @@
 module Robot (robotName, mkRobot, resetName) where
 
+import Control.Applicative ((<$>))
+import Control.Concurrent (MVar, newMVar, readMVar, swapMVar)
+import Control.Monad (void)
 import System.Random (randomRIO)
-import Data.IORef
-import Control.Applicative  
 
-newtype Robot = Robot { unRobot :: IORef String }
+newtype Robot = Robot { unRobot :: MVar String }
 
 mkRobot :: IO Robot
-mkRobot = Robot <$> (generateName >>= newIORef)
+mkRobot = Robot <$> (generateName >>= newMVar)
 
 robotName :: Robot -> IO String
-robotName = readIORef . unRobot
+robotName = readMVar . unRobot
 
 resetName :: Robot -> IO ()
-resetName robot = generateName >>= writeIORef (unRobot robot)
+resetName robot = void (generateName >>= swapMVar (unRobot robot))
 
 generateName :: IO String
 generateName = mapM randomRIO pattern

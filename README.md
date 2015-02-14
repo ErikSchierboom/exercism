@@ -9,8 +9,6 @@ This repository contains my work on the programming exercises on [exercism.io](h
 - F#
 - Scala
 - Java
-
-### In progress
 - Haskell
 
 ## License

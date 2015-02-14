@@ -1,12 +1,13 @@
 module Anagram (anagramsFor) where
 
 import Data.Char (toLower)
-import Data.List (permutations)
-import Data.Set (fromList, member, delete)
+import Data.List (sort)
 
 anagramsFor :: String -> [String] -> [String]
-anagramsFor x ys = filter isAnagram ys where
-    toLower' = map toLower
-    lowerInput = toLower' x
-    anagrams = delete lowerInput $ fromList $ permutations lowerInput
-    isAnagram word = member (toLower' word) anagrams
+anagramsFor input = filter (\word -> normalize input == normalize word && toLowerStr word /= toLowerStr input)
+
+toLowerStr :: String -> String
+toLowerStr = map toLower
+
+normalize :: String -> String
+normalize = sort . toLowerStr
