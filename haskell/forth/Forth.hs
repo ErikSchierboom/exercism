@@ -75,56 +75,37 @@ evalWord word state =
     Just op -> applyOp op state
 
 applyOp :: Operation -> ForthState -> Either ForthError ForthState
-applyOp Plus  state = binOp (toBinOp (+)) state
-applyOp Minus state = binOp (toBinOp (-)) state
-applyOp Mult  state = binOp (toBinOp (*)) state
-applyOp Div   state = binOp divWithError state
-applyOp Dup   state = dupOp state
-applyOp Drop  state = dropOp state
-applyOp Swap  state = swapOp state
-applyOp Over  state = overOp state
+applyOp Plus  state = binaryStackOp (toBinaryStackOp (+)) state
+applyOp Minus state = binaryStackOp (toBinaryStackOp (-)) state
+applyOp Mult  state = binaryStackOp (toBinaryStackOp (*)) state
+applyOp Div   state = divOp state
+applyOp Dup   state = unaryStackOp (replicate 2) state
+applyOp Drop  state = unaryStackOp (\_ -> []) state
+applyOp Swap  state = binaryStackOp (\x y -> [y,x]) state
+applyOp Over  state = binaryStackOp (\x y -> [y,x,y]) state
 applyOp (User terms) state = Right $ addItems state terms
 
-dupOp :: ForthState -> Either ForthError ForthState
-dupOp state@(S stack _ _) =
+toBinaryStackOp :: (Value -> Value -> Value) -> Value -> Value -> [Value]
+toBinaryStackOp op x y = [op y x]
+
+unaryStackOp :: (Value -> [Value]) -> ForthState -> Either ForthError ForthState
+unaryStackOp op state@(S stack _ _) =
   case stack of 
-    [] -> Left StackUnderflow
-    x:_ -> Right $ state { sStack = x:stack }
+    []   -> Left StackUnderflow
+    x:xs -> Right $ state { sStack = op x ++ xs }
 
-dropOp :: ForthState -> Either ForthError ForthState
-dropOp state@(S stack _ _) =
+binaryStackOp :: (Value -> Value -> [Value]) -> ForthState -> Either ForthError ForthState
+binaryStackOp op state@(S stack _ _) =
   case stack of 
-    [] -> Left StackUnderflow
-    _:xs -> Right $ state { sStack = xs }
+    x:y:xs -> Right $ state { sStack = op x y ++ xs }
+    _      -> Left StackUnderflow
 
-swapOp :: ForthState -> Either ForthError ForthState
-swapOp state@(S stack _ _) =
+divOp :: ForthState -> Either ForthError ForthState
+divOp state@(S stack _ _) = 
   case stack of 
-    x:y:zs -> Right $ state { sStack = y:x:zs }
-    _ -> Left StackUnderflow
-
-overOp :: ForthState -> Either ForthError ForthState
-overOp state@(S stack _ _) =
-  case stack of 
-    x:y:zs -> Right $ state { sStack = y:x:y:zs }
-    _ -> Left StackUnderflow    
-
-toBinOp :: (Value -> Value -> Value) -> Value -> Value -> Either ForthError Value
-toBinOp op x y = Right $ op x y
-
-binOp :: (Value -> Value -> Either ForthError Value) -> ForthState -> Either ForthError ForthState
-binOp op (S stack input mapping) =
-  case stack of
-    (x:y:zs) -> 
-      case op y x of
-        Left e -> Left e
-        Right result -> Right (S (result:zs) input mapping)
-    _ -> Left StackUnderflow
-
-divWithError :: Value -> Value -> Either ForthError Value
-divWithError x y
-  | y == 0 = Left DivisionByZero
-  | otherwise = Right (x `div` y)
+    0:_    -> Left DivisionByZero
+    x:y:xs -> Right $ state { sStack = y `div` x:xs }
+    _      -> Left StackUnderflow
 
 formatStack :: ForthState -> Text
 formatStack = T.pack . unwords . map show . reverse . sStack
