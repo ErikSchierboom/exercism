@@ -6,10 +6,10 @@ class Accumulate {
     @tailrec
     def loop(remainder: List[A], acc: List[B]): List[B] =
       remainder match {
-        case x :: xs => loop(xs, acc :+ f(x))
+        case x :: xs => loop(xs, f(x) :: acc)
         case Nil => acc
       }
 
-    loop(list, Nil)
+    loop(list, Nil).reverse
   }
 }
