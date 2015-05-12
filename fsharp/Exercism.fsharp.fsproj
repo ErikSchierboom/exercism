@@ -65,6 +65,8 @@
     <Compile Include="rna-transcription\RNATranscriptionTests.fs" />
     <Compile Include="roman-numerals\RomanNumeral.fs" />
     <Compile Include="roman-numerals\RomanNumeralTests.fs" />
+    <Compile Include="strain\Strain.fs" />
+    <Compile Include="strain\StrainTests.fs" />
     <Compile Include="trinary\Trinary.fs" />
     <Compile Include="trinary\TrinaryTests.fs" />
     <Compile Include="word-count\WordCount.fs" />
@@ -93,6 +95,28 @@
     <Compile Include="leap\LeapYearTests.fs" />
     <Compile Include="hamming\Hamming.fs" />
     <Compile Include="hamming\HammingTests.fs" />
+    <Compile Include="anagram\Anagram.fs" />
+    <Compile Include="anagram\AnagramTests.fs" />
+    <Compile Include="clock\Clock.fs" />
+    <Compile Include="clock\ClockTests.fs" />
+    <Compile Include="series\Series.fs" />
+    <Compile Include="series\SeriesTests.fs" />
+    <Compile Include="atbash-cipher\Atbash.fs" />
+    <Compile Include="atbash-cipher\AtbashTests.fs" />
+    <Compile Include="grade-school\School.fs" />
+    <Compile Include="grade-school\GradeSchoolTests.fs" />
+    <Compile Include="raindrops\Raindrops.fs" />
+    <Compile Include="raindrops\RaindropsTests.fs" />
+    <Compile Include="acronym\Acronym.fs" />
+    <Compile Include="acronym\AcronymTests.fs" />
+    <Compile Include="crypto-square\CryptoSquare.fs" />
+    <Compile Include="crypto-square\CryptoSquareTests.fs" />
+    <Compile Include="linked-list\Deque.fs" />
+    <Compile Include="linked-list\LinkedListTests.fs" />
+    <Compile Include="luhn\Luhn.fs" />
+    <Compile Include="luhn\LuhnTests.fs" />
+    <Compile Include="scrabble-score\Scrabble.fs" />
+    <Compile Include="scrabble-score\ScrabbleScoreTests.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />

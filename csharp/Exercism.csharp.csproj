@@ -44,6 +44,8 @@
   <ItemGroup>
     <Compile Include="accumulate\AccumulateTest.cs" />
     <Compile Include="accumulate\AccummulateExtensions.cs" />
+    <Compile Include="acronym\Acronym.cs" />
+    <Compile Include="acronym\AcronymTest.cs" />
     <Compile Include="allergies\Allergies.cs" />
     <Compile Include="allergies\AllergiesTest.cs" />
     <Compile Include="anagram\Anagram.cs" />
@@ -68,6 +70,8 @@
     <Compile Include="grade-school\School.cs" />
     <Compile Include="hamming\Hamming.cs" />
     <Compile Include="hamming\HammingTest.cs" />
+    <Compile Include="hexadecimal\Hexadecimal.cs" />
+    <Compile Include="hexadecimal\HexadecimalTest.cs" />
     <Compile Include="leap\LeapTest.cs" />
     <Compile Include="leap\Year.cs" />
     <Compile Include="linked-list\Deque.cs" />
@@ -128,6 +132,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="accumulate\README.md" />
+    <None Include="acronym\README.md" />
     <None Include="allergies\README.md" />
     <None Include="anagram\README.md" />
     <None Include="atbash-cipher\README.md" />
@@ -140,6 +145,7 @@
     <None Include="gigasecond\README.md" />
     <None Include="grade-school\README.md" />
     <None Include="hamming\README.md" />
+    <None Include="hexadecimal\README.md" />
     <None Include="leap\README.md" />
     <None Include="linked-list\README.md" />
     <None Include="luhn\README.md" />
