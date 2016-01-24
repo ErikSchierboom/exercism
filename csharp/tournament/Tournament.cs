@@ -9,7 +9,7 @@
 
     public class Tournament
     {
-        private const string LineFormat = "{0, -31}|{1,3} |{2,3} |{3,3} |{4,3} |{5,3}\r\n";
+        private const string LineFormat = "{0, -31}|{1,3} |{2,3} |{3,3} |{4,3} |{5,3}{6}";
 
         public static void Tally(MemoryStream inStream, MemoryStream outStream)
         {
@@ -22,7 +22,7 @@
 
         private static void WriteHeader(StreamWriter streamWriter)
         {
-            streamWriter.Write(LineFormat, "Team", " MP", "  W", "  D", "  L", "  P");
+            streamWriter.Write(LineFormat, "Team", " MP", "  W", "  D", "  L", "  P", Environment.NewLine);
         }
 
         private static void WriteTeams(MemoryStream inStream, StreamWriter streamWriter)
@@ -31,7 +31,7 @@
 
             foreach (var team in teams.OrderByDescending(t => t.Points))
             {
-                streamWriter.Write(LineFormat, team.Name, team.Played, team.Won, team.Drawn, team.Lost, team.Points);
+                streamWriter.Write(LineFormat, team.Name, team.Played, team.Won, team.Drawn, team.Lost, team.Points, Environment.NewLine);
             }
         }
     }
