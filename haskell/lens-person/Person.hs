@@ -1,6 +1,9 @@
+{-# LANGUAGE TemplateHaskell #-}
+
 module Person where
 
 import           Data.Time.Calendar
+import           Control.Lens
 
 data Person = Person {
       _name    :: Name,
@@ -35,11 +38,26 @@ data Gregorian = Gregorian {
 
 -- Implement these.
 
+makeLenses ''Person
+makeLenses ''Name
+makeLenses ''Born
+makeLenses ''Address
+makeLenses ''Day
+makeLenses ''Gregorian
+
 bornStreet :: Born -> String
+bornStreet = view (bornAt . street) 
 
 setCurrentStreet :: String -> Person -> Person
+setCurrentStreet = set (address . street)
 
 setBirthMonth :: Int -> Person -> Person
+setBirthMonth newMonth = over (born . bornOn) (setMonth newMonth)
+    
+setMonth :: Int -> Day -> Day
+setMonth newMonth oldDay = fromGregorian y newMonth d 
+    where (y, _, d) = toGregorian oldDay
 
 -- | Transform both birth and current street names.
 renameStreets :: (String -> String) -> Person -> Person
+renameStreets x = over (born . bornAt . street) x . over (address . street) x
