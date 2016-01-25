@@ -174,3 +174,6 @@ coffeescript/*/*.js.map
 # =========================
 CMakeLists.txt
 testCaseCollection.xml
+
+# Visual Studio Code
+.vscode/
