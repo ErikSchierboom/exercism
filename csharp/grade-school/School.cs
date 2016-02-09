@@ -1,29 +1,26 @@
-﻿namespace Exercism
+﻿using System.Collections.Generic;
+
+public class School
 {
-    using System.Collections.Generic;
-
-    public class School
+    public School()
     {
-        public School()
+        this.Roster = new Dictionary<int, ISet<string>>();
+    }
+
+    public IDictionary<int, ISet<string>> Roster { get; private set; }
+
+    public ISet<string> Grade(int grade)
+    {
+        return this.Roster.ContainsKey(grade) ? this.Roster[grade] : new HashSet<string>();
+    }
+
+    public void Add(string student, int grade)
+    {
+        if (!this.Roster.ContainsKey(grade))
         {
-            this.Roster = new Dictionary<int, ISet<string>>();
+            this.Roster[grade] = new SortedSet<string>();
         }
 
-        public IDictionary<int, ISet<string>> Roster { get; private set; }
-
-        public ISet<string> Grade(int grade)
-        {
-            return this.Roster.ContainsKey(grade) ? this.Roster[grade] : new HashSet<string>();
-        }
-
-        public void Add(string student, int grade)
-        {
-            if (!this.Roster.ContainsKey(grade))
-            {
-                this.Roster[grade] = new SortedSet<string>();
-            }
-
-            this.Roster[grade].Add(student);
-        }
+        this.Roster[grade].Add(student);
     }
 }

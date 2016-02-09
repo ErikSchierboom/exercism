@@ -1,11 +1,9 @@
-﻿namespace Exercism
-{
-    using System.Collections.Generic;
-    using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 
-    public static class Complement
-    {
-        private static readonly IDictionary<char, char> RnaComplements = new Dictionary<char, char>
+public static class Complement
+{
+    private static readonly IDictionary<char, char> RnaComplements = new Dictionary<char, char>
                                                                                 {
                                                                                     { 'G', 'C' },
                                                                                     { 'C', 'G' },
@@ -13,7 +11,7 @@
                                                                                     { 'A', 'T' }
                                                                                 };
 
-        private static readonly IDictionary<char, char> DnaComplements = new Dictionary<char, char>
+    private static readonly IDictionary<char, char> DnaComplements = new Dictionary<char, char>
                                                                                 {
                                                                                     { 'G', 'C' },
                                                                                     { 'C', 'G' },
@@ -21,19 +19,18 @@
                                                                                     { 'A', 'U' }
                                                                                 };
 
-        public static string OfRna(string rna)
-        {
-            return Transcribe(rna, RnaComplements);
-        }
+    public static string OfRna(string rna)
+    {
+        return Transcribe(rna, RnaComplements);
+    }
 
-        public static string OfDna(string dna)
-        {
-            return Transcribe(dna, DnaComplements);
-        }
+    public static string OfDna(string dna)
+    {
+        return Transcribe(dna, DnaComplements);
+    }
 
-        private static string Transcribe(string strand, IDictionary<char, char> complements)
-        {
-            return new string(strand.Select(n => complements[n]).ToArray());
-        }
+    private static string Transcribe(string strand, IDictionary<char, char> complements)
+    {
+        return new string(strand.Select(n => complements[n]).ToArray());
     }
 }

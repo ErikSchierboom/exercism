@@ -1,11 +1,9 @@
-﻿namespace Exercism
-{
-    using System.Collections.Generic;
-    using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 
-    public class TwelveDaysSong
-    {
-        private static readonly List<string> AllVerses = new List<string>
+public class TwelveDaysSong
+{
+    private static readonly List<string> AllVerses = new List<string>
                                                       {
                                                           "On the first day of Christmas my true love gave to me, a Partridge in a Pear Tree.\n",
                                                           "On the second day of Christmas my true love gave to me, two Turtle Doves, and a Partridge in a Pear Tree.\n",
@@ -22,19 +20,18 @@
                                                       };
 
 
-        public string Verse(int number)
-        {
-            return AllVerses[number - 1];
-        }
+    public string Verse(int number)
+    {
+        return AllVerses[number - 1];
+    }
 
-        public string Verses(int begin, int end)
-        {
-            return string.Join("\n", AllVerses.Skip(begin - 1).Take(end - (begin - 1))) + "\n";
-        }
+    public string Verses(int begin, int end)
+    {
+        return string.Join("\n", AllVerses.Skip(begin - 1).Take(end - (begin - 1))) + "\n";
+    }
 
-        public string Sing()
-        {
-            return this.Verses(1, AllVerses.Count);
-        }
+    public string Sing()
+    {
+        return this.Verses(1, AllVerses.Count);
     }
 }

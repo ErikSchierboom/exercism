@@ -1,36 +1,23 @@
-﻿namespace Exercism
+﻿using System.Collections.Generic;
+using System.Linq;
+
+public static class Sieve
 {
-    using System.Collections.Generic;
-    using System.Linq;
-
-    public class Sieve
+    public static IEnumerable<int> Primes(int max)
     {
-        private readonly int max;
+        var possiblePrimes = Enumerable.Range(2, max - 1);
 
-        public Sieve(int max)
+        while (possiblePrimes.Any())
         {
-            this.max = max;
+            var prime = possiblePrimes.First();
+            yield return prime;
+
+            possiblePrimes = ExcludePrimeMultiples(possiblePrimes, prime);
         }
+    }
 
-        public IEnumerable<int> Primes
-        {
-            get
-            {
-                var possiblePrimes = Enumerable.Range(2, this.max - 1);
-
-                while (possiblePrimes.Any())
-                {
-                    var prime = possiblePrimes.First();
-                    yield return prime;
-
-                    possiblePrimes = ExcludePrimeMultiples(possiblePrimes, prime);
-                }
-            }
-        }
-
-        private static IEnumerable<int> ExcludePrimeMultiples(IEnumerable<int> possiblePrimes, int prime)
-        {
-            return possiblePrimes.Where(n => n % prime != 0);
-        }
+    private static IEnumerable<int> ExcludePrimeMultiples(IEnumerable<int> possiblePrimes, int prime)
+    {
+        return possiblePrimes.Where(n => n % prime != 0);
     }
 }

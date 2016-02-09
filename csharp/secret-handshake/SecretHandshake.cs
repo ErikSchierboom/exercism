@@ -1,13 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Exercism
+public static class SecretHandshake
 {
-    public class SecretHandshake
-    {
-        private const int ReverseCommand = 1 << 4;
+    private const int ReverseCommand = 1 << 4;
 
-        private static readonly Dictionary<int, string> CommandsMapping = new Dictionary<int, string>
+    private static readonly Dictionary<int, string> CommandsMapping = new Dictionary<int, string>
                                                                           {
                                                                               { 1 << 0, "wink" },
                                                                               { 1 << 1, "double blink" },
@@ -15,24 +13,16 @@ namespace Exercism
                                                                               { 1 << 3, "jump" },
                                                                           };
 
-        private readonly int number;
+    public static IEnumerable<string> Commands(int number)
+    {
+        var commands = CommandsMapping.Where(commandMapping => ContainsCommand(number, commandMapping.Key))
+            .Select(commandMapping => commandMapping.Value);
 
-        public SecretHandshake(int number)
-        {
-            this.number = number;
-        }
+        return ContainsCommand(number, ReverseCommand) ? commands.Reverse() : commands;
+    }
 
-        public IEnumerable<string> Commands()
-        {
-            var commands = CommandsMapping.Where(commandMapping => this.ContainsCommand(commandMapping.Key))
-                .Select(commandMapping => commandMapping.Value);
-
-            return this.ContainsCommand(ReverseCommand) ? commands.Reverse() : commands;
-        }
-
-        private bool ContainsCommand(int mask)
-        {
-            return (this.number & mask) != 0;
-        }
+    private static bool ContainsCommand(int number, int mask)
+    {
+        return (number & mask) != 0;
     }
 }

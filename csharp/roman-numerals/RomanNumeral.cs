@@ -1,10 +1,8 @@
-﻿namespace Exercism
-{
-    using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-    public static class IntExtensions
-    {
-        private static readonly Dictionary<int, string> RomanNumeralValues = new Dictionary<int, string>
+public static class RomanNumeral
+{
+    private static readonly Dictionary<int, string> RomanNumeralValues = new Dictionary<int, string>
                                                                              {
                                                                                  { 1000, "M"  },
                                                                                  { 900,  "CM" },
@@ -21,17 +19,16 @@
                                                                                  { 1,    "I"  },
                                                                              };
 
-        public static string ToRoman(this int number)
+    public static string ToRoman(this int number)
+    {
+        foreach (var romanNumeral in RomanNumeralValues)
         {
-            foreach (var romanNumeral in RomanNumeralValues)
+            if (number >= romanNumeral.Key)
             {
-                if (number >= romanNumeral.Key)
-                {
-                    return romanNumeral.Value + (number - romanNumeral.Key).ToRoman();
-                }
+                return romanNumeral.Value + (number - romanNumeral.Key).ToRoman();
             }
-
-            return string.Empty;
         }
+
+        return string.Empty;
     }
 }

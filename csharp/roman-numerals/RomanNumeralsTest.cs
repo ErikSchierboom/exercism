@@ -1,35 +1,29 @@
 using NUnit.Framework;
 
-namespace Exercism
+[TestFixture]
+public class RomanNumeralsTest
 {
-    [TestFixture]
-    public class RomanNumeralsTest
+    [TestCase(0, ExpectedResult = "")]
+    [TestCase(1, ExpectedResult = "I")]
+    [TestCase(2, ExpectedResult = "II")]
+    [TestCase(3, ExpectedResult = "III")]
+    [TestCase(4, ExpectedResult = "IV")]
+    [TestCase(5, ExpectedResult = "V")]
+    [TestCase(6, ExpectedResult = "VI")]
+    [TestCase(9, ExpectedResult = "IX")]
+    [TestCase(27, ExpectedResult = "XXVII")]
+    [TestCase(48, ExpectedResult = "XLVIII")]
+    [TestCase(59, ExpectedResult = "LIX")]
+    [TestCase(93, ExpectedResult = "XCIII")]
+    [TestCase(141, ExpectedResult = "CXLI")]
+    [TestCase(163, ExpectedResult = "CLXIII")]
+    [TestCase(402, ExpectedResult = "CDII")]
+    [TestCase(575, ExpectedResult = "DLXXV")]
+    [TestCase(911, ExpectedResult = "CMXI")]
+    [TestCase(1024, ExpectedResult = "MXXIV")]
+    [TestCase(3000, ExpectedResult = "MMM")]
+    public string Convert_roman_to_arabic_numerals(int arabicNumeral)
     {
-        // Change 'Ignore = true' to 'Ignore = false' to run a test case.
-        // You can also just remove 'Ignore = true'.
-
-        [TestCase(0, Result = "")]
-        [TestCase(1, Result = "I")]
-        [TestCase(2, Result = "II")]
-        [TestCase(3, Result = "III")]
-        [TestCase(4, Result = "IV")]
-        [TestCase(5, Result = "V")]
-        [TestCase(6, Result = "VI")]
-        [TestCase(9, Result = "IX")]
-        [TestCase(27, Result = "XXVII")]
-        [TestCase(48, Result = "XLVIII")]
-        [TestCase(59, Result = "LIX")]
-        [TestCase(93, Result = "XCIII")]
-        [TestCase(141, Result = "CXLI")]
-        [TestCase(163, Result = "CLXIII")]
-        [TestCase(402, Result = "CDII")]
-        [TestCase(575, Result = "DLXXV")]
-        [TestCase(911, Result = "CMXI")]
-        [TestCase(1024, Result = "MXXIV")]
-        [TestCase(3000, Result = "MMM")]
-        public string Convert_roman_to_arabic_numerals(int arabicNumeral)
-        {
-            return arabicNumeral.ToRoman();
-        }
+        return arabicNumeral.ToRoman();
     }
 }

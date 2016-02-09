@@ -1,68 +1,65 @@
-namespace Exercism
+using System;
+
+public class Clock : IEquatable<Clock>, IComparable<Clock>
 {
-    using System;
+    private readonly int hours;
+    private readonly int minutes;
+    private readonly int totalMinutes;
 
-    public class Clock : IEquatable<Clock>, IComparable<Clock>
+    public Clock(int hours, int minutes = 0)
     {
-        private readonly int hours;
-        private readonly int minutes;
-        private readonly int totalMinutes;
+        this.totalMinutes = hours * 60 + minutes;
+        this.hours = Mod(this.totalMinutes / 60.0, 24);
+        this.minutes = Mod(minutes, 60);
+    }
 
-        public Clock(int hours, int minutes = 0)
+    public Clock Add(int minutesToAdd)
+    {
+        return new Clock(this.hours, this.minutes + minutesToAdd);
+    }
+
+    public Clock Subtract(int minutesToSubtract)
+    {
+        return new Clock(this.hours, this.minutes + (-minutesToSubtract));
+    }
+
+    public override string ToString()
+    {
+        return string.Format("{0:00}:{1:00}", this.hours, this.minutes);
+    }
+
+    public bool Equals(Clock other)
+    {
+        if (other == null)
         {
-            this.totalMinutes = hours * 60 + minutes;
-            this.hours = Mod(this.totalMinutes / 60.0, 24);
-            this.minutes = Mod(minutes, 60);
+            return false;
         }
 
-        public Clock Add(int minutesToAdd)
+        return this.totalMinutes.Equals(other.totalMinutes);
+    }
+
+    public int CompareTo(Clock other)
+    {
+        if (other == null)
         {
-            return new Clock(this.hours, this.minutes + minutesToAdd);
+            return 1;
         }
 
-        public Clock Subtract(int minutesToSubtract)
-        {
-            return new Clock(this.hours, this.minutes + (-minutesToSubtract));
-        }
+        return this.totalMinutes.CompareTo(other.totalMinutes);
+    }
 
-        public override string ToString()
-        {
-            return string.Format("{0:00}:{1:00}", this.hours, this.minutes);
-        }
+    public override bool Equals(object obj)
+    {
+        return this.Equals(obj as Clock);
+    }
 
-        public bool Equals(Clock other)
-        {
-            if (other == null)
-            {
-                return false;
-            }
+    public override int GetHashCode()
+    {
+        return this.totalMinutes.GetHashCode();
+    }
 
-            return this.totalMinutes.Equals(other.totalMinutes);
-        }
-
-        public int CompareTo(Clock other)
-        {
-            if (other == null)
-            {
-                return 1;
-            }
-
-            return this.totalMinutes.CompareTo(other.totalMinutes);
-        }
-
-        public override bool Equals(object obj)
-        {
-            return this.Equals(obj as Clock);
-        }
-
-        public override int GetHashCode()
-        {
-            return this.totalMinutes.GetHashCode();
-        }
-
-        private static int Mod(double x, double y)
-        {
-            return (int)(((x % y) + y) % y);
-        }
+    private static int Mod(double x, double y)
+    {
+        return (int)(((x % y) + y) % y);
     }
 }

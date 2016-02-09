@@ -1,73 +1,54 @@
-﻿namespace Exercism
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
+public class Crypto
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-
-    public class Crypto
+    public Crypto(string input)
     {
-        public Crypto(string input)
-        {
-            this.NormalizePlaintext = GetNormalizedPlaintext(input);
-            this.Size = this.CalculateSize();
-        }
+        this.NormalizePlaintext = GetNormalizedPlaintext(input);
+        this.Size = this.CalculateSize();
+    }
 
-        public int Size { get; private set; }
+    public int Size { get; private set; }
 
-        public string NormalizePlaintext { get; private set; }
+    public string NormalizePlaintext { get; private set; }
 
-        public string NormalizeCiphertext()
-        {
-            return string.Join(" ", Chunks(this.Ciphertext(), 5));
-        }
+    public string NormalizeCiphertext()
+    {
+        return string.Join(" ", Transpose(this.PlaintextSegments()));
+    }
 
-        public string Ciphertext()
-        {
-            var cypherText = string.Empty;
+    public string Ciphertext()
+    {
+        return string.Join("", Transpose(this.PlaintextSegments()));
+    }
 
-            var plainTextSegments = this.PlaintextSegments().ToList();
+    public IEnumerable<string> PlaintextSegments()
+    {
+        return Chunks(this.NormalizePlaintext, this.Size);
+    }
 
-            for (var x = 0; x < this.Size; x++)
-            {
-                for (var y = 0; y < plainTextSegments.Count; y++)
-                {
-                    if (x < plainTextSegments[y].Length)
-                    {
-                        cypherText += plainTextSegments[y][x];    
-                    }
-                }
-            }
+    private int CalculateSize()
+    {
+        return (int)Math.Ceiling(Math.Sqrt(this.NormalizePlaintext.Length));
+    }
 
-            return cypherText;
-        }
+    private static string GetNormalizedPlaintext(string input)
+    {
+        return new string(input.ToLowerInvariant().Where(char.IsLetterOrDigit).ToArray());
+    }
 
-        public IEnumerable<string> PlaintextSegments()
-        {
-            return Chunks(this.NormalizePlaintext, this.Size);
-        }
+    private static IEnumerable<string> Chunks(string str, int chunkSize)
+    {
+        return Enumerable.Range(0, (int)Math.Ceiling(str.Length / (double)chunkSize))
+                         .Select(i => str.Substring(i * chunkSize, Math.Min(str.Length - i * chunkSize, chunkSize)));
+    }
 
-        private int CalculateSize()
-        {
-            for (var i = 1; i < this.NormalizePlaintext.Length; i++)
-            {
-                if (i * i >= this.NormalizePlaintext.Length)
-                {
-                    return i;
-                }
-            }
-
-            throw new InvalidOperationException("Could not calculate size");
-        }
-
-        private static string GetNormalizedPlaintext(string input)
-        {
-            return new string(input.ToLowerInvariant().Where(char.IsLetterOrDigit).ToArray());
-        }
-
-        private static IEnumerable<string> Chunks(string str, int chunkSize)
-        {
-            return Enumerable.Range(0, (int)Math.Ceiling(str.Length / (double)chunkSize))
-                             .Select(i => str.Substring(i * chunkSize, Math.Min(str.Length - (i * chunkSize), chunkSize)));
-        }
+    private static IEnumerable<string> Transpose(IEnumerable<string> input)
+    {
+        return input.SelectMany(s => s.Select((c, i) => Tuple.Create(i, c)))
+                    .GroupBy(x => x.Item1)
+                    .Select(g => new string(g.Select(t => t.Item2).ToArray()));
     }
 }
