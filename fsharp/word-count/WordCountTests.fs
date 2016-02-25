@@ -13,8 +13,7 @@ type WordCountTests() =
 
         Assert.That(phrase.wordCount(), Is.EqualTo(counts))
 
-    [<Test>]
-    [<Ignore>]
+    [<Test>]    
     member tests.Count_one_of_each() =
         let phrase = Phrase("one of each");
         let counts = Map.ofSeq [("one",  1);
@@ -23,8 +22,7 @@ type WordCountTests() =
 
         Assert.That(phrase.wordCount(), Is.EqualTo(counts))
 
-    [<Test>]
-    [<Ignore>]
+    [<Test>]    
     member tests.Count_multiple_occurrences() =
         let phrase = Phrase("one fish two fish red fish blue fish");
         let counts = Map.ofSeq [("one",  1);
@@ -35,8 +33,7 @@ type WordCountTests() =
 
         Assert.That(phrase.wordCount(), Is.EqualTo(counts))
 
-    [<Test>]
-    [<Ignore>]
+    [<Test>]    
     member tests.Count_everything_just_once() =
         let phrase = Phrase("all the kings horses and all the kings men");
         let counts = Map.ofSeq [("all",    2);
@@ -48,8 +45,7 @@ type WordCountTests() =
 
         Assert.That(phrase.wordCount(), Is.EqualTo(counts))
 
-    [<Test>]
-    [<Ignore>]
+    [<Test>]    
     member tests.Ignore_punctuation() =
         let phrase = Phrase("car : carpet as java : javascript!!&@$%^&");
         let counts = Map.ofSeq [("car",        1);
@@ -60,8 +56,7 @@ type WordCountTests() =
 
         Assert.That(phrase.wordCount(), Is.EqualTo(counts))
 
-    [<Test>]
-    [<Ignore>]
+    [<Test>]    
     member tests.Handles_cramped_list() =
         let phrase = Phrase("one,two,three");
         let counts = Map.ofSeq [("one",   1);
@@ -70,8 +65,7 @@ type WordCountTests() =
 
         Assert.That(phrase.wordCount(), Is.EqualTo(counts))
 
-    [<Test>]
-    [<Ignore>]
+    [<Test>]    
     member tests.Include_numbers() =
         let phrase = Phrase("testing, 1, 2 testing");
         let counts = Map.ofSeq [("testing", 2);
@@ -80,16 +74,14 @@ type WordCountTests() =
 
         Assert.That(phrase.wordCount(), Is.EqualTo(counts))
 
-    [<Test>]
-    [<Ignore>]
+    [<Test>]    
     member tests.Normalize_case() =
         let phrase = Phrase("go Go GO");
         let counts = Map.ofSeq [("go", 3)]
 
         Assert.That(phrase.wordCount(), Is.EqualTo(counts))
 
-    [<Test>]
-    [<Ignore>]
+    [<Test>]    
     member tests.With_apostrophes() =
         let phrase = Phrase("First: don't laugh. Then: don't cry.");
         let counts = Map.ofSeq [("first", 1);
@@ -100,16 +92,14 @@ type WordCountTests() =
 
         Assert.That(phrase.wordCount(), Is.EqualTo(counts))
 
-    [<Test>]
-    [<Ignore>]
+    [<Test>]    
     member tests.With_free_standing_apostrophes() =
         let phrase = Phrase("go ' Go '' GO");
         let counts = Map.ofSeq [("go", 3)]
 
         Assert.That(phrase.wordCount(), Is.EqualTo(counts))
 
-    [<Test>]
-    [<Ignore>]
+    [<Test>]    
     member tests.With_apostrophes_as_quotes() =
         let phrase = Phrase("She said, 'let's meet at twelve o'clock'");
         let counts = Map.ofSeq [("she", 1);
