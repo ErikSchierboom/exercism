@@ -3,7 +3,7 @@ module RaindropsTests
 open NUnit.Framework
 open Raindrops
 
-[<TestFixture>]
+
 type RaindropsTests() =
     [<TestCase(1, ExpectedResult = "1")>]
     [<TestCase(52, ExpectedResult = "52")>]

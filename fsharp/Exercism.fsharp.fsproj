@@ -10,8 +10,9 @@
     <RootNamespace>fsharp</RootNamespace>
     <AssemblyName>Exercism.fsharp</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <TargetFSharpCoreVersion>4.3.1.0</TargetFSharpCoreVersion>
+    <TargetFSharpCoreVersion>4.4.0.0</TargetFSharpCoreVersion>
     <Name>Exercism.fsharp</Name>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -57,6 +58,8 @@
     <Compile Include="beer-song\BeerSongTest.fs" />
     <Compile Include="etl\ETL.fs" />
     <Compile Include="etl\ETLTests.fs" />
+    <Compile Include="hexadecimal\Example.fs" />
+    <Compile Include="hexadecimal\HexadecimalTest.fs" />
     <Compile Include="kindergarten-garden\Example.fs" />
     <Compile Include="kindergarten-garden\KinderGartenGardenTest.fs" />
     <Compile Include="octal\Octal.fs" />

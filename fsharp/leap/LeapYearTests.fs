@@ -3,7 +3,7 @@
 open NUnit.Framework
 open LeapYear
 
-[<TestFixture>]
+
 type LeapYearTests() = 
     
     [<Test>]

@@ -3,7 +3,6 @@
 open NUnit.Framework
 open SumOfMultiples
 
-[<TestFixture>]
 type SumOfMultiplesTest() =
     let mutable sumOfMultiples = SumOfMultiples()
     

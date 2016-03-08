@@ -3,7 +3,7 @@
 open NUnit.Framework
 open Phrase
 
-[<TestFixture>]
+
 type WordCountTests() =
     
     [<Test>]

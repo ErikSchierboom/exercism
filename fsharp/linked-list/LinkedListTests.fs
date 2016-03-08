@@ -3,7 +3,7 @@ module DequeTests
 open NUnit.Framework
 open Deque
 
-[<TestFixture>]
+
 type DequeTests() =
 
     [<Test>]

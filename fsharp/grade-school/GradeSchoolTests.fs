@@ -3,7 +3,7 @@ module GradeSchoolTests
 open NUnit.Framework
 open School
 
-[<TestFixture>]
+
 type GradeSchoolTests() = 
     [<Test>]
     member tests.New_school_has_an_empty_roster() =

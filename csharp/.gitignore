@@ -183,3 +183,7 @@ UpgradeLog*.htm
 
 # Microsoft Fakes
 FakesAssemblies/
+
+tools/
+.fake/
+.vs/

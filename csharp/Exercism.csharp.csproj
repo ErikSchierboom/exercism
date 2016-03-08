@@ -53,6 +53,10 @@
     <Compile Include="anagram\AnagramTest.cs" />
     <Compile Include="atbash-cipher\Atbash.cs" />
     <Compile Include="atbash-cipher\AtbashTest.cs" />
+    <Compile Include="beer-song\Beer.cs" />
+    <Compile Include="beer-song\BeerTests.cs" />
+    <Compile Include="binary-search-tree\Example.cs" />
+    <Compile Include="binary-search-tree\BinarySearchTreeTest.cs" />
     <Compile Include="binary\Binary.cs" />
     <Compile Include="binary\BinaryTest.cs" />
     <Compile Include="bob\Bob.cs" />
@@ -73,18 +77,30 @@
     <Compile Include="hamming\HammingTest.cs" />
     <Compile Include="hexadecimal\Hexadecimal.cs" />
     <Compile Include="hexadecimal\HexadecimalTest.cs" />
+    <Compile Include="kindergarten-garden\Garden.cs" />
+    <Compile Include="kindergarten-garden\KinderGartenGardenTest.cs" />
     <Compile Include="leap\LeapTest.cs" />
     <Compile Include="leap\Year.cs" />
     <Compile Include="linked-list\Deque.cs" />
     <Compile Include="linked-list\LinkedListTest.cs" />
     <Compile Include="luhn\Luhn.cs" />
     <Compile Include="luhn\LuhnTest.cs" />
+    <Compile Include="matrix\Example.cs" />
+    <Compile Include="matrix\MatrixTest.cs" />
     <Compile Include="meetup\Meetup.cs" />
     <Compile Include="meetup\MeetupTest.cs" />
+    <Compile Include="nth-prime\Example.cs" />
+    <Compile Include="nth-prime\NthPrimeTest.cs" />
     <Compile Include="nucleotide-count\DNA.cs" />
     <Compile Include="nucleotide-count\NucleotideCountTest.cs" />
+    <Compile Include="ocr-numbers\Example.cs" />
+    <Compile Include="ocr-numbers\OcrNumbersTest.cs" />
     <Compile Include="octal\Octal.cs" />
     <Compile Include="octal\OctalTest.cs" />
+    <Compile Include="palindrome-products\Example.cs" />
+    <Compile Include="palindrome-products\PalindromeTest.cs" />
+    <Compile Include="pascals-triangle\PascalsTriangle.cs" />
+    <Compile Include="pascals-triangle\PascalsTriangleTest.cs" />
     <Compile Include="phone-number\PhoneNumber.cs" />
     <Compile Include="phone-number\PhoneNumberTest.cs" />
     <Compile Include="pig-latin\PigLatin.cs" />
@@ -94,14 +110,20 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="pythagorean-triplet\PythagoreanTripletTest.cs" />
     <Compile Include="pythagorean-triplet\Triplet.cs" />
+    <Compile Include="queen-attack\Queen.cs" />
+    <Compile Include="queen-attack\QueenAttackTest.cs" />
     <Compile Include="raindrops\Raindrops.cs" />
     <Compile Include="raindrops\RaindropsTest.cs" />
     <Compile Include="rna-transcription\Complement.cs" />
     <Compile Include="rna-transcription\ComplementTest.cs" />
     <Compile Include="robot-name\Robot.cs" />
     <Compile Include="robot-name\RobotNameTest.cs" />
+    <Compile Include="robot-simulator\Example.cs" />
+    <Compile Include="robot-simulator\RobotSimulatorTest.cs" />
     <Compile Include="roman-numerals\RomanNumeral.cs" />
     <Compile Include="roman-numerals\RomanNumeralsTest.cs" />
+    <Compile Include="saddle-points\SaddlePoints.cs" />
+    <Compile Include="saddle-points\SaddlePointTests.cs" />
     <Compile Include="scrabble-score\Scrabble.cs" />
     <Compile Include="scrabble-score\ScrabbleScoreTest.cs" />
     <Compile Include="secret-handshake\SecretHandshake.cs" />
@@ -112,6 +134,8 @@
     <Compile Include="sieve\SieveTest.cs" />
     <Compile Include="simple-cipher\Cipher.cs" />
     <Compile Include="simple-cipher\SimpleCipherTest.cs" />
+    <Compile Include="simple-linked-list\Example.cs" />
+    <Compile Include="simple-linked-list\SimpleLinkedListTest.cs" />
     <Compile Include="space-age\SpaceAge.cs" />
     <Compile Include="space-age\SpaceAgeTest.cs" />
     <Compile Include="strain\StrainExtensions.cs" />
@@ -182,6 +206,7 @@
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -3,7 +3,7 @@
 open NUnit.Framework
 open Complement
 
-[<TestFixture>]
+
 type RNATranscriptionTest() =
     
     [<Test>]

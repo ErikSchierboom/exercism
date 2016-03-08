@@ -6,7 +6,7 @@ type Anagram(target) =
 
     let normalize (str:string) = new string(str.ToLowerInvariant().ToCharArray() |> Array.sort)
     let normalizedTarget = normalize target
-    let unequal str other = not (String.Equals(str, target, StringComparison.InvariantCultureIgnoreCase))
+    let unequal str other = not (String.Equals(str, other, StringComparison.InvariantCultureIgnoreCase))
     
     let isMatch str = normalize str = normalizedTarget && unequal str target
 

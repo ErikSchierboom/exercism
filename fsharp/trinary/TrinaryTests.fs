@@ -3,7 +3,7 @@
 open NUnit.Framework
 open Trinary
 
-[<TestFixture>]
+
 type TrinaryTests() =
     
     [<TestCase("1", ExpectedResult = 1)>]

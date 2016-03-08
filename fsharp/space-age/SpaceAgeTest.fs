@@ -3,12 +3,11 @@
 open NUnit.Framework
 open SpaceAge
 
-[<TestFixture>]
 type SpaceAgeTest() =
     
     [<Test>]
     member tests.Age_in_seconds() =
-        Assert.That<decimal>(SpaceAge(1000000m).Seconds, Is.EqualTo(1000000))
+        Assert.That(SpaceAge(1000000m).Seconds, Is.EqualTo(1000000))
 
     [<Test>]
     member tests.Age_on_earth() =

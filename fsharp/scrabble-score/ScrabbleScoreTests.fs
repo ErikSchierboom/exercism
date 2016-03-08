@@ -3,7 +3,7 @@ module ScrabbleScoreTests
 open NUnit.Framework
 open Scrabble
 
-[<TestFixture>]
+
 type ScrabbleScoreTest() = 
   
     [<Test>]
