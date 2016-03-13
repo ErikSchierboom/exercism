@@ -4,7 +4,7 @@ open System
 open NUnit.Framework
 open Series
 
-[<TestFixture>]
+
 type SeriesTests() =
     static member SliceOneTestData = 
         [| 
@@ -25,8 +25,7 @@ type SeriesTests() =
             ("37103", [[3; 7]; [7; 1]; [1; 0]; [0; 3]])
         |]
 
-    [<TestCaseSource("SliceTwoTestData")>]
-    [<Ignore>]
+    [<TestCaseSource("SliceTwoTestData")>]    
     member tests.Series_of_two_splits_to_two_digits(testData: string * int list list) =
         let input, expected = testData
         let series = new Series(input)
@@ -39,8 +38,7 @@ type SeriesTests() =
             ("982347", [[9; 8; 2]; [8; 2; 3]; [2; 3; 4]; [3; 4; 7]])
         |]
 
-    [<TestCaseSource("SliceThreeTestData")>]
-    [<Ignore>]
+    [<TestCaseSource("SliceThreeTestData")>]    
     member tests.Series_of_three_splits_to_three_digits(testData: string * int list list) =
         let input, expected = testData
         let series = new Series(input)
@@ -52,8 +50,7 @@ type SeriesTests() =
             ("91274", [[9; 1; 2; 7]; [1; 2; 7; 4]])
         |]
 
-    [<TestCaseSource("SliceFourTestData")>]
-    [<Ignore>]
+    [<TestCaseSource("SliceFourTestData")>]    
     member tests.Series_of_four_splits_to_four_digits(testData: string * int list list) =
         let input, expected = testData
         let series = new Series(input)
@@ -65,15 +62,14 @@ type SeriesTests() =
             ("81228", [[8; 1; 2; 2; 8]])
         |]
 
-    [<TestCaseSource("SliceFiveTestData")>]
-    [<Ignore>]
+    [<TestCaseSource("SliceFiveTestData")>]    
     member tests.Series_of_five_splits_to_five_digits(testData: string * int list list) =
         let input, expected = testData
         let series = new Series(input)
         Assert.That(series.slices(5), Is.EqualTo(expected))
 
-    [<TestCase("01234", 6, Ignore = true)>]
-    [<TestCase("01032987583", 19, Ignore = true)>]
+    [<TestCase("01234", 6)>]
+    [<TestCase("01032987583", 19)>]
     member tests.Slice_longer_than_input_is_not_allowed(input, slice) =
         let series = new Series(input)
         Assert.Throws<System.ArgumentException>(fun () -> series.slices(slice) |> ignore) |> ignore

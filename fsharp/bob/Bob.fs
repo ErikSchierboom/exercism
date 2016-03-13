@@ -8,8 +8,8 @@ type Bob(input: string) =
     let isQuestion = input.EndsWith "?"
 
     member this.hey() = match input with 
-                        | x when isEmpty -> "Fine. Be that way!"
-                        | x when isYell -> "Whoa, chill out!"
-                        | x when isQuestion -> "Sure."
+                        | _ when isEmpty -> "Fine. Be that way!"
+                        | _ when isYell -> "Whoa, chill out!"
+                        | _ when isQuestion -> "Sure."
                         | _ -> "Whatever."
 

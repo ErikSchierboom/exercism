@@ -3,7 +3,7 @@
 open NUnit.Framework
 open Triangle
 
-[<TestFixture>]
+
 type TriangleTest() =
 
     [<Test>]

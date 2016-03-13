@@ -3,7 +3,7 @@ module DequeTests
 open NUnit.Framework
 open Deque
 
-[<TestFixture>]
+
 type DequeTests() =
 
     [<Test>]
@@ -14,8 +14,7 @@ type DequeTests() =
         Assert.That(deque.pop(), Is.EqualTo(20))
         Assert.That(deque.pop(), Is.EqualTo(10))
 
-    [<Test>]
-    [<Ignore>]
+    [<Test>]    
     member tests.push_and_shift_are_first_in_first_out_order() =
         let deque = new Deque<int>()
         deque.push(10)
@@ -23,8 +22,7 @@ type DequeTests() =
         Assert.That(deque.shift(), Is.EqualTo(10))
         Assert.That(deque.shift(), Is.EqualTo(20))
 
-    [<Test>]
-    [<Ignore>]
+    [<Test>]    
     member tests.unshift_and_shift_are_last_in_first_out_order() =
         let deque = new Deque<int>()
         deque.unshift(10)
@@ -32,8 +30,7 @@ type DequeTests() =
         Assert.That(deque.shift(), Is.EqualTo(20))
         Assert.That(deque.shift(), Is.EqualTo(10))
 
-    [<Test>]
-    [<Ignore>]
+    [<Test>]    
     member tests.unshift_and_pop_are_last_in_last_out_order() =
         let deque = new Deque<int>()
         deque.unshift(10)
@@ -41,8 +38,7 @@ type DequeTests() =
         Assert.That(deque.pop(), Is.EqualTo(10))
         Assert.That(deque.pop(), Is.EqualTo(20))
 
-    [<Test>]
-    [<Ignore>]
+    [<Test>]    
     member tests.push_and_pop_can_handle_multiple_values() =
         let deque = new Deque<int>()
         deque.push(10)
@@ -52,8 +48,7 @@ type DequeTests() =
         Assert.That(deque.pop(), Is.EqualTo(20))
         Assert.That(deque.pop(), Is.EqualTo(10))
 
-    [<Test>]
-    [<Ignore>]
+    [<Test>]    
     member tests.unshift_and_shift_can_handle_multiple_values() =
         let deque = new Deque<int>()
         deque.unshift(10)
@@ -63,8 +58,7 @@ type DequeTests() =
         Assert.That(deque.shift(), Is.EqualTo(20))
         Assert.That(deque.shift(), Is.EqualTo(10))
 
-    [<Test>]
-    [<Ignore>]
+    [<Test>]    
     member tests.All_methods_of_manipulating_the_deque_can_be_used_together() =
         let deque = new Deque<int>()
         deque.push(10)

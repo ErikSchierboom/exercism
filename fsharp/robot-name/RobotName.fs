@@ -9,7 +9,7 @@ type RobotName() =
 
     let random = System.Random()
 
-    let takeRandomElements xs length = [for x in 1 .. length -> List.nth xs (random.Next(List.length xs))]
+    let takeRandomElements xs length = List.init length (fun _ -> List.item (random.Next(List.length xs)) xs)
     let generateRandomString chars length = new System.String(takeRandomElements chars length |> List.toArray)
     let generateLetters() = generateRandomString letters NumberOfLetters
     let generateDigits() = generateRandomString digits NumberOfDigits

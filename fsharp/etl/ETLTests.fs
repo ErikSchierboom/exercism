@@ -3,7 +3,6 @@
 open NUnit.Framework
 open ETL
 
-[<TestFixture>]
 type ETLTests() =
 
     [<Test>]
@@ -13,21 +12,18 @@ type ETLTests() =
         Assert.That(ETL().transform(old), Is.EqualTo(expected))
 
     [<Test>]
-    [<Ignore>]
     member tests.Transforms_multiple_values() =
         let old = [(1, ["A"; "E"; "I"; "O"; "U"])] |> Map.ofSeq
         let expected = [("a", 1); ("e", 1); ("i", 1); ("o", 1); ("u", 1)] |> Map.ofSeq
         Assert.That(ETL().transform(old), Is.EqualTo(expected))
 
     [<Test>]
-    [<Ignore>]
     member tests.Transforms_multiple_keys() =
         let old = [(1, ["A"; "E"]); (2, ["D"; "G"])] |> Map.ofSeq
         let expected = [("a", 1); ("e", 1); ("d", 2); ("g", 2); ] |> Map.ofSeq
         Assert.That(ETL().transform(old), Is.EqualTo(expected))
 
     [<Test>]
-    [<Ignore>]
     member tests.Transforms_a_full_dataset() =
         let old = [(1, ["A"; "E"; "I"; "O"; "U"; "L"; "N"; "R"; "S"; "T"]); 
                    (2, ["D"; "G"]); 

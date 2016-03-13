@@ -8,4 +8,3 @@ type Accumulate() =
             | x::xs -> accumulateLoop func xs (func x :: acc)
 
     member this.accumulate(func, input) = accumulateLoop func input List.empty
-

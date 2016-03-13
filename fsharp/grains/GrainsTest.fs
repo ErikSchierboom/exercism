@@ -3,7 +3,7 @@
 open NUnit.Framework
 open Grains
 
-[<TestFixture>]
+
 type GrainsTest() = 
     let grains = Grains()
     
