@@ -19,7 +19,7 @@ goRight (current, Crumb x left (r:right):crumbs) = Just (r, Crumb x (left ++ [cu
 goRight _ = Nothing
 
 findNode :: Eq a => a -> Zipper a -> Maybe (Zipper a)  
-findNode x zipper@(focus, crumbs) = 
+findNode x zipper@(focus, _) = 
     if value focus == x then Just zipper
     else listToMaybe $ catMaybes $ findDown:[findRight]
         where findDown = goDown zipper >>= findNode x
@@ -32,17 +32,14 @@ changeParent (Graph x xs, Crumb a left right:crumbs) = Graph x ys where
     ys = xs ++ [parentGraph]
     
 fromPOV :: Eq a => a -> Graph a -> Maybe (Graph a)
-fromPOV x graph = case findNode x (graph, []) of 
-    Just nodeZipper -> Just (changeParent nodeZipper)
-    Nothing -> Nothing 
+fromPOV x = fmap changeParent . findNode x . graphToZipper
 
 tracePathBetween :: Eq a => a -> a -> Graph a -> Maybe [a]
-tracePathBetween node1 node2 graph = case fromPOV node1 graph of
-    Just nodeGraph -> 
-        case findNode node2 (nodeGraph, []) of
-            Just foundZipper -> Just $ zipperToPath foundZipper
-            Nothing -> Nothing
-    Nothing -> Nothing
+tracePathBetween node1 node2 graph = 
+    fmap zipperToPath $ fromPOV node1 graph >>= findNode node2 . graphToZipper
+
+graphToZipper :: Graph a -> Zipper a
+graphToZipper graph = (graph, [])
 
 crumbValue :: Crumb a -> a
 crumbValue (Crumb x _ _) = x
