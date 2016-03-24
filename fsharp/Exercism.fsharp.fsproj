@@ -56,24 +56,50 @@
     <Compile Include="allergies\AllergiesTests.fs" />
     <Compile Include="beer-song\BeerSong.fs" />
     <Compile Include="beer-song\BeerSongTest.fs" />
+    <Compile Include="binary-search-tree\Example.fs" />
+    <Compile Include="binary-search-tree\BinarySearchTreeTest.fs" />
+    <Compile Include="diamond\Example.fs" />
+    <Compile Include="diamond\DiamondTest.fs" />
     <Compile Include="etl\ETL.fs" />
     <Compile Include="etl\ETLTests.fs" />
     <Compile Include="hexadecimal\Example.fs" />
     <Compile Include="hexadecimal\HexadecimalTest.fs" />
     <Compile Include="kindergarten-garden\Example.fs" />
     <Compile Include="kindergarten-garden\KinderGartenGardenTest.fs" />
+    <Compile Include="largest-series-product\Example.fs" />
+    <Compile Include="largest-series-product\LargestSeriesProductTest.fs" />
+    <Compile Include="matrix\Example.fs" />
+    <Compile Include="matrix\MatrixTest.fs" />
+    <Compile Include="meetup\Example.fs" />
+    <Compile Include="meetup\MeetupTest.fs" />
+    <Compile Include="nucleotide-count\Example.fs" />
+    <Compile Include="nucleotide-count\NucleotideCountTest.fs" />
+    <Compile Include="ocr-numbers\Example.fs" />
+    <Compile Include="ocr-numbers\OcrNumbersTest.fs" />
     <Compile Include="octal\Octal.fs" />
     <Compile Include="octal\OctalTests.fs" />
     <Compile Include="pig-latin\PigLatin.fs" />
     <Compile Include="pig-latin\PigLatinTests.fs" />
+    <Compile Include="pythagorean-triplet\Example.fs" />
+    <Compile Include="pythagorean-triplet\PythagoreanTripletTest.fs" />
+    <Compile Include="queen-attack\Example.fs" />
+    <Compile Include="queen-attack\QueenAttackTest.fs" />
     <Compile Include="rna-transcription\RNATranscription.fs" />
     <Compile Include="rna-transcription\RNATranscriptionTests.fs" />
+    <Compile Include="robot-simulator\Example.fs" />
+    <Compile Include="robot-simulator\RobotSimulatorTest.fs" />
     <Compile Include="roman-numerals\RomanNumeral.fs" />
     <Compile Include="roman-numerals\RomanNumeralTests.fs" />
+    <Compile Include="sieve\Example.fs" />
+    <Compile Include="sieve\SieveTest.fs" />
+    <Compile Include="simple-linked-list\Example.fs" />
+    <Compile Include="simple-linked-list\SimpleLinkedListTest.fs" />
     <Compile Include="strain\Strain.fs" />
     <Compile Include="strain\StrainTests.fs" />
     <Compile Include="trinary\Trinary.fs" />
     <Compile Include="trinary\TrinaryTests.fs" />
+    <Compile Include="twelve-days\Example.fs" />
+    <Compile Include="twelve-days\TwelveDaysTest.fs" />
     <Compile Include="word-count\WordCount.fs" />
     <Compile Include="word-count\WordCountTests.fs" />
     <Compile Include="binary\Binary.fs" />
@@ -130,7 +156,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>packages\NUnit.3.0.1\lib\net45\nunit.framework.dll</HintPath>
+      <HintPath>packages\NUnit.3.2.0\lib\net45\nunit.framework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />

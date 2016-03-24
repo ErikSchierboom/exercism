@@ -3,25 +3,22 @@
 open NUnit.Framework
 open SumOfMultiples
 
-type SumOfMultiplesTest() =
-    let mutable sumOfMultiples = SumOfMultiples()
-    
-    [<Test>]
-    member tc.Sum_to_1() = 
-        Assert.That(sumOfMultiples.To(0), Is.EqualTo(0))
+[<Test>]
+let ``Sum to 1``() =
+    Assert.That(sumOfMultiples [3; 5] 0, Is.EqualTo(0))
 
-    [<Test>]
-    member tc.Sum_to_3() = 
-        Assert.That(sumOfMultiples.To(3), Is.EqualTo(0))
+[<Test>]
+let ``Sum to 3``() =
+    Assert.That(sumOfMultiples [3; 5] 3, Is.EqualTo(0))
 
-    [<Test>]
-    member tc.Sum_to_10() = 
-        Assert.That(sumOfMultiples.To(10), Is.EqualTo(23))
+[<Test>]
+let ``Sum to 10``() =
+    Assert.That(sumOfMultiples [3; 5] 10, Is.EqualTo(23))
 
-    [<Test>]
-    member tc.Configurable_7_13_17_to_20() = 
-        Assert.That(SumOfMultiples([7; 13; 17]).To(20), Is.EqualTo(51))
+[<Test>]
+let ``Sum to 20``() =
+    Assert.That(sumOfMultiples [7; 13; 17] 20, Is.EqualTo(51))
 
-    [<Test>]
-    member tc.Configurable_43_47_to_10000() = 
-        Assert.That(SumOfMultiples([43; 47]).To(10000), Is.EqualTo(2203160))
+[<Test>]
+let ``Sum to 10000``() =
+    Assert.That(sumOfMultiples [43; 47] 10000, Is.EqualTo(2203160))
