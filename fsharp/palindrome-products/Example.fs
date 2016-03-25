@@ -1,75 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿module Palindrome
 
-public class Palindrome
-{
-    private Palindrome(int value, ISet<Tuple<int, int>> factors)
-    {
-        Value = value;
-        Factors = factors;
-    }
+let isPalindrome n = 
+    let mutable current = n
+    let mutable result = 0
+    while(current > 0) do
+        result <- result * 10 + current % 10
+        current <- current / 10
 
-    public int Value { get; }
+    result = n
 
-    public ISet<Tuple<int, int>> Factors { get; }
+let palindrome predicate minFactor maxFactor = 
+    let allPalindromes = 
+        [for y in minFactor..maxFactor do
+             for x in minFactor ..y do
+                 if isPalindrome (x * y) then
+                    yield x * y, (x, y)]
 
-    public static Palindrome Largest(int maxFactor)
-    {
-        return Largest(1, maxFactor);
-    }
-
-    public static Palindrome Largest(int minFactor, int maxFactor)
-    {
-        return FindPalindrome(minFactor, maxFactor, x => x.Max(p => p.Item1));
-    }
-
-    public static Palindrome Smallest(int maxFactor)
-    {
-        return Smallest(1, maxFactor);
-    }
-
-    public static Palindrome Smallest(int minFactor, int maxFactor)
-    {
-        return FindPalindrome(minFactor, maxFactor, x => x.Min(p => p.Item1));
-    }
+    let value = 
+        allPalindromes 
+        |> List.map fst 
+        |> predicate
     
-    private static Palindrome FindPalindrome(int minFactor, int maxFactor, Func<List<Tuple<int, Tuple<int, int>>>, int> valueSelector)
-    {
-        var palindromes = FindAllPalindromes(minFactor, maxFactor);
-        var value = valueSelector(palindromes);
-        var factors = new HashSet<Tuple<int, int>>(palindromes.Where(p => p.Item1 == value).Select(p => p.Item2));
+    let factors = 
+        allPalindromes 
+        |> List.filter (fun x -> fst x = value) 
+        |> List.map snd 
+        |> List.sort
 
-        return new Palindrome(value, factors);
-    }
+    (value, factors)
 
-    private static List<Tuple<int, Tuple<int, int>>> FindAllPalindromes(int minFactor, int maxFactor)
-    {
-        return (from pair in Pairs(minFactor, maxFactor)
-                let product = pair.Item1 * pair.Item2
-                where IsPalindrome(product)
-                select Tuple.Create(product, pair))
-                .ToList();
-    }
-
-    private static IEnumerable<Tuple<int, int>> Pairs(int minFactor, int maxFactor)
-    {
-        return from x in Enumerable.Range(minFactor, maxFactor + 1 - minFactor)
-               from y in Enumerable.Range(x, maxFactor + 1 - x)
-               select Tuple.Create(x, y);
-    }
-
-    private static bool IsPalindrome(int num)
-    {
-        var n = num;
-        var rev = 0;
-        while (num > 0)
-        {
-            var dig = num % 10;
-            rev = rev * 10 + dig;
-            num = num / 10;
-        }
-
-        return n == rev;
-    }
-}
+let largestPalindrome minFactor maxFactor = palindrome List.max minFactor maxFactor
+let smallestPalindrome minFactor maxFactor = palindrome List.min minFactor maxFactor

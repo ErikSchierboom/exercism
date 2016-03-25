@@ -1,47 +1,29 @@
-﻿using System.Linq;
-using NUnit.Framework;
+﻿module PascalsTriangleTest
 
-public class PascalsTriangleTest
-{
-    [Test]
-    public void One_row()
-    {
-        var actual = new PascalsTriangle().Calculate(1);
-        Assert.That(actual, Is.EqualTo(new[] { new[] { 1 } }));
-    }
+open NUnit.Framework
+
+open PascalsTriangle
+
+[<Test>]
+let ``One row``() =
+    Assert.That(triangle 1, Is.EqualTo([[1]]))
         
-    [Test]
-    public void Two_rows()
-    {
-        var actual = new PascalsTriangle().Calculate(2);
-        Assert.That(actual, Is.EqualTo(new[] { new[] { 1 }, new[] { 1, 1 } }));
-    }
+[<Test>]
+let ``Two rows``() =
+    Assert.That(triangle 2, Is.EqualTo([[1]; [1; 1]]))
 
-    [Test]
-    public void Three_rows()
-    {
-        var actual = new PascalsTriangle().Calculate(3);
-        Assert.That(actual, Is.EqualTo(new[] { new[] { 1 }, new[] { 1, 1 }, new[] { 1, 2, 1 } }));
-    }
+[<Test>]
+let ``Three rows``() =
+    Assert.That(triangle 3, Is.EqualTo([[1]; [1; 1]; [1; 2; 1]]))
 
-    [Test]
-    public void Four_rows()
-    {
-        var actual = new PascalsTriangle().Calculate(4);
-        Assert.That(actual, Is.EqualTo(new[] { new[] { 1 }, new[] { 1, 1 }, new[] { 1, 2, 1 }, new[] { 1, 3, 3, 1 } }));
-    }
+[<Test>]
+let ``Four rows``() =
+    Assert.That(triangle 4, Is.EqualTo([[1]; [1; 1]; [1; 2; 1]; [1; 3; 3; 1]]))
 
-    [Test]
-    public void Five_rows()
-    {
-        var actual = new PascalsTriangle().Calculate(5);
-        Assert.That(actual, Is.EqualTo(new[] { new[] { 1 }, new[] { 1, 1 }, new[] { 1, 2, 1 }, new[] { 1, 3, 3, 1 }, new [] { 1, 4, 6, 4, 1 } }));
-    }
+[<Test>]
+let ``Five rows``() =
+    Assert.That(triangle 5, Is.EqualTo([[1]; [1; 1]; [1; 2; 1]; [1; 3; 3; 1]; [1; 4; 6; 4; 1]]))
 
-    [Test]
-    public void Twenty_rows()
-    {
-        var actual = new PascalsTriangle().Calculate(20).Last();
-        Assert.That(actual, Is.EqualTo(new[] { 1, 19, 171, 969, 3876, 11628, 27132, 50388, 75582, 92378, 92378, 75582, 50388, 27132, 11628, 3876, 969, 171, 19, 1 }));
-    }
-}
+[<Test>]
+let ``Twenty rows``() =
+    Assert.That(triangle 20 |> List.last, Is.EqualTo([1; 19; 171; 969; 3876; 11628; 27132; 50388; 75582; 92378; 92378; 75582; 50388; 27132; 11628; 3876; 969; 171; 19; 1]))

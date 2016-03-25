@@ -1,150 +1,96 @@
-using NUnit.Framework;
+module SimpleCipherTest
 
-[TestFixture]
-public class RandomKeyCipherTest
-{
-    private Cipher cipher;
+open System
+open NUnit.Framework
 
-    [SetUp]
-    public void Setup()
-    {
-        cipher = new Cipher();
-    }
+open SimpleCipher
 
-    [Test]
-    public void Cipher_key_is_made_of_letters()
-    {
-        Assert.That(cipher.Key, Does.Match("[a-z]+"));
-    }
-    
-    [Test]
-    public void Default_cipher_key_is_100_characters()
-    {
-        Assert.That(cipher.Key, Has.Length.EqualTo(100));
-    }
-    
-    [Test]
-    public void Cipher_keys_are_randomly_generated()
-    {
-        Assert.That(cipher.Key, Is.Not.EqualTo(new Cipher().Key));
-    }
+let plainText = "abcdefghij"
+let key = "abcdefghij";
 
-    // Here we take advantage of the fact that plaintext of "aaa..." doesn't output
-    // the key. This is a critical problem with shift ciphers, some characters
-    // will always output the key verbatim.
-    [Test]
-    public void Cipher_can_encode()
-    {
-        Assert.That(cipher.Encode("aaaaaaaaaa"), Is.EqualTo(cipher.Key.Substring(0, 10)));
-    }
+[<Test>]
+let ``Encode random uses key made of letters``() =
+    let (key, _) = encodeRandom plainText
+    Assert.That(key, Does.Match("[a-z]+"))
+    
+[<Test>]
+let ``Encode random uses key of 100 characters``() =
+    let (key, _) = encodeRandom plainText
+    Assert.That(key, Has.Length.EqualTo(100))
+    
+[<Test>]
+let ``Encode random uses randomly generated key``() =
+    let keys = List.init 100 (fun _ -> encodeRandom plainText |> fst)
+    Assert.That(keys |> List.distinct, Is.EqualTo(keys))
 
-    [Test]
-    public void Cipher_can_decode()
-    {
-        Assert.That(cipher.Decode(cipher.Key.Substring(0, 10)), Is.EqualTo("aaaaaaaaaa"));
-    }
+// Here we take advantage of the fact that plaintext of "aaa..." doesn't output
+// the key. This is a critical problem with shift ciphers, some characters
+// will always output the key verbatim.
+[<Test>]
+let ``Encode random can encode``() =
+    let (key, encoded) = encodeRandom "aaaaaaaaaa"
+    Assert.That(encoded, Is.EqualTo(key.Substring(0, 10)))
 
-    [Test]
-    public void Cipher_is_reversible()
-    {
-        const string PLAINTEXT = "abcdefghij";
-        Assert.That(cipher.Decode(cipher.Encode(PLAINTEXT)), Is.EqualTo(PLAINTEXT));
-    }
-}
+[<Test>]
+let ``Encode random can decode``() =    
+    let (key, encoded) = encodeRandom "aaaaaaaaaa"
+    Assert.That(decode key (key.Substring(0, 10)), Is.EqualTo("aaaaaaaaaa"))
 
-[TestFixture]
-public class IncorrectKeyCipherTest
-{
-    [Test]
-    public void Cipher_throws_with_an_all_caps_key()
-    {
-        Assert.That(() => new Cipher("ABCDEF"), Throws.ArgumentException);
-    }
+[<Test>]
+let ``Encode random is reversible``() =
+    let (key, encoded) = encodeRandom plainText
+    Assert.That(decode key encoded, Is.EqualTo(plainText))
     
-    [Test]
-    public void Cipher_throws_with_any_caps_key()
-    {
-        Assert.That(() => new Cipher("abcdEFg"), Throws.ArgumentException);
-    }
+[<Test>]
+let ``Cipher can encode with given key``() =
+    Assert.That(encode key "aaaaaaaaaa", Is.EqualTo("abcdefghij"))
+    
+[<Test>]
+let ``Cipher can decode with given key``() =
+    Assert.That(decode key "abcdefghij", Is.EqualTo("aaaaaaaaaa"))
+    
+[<Test>]
+let ``Cipher is reversible given key``() =
+    Assert.That(encode key plainText |> decode key, Is.EqualTo(plainText))
+    
+[<Test>]
+let ``Cipher can double shift encode``() =
+    let plainText = "iamapandabear"
+    Assert.That(encode plainText plainText, Is.EqualTo("qayaeaagaciai"))
+    
+[<Test>]
+let ``Cipher can wrap encode``() =
+    Assert.That(encode key "zzzzzzzzzz", Is.EqualTo("zabcdefghi"))
+    
+[<Test>]
+let ``Cipher can encode a message that is shorter than the key``() =
+    Assert.That(encode key "aaaaa", Is.EqualTo("abcde"))
+    
+[<Test>]
+let ``Cipher can decode a message that is shorter than the key``() =
+    Assert.That(decode key "abcde", Is.EqualTo("aaaaa"))
 
-    [Test]
-    public void Cipher_throws_with_numeric_key()
-    {
-        Assert.That(() => new Cipher("12345"), Throws.ArgumentException);
-    }
+[<Test>]
+let ``Encode throws with an all caps key``() =
+    let key = "ABCDEF"
+    Assert.That((fun () -> encode key plainText |> ignore), Throws.Exception)
+    
+[<Test>]
+let ``Encode throws with any caps key``() =
+    let key = "abcdEFg"
+    Assert.That((fun () -> encode key plainText |> ignore), Throws.Exception)
 
-    [Test]
-    public void Cipher_throws_with_any_numeric_key()
-    {
-        Assert.That(() => new Cipher("abcd345ef"), Throws.ArgumentException);
-    }
-    
-    [Test]
-    public void Cipher_throws_with_empty_key()
-    {
-        Assert.That(() => new Cipher(""), Throws.ArgumentException);
-    }
-}
+[<Test>]
+let ``Encode throws with numeric key``() =
+    let key = "12345"
+    Assert.That((fun () -> encode key plainText |> ignore), Throws.Exception)
 
-[TestFixture]
-public class SubstitutionCipherTest
-{
-    private const string KEY = "abcdefghij";
-    private Cipher cipher;
+[<Test>]
+let ``Encode throws with any numeric key``() =
+    let key = "abcd345ef"
+    Assert.That((fun () -> encode key plainText |> ignore), Throws.Exception)
     
-    [SetUp]
-    public void Setup()
-    {
-        cipher = new Cipher(KEY);
-    }
-    
-    [Test]
-    public void Cipher_keeps_the_submitted_key()
-    {
-        Assert.That(cipher.Key, Is.EqualTo(KEY));
-    }
-    
-    [Test]
-    public void Cipher_can_encode_with_given_key()
-    {
-        Assert.That(cipher.Encode("aaaaaaaaaa"), Is.EqualTo("abcdefghij"));
-    }
-    
-    [Test]
-    public void Cipher_can_decode_with_given_key()
-    {
-        Assert.That(cipher.Decode("abcdefghij"), Is.EqualTo("aaaaaaaaaa"));
-    }
-    
-    [Test]
-    public void Cipher_is_reversible_given_key()
-    {
-        const string PLAINTEXT = "abcdefghij";
-        Assert.That(cipher.Decode(cipher.Encode(PLAINTEXT)), Is.EqualTo(PLAINTEXT));
-    }
-    
-    [Test]
-    public void Cipher_can_double_shift_encode()
-    {
-        const string PLAINTEXT = "iamapandabear";
-        Assert.That(new Cipher(PLAINTEXT).Encode(PLAINTEXT), Is.EqualTo("qayaeaagaciai"));
-    }
-    
-    [Test]
-    public void Cipher_can_wrap_encode()
-    {
-        Assert.That(cipher.Encode("zzzzzzzzzz"), Is.EqualTo("zabcdefghi"));
-    }
-    
-    [Test]
-    public void Cipher_can_encode_a_message_that_is_shorter_than_the_key()
-    {
-        Assert.That(cipher.Encode("aaaaa"), Is.EqualTo("abcde"));
-    }
-    
-    [Test]
-    public void Cipher_can_decode_a_message_that_is_shorter_than_the_key()
-    {
-        Assert.That(cipher.Decode("abcde"), Is.EqualTo("aaaaa"));
-    }
-}
+[<Test>]
+let ``Encode throws with empty key``() =
+    let key = ""
+    Assert.That((fun () -> encode key plainText |> ignore), Throws.Exception)

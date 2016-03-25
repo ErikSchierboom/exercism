@@ -1,42 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿module NthPrime
 
-public static class NthPrime
-{
-    public static int Nth(int nth)
-    {
-        return Primes().Skip(nth - 1).First();
+open System
+
+let isPrime (n: int) = 
+    let r = Math.Floor(Math.Sqrt(n |> double)) |> int
+    r < 5 || Seq.init (r - 4) id |> Seq.forall (fun x -> n % (5 + x) <> 0)
+
+let rec possiblePrimes n = 
+    seq { 
+        yield n - 1
+        yield n + 1
+        yield! possiblePrimes (n + 6)
+    }
+    
+let primes = 
+    seq {
+        yield 2
+        yield 3
+        yield! Seq.filter isPrime (possiblePrimes 6)
     }
 
-    private static IEnumerable<int> Primes()
-    {
-        yield return 2;
-        yield return 3;
-
-        foreach (var prime in PossiblePrimes().Where(IsPrime))
-        {
-            yield return prime;
-        }
-    }
-
-    private static IEnumerable<int> PossiblePrimes()
-    {
-        var n = 6;
-
-        while (true)
-        {
-            yield return n - 1;
-            yield return n + 1;
-
-            n += 6;
-        }
-    }
-
-    private static bool IsPrime(int n)
-    {
-        var r = (int)Math.Floor(Math.Sqrt(n));
-
-        return r < 5 || Enumerable.Range(5, r - 4).All(x => n % x != 0);
-    }
-}
+let nthPrime nth = Seq.item (nth - 1) primes

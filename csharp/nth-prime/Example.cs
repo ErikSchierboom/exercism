@@ -6,6 +6,8 @@ public static class NthPrime
 {
     public static int Nth(int nth)
     {
+        var isPrime = IsPrime(102911);
+
         return Primes().Skip(nth - 1).First();
     }
 
