@@ -1,6 +1,6 @@
 public final class PhoneNumber {
 
-    private static final String InvalidNumber = "0000000000";
+    private static final String INVALID_NUMBER = "0000000000";
     private String number;
 
     public PhoneNumber(String input) {
@@ -29,7 +29,7 @@ public final class PhoneNumber {
             return digits.substring(1);
         }
         else {
-            return InvalidNumber;
+            return INVALID_NUMBER;
         }
     }
 

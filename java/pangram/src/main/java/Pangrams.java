@@ -1,15 +1,12 @@
-import java.util.Set;
-import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public class Pangrams {
 
-    private static final Set<Character> alphabet = "abcdefghijklmnopqrstuvwxyz".chars()
-                                                                               .mapToObj(c -> (char)c)
-                                                                               .collect(Collectors.toSet());
-    
     public static boolean isPangram(String input) {
         String normalized = input.toLowerCase();
 
-        return alphabet.stream().allMatch(c -> normalized.contains(c.toString()));
+        return IntStream.rangeClosed('a', 'z')
+                .mapToObj(c -> (char)c)
+                .allMatch(c -> normalized.indexOf(c) != -1);
     }
 }
