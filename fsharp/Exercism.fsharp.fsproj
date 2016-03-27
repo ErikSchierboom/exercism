@@ -50,43 +50,43 @@
   </Choose>
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
-        <Compile Include="accumulate\Accumulate.fs" />
+    <Compile Include="accumulate\Example.fs" />
     <Compile Include="accumulate\AccumulateTests.fs" />
-    <Compile Include="acronym\Acronym.fs" />
+    <Compile Include="acronym\Example.fs" />
     <Compile Include="acronym\AcronymTests.fs" />
-    <Compile Include="allergies\Allergies.fs" />
+    <Compile Include="allergies\Example.fs" />
     <Compile Include="allergies\AllergiesTests.fs" />
-    <Compile Include="anagram\Anagram.fs" />
+    <Compile Include="anagram\Example.fs" />
     <Compile Include="anagram\AnagramTests.fs" />
-    <Compile Include="atbash-cipher\Atbash.fs" />
+    <Compile Include="atbash-cipher\Example.fs" />
     <Compile Include="atbash-cipher\AtbashTests.fs" />
-    <Compile Include="bank-account\BankAccount.fs" />
+    <Compile Include="bank-account\Example.fs" />
     <Compile Include="bank-account\BankAccountTest.fs" />
-    <Compile Include="beer-song\BeerSong.fs" />
+    <Compile Include="beer-song\Example.fs" />
     <Compile Include="beer-song\BeerSongTest.fs" />
-    <Compile Include="binary-search-tree\BinarySearchTreeTest.fs" />
     <Compile Include="binary-search-tree\Example.fs" />
-    <Compile Include="binary\Binary.fs" />
+    <Compile Include="binary-search-tree\BinarySearchTreeTest.fs" />
+    <Compile Include="binary\Example.fs" />
     <Compile Include="binary\BinaryTests.fs" />
-    <Compile Include="bob\Bob.fs" />
+    <Compile Include="bob\Example.fs" />
     <Compile Include="bob\BobTest.fs" />
-    <Compile Include="clock\Clock.fs" />
+    <Compile Include="clock\Example.fs" />
     <Compile Include="clock\ClockTests.fs" />
-    <Compile Include="crypto-square\CryptoSquare.fs" />
+    <Compile Include="crypto-square\Example.fs" />
     <Compile Include="crypto-square\CryptoSquareTests.fs" />
-    <Compile Include="diamond\DiamondTest.fs" />
     <Compile Include="diamond\Example.fs" />
-    <Compile Include="difference-of-squares\DifferenceOfSquares.fs" />
+    <Compile Include="diamond\DiamondTest.fs" />
+    <Compile Include="difference-of-squares\Example.fs" />
     <Compile Include="difference-of-squares\DifferenceOfSquaresTest.fs" />
-    <Compile Include="etl\ETL.fs" />
+    <Compile Include="etl\Example.fs" />
     <Compile Include="etl\ETLTests.fs" />
-    <Compile Include="gigasecond\Gigasecond.fs" />
+    <Compile Include="gigasecond\Example.fs" />
     <Compile Include="gigasecond\GigasecondTest.fs" />
+    <Compile Include="grade-school\Example.fs" />
     <Compile Include="grade-school\GradeSchoolTests.fs" />
-    <Compile Include="grade-school\School.fs" />
-    <Compile Include="grains\Grains.fs" />
+    <Compile Include="grains\Example.fs" />
     <Compile Include="grains\GrainsTest.fs" />
-    <Compile Include="hamming\Hamming.fs" />
+    <Compile Include="hamming\Example.fs" />
     <Compile Include="hamming\HammingTests.fs" />
     <Compile Include="hexadecimal\Example.fs" />
     <Compile Include="hexadecimal\HexadecimalTest.fs" />
@@ -94,11 +94,11 @@
     <Compile Include="kindergarten-garden\KinderGartenGardenTest.fs" />
     <Compile Include="largest-series-product\Example.fs" />
     <Compile Include="largest-series-product\LargestSeriesProductTest.fs" />
-    <Compile Include="leap\LeapYear.fs" />
+    <Compile Include="leap\Example.fs" />
     <Compile Include="leap\LeapYearTests.fs" />
     <Compile Include="linked-list\Deque.fs" />
     <Compile Include="linked-list\LinkedListTests.fs" />
-    <Compile Include="luhn\Luhn.fs" />
+    <Compile Include="luhn\Example.fs" />
     <Compile Include="luhn\LuhnTests.fs" />
     <Compile Include="matrix\Example.fs" />
     <Compile Include="matrix\MatrixTest.fs" />
@@ -110,13 +110,13 @@
     <Compile Include="nucleotide-count\NucleotideCountTest.fs" />
     <Compile Include="ocr-numbers\Example.fs" />
     <Compile Include="ocr-numbers\OcrNumbersTest.fs" />
-    <Compile Include="octal\Octal.fs" />
+    <Compile Include="octal\Example.fs" />
     <Compile Include="octal\OctalTests.fs" />
     <Compile Include="palindrome-products\Example.fs" />
     <Compile Include="palindrome-products\PalindromeTest.fs" />
     <Compile Include="pascals-triangle\Example.fs" />
     <Compile Include="pascals-triangle\PascalsTriangleTest.fs" />
-    <Compile Include="pig-latin\PigLatin.fs" />
+    <Compile Include="pig-latin\Example.fs" />
     <Compile Include="pig-latin\PigLatinTests.fs" />
     <Compile Include="prime-factors\Example.fs" />
     <Compile Include="prime-factors\PrimeFactorsTest.fs" />
@@ -124,23 +124,23 @@
     <Compile Include="pythagorean-triplet\PythagoreanTripletTest.fs" />
     <Compile Include="queen-attack\Example.fs" />
     <Compile Include="queen-attack\QueenAttackTest.fs" />
-    <Compile Include="raindrops\Raindrops.fs" />
+    <Compile Include="raindrops\Example.fs" />
     <Compile Include="raindrops\RaindropsTests.fs" />
-    <Compile Include="rna-transcription\RNATranscription.fs" />
+    <Compile Include="rna-transcription\Example.fs" />
     <Compile Include="rna-transcription\RNATranscriptionTests.fs" />
-    <Compile Include="robot-name\RobotName.fs" />
+    <Compile Include="robot-name\Example.fs" />
     <Compile Include="robot-name\RobotNameTest.fs" />
     <Compile Include="robot-simulator\Example.fs" />
     <Compile Include="robot-simulator\RobotSimulatorTest.fs" />
-    <Compile Include="roman-numerals\RomanNumeral.fs" />
+    <Compile Include="roman-numerals\Example.fs" />
     <Compile Include="roman-numerals\RomanNumeralTests.fs" />
     <Compile Include="saddle-points\Example.fs" />
     <Compile Include="saddle-points\SaddlePointTests.fs" />
-    <Compile Include="scrabble-score\Scrabble.fs" />
+    <Compile Include="scrabble-score\Example.fs" />
     <Compile Include="scrabble-score\ScrabbleScoreTests.fs" />
     <Compile Include="secret-handshake\Example.fs" />
     <Compile Include="secret-handshake\SecretHandshakeTest.fs" />
-    <Compile Include="series\Series.fs" />
+    <Compile Include="series\Example.fs" />
     <Compile Include="series\SeriesTests.fs" />
     <Compile Include="sieve\Example.fs" />
     <Compile Include="sieve\SieveTest.fs" />
@@ -148,21 +148,21 @@
     <Compile Include="simple-cipher\SimpleCipherTest.fs" />
     <Compile Include="simple-linked-list\Example.fs" />
     <Compile Include="simple-linked-list\SimpleLinkedListTest.fs" />
-    <Compile Include="space-age\SpaceAge.fs" />
+    <Compile Include="space-age\Example.fs" />
     <Compile Include="space-age\SpaceAgeTest.fs" />
-    <Compile Include="strain\Strain.fs" />
+    <Compile Include="strain\Example.fs" />
     <Compile Include="strain\StrainTests.fs" />
-    <Compile Include="sum-of-multiples\SumOfMultiples.fs" />
+    <Compile Include="sum-of-multiples\Example.fs" />
     <Compile Include="sum-of-multiples\SumOfMultiplesTest.fs" />
-    <Compile Include="triangle\Triangle.fs" />
+    <Compile Include="triangle\Example.fs" />
     <Compile Include="triangle\TriangleTest.fs" />
-    <Compile Include="trinary\Trinary.fs" />
+    <Compile Include="trinary\Example.fs" />
     <Compile Include="trinary\TrinaryTests.fs" />
     <Compile Include="twelve-days\Example.fs" />
     <Compile Include="twelve-days\TwelveDaysTest.fs" />
-    <Compile Include="word-count\WordCount.fs" />
+    <Compile Include="word-count\Example.fs" />
     <Compile Include="word-count\WordCountTests.fs" />
-    <Compile Include="wordy\WordProblem.fs" />
+    <Compile Include="wordy\Example.fs" />
     <Compile Include="wordy\WordyTest.fs" />
     <Content Include="packages.config" />
   </ItemGroup>
@@ -171,9 +171,25 @@
     <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <Private>True</Private>
     </Reference>
+    <Reference Include="nunit.core">
+      <HintPath>packages\NUnitTestAdapter.2.0.0\lib\nunit.core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="nunit.core.interfaces">
+      <HintPath>packages\NUnitTestAdapter.2.0.0\lib\nunit.core.interfaces.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>packages\NUnit.3.2.0\lib\net45\nunit.framework.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.util">
+      <HintPath>packages\NUnitTestAdapter.2.0.0\lib\nunit.util.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="NUnit.VisualStudio.TestAdapter">
+      <HintPath>packages\NUnitTestAdapter.2.0.0\lib\NUnit.VisualStudio.TestAdapter.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

@@ -10,9 +10,9 @@ let buildDir = getBuildParamOrDefault "buildDir" "./build/"
 let testDll = buildDir @@ "Tests.dll"
 let nunitFrameworkDll = "tools/NUnit/lib/nunit.framework.dll"
 
-let implementationFiles() = !! "./**/*.fs" -- "./**/*Test*.fs" |> List.ofSeq
-let testFiles() = !! "./**/*Test*.fs" |> List.ofSeq
-let sourceFiles() = implementationFiles() @ testFiles() 
+let implementationFiles`` () = !! "./**/*.fs" -- "./**/*Test*.fs" |> List.ofSeq
+let testFiles`` () = !! "./**/*Test*.fs" |> List.ofSeq
+let sourceFiles`` () = implementationFiles() @ testFiles() 
   
 // Targets
 Target "Clean" (fun _ ->

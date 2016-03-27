@@ -3,29 +3,26 @@
 open NUnit.Framework
 open Hamming
 
+[<Test>]
+let ``No difference between empty strands`` () =
+    Assert.That(compute "" "", Is.EqualTo(0))
 
-type HammingTests() =
+[<Test>]    
+let ``No difference between identical strands`` () =
+    Assert.That(compute "GGACTGA" "GGACTGA", Is.EqualTo(0))
 
-    [<Test>]
-    member tests.No_difference_between_empty_strands() =
-        Assert.That(Hamming().compute("",""), Is.EqualTo(0))
+[<Test>]    
+let ``Complete hamming distance in small strand`` () =
+    Assert.That(compute "ACT" "GGA", Is.EqualTo(3))
 
-    [<Test>]    
-    member tests.No_difference_between_identical_strands() =
-        Assert.That(Hamming().compute("GGACTGA","GGACTGA"), Is.EqualTo(0))
+[<Test>]    
+let ``Hamming distance is off by one strand`` () =
+    Assert.That(compute "GGACGGATTCTG" "AGGACGGATTCT", Is.EqualTo(9))
 
-    [<Test>]    
-    member tests.Complete_hamming_distance_in_small_strand() =
-        Assert.That(Hamming().compute("ACT","GGA"), Is.EqualTo(3))
+[<Test>]    
+let ``Smalling hamming distance in middle somewhere`` () =
+    Assert.That(compute "GGACG" "GGTCG", Is.EqualTo(1))
 
-    [<Test>]    
-    member tests.Hamming_distance_is_off_by_one_strand() =
-        Assert.That(Hamming().compute("GGACGGATTCTG","AGGACGGATTCT"), Is.EqualTo(9))
-
-    [<Test>]    
-    member tests.Smalling_hamming_distance_in_middle_somewhere() =
-        Assert.That(Hamming().compute("GGACG","GGTCG"), Is.EqualTo(1))
-
-    [<Test>]    
-    member tests.Larger_distance() =
-        Assert.That(Hamming().compute("ACCAGGG","ACTATGG"), Is.EqualTo(2))
+[<Test>]    
+let ``Larger distance`` () =
+    Assert.That(compute "ACCAGGG" "ACTATGG", Is.EqualTo(2))

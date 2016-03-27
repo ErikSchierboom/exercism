@@ -4,7 +4,7 @@ open Diamond
 open System
 open NUnit.Framework
 
-type DiamondTest() =
+type DiamondTest () =
     let split (x: string) = x.Split([| '\n' |], StringSplitOptions.None)
 
     let trim (x:string) = x.Trim()
@@ -22,7 +22,6 @@ type DiamondTest() =
         Assert.That(firstRowCharacters, Is.EqualTo("A"))
 
     [<TestCaseSource("Letters")>]
-    [<Ignore("Remove to run test")>]
     member this.``All rows must have symmetric contour`` (letter:char) =
         let actual = make letter
         let rows = actual |> split
@@ -31,7 +30,6 @@ type DiamondTest() =
         Assert.That(rows, Is.All.Matches(symmetric))
 
     [<TestCaseSource("Letters")>]
-    [<Ignore("Remove to run test")>]
     member this.``Top of figure has letters in correct order`` (letter:char) =
         let actual = make letter
 
@@ -47,7 +45,6 @@ type DiamondTest() =
         Assert.That(expected, Is.EqualTo(firstNonSpaceLetters))
 
     [<TestCaseSource("Letters")>]
-    [<Ignore("Remove to run test")>]
     member this.``Figure is symmetric around the horizontal axis`` (letter:char) =
         let actual = make letter
 
@@ -66,7 +63,6 @@ type DiamondTest() =
         Assert.That(top, Is.EqualTo(bottom))
     
     [<TestCaseSource("Letters")>]
-    [<Ignore("Remove to run test")>]
     member this.``Diamond has square shape`` (letter:char) =
         let actual = make letter
 
@@ -77,7 +73,6 @@ type DiamondTest() =
         Assert.That(rows, Is.All.Matches(correctWidth))
 
     [<TestCaseSource("Letters")>]
-    [<Ignore("Remove to run test")>]
     member this.``All rows except top and bottom have two identical letters`` (letter:char) =
         let actual = make letter
 
@@ -93,8 +88,7 @@ type DiamondTest() =
 
         Assert.That(rows, Is.All.Matches(twoIdenticalLetters))
 
-    [<TestCaseSource("Letters")>]    
-    [<Ignore("Remove to run test")>]
+    [<TestCaseSource("Letters")>]
     member this.``Bottom left corner spaces are triangle`` (letter:char) =
         let actual = make letter
 

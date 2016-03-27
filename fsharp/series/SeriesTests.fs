@@ -4,8 +4,7 @@ open System
 open NUnit.Framework
 open Series
 
-
-type SeriesTests() =
+type SeriesTests () =
     static member SliceOneTestData = 
         [| 
             ("01234", [[0]; [1]; [2]; [3]; [4]]);
@@ -13,10 +12,9 @@ type SeriesTests() =
         |]
 
     [<TestCaseSource("SliceOneTestData")>]
-    member tests.Series_of_one_splits_to_one_digit(testData: string * int list list) =
+    member this.``Series of one splits to one digit`` (testData: string * int list list) =
         let input, expected = testData
-        let series = new Series(input)
-        Assert.That(series.slices(1), Is.EqualTo(expected))
+        Assert.That(slices input 1, Is.EqualTo(expected))
 
     static member SliceTwoTestData =
         [| 
@@ -26,10 +24,9 @@ type SeriesTests() =
         |]
 
     [<TestCaseSource("SliceTwoTestData")>]    
-    member tests.Series_of_two_splits_to_two_digits(testData: string * int list list) =
+    member this.``Series of two splits to two digits`` (testData: string * int list list) =
         let input, expected = testData
-        let series = new Series(input)
-        Assert.That(series.slices(2), Is.EqualTo(expected))
+        Assert.That(slices input 2, Is.EqualTo(expected))
 
     static member SliceThreeTestData =
         [| 
@@ -39,10 +36,9 @@ type SeriesTests() =
         |]
 
     [<TestCaseSource("SliceThreeTestData")>]    
-    member tests.Series_of_three_splits_to_three_digits(testData: string * int list list) =
+    member this.``Series of three splits to three digits`` (testData: string * int list list) =
         let input, expected = testData
-        let series = new Series(input)
-        Assert.That(series.slices(3), Is.EqualTo(expected))
+        Assert.That(slices input 3, Is.EqualTo(expected))
 
     static member SliceFourTestData =
         [| 
@@ -51,10 +47,9 @@ type SeriesTests() =
         |]
 
     [<TestCaseSource("SliceFourTestData")>]    
-    member tests.Series_of_four_splits_to_four_digits(testData: string * int list list) =
+    member this.``Series of four splits to four digits`` (testData: string * int list list) =
         let input, expected = testData
-        let series = new Series(input)
-        Assert.That(series.slices(4), Is.EqualTo(expected))
+        Assert.That(slices input 4, Is.EqualTo(expected))
 
     static member SliceFiveTestData =
         [| 
@@ -63,13 +58,11 @@ type SeriesTests() =
         |]
 
     [<TestCaseSource("SliceFiveTestData")>]    
-    member tests.Series_of_five_splits_to_five_digits(testData: string * int list list) =
+    member this.``Series of five splits to five digits`` (testData: string * int list list) =
         let input, expected = testData
-        let series = new Series(input)
-        Assert.That(series.slices(5), Is.EqualTo(expected))
+        Assert.That(slices input 5, Is.EqualTo(expected))
 
     [<TestCase("01234", 6)>]
     [<TestCase("01032987583", 19)>]
-    member tests.Slice_longer_than_input_is_not_allowed(input, slice) =
-        let series = new Series(input)
-        Assert.Throws<System.ArgumentException>(fun () -> series.slices(slice) |> ignore) |> ignore
+    member this.``Slice longer than input is not allowed`` (input, slice) =
+        Assert.That((fun () -> slices input slice |> ignore), Throws.Exception)

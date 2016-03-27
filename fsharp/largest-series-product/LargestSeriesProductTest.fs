@@ -9,11 +9,11 @@ let ``Gets the largest product``(digits: string) (seriesLength: int) =
     largestProduct digits seriesLength
     
 [<Test>]
-let ``Largest product works for small numbers``() =
+let ``Largest product works for small numbers`` () =
     Assert.That(largestProduct "19" 2, Is.EqualTo(9))
     
 [<Test>]
-let ``Largest product works for large numbers``() =
+let ``Largest product works for large numbers`` () =
     let LARGE_NUMBER = "73167176531330624919225119674426574742355349194934"
     Assert.That(largestProduct LARGE_NUMBER 6, Is.EqualTo(23520))
     
@@ -28,5 +28,5 @@ let ``Largest product for empty span is 1``(digits: string) =
     largestProduct digits 0
     
 [<Test>]
-let ``Cannot slice empty string with nonzero span``() =
-    Assert.Throws(fun () -> largestProduct "" 1 |> ignore) |> ignore
+let ``Cannot slice empty string with nonzero span`` () =
+    Assert.That((fun () -> largestProduct "" 1 |> ignore), Throws.Exception)

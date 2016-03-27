@@ -2,42 +2,39 @@
 
 open NUnit.Framework
 open DifferenceOfSquares
-
-
-type DifferenceOfSquaresTests() =
     
-    [<Test>]
-    member test.Square_of_sums_to_5() =
-        Assert.That(DifferenceOfSquares(5).squareOfSums(), Is.EqualTo(225))
+[<Test>]
+let ``Square of sums to 5`` () =
+    Assert.That(squareOfSums 5, Is.EqualTo(225))
 
-    [<Test>]
-    member test.Sum_of_squares_to_5() =
-        Assert.That(DifferenceOfSquares(5).sumOfSquares(), Is.EqualTo(55))
+[<Test>]
+let ``Sum of squares to 5`` () =
+    Assert.That(sumOfSquares 5, Is.EqualTo(55))
 
-    [<Test>]
-    member test.Difference_of_sums_to_5() =
-        Assert.That(DifferenceOfSquares(5).difference(), Is.EqualTo(170))
+[<Test>]
+let ``Difference of sums to 5`` () =
+    Assert.That(difference 5, Is.EqualTo(170))
 
-    [<Test>]
-    member test.Square_of_sums_to_10() =
-        Assert.That(DifferenceOfSquares(10).squareOfSums(), Is.EqualTo(3025))
+[<Test>]
+let ``Square of sums to 10`` () =
+    Assert.That(squareOfSums 10, Is.EqualTo(3025))
 
-    [<Test>]
-    member test.Sum_of_squares_to_10() =
-        Assert.That(DifferenceOfSquares(10).sumOfSquares(), Is.EqualTo(385))
+[<Test>]
+let ``Sum of squares to 10`` () =
+    Assert.That(sumOfSquares 10, Is.EqualTo(385))
 
-    [<Test>]
-    member test.Difference_of_sums_to_10() =
-        Assert.That(DifferenceOfSquares(10).difference(), Is.EqualTo(2640))
+[<Test>]
+let ``Difference of sums to 10`` () =
+    Assert.That(difference 10, Is.EqualTo(2640))
 
-    [<Test>]
-    member test.Square_of_sums_to_100() =
-        Assert.That(DifferenceOfSquares(100).squareOfSums(), Is.EqualTo(25502500))
+[<Test>]
+let ``Square of sums to 100`` () =
+    Assert.That(squareOfSums 100, Is.EqualTo(25502500))
 
-    [<Test>]
-    member test.Sum_of_squares_to_100() =
-        Assert.That(DifferenceOfSquares(100).sumOfSquares(), Is.EqualTo(338350))
+[<Test>]
+let ``Sum of squares to 100`` () =
+    Assert.That(sumOfSquares 100, Is.EqualTo(338350))
 
-    [<Test>]
-    member test.Difference_of_sums_to_100() =
-        Assert.That(DifferenceOfSquares(100).difference(), Is.EqualTo(25164150))
+[<Test>]
+let ``Difference of sums to 100`` () =
+    Assert.That(difference 100, Is.EqualTo(25164150))
