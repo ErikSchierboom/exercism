@@ -17,6 +17,9 @@ let ``Binary converts to decimal`` (input: string) =
 [<TestCase("2")>]
 [<TestCase("5")>]
 [<TestCase("9")>]
+[<TestCase("a10")>]
+[<TestCase("100b")>]
+[<TestCase("10c01")>]
 [<TestCase("134678")>]
 [<TestCase("abc10z")>]
 let ``Invalid binary is decimal 0`` (input: string) =

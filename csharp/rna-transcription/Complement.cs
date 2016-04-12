@@ -3,14 +3,6 @@ using System.Linq;
 
 public static class Complement
 {
-    private static readonly IDictionary<char, char> RnaComplements = new Dictionary<char, char>
-                                                                                {
-                                                                                    { 'G', 'C' },
-                                                                                    { 'C', 'G' },
-                                                                                    { 'U', 'A' },
-                                                                                    { 'A', 'T' }
-                                                                                };
-
     private static readonly IDictionary<char, char> DnaComplements = new Dictionary<char, char>
                                                                                 {
                                                                                     { 'G', 'C' },
@@ -18,11 +10,6 @@ public static class Complement
                                                                                     { 'T', 'A' },
                                                                                     { 'A', 'U' }
                                                                                 };
-
-    public static string OfRna(string rna)
-    {
-        return Transcribe(rna, RnaComplements);
-    }
 
     public static string OfDna(string dna)
     {

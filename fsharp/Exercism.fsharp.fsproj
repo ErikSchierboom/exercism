@@ -56,6 +56,8 @@
     <Compile Include="acronym\AcronymTests.fs" />
     <Compile Include="allergies\Example.fs" />
     <Compile Include="allergies\AllergiesTests.fs" />
+    <Compile Include="alphametics\Example.fs" />
+    <Compile Include="alphametics\AlphameticsTest.fs" />
     <Compile Include="anagram\Example.fs" />
     <Compile Include="anagram\AnagramTests.fs" />
     <Compile Include="atbash-cipher\Example.fs" />
@@ -80,6 +82,8 @@
     <Compile Include="difference-of-squares\DifferenceOfSquaresTest.fs" />
     <Compile Include="etl\Example.fs" />
     <Compile Include="etl\ETLTests.fs" />
+    <Compile Include="food-chain\Example.fs" />
+    <Compile Include="food-chain\FoodChainTest.fs" />
     <Compile Include="gigasecond\Example.fs" />
     <Compile Include="gigasecond\GigasecondTest.fs" />
     <Compile Include="grade-school\Example.fs" />
@@ -165,8 +169,22 @@
     <Compile Include="wordy\Example.fs" />
     <Compile Include="wordy\WordyTest.fs" />
     <Content Include="packages.config" />
+    <Compile Include="connect\Example.fs" />
+    <Compile Include="connect\ConnectTest.fs" />
+    <Compile Include="pangram\Example.fs" />
+    <Compile Include="pangram\PangramTest.fs" />
+    <Compile Include="proverb\Example.fs" />
+    <Compile Include="proverb\ProverbTest.fs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="FParsec">
+      <HintPath>packages\FParsec.1.0.2\lib\net40-client\FParsec.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FParsecCS">
+      <HintPath>packages\FParsec.1.0.2\lib\net40-client\FParsecCS.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <Private>True</Private>
