@@ -175,6 +175,8 @@
     <Compile Include="pangram\PangramTest.fs" />
     <Compile Include="proverb\Example.fs" />
     <Compile Include="proverb\ProverbTest.fs" />
+    <Compile Include="run-length-encoding\Example.fs" />
+    <Compile Include="run-length-encoding\RunLengthEncodingTest.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FParsec">
