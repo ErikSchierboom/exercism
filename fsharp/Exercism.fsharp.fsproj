@@ -72,6 +72,8 @@
     <Compile Include="binary\BinaryTests.fs" />
     <Compile Include="bob\Example.fs" />
     <Compile Include="bob\BobTest.fs" />
+    <Compile Include="bowling\Example.fs" />
+    <Compile Include="bowling\BowlingTest.fs" />
     <Compile Include="clock\Example.fs" />
     <Compile Include="clock\ClockTests.fs" />
     <Compile Include="crypto-square\Example.fs" />
