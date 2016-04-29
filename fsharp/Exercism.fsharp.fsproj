@@ -179,6 +179,16 @@
     <Compile Include="proverb\ProverbTest.fs" />
     <Compile Include="run-length-encoding\Example.fs" />
     <Compile Include="run-length-encoding\RunLengthEncodingTest.fs" />
+    <Compile Include="scale-generator\Example.fs" />
+    <Compile Include="scale-generator\ScaleGeneratorTest.fs" />
+    <Compile Include="circular-buffer\Example.fs" />
+    <Compile Include="circular-buffer\CircularBufferTest.fs" />
+    <Compile Include="house\Example.fs" />
+    <Compile Include="house\HouseTest.fs" />
+    <Compile Include="list-ops\Example.fs" />
+    <Compile Include="list-ops\ListOpsTest.fs" />
+    <Compile Include="parallel-letter-frequency\Example.fs" />
+    <Compile Include="parallel-letter-frequency\ParallelLetterFrequencyTest.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FParsec">
