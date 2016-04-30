@@ -189,6 +189,16 @@
     <Compile Include="list-ops\ListOpsTest.fs" />
     <Compile Include="parallel-letter-frequency\Example.fs" />
     <Compile Include="parallel-letter-frequency\ParallelLetterFrequencyTest.fs" />
+    <Compile Include="phone-number\Example.fs" />
+    <Compile Include="phone-number\PhoneNumberTest.fs" />
+    <Compile Include="say\Example.fs" />
+    <Compile Include="say\SayTest.fs" />
+    <Compile Include="sublist\Example.fs" />
+    <Compile Include="sublist\SublistTest.fs" />
+    <Compile Include="zipper\Example.fs" />
+    <Compile Include="zipper\ZipperTest.fs" />
+    <Compile Include="forth\Example.fs" />
+    <Compile Include="forth\ForthTest.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FParsec">
