@@ -19,6 +19,9 @@ public class BinaryTest
     [TestCase("2")]
     [TestCase("5")]
     [TestCase("9")]
+    [TestCase("a10")]
+    [TestCase("100b")]
+    [TestCase("10c01")]
     [TestCase("134678")]
     [TestCase("abc10z")]
     public void Invalid_binary_is_decimal_0(string invalidValue)

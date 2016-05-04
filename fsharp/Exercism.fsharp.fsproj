@@ -56,6 +56,8 @@
     <Compile Include="acronym\AcronymTests.fs" />
     <Compile Include="allergies\Example.fs" />
     <Compile Include="allergies\AllergiesTests.fs" />
+    <Compile Include="alphametics\Example.fs" />
+    <Compile Include="alphametics\AlphameticsTest.fs" />
     <Compile Include="anagram\Example.fs" />
     <Compile Include="anagram\AnagramTests.fs" />
     <Compile Include="atbash-cipher\Example.fs" />
@@ -70,6 +72,8 @@
     <Compile Include="binary\BinaryTests.fs" />
     <Compile Include="bob\Example.fs" />
     <Compile Include="bob\BobTest.fs" />
+    <Compile Include="bowling\Example.fs" />
+    <Compile Include="bowling\BowlingTest.fs" />
     <Compile Include="clock\Example.fs" />
     <Compile Include="clock\ClockTests.fs" />
     <Compile Include="crypto-square\Example.fs" />
@@ -80,6 +84,8 @@
     <Compile Include="difference-of-squares\DifferenceOfSquaresTest.fs" />
     <Compile Include="etl\Example.fs" />
     <Compile Include="etl\ETLTests.fs" />
+    <Compile Include="food-chain\Example.fs" />
+    <Compile Include="food-chain\FoodChainTest.fs" />
     <Compile Include="gigasecond\Example.fs" />
     <Compile Include="gigasecond\GigasecondTest.fs" />
     <Compile Include="grade-school\Example.fs" />
@@ -165,8 +171,45 @@
     <Compile Include="wordy\Example.fs" />
     <Compile Include="wordy\WordyTest.fs" />
     <Content Include="packages.config" />
+    <Compile Include="connect\Example.fs" />
+    <Compile Include="connect\ConnectTest.fs" />
+    <Compile Include="pangram\Example.fs" />
+    <Compile Include="pangram\PangramTest.fs" />
+    <Compile Include="proverb\Example.fs" />
+    <Compile Include="proverb\ProverbTest.fs" />
+    <Compile Include="run-length-encoding\Example.fs" />
+    <Compile Include="run-length-encoding\RunLengthEncodingTest.fs" />
+    <Compile Include="scale-generator\Example.fs" />
+    <Compile Include="scale-generator\ScaleGeneratorTest.fs" />
+    <Compile Include="circular-buffer\Example.fs" />
+    <Compile Include="circular-buffer\CircularBufferTest.fs" />
+    <Compile Include="house\Example.fs" />
+    <Compile Include="house\HouseTest.fs" />
+    <Compile Include="list-ops\Example.fs" />
+    <Compile Include="list-ops\ListOpsTest.fs" />
+    <Compile Include="parallel-letter-frequency\Example.fs" />
+    <Compile Include="parallel-letter-frequency\ParallelLetterFrequencyTest.fs" />
+    <Compile Include="phone-number\Example.fs" />
+    <Compile Include="phone-number\PhoneNumberTest.fs" />
+    <Compile Include="say\Example.fs" />
+    <Compile Include="say\SayTest.fs" />
+    <Compile Include="sublist\Example.fs" />
+    <Compile Include="sublist\SublistTest.fs" />
+    <Compile Include="zipper\Example.fs" />
+    <Compile Include="zipper\ZipperTest.fs" />
+    <Compile Include="forth\Example.fs" />
+    <Compile Include="forth\ForthTest.fs" />
+    <Content Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="FParsec">
+      <HintPath>packages\FParsec.1.0.2\lib\net40-client\FParsec.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FParsecCS">
+      <HintPath>packages\FParsec.1.0.2\lib\net40-client\FParsecCS.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <Private>True</Private>

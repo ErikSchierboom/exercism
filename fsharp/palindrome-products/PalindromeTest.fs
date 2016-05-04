@@ -29,24 +29,28 @@ let ``Smallest palindrome from double digit factors`` () =
     Assert.That(factors, Is.EqualTo([(11, 11)]))
     
 [<Test>]
+[<Ignore("Takes a bit long")>]
 let ``Largest palindrome from triple digit factors`` () =
     let (largest, factors) = largestPalindrome 100 999
     Assert.That(largest, Is.EqualTo(906609))
     Assert.That(factors, Is.EqualTo([(913, 993)]))
     
 [<Test>]
+[<Ignore("Takes a bit long")>]
 let ``Smallest palindrome from triple digit factors`` () =
     let (smallest, factors) = smallestPalindrome 100 999
     Assert.That(smallest, Is.EqualTo(10201))
     Assert.That(factors, Is.EqualTo([(101, 101)]))
     
 [<Test>]
+[<Ignore("Takes a bit long")>]
 let ``Largest palindrome from four digit factors`` () =
     let (largest, factors) = largestPalindrome 1000 9999
     Assert.That(largest, Is.EqualTo(99000099))
     Assert.That(factors, Is.EqualTo([(9901, 9999)]))
     
 [<Test>]
+[<Ignore("Takes a bit long")>]
 let ``Smallest palindrome from four digit factors`` () =
     let (smallest, factors) = smallestPalindrome 1000 9999
     Assert.That(smallest, Is.EqualTo(1002001))

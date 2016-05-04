@@ -30,7 +30,14 @@ public class ClockTest
         var clock = new Clock(10).Add(63);
         Assert.That(clock.ToString(), Is.EqualTo("11:03"));
     }
-    
+
+    [Test]
+    public void Can_add_over_more_than_one_day()
+    {
+        var clock = new Clock(10).Add(7224);
+        Assert.That(clock.ToString(), Is.EqualTo("10:24"));
+    }
+
     [Test]
     public void Can_subtract_minutes()
     {
@@ -85,6 +92,14 @@ public class ClockTest
     {
         var clock1 = new Clock(14, 30);
         var clock2 = new Clock(14, 30);
+        Assert.That(clock1, Is.EqualTo(clock2));
+    }
+
+    [Test]
+    public void Overflown_clocks_with_same_time_are_equal()
+    {
+        var clock1 = new Clock(14, 30);
+        var clock2 = new Clock(38, 30);
         Assert.That(clock1, Is.EqualTo(clock2));
     }
 }
