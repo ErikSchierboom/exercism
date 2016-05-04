@@ -32,3 +32,13 @@ let ``Can solve puzzles with any boolean expression`` () =
 let ``Cannot solve unsolvable puzzles`` () =
     let actual = solve "A * B == A + B"
     Assert.That(actual, Is.EqualTo(None))
+
+[<Test>]
+let ``Cannot solve invalid puzzle`` () =
+    let actual = solve "A == "
+    Assert.That(actual, Is.EqualTo(None))
+    
+[<Test>]
+let ``Cannot solve puzzle with invalid characters`` () =
+    let actual = solve "@ == #"
+    Assert.That(actual, Is.EqualTo(None))
