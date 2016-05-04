@@ -199,6 +199,7 @@
     <Compile Include="zipper\ZipperTest.fs" />
     <Compile Include="forth\Example.fs" />
     <Compile Include="forth\ForthTest.fs" />
+    <Content Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FParsec">
