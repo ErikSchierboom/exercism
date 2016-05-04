@@ -7,9 +7,19 @@ open Forth
 let bind f m = 
     match m with
     | Choice1Of2 x -> f x
-    | Choice2Of2 _ -> m
+    | Choice2Of2 x -> Choice2Of2 x
 
-let (>>=) m f = bind f m
+let map f =
+    function
+    | Choice1Of2 x -> f x |> Choice1Of2
+    | Choice2Of2 x -> Choice2Of2 x
+
+let run text = eval text empty |> map formatStack
+    
+// Note: we use the Choice<'T1, 'T2> type to represent a possible outcome of
+// evaluating input. When the evaluating is succesful, the result is 
+// contained in a Choice1Of2. If an error occured, that error is contained
+// in a Choice2Of2.
 
 [<Test>]
 let ``No input, no stack`` () =
@@ -17,84 +27,86 @@ let ``No input, no stack`` () =
 
 [<Test>]
 let ``Numbers just get pushed onto the stack`` () =
-    Assert.That(eval "1 2 3 4 5" empty, Is.EqualTo(Choice1Of2 "1 2 3 4 5"))
+    Assert.That(run "1 2 3 4 5", Is.EqualTo(Choice1Of2 "1 2 3 4 5": Choice<string,ForthError>))
 
 [<Test>]
 let ``Non-word characters are separators`` () =
-    // Note the Ogham Space Mark ( ), this is a spacing character.
-    Assert.That(eval "1\NUL2\SOH3\n4\r5 6\t7" empty, Is.EqualTo(Choice1Of2 "1 2 3 4 5 6 7"))
+    Assert.That(run "1\b2\t3\n4\r5 6\t7", Is.EqualTo(Choice1Of2 "1 2 3 4 5 6 7": Choice<string,ForthError>))
 
 [<Test>]
 let ``Basic arithmetic`` () =
-    Assert.That(eval "1 2 + 4 -" empty, Is.EqualTo(Choice1Of2 "-1"))
-    Assert.That(eval "2 4 * 3 /" empty, Is.EqualTo(Choice1Of2 "2"))
+    Assert.That(run "1 2 + 4 -", Is.EqualTo(Choice1Of2 "-1": Choice<string,ForthError>))
+    Assert.That(run "2 4 * 3 /", Is.EqualTo(Choice1Of2 "2": Choice<string,ForthError>))
 
 [<Test>]
 let ``Division by zero`` () =
-    Assert.That(eval "4 2 2 - /" empty, Is.EqualTo(Choice2Of2 DivisionByZero))
+    Assert.That(run "4 2 2 - /", Is.EqualTo(Choice2Of2 DivisionByZero: Choice<string,ForthError>))
 
 [<Test>]
 let ``dup`` () =
-    Assert.That(eval "1 DUP" empty, Is.EqualTo(Choice1Of2 "1 1"))
-    Assert.That(eval "1 2 Dup" empty, Is.EqualTo(Choice1Of2 "1 2 2"))
-    Assert.That(eval "dup" empty, Is.EqualTo(Choice2Of2 StackUnderflow))
+    Assert.That(run "1 DUP", Is.EqualTo(Choice1Of2 "1 1": Choice<string,ForthError>))
+    Assert.That(run "1 2 Dup", Is.EqualTo(Choice1Of2 "1 2 2": Choice<string,ForthError>))
+    Assert.That(run "dup", Is.EqualTo(Choice2Of2 StackUnderflow: Choice<string,ForthError>))
 
 [<Test>]
 let ``drop`` () =
-    Assert.That(eval "1 drop" empty, Is.EqualTo(Choice1Of2 ""))
-    Assert.That(eval "1 2 drop" empty, Is.EqualTo(Choice1Of2 "1"))
-    Assert.That(eval "drop" empty, Is.EqualTo(Choice2Of2 StackUnderflow))
+    Assert.That(run "1 drop", Is.EqualTo(Choice1Of2 "": Choice<string,ForthError>))
+    Assert.That(run "1 2 drop", Is.EqualTo(Choice1Of2 "1": Choice<string,ForthError>))
+    Assert.That(run "drop", Is.EqualTo(Choice2Of2 StackUnderflow: Choice<string,ForthError>))
 
 [<Test>]
 let ``swap`` () =
-    Assert.That(eval "1 2 swap" empty, Is.EqualTo(Choice1Of2 "2 1"))
-    Assert.That(eval "1 2 3 swap" empty, Is.EqualTo(Choice1Of2 "1 3 2"))
-    Assert.That(eval "1 swap" empty, Is.EqualTo(Choice2Of2 StackUnderflow))
-    Assert.That(eval "swap" empty, Is.EqualTo(Choice2Of2 StackUnderflow))
+    Assert.That(run "1 2 swap", Is.EqualTo(Choice1Of2 "2 1": Choice<string,ForthError>))
+    Assert.That(run "1 2 3 swap", Is.EqualTo(Choice1Of2 "1 3 2": Choice<string,ForthError>))
+    Assert.That(run "1 swap", Is.EqualTo(Choice2Of2 StackUnderflow: Choice<string,ForthError>))
+    Assert.That(run "swap", Is.EqualTo(Choice2Of2 StackUnderflow: Choice<string,ForthError>))
 
 [<Test>]
 let ``over`` () =
-    Assert.That(eval "1 2 over" empty, Is.EqualTo(Choice1Of2 "1 2 1"))
-    Assert.That(eval "1 2 3 over" empty, Is.EqualTo(Choice1Of2 "1 2 3 2"))
-    Assert.That(eval "1 over" empty, Is.EqualTo(Choice2Of2 StackUnderflow))
-    Assert.That(eval "over" empty, Is.EqualTo(Choice2Of2 StackUnderflow))
+    Assert.That(run "1 2 over", Is.EqualTo(Choice1Of2 "1 2 1": Choice<string,ForthError>))
+    Assert.That(run "1 2 3 over", Is.EqualTo(Choice1Of2 "1 2 3 2": Choice<string,ForthError>))
+    Assert.That(run "1 over", Is.EqualTo(Choice2Of2 StackUnderflow: Choice<string,ForthError>))
+    Assert.That(run "over", Is.EqualTo(Choice2Of2 StackUnderflow: Choice<string,ForthError>))
 
 [<Test>]
 let ``Defining a new word`` () =
     let actual =
         empty
-        |>  eval ": dup-twice dup dup ;"  
-        >>= eval "1 dup-twice"
+        |> eval ": dup-twice dup dup ;"  
+        |> bind (eval "1 dup-twice")
+        |> map formatStack
 
-    Assert.That(actual, Is.EqualTo(Choice1Of2 "1 1 1"))
+    Assert.That(actual, Is.EqualTo(Choice1Of2 "1 1 1": Choice<string,ForthError>))
 
 [<Test>]
 let ``Redefining an existing word`` () =    
     let actual =
         empty
-        |>  eval ": foo dup ;"  
-        >>= eval ": foo dup dup ;"
-        >>= eval "1 foo"
+        |> eval ": foo dup ;"  
+        |> bind (eval ": foo dup dup ;")
+        |> bind (eval "1 foo")
+        |> map formatStack
         
-    Assert.That(actual, Is.EqualTo(Choice1Of2 "1 1 1"))
+    Assert.That(actual, Is.EqualTo(Choice1Of2 "1 1 1": Choice<string,ForthError>))
 
 [<Test>]
 let ``Redefining an existing built-in word`` () =  
     let actual =
         empty
-        |>  eval ": swap dup ;"  
-        >>= eval "1 swap"
+        |> eval ": swap dup ;"  
+        |> bind (eval "1 swap")
+        |> map formatStack
 
-    Assert.That(actual, Is.EqualTo(Choice1Of2 "1 1"))
+    Assert.That(actual, Is.EqualTo(Choice1Of2 "1 1": Choice<string,ForthError>))
 
 [<Test>]
 let ``Defining words with odd characters`` () =
-    Assert.That(eval ": € 220371 ; €" empty, Is.EqualTo(Choice1Of2 "220371"))
+    Assert.That(run ": € 220371 ; €", Is.EqualTo(Choice1Of2 "220371": Choice<string,ForthError>))
 
 [<Test>]
 let ``Defining a number`` () =
-    Assert.That(eval ": 1 2 ;" empty, Is.EqualTo(Choice2Of2 InvalidWord))
+    Assert.That(run ": 1 2 ;", Is.EqualTo(Choice2Of2 InvalidWord: Choice<string,ForthError>))
 
 [<Test>]
 let ``Calling a non-existing word`` () =
-    Assert.That(eval "1 foo" empty, Is.EqualTo(Choice2Of2 (UnknownWord "foo")))
+    Assert.That(run "1 foo", Is.EqualTo(Choice2Of2 (UnknownWord "foo"): Choice<string,ForthError>))
