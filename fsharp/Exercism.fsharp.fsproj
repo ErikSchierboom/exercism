@@ -200,6 +200,14 @@
     <Compile Include="forth\Example.fs" />
     <Compile Include="forth\ForthTest.fs" />
     <Content Include="App.config" />
+    <Compile Include="word-search\Example.fs" />
+    <Compile Include="word-search\WordSearchTest.fs" />
+    <Compile Include="go-counting\Example.fs" />
+    <Compile Include="go-counting\GoCountingTest.fs" />
+    <Compile Include="custom-set\Example.fs" />
+    <Compile Include="custom-set\CustomSetTest.fs" />
+    <Compile Include="rail-fence-cipher\Example.fs" />
+    <Compile Include="rail-fence-cipher\RailFenceCipherTest.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FParsec">

@@ -11,6 +11,7 @@ let ``Can solve short puzzles`` () =
     Assert.That(actual, Is.EqualTo(expected))
 
 [<Test>]
+[<Ignore("Takes a bit long")>]
 let ``Can solve long puzzles`` () =
     let actual = solve "SEND + MORE == MONEY"
     let expected = ['S', 9; 'E', 5; 'N', 6; 'D', 7; 'M', 1; 'O', 0; 'R', 8; 'Y', 2] |> Map.ofList |> Some
@@ -34,11 +35,9 @@ let ``Cannot solve unsolvable puzzles`` () =
     Assert.That(actual, Is.EqualTo(None))
 
 [<Test>]
-let ``Cannot solve invalid puzzle`` () =
-    let actual = solve "A == "
-    Assert.That(actual, Is.EqualTo(None))
+let ``Throws exception when puzzle is incomplete`` () =
+    Assert.That((fun () -> solve "A == " |> ignore), Throws.Exception)
     
 [<Test>]
-let ``Cannot solve puzzle with invalid characters`` () =
-    let actual = solve "@ == #"
-    Assert.That(actual, Is.EqualTo(None))
+let ``Throws exception when puzzle uses invalid character`` () =
+    Assert.That((fun () -> solve "# == 1" |> ignore), Throws.Exception)

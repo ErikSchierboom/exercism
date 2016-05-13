@@ -1,45 +1,49 @@
 ﻿module Alphametics
 
-open FParsec
-
 open System
 open System.Text.RegularExpressions
 
-type Operator = Plus | Mult | Pow
+type Operators = Plus | Mult | Pow | Eq
     
 type Token =
     | Operand of int
-    | Operator of Operator
+    | Operator of Operators
+
+let (|Int|_|) str =
+   match Int32.TryParse(str) with
+   | (true, i) -> Some i
+   | _ -> None
+
+let token (str: string) =
+    match str with
+    | "+"   -> Operator Plus
+    | "*"   -> Operator Mult
+    | "^"   -> Operator Pow
+    | "=="  -> Operator Eq
+    | Int i -> Operand i
+    | _     -> failwith "Invalid token"
+
+let breakBy item list =
+    match List.tryFindIndex (fun x -> x = item) list with
+    | None -> None
+    | Some i -> Some (list.[0..i - 1], list.[i + 1..])
+    
+let tokenize (str: string) = 
+    str.Split() 
+    |> List.ofArray
+    |> List.map token
+    |> breakBy (Operator Eq) 
 
 let operators = 
     [(Pow,  fun x y -> pown x y |> Operand); 
      (Mult, fun x y -> x * y |> Operand); 
      (Plus, fun x y -> x + y |> Operand)]
 
-let operand: Parser<Token, unit> = pint32 |>> Operand
-let operator: Parser<Token, unit> = 
-        (stringReturn "+"  (Operator Plus)) 
-    <|> (stringReturn "*"  (Operator Mult))
-    <|> (stringReturn "^"  (Operator Pow))
-
-let tokenize (str:string) = 
-    
-    let operand = pint32 |>> Operand
-    let operator = 
-            (stringReturn "+"  (Operator Plus)) 
-        <|> (stringReturn "*"  (Operator Mult))
-        <|> (stringReturn "^"  (Operator Pow))
-
-    let token = operand .>> spaces <|> operator .>> spaces
-    let equation = many token .>> (pstring "==") .>> spaces .>>. many token
-
-    run equation str
-
 let rec simplifyOperator (operator, op) acc remainder =     
-        match remainder with    
-        | Operand x::Operator y::Operand z::xs when y = operator -> simplifyOperator (operator, op) (op x z::acc) xs
-        | x::xs -> simplifyOperator (operator, op) (x::acc) xs
-        | [] -> acc |> List.rev
+    match remainder with    
+    | Operand x::Operator y::Operand z::xs when y = operator -> simplifyOperator (operator, op) (op x z::acc) xs
+    | x::xs -> simplifyOperator (operator, op) (x::acc) xs
+    | [] -> acc |> List.rev
 
 let simplify equation = operators |> List.fold (fun acc operator -> simplifyOperator operator [] acc) equation
 
@@ -47,8 +51,8 @@ let solveEquation (left, right) = simplify left = simplify right
 
 let equationIsCorrect input = 
     match tokenize input with    
-    | Failure _ -> false
-    | Success (equation, _, _) -> solveEquation equation
+    | None -> false
+    | Some equation -> solveEquation equation
 
 let chars (str: string) = str |> Seq.filter (Char.IsLetter) |> Set.ofSeq
 
@@ -63,7 +67,11 @@ let generateCombinations length =
 
 let generateMaps (str: string) =
     let c = chars str
-    let nonZeroChars = Regex.Matches (str, "([A-Z])[A-Z]*") |> Seq.cast<Match> |> Seq.map (fun m -> m.Groups |> Seq.cast<Group> |> Seq.map (fun n -> n.Value.Chars 0) |> Seq.item 1) |> Set.ofSeq
+    let nonZeroChars = 
+        Regex.Matches (str, "([A-Z])[A-Z]*") 
+        |> Seq.cast<Match> 
+        |> Seq.map (fun m -> m.Groups |> Seq.cast<Group> |> Seq.map (fun n -> n.Value.Chars 0) |> Seq.item 1) 
+        |> Set.ofSeq
    
     generateCombinations (Set.count c)
     |> Seq.map (Seq.zip c >> Map.ofSeq)
