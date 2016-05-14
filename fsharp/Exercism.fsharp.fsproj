@@ -208,6 +208,10 @@
     <Compile Include="custom-set\CustomSetTest.fs" />
     <Compile Include="rail-fence-cipher\Example.fs" />
     <Compile Include="rail-fence-cipher\RailFenceCipherTest.fs" />
+    <Compile Include="tournament\Example.fs" />
+    <Compile Include="tournament\TournamentTest.fs" />
+    <Compile Include="isogram\Example.fs" />
+    <Compile Include="isogram\IsogramTest.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FParsec">
