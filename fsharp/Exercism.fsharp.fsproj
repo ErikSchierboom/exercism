@@ -212,6 +212,8 @@
     <Compile Include="tournament\TournamentTest.fs" />
     <Compile Include="isogram\Example.fs" />
     <Compile Include="isogram\IsogramTest.fs" />
+    <Compile Include="bracket-push\Example.fs" />
+    <Compile Include="bracket-push\BracketPushTest.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FParsec">
