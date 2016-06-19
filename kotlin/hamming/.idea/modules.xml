@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hamming.iml" filepath="$PROJECT_DIR$/.idea/modules/hamming.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hamming_main.iml" filepath="$PROJECT_DIR$/.idea/modules/hamming_main.iml" group="hamming" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/hamming_test.iml" filepath="$PROJECT_DIR$/.idea/modules/hamming_test.iml" group="hamming" />
+    </modules>
+  </component>
+</project>

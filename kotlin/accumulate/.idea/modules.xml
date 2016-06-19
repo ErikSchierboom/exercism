@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/accumulate.iml" filepath="$PROJECT_DIR$/.idea/modules/accumulate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/accumulate_main.iml" filepath="$PROJECT_DIR$/.idea/modules/accumulate_main.iml" group="accumulate" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/accumulate_test.iml" filepath="$PROJECT_DIR$/.idea/modules/accumulate_test.iml" group="accumulate" />
+    </modules>
+  </component>
+</project>

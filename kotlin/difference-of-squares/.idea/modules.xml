@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/difference-of-squares.iml" filepath="$PROJECT_DIR$/.idea/modules/difference-of-squares.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/difference-of-squares_main.iml" filepath="$PROJECT_DIR$/.idea/modules/difference-of-squares_main.iml" group="difference-of-squares" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/difference-of-squares_test.iml" filepath="$PROJECT_DIR$/.idea/modules/difference-of-squares_test.iml" group="difference-of-squares" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/isogram.iml" filepath="$PROJECT_DIR$/.idea/modules/isogram.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/isogram_main.iml" filepath="$PROJECT_DIR$/.idea/modules/isogram_main.iml" group="isogram" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/isogram_test.iml" filepath="$PROJECT_DIR$/.idea/modules/isogram_test.iml" group="isogram" />
+    </modules>
+  </component>
+</project>

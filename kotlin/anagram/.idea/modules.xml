@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/anagram.iml" filepath="$PROJECT_DIR$/.idea/modules/anagram.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/anagram_main.iml" filepath="$PROJECT_DIR$/.idea/modules/anagram_main.iml" group="anagram" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/anagram_test.iml" filepath="$PROJECT_DIR$/.idea/modules/anagram_test.iml" group="anagram" />
+    </modules>
+  </component>
+</project>

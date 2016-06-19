@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/raindrops.iml" filepath="$PROJECT_DIR$/.idea/modules/raindrops.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/raindrops_main.iml" filepath="$PROJECT_DIR$/.idea/modules/raindrops_main.iml" group="raindrops" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/raindrops_test.iml" filepath="$PROJECT_DIR$/.idea/modules/raindrops_test.iml" group="raindrops" />
+    </modules>
+  </component>
+</project>

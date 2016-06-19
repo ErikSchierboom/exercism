@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nucleotide-count.iml" filepath="$PROJECT_DIR$/.idea/modules/nucleotide-count.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nucleotide-count_main.iml" filepath="$PROJECT_DIR$/.idea/modules/nucleotide-count_main.iml" group="nucleotide-count" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/nucleotide-count_test.iml" filepath="$PROJECT_DIR$/.idea/modules/nucleotide-count_test.iml" group="nucleotide-count" />
+    </modules>
+  </component>
+</project>

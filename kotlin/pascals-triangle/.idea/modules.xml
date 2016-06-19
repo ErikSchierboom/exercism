@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/pascals-triangle.iml" filepath="$PROJECT_DIR$/.idea/modules/pascals-triangle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/pascals-triangle_main.iml" filepath="$PROJECT_DIR$/.idea/modules/pascals-triangle_main.iml" group="pascals-triangle" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/pascals-triangle_test.iml" filepath="$PROJECT_DIR$/.idea/modules/pascals-triangle_test.iml" group="pascals-triangle" />
+    </modules>
+  </component>
+</project>

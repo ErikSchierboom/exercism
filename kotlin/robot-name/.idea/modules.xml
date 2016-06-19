@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/robot-name.iml" filepath="$PROJECT_DIR$/.idea/modules/robot-name.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/robot-name_main.iml" filepath="$PROJECT_DIR$/.idea/modules/robot-name_main.iml" group="robot-name" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/robot-name_test.iml" filepath="$PROJECT_DIR$/.idea/modules/robot-name_test.iml" group="robot-name" />
+    </modules>
+  </component>
+</project>

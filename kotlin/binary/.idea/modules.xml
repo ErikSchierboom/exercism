@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/binary.iml" filepath="$PROJECT_DIR$/.idea/modules/binary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/binary_main.iml" filepath="$PROJECT_DIR$/.idea/modules/binary_main.iml" group="binary" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/binary_test.iml" filepath="$PROJECT_DIR$/.idea/modules/binary_test.iml" group="binary" />
+    </modules>
+  </component>
+</project>
