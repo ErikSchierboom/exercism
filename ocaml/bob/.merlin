@@ -1,5 +1,0 @@
-PKG findlib
-PKG core
-PKG ounit
-S *
-B *
