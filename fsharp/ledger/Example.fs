@@ -7,6 +7,11 @@ type Entry = { date: DateTime; description: string; change: float }
 
 let parseDate date = DateTime.Parse(date, CultureInfo.InvariantCulture)
 
+let mkEntry date description change = 
+    { date = parseDate date
+      description = description
+      change = float change / 100.0  }
+
 let currencySymbol =
     function
     | "USD" -> "$"
@@ -30,11 +35,6 @@ let getCulture (currency: string) (locale: string) =
     culture.DateTimeFormat.ShortDatePattern <- dateFormat locale
     culture
 
-let mkEntry date description change = 
-    { date = parseDate date
-      description = description
-      change = float change / 100.0  }
-
 let printHeader (culture: CultureInfo) = 
     match culture.Name with
     | "en-US" -> "Date       | Description               | Change       "
@@ -52,10 +52,10 @@ let formatChange (culture: IFormatProvider) (change: float) =
     else change.ToString("C", culture) + " "
 
 let printEntry (culture: IFormatProvider) = 
-    let date = formatDate culture
-    let culture = formatChange culture
+    let formatDate' = formatDate culture
+    let formatChange' = formatChange culture
 
-    fun entry -> sprintf "%s | %-25s | %13s" (date entry.date) (formatDescription entry.description) (culture entry.change)
+    fun entry -> sprintf "%s | %-25s | %13s" (formatDate' entry.date) (formatDescription entry.description) (formatChange' entry.change)
 
 let orderEntries = List.sortBy (fun x -> x.date, x.description, x.change)
 
