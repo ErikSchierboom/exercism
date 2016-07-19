@@ -331,6 +331,8 @@
     <None Include="zipper\README.md" />
     <Content Include="App.config" />
     <Content Include="packages.config" />
+    <Compile Include="ledger\Example.fs" />
+    <Compile Include="ledger\LedgerTest.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FParsec">
