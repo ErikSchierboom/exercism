@@ -333,6 +333,8 @@
     <Content Include="packages.config" />
     <Compile Include="ledger\Example.fs" />
     <Compile Include="ledger\LedgerTest.fs" />
+    <Compile Include="variable-length-quantity\Example.fs" />
+    <Compile Include="variable-length-quantity\VariableLengthQuantityTest.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FParsec">
