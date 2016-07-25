@@ -338,6 +338,8 @@
     <Compile Include="ledger\LedgerTest.fs" />
     <Compile Include="variable-length-quantity\Example.fs" />
     <Compile Include="variable-length-quantity\VariableLengthQuantityTest.fs" />
+    <Compile Include="all-your-base\Example.fs" />
+    <Compile Include="all-your-base\AllYourBaseTest.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FParsec">
