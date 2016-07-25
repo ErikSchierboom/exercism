@@ -176,6 +176,9 @@
     <Compile Include="luhn\Example.fs" />
     <Compile Include="luhn\LuhnTests.fs" />
     <None Include="luhn\README.md" />
+    <Compile Include="markdown\Example.fs" />
+    <Compile Include="markdown\MarkdownTest.fs" />
+    <None Include="markdown\README.md" />
     <Compile Include="matrix\Example.fs" />
     <Compile Include="matrix\MatrixTest.fs" />
     <None Include="matrix\README.md" />
