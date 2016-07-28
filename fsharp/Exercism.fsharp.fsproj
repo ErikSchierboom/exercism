@@ -51,22 +51,24 @@
   <Import Project="$(FSharpTargetsPath)" />
   <ItemGroup>
     <Compile Include="accumulate\Example.fs" />
-    <Compile Include="accumulate\AccumulateTests.fs" />
+    <Compile Include="accumulate\AccumulateTest.fs" />
     <None Include="accumulate\README.md" />
     <Compile Include="acronym\Example.fs" />
-    <Compile Include="acronym\AcronymTests.fs" />
+    <Compile Include="acronym\AcronymTest.fs" />
     <None Include="acronym\README.md" />
+    <Compile Include="all-your-base\Example.fs" />
+    <Compile Include="all-your-base\AllYourBaseTest.fs" />
     <Compile Include="allergies\Example.fs" />
-    <Compile Include="allergies\AllergiesTests.fs" />
+    <Compile Include="allergies\AllergiesTest.fs" />
     <None Include="allergies\README.md" />
     <Compile Include="alphametics\Example.fs" />
     <Compile Include="alphametics\AlphameticsTest.fs" />
     <None Include="alphametics\README.md" />
     <Compile Include="anagram\Example.fs" />
-    <Compile Include="anagram\AnagramTests.fs" />
+    <Compile Include="anagram\AnagramTest.fs" />
     <None Include="anagram\README.md" />
     <Compile Include="atbash-cipher\Example.fs" />
-    <Compile Include="atbash-cipher\AtbashTests.fs" />
+    <Compile Include="atbash-cipher\AtbashTest.fs" />
     <None Include="atbash-cipher\README.md" />
     <Compile Include="bank-account\Example.fs" />
     <Compile Include="bank-account\BankAccountTest.fs" />
@@ -81,7 +83,7 @@
     <Compile Include="binary-search-tree\BinarySearchTreeTest.fs" />
     <None Include="binary-search-tree\README.md" />
     <Compile Include="binary\Example.fs" />
-    <Compile Include="binary\BinaryTests.fs" />
+    <Compile Include="binary\BinaryTest.fs" />
     <None Include="binary\README.md" />
     <Compile Include="bob\Example.fs" />
     <Compile Include="bob\BobTest.fs" />
@@ -99,13 +101,13 @@
     <Compile Include="circular-buffer\CircularBufferTest.fs" />
     <None Include="circular-buffer\README.md" />
     <Compile Include="clock\Example.fs" />
-    <Compile Include="clock\ClockTests.fs" />
+    <Compile Include="clock\ClockTest.fs" />
     <None Include="clock\README.md" />
     <Compile Include="connect\Example.fs" />
     <Compile Include="connect\ConnectTest.fs" />
     <None Include="connect\README.md" />
     <Compile Include="crypto-square\Example.fs" />
-    <Compile Include="crypto-square\CryptoSquareTests.fs" />
+    <Compile Include="crypto-square\CryptoSquareTest.fs" />
     <None Include="crypto-square\README.md" />
     <Compile Include="custom-set\Example.fs" />
     <Compile Include="custom-set\CustomSetTest.fs" />
@@ -123,7 +125,7 @@
     <Compile Include="dominoes\DominoesTest.fs" />
     <None Include="dominoes\README.md" />
     <Compile Include="etl\Example.fs" />
-    <Compile Include="etl\ETLTests.fs" />
+    <Compile Include="etl\ETLTest.fs" />
     <None Include="etl\README.md" />
     <Compile Include="food-chain\Example.fs" />
     <Compile Include="food-chain\FoodChainTest.fs" />
@@ -138,13 +140,13 @@
     <Compile Include="go-counting\GoCountingTest.fs" />
     <None Include="go-counting\README.md" />
     <Compile Include="grade-school\Example.fs" />
-    <Compile Include="grade-school\GradeSchoolTests.fs" />
+    <Compile Include="grade-school\GradeSchoolTest.fs" />
     <None Include="grade-school\README.md" />
     <Compile Include="grains\Example.fs" />
     <Compile Include="grains\GrainsTest.fs" />
     <None Include="grains\README.md" />
     <Compile Include="hamming\Example.fs" />
-    <Compile Include="hamming\HammingTests.fs" />
+    <Compile Include="hamming\HammingTest.fs" />
     <None Include="hamming\README.md" />
     <Compile Include="hello-world\Example.fs" />
     <Compile Include="hello-world\HelloWorldTest.fs" />
@@ -165,16 +167,18 @@
     <Compile Include="largest-series-product\LargestSeriesProductTest.fs" />
     <None Include="largest-series-product\README.md" />
     <Compile Include="leap\Example.fs" />
-    <Compile Include="leap\LeapYearTests.fs" />
+    <Compile Include="leap\LeapYearTest.fs" />
     <None Include="leap\README.md" />
     <Compile Include="linked-list\Deque.fs" />
-    <Compile Include="linked-list\LinkedListTests.fs" />
+    <Compile Include="linked-list\LinkedListTest.fs" />
     <None Include="linked-list\README.md" />
+    <Compile Include="ledger\Example.fs" />
+    <Compile Include="ledger\LedgerTest.fs" />
     <Compile Include="list-ops\Example.fs" />
     <Compile Include="list-ops\ListOpsTest.fs" />
     <None Include="list-ops\README.md" />
     <Compile Include="luhn\Example.fs" />
-    <Compile Include="luhn\LuhnTests.fs" />
+    <Compile Include="luhn\LuhnTest.fs" />
     <None Include="luhn\README.md" />
     <Compile Include="markdown\Example.fs" />
     <Compile Include="markdown\MarkdownTest.fs" />
@@ -198,7 +202,7 @@
     <Compile Include="ocr-numbers\OcrNumbersTest.fs" />
     <None Include="ocr-numbers\README.md" />
     <Compile Include="octal\Example.fs" />
-    <Compile Include="octal\OctalTests.fs" />
+    <Compile Include="octal\OctalTest.fs" />
     <None Include="octal\README.md" />
     <Compile Include="palindrome-products\Example.fs" />
     <Compile Include="palindrome-products\PalindromeTest.fs" />
@@ -219,7 +223,7 @@
     <Compile Include="phone-number\PhoneNumberTest.fs" />
     <None Include="phone-number\README.md" />
     <Compile Include="pig-latin\Example.fs" />
-    <Compile Include="pig-latin\PigLatinTests.fs" />
+    <Compile Include="pig-latin\PigLatinTest.fs" />
     <None Include="pig-latin\README.md" />
     <Compile Include="poker\Example.fs" />
     <Compile Include="poker\PokerTest.fs" />
@@ -246,10 +250,12 @@
     <Compile Include="rail-fence-cipher\RailFenceCipherTest.fs" />
     <None Include="rail-fence-cipher\README.md" />
     <Compile Include="raindrops\Example.fs" />
-    <Compile Include="raindrops\RaindropsTests.fs" />
+    <Compile Include="raindrops\RaindropsTest.fs" />
     <None Include="raindrops\README.md" />
+    <Compile Include="rectangles\Example.fs" />
+    <Compile Include="rectangles\RectanglesTest.fs" />
     <Compile Include="rna-transcription\Example.fs" />
-    <Compile Include="rna-transcription\RNATranscriptionTests.fs" />
+    <Compile Include="rna-transcription\RNATranscriptionTest.fs" />
     <None Include="rna-transcription\README.md" />
     <Compile Include="robot-name\Example.fs" />
     <Compile Include="robot-name\RobotNameTest.fs" />
@@ -258,13 +264,13 @@
     <Compile Include="robot-simulator\RobotSimulatorTest.fs" />
     <None Include="robot-simulator\README.md" />
     <Compile Include="roman-numerals\Example.fs" />
-    <Compile Include="roman-numerals\RomanNumeralTests.fs" />
+    <Compile Include="roman-numerals\RomanNumeralTest.fs" />
     <None Include="roman-numerals\README.md" />
     <Compile Include="run-length-encoding\Example.fs" />
     <Compile Include="run-length-encoding\RunLengthEncodingTest.fs" />
     <None Include="run-length-encoding\README.md" />
     <Compile Include="saddle-points\Example.fs" />
-    <Compile Include="saddle-points\SaddlePointTests.fs" />
+    <Compile Include="saddle-points\SaddlePointTest.fs" />
     <None Include="saddle-points\README.md" />
     <Compile Include="say\Example.fs" />
     <Compile Include="say\SayTest.fs" />
@@ -273,14 +279,16 @@
     <Compile Include="scale-generator\ScaleGeneratorTest.fs" />
     <None Include="scale-generator\README.md" />
     <Compile Include="scrabble-score\Example.fs" />
-    <Compile Include="scrabble-score\ScrabbleScoreTests.fs" />
+    <Compile Include="scrabble-score\ScrabbleScoreTest.fs" />
     <None Include="scrabble-score\README.md" />
     <Compile Include="secret-handshake\Example.fs" />
     <Compile Include="secret-handshake\SecretHandshakeTest.fs" />
     <None Include="secret-handshake\README.md" />
     <Compile Include="series\Example.fs" />
-    <Compile Include="series\SeriesTests.fs" />
+    <Compile Include="series\SeriesTest.fs" />
     <None Include="series\README.md" />
+    <Compile Include="sgf-parsing\Example.fs" />
+    <Compile Include="sgf-parsing\SgfParsingTest.fs" />
     <Compile Include="sieve\Example.fs" />
     <Compile Include="sieve\SieveTest.fs" />
     <None Include="sieve\README.md" />
@@ -294,7 +302,7 @@
     <Compile Include="space-age\SpaceAgeTest.fs" />
     <None Include="space-age\README.md" />
     <Compile Include="strain\Example.fs" />
-    <Compile Include="strain\StrainTests.fs" />
+    <Compile Include="strain\StrainTest.fs" />
     <None Include="strain\README.md" />
     <Compile Include="sublist\Example.fs" />
     <Compile Include="sublist\SublistTest.fs" />
@@ -305,11 +313,13 @@
     <Compile Include="tournament\Example.fs" />
     <Compile Include="tournament\TournamentTest.fs" />
     <None Include="tournament\README.md" />
+    <Compile Include="tree-building\Example.fs" />
+    <Compile Include="tree-building\TreeBuildingTest.fs" />
     <Compile Include="triangle\Example.fs" />
     <Compile Include="triangle\TriangleTest.fs" />
     <None Include="triangle\README.md" />
     <Compile Include="trinary\Example.fs" />
-    <Compile Include="trinary\TrinaryTests.fs" />
+    <Compile Include="trinary\TrinaryTest.fs" />
     <None Include="trinary\README.md" />
     <Compile Include="twelve-days\Example.fs" />
     <Compile Include="twelve-days\TwelveDaysTest.fs" />
@@ -317,8 +327,10 @@
     <Compile Include="two-bucket\Example.fs" />
     <Compile Include="two-bucket\TwoBucketTest.fs" />
     <None Include="two-bucket\README.md" />
+    <Compile Include="variable-length-quantity\Example.fs" />
+    <Compile Include="variable-length-quantity\VariableLengthQuantityTest.fs" />
     <Compile Include="word-count\Example.fs" />
-    <Compile Include="word-count\WordCountTests.fs" />
+    <Compile Include="word-count\WordCountTest.fs" />
     <None Include="word-count\README.md" />
     <Compile Include="word-search\Example.fs" />
     <Compile Include="word-search\WordSearchTest.fs" />
@@ -334,12 +346,18 @@
     <None Include="zipper\README.md" />
     <Content Include="App.config" />
     <Content Include="packages.config" />
-    <Compile Include="ledger\Example.fs" />
-    <Compile Include="ledger\LedgerTest.fs" />
-    <Compile Include="variable-length-quantity\Example.fs" />
-    <Compile Include="variable-length-quantity\VariableLengthQuantityTest.fs" />
-    <Compile Include="all-your-base\Example.fs" />
-    <Compile Include="all-your-base\AllYourBaseTest.fs" />
+    <Compile Include="transpose\Example.fs" />
+    <Compile Include="transpose\TransposeTest.fs" />
+    <Compile Include="grep\Example.fs" />
+    <Compile Include="grep\GrepTest.fs" />
+    <Compile Include="react\Example.fs" />
+    <Compile Include="react\ReactTest.fs" />
+    <Compile Include="hangman\Example.fs" />
+    <Compile Include="hangman\HangmanTest.fs" />
+    <Compile Include="error-handling\Example.fs" />
+    <Compile Include="error-handling\ErrorHandlingTest.fs" />
+    <Compile Include="dot-dsl\Example.fs" />
+    <Compile Include="dot-dsl\DotDslTest.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FParsec">
@@ -354,25 +372,9 @@
     <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <Private>True</Private>
     </Reference>
-    <Reference Include="nunit.core">
-      <HintPath>packages\NUnitTestAdapter.2.0.0\lib\nunit.core.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="nunit.core.interfaces">
-      <HintPath>packages\NUnitTestAdapter.2.0.0\lib\nunit.core.interfaces.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>packages\NUnit.3.2.0\lib\net45\nunit.framework.dll</HintPath>
       <Private>True</Private>
-    </Reference>
-    <Reference Include="nunit.util">
-      <HintPath>packages\NUnitTestAdapter.2.0.0\lib\nunit.util.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="NUnit.VisualStudio.TestAdapter">
-      <HintPath>packages\NUnitTestAdapter.2.0.0\lib\NUnit.VisualStudio.TestAdapter.dll</HintPath>
-      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
