@@ -124,6 +124,10 @@
     <Compile Include="dominoes\Example.fs" />
     <Compile Include="dominoes\DominoesTest.fs" />
     <None Include="dominoes\README.md" />
+    <Compile Include="dot-dsl\Example.fs" />
+    <Compile Include="dot-dsl\DotDslTest.fs" />
+    <Compile Include="error-handling\Example.fs" />
+    <Compile Include="error-handling\ErrorHandlingTest.fs" />
     <Compile Include="etl\Example.fs" />
     <Compile Include="etl\ETLTest.fs" />
     <None Include="etl\README.md" />
@@ -145,9 +149,13 @@
     <Compile Include="grains\Example.fs" />
     <Compile Include="grains\GrainsTest.fs" />
     <None Include="grains\README.md" />
+    <Compile Include="grep\Example.fs" />
+    <Compile Include="grep\GrepTest.fs" />
     <Compile Include="hamming\Example.fs" />
     <Compile Include="hamming\HammingTest.fs" />
     <None Include="hamming\README.md" />
+    <Compile Include="hangman\Example.fs" />
+    <Compile Include="hangman\HangmanTest.fs" />
     <Compile Include="hello-world\Example.fs" />
     <Compile Include="hello-world\HelloWorldTest.fs" />
     <None Include="hello-world\README.md" />
@@ -252,6 +260,8 @@
     <Compile Include="raindrops\Example.fs" />
     <Compile Include="raindrops\RaindropsTest.fs" />
     <None Include="raindrops\README.md" />
+    <Compile Include="react\Example.fs" />
+    <Compile Include="react\ReactTest.fs" />
     <Compile Include="rectangles\Example.fs" />
     <Compile Include="rectangles\RectanglesTest.fs" />
     <Compile Include="rna-transcription\Example.fs" />
@@ -313,6 +323,8 @@
     <Compile Include="tournament\Example.fs" />
     <Compile Include="tournament\TournamentTest.fs" />
     <None Include="tournament\README.md" />
+    <Compile Include="transpose\Example.fs" />
+    <Compile Include="transpose\TransposeTest.fs" />
     <Compile Include="tree-building\Example.fs" />
     <Compile Include="tree-building\TreeBuildingTest.fs" />
     <Compile Include="triangle\Example.fs" />
@@ -346,18 +358,6 @@
     <None Include="zipper\README.md" />
     <Content Include="App.config" />
     <Content Include="packages.config" />
-    <Compile Include="transpose\Example.fs" />
-    <Compile Include="transpose\TransposeTest.fs" />
-    <Compile Include="grep\Example.fs" />
-    <Compile Include="grep\GrepTest.fs" />
-    <Compile Include="react\Example.fs" />
-    <Compile Include="react\ReactTest.fs" />
-    <Compile Include="hangman\Example.fs" />
-    <Compile Include="hangman\HangmanTest.fs" />
-    <Compile Include="error-handling\Example.fs" />
-    <Compile Include="error-handling\ErrorHandlingTest.fs" />
-    <Compile Include="dot-dsl\Example.fs" />
-    <Compile Include="dot-dsl\DotDslTest.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FParsec">
