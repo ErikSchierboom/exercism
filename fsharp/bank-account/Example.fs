@@ -4,7 +4,7 @@ type BankAccount =
     | Open of float
     | Closed
 
-let mkBankAccount = Closed
+let mkBankAccount() = Closed
 
 let openAccount =
     function
