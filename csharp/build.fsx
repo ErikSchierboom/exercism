@@ -1,44 +1,45 @@
 // Include Fake library
-#r "tools/FAKE/tools/FakeLib.dll"
+#r "../packages/FAKE/tools/FakeLib.dll"
 
 open Fake
-open Fake.CscHelper
 open Fake.Testing.NUnit3
 
-// Properties
-let buildDir = getBuildParamOrDefault "buildDir" "./build/"
-let testDll = buildDir @@ "Tests.dll"
-let nunitFrameworkDll = "tools/NUnit/lib/net45/nunit.framework.dll"
-  
+// Directories
+let buildDir  = "./build/"
+
+// Files
+let solutionFile = "./Exercism.csharp.csproj"
+let compiledOutput = buildDir @@ "Exercism.csharp.dll"
+
 // Targets
 Target "Clean" (fun _ ->
-    CleanDir buildDir
+    CleanDirs [buildDir]
 )
 
 Target "Build" (fun _ ->
-  !! "./**/*.cs"
-  |> List.ofSeq
-  |> Csc (fun p ->
-           { p with Output = testDll
-                    References = [nunitFrameworkDll]
-                    Target = Library })
+    MSBuildRelease buildDir "Build" [solutionFile]
+    |> Log "MSBuild output: "
 )
 
 Target "Test" (fun _ ->
-    Copy buildDir [nunitFrameworkDll]
-    
-    [testDll]
-    |> NUnit3 (fun p -> 
-        { p with
-            ShadowCopy = false })
+    if getEnvironmentVarAsBool "APPVEYOR" then
+        [compiledOutput]
+        |> NUnit3 (fun p -> { p with 
+                                ShadowCopy = false
+                                ToolPath = @"C:\Tools\NUnit3\bin\nunit3-console.exe"
+                                ResultSpecs = ["myresults.xml;format=AppVeyor"] })
+    else
+        [compiledOutput]
+        |> NUnit3 (fun p -> { p with 
+                                ShadowCopy = false
+                                ToolPath = "../packages/NUnit.ConsoleRunner/tools/nunit3-console.exe" })
 )
 
-Target "Default" (fun _ -> ())
 
-// Dependencies
+// Build order
 "Clean" 
-    ==> "Build"    
-    ==> "Test"
-    ==> "Default"
-  
-RunTargetOrDefault "Default"
+  ==> "Build"
+  ==> "Test"
+
+// start build
+RunTargetOrDefault "Test"
