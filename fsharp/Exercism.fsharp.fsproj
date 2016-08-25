@@ -357,6 +357,8 @@
     <Compile Include="zipper\ZipperTest.fs" />
     <None Include="zipper\README.md" />
     <Content Include="App.config" />
+    <Compile Include="sorting\Example.fs" />
+    <Compile Include="sorting\SortingTest.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
