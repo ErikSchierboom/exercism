@@ -43,6 +43,8 @@
     <Compile Include="accumulate\AccummulateExtensions.cs" />
     <Compile Include="acronym\Acronym.cs" />
     <Compile Include="acronym\AcronymTest.cs" />
+    <Compile Include="all-your-base\AllYourBaseTest.cs" />
+    <Compile Include="all-your-base\Example.cs" />
     <Compile Include="allergies\Allergies.cs" />
     <Compile Include="allergies\AllergiesTest.cs" />
     <Compile Include="anagram\Anagram.cs" />
@@ -53,6 +55,8 @@
     <Compile Include="beer-song\BeerTests.cs" />
     <Compile Include="binary-search-tree\Example.cs" />
     <Compile Include="binary-search-tree\BinarySearchTreeTest.cs" />
+    <Compile Include="binary-search\Example.cs" />
+    <Compile Include="binary-search\BinarySearchTest.cs" />
     <Compile Include="binary\Binary.cs" />
     <Compile Include="binary\BinaryTest.cs" />
     <Compile Include="bob\Bob.cs" />
