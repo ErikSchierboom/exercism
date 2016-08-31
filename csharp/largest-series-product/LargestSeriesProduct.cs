@@ -2,28 +2,33 @@
 using System.Collections.Generic;
 using System.Linq;
 
-public class LargestSeriesProduct
+public static class LargestSeriesProduct
 {
-    public LargestSeriesProduct(string str)
-    {
-        Digits = str.ToCharArray().Select(c => int.Parse(c.ToString())).ToArray();
-    }
+    public static long GetLargestProduct(string digits, int span) => GetSlices(ParseDigits(digits), span).Max(l => GetProduct(l));
 
-    public int[] Digits { get; }
-
-    public IEnumerable<IEnumerable<int>> GetSlices(int sliceLength)
+    private static IEnumerable<IEnumerable<long>> GetSlices(long[] digits, int span)
     {
-        if (sliceLength > Digits.Length)
+        if (span < 0 || span > digits.Length)
         {
-            throw new ArgumentException("Slice size is too big");
+            throw new ArgumentException("Invalid span.");
         }
 
-        return Enumerable.Range(0, GetNumberOfSlices(sliceLength)).Select(i => Digits.Skip(i).Take(sliceLength));
+        return Enumerable.Range(0, GetNumberOfSlices(digits, span)).Select(i => digits.Skip(i).Take(span));
     }
 
-    public int GetLargestProduct(int seriesLength) => GetSlices(seriesLength).Max(GetProduct);
+    private static long[] ParseDigits(string digits) => digits.ToCharArray().Select(ParseDigit).ToArray();
 
-    private static int GetProduct(IEnumerable<int> numbers) => numbers.Aggregate(1, (x, product) => x * product);
+    private static long ParseDigit(char c)
+    {
+        if (!char.IsDigit(c))
+        {
+            throw new ArgumentException("Invalid digit.");
+        }
 
-    private int GetNumberOfSlices(int sliceLength) => Digits.Length + 1 - sliceLength;
+        return long.Parse(c.ToString());
+    }
+
+    private static long GetProduct(IEnumerable<long> numbers) => numbers.Aggregate(1L, (x, product) => x * product);
+
+    private static int GetNumberOfSlices(long[] digits, int span) => digits.Length + 1 - span;
 }

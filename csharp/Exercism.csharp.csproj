@@ -175,7 +175,6 @@
     <None Include="meetup\README.md" />
     <None Include="nucleotide-count\README.md" />
     <None Include="octal\README.md" />
-    <None Include="packages.config" />
     <None Include="phone-number\README.md" />
     <None Include="pig-latin\README.md" />
     <None Include="prime-factors\README.md" />
