@@ -30,8 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Sprache, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Sprache.2.1.0\lib\net40\Sprache.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -61,22 +67,46 @@
     <Compile Include="binary\BinaryTest.cs" />
     <Compile Include="bob\Bob.cs" />
     <Compile Include="bob\BobTest.cs" />
+    <Compile Include="bowling\BowlingTest.cs" />
+    <Compile Include="bowling\Example.cs" />
+    <Compile Include="bracket-push\BracketPushTest.cs" />
+    <Compile Include="bracket-push\Example.cs" />
+    <Compile Include="change\Example.cs" />
+    <Compile Include="change\ChangeTest.cs" />
+    <Compile Include="circular-buffer\CircularBufferTest.cs" />
+    <Compile Include="circular-buffer\Example.cs" />
     <Compile Include="clock\Clock.cs" />
     <Compile Include="clock\ClockTest.cs" />
     <Compile Include="crypto-square\Crypto.cs" />
     <Compile Include="crypto-square\CryptoSquareTest.cs" />
+    <Compile Include="custom-set\CustomSetTest.cs" />
+    <Compile Include="custom-set\Example.cs" />
+    <Compile Include="diamond\DiamondTest.cs" />
+    <Compile Include="diamond\Example.cs" />
     <Compile Include="difference-of-squares\DifferenceOfSquaresTests.cs" />
     <Compile Include="difference-of-squares\Squares.cs" />
+    <Compile Include="diffie-hellman\DiffieHellmanTest.cs" />
+    <Compile Include="diffie-hellman\Example.cs" />
+    <Compile Include="dominoes\DominoesTest.cs" />
+    <Compile Include="dominoes\Example.cs" />
     <Compile Include="etl\ETL.cs" />
     <Compile Include="etl\ETLTest.cs" />
+    <Compile Include="flatten-array\Example.cs" />
+    <Compile Include="flatten-array\FlattenArrayTest.cs" />
+    <Compile Include="food-chain\Example.cs" />
+    <Compile Include="food-chain\FoodChainTest.cs" />
     <Compile Include="gigasecond\Gigasecond.cs" />
     <Compile Include="gigasecond\GigasecondTest.cs" />
     <Compile Include="grade-school\GradeSchoolTest.cs" />
     <Compile Include="grade-school\School.cs" />
+    <Compile Include="grep\Example.cs" />
+    <Compile Include="grep\GrepTest.cs" />
     <Compile Include="hamming\Hamming.cs" />
     <Compile Include="hamming\HammingTest.cs" />
     <Compile Include="hexadecimal\Hexadecimal.cs" />
     <Compile Include="hexadecimal\HexadecimalTest.cs" />
+    <Compile Include="house\Example.cs" />
+    <Compile Include="house\HouseTest.cs" />
     <Compile Include="kindergarten-garden\Garden.cs" />
     <Compile Include="kindergarten-garden\KinderGartenGardenTest.cs" />
     <Compile Include="leap\LeapTest.cs" />
@@ -99,19 +129,27 @@
     <Compile Include="octal\OctalTest.cs" />
     <Compile Include="palindrome-products\Example.cs" />
     <Compile Include="palindrome-products\PalindromeTest.cs" />
+    <Compile Include="parallel-letter-frequency\Example.cs" />
+    <Compile Include="parallel-letter-frequency\ParallelLetterFrequencyTest.cs" />
     <Compile Include="pascals-triangle\PascalsTriangle.cs" />
     <Compile Include="pascals-triangle\PascalsTriangleTest.cs" />
     <Compile Include="phone-number\PhoneNumber.cs" />
     <Compile Include="phone-number\PhoneNumberTest.cs" />
     <Compile Include="pig-latin\PigLatin.cs" />
     <Compile Include="pig-latin\PigLatinTest.cs" />
+    <Compile Include="poker\Example.cs" />
+    <Compile Include="poker\PokerTest.cs" />
     <Compile Include="prime-factors\PrimeFactors.cs" />
     <Compile Include="prime-factors\PrimeFactorsTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="proverb\Example.cs" />
+    <Compile Include="proverb\ProverbTest.cs" />
     <Compile Include="pythagorean-triplet\PythagoreanTripletTest.cs" />
     <Compile Include="pythagorean-triplet\Triplet.cs" />
     <Compile Include="queen-attack\Queen.cs" />
     <Compile Include="queen-attack\QueenAttackTest.cs" />
+    <Compile Include="rail-fence-cipher\Example.cs" />
+    <Compile Include="rail-fence-cipher\RailFenceCipherTest.cs" />
     <Compile Include="raindrops\Raindrops.cs" />
     <Compile Include="raindrops\RaindropsTest.cs" />
     <Compile Include="rna-transcription\Complement.cs" />
@@ -122,14 +160,22 @@
     <Compile Include="robot-simulator\RobotSimulatorTest.cs" />
     <Compile Include="roman-numerals\RomanNumeral.cs" />
     <Compile Include="roman-numerals\RomanNumeralsTest.cs" />
+    <Compile Include="run-length-encoding\Example.cs" />
+    <Compile Include="run-length-encoding\RunLengthEncodingTest.cs" />
     <Compile Include="saddle-points\SaddlePoints.cs" />
     <Compile Include="saddle-points\SaddlePointTests.cs" />
+    <Compile Include="say\Example.cs" />
+    <Compile Include="say\SayTest.cs" />
+    <Compile Include="scale-generator\Example.cs" />
+    <Compile Include="scale-generator\ScaleGeneratorTest.cs" />
     <Compile Include="scrabble-score\Scrabble.cs" />
     <Compile Include="scrabble-score\ScrabbleScoreTest.cs" />
     <Compile Include="secret-handshake\SecretHandshake.cs" />
     <Compile Include="secret-handshake\SecretHandshakeTests.cs" />
     <Compile Include="series\Series.cs" />
     <Compile Include="series\SeriesTest.cs" />
+    <Compile Include="sgf-parsing\Example.cs" />
+    <Compile Include="sgf-parsing\SgfParsingTest.cs" />
     <Compile Include="sieve\Sieve.cs" />
     <Compile Include="sieve\SieveTest.cs" />
     <Compile Include="simple-cipher\Cipher.cs" />
@@ -140,22 +186,32 @@
     <Compile Include="space-age\SpaceAgeTest.cs" />
     <Compile Include="strain\StrainExtensions.cs" />
     <Compile Include="strain\StrainTest.cs" />
+    <Compile Include="sublist\Example.cs" />
+    <Compile Include="sublist\SublistTest.cs" />
     <Compile Include="sum-of-multiples\SumOfMultiples.cs" />
     <Compile Include="sum-of-multiples\SumOfMultiplesTest.cs" />
     <Compile Include="tournament\Tournament.cs" />
     <Compile Include="tournament\TournamentTest.cs" />
+    <Compile Include="transpose\Example.cs" />
+    <Compile Include="transpose\TransposeTest.cs" />
     <Compile Include="triangle\Triangle.cs" />
     <Compile Include="triangle\TriangleTest.cs" />
     <Compile Include="trinary\Trinary.cs" />
     <Compile Include="trinary\TrinaryTest.cs" />
     <Compile Include="twelve-days\TwelveDaysSong.cs" />
     <Compile Include="twelve-days\TwelveDaysTest.cs" />
+    <Compile Include="variable-length-quantity\Example.cs" />
+    <Compile Include="variable-length-quantity\VariableLengthQuantityTest.cs" />
     <Compile Include="word-count\Phrase.cs" />
     <Compile Include="word-count\WordCountTest.cs" />
+    <Compile Include="word-search\Example.cs" />
+    <Compile Include="word-search\WordSearchTest.cs" />
     <Compile Include="wordy\WordProblem.cs" />
     <Compile Include="wordy\WordyTest.cs" />
     <Compile Include="largest-series-product\LargestSeriesProductTest.cs" />
     <Compile Include="largest-series-product\LargestSeriesProduct.cs" />
+    <Compile Include="zebra-puzzle\Example.cs" />
+    <Compile Include="zebra-puzzle\ZebraPuzzleTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="accumulate\README.md" />
@@ -179,6 +235,7 @@
     <None Include="meetup\README.md" />
     <None Include="nucleotide-count\README.md" />
     <None Include="octal\README.md" />
+    <None Include="packages.config" />
     <None Include="phone-number\README.md" />
     <None Include="pig-latin\README.md" />
     <None Include="prime-factors\README.md" />
@@ -205,6 +262,7 @@
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

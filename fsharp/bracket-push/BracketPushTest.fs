@@ -40,7 +40,6 @@ let ``Several paired brackets`` () =
     Assert.That(matched actual, Is.True)
 
 [<Test>]
-[<Ignore("Remove to run test")>]
 let ``Paired and nested brackets`` () =
     let actual ="([{}({}[])])"
     Assert.That(matched actual, Is.True)

@@ -12,13 +12,24 @@ let ``Empty string`` () =
     Assert.That(transpose input, Is.EqualTo(expected))
 
 [<Test>]
-let ``Two characters`` () = 
+let ``Two characters in a row`` () = 
     let input =
         "A1"
 
     let expected = 
         "A\n" +
         "1"
+
+    Assert.That(transpose input, Is.EqualTo(expected))
+
+[<Test>]
+let ``Two characters in a column`` () = 
+    let input =
+        "A\n" +
+        "1";
+
+    let expected = 
+        "A1"
 
     Assert.That(transpose input, Is.EqualTo(expected))
 
@@ -237,6 +248,6 @@ let ``Many lines`` () =
         "          o  n\n" +
         "          v  d\n" +
         "          e  .\n" +
-        "          ,  "
+        "          ,"
     
     Assert.That(transpose input, Is.EqualTo(expected))
