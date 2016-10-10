@@ -1,6 +1,6 @@
 module Triangle exposing (..)
 
-import Set
+import Set exposing (fromList, size)
 
 
 type Triangle
@@ -20,7 +20,7 @@ triangleKind x y z =
             x + y <= z || x + z <= y || y + z <= x
 
         equalSides =
-            [ x, y, z ] |> Set.fromList |> Set.size
+            [ x, y, z ] |> fromList |> size
     in
         if invalidLengths then
             Err "Invalid lengths"

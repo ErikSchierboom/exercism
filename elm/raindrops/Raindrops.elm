@@ -1,7 +1,7 @@
 module Raindrops exposing (..)
 
-import List
-import String
+import List exposing (filter, map)
+import String exposing (concat)
 
 
 raindrops : Int -> String
@@ -12,9 +12,9 @@ raindrops x =
 
         factors =
             factorsMapping
-                |> List.filter (\( factor, _ ) -> x % factor == 0)
-                |> List.map snd
-                |> String.concat
+                |> filter (\( factor, _ ) -> x % factor == 0)
+                |> map snd
+                |> concat
     in
         case factors of
             "" ->

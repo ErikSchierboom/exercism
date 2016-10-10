@@ -1,26 +1,33 @@
 module Bob exposing (..)
 
-import String
-import Char
+import String exposing (trim, isEmpty, endsWith, toUpper, any)
+import Char exposing (isUpper)
+
 
 isSilence : String -> Bool
-isSilence = String.trim >> String.isEmpty 
+isSilence =
+    trim >> isEmpty
+
 
 isQuestion : String -> Bool
-isQuestion = String.endsWith "?"
+isQuestion =
+    endsWith "?"
 
-isShout: String -> Bool
-isShout sentence = 
-    String.toUpper sentence == sentence &&
-    String.any Char.isUpper sentence
+
+isShout : String -> Bool
+isShout sentence =
+    toUpper sentence
+        == sentence
+        && any isUpper sentence
+
 
 hey : String -> String
-hey sentence = 
+hey sentence =
     if isSilence sentence then
-        "Fine. Be that way!"   
+        "Fine. Be that way!"
     else if isShout sentence then
         "Whoa, chill out!"
     else if isQuestion sentence then
-        "Sure."  
+        "Sure."
     else
         "Whatever."

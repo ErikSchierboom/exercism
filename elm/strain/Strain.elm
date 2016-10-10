@@ -9,7 +9,7 @@ keep pred input =
         aux acc remainder =
             case remainder of
                 [] ->
-                    List.reverse acc
+                    reverse acc
 
                 hd :: tl ->
                     if pred hd then

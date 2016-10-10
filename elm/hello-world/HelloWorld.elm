@@ -1,5 +1,8 @@
 module HelloWorld exposing (..)
 
+import Maybe exposing (withDefault)
+
+
 helloWorld : Maybe String -> String
 helloWorld name =
-    "Hello, " ++ (Maybe.withDefault "World" name) ++ "!"
+    "Hello, " ++ (withDefault "World" name) ++ "!"

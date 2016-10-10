@@ -1,13 +1,13 @@
 module Pangram exposing (..)
 
-import String
+import String exposing (all, toLower, contains, fromChar)
 
 
 isPangram : String -> Bool
 isPangram str =
     let
         loweredStr =
-            str |> String.toLower
+            str |> toLower
     in
         "abcdefghijklmnopqrstuvwxyz"
-            |> String.all (\c -> String.contains (String.fromChar c) loweredStr)
+            |> all (\c -> contains (fromChar c) loweredStr)
