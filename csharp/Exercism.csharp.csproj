@@ -131,6 +131,8 @@
     <Compile Include="octal\OctalTest.cs" />
     <Compile Include="palindrome-products\Example.cs" />
     <Compile Include="palindrome-products\PalindromeTest.cs" />
+    <Compile Include="pangram\Example.cs" />
+    <Compile Include="pangram\PangramTest.cs" />
     <Compile Include="parallel-letter-frequency\Example.cs" />
     <Compile Include="parallel-letter-frequency\ParallelLetterFrequencyTest.cs" />
     <Compile Include="pascals-triangle\PascalsTriangle.cs" />
@@ -239,6 +241,7 @@
     <None Include="nucleotide-count\README.md" />
     <None Include="octal\README.md" />
     <None Include="packages.config" />
+    <None Include="pangram\README.md" />
     <None Include="phone-number\README.md" />
     <None Include="pig-latin\README.md" />
     <None Include="prime-factors\README.md" />
