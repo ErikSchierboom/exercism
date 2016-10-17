@@ -99,6 +99,8 @@
     <Compile Include="gigasecond\GigasecondTest.cs" />
     <Compile Include="grade-school\GradeSchoolTest.cs" />
     <Compile Include="grade-school\School.cs" />
+    <Compile Include="grains\Example.cs" />
+    <Compile Include="grains\GrainsTest.cs" />
     <Compile Include="grep\Example.cs" />
     <Compile Include="grep\GrepTest.cs" />
     <Compile Include="hamming\Hamming.cs" />
@@ -227,6 +229,7 @@
     <None Include="etl\README.md" />
     <None Include="gigasecond\README.md" />
     <None Include="grade-school\README.md" />
+    <None Include="grains\README.md" />
     <None Include="hamming\README.md" />
     <None Include="hexadecimal\README.md" />
     <None Include="leap\README.md" />
