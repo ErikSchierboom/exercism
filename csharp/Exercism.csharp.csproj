@@ -57,6 +57,8 @@
     <Compile Include="anagram\AnagramTest.cs" />
     <Compile Include="atbash-cipher\Atbash.cs" />
     <Compile Include="atbash-cipher\AtbashTest.cs" />
+    <Compile Include="bank-account\BankAccount.cs" />
+    <Compile Include="bank-account\BankAccountTest.cs" />
     <Compile Include="beer-song\Beer.cs" />
     <Compile Include="beer-song\BeerTests.cs" />
     <Compile Include="binary-search-tree\Example.cs" />
@@ -223,6 +225,7 @@
     <None Include="allergies\README.md" />
     <None Include="anagram\README.md" />
     <None Include="atbash-cipher\README.md" />
+    <None Include="bank-account\README.md" />
     <None Include="binary\README.md" />
     <None Include="bob\README.md" />
     <None Include="clock\README.md" />
