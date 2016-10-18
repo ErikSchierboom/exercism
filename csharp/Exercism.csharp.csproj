@@ -139,6 +139,8 @@
     <Compile Include="parallel-letter-frequency\ParallelLetterFrequencyTest.cs" />
     <Compile Include="pascals-triangle\PascalsTriangle.cs" />
     <Compile Include="pascals-triangle\PascalsTriangleTest.cs" />
+    <Compile Include="perfect-numbers\Example.cs" />
+    <Compile Include="perfect-numbers\PerfectNumbersTest.cs" />
     <Compile Include="phone-number\PhoneNumber.cs" />
     <Compile Include="phone-number\PhoneNumberTest.cs" />
     <Compile Include="pig-latin\PigLatin.cs" />
@@ -247,6 +249,7 @@
     <None Include="octal\README.md" />
     <None Include="packages.config" />
     <None Include="pangram\README.md" />
+    <None Include="perfect-numbers\README.md" />
     <None Include="phone-number\README.md" />
     <None Include="pig-latin\README.md" />
     <None Include="prime-factors\README.md" />
