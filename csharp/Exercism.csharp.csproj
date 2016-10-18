@@ -111,6 +111,8 @@
     <Compile Include="hexadecimal\HexadecimalTest.cs" />
     <Compile Include="house\Example.cs" />
     <Compile Include="house\HouseTest.cs" />
+    <Compile Include="isogram\Example.cs" />
+    <Compile Include="isogram\IsogramTest.cs" />
     <Compile Include="kindergarten-garden\Garden.cs" />
     <Compile Include="kindergarten-garden\KinderGartenGardenTest.cs" />
     <Compile Include="leap\LeapTest.cs" />
@@ -230,6 +232,7 @@
     <None Include="anagram\README.md" />
     <None Include="atbash-cipher\README.md" />
     <None Include="bank-account\README.md" />
+    <None Include="binary-search\README.md" />
     <None Include="binary\README.md" />
     <None Include="bob\README.md" />
     <None Include="clock\README.md" />
@@ -241,6 +244,7 @@
     <None Include="grains\README.md" />
     <None Include="hamming\README.md" />
     <None Include="hexadecimal\README.md" />
+    <None Include="isogram\README.md" />
     <None Include="leap\README.md" />
     <None Include="linked-list\README.md" />
     <None Include="luhn\README.md" />
