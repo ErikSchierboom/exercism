@@ -125,6 +125,8 @@
     <Compile Include="matrix\MatrixTest.cs" />
     <Compile Include="meetup\Meetup.cs" />
     <Compile Include="meetup\MeetupTest.cs" />
+    <Compile Include="minesweeper\Minesweeper.cs" />
+    <Compile Include="minesweeper\MinesweeperTest.cs" />
     <Compile Include="nth-prime\Example.cs" />
     <Compile Include="nth-prime\NthPrimeTest.cs" />
     <Compile Include="nucleotide-count\DNA.cs" />
@@ -249,6 +251,7 @@
     <None Include="linked-list\README.md" />
     <None Include="luhn\README.md" />
     <None Include="meetup\README.md" />
+    <None Include="minesweeper\README.md" />
     <None Include="nucleotide-count\README.md" />
     <None Include="octal\README.md" />
     <None Include="packages.config" />
