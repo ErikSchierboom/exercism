@@ -1,0 +1,7 @@
+object SumOfMultiples {
+  def sumOfMultiples(numbers: List[Int], upperBound: Int): Int = {
+    def isMultiple(x: Int) = numbers.exists { x % _ == 0 }
+
+    return List.range(1, upperBound).filter(isMultiple).sum
+  }
+}
