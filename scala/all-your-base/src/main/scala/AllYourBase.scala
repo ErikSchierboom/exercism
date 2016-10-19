@@ -6,10 +6,7 @@ object AllYourBase {
     else if (digits.isEmpty)
       Some(List())
     else
-      fromBase(from, digits) match {
-        case None => None
-        case Some(x) => toBase(out, x)
-      }
+      fromBase(from, digits).flatMap(toBase(out, _))
 
   def toBase(base: Int, number: Int): Option[List[Int]] = {
     def loop(n: Int, acc: List[Int]): List[Int] = {
@@ -23,10 +20,7 @@ object AllYourBase {
       }
     }
 
-    loop(number, List.empty) match {
-      case List() => Some(List())
-      case digits => Some(digits)
-    }
+    Some(loop(number, List.empty))
   }
 
   def fromBase(base: Int, digits: List[Int]): Option[Int] = {
