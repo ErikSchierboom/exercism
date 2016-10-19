@@ -1,16 +1,15 @@
 object Change {
-  def minimalCoins(coins: List[Int], map: Map[Int, List[Int]], target: Int): Option[List[Int]] =
+  def minimalCoins(coins: List[Int], minimalCoinsMap: Map[Int, List[Int]], target: Int): Option[List[Int]] =
     coins
-      .filter { coin => coin <= target}
-      .map { coin => coin::map(target - coin) }
-      .sortBy { list => list.length }
+      .filter { _ <= target}
+      .map { coin => coin::minimalCoinsMap(target - coin) }
+      .sortBy { _.length }
       .headOption
 
-  def updateMinimalCoinsMap(coins: List[Int], map: Map[Int, List[Int]], target: Int): Map[Int, List[Int]] =
-    minimalCoins(coins, map, target) match {
-      case Some(x) => map.updated(target, x)
-      case None => map
-    }
+  def updateMinimalCoinsMap(coins: List[Int], minimalCoinsMap: Map[Int, List[Int]], target: Int): Map[Int, List[Int]] =
+    minimalCoins(coins, minimalCoinsMap, target)
+      .map { minimalCoinsMap.updated(target, _) }
+      .getOrElse(minimalCoinsMap)
 
   def findFewestCoins(target: Int, coins: List[Int]): Option[List[Int]] =
     List
