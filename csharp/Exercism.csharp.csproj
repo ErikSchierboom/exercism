@@ -241,6 +241,7 @@
     <None Include="binary-search\README.md" />
     <None Include="binary\README.md" />
     <None Include="bob\README.md" />
+    <None Include="bowling\README.md" />
     <None Include="clock\README.md" />
     <None Include="crypto-square\README.md" />
     <None Include="difference-of-squares\README.md" />
