@@ -5,41 +5,40 @@ object AllYourBase {
       None
     else if (digits.isEmpty)
       Some(List())
-    else
-      fromBase(from, digits).flatMap(toBase(out, _))
+    else {
+      for {
+        fromBase_ <- fromBase(from, digits)
+        toBase_ <- toBase(out, fromBase_)
+      } yield toBase_
+    }
 
-  def toBase(base: Int, number: Int): Option[List[Int]] = {
-    def loop(n: Int, acc: List[Int]): List[Int] = {
-      if (n == 0) {
-        acc
-      }
-      else {
+  def toBase(base: Int, number: Int): Option[List[Int]] =
+    Some(unfoldLeft(number) {
+      case 0 => None
+      case n =>
         val digit = n % base
         val remainder = n / base
-        loop(remainder, digit::acc)
-      }
-    }
-
-    Some(loop(number, List.empty))
-  }
+        Some(remainder, digit)
+    })
 
   def fromBase(base: Int, digits: List[Int]): Option[Int] = {
-    def loop(acc: Int, remainder: List[Int]): Option[Int] =
-      remainder match {
-        case List() => Some(acc)
-        case digit::rest =>
-            if (digit < 0)
-              None
-            else if (digit >= base)
-              None
-            else
-              loop(acc * base + digit, rest)
-      }
+    def validDigit(digit: Int) = if (digit < 0 || digit >= base) None else Some(digit)
 
-    digits match {
-      case List() => None
-      case _ => loop(0, digits)
+    digits.foldLeft(Option(0)) {
+      case (acc, digit) =>
+        for {
+          digit_ <- validDigit(digit)
+          acc_ <- acc
+        } yield acc_ * base + digit_
     }
   }
 
+  def unfoldLeft[A, B](seed: B)(f: B => Option[(B, A)]) = {
+    def loop(seed: B)(ls: List[A]): List[A] = f(seed) match {
+      case Some((b, a)) => loop(b)(a :: ls)
+      case None => ls
+    }
+
+    loop(seed)(Nil)
+  }
 }
