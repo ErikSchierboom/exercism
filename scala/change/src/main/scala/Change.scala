@@ -12,9 +12,7 @@ object Change {
       .getOrElse(minimalCoinsMap)
 
   def findFewestCoins(target: Int, coins: List[Int]): Option[List[Int]] =
-    List
-      .range(1, target + 1)
-      .foldLeft(Map((0, List[Int]()))) { (map, change) => updateMinimalCoinsMap(coins, map, change)}
-      .get(target)
-
+    (1 to target)
+    .foldLeft(Map((0, List[Int]()))) { (minimalCoinsMap, change) => updateMinimalCoinsMap(coins, minimalCoinsMap, change)}
+    .get(target)
 }
