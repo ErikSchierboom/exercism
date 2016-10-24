@@ -5,13 +5,13 @@ open BankAccount
 
 [<Test>]
 let ``Returns empty balance after opening`` () =
-    let account = mkBankAccount |> openAccount
+    let account = mkBankAccount() |> openAccount
 
     Assert.That(getBalance account, Is.EqualTo(Some 0.0))
 
 [<Test>]
 let ``Check basic balance`` () =
-    let account1 = mkBankAccount |> openAccount
+    let account1 = mkBankAccount() |> openAccount
     let openingBalance = account1 |> getBalance 
 
     let account2 = account1 |> updateBalance 10.0
@@ -22,7 +22,7 @@ let ``Check basic balance`` () =
 
 [<Test>]
 let ``Balance can increment or decrement`` () =    
-    let account1 = mkBankAccount |> openAccount
+    let account1 = mkBankAccount() |> openAccount
     let openingBalance = account1 |> getBalance 
 
     let account2 = account1 |> updateBalance 10.0
@@ -38,7 +38,7 @@ let ``Balance can increment or decrement`` () =
 [<Test>]
 let ``Account can be closed`` () =
     let account = 
-        mkBankAccount
+        mkBankAccount()
         |> openAccount
         |> closeAccount
 

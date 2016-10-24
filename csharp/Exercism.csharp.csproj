@@ -30,12 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="nunit.framework, Version=3.2.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
-      <HintPath>packages\NUnit.3.2.0\lib\net45\nunit.framework.dll</HintPath>
+    <Reference Include="Sprache, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Sprache.2.1.0\lib\net40\Sprache.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,6 +49,8 @@
     <Compile Include="accumulate\AccummulateExtensions.cs" />
     <Compile Include="acronym\Acronym.cs" />
     <Compile Include="acronym\AcronymTest.cs" />
+    <Compile Include="all-your-base\AllYourBaseTest.cs" />
+    <Compile Include="all-your-base\Example.cs" />
     <Compile Include="allergies\Allergies.cs" />
     <Compile Include="allergies\AllergiesTest.cs" />
     <Compile Include="anagram\Anagram.cs" />
@@ -57,26 +61,52 @@
     <Compile Include="beer-song\BeerTests.cs" />
     <Compile Include="binary-search-tree\Example.cs" />
     <Compile Include="binary-search-tree\BinarySearchTreeTest.cs" />
+    <Compile Include="binary-search\Example.cs" />
+    <Compile Include="binary-search\BinarySearchTest.cs" />
     <Compile Include="binary\Binary.cs" />
     <Compile Include="binary\BinaryTest.cs" />
     <Compile Include="bob\Bob.cs" />
     <Compile Include="bob\BobTest.cs" />
+    <Compile Include="bowling\BowlingTest.cs" />
+    <Compile Include="bowling\Example.cs" />
+    <Compile Include="bracket-push\BracketPushTest.cs" />
+    <Compile Include="bracket-push\Example.cs" />
+    <Compile Include="change\Example.cs" />
+    <Compile Include="change\ChangeTest.cs" />
+    <Compile Include="circular-buffer\CircularBufferTest.cs" />
+    <Compile Include="circular-buffer\Example.cs" />
     <Compile Include="clock\Clock.cs" />
     <Compile Include="clock\ClockTest.cs" />
     <Compile Include="crypto-square\Crypto.cs" />
     <Compile Include="crypto-square\CryptoSquareTest.cs" />
+    <Compile Include="custom-set\CustomSetTest.cs" />
+    <Compile Include="custom-set\Example.cs" />
+    <Compile Include="diamond\DiamondTest.cs" />
+    <Compile Include="diamond\Example.cs" />
     <Compile Include="difference-of-squares\DifferenceOfSquaresTests.cs" />
     <Compile Include="difference-of-squares\Squares.cs" />
+    <Compile Include="diffie-hellman\DiffieHellmanTest.cs" />
+    <Compile Include="diffie-hellman\Example.cs" />
+    <Compile Include="dominoes\DominoesTest.cs" />
+    <Compile Include="dominoes\Example.cs" />
     <Compile Include="etl\ETL.cs" />
     <Compile Include="etl\ETLTest.cs" />
+    <Compile Include="flatten-array\Example.cs" />
+    <Compile Include="flatten-array\FlattenArrayTest.cs" />
+    <Compile Include="food-chain\Example.cs" />
+    <Compile Include="food-chain\FoodChainTest.cs" />
     <Compile Include="gigasecond\Gigasecond.cs" />
     <Compile Include="gigasecond\GigasecondTest.cs" />
     <Compile Include="grade-school\GradeSchoolTest.cs" />
     <Compile Include="grade-school\School.cs" />
+    <Compile Include="grep\Example.cs" />
+    <Compile Include="grep\GrepTest.cs" />
     <Compile Include="hamming\Hamming.cs" />
     <Compile Include="hamming\HammingTest.cs" />
     <Compile Include="hexadecimal\Hexadecimal.cs" />
     <Compile Include="hexadecimal\HexadecimalTest.cs" />
+    <Compile Include="house\Example.cs" />
+    <Compile Include="house\HouseTest.cs" />
     <Compile Include="kindergarten-garden\Garden.cs" />
     <Compile Include="kindergarten-garden\KinderGartenGardenTest.cs" />
     <Compile Include="leap\LeapTest.cs" />
@@ -99,19 +129,27 @@
     <Compile Include="octal\OctalTest.cs" />
     <Compile Include="palindrome-products\Example.cs" />
     <Compile Include="palindrome-products\PalindromeTest.cs" />
+    <Compile Include="parallel-letter-frequency\Example.cs" />
+    <Compile Include="parallel-letter-frequency\ParallelLetterFrequencyTest.cs" />
     <Compile Include="pascals-triangle\PascalsTriangle.cs" />
     <Compile Include="pascals-triangle\PascalsTriangleTest.cs" />
     <Compile Include="phone-number\PhoneNumber.cs" />
     <Compile Include="phone-number\PhoneNumberTest.cs" />
     <Compile Include="pig-latin\PigLatin.cs" />
     <Compile Include="pig-latin\PigLatinTest.cs" />
+    <Compile Include="poker\Example.cs" />
+    <Compile Include="poker\PokerTest.cs" />
     <Compile Include="prime-factors\PrimeFactors.cs" />
     <Compile Include="prime-factors\PrimeFactorsTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="proverb\Example.cs" />
+    <Compile Include="proverb\ProverbTest.cs" />
     <Compile Include="pythagorean-triplet\PythagoreanTripletTest.cs" />
     <Compile Include="pythagorean-triplet\Triplet.cs" />
     <Compile Include="queen-attack\Queen.cs" />
     <Compile Include="queen-attack\QueenAttackTest.cs" />
+    <Compile Include="rail-fence-cipher\Example.cs" />
+    <Compile Include="rail-fence-cipher\RailFenceCipherTest.cs" />
     <Compile Include="raindrops\Raindrops.cs" />
     <Compile Include="raindrops\RaindropsTest.cs" />
     <Compile Include="rna-transcription\Complement.cs" />
@@ -122,14 +160,22 @@
     <Compile Include="robot-simulator\RobotSimulatorTest.cs" />
     <Compile Include="roman-numerals\RomanNumeral.cs" />
     <Compile Include="roman-numerals\RomanNumeralsTest.cs" />
+    <Compile Include="run-length-encoding\Example.cs" />
+    <Compile Include="run-length-encoding\RunLengthEncodingTest.cs" />
     <Compile Include="saddle-points\SaddlePoints.cs" />
     <Compile Include="saddle-points\SaddlePointTests.cs" />
+    <Compile Include="say\Example.cs" />
+    <Compile Include="say\SayTest.cs" />
+    <Compile Include="scale-generator\Example.cs" />
+    <Compile Include="scale-generator\ScaleGeneratorTest.cs" />
     <Compile Include="scrabble-score\Scrabble.cs" />
     <Compile Include="scrabble-score\ScrabbleScoreTest.cs" />
     <Compile Include="secret-handshake\SecretHandshake.cs" />
     <Compile Include="secret-handshake\SecretHandshakeTests.cs" />
     <Compile Include="series\Series.cs" />
     <Compile Include="series\SeriesTest.cs" />
+    <Compile Include="sgf-parsing\Example.cs" />
+    <Compile Include="sgf-parsing\SgfParsingTest.cs" />
     <Compile Include="sieve\Sieve.cs" />
     <Compile Include="sieve\SieveTest.cs" />
     <Compile Include="simple-cipher\Cipher.cs" />
@@ -140,22 +186,32 @@
     <Compile Include="space-age\SpaceAgeTest.cs" />
     <Compile Include="strain\StrainExtensions.cs" />
     <Compile Include="strain\StrainTest.cs" />
+    <Compile Include="sublist\Example.cs" />
+    <Compile Include="sublist\SublistTest.cs" />
     <Compile Include="sum-of-multiples\SumOfMultiples.cs" />
     <Compile Include="sum-of-multiples\SumOfMultiplesTest.cs" />
     <Compile Include="tournament\Tournament.cs" />
     <Compile Include="tournament\TournamentTest.cs" />
+    <Compile Include="transpose\Example.cs" />
+    <Compile Include="transpose\TransposeTest.cs" />
     <Compile Include="triangle\Triangle.cs" />
     <Compile Include="triangle\TriangleTest.cs" />
     <Compile Include="trinary\Trinary.cs" />
     <Compile Include="trinary\TrinaryTest.cs" />
     <Compile Include="twelve-days\TwelveDaysSong.cs" />
     <Compile Include="twelve-days\TwelveDaysTest.cs" />
+    <Compile Include="variable-length-quantity\Example.cs" />
+    <Compile Include="variable-length-quantity\VariableLengthQuantityTest.cs" />
     <Compile Include="word-count\Phrase.cs" />
     <Compile Include="word-count\WordCountTest.cs" />
+    <Compile Include="word-search\Example.cs" />
+    <Compile Include="word-search\WordSearchTest.cs" />
     <Compile Include="wordy\WordProblem.cs" />
     <Compile Include="wordy\WordyTest.cs" />
     <Compile Include="largest-series-product\LargestSeriesProductTest.cs" />
     <Compile Include="largest-series-product\LargestSeriesProduct.cs" />
+    <Compile Include="zebra-puzzle\Example.cs" />
+    <Compile Include="zebra-puzzle\ZebraPuzzleTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="accumulate\README.md" />
@@ -215,4 +271,57 @@
   <Target Name="AfterBuild">
   </Target>
   -->
+  <Import Project="..\.paket\paket.targets" />
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v2.0' Or $(TargetFrameworkVersion) == 'v3.0')">
+      <ItemGroup>
+        <Reference Include="NUnit.System.Linq">
+          <HintPath>..\packages\NUnit\lib\net20\NUnit.System.Linq.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+        <Reference Include="nunit.framework">
+          <HintPath>..\packages\NUnit\lib\net20\nunit.framework.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v3.5'">
+      <ItemGroup>
+        <Reference Include="nunit.framework">
+          <HintPath>..\packages\NUnit\lib\net35\nunit.framework.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And $(TargetFrameworkVersion) == 'v4.0'">
+      <ItemGroup>
+        <Reference Include="nunit.framework">
+          <HintPath>..\packages\NUnit\lib\net40\nunit.framework.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6' Or $(TargetFrameworkVersion) == 'v4.6.1' Or $(TargetFrameworkVersion) == 'v4.6.2' Or $(TargetFrameworkVersion) == 'v4.6.3')">
+      <ItemGroup>
+        <Reference Include="nunit.framework">
+          <HintPath>..\packages\NUnit\lib\net45\nunit.framework.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+    <When Condition="($(TargetFrameworkIdentifier) == 'WindowsPhoneApp') Or ($(TargetFrameworkIdentifier) == '.NETCore') Or ($(TargetFrameworkIdentifier) == '.NETStandard' And ($(TargetFrameworkVersion) == 'v1.0' Or $(TargetFrameworkVersion) == 'v1.1' Or $(TargetFrameworkVersion) == 'v1.2' Or $(TargetFrameworkVersion) == 'v1.3' Or $(TargetFrameworkVersion) == 'v1.4' Or $(TargetFrameworkVersion) == 'v1.5' Or $(TargetFrameworkVersion) == 'v1.6')) Or ($(TargetFrameworkIdentifier) == '.NETCoreApp' And $(TargetFrameworkVersion) == 'v1.0') Or ($(TargetFrameworkIdentifier) == 'WindowsPhone' And ($(TargetFrameworkVersion) == 'v8.0' Or $(TargetFrameworkVersion) == 'v8.1')) Or ($(TargetFrameworkIdentifier) == 'MonoAndroid') Or ($(TargetFrameworkIdentifier) == 'MonoTouch') Or ($(TargetFrameworkIdentifier) == 'Xamarin.iOS') Or ($(TargetFrameworkIdentifier) == 'Xamarin.Mac') Or ($(TargetFrameworkProfile) == 'Profile7') Or ($(TargetFrameworkProfile) == 'Profile31') Or ($(TargetFrameworkProfile) == 'Profile32') Or ($(TargetFrameworkProfile) == 'Profile44') Or ($(TargetFrameworkProfile) == 'Profile49') Or ($(TargetFrameworkProfile) == 'Profile78') Or ($(TargetFrameworkProfile) == 'Profile84') Or ($(TargetFrameworkProfile) == 'Profile111') Or ($(TargetFrameworkProfile) == 'Profile151') Or ($(TargetFrameworkProfile) == 'Profile157') Or ($(TargetFrameworkProfile) == 'Profile259')">
+      <ItemGroup>
+        <Reference Include="nunit.framework">
+          <HintPath>..\packages\NUnit\lib\portable-net45+win8+wp8+wpa81+Xamarin.Mac+MonoAndroid10+MonoTouch10+Xamarin.iOS10\nunit.framework.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
 </Project>

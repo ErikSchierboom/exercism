@@ -177,3 +177,5 @@ testCaseCollection.xml
 
 # Visual Studio Code
 .vscode/
+
+paket.exe
