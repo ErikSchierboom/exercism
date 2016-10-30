@@ -61,7 +61,7 @@ class WordProblemTest extends FlatSpec with Matchers {
   }
 
   // Test for "Extension"
-  ignore should "handle powers" in {
+  it should "handle powers" in {
     WordProblem("What is 2 raised to the 5?") should equal(Some(32))
   }
 }
