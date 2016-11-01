@@ -1,12 +1,26 @@
 import scala.util.parsing.combinator._
 
-abstract class Expression
-case class Number(n: Int) extends Expression
-case class Sum(e1: Expression, e2: Expression) extends Expression
-case class Subtract(e1: Expression, e2: Expression) extends Expression
-case class Multiply(e1: Expression, e2: Expression) extends Expression
-case class Divide(e1: Expression, e2: Expression) extends Expression
-case class Power(e1: Expression, e2: Expression) extends Expression
+sealed trait Expression {
+  def solve: Int
+}
+case class Number(n: Int) extends Expression {
+  def solve = n
+}
+case class Sum(e1: Expression, e2: Expression) extends Expression {
+  def solve = e1.solve + e2.solve
+}
+case class Subtract(e1: Expression, e2: Expression) extends Expression {
+  def solve = e1.solve - e2.solve
+}
+case class Multiply(e1: Expression, e2: Expression) extends Expression {
+  def solve = e1.solve * e2.solve
+}
+case class Divide(e1: Expression, e2: Expression) extends Expression {
+  def solve = e1.solve / e2.solve
+}
+case class Power(e1: Expression, e2: Expression) extends Expression {
+  def solve = Math.pow(e1.solve, e2.solve).toInt
+}
 
 object WordProblemParser extends RegexParsers {
   def number: Parser[Number] = """(0|-?[1-9]\d*)""".r ^^ { str => Number(str.toInt) }
@@ -30,19 +44,9 @@ object WordProblemParser extends RegexParsers {
 }
 
 object WordProblem {
-  def solve(expression: Expression): Int =
-    expression match {
-      case Number(n) => n
-      case Sum(e1, e2) => solve(e1) + solve(e2)
-      case Subtract(e1, e2) => solve(e1) - solve(e2)
-      case Multiply(e1, e2) => solve(e1) * solve(e2)
-      case Divide(e1, e2) => solve(e1) / solve(e2)
-      case Power(e1, e2) => Math.pow(solve(e1), solve(e2)).toInt
-    }
-
   def apply(input: String): Option[Int] = {
     WordProblemParser.parse(WordProblemParser.problem, input) match {
-      case WordProblemParser.Success(expression, _) => Some(solve(expression))
+      case WordProblemParser.Success(expression, _) => Some(expression.solve)
       case _ => None
     }
   }
