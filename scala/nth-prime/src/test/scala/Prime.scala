@@ -7,7 +7,7 @@ object Prime {
 
   lazy val possiblePrimes = Stream.from(6, 6).flatMap(x => List(x - 1, x + 1))
 
-  lazy val primes = Stream.cons(2, Stream.cons(3, possiblePrimes.filter(isPrime)))
+  lazy val primes = 2 #:: 3 #:: possiblePrimes.filter(isPrime)
 
   def nth(n: Int) = primes.drop(n - 1).head
 }
