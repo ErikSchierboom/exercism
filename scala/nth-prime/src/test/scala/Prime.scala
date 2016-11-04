@@ -9,5 +9,5 @@ object Prime {
 
   lazy val primes = 2 #:: 3 #:: possiblePrimes.filter(isPrime)
 
-  def nth(n: Int) = primes.drop(n - 1).head
+  def nth(n: Int) = primes(n - 1)
 }
