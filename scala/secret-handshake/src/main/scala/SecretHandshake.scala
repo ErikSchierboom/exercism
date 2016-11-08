@@ -10,16 +10,12 @@ object SecretHandshake {
       (1 << 4, (acc: List[String]) => acc.reverse))
 
   def handshake(number: Int): List[String] = commands.foldLeft[List[String]](Nil) {
-    case (acc, (mask, apply)) =>
-      if ((number & mask) != 0) apply(acc)
+    case (acc, (mask, applyCommand)) =>
+      if ((number & mask) != 0) applyCommand(acc)
       else acc
   }
 
-  def handshake(input: String): List[String] =
-    tryParseBinary(input) match {
-      case Some(number) => handshake(number)
-      case None => Nil
-    }
+  def handshake(input: String): List[String] = tryParseBinary(input).map(handshake).getOrElse(Nil)
 
   def tryParseBinary(input: String) =
     input.foldLeft[Option[Int]](Some(0)) {
