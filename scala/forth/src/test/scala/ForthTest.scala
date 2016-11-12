@@ -21,7 +21,7 @@ class ForthTest extends FlatSpec with Matchers with EitherValues {
     // Note the Ogham Space Mark ( ), this is a spacing character.
     // Also note that if Regex is used for your solution then handling
     // Unicode requires and additional flag in the Regex string "(?U)".
-    forth.eval("1\u00002\u00013\n4\r5 6\t7") match {
+      forth.eval("1\u00002\u00013\n4\r5 6\t7") match {
       case Right(state) => state.toString should equal("1 2 3 4 5 6 7")
       case Left(error) => fail("error handling non-word chars - " + error)
     }
