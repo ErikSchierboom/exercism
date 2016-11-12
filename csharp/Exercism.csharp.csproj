@@ -166,6 +166,8 @@
     <Compile Include="rail-fence-cipher\RailFenceCipherTest.cs" />
     <Compile Include="raindrops\Raindrops.cs" />
     <Compile Include="raindrops\RaindropsTest.cs" />
+    <Compile Include="rectangles\Rectangles.cs" />
+    <Compile Include="rectangles\RectanglesTest.cs" />
     <Compile Include="rna-transcription\Complement.cs" />
     <Compile Include="rna-transcription\ComplementTest.cs" />
     <Compile Include="robot-name\Robot.cs" />
@@ -264,6 +266,7 @@
     <None Include="proverb\README.md" />
     <None Include="pythagorean-triplet\README.md" />
     <None Include="raindrops\README.md" />
+    <None Include="rectangles\README.md" />
     <None Include="rna-transcription\README.md" />
     <None Include="robot-name\README.md" />
     <None Include="roman-numerals\README.md" />
