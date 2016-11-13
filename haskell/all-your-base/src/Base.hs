@@ -1,38 +1,25 @@
 module Base (rebase) where
 
-toBaseLoop :: Integral a => a -> a -> [a] -> [a]
-toBaseLoop b 0 acc = acc 
-toBaseLoop b n acc = toBaseLoop b n' (digit:acc)
-    where 
-        digit = n `mod` b
-        n' = n `div` b
+import Data.Tuple (swap)
+import Data.List (unfoldr)
 
-toBase :: Integral a => a -> a -> Maybe [a]
-toBase b n =
-    case toBaseLoop b n [] of 
-        [] -> Just []
-        digits -> Just digits
-
-fromBaseLoop :: Integral a => a -> a -> [a] -> Maybe a
-fromBaseLoop b acc [] = Just acc 
-fromBaseLoop b acc digits
-    | digit < 0 = Nothing
-    | digit >= b = Nothing
-    | otherwise = 
-        fromBaseLoop b (acc * b + digit) rest where
-            digit = head digits
-            rest = tail digits
+toBase :: Integral a => a -> a -> [a]
+toBase outputBase n = reverse $ unfoldr aux n where
+    aux 0 = Nothing 
+    aux n = Just $ swap $ n `divMod` outputBase
 
 fromBase :: Integral a => a -> [a] -> Maybe a
-fromBase b [] = Nothing
-fromBase b nums = fromBaseLoop b 0 nums
+fromBase inputBase [] = Nothing
+fromBase inputBase nums = aux 0 nums where
+    aux acc [] = Just acc 
+    aux acc (digit:rest)
+        | digit < 0 = Nothing
+        | digit >= inputBase = Nothing
+        | otherwise = aux (acc * inputBase + digit) rest
 
 rebase :: Integral a => a -> a -> [a] -> Maybe [a]
 rebase inputBase outputBase inputDigits
     | inputBase < 2 = Nothing 
     | outputBase < 2 = Nothing
     | null inputDigits = Just []
-    | otherwise =
-        case fromBase inputBase inputDigits of
-            Nothing -> Nothing
-            Just num -> toBase outputBase num
+    | otherwise = fmap (toBase outputBase) (fromBase inputBase inputDigits)
