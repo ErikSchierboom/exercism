@@ -1,0 +1,22 @@
+name: alphametics
+
+dependencies:
+  - base
+
+library:
+  exposed-modules: Alphametics
+  source-dirs: src
+  dependencies:
+    - parsec
+    - text
+    - containers
+  # - foo       # List here the packages you
+  # - bar       # want to use in your solution.
+
+tests:
+  test:
+    main: Tests.hs
+    source-dirs: test
+    dependencies:
+      - alphametics
+      - hspec
