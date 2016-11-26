@@ -228,6 +228,8 @@
     <Compile Include="largest-series-product\LargestSeriesProduct.cs" />
     <Compile Include="zebra-puzzle\Example.cs" />
     <Compile Include="zebra-puzzle\ZebraPuzzleTest.cs" />
+    <Compile Include="hello-world\HelloWorldTest.cs" />
+    <Compile Include="hello-world\HelloWorld.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="accumulate\README.md" />
@@ -284,6 +286,7 @@
     <None Include="twelve-days\README.md" />
     <None Include="word-count\README.md" />
     <None Include="wordy\README.md" />
+    <None Include="hello-world\README.md" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
