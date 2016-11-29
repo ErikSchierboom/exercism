@@ -3,8 +3,6 @@ object AllYourBase {
   def rebase(from: Int, digits: List[Int], out: Int): Option[List[Int]] =
     if (from < 2 || out < 2)
       None
-    else if (digits.isEmpty)
-      Some(List())
     else {
       for {
         fromBase_ <- fromBase(from, digits)
