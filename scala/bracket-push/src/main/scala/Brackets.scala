@@ -1,5 +1,5 @@
 object Brackets {
-  val brackets = "[]{}()".toCharArray.toSet
+  val brackets = "[]{}()".toSet
 
   def areBalanced(input: String) = {
     def replaceMatchingBrackets(str: String) =
@@ -23,7 +23,7 @@ object Brackets {
       }
     }
 
-    val filtered = input.filter(brackets(_))
+    val filtered = input.filter(brackets)
     loop(filtered)
   }
 }
