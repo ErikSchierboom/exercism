@@ -21,7 +21,7 @@ let ``Can add large numbers`` () =
     
 [<Test>]
 let ``Can parse and solve subtraction problems`` () =
-    Assert.That(solve "What is 4 minus -12", Is.EqualTo(Some 16))
+    Assert.That(solve "What is 4 minus -12?", Is.EqualTo(Some 16))
     
 [<Test>]
 let ``Can parse and solve multiplication problems`` () =
@@ -53,7 +53,7 @@ let ``Can multiply twice`` () =
     
 [<Test>]
 let ``Can add then multiply`` () =
-    Assert.That(solve "What is -3 plus 7 multiplied by -2?", Is.EqualTo(Some -8))
+    Assert.That(solve "What is -3 plus 7 multiplied by -2?", Is.EqualTo(Some -17))
     
 [<Test>]
 let ``Can divide twice`` () =

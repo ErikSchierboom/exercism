@@ -1,49 +1,23 @@
 module WordProblem
 
-open System
-open System.Text.RegularExpressions
+open FParsec
 
-type Operation = int -> int
-type Equation = int * (Operation list)
+let parseToOption parser (input: string) =
+    match run parser input with
+    | Success(result, _, _)   -> Some result
+    | Failure(errorMsg, _, _) -> None
 
-let equationRegex = new Regex(@"(?<left>-?\d+) (?<operation>-?plus|minus|divided by|multiplied by) (?=(?<right>-?\d+))", RegexOptions.Compiled)
+let parseExpression = 
+    let opp = new OperatorPrecedenceParser<int,unit,unit>()
+    opp.TermParser <- pint32 .>> spaces
 
-let regexGroupStr (group: string) (m: Match) = m.Groups.[group].Value
-let regexGroupNumber (group: string) (m: Match) = regexGroupStr group m |> int
+    opp.AddOperator(InfixOperator("plus",          spaces, 1, Associativity.Left, (+)))
+    opp.AddOperator(InfixOperator("minus",         spaces, 1, Associativity.Left, (-)))
+    opp.AddOperator(InfixOperator("multiplied by", spaces, 2, Associativity.Left, (*)))
+    opp.AddOperator(InfixOperator("divided by",    spaces, 2, Associativity.Left, (/)))
 
-let calculate (left, operations) = List.fold (fun acc item -> item acc) left operations
+    opp.ExpressionParser
 
-let parseRight (m: Match) = regexGroupNumber "right" m
+let parseEquation = pstring "What is " >>. parseExpression .>>  pstring "?"
 
-let parseOperand (m: Match) = 
-    match regexGroupStr "operation" m with
-    | "plus"          -> (+)
-    | "minus"         -> (-)
-    | "multiplied by" -> (*)
-    | "divided by"    -> (/)
-    | _ -> failwith "Unknown operation"
-
-let parseOperation (m: Match) =
-    fun x -> (parseOperand m) x (parseRight m)
-
-let parseOperations (matches: MatchCollection) =
-    matches 
-    |> Seq.cast<Match> 
-    |> Seq.map parseOperation
-    |> Seq.toList
-
-let parseLeft (matches: MatchCollection) = 
-    matches 
-    |> Seq.cast 
-    |> Seq.head 
-    |> regexGroupNumber "left" 
-
-let parse (question: string): Equation option =
-    match equationRegex.Matches question with
-    | m when m.Count = 0 -> None
-    | m -> Some (parseLeft m, parseOperations m)
-
-let solve (question: string): int option =  
-    question 
-    |> parse 
-    |> Option.map calculate
+let solve (question: string) = parseToOption parseEquation question
