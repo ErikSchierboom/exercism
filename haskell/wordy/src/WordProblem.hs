@@ -2,10 +2,9 @@
 
 module WordProblem (answer) where
 
-import Control.Applicative ((<|>))
-import Data.Attoparsec.Text
+import Control.Applicative ((<|>), (<$>))
+import Data.Attoparsec.Text (Parser, parse, maybeResult, space, decimal, signed, string, sepBy1)
 import Data.Text (pack)
-import Data.Maybe 
 
 data Expression 
     = Operand Int 
