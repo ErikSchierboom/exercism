@@ -13,8 +13,8 @@ let parseExpression =
 
     opp.AddOperator(InfixOperator("plus",          spaces, 1, Associativity.Left, (+)))
     opp.AddOperator(InfixOperator("minus",         spaces, 1, Associativity.Left, (-)))
-    opp.AddOperator(InfixOperator("multiplied by", spaces, 2, Associativity.Left, (*)))
-    opp.AddOperator(InfixOperator("divided by",    spaces, 2, Associativity.Left, (/)))
+    opp.AddOperator(InfixOperator("multiplied by", spaces, 1, Associativity.Left, (*)))
+    opp.AddOperator(InfixOperator("divided by",    spaces, 1, Associativity.Left, (/)))
 
     opp.ExpressionParser
 

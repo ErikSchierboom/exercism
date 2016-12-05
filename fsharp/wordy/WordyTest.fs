@@ -53,7 +53,7 @@ let ``Can multiply twice`` () =
     
 [<Test>]
 let ``Can add then multiply`` () =
-    Assert.That(solve "What is -3 plus 7 multiplied by -2?", Is.EqualTo(Some -17))
+    Assert.That(solve "What is -3 plus 7 multiplied by -2?", Is.EqualTo(Some -8))
     
 [<Test>]
 let ``Can divide twice`` () =
