@@ -1,9 +1,8 @@
 ﻿<Properties StartupConfiguration="{F7E8E67C-3CFA-4B46-A2B6-956263649501}|Unit Tests">
   <MonoDevelop.Ide.ItemProperties.Exercism.fsharp PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="wordy/Example.fs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="accumulate/Example.fs">
     <Files>
-      <File FileName="wordy/Example.fs" Line="331" Column="34" />
-      <File FileName="wordy/WordyTest.fs" Line="56" Column="60" />
+      <File FileName="accumulate/Example.fs" Line="8" Column="65" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
