@@ -13,7 +13,6 @@ let ``Readme example`` () =
     Assert.That(actual, Is.EqualTo([(1, 0)]))
 
 [<Test>]
-[<Ignore("Remove to run test")>]
 let ``No saddle point`` () =
     let values = [ [ 2; 1 ]; 
                    [ 1; 2 ] ]
@@ -21,7 +20,6 @@ let ``No saddle point`` () =
     Assert.That(actual, Is.Empty)
 
 [<Test>]
-[<Ignore("Remove to run test")>]
 let ``Saddle point`` () =
     let values = [ [ 1; 2 ]; 
                    [ 3; 4 ] ]
@@ -29,7 +27,6 @@ let ``Saddle point`` () =
     Assert.That(actual, Is.EqualTo([(0, 1)]))
 
 [<Test>]
-[<Ignore("Remove to run test")>]
 let ``Another saddle point`` () =
     let values = [ [ 18;  3; 39; 19;  91 ]; 
                    [ 38; 10;  8; 77; 320 ]; 
@@ -38,7 +35,6 @@ let ``Another saddle point`` () =
     Assert.That(actual, Is.EqualTo([(2, 2)]))
 
 [<Test>]
-[<Ignore("Remove to run test")>]
 let ``Multiple saddle points`` () =
     let values = [ [ 4; 5; 4 ];
                    [ 3; 5; 5 ];

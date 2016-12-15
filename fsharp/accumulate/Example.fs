@@ -1,8 +1,8 @@
 ﻿module Accumulate
 
-let rec accumulateLoop func input acc = 
-    match input with
-        | [] -> acc |> List.rev
-        | x::xs -> accumulateLoop func xs (func x :: acc)
+let rec accumulateLoop func acc = 
+    function
+    | []    -> acc |> List.rev
+    | x::xs -> accumulateLoop func (func x :: acc) xs
 
-let accumulate func input = accumulateLoop func input List.empty
+let accumulate func input = accumulateLoop func [] input
