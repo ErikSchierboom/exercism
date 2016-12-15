@@ -359,6 +359,7 @@
     <Content Include="App.config" />
     <Compile Include="sorting\Example.fs" />
     <Compile Include="sorting\SortingTest.fs" />
+    <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
