@@ -10,8 +10,6 @@ This repository contains [my work](http://exercism.io/ErikSchierboom) on solving
 - [Kotlin](http://exercism.io/languages/kotlin)
 - [Scala](http://exercism.io/languages/scala)
 - [Elm](http://exercism.io/languages/elm)
-
-## In progress
 - [ECMAScript](http://exercism.io/languages/ecmascript)
 
 ## License
