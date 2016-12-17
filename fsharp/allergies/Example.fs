@@ -3,19 +3,19 @@
 open System
 
 type Allergen = 
-   | Eggs = 1
-   | Peanuts = 2
-   | Shellfish = 4
-   | Strawberries = 8
-   | Tomatoes = 16
-   | Chocolate = 32
-   | Pollen = 64
-   | Cats = 128
+   | Eggs         = 0b00000001
+   | Peanuts      = 0b00000010
+   | Shellfish    = 0b00000100
+   | Strawberries = 0b00001000
+   | Tomatoes     = 0b00010000
+   | Chocolate    = 0b00100000
+   | Pollen       = 0b01000000
+   | Cats         = 0b10000000
 
-let allergicTo (allergen: Allergen) (codedAllergies: int) = codedAllergies &&& int allergen <> 0
+let allergicTo allergen codedAllergies = codedAllergies &&& int allergen <> 0
 
-let allergies (codedAllergies: int) = 
+let allergies codedAllergies = 
     Enum.GetValues(typeof<Allergen>) 
     |> Seq.cast<Allergen> 
-    |> List.ofSeq 
-    |> List.filter (fun allergen -> allergicTo allergen codedAllergies)
+    |> Seq.filter (fun allergen -> allergicTo allergen codedAllergies)
+    |> Seq.toList

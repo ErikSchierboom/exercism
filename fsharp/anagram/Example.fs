@@ -2,11 +2,16 @@
 
 open System
 
-let normalize (str:string) = new string(str.ToLowerInvariant().ToCharArray() |> Array.sort)    
-let unequal str other = not (String.Equals(str, other, StringComparison.InvariantCultureIgnoreCase))
-       
-let anagrams sources target = 
-    let normalizedTarget = normalize target
-    let isMatch str = normalize str = normalizedTarget && unequal str target
+let lower (str: string) = str.ToLower()
+
+let normalize str = 
+    str 
+    |> lower 
+    |> Seq.sort 
+    |> Seq.toList
     
-    List.filter isMatch sources
+let isAnagram target =
+    let normalizedTarget = normalize target    
+    fun source -> lower source <> lower target && normalize source = normalizedTarget
+       
+let anagrams sources target = List.filter (isAnagram target) sources
