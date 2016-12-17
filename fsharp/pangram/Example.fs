@@ -1,6 +1,8 @@
 ﻿module Pangram
 
-let isPangram (input: string) = 
-    let normalized = input.ToLowerInvariant()
-    
-    ['a'..'z'] |> List.forall (fun l -> normalized.Contains(l.ToString()))
+let alphabet = set ['a'..'z']
+
+let isPangram (input: string) =  
+    input.ToLowerInvariant()
+    |> set
+    |> Set.isSubset alphabet

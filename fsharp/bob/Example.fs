@@ -8,8 +8,8 @@ let hey (input: string) =
     let isQuestion = input.EndsWith "?"
 
     match input with 
-    | _ when isEmpty -> "Fine. Be that way!"
-    | _ when isYell -> "Whoa, chill out!"
+    | _ when isEmpty    -> "Fine. Be that way!"
+    | _ when isYell     -> "Whoa, chill out!"
     | _ when isQuestion -> "Sure."
-    | _ -> "Whatever."
+    | _                 -> "Whatever."
 
