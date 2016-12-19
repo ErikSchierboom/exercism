@@ -119,6 +119,8 @@
     <Compile Include="leap\Year.cs" />
     <Compile Include="linked-list\Deque.cs" />
     <Compile Include="linked-list\LinkedListTest.cs" />
+    <Compile Include="list-ops\Example.cs" />
+    <Compile Include="list-ops\ListOpsTest.cs" />
     <Compile Include="luhn\Luhn.cs" />
     <Compile Include="luhn\LuhnTest.cs" />
     <Compile Include="matrix\Example.cs" />
