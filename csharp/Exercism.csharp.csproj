@@ -218,6 +218,8 @@
     <Compile Include="trinary\TrinaryTest.cs" />
     <Compile Include="twelve-days\TwelveDaysSong.cs" />
     <Compile Include="twelve-days\TwelveDaysTest.cs" />
+    <Compile Include="two-bucket\Example.cs" />
+    <Compile Include="two-bucket\TwoBucketTest.cs" />
     <Compile Include="variable-length-quantity\Example.cs" />
     <Compile Include="variable-length-quantity\VariableLengthQuantityTest.cs" />
     <Compile Include="word-count\Phrase.cs" />
