@@ -123,6 +123,8 @@
     <Compile Include="list-ops\ListOpsTest.cs" />
     <Compile Include="luhn\Luhn.cs" />
     <Compile Include="luhn\LuhnTest.cs" />
+    <Compile Include="markdown\Example.cs" />
+    <Compile Include="markdown\MarkdownTest.cs" />
     <Compile Include="matrix\Example.cs" />
     <Compile Include="matrix\MatrixTest.cs" />
     <Compile Include="meetup\Meetup.cs" />
