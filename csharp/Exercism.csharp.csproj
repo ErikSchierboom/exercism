@@ -79,6 +79,8 @@
     <Compile Include="circular-buffer\Example.cs" />
     <Compile Include="clock\Clock.cs" />
     <Compile Include="clock\ClockTest.cs" />
+    <Compile Include="connect\ConnectTest.cs" />
+    <Compile Include="connect\Example.cs" />
     <Compile Include="crypto-square\Crypto.cs" />
     <Compile Include="crypto-square\CryptoSquareTest.cs" />
     <Compile Include="custom-set\CustomSetTest.cs" />
@@ -99,6 +101,8 @@
     <Compile Include="food-chain\FoodChainTest.cs" />
     <Compile Include="gigasecond\Gigasecond.cs" />
     <Compile Include="gigasecond\GigasecondTest.cs" />
+    <Compile Include="go-counting\Example.cs" />
+    <Compile Include="go-counting\GoCountingTest.cs" />
     <Compile Include="grade-school\GradeSchoolTest.cs" />
     <Compile Include="grade-school\School.cs" />
     <Compile Include="grains\Example.cs" />
@@ -253,6 +257,7 @@
     <None Include="difference-of-squares\README.md" />
     <None Include="etl\README.md" />
     <None Include="gigasecond\README.md" />
+    <None Include="go-counting\README.md" />
     <None Include="grade-school\README.md" />
     <None Include="grains\README.md" />
     <None Include="hamming\README.md" />
@@ -298,7 +303,10 @@
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Compile Include="react\Example.cs" />
+    <Compile Include="react\ReactTest.cs" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
