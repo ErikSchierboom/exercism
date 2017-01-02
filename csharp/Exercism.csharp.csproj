@@ -69,6 +69,8 @@
     <Compile Include="binary\BinaryTest.cs" />
     <Compile Include="bob\Bob.cs" />
     <Compile Include="bob\BobTest.cs" />
+    <Compile Include="book-store\BookStoreTest.cs" />
+    <Compile Include="book-store\Example.cs" />
     <Compile Include="bowling\BowlingTest.cs" />
     <Compile Include="bowling\Example.cs" />
     <Compile Include="bracket-push\BracketPushTest.cs" />
@@ -251,6 +253,7 @@
     <None Include="binary-search\README.md" />
     <None Include="binary\README.md" />
     <None Include="bob\README.md" />
+    <None Include="book-store\README.md" />
     <None Include="bowling\README.md" />
     <None Include="clock\README.md" />
     <None Include="crypto-square\README.md" />
