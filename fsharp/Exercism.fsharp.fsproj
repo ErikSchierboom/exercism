@@ -360,6 +360,8 @@
     <Compile Include="sorting\Example.fs" />
     <Compile Include="sorting\SortingTest.fs" />
     <Content Include="packages.config" />
+    <Compile Include="book-store\Example.fs" />
+    <Compile Include="book-store\BookStoreTest.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />
