@@ -4,7 +4,7 @@ type Node = { left: Node option; value: int; right: Node option }
 
 let left node  = node.left
 let right node = node.right
-let value node = node.value
+let value node = Some node.value
 
 let singleton value = { left = None; right = None; value = value }
 
