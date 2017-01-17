@@ -123,6 +123,9 @@
     <Compile Include="kindergarten-garden\KinderGartenGardenTest.cs" />
     <Compile Include="leap\LeapTest.cs" />
     <Compile Include="leap\Year.cs" />
+    <Compile Include="ledger\Example.cs" />
+    <Compile Include="ledger\Ledger.cs" />
+    <Compile Include="ledger\LedgerTest.cs" />
     <Compile Include="linked-list\Deque.cs" />
     <Compile Include="linked-list\LinkedListTest.cs" />
     <Compile Include="list-ops\Example.cs" />
@@ -247,6 +250,7 @@
     <None Include="accumulate\README.md" />
     <None Include="acronym\README.md" />
     <None Include="allergies\README.md" />
+    <None Include="alphametics\README.md" />
     <None Include="anagram\README.md" />
     <None Include="atbash-cipher\README.md" />
     <None Include="bank-account\README.md" />
@@ -269,6 +273,7 @@
     <None Include="leap\README.md" />
     <None Include="linked-list\README.md" />
     <None Include="luhn\README.md" />
+    <None Include="markdown\README.md" />
     <None Include="meetup\README.md" />
     <None Include="minesweeper\README.md" />
     <None Include="nucleotide-count\README.md" />
@@ -278,6 +283,7 @@
     <None Include="perfect-numbers\README.md" />
     <None Include="phone-number\README.md" />
     <None Include="pig-latin\README.md" />
+    <None Include="pov\README.md" />
     <None Include="prime-factors\README.md" />
     <None Include="protein-translation\README.md" />
     <None Include="proverb\README.md" />
@@ -313,6 +319,22 @@
   <ItemGroup>
     <Compile Include="tree-building\Example.cs" />
     <Compile Include="tree-building\TreeBuildingTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="hangman\Example.cs" />
+    <Compile Include="hangman\HangmanTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="dot-dsl\DotDslTest.cs" />
+    <Compile Include="dot-dsl\Example.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="alphametics\AlphameticsTest.cs" />
+    <Compile Include="alphametics\Example.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="pov\Example.cs" />
+    <Compile Include="pov\PovTest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
