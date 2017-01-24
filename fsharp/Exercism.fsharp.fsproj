@@ -362,8 +362,14 @@
     <Content Include="packages.config" />
     <Compile Include="book-store\Example.fs" />
     <Compile Include="book-store\BookStoreTest.fs" />
+    <Compile Include="lens-person\Example.fs" />
+    <Compile Include="lens-person\LensPersonTest.fs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Aether">
+      <HintPath>packages\Aether.8.1.2\lib\net35\Aether.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
