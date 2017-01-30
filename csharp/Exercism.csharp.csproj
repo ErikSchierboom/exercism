@@ -95,6 +95,8 @@
     <Compile Include="diffie-hellman\Example.cs" />
     <Compile Include="dominoes\DominoesTest.cs" />
     <Compile Include="dominoes\Example.cs" />
+    <Compile Include="error-handling\ErrorHandling.cs" />
+    <Compile Include="error-handling\ErrorHandlingTest.cs" />
     <Compile Include="etl\ETL.cs" />
     <Compile Include="etl\ETLTest.cs" />
     <Compile Include="flatten-array\Example.cs" />
@@ -262,6 +264,7 @@
     <None Include="clock\README.md" />
     <None Include="crypto-square\README.md" />
     <None Include="difference-of-squares\README.md" />
+    <None Include="error-handling\README.md" />
     <None Include="etl\README.md" />
     <None Include="gigasecond\README.md" />
     <None Include="go-counting\README.md" />
