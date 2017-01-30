@@ -1,7 +1,5 @@
 ﻿module FoodChain
 
-let joinBy str = List.reduce (fun x y -> x + str + y)
-
 let verses = 8
 
 let subjects = 
@@ -40,9 +38,9 @@ let verseEnd number =
 
 let verse number = 
     verseBegin number @ verseEnd number
-    |> joinBy "\n"
+    |> String.concat "\n"
 
 let song = 
     [1 .. verses]
     |> List.map verse 
-    |> joinBy "\n\n"
+    |> String.concat "\n\n"
