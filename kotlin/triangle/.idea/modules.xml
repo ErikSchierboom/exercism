@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/triangle.iml" filepath="$PROJECT_DIR$/.idea/modules/triangle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/triangle_main.iml" filepath="$PROJECT_DIR$/.idea/modules/triangle_main.iml" group="triangle" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/triangle_test.iml" filepath="$PROJECT_DIR$/.idea/modules/triangle_test.iml" group="triangle" />
+    </modules>
+  </component>
+</project>
