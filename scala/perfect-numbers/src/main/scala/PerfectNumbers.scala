@@ -9,8 +9,8 @@ object PerfectNumbers {
   def classify(n: Int): NumberType.NumberType = {
 
     sumOfFactors(n) match {
-      case (x) if x == n => NumberType.Perfect
-      case (x) if x < n => NumberType.Deficient
+      case x if x == n => NumberType.Perfect
+      case x if x < n => NumberType.Deficient
       case _ => NumberType.Abundant
     }
   }
