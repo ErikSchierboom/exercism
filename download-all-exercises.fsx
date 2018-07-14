@@ -21,9 +21,11 @@ let exercises language =
     let configJsonUrl = sprintf "https://raw.githubusercontent.com/exercism/%s/master/config.json" language
     let configJsonContents = downloadUrl configJsonUrl
 
-    Regex.Matches(configJsonContents, "\"slug\": \"(.+)\"")
+    Regex.Matches(configJsonContents, "{(.+?)}", RegexOptions.Singleline)
     |> Seq.cast<Match>
     |> Seq.map (fun x -> x.Groups.[1].Value)
+    |> Seq.filter (fun x -> x.Contains("deprecated") |> not)
+    |> Seq.map (fun x -> Regex.Match(x, "\"slug\": \"(.+)\"").Groups.[1].Value)
     |> Seq.toList
 
 let downloadExercise language exercise =
