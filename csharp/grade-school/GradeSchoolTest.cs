@@ -21,11 +21,11 @@ public class GradeSchoolTest
         school.Add("Blair", 2);
         school.Add("James", 2);
         school.Add("Paul", 2);
-
+       
         var actual = school.Roster();
 
         var expected = new[] { "Blair", "James", "Paul" };
-        Assert.Equal(expected, actual);
+        Assert.Equal(expected, actual );
     }
 
     [Fact]
@@ -37,7 +37,7 @@ public class GradeSchoolTest
 
         var actual = school.Roster();
 
-        var expected = new[] { "Chelsea", "Logan" };
+        var expected = new[] { "Chelsea", "Logan"};
         Assert.Equal(expected, actual);
     }
 
@@ -48,7 +48,7 @@ public class GradeSchoolTest
         school.Add("Franklin", 5);
         school.Add("Bradley", 5);
         school.Add("Jeff", 1);
-
+        
         var actual = school.Grade(5);
 
         var expected = new[] { "Bradley", "Franklin" };
@@ -60,7 +60,7 @@ public class GradeSchoolTest
     {
         var school = new School();
 
-        var actual = school.Grade(1);
+        var actual = school.Grade(1); 
 
         Assert.Empty(actual);
     }
@@ -76,9 +76,9 @@ public class GradeSchoolTest
         school.Add("Alex", 2);
         school.Add("Jim", 3);
         school.Add("Charlie", 1);
-
+              
         var actual = school.Roster();
-
+        
         var expected = new[] { "Anna", "Barb", "Charlie", "Alex", "Peter", "Zoe", "Jim" };
         Assert.Equal(expected, actual);
     }
