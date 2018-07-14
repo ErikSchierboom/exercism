@@ -5,6 +5,7 @@
 *.suo
 *.user
 *.userosscache
+*.userprefs
 *.sln.docstates
 .idea/
 
