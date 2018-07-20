@@ -1,6 +1,5 @@
 .vscode/
 .vs/
-.rider/
-.intellij/
+.idea/
 
 users/

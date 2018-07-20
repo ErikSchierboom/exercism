@@ -2,4 +2,4 @@ obj/
 bin/
 .vs/
 .vscode/
-.rider/
+.idea/
