@@ -1,9 +1,8 @@
 object Raindrops {
-    fun convert(input: Int): String {
-        val factors = listOf(3 to "Pling", 5 to "Plang", 7 to "Plong")
-                .filter { input % it.first == 0 }
-                .map { it.second }
+    private val factors = listOf(3 to "Pling", 5 to "Plang", 7 to "Plong")
 
-        return if (factors.isEmpty()) input.toString() else factors.joinToString(separator = "")
+    fun convert(input: Int): String {
+        val raindrops = factors.filter { input % it.first == 0 }.map { it.second }.joinToString("")
+        return if (raindrops.isNotEmpty()) raindrops else input.toString()
     }
 }
