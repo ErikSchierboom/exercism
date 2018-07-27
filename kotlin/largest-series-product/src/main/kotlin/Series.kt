@@ -1,22 +1,20 @@
-fun <T> List<T>.windowed(span: Int) = (0 .. (this.size - span)).map { this.subList(it, it + span) }
-
-class Series(input: String) {
-
-    private val digits: List<Long>
+class Series(private val series: String) {
 
     init {
-        if (input.any { !Character.isDigit(it) })
-            throw IllegalArgumentException()
-
-        digits = input.map { it.toString().toLong() }
+        require(series.all(Char::isDigit))
     }
 
-    fun product(digits: List<Long>): Long = digits.fold(1L) { acc, l -> acc * l }
+    fun getLargestProduct(sliceLength: Int): Int {
+        require(sliceLength >= 0)
+        require(sliceLength <= series.length)
 
-    fun getLargestProduct(span: Int): Long {
-        if (span < 0 || span > digits.size)
-            throw IllegalArgumentException()
-
-        return digits.windowed(span).map { product(it) }.max() ?: 0
+        return series.map(Character::getNumericValue)
+                .slices(sliceLength)
+                .map { it.product() }
+                .max() ?: 1
     }
+
+    private fun List<Int>.slices(sliceLength: Int) = (0 .. this.size - sliceLength).map { this.slice(it until it + sliceLength) }
+
+    private fun List<Int>.product() = this.fold(1) { acc, i -> acc * i }
 }
