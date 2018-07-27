@@ -1,7 +1,6 @@
 object Hamming {
     fun compute(strand1: String, strand2: String): Int {
-        if (strand1.length != strand2.length) throw IllegalArgumentException()
-
-        return strand1.toCharArray().zip(strand2.toCharArray()).sumBy { if (it.first == it.second) 0 else 1 }
+        require(strand1.length == strand2.length) { "left and right strands must be of equal length." }
+        return strand1.zip(strand2).count { it.first != it.second }
     }
 }
