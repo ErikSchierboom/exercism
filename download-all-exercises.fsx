@@ -6,8 +6,7 @@ open System.Text.RegularExpressions
 
 let languageArgument =
     Environment.GetCommandLineArgs()
-    |> Array.skipWhile (fun arg -> arg <> "--")
-    |> Array.skip 1
+    |> Array.skip 4
     |> Array.tryHead
 
 let downloadUrl (url: string) =

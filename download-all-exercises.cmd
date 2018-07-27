@@ -1,1 +1,1 @@
-fsharpi --exec --nologo download-all-exercises.fsx %*
+fsi --exec --nologo download-all-exercises.fsx %*
