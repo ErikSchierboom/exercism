@@ -18,13 +18,11 @@ class RobotTest {
         assertTrue(isValidName(robot.name), "Robot name ${robot.name} didn't match expected pattern.")
     }
 
-    @Ignore
     @Test
     fun differentRobotsHaveDifferentNames() {
         assertNotEquals(robot.name, Robot().name)
     }
 
-    @Ignore
     @Test
     fun resetName() {
         val name = robot.name

@@ -1,12 +1,10 @@
 import java.util.*
 
-val random = Random()
-val letters = ('A' to 'Z').toList()
-val digits = ('0' to '9').toList()
-
-fun <T> List<T>.random() = this[random.nextInt(this.size)]
-
 class Robot {
+    private val letters = ('A' to 'Z').toList()
+    private val digits = ('0' to '9').toList()
+    private val random = Random()
+
     var name: String
 
     init {
@@ -20,4 +18,6 @@ class Robot {
     fun generateName(): String =
             listOf(letters.random(),letters.random(), digits.random(), digits.random(), digits.random())
                 .joinToString(separator = "")
+
+    private fun <T> List<T>.random() = this[random.nextInt(this.size)]
 }
