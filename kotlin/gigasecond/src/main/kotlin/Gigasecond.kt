@@ -5,5 +5,5 @@ class Gigasecond(dateTime: LocalDateTime) {
     constructor(date: LocalDate) : this(date.atStartOfDay()) {
     }
 
-    val date = dateTime.plusSeconds(1000000000)
+    val date = dateTime.plusSeconds(1e9.toLong())
 }
