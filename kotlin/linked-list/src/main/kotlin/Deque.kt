@@ -38,8 +38,7 @@ class Deque<T> {
         }
     }
 
-
-    fun addToEmpty(value: T) {
+    private fun addToEmpty(value: T) {
         val newElement = Element(value, null, null)
         first = newElement
         last = newElement
