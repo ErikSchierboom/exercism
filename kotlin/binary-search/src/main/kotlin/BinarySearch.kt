@@ -1,20 +1,14 @@
 object BinarySearch {
-    tailrec fun search(input: List<Int>, value: Int): Int {
-        if (input.sorted() != input)
-            throw IllegalArgumentException()
+    fun search(input: List<Int>, value: Int): Int = binarySearch(input, value,0, input.size - 1)
 
-        if (input.isEmpty())
-            return -1
+    private tailrec fun binarySearch(input: List<Int>, value: Int, lower: Int, upper: Int): Int {
+        val middleIndex = upper + lower / 2
 
-        val middleIndex = input.size / 2
-        val middle = input[middleIndex]
-
-        if (middle == value)
-            return middleIndex
-        else if (middle < value)
-            return search(input.subList(middleIndex + 1, input.size - 1), value)
-        else
-            return search(input.subList(0, middleIndex), value)
+        return when {
+            lower > upper -> -1
+            input[middleIndex] == value -> middleIndex
+            input[middleIndex] < value -> binarySearch(input, value, middleIndex + 1, upper)
+            else -> binarySearch(input, value, lower, middleIndex - 1)
+        }
     }
-
 }
