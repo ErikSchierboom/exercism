@@ -1,10 +1,12 @@
 object WordCount {
     fun phrase(input: String): Map<String, Int> {
         return input.toLowerCase()
-                .filter { Character.isLetterOrDigit(it) || it == ' ' || it == '\'' }
-                .split(Regex("\\s+"))
-                .groupBy { it }
-                .map { it.key to it.value.size }
-                .toMap()
+                .words()
+                .groupingBy { it }
+                .eachCount()
     }
+
+    private fun String.words() = Regex("""[\w']+""").findAll(this).map { it.value.unquote() }
+
+    private fun String.unquote() = this.trim('\'')
 }
