@@ -8,5 +8,5 @@ object Bob {
 
     private fun String.isQuestion() = this.trimEnd().endsWith('?')
 
-    private fun String.isYell() = this.toUpperCase() == this
+    private fun String.isYell() = this.any(Char::isLetter) && this.toUpperCase() == this
 }
