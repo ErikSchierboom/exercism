@@ -11,4 +11,4 @@ find . -type file -name "\\\\*.[cf]s" -print0 | xargs -0  rename -f 's/\\//g'
 sed -i .original 's/[(]Skip = "Remove to run test"[)]//' $TEST_FILE_GLOB
 rm $TEST_FILE_GLOB$BACKUP_SUFFIX
 dotnet test
-code .
+code -r .
