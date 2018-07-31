@@ -1,21 +1,24 @@
-class Luhn(input: Long) {
-    val digits = input.toString().map { Integer.parseInt(it.toString()) }
+object Luhn {
+    fun isValid(input: String): Boolean {
+        val sanitizedInput = input.replace(" ", "")
 
-    fun addend(index: Int, digit: Int) =
-        if (index % 2 == 0) digit
-        else if (digit >= 5) digit * 2 - 9
-        else digit * 2
-
-    val checkDigit: Int = (input % 10).toInt()
-    val addends = digits.reversed().mapIndexed { i, j -> addend(i, j) }.reversed()
-    val checksum = addends.sum()
-    val isValid = checksum % 10 == 0
-
-    val create: Long by lazy {
-        val zeroCheckDigitNumber = input * 10
-        val target = Luhn(zeroCheckDigitNumber)
-
-        if (target.isValid) zeroCheckDigitNumber
-        else zeroCheckDigitNumber + 10L - (target.checksum % 10)
+        return when {
+            valid(sanitizedInput) -> checksum(sanitizedInput) % 10 == 0
+            else -> false
+        }
     }
+
+    private fun valid(input: String) = input.all(Char::isDigit) && input.length > 1
+
+    private fun checksum(input: String) = addends(input).sum()
+
+    private fun addends(input: String) = input.digits().mapIndexed { i, j ->
+        when {
+            (input.length - i + 1) % 2 == 0 -> j
+            j >= 5 -> j * 2 - 9
+            else -> j * 2
+        }
+    }
+
+    private fun String.digits() = this.map(Character::getNumericValue)
 }
