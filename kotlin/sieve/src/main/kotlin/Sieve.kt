@@ -1,15 +1,15 @@
 object Sieve {
     fun primesUpTo(max: Int): List<Int> {
-        var possiblePrimes = (2 .. max).toList()
-        val primes = mutableListOf<Int>()
+        tailrec fun helper(primes: List<Int>, possiblePrimes: List<Int>): List<Int> =
+            when {
+                possiblePrimes.isEmpty() -> primes
+                else -> {
+                    val prime = possiblePrimes.first()
+                    val sievedPossiblePrimes = possiblePrimes.filter { it % prime != 0 }
+                    helper(primes + prime, sievedPossiblePrimes)
+                }
+            }
 
-        do {
-            val prime = possiblePrimes[0]
-            primes.add(prime)
-
-            possiblePrimes = possiblePrimes.filter { it % prime != 0 }.toMutableList()
-        } while (!possiblePrimes.isEmpty())
-
-        return primes
+        return helper(emptyList(), (2 .. max).toList())
     }
 }
