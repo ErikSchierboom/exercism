@@ -11,7 +11,6 @@ class SieveTest {
         assertEquals(expectedOutput, Sieve.primesUpTo(1))
     }
 
-    @Ignore
     @Test
     fun findFirstPrime() {
         val expectedOutput = listOf(2)
@@ -19,7 +18,6 @@ class SieveTest {
         assertEquals(expectedOutput, Sieve.primesUpTo(2))
     }
 
-    @Ignore
     @Test
     fun findPrimesUpTo10() {
         val expectedOutput = listOf(2, 3, 5, 7)
@@ -27,7 +25,6 @@ class SieveTest {
         assertEquals(expectedOutput, Sieve.primesUpTo(10))
     }
 
-    @Ignore
     @Test
     fun findPrimesUpTo1000() {
         val expectedOutput = listOf(2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61,

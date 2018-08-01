@@ -17,7 +17,6 @@ class PascalsTriangleTest {
         assertEquals(expectedOutput, PascalsTriangle.computeTriangle(0))
     }
 
-    @Ignore
     @Test
     fun oneRow() {
         val expectedOutput = listOf(
@@ -27,7 +26,6 @@ class PascalsTriangleTest {
         assertEquals(expectedOutput, PascalsTriangle.computeTriangle(1))
     }
 
-    @Ignore
     @Test
     fun twoRows() {
         val expectedOutput = listOf(
@@ -38,7 +36,6 @@ class PascalsTriangleTest {
         assertEquals(expectedOutput, PascalsTriangle.computeTriangle(2))
     }
 
-    @Ignore
     @Test
     fun threeRows() {
         val expectedOutput = listOf(
@@ -50,7 +47,6 @@ class PascalsTriangleTest {
         assertEquals(expectedOutput, PascalsTriangle.computeTriangle(3))
     }
 
-    @Ignore
     @Test
     fun fourRows() {
         val expectedOutput = listOf(
@@ -63,7 +59,6 @@ class PascalsTriangleTest {
         assertEquals(expectedOutput, PascalsTriangle.computeTriangle(4))
     }
 
-    @Ignore
     @Test
     fun fiveRows() {
         val expectedOutput = listOf(
@@ -77,7 +72,6 @@ class PascalsTriangleTest {
         assertEquals(expectedOutput, PascalsTriangle.computeTriangle(5))
     }
 
-    @Ignore
     @Test
     fun sixRows() {
         val expectedOutput = listOf(
@@ -92,7 +86,6 @@ class PascalsTriangleTest {
         assertEquals(expectedOutput, PascalsTriangle.computeTriangle(6))
     }
 
-    @Ignore
     @Test
     fun tenRows() {
         val expectedOutput = listOf(
@@ -111,7 +104,6 @@ class PascalsTriangleTest {
         assertEquals(expectedOutput, PascalsTriangle.computeTriangle(10))
     }
 
-    @Ignore
     @Test
     fun validatesNotNegativeRows() {
         expectedException.expect(IllegalArgumentException::class.java)

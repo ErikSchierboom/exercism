@@ -14,7 +14,6 @@ class SeriesTest {
         )
     }
 
-    @Ignore
     @Test
     fun slicesOfTwo() {
         assertEquals(listOf<List<Int>>(), Series.slices(2, ""))
@@ -25,7 +24,6 @@ class SeriesTest {
         )
     }
 
-    @Ignore
     @Test
     fun slicesOfThree() {
         assertEquals(listOf<List<Int>>(), Series.slices(3, ""))

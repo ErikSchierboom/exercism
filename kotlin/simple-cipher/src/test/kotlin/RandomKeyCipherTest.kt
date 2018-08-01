@@ -20,13 +20,11 @@ class RandomKeyCipherTest {
         assertTrue(cipher.key.matches(Regex("[a-z]+")))
     }
 
-    @Ignore
     @Test
     fun defaultCipherKeyIs100Characters() {
         assertEquals(100, cipher.key.length)
     }
 
-    @Ignore
     @Test
     fun cipherKeysAreRandomlyGenerated() {
         assertNotEquals(Cipher().key, cipher.key)
@@ -36,7 +34,6 @@ class RandomKeyCipherTest {
      * Here we take advantage of the fact that plaintext of "aaa..." doesn't output the key. This is a critical problem
      * with shift ciphers, some characters will always output the key verbatim.
      */
-    @Ignore
     @Test
     fun cipherCanEncode() {
         val expectedOutput = cipher.key.substring(0, 10)
@@ -44,7 +41,6 @@ class RandomKeyCipherTest {
         assertEquals(expectedOutput, cipher.encode("aaaaaaaaaa"))
     }
 
-    @Ignore
     @Test
     fun cipherCanDecode() {
         val expectedOutput = "aaaaaaaaaa"
@@ -52,7 +48,6 @@ class RandomKeyCipherTest {
         assertEquals(expectedOutput, cipher.decode(cipher.key.substring(0, 10)))
     }
 
-    @Ignore
     @Test
     fun cipherIsReversible() {
         val plainText = "abcdefghij"

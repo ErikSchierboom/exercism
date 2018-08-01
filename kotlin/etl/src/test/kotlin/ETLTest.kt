@@ -12,7 +12,6 @@ class ETLTest {
         assertEquals(expected, ETL.transform(old))
     }
 
-    @Ignore
     @Test
     fun singleScoreWithMultipleLetters() {
         val old = mapOf(1 to listOf('A', 'E', 'I', 'O', 'U'))
@@ -21,7 +20,6 @@ class ETLTest {
         assertEquals(expected, ETL.transform(old))
     }
 
-    @Ignore
     @Test
     fun multipleScoresWithMultipleLetters() {
         val old = mapOf(1 to listOf('A', 'E'), 2 to listOf('D', 'G'))
@@ -30,7 +28,6 @@ class ETLTest {
         assertEquals(expected, ETL.transform(old))
     }
 
-    @Ignore
     @Test
     fun multipleScoresWithDifferingNumbersOfLetters() {
         val old = mapOf(

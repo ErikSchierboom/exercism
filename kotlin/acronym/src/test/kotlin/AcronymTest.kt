@@ -11,7 +11,6 @@ class AcronymTest {
         assertEquals(expected, Acronym.generate(phrase))
     }
 
-    @Ignore
     @Test
     fun fromOtherTitleCasedPhrases() {
         val phrase = "Ruby on Rails"
@@ -19,7 +18,6 @@ class AcronymTest {
         assertEquals(expected, Acronym.generate(phrase))
     }
 
-    @Ignore
     @Test
     fun fromPhrasesWithPunctuation() {
         val phrase = "First In, First Out"
@@ -27,7 +25,6 @@ class AcronymTest {
         assertEquals(expected, Acronym.generate(phrase))
     }
 
-    @Ignore
     @Test
     fun fromAllCapsWord() {
         val phrase = "PHP: Hypertext Preprocessor"
@@ -35,7 +32,6 @@ class AcronymTest {
         assertEquals(expected, Acronym.generate(phrase))
     }
 
-    @Ignore
     @Test
     fun fromNonAcronymAllCapsWord() {
         val phrase = "GNU Image Manipulation Program"
@@ -43,7 +39,6 @@ class AcronymTest {
         assertEquals(expected, Acronym.generate(phrase))
     }
 
-    @Ignore
     @Test
     fun fromPhrasesWithPunctuationAndSentenceCasing() {
         val phrase = "Complementary metal-oxide semiconductor"
