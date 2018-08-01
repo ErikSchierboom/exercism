@@ -2,25 +2,16 @@ enum class Classification {
     DEFICIENT, PERFECT, ABUNDANT
 }
 
-fun sumOfFactors(naturalNumber: Int): Int {
-    var sumOfFactors = 0
-
-    for (i in 1..naturalNumber - 1)
-        if (naturalNumber % i === 0)
-            sumOfFactors += i
-
-    return sumOfFactors
-}
+private fun sumOfFactors(naturalNumber: Int) = (1 until naturalNumber).filter { naturalNumber % it == 0 }.sum()
 
 fun classify(naturalNumber: Int): Classification {
-    require(naturalNumber >= 0)
+    require(naturalNumber > 0)
 
-    var sumOfFactorsForInput = sumOfFactors(naturalNumber)
+    val sumOfFactorsForInput = sumOfFactors(naturalNumber)
 
-    if (sumOfFactorsForInput < naturalNumber)
-        return Classification.DEFICIENT
-    else if (sumOfFactorsForInput == naturalNumber)
-        return Classification.PERFECT
-    else
-        return Classification.ABUNDANT
+    return when {
+        sumOfFactorsForInput < naturalNumber -> Classification.DEFICIENT
+        sumOfFactorsForInput == naturalNumber -> Classification.PERFECT
+        else -> Classification.ABUNDANT
+    }
 }
