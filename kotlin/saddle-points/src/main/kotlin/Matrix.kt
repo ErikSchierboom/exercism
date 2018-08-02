@@ -2,34 +2,19 @@ class Matrix(input: List<List<Int>>) {
     val saddlePoints: Set<MatrixCoordinate>
 
     init {
-        val maximumPerRow = input.map { it.max() ?: Int.MAX_VALUE }
-        val minimumPerColumn = input.transpose().map { it.min() ?: Int.MIN_VALUE }
+        val rows = input.size
+        val columns = if (rows == 0) 0 else input[0].size
 
-        fun isSaddlePoint(coordinate: MatrixCoordinate): Boolean {
-            val value = input[coordinate.row][coordinate.col]
-            return value >= maximumPerRow[coordinate.row] && value <= minimumPerColumn[coordinate.col]
-        }
+        val maximumPerRow = input.map { it.max() }
+        val minimumPerColumn = (0 until columns).map { column -> (0 until rows).map { row -> input[row][column] }.min() }
 
-        saddlePoints = input.coordinates().filter(::isSaddlePoint).toSet()
-    }
+        fun isSaddlePoint(coordinate: MatrixCoordinate) = maximumPerRow[coordinate.row] == minimumPerColumn[coordinate.col]
 
-    fun List<List<Int>>.rows(): Int = this.size
-
-    fun List<List<Int>>.columns(): Int = if (this.isEmpty()) 0 else this[0].size
-
-    fun List<List<Int>>.transpose(): List<List<Int>> {
-        return (0 until this.rows()).map { row ->
-            (0 until this.columns()).map { col ->
-                this[col][row]
-            }
-        }
-    }
-
-    fun List<List<Int>>.coordinates(): List<MatrixCoordinate> {
-        return (0 until this.rows()).flatMap { row ->
-            (0 until this.columns()).map { col ->
+        val coordinates = (0 until rows).flatMap { row ->
+            (0 until columns).map { col ->
                 MatrixCoordinate(row, col)
             }
         }
+        saddlePoints = coordinates.filter(::isSaddlePoint).toSet()
     }
 }
