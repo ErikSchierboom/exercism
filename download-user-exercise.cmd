@@ -1,0 +1,1 @@
+fsi --exec --nologo download-user-exercise.fsx %*
