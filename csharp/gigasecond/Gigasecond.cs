@@ -1,19 +1,6 @@
-﻿namespace gigasecond
+﻿using System;
+
+public static class Gigasecond
 {
-    using System;
-
-    public class Gigasecond
-    {
-        private readonly DateTime gigasecondDate;
-
-        public Gigasecond(DateTime birthDate)
-        {
-            this.gigasecondDate = birthDate.AddSeconds(1000000000).Date;
-        }
-
-        public DateTime Date()
-        {
-            return this.gigasecondDate;
-        }
-    }
+    public static DateTime Add(DateTime birthDate) => birthDate.AddSeconds(1e9);
 }
