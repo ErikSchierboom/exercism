@@ -30,12 +30,27 @@ let exercises language =
 let downloadExercise language exercise =
     let command = "exercism"
     let arguments = sprintf "download --exercise=%s --track=%s" exercise language
-    let downloadProcess = Process.Start(command, arguments)
+
+    let processStartInfo = ProcessStartInfo(command, arguments)
+    processStartInfo.UseShellExecute <- false
+    processStartInfo.RedirectStandardOutput <- true
+    processStartInfo.RedirectStandardError <- true
+
+    use downloadProcess = new Process()
+    downloadProcess.StartInfo <- processStartInfo
+    downloadProcess.Start() |> ignore
     downloadProcess.WaitForExit()
+    let downloadedToDirectory = downloadProcess.StandardOutput.ReadToEnd().Trim()
+
+    printfn "Exercise %s downloaded to: %s" exercise downloadedToDirectory
 
 let downloadExercises language =
+    printfn "Downloading exercises for %s track..." language
+
     exercises language
     |> List.iter (downloadExercise language)
+
+    printfn "Exercises downloaded"
 
 match languageArgument with
 | Some language -> downloadExercises language
