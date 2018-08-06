@@ -1,12 +1,11 @@
-open System
 open System.Net
 open System.IO
 open System.Diagnostics
 open System.Text.RegularExpressions
 
 let languageArgument =
-    Environment.GetCommandLineArgs()
-    |> Array.skip 4
+    fsi.CommandLineArgs
+    |> Array.tail
     |> Array.tryHead
 
 let downloadUrl (url: string) =

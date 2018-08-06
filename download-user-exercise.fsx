@@ -1,17 +1,16 @@
-open System
 open System.IO
 open System.Diagnostics
 
 let arg index =
-    let args = Environment.GetCommandLineArgs()
+    let args = fsi.CommandLineArgs
     match index < args.Length with 
     | false -> None
     | true -> args |> Array.skip index |> Array.tryHead
 
-let uuidArgument = arg 4
+let uuidArgument = arg 1
 
 let openInIdeArgument = 
-    arg 5
+    arg 2
     |> Option.map (fun arg -> arg <> "test")
     |> Option.defaultValue true
 
