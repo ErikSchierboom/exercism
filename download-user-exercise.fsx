@@ -2,10 +2,18 @@ open System
 open System.IO
 open System.Diagnostics
 
-let uuidArgument =
-    Environment.GetCommandLineArgs()
-    |> Array.skip 4
-    |> Array.tryHead
+let arg index =
+    let args = Environment.GetCommandLineArgs()
+    match index < args.Length with 
+    | false -> None
+    | true -> args |> Array.skip index |> Array.tryHead
+
+let uuidArgument = arg 4
+
+let openInIdeArgument = 
+    arg 5
+    |> Option.map (fun arg -> arg <> "test")
+    |> Option.defaultValue true
 
 let runProcess processStartInfo =
     let newProcess = new Process()
@@ -56,7 +64,7 @@ let processUuid uuid =
     let directory = downloadSubmission uuid
     enableAllTests directory |> ignore
     runAllTests directory |> ignore
-    openInIDE directory |> ignore
+    if openInIdeArgument then openInIDE directory else ()
 
 match uuidArgument with
 | Some uuid -> processUuid uuid
