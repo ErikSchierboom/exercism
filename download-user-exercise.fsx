@@ -54,7 +54,7 @@ let runAllTests directory =
     runAndDisposeProcess processStartInfo
 
 let openInIDE directory =
-    let processStartInfo = ProcessStartInfo("code", ".")
+    let processStartInfo = ProcessStartInfo("code", "-r .")
     processStartInfo.WorkingDirectory <- directory
 
     runAndDisposeProcess processStartInfo
