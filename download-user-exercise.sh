@@ -1,1 +1,1 @@
-fsharpi --exec --nologo download-user-exercise.fsx $@
+fsharpi --exec --nologo ./download-user-exercise.fsx $@
