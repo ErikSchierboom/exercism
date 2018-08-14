@@ -11,8 +11,8 @@ public class SaddlePoints
     public SaddlePoints(int[,] values)
     {
         this.values = values;
-        this.maxRows = Rows().Select(r => r.Max()).ToArray();
-        this.minCols = Columns().Select(r => r.Min()).ToArray();
+        maxRows = Rows().Select(r => r.Max()).ToArray();
+        minCols = Columns().Select(r => r.Min()).ToArray();
     }
 
     public IEnumerable<Tuple<int, int>> Calculate() => Coordinates().Where(IsSaddlePoint);

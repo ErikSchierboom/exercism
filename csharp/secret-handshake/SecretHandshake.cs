@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-public class SecretHandshake
+public static class SecretHandshake
 {
     private const int ReverseCommand = 1 << 4;
 
@@ -13,23 +13,13 @@ public class SecretHandshake
                                                                              { 1 << 3, "jump" },
                                                                          };
 
-    private readonly int number;
-
-    public SecretHandshake(int number)
+    public static IEnumerable<string> Commands(int number)
     {
-        this.number = number;
-    }
-
-    public IEnumerable<string> Commands()
-    {
-        var commands = CommandsMapping.Where(commandMapping => this.ContainsCommand(commandMapping.Key))
+        var commands = CommandsMapping.Where(commandMapping => ContainsCommand(commandMapping.Key))
                                       .Select(commandMapping => commandMapping.Value);
 
         return ContainsCommand(ReverseCommand) ? commands.Reverse() : commands;
-    }
-
-    private bool ContainsCommand(int mask)
-    {
-        return (this.number & mask) != 0;
+        
+        bool ContainsCommand(int mask) => (number & mask) != 0;
     }
 }

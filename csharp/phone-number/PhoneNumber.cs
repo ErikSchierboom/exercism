@@ -1,41 +1,33 @@
-﻿namespace phone_number
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
+public static class PhoneNumber
 {
-    using System.Linq;
-
-    public class PhoneNumber
+    public static string Clean(string phoneNumber)
     {
-        private const string InvalidPhoneNumber = "0000000000";
+        var digits = Digits(phoneNumber);
 
-        public PhoneNumber(string phoneNumber)
-        {
-            this.Number = GetCorrectPhoneNumber(phoneNumber);
-            this.AreaCode = this.Number.Substring(0, 3);
-        }
+        if (InvalidAreaCode(digits) || InvalidExchangeCode(digits))
+            throw new ArgumentException();
 
-        public string Number { get; private set; }
-
-        public string AreaCode { get; private set; }
-
-        private static string GetCorrectPhoneNumber(string phoneNumber)
-        {
-            var digits = phoneNumber.Where(char.IsDigit).ToArray();
-
-            if (digits.Length == 10)
-            {
-                return new string(digits);
-            }
-
-            if (digits.Length == 11 && digits.First() == '1')
-            {
-                return new string(digits.Skip(1).ToArray());
-            }
-
-            return InvalidPhoneNumber;
-        }
-
-        public override string ToString()
-        {
-            return string.Format("({0}) {1}-{2}", this.AreaCode, this.Number.Substring(3, 3), this.Number.Substring(6, 4));
-        }
+        return new string(digits);
     }
+
+    private static char[] Digits(string phoneNumber)
+    {
+        var digits = phoneNumber.Where(char.IsDigit).ToArray();
+
+        if (digits.Length == 10)
+            return digits;
+
+        if (digits.Length == 11 && digits[0] == '1')
+            return digits.Skip(1).ToArray();
+
+        throw new ArgumentException();
+    }
+
+    private static bool InvalidAreaCode(IReadOnlyList<char> digits) => digits[0] == '0' || digits[0] == '1';
+    
+    private static bool InvalidExchangeCode(IReadOnlyList<char> digits) => digits[3] == '0' || digits[3] == '1';
 }

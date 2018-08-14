@@ -127,7 +127,7 @@ public class SgfParsingTest
 
         public int GetHashCode(SgfTree obj)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
     }
 
@@ -142,7 +142,7 @@ public class SgfParsingTest
 
         public int GetHashCode(IDictionary<string, string[]> obj)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
     }
 }

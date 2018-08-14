@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 public enum Classification
 {
@@ -7,10 +8,20 @@ public enum Classification
     Deficient
 }
 
-public static class PerfectNumbers
+public class PerfectNumbers
 {
     public static Classification Classify(int number)
     {
-        throw new NotImplementedException();
+        if (number < 1)
+            throw new ArgumentOutOfRangeException();
+        
+        var sumOfFactors = Enumerable.Range(1, number/2).Where(x => number%x == 0).Sum();
+
+        if (sumOfFactors == number)
+        { 
+            return Classification.Perfect;
+        }
+
+        return sumOfFactors < number ? Classification.Deficient : Classification.Abundant;
     }
 }

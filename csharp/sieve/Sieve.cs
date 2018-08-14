@@ -1,36 +1,29 @@
-﻿namespace sieve
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
+public static class Sieve
 {
-    using System.Collections.Generic;
-    using System.Linq;
-
-    public class Sieve
+    public static IEnumerable<int> Primes(int max)
     {
-        private readonly int max;
+        if (max < 2)
+            throw new ArgumentOutOfRangeException(nameof(max));
+        
+        var possiblePrimes = Enumerable.Range(2, max - 1).ToList();
 
-        public Sieve(int max)
-        {
-            this.max = max;
-        }
+        return Sieve(possiblePrimes);
 
-        public IEnumerable<int> Primes
+        IEnumerable<int> Sieve(List<int> unsievedPrimes)
         {
-            get
+            while (unsievedPrimes.Any())
             {
-                var possiblePrimes = Enumerable.Range(2, this.max - 1);
+                var prime = unsievedPrimes[0];
+                yield return prime;
 
-                while (possiblePrimes.Any())
-                {
-                    var prime = possiblePrimes.First();
-                    yield return prime;
-
-                    possiblePrimes = ExcludePrimeMultiples(possiblePrimes, prime);
-                }
+                unsievedPrimes = ExcludePrimeMultiples(unsievedPrimes, prime);
             }
         }
-
-        private static IEnumerable<int> ExcludePrimeMultiples(IEnumerable<int> possiblePrimes, int prime)
-        {
-            return possiblePrimes.Where(n => n % prime != 0);
-        }
+        
+        List<int> ExcludePrimeMultiples(List<int> unsievedPrimes, int prime) => unsievedPrimes.Where(n => n % prime != 0).ToList();
     }
 }

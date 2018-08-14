@@ -3,13 +3,19 @@ using System.Collections.Generic;
 
 public static class Strain
 {
-    public static IEnumerable<T> Keep<T>(this IEnumerable<T> collection, Func<T, bool> predicate)
+    public static IEnumerable<T> Keep<T>(this IEnumerable<T> value, Predicate<T> predicate)
     {
-        throw new NotImplementedException("You need to implement this function.");
+        foreach (var element in value)
+        {
+            if (predicate(element))
+            {
+                yield return element;
+            }
+        }
     }
 
-    public static IEnumerable<T> Discard<T>(this IEnumerable<T> collection, Func<T, bool> predicate)
+    public static IEnumerable<T> Discard<T>(this IEnumerable<T> value, Predicate<T> predicate)
     {
-        throw new NotImplementedException("You need to implement this function.");
+        return value.Keep(x => !predicate(x));
     }
 }

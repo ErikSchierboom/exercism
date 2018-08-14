@@ -1,9 +1,10 @@
-﻿using System;
+﻿using System.Linq;
 
 public static class Isogram
 {
-    public static bool IsIsogram(string word)
+    public static bool IsIsogram(string input)
     {
-        throw new NotImplementedException("You need to implement this function.");
+        var lowerInput = input.ToLower().Where(char.IsLetter).ToList();
+        return lowerInput.Distinct().Count() == lowerInput.Count;
     }
 }

@@ -1,14 +1,17 @@
 ﻿using System;
+using System.Linq;
 
 public static class Grains
 {
-    public static ulong Square(int n)
+    public static double Square(int i)
     {
-        throw new NotImplementedException("You need to implement this function.");
+        if (i <= 0 || i > 64)
+        {
+            throw new ArgumentOutOfRangeException(nameof(i));
+        }
+        
+        return Math.Pow(2, i - 1);
     }
 
-    public static ulong Total()
-    {
-        throw new NotImplementedException("You need to implement this function.");
-    }
+    public static double Total() => Enumerable.Range(1, 64).Select(Square).Sum();
 }

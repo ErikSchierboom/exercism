@@ -1,16 +1,19 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using Microsoft.VisualBasic.CompilerServices;
 
-public class PascalsTriangle
+public static class PascalsTriangle
 {
-    public IEnumerable<IEnumerable<int>> Calculate(int rows)
+    public static IEnumerable<IEnumerable<int>> Calculate(int rows)
     {
-        for (var i = 1; i <= rows; i++)
-        {
-            yield return Row(i);
-        }
+        if (rows < 0)
+            throw new ArgumentOutOfRangeException(nameof(rows));
+
+        return Enumerable.Range(1, rows).Select(Row);
     }
-        
-    private IEnumerable<int> Row(int row)
+
+    private static IEnumerable<int> Row(int row)
     {
         yield return 1;
         var column = 1;

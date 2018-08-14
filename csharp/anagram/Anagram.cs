@@ -1,14 +1,30 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 public class Anagram
 {
-    public Anagram(string baseWord)
+    private readonly string target;
+    private readonly string normalizedTarget;
+
+    public Anagram(string target)
     {
-        throw new NotImplementedException("You need to implement this function.");
+        this.target = target;
+        normalizedTarget = NormalizeWord(target);
     }
 
-    public string[] Anagrams(string[] potentialMatches)
+    public IEnumerable<string> Anagrams(IEnumerable<string> sources)
     {
-        throw new NotImplementedException("You need to implement this function.");
+        return sources.Where(IsAnagram);
+    }
+
+    private bool IsAnagram(string source)
+    {
+        return NormalizeWord(source) == normalizedTarget && !string.Equals(source, target, StringComparison.InvariantCultureIgnoreCase);
+    }
+
+    private static string NormalizeWord(string word)
+    {
+        return new string(word.ToLowerInvariant().OrderBy(c => c).ToArray());
     }
 }
