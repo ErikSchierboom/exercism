@@ -5,11 +5,10 @@ public static class ArmstrongNumbers
 {
     public static bool IsArmstrongNumber(int number)
     {
-        var digits = number.ToString().Select(CharToInt).ToArray();
-        var digitsRaisedToPowerSum = digits.Sum(digit => Math.Pow(digit, digits.Length));
+        var numberAsString = number.ToString();
+        return numberAsString.Select(CharToInt).Sum(IntRaisedToPower) == number;
 
-        return digitsRaisedToPowerSum == number;
+        int IntRaisedToPower(int i) => (int) Math.Pow(i, numberAsString.Length);
+        int CharToInt(char c) => c - '0';
     }
-
-    private static int CharToInt(char c) => c - '0';
 }
