@@ -1,17 +1,21 @@
 class BankAccount {
-    private var closed = false
+    private var open = true
     private var currentBalance = 0
 
     val balance
-        get() =
-            if (closed) throw IllegalStateException() else this.currentBalance
+        get(): Int {
+            check(open)
+            return this.currentBalance
+        }
 
     @Synchronized
-    fun adjustBalance(amount: Int) =
-            if (closed) throw IllegalStateException() else currentBalance += amount;
+    fun adjustBalance(amount: Int) {
+        check(open)
+        currentBalance += amount
+    }
 
     @Synchronized
     fun close() {
-        closed = true
+        open = false
     }
 }
