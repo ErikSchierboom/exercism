@@ -7,12 +7,7 @@ public static class IsbnVerifier
     public static bool IsValid(string number)
     {
         var normalizedNumber = NormalizeNumber(number);
-        if (!IsValidNumber(normalizedNumber))
-        {
-            return false;
-        }
-
-        return Checksum(normalizedNumber) % 11 == 0;
+        return IsValidNumber(normalizedNumber) && Checksum(normalizedNumber) % 11 == 0;
     }
 
     private static string NormalizeNumber(string number) => number.Replace("-", "");
@@ -22,8 +17,8 @@ public static class IsbnVerifier
     private static int Checksum(string normalizedNumber) 
         => normalizedNumber
             .Reverse()
-            .Select((digit, i) => DigitToInt(digit) * (i + 1))
+            .Select((digit, i) => DigitToValue(digit) * (i + 1))
             .Sum();
 
-    private static int DigitToInt(char digit) => digit == 'X' ? 10 : digit - '0';
+    private static int DigitToValue(char digit) => digit == 'X' ? 10 : digit - '0';
 }
