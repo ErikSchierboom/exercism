@@ -1,10 +1,15 @@
 ﻿module CollatzConjecture
 
-let rec private stepsHelper steps number =
-    match number with
-    | 1 -> Some steps
-    | _ when number < 1 -> None
-    | _ when number % 2 = 0 -> stepsHelper (steps + 1) (number / 2)
-    | _ -> stepsHelper (steps + 1) (number * 3  + 1)
+let steps number = 
+    let rec helper count current =
+        match current with
+        | _ when current < 1 -> 
+            None
+        | 1 -> 
+            Some count
+        | _ when current % 2 = 0 ->
+            helper (count + 1) (current / 2)
+        | _ ->
+            helper (count + 1) (current * 3  + 1)
 
-let steps number = stepsHelper 0 number
+    helper 0 number
