@@ -7,13 +7,13 @@ let private upperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 let private keyForLetter letter = if Char.IsLower(letter) then lowerCaseLetters else upperCaseLetters
 
-let private shiftLetter shiftKey (key: string) (letter: char) = 
+let private rotateLetterUsingKey shiftKey (letter: char) (key: string) = 
     let shiftIndex = key.IndexOf(letter) + shiftKey
     key.[shiftIndex % key.Length]
 
-let rotateLetter shiftKey letter =
+let private rotateLetter shiftKey letter =
     if Char.IsLetter(letter) then
-        shiftLetter shiftKey (keyForLetter letter) letter
+        rotateLetterUsingKey shiftKey letter  (keyForLetter letter)
     else
         letter
 
