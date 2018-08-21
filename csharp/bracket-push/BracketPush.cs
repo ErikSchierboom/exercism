@@ -1,22 +1,43 @@
+using System.Collections.Generic;
 using System.Linq;
 
 public static class BracketPush
 {
+    private static readonly Dictionary<char, char> ClosingToOpeningBrackets = new Dictionary<char, char>
+    {
+        [']'] = '[',
+        ['}'] = '{',
+        [')'] = '(',
+    };
+
     public static bool IsPaired(string input)
     {
-        var brackets = new string(input.Where(c => "[]{}()".Contains(c)).ToArray());
-        var previousLength = brackets.Length;
+        var unpairedBrackets = new Stack<char>();
 
-        while (brackets.Length > 0)
+        foreach (var character in input)
         {
-            brackets = brackets.Replace("[]", "").Replace("{}", "").Replace("()", "");
-
-            if (brackets.Length == previousLength)
-                return false;
-
-            previousLength = brackets.Length;
+            if (IsOpeningBracket(character))
+            {
+                unpairedBrackets.Push(character);
+            }
+            else if (TryGetOpeningBracketForClosingBracket(character, out var openingBracket))
+            {
+                if (!ClosingBracketMatchesLastUnpairedBracket(unpairedBrackets, openingBracket)) 
+                    return false;
+                
+                unpairedBrackets.Pop();
+            }
         }
 
-        return true;
+        return !unpairedBrackets.Any();
     }
+
+    private static bool IsOpeningBracket(char character)
+        => ClosingToOpeningBrackets.Values.Contains(character);
+
+    private static bool TryGetOpeningBracketForClosingBracket(char character, out char openingBracket)
+        => ClosingToOpeningBrackets.TryGetValue(character, out openingBracket);
+
+    private static bool ClosingBracketMatchesLastUnpairedBracket(Stack<char> unpairedBrackets, char openingBracket)
+        => unpairedBrackets.TryPeek(out var topUnpairedBracket) && topUnpairedBracket == openingBracket;
 }
