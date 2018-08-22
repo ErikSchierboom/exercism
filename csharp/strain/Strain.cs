@@ -3,19 +3,15 @@ using System.Collections.Generic;
 
 public static class Strain
 {
-    public static IEnumerable<T> Keep<T>(this IEnumerable<T> value, Predicate<T> predicate)
+    public static IEnumerable<T> Keep<T>(this IEnumerable<T> source, Predicate<T> predicate)
     {
-        foreach (var element in value)
+        foreach (var element in source)
         {
             if (predicate(element))
-            {
                 yield return element;
-            }
         }
     }
 
-    public static IEnumerable<T> Discard<T>(this IEnumerable<T> value, Predicate<T> predicate)
-    {
-        return value.Keep(x => !predicate(x));
-    }
+    public static IEnumerable<T> Discard<T>(this IEnumerable<T> source, Predicate<T> predicate) 
+        => source.Keep(element => !predicate(element));
 }
