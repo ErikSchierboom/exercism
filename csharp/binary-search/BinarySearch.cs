@@ -1,6 +1,4 @@
-﻿using System;
-
-public class BinarySearch
+﻿public class BinarySearch
 {
     private readonly int[] _input;
 
@@ -9,27 +7,22 @@ public class BinarySearch
     public int Find(int value)
     {
         if (_input.Length == 0)
-        {
             return -1;
-        }
 
         return FindBetweenIndices(0, _input.Length - 1);
 
         int FindBetweenIndices(int minIndex, int maxIndex)
         {
-            var middleIndex = (minIndex + maxIndex) / 2;
-
-            if (_input[middleIndex] == value)
-            {
-                return middleIndex;
-            }
-
-            if (middleIndex <= 0 || middleIndex >= _input.Length - 1 || minIndex >= maxIndex)
-            {
+            if (minIndex > maxIndex)
                 return -1;
-            }
+            
+            var middleIndex = (minIndex + maxIndex) / 2;
+            var valueAtMiddleIndex = _input[middleIndex];
+            
+            if (valueAtMiddleIndex == value)
+                return middleIndex;
 
-            return _input[middleIndex] > value
+            return valueAtMiddleIndex > value
                 ? FindBetweenIndices(minIndex, middleIndex - 1)
                 : FindBetweenIndices(middleIndex + 1, maxIndex);
         }
