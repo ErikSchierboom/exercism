@@ -1,5 +1,3 @@
-using System;
-
 public struct Clock
 {
     private const int HoursPerDay = 24;
