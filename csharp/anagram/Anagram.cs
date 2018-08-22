@@ -4,27 +4,24 @@ using System.Linq;
 
 public class Anagram
 {
-    private readonly string target;
-    private readonly string normalizedTarget;
+    private readonly string _word;
+    private readonly IEnumerable<char> _normalizedWord;
 
-    public Anagram(string target)
-    {
-        this.target = target;
-        normalizedTarget = NormalizeWord(target);
-    }
+    public Anagram(string word)
+        => (_word, _normalizedWord) = (word, Normalize(word));
 
-    public IEnumerable<string> Anagrams(IEnumerable<string> sources)
-    {
-        return sources.Where(IsAnagram);
-    }
+    public IEnumerable<string> Anagrams(IEnumerable<string> sources) 
+        => sources.Where(IsAnagram).ToArray();
 
-    private bool IsAnagram(string source)
-    {
-        return NormalizeWord(source) == normalizedTarget && !string.Equals(source, target, StringComparison.InvariantCultureIgnoreCase);
-    }
+    private bool IsAnagram(string possibleAnagram) 
+        => HasMatchingCharacters(possibleAnagram) && IsDifferentFromWord(possibleAnagram);
 
-    private static string NormalizeWord(string word)
-    {
-        return new string(word.ToLowerInvariant().OrderBy(c => c).ToArray());
-    }
+    private bool HasMatchingCharacters(string possibleAnagram) 
+        => Normalize(possibleAnagram).SequenceEqual(_normalizedWord);
+
+    private bool IsDifferentFromWord(string possibleAnagram) 
+        => !string.Equals(possibleAnagram, _word, StringComparison.InvariantCultureIgnoreCase);
+
+    private static IEnumerable<char> Normalize(string word) 
+        => word.ToLowerInvariant().OrderBy(c => c);
 }
