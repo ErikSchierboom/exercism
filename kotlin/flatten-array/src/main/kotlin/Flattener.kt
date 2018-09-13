@@ -1,14 +1,9 @@
 object Flattener {
-    fun flatten(nestedList: List<Any?>): List<Any> {
-        val results = mutableListOf<Any>()
-
-        for (x in nestedList.filterNotNull()) {
-            when (x) {
-                is List<*> -> results.addAll(flatten(x))
-                else -> results.add(x)
+    fun flatten(nestedList: List<Any?>): List<Any> =
+            nestedList.filterNotNull().flatMap {
+                when (it) {
+                    is List<*> -> flatten(it)
+                    else -> listOf(it)
+                }
             }
-        }
-
-        return results
-    }
 }
