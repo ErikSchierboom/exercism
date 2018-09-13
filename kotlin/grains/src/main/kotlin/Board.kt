@@ -7,5 +7,5 @@ object Board {
         return BigInteger("2").pow(square - 1)
     }
 
-    fun getTotalGrainCount() = (1 .. 64).map(::getGrainCountForSquare).reduce { acc, count -> acc + count }
+    fun getTotalGrainCount() = BigInteger("2").pow(64) - BigInteger("1")
 }
