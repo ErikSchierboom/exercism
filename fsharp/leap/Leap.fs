@@ -1,3 +1,3 @@
 ﻿module Leap
 
-let leapYear year = year % 4 = 0 && year % 100 <> 0 || year % 400 = 0
+let leapYear (year: int): bool = failwith "You need to implement this function."

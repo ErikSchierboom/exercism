@@ -5,36 +5,12 @@ type Position = int * int
 
 type Robot = { direction: Direction; position: Position }
 
-let create direction position = { direction = direction; position = position }
+let create direction position = failwith "You need to implement this function."
 
-let turnLeft robot =
-    match robot.direction with
-    | North -> { robot with direction = West  }
-    | East  -> { robot with direction = North }
-    | South -> { robot with direction = East  }
-    | West  -> { robot with direction = South }
+let turnLeft robot = failwith "You need to implement this function."
 
-let turnRight robot =
-    match robot.direction with
-    | North -> { robot with direction = East  }
-    | East  -> { robot with direction = South }
-    | South -> { robot with direction = West  }
-    | West  -> { robot with direction = North }
+let turnRight robot = failwith "You need to implement this function."
 
-let advance robot =
-    let (x, y) = robot.position
+let advance robot = failwith "You need to implement this function."
 
-    match robot.direction with
-    | North -> { robot with position = (x    , y + 1) }
-    | East  -> { robot with position = (x + 1, y    ) }
-    | South -> { robot with position = (x    , y - 1) }
-    | West  -> { robot with position = (x - 1, y    ) }
-
-let private applyInstruction robot instruction =
-    match instruction with
-    | 'L' -> turnLeft robot
-    | 'R' -> turnRight robot
-    | 'A' -> advance robot
-    | _   -> failwith "Invalid instruction"
-
-let instructions instructions' robot = Seq.fold applyInstruction robot instructions'
+let instructions instructions' robot = failwith "You need to implement this function."
