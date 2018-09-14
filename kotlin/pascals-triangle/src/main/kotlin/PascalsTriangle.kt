@@ -1,17 +1,20 @@
+import kotlin.coroutines.experimental.buildSequence
+
 object PascalsTriangle {
-    fun row(i: Int): List<Int> {
-        val values = mutableListOf(1)
-        var column = 1
-
-        for (j in 1 .. i - 1) {
-            column = column * (i - j) / j
-            values.add(column)
-        }
-
-        return values;
+    fun computeTriangle(rows: Int): List<List<Int>> {
+        require(rows >= 0) { "Rows can't be negative!" }
+        return (1..rows).map(this::row)
     }
 
-    fun computeTriangle(rows: Int): List<List<Int>> =
-        if (rows < 0) throw IllegalArgumentException()
-        else (1..rows).map { row(it) }
+    private fun row(i: Int): List<Int> {
+        return buildSequence {
+            var column = 1
+            yield(column)
+
+            for (j in 1 until i) {
+                column = column * (i - j) / j
+                yield(column)
+            }
+        }.toList()
+    }
 }
