@@ -1,106 +1,84 @@
-﻿module Markdown
+module Markdown
 
-let rec parse (markdown: string) =
-   let mutable html = ""
-   let mutable remainder = markdown
-   let mutable isList = false
+open System
+open System.Text.RegularExpressions
 
-   let lines = remainder.Split('\n')
+let openingTag tag = sprintf "<%s>" tag
+let closingTag tag = sprintf "</%s>" tag
+let wrapInTag tag text = sprintf "%s%s%s" (openingTag tag) text (closingTag tag)
+let startsWithTag tag (text: string) = text.StartsWith (openingTag tag)
 
-   for i = 0 to lines.Length - 1 do
-       
-       if lines.[i].[0] = '*' then
-           if not isList then  
-               html <- html + "<ul>"
-               isList <- true
+let headerMarkdown = "#"
+let boldMarkdown = "__"
+let italicMarkdown = "_"
+let listItemMarkdown = "*"
 
-           html <- html + "<li>"
+let boldTag = "em"
+let italicTag = "i"
+let paragraphTag = "p"
+let listTag = "ul"
+let listItemTag = "li"
 
-           let mutable line = lines.[i].[2..]     
-           let mutable __pos = line.IndexOf "__"
+let parseDelimited delimiter tag (markdown: string) = 
+    let pattern = sprintf "%s(.+?)%s" delimiter delimiter
+    let replacement = wrapInTag tag "$1"
+    Regex.Replace(markdown, pattern, replacement)
 
-           let notusep = line.StartsWith "__" || line.StartsWith "_"
+let parseBold   = parseDelimited "__" boldTag
+let parseItalic = parseDelimited "_"  italicTag
 
-           while __pos > -1 do                
-               let mutable __pos' = if __pos >= (line.Length - 2) then -1 else line.IndexOf("__", __pos + 2)
+let correctLine list (markdown: string) = 
+    if list && (startsWithTag boldTag markdown || startsWithTag italicTag markdown) then markdown
+    else wrapInTag paragraphTag markdown
 
-               if __pos' > -1 then                                        
-                   if __pos + 2 >= (line.Length - 1) then                     
-                       line <- line.[0.. __pos - 1] + "<strong>" + line.[__pos + 2 .. __pos' - 1] + "</strong>"
-                       __pos <- __pos' + 1
-                   else
-                       line <- line.[0.. __pos - 1] + "<strong>" + line.[__pos + 2 .. __pos' - 1] + "</strong>" + line.[__pos' + 2 ..]
-                       __pos <- __pos' + 1
-               else
-                   __pos <- -1
+let parseText list (markdown: string) =
+    markdown
+    |> parseBold
+    |> parseItalic
+    |> correctLine list
 
-           __pos <- line.IndexOf "_"
+let (|Header|_|) (list: bool) (markdown: string) = 
+    let headerNumber = 
+        markdown 
+        |> Seq.takeWhile ((=) headerMarkdown.[0]) 
+        |> Seq.length
 
-           while __pos > -1 do                
-               let mutable __pos' = if __pos >= (line.Length - 1) then -1 else line.IndexOf("_", __pos + 1)
+    if headerNumber = 0 then
+        None
+    else
+        let headerTag = sprintf "h%i" headerNumber
+        let headerHtml = wrapInTag headerTag markdown.[headerNumber + 1 ..]
 
-               if __pos' > -1 then                                        
-                   if __pos + 1 >= (line.Length - 1) then                     
-                       line <- line.[0.. __pos - 1] + "<em>" + line.[__pos + 1 .. __pos' - 1] + "</em>"
-                       __pos <- __pos' + 1
-                   else
-                       line <- line.[0.. __pos - 1] + "<em>" + line.[__pos + 1 .. __pos' - 1] + "</em>" + line.[__pos' + 1 ..]
-                       __pos <- __pos' + 1
-               else
-                   __pos <- -1
-                   
-           html <- html + line 
+        if list then 
+            Some (false, closingTag listTag + headerHtml) 
+        else 
+            Some (false, headerHtml)
 
-           html <- html + "</li>"          
+let (|LineItem|_|) (list: bool) (markdown: string) =
+    if markdown.StartsWith listItemMarkdown then 
+        let innerHtml = parseText true markdown.[2 ..] |> wrapInTag listItemTag
+        if list then 
+            Some (true, innerHtml)
+        else 
+            Some (true, openingTag listTag + innerHtml)
+    else
+        None
 
-       elif lines.[i].[0] = '#' then
-           if lines.[i].[0..6] = "###### " then
-               html <- html + "<h6>" + lines.[i].[7..] + "</h6>"
-           elif lines.[i].[0..5] = "##### " then
-               html <- html + "<h5>" + lines.[i].[6..] + "</h5>"
-           elif lines.[i].[0..4] = "#### " then
-               html <- html + "<h4>" + lines.[i].[5..] + "</h4>"
-           elif lines.[i].[0..3] = "### " then
-               html <- html + "<h3>" + lines.[i].[4..] + "</h3>"
-           elif lines.[i].[0..2] = "## " then
-               html <- html + "<h2>" + lines.[i].[3..] + "</h2>"
-           else
-               html <- html + "<h1>" + lines.[i].[2..] + "</h1>"
-       else 
-           let mutable line = lines.[i]            
-           let mutable __pos = line.IndexOf "__"
+let (|Paragraph|_|) (list: bool) (markdown: string) = 
+    if list then 
+        Some (false, closingTag listTag + parseText list markdown)
+    else 
+        Some (false, parseText list markdown)
 
-           while __pos > -1 do                
-               let mutable __pos' = if __pos >= (line.Length - 2) then -1 else line.IndexOf("__", __pos + 2)
-
-               if __pos' > -1 then                                        
-                   if __pos + 2 >= (line.Length - 1) then                     
-                       line <- line.[0.. __pos - 1] + "<strong>" + line.[__pos + 2 .. __pos' - 1] + "</strong>"
-                       __pos <- __pos' + 1
-                   else
-                       line <- line.[0.. __pos - 1] + "<strong>" + line.[__pos + 2 .. __pos' - 1] + "</strong>" + line.[__pos' + 2 ..]
-                       __pos <- __pos' + 1
-               else
-                   __pos <- -1
-
-           __pos <- line.IndexOf "_"
-
-           while __pos > -1 do                
-               let mutable __pos' = if __pos >= (line.Length - 1) then -1 else line.IndexOf("_", __pos + 1)
-
-               if __pos' > -1 then                                        
-                   if __pos + 1 >= (line.Length - 1) then                     
-                       line <- line.[0.. __pos - 1] + "<em>" + line.[__pos + 1 .. __pos' - 1] + "</em>"
-                       __pos <- __pos' + 1
-                   else
-                       line <- line.[0.. __pos - 1] + "<em>" + line.[__pos + 1 .. __pos' - 1] + "</em>" + line.[__pos' + 1 ..]
-                       __pos <- __pos' + 1
-               else
-                   __pos <- -1
-
-           html <- html + "<p>" + line + "</p>"
-
-   if isList then
-       html <- html + "</ul>"
-
-   html
+let parseLine (list, html) (markdown: string) = 
+    match markdown with
+    | Header list (list', html') | LineItem list (list', html') | Paragraph list (list', html') -> (list', html + html')
+    | _ -> failwith "Invalid markdown"        
+    
+let parse (markdown: string) =
+    let lines = markdown.Split '\n'
+    let (list, html) = Array.fold parseLine (false, "") lines
+    if list then 
+        html + closingTag listTag 
+    else 
+        html

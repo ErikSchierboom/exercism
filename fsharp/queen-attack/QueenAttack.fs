@@ -1,5 +1,9 @@
-﻿module QueenAttack
+module QueenAttack
 
-let create (position: int * int) = failwith "You need to implement this function."
+open System
 
-let canAttack (queen1: int * int) (queen2: int * int) = failwith "You need to implement this function."
+let abs (x:int) = Math.Abs x
+
+let canAttack (row1, col1) (row2, col2) =
+    if row1 = row2 && col1 = col2 then failwith "The queens cannot be positioned at the same place."
+    else row1 = row2 || col1 = col2 || (row1 - row2 |> abs) = (col1 - col2 |> abs)

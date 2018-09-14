@@ -1,3 +1,8 @@
-﻿module SumOfMultiples
+module SumOfMultiples
 
-let sum (numbers: int list) (upperBound: int): int = failwith "You need to implement this function."
+let sumOfMultiples numbers upperBound =
+    let isMultiple x = numbers |> List.exists (fun y -> x % y = 0) 
+    
+    [1 .. upperBound - 1] 
+    |> List.filter isMultiple 
+    |> List.sum

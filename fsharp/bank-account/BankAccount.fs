@@ -1,11 +1,24 @@
-﻿module BankAccount
+module BankAccount
 
-let mkBankAccount() = failwith "You need to implement this function."
+type BankAccount = 
+    | Open of float
+    | Closed
 
-let openAccount account = failwith "You need to implement this function."
+let mkBankAccount = Closed
 
-let closeAccount account = failwith "You need to implement this function."
+let openAccount =
+    function
+    | Open x -> Open x
+    | Closed -> Open 0.0
 
-let getBalance account = failwith "You need to implement this function."
+let closeAccount x = Closed
 
-let updateBalance change account = failwith "You need to implement this function."
+let getBalance =
+    function
+    | Open x -> Some x
+    | Closed -> None
+
+let updateBalance change =
+    function
+    | Open x -> Open (x + change)
+    | Closed -> Closed

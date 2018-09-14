@@ -1,3 +1,11 @@
-﻿module RnaTranscription
+module RNATranscription
 
-let toRna (dna: string): string = failwith "You need to implement this function."
+let dnaToRna = 
+    function
+    | 'G' -> 'C'
+    | 'C' -> 'G'
+    | 'T' -> 'A'
+    | 'A' -> 'U'
+    | _   -> invalidOp "Invalid nucleotide"
+
+let toRna = String.map dnaToRna

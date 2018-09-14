@@ -1,4 +1,6 @@
-﻿module Grains
+module Grains
 
-let square (n: int): Result<uint64,string> = failwith "You need to implement this function."
-let total: Result<uint64,string> = failwith "You need to implement this function."
+open System.Numerics
+
+let square (n:int) = 2I ** (n - 1)
+let total = [1..64] |> List.sumBy square
