@@ -1,4 +1,4 @@
-module WordProblem
+module Wordy
 
 open FParsec
 
@@ -20,4 +20,4 @@ let parseExpression =
 
 let parseEquation = pstring "What is " >>. parseExpression .>>  pstring "?"
 
-let solve (question: string) = parseToOption parseEquation question
+let answer (question: string) = parseToOption parseEquation question

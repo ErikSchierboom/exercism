@@ -1,6 +1,4 @@
-module FoodChain
-
-let verses = 8
+﻿module FoodChain
 
 let subjects = 
     [("spider", "It wriggled and jiggled and tickled inside her.");
@@ -36,11 +34,9 @@ let verseEnd number =
         |> List.skip (List.length history - number)
         |> List.take number
 
-let verse number = 
-    verseBegin number @ verseEnd number
-    |> String.concat "\n"
+let verse number = verseBegin number @ verseEnd number
 
-let song = 
-    [1 .. verses]
-    |> List.map verse 
-    |> String.concat "\n\n"
+let recite start stop =
+    [start .. stop]
+    |> List.map verse
+    |> List.reduce (fun x y -> x @ "" :: y)

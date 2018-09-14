@@ -1,4 +1,4 @@
-module Rectangle
+﻿module Rectangles
 
 open System
 
@@ -36,12 +36,12 @@ let findCorners grid =
         if cell grid (x, y) = Corner then
             yield (x, y) ]
 
-let connectedVertically grid (x, y) (x', y') = 
+let connectedVertically grid (x, y) (_, y') = 
     let connectsVertically coord = cell grid coord = VerticalLine || cell grid coord = Corner
     let verticalIntermediateCoords = [for y'' in y + 1 .. y' - 1 do yield (x, y'')] 
     List.forall connectsVertically verticalIntermediateCoords
 
-let connectedHorizontally grid (x, y) (x', y') = 
+let connectedHorizontally grid (x, y) (x', _) = 
     let connectsHorizontally coord = cell grid coord = HorizontalLine || cell grid coord = Corner
     let horizontalIntermediateCoords = [for x'' in x + 1 .. x' - 1 do yield (x'', y)]
     List.forall connectsHorizontally horizontalIntermediateCoords
@@ -57,7 +57,7 @@ let rectanglesForCorner grid corners topLeft =
         for bottomLeft  in corners |> Seq.filter (isLeftLineOfRectangle grid topLeft) do
         for bottomRight in corners |> Seq.filter (isRightLineOfRectangle grid topRight)
                                    |> Seq.filter (isBottomLineOfRectangle grid bottomLeft) do
-            yield 1
+            yield bottomRight
     } |> Seq.length
     
 let rectangles lines =

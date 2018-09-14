@@ -1,4 +1,4 @@
-module Connect
+﻿module Connect
 
 type Color = Black | White
 type Coordinate = int * int
@@ -48,15 +48,14 @@ let charToColor c =
     | 'X' -> Some Black
     | _   -> None
 
-let mkBoard (input: string) = 
-    let split = input.Split('\n')
-    let rows' = Array.length split
-    let cols' = Seq.length (Array.head split)
-    let cellColor col row = split |> Array.item row |> Seq.item col |> charToColor
+let mkBoard (input: string list) = 
+    let rows' = List.length input
+    let cols' = Seq.length (List.head input)
+    let cellColor col row = input |> List.item row |> Seq.item col |> charToColor
     
     Array2D.init cols' rows' cellColor
 
-let resultFor input =
+let winner input =
     let board = mkBoard input
     if whiteWins board then Some White
     elif blackWins board then Some Black

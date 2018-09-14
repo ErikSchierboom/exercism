@@ -1,4 +1,4 @@
-module ProteinTranslation
+﻿module ProteinTranslation
 
 open System
 
@@ -23,7 +23,7 @@ let codonToProtein =
     | "UGA" -> "STOP"
     | _ -> failwith "Invalid codon"
 
-let translate (input: string) =
+let proteins (input: string) =
     input 
     |> Seq.chunkBySize 3 
     |> Seq.map (String >> codonToProtein)

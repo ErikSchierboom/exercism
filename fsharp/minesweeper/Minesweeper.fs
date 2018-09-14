@@ -1,4 +1,4 @@
-module Minesweeper
+﻿module Minesweeper
 
 open System
     
@@ -12,12 +12,12 @@ let parseCell =
     | '*' -> Mine
     | _   -> Empty
 
-let parseCells (input: string) =
-    input.Split('\n')
+let parseCells (input: string list) =
+    input
     |> Seq.map (Seq.map parseCell)
     |> array2D
 
-let mkBoard (input: string) =
+let mkBoard input =
     let cells = parseCells input
     { cells = cells; rows = cells.GetLength 0; cols = cells.GetLength 1 }
 
@@ -46,7 +46,7 @@ let cellOutput (board: Board) (row, col) =
 
 let rowOutput (board: Board) row = Array.init board.cols (fun col -> cellOutput board (row, col)) |> String    
     
-let annotate (input: string) = 
+let annotate input = 
     let board = mkBoard input
     
     List.init board.rows (rowOutput board)

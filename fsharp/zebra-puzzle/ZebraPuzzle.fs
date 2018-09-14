@@ -1,4 +1,4 @@
-module ZebraPuzzle
+﻿module ZebraPuzzle
 
 type Color = Red | Green | Ivory | Yellow | Blue 
 type Nationality = Englishman | Spaniard | Ukranian | Japanese | Norwegian
@@ -14,7 +14,7 @@ let rec insertions x = function
 
 let rec permutations = function
     | []      -> seq [ [] ]
-    | x :: xs -> Seq.concat (Seq.map (insertions x) (permutations xs))
+    | x :: xs -> Seq.collect (insertions x) (permutations xs)
 
 let index value = List.findIndex ((=) value)
 
@@ -74,7 +74,7 @@ let solutions = seq {
             yield { colors = validColors; nationalities = validNationalities; pets = validPets; drinks = validDrinks; smokes = validSmokes }
     }
 
-let solve = Seq.head solutions
+let solution = Seq.head solutions
 
-let whoDrinksWater solution = List.item (index Water solution.drinks) solution.nationalities
-let whoOwnsZebra solution = List.item (index Zebra solution.pets) solution.nationalities
+let drinksWater = List.item (index Water solution.drinks) solution.nationalities
+let ownsZebra = List.item (index Zebra solution.pets) solution.nationalities

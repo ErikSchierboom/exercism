@@ -1,4 +1,4 @@
-module Say
+﻿module Say
 
 let quotRem (x: int64) (y: int64) =
     let div = x / y
@@ -67,7 +67,7 @@ let parts number =
     let (thousandsCount, thousandsRemainder) = quotRem millionsRemainder 1000L
     (billionsCount, millionsCount, thousandsCount, thousandsRemainder)
     
-let inEnglish number = 
+let say number = 
     match number with
     | _ when number < 0L || number>= 1000000000000L -> 
         None

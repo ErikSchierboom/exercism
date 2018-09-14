@@ -1,4 +1,4 @@
-module CustomSet
+﻿module CustomSet
 
 type Set<'T> = { items: 'T list }
 
@@ -23,6 +23,8 @@ let union left right = left.items @ right.items |> fromList
 let intersection left right = left.items |> List.filter (fun x -> List.contains x right.items) |> fromList
 
 let difference left right = left.items |> List.filter (fun x -> List.contains x right.items |> not) |> fromList
+
+let isEqualTo left right = (size left = size right) && (isEmpty (difference left right))
 
 let isSubsetOf left right = left.items |> List.forall (fun x -> List.contains x right.items)
 

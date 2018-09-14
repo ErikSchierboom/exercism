@@ -1,4 +1,4 @@
-module Palindrome
+﻿module PalindromeProducts
 
 let isPalindrome n = 
     let mutable current = n
@@ -29,5 +29,5 @@ let palindrome predicate minFactor maxFactor =
 
     (value, factors)
 
-let largestPalindrome minFactor maxFactor = palindrome List.max minFactor maxFactor
-let smallestPalindrome minFactor maxFactor = palindrome List.min minFactor maxFactor
+let largest minFactor maxFactor = palindrome List.max minFactor maxFactor
+let smallest minFactor maxFactor = palindrome List.min minFactor maxFactor

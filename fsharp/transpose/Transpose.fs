@@ -1,18 +1,26 @@
-module Transpose
+﻿module Transpose
 
-let maxLength (input: string[]) = 
-    input
-    |> Array.map (fun x -> x.Length) 
-    |> Array.max
+let transpose (rows: string list): string list =
+    let transposedCoordinates =
+        rows
+        |> List.mapi (fun row str -> str |> Seq.mapi (fun col char -> (col, (row, char))) |> List.ofSeq)
+        |> List.concat
 
-let padRows rows =
-    rows
-    |> Array.mapi (fun i row -> if i < Array.length rows - 1 then rows |> maxLength |> row.PadRight else row)
+    let groupedByTransposedColumns =
+        transposedCoordinates
+        |> List.groupBy fst
+        |> List.map (fun (row, chars) -> (row, chars |> List.map snd))
 
-let transpose (input: string) = 
-    input.Split '\n'
-    |> padRows
-    |> Seq.collect (fun s -> s |> Seq.mapi (fun i e -> (i, e)))
-    |> Seq.groupBy fst
-    |> Seq.map (fun (_, s) -> s |> Seq.map snd |> Seq.toArray |> System.String)
-    |> String.concat "\n"
+    let transposedColToRow (input: (int * char) list) =
+        let maxCol = input |> List.map fst |> List.max
+        let findCharacter col = 
+            match List.tryFind (fun (c, _) -> c = col) input with
+            | Some y -> snd y
+            | None -> ' '
+
+        [| 0..maxCol |] 
+        |> Array.map findCharacter
+        |> System.String
+
+    groupedByTransposedColumns
+    |> List.map (snd >> transposedColToRow)

@@ -1,4 +1,4 @@
-module House
+﻿module House
 
 let subjects = 
     [("house that Jack built", "lay in");
@@ -23,13 +23,12 @@ let line number index =
     if index = number then "This is the " + subject + ending
     else "that " + verb + " the " + subject + ending
     
-let block number = 
+let verse number = 
     let lineForBlock = line number
     [number .. -1 .. 1]
     |> List.map lineForBlock
-    |> List.reduce (fun x y -> x + "\n" + y)    
+    |> List.reduce (sprintf "%s %s")
 
-let rhyme = 
-    [1..numberOfBlocks]
-    |> List.map block
-    |> List.reduce (fun x y -> x + "\n\n" + y)
+let recite startVerse endVerse = 
+    [startVerse..endVerse]
+    |> List.map verse

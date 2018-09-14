@@ -1,4 +1,4 @@
-module BracketPush
+﻿module BracketPush
 
 open System
 
@@ -8,7 +8,7 @@ let findBracketPair character =
     let isMatch = fun (open', close') -> open' = character || close' = character
     List.tryFind isMatch bracketPairs
      
-let matched (input: string) =        
+let isPaired (input: string) =        
     let rec loop stack =
         function
         | [] -> 

@@ -1,4 +1,4 @@
-module BookStore
+﻿module BookStore
 
 open System
 
@@ -55,7 +55,7 @@ let rec calculateTotalCostForSize totalCost bookGroups booksToRemove =
         let updatedTotalCost = totalCost + removedBooksPrice
         calculateTotalCostForSize updatedTotalCost removedBooks actualBooksToRemove
 
-let calculateTotalCost =
+let total =
     function
     | [] -> 
         0.

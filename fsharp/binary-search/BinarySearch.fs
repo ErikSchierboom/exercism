@@ -1,6 +1,6 @@
-module BinarySearch
+﻿module BinarySearch
 
-let binarySearch input value =
+let find input value =
     let rec aux min max = 
         if min > max then
             None

@@ -1,4 +1,4 @@
-module VariableLengthQuantity
+﻿module VariableLengthQuantity
 
 let sevenBitsMask = 0x7fu
 let eightBitMask = 0x80u
@@ -19,9 +19,9 @@ let toBytesSingle value =
     if value = 0u then [0uy]
     else List.unfold unfolder (value, true) |> List.rev
 
-let toBytes values = List.collect toBytesSingle values
+let encode values = List.collect toBytesSingle values
 
-let fromBytes (bytes: byte list): uint32 list = 
+let decode (bytes: byte list): uint32 list = 
     let folder (acc, values) b = 
         if acc &&& 0xfe000000u > 0u then 
             failwith "Overflow exception"

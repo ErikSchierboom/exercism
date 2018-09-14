@@ -1,72 +1,36 @@
-// This file was auto-generated based on version 1.1.1 of the canonical data.
+module KindergartenGarden
 
-module KindergartenGardenTest
+type Plant = Violets | Radishes | Clover | Grass
 
-open FsUnit.Xunit
-open Xunit
+let plantsPerChildPerRow = 2
+let rowSeparator = '\n'
 
-open KindergartenGarden
+let private children = 
+    [ "Alice"; "Bob"; "Charlie"; "David";
+      "Eve"; "Fred"; "Ginny"; "Harriet";
+      "Ileana"; "Joseph"; "Kincaid"; "Larry"]
 
-[<Fact>]
-let ``Partial garden - garden with single student`` () =
-    let student = "Alice"
-    let diagram = "RC\nGG"
-    let expected = [Plant.Radishes; Plant.Clover; Plant.Grass; Plant.Grass]
-    plants diagram student |> should equal expected
+let private plantFromCode code =
+    match code with
+    | 'V' -> Violets
+    | 'R' -> Radishes
+    | 'C' -> Clover
+    | 'G' -> Grass
+    | x -> failwithf "%c is an invalid plant code" x
 
-[<Fact(Skip = "Remove to run test")>]
-let ``Partial garden - different garden with single student`` () =
-    let student = "Alice"
-    let diagram = "VC\nRC"
-    let expected = [Plant.Violets; Plant.Clover; Plant.Radishes; Plant.Clover]
-    plants diagram student |> should equal expected
+let private plantsInRow (row: string) = 
+    Seq.map plantFromCode row 
+    |> Seq.chunkBySize plantsPerChildPerRow
+    |> Seq.map List.ofArray
 
-[<Fact(Skip = "Remove to run test")>]
-let ``Partial garden - garden with two students`` () =
-    let student = "Bob"
-    let diagram = "VVCG\nVVRC"
-    let expected = [Plant.Clover; Plant.Grass; Plant.Radishes; Plant.Clover]
-    plants diagram student |> should equal expected
+let toGarden (windowSills: string) =     
+    let rows = windowSills.Split rowSeparator
+    let row1 = plantsInRow rows.[0]
+    let row2 = plantsInRow rows.[1]
+    Seq.zip3 children row1 row2 
+    |> Seq.map (fun (child, plants1, plants2) -> (child, plants1 @ plants2))
+    |> Map.ofSeq
 
-[<Fact(Skip = "Remove to run test")>]
-let ``Partial garden - multiple students for the same garden with three students - second student's garden`` () =
-    let student = "Bob"
-    let diagram = "VVCCGG\nVVCCGG"
-    let expected = [Plant.Clover; Plant.Clover; Plant.Clover; Plant.Clover]
-    plants diagram student |> should equal expected
-
-[<Fact(Skip = "Remove to run test")>]
-let ``Partial garden - multiple students for the same garden with three students - third student's garden`` () =
-    let student = "Charlie"
-    let diagram = "VVCCGG\nVVCCGG"
-    let expected = [Plant.Grass; Plant.Grass; Plant.Grass; Plant.Grass]
-    plants diagram student |> should equal expected
-
-[<Fact(Skip = "Remove to run test")>]
-let ``Full garden - first student's garden`` () =
-    let student = "Alice"
-    let diagram = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV"
-    let expected = [Plant.Violets; Plant.Radishes; Plant.Violets; Plant.Radishes]
-    plants diagram student |> should equal expected
-
-[<Fact(Skip = "Remove to run test")>]
-let ``Full garden - second student's garden`` () =
-    let student = "Bob"
-    let diagram = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV"
-    let expected = [Plant.Clover; Plant.Grass; Plant.Clover; Plant.Clover]
-    plants diagram student |> should equal expected
-
-[<Fact(Skip = "Remove to run test")>]
-let ``Full garden - second to last student's garden`` () =
-    let student = "Kincaid"
-    let diagram = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV"
-    let expected = [Plant.Grass; Plant.Clover; Plant.Clover; Plant.Grass]
-    plants diagram student |> should equal expected
-
-[<Fact(Skip = "Remove to run test")>]
-let ``Full garden - last student's garden`` () =
-    let student = "Larry"
-    let diagram = "VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV"
-    let expected = [Plant.Grass; Plant.Violets; Plant.Clover; Plant.Violets]
-    plants diagram student |> should equal expected
-
+let plants diagram student = 
+    let garden = toGarden diagram
+    defaultArg (Map.tryFind student garden) []

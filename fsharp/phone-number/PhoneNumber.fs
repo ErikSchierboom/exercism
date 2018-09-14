@@ -1,8 +1,8 @@
-module PhoneNumber
+﻿module PhoneNumber
 
 open System
 
-let parsePhoneNumber (input: string) = 
+let clean (input: string) = 
     let digits = input.ToCharArray() |> Array.filter (Char.IsDigit) |> String
 
     match digits.Length with

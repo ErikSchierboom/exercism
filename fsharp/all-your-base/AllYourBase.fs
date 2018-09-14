@@ -22,7 +22,7 @@ let toDigits toBase n =
 
     List.unfold unfolder n |> List.rev
 
-let rebase inputBase inputDigits outputBase =
+let rebase inputDigits inputBase outputBase =
     if inputBase < 2 || outputBase < 2 then 
         None
     else 

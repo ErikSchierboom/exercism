@@ -1,4 +1,4 @@
-module PrimeFactors
+﻿module PrimeFactors
 
 open System
 
@@ -7,7 +7,7 @@ let possiblePrimes (number: int64): int64 list =
                    for k in [-1L; 1L] do
                       yield n + k ]
 
-let primeFactorsFor number =
+let factors number =
     let rec loop factors (remainder: int64) (possibleFactors: int64 list) =
         match possibleFactors with
         | [] -> factors |> List.rev

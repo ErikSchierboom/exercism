@@ -1,17 +1,26 @@
-module TreeBuilding
+﻿module TreeBuilding
 
 type Record = { RecordId: int; ParentId: int }
 type Tree = 
     | Branch of int * Tree list
     | Leaf of int
 
+let recordId = function Branch (id, _) | Leaf id -> id
+
+let isBranch = function Branch _ -> true  | Leaf _ -> false
+
+let children = function Branch (_, children') -> children' | Leaf _ -> []
+
+let rootNodeRecordId = 0
+
 let addOrAppend key value map =
     let list = defaultArg (Map.tryFind key map) []
     Map.add key (list @ [value]) map
 
 let invalidNode previous x = 
-    x.ParentId >= x.RecordId || 
-    x.RecordId <> previous + 1
+    match x.RecordId with
+    | 0 -> x.ParentId <> rootNodeRecordId
+    | _ -> x.ParentId >= x.RecordId || x.RecordId <> previous + 1
 
 let rec recordsToMap previous map remainder =
     match remainder with
@@ -20,7 +29,8 @@ let rec recordsToMap previous map remainder =
     | x::_ when invalidNode previous x ->
         failwith "Invalid record"
     | x::xs ->
-        let updatedMap = addOrAppend x.ParentId x.RecordId map
+        let parentId = if x.RecordId = rootNodeRecordId then -1 else x.ParentId
+        let updatedMap = addOrAppend parentId x.RecordId map
         recordsToMap x.RecordId updatedMap xs
 
 let rec mapToTree map recordId =

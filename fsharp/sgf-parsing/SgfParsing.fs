@@ -1,4 +1,4 @@
-module SgfParsing
+﻿module SgfParsing
 
 open FParsec
 
@@ -12,7 +12,7 @@ let propertyToData =
     | Some (prop, values) -> Map.ofList [(prop, values)]
     | None -> Map.empty
 
-let rec nodesToTree (nodes, trees) = 
+let rec nodesToTree (nodes, trees) =
     match nodes with
     | [] -> failwith "Can only create tree from non-empty nodes list"
     | x::[] -> Node (x, trees)
