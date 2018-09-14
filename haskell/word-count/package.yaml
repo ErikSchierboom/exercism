@@ -1,0 +1,20 @@
+name: word-count
+version: 1.2.0.5
+
+dependencies:
+  - base
+
+library:
+  exposed-modules: WordCount
+  source-dirs: src
+  # dependencies:
+  # - foo       # List here the packages you
+  # - bar       # want to use in your solution.
+
+tests:
+  test:
+    main: Tests.hs
+    source-dirs: test
+    dependencies:
+      - word-count
+      - hspec

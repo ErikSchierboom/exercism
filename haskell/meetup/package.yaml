@@ -1,0 +1,21 @@
+name: meetup
+version: 1.1.0.4
+
+dependencies:
+  - base
+  - time
+
+library:
+  exposed-modules: Meetup
+  source-dirs: src
+  # dependencies:
+  # - foo       # List here the packages you
+  # - bar       # want to use in your solution.
+
+tests:
+  test:
+    main: Tests.hs
+    source-dirs: test
+    dependencies:
+      - meetup
+      - hspec

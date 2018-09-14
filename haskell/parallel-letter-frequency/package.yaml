@@ -1,0 +1,32 @@
+name: parallel-letter-frequency
+version: 0.1.0.3
+
+dependencies:
+  - base
+  - containers
+  - text
+
+library:
+  exposed-modules: Frequency
+  source-dirs: src
+  # dependencies:
+  # - foo       # List here the packages you
+  # - bar       # want to use in your solution.
+
+tests:
+  test:
+    main: Tests.hs
+    source-dirs: test
+    dependencies:
+      - parallel-letter-frequency
+      - hspec
+
+benchmarks:
+  bench:
+    ghc-options: -threaded -with-rtsopts=-N -O2
+
+    main: Benchmark.hs
+    source-dirs: bench
+    dependencies:
+      - parallel-letter-frequency
+      - criterion

@@ -1,0 +1,20 @@
+name: anagram
+version: 1.2.0.6
+
+dependencies:
+  - base
+
+library:
+  exposed-modules: Anagram
+  source-dirs: src
+  # dependencies:
+  # - foo       # List here the packages you
+  # - bar       # want to use in your solution.
+
+tests:
+  test:
+    main: Tests.hs
+    source-dirs: test
+    dependencies:
+      - anagram
+      - hspec

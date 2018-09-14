@@ -1,0 +1,20 @@
+name: roman-numerals
+version: 1.2.0.5
+
+dependencies:
+  - base
+
+library:
+  exposed-modules: Roman
+  source-dirs: src
+  # dependencies:
+  # - foo       # List here the packages you
+  # - bar       # want to use in your solution.
+
+tests:
+  test:
+    main: Tests.hs
+    source-dirs: test
+    dependencies:
+      - roman-numerals
+      - hspec
