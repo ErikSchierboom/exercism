@@ -1,11 +1,11 @@
 {
-    "version": "3.0.0",
-    "summary": "Exercism problems in Elm.",
+    "version": "1.0.0",
+    "summary": "Test Suites",
     "repository": "https://github.com/exercism/elm.git",
     "license": "BSD3",
     "source-directories": [
-        ".",
-        ".."
+        "..",
+        "."
     ],
     "exposed-modules": [],
     "dependencies": {
