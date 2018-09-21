@@ -6,8 +6,6 @@ export default class Gigasecond {
     }
 
     date() {
-        const gigasecond = new Date(this.birthDate)
-        gigasecond.setUTCSeconds(gigasecond.getUTCSeconds() + 1E9)
-        return gigasecond
+        return new Date(this.birthDate.getTime() + 1E9 * 1000)
     }
 }
