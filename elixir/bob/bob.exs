@@ -22,6 +22,5 @@ defmodule Bob do
   defp question?(input), do: String.trim(input) |> String.ends_with?("?")
   defp shouting?(input), do: String.upcase(input) === input && has_letter?(input)
 
-  defp has_letter?(str), do: str |> String.graphemes() |> Enum.any?(&is_letter?/1)
-  defp is_letter?(c), do: c =~ ~r/\p{L}/u
+  defp has_letter?(str), do: String.upcase(str) !== String.downcase(str)
 end
