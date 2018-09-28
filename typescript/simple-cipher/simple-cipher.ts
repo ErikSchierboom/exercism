@@ -1,4 +1,4 @@
-const letters = [..."abcdefghijklmnopqrstuvwxyz"]
+const letters = "abcdefghijklmnopqrstuvwxyz"
 
 function randomLetter() {
     const randomIndex = Math.floor(Math.random() * letters.length)
