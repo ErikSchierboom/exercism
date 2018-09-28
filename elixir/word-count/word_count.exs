@@ -7,19 +7,9 @@ defmodule Words do
   @spec count(String.t()) :: map
   def count(sentence) do
     sentence
-    |> words
-    |> word_count
-  end
-
-  defp words(sentence) do
-    sentence
+    |> String.replace(~r/[!&@$%^&]/, "")
     |> String.downcase()
     |> String.split(~r/[\s_:,]+/)
-    |> Enum.map(&normalize_word/1)
+    |> Enum.reduce(%{}, fn x, acc -> Map.update(acc, x, 1, &(&1 + 1)) end)
   end
-
-  defp normalize_word(word), do: String.replace(word, ~r/[!&@$%^&]/, "")
-
-  defp word_count(words),
-    do: Enum.reduce(words, %{}, fn x, acc -> Map.update(acc, x, 1, &(&1 + 1)) end)
 end
