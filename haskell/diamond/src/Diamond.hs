@@ -1,6 +1,5 @@
 module Diamond (diamond) where
 
-import Data.List (unlines)
 import Data.List.Index (indexed)
 
 makeLine :: Int -> (Int, Char) -> String
