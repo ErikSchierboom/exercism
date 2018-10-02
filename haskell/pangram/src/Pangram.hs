@@ -7,5 +7,6 @@ letters :: String
 letters = ['A' .. 'Z']
 
 isPangram :: String -> Bool
-isPangram text =
-    (length $ nub $ map toUpper $ filter isLetter text) == 26
+isPangram text = all (\letter -> elem letter upperText) letters
+    where
+        upperText = map toUpper text

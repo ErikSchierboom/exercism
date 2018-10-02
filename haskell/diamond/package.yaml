@@ -7,9 +7,8 @@ dependencies:
 library:
   exposed-modules: Diamond
   source-dirs: src
-  # dependencies:
-  # - foo       # List here the packages you
-  # - bar       # want to use in your solution.
+  dependencies:
+    - ilist
 
 tests:
   test:
