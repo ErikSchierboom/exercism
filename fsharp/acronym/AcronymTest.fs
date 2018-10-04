@@ -11,19 +11,19 @@ open Acronym
 let ``Basic`` () =
     abbreviate "Portable Network Graphics" |> should equal "PNG"
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Lowercase words`` () =
     abbreviate "Ruby on Rails" |> should equal "ROR"
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Punctuation`` () =
     abbreviate "First In, First Out" |> should equal "FIFO"
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``All caps word`` () =
     abbreviate "GNU Image Manipulation Program" |> should equal "GIMP"
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Punctuation without whitespace`` () =
     abbreviate "Complementary metal-oxide semiconductor" |> should equal "CMOS"
 

@@ -11,19 +11,19 @@ open NthPrime
 let ``First prime`` () =
     prime 1 |> should equal (Some 2)
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Second prime`` () =
     prime 2 |> should equal (Some 3)
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Sixth prime`` () =
     prime 6 |> should equal (Some 13)
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Big prime`` () =
     prime 10001 |> should equal (Some 104743)
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``There is no zeroth prime`` () =
     prime 0 |> should equal None
 

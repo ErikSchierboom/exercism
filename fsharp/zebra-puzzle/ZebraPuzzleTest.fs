@@ -11,7 +11,7 @@ open ZebraPuzzle
 let ``Resident who drinks water`` () =
     drinksWater |> should equal Norwegian
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Resident who owns zebra`` () =
     ownsZebra |> should equal Japanese
 

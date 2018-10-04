@@ -11,35 +11,35 @@ open Isogram
 let ``Empty string`` () =
     isIsogram "" |> should equal true
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Isogram with only lower case characters`` () =
     isIsogram "isogram" |> should equal true
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Word with one duplicated character`` () =
     isIsogram "eleven" |> should equal false
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Longest reported english isogram`` () =
     isIsogram "subdermatoglyphic" |> should equal true
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Word with duplicated character in mixed case`` () =
     isIsogram "Alphabet" |> should equal false
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Hypothetical isogrammic word with hyphen`` () =
     isIsogram "thumbscrew-japingly" |> should equal true
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Isogram with duplicated hyphen`` () =
     isIsogram "six-year-old" |> should equal true
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Made-up name that is an isogram`` () =
     isIsogram "Emily Jung Schwartzkopf" |> should equal true
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Duplicated character in the middle`` () =
     isIsogram "accentor" |> should equal false
 

@@ -13,13 +13,13 @@ let ``Zero pieces`` () =
     let expected: string list = []
     recite strings |> should equal expected
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``One piece`` () =
     let strings = ["nail"]
     let expected = ["And all for the want of a nail."]
     recite strings |> should equal expected
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Two pieces`` () =
     let strings = ["nail"; "shoe"]
     let expected = 
@@ -27,7 +27,7 @@ let ``Two pieces`` () =
           "And all for the want of a nail." ]
     recite strings |> should equal expected
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Three pieces`` () =
     let strings = ["nail"; "shoe"; "horse"]
     let expected = 
@@ -36,7 +36,7 @@ let ``Three pieces`` () =
           "And all for the want of a nail." ]
     recite strings |> should equal expected
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Full proverb`` () =
     let strings = ["nail"; "shoe"; "horse"; "rider"; "message"; "battle"; "kingdom"]
     let expected = 
@@ -49,7 +49,7 @@ let ``Full proverb`` () =
           "And all for the want of a nail." ]
     recite strings |> should equal expected
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Four pieces modernized`` () =
     let strings = ["pin"; "gun"; "soldier"; "battle"]
     let expected = 

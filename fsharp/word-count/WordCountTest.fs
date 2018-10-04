@@ -12,7 +12,7 @@ let ``Count one word`` () =
     let expected = [("word", 1)] |> Map.ofList
     countWords "word" |> should equal expected
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Count one of each word`` () =
     let expected = 
         [ ("one", 1);
@@ -21,7 +21,7 @@ let ``Count one of each word`` () =
         |> Map.ofList
     countWords "one of each" |> should equal expected
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Multiple occurrences of a word`` () =
     let expected = 
         [ ("one", 1);
@@ -32,7 +32,7 @@ let ``Multiple occurrences of a word`` () =
         |> Map.ofList
     countWords "one fish two fish red fish blue fish" |> should equal expected
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Handles cramped lists`` () =
     let expected = 
         [ ("one", 1);
@@ -41,7 +41,7 @@ let ``Handles cramped lists`` () =
         |> Map.ofList
     countWords "one,two,three" |> should equal expected
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Handles expanded lists`` () =
     let expected = 
         [ ("one", 1);
@@ -50,7 +50,7 @@ let ``Handles expanded lists`` () =
         |> Map.ofList
     countWords "one,\ntwo,\nthree" |> should equal expected
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Ignore punctuation`` () =
     let expected = 
         [ ("car", 1);
@@ -61,7 +61,7 @@ let ``Ignore punctuation`` () =
         |> Map.ofList
     countWords "car: carpet as java: javascript!!&@$%^&" |> should equal expected
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Include numbers`` () =
     let expected = 
         [ ("testing", 2);
@@ -70,7 +70,7 @@ let ``Include numbers`` () =
         |> Map.ofList
     countWords "testing, 1, 2 testing" |> should equal expected
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Normalize case`` () =
     let expected = 
         [ ("go", 3);
@@ -78,7 +78,7 @@ let ``Normalize case`` () =
         |> Map.ofList
     countWords "go Go GO Stop stop" |> should equal expected
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``With apostrophes`` () =
     let expected = 
         [ ("first", 1);
@@ -89,7 +89,7 @@ let ``With apostrophes`` () =
         |> Map.ofList
     countWords "First: don't laugh. Then: don't cry." |> should equal expected
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``With quotations`` () =
     let expected = 
         [ ("joe", 1);
@@ -101,7 +101,7 @@ let ``With quotations`` () =
         |> Map.ofList
     countWords "Joe can't tell between 'large' and large." |> should equal expected
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Multiple spaces not detected as a word`` () =
     let expected = 
         [ ("multiple", 1);

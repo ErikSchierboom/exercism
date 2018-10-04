@@ -12,18 +12,18 @@ let ``Robot has a name`` () =
     let robot = mkRobot()
     Regex.IsMatch(name robot, @"\w{2}\d{3}") |> should equal true
     
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Name is the same each time`` () =     
     let robot = mkRobot()
     name robot |> should equal (name robot)
     
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Different robots have different names`` () = 
     let robot = mkRobot()
     let robot2 = mkRobot()
     name robot |> should not' (equal (name robot2))
     
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Can reset the name`` () =  
     let robot = mkRobot()
     let originalName = name robot

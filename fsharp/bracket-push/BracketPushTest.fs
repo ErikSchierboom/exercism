@@ -11,59 +11,59 @@ open BracketPush
 let ``Paired square brackets`` () =
     isPaired "[]" |> should equal true
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Empty string`` () =
     isPaired "" |> should equal true
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Unpaired brackets`` () =
     isPaired "[[" |> should equal false
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Wrong ordered brackets`` () =
     isPaired "}{" |> should equal false
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Wrong closing bracket`` () =
     isPaired "{]" |> should equal false
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Paired with whitespace`` () =
     isPaired "{ }" |> should equal true
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Partially paired brackets`` () =
     isPaired "{[])" |> should equal false
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Simple nested brackets`` () =
     isPaired "{[]}" |> should equal true
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Several paired brackets`` () =
     isPaired "{}[]" |> should equal true
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Paired and nested brackets`` () =
     isPaired "([{}({}[])])" |> should equal true
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Unopened closing brackets`` () =
     isPaired "{[)][]}" |> should equal false
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Unpaired and nested brackets`` () =
     isPaired "([{])" |> should equal false
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Paired and wrong nested brackets`` () =
     isPaired "[({]})" |> should equal false
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Math expression`` () =
     isPaired "(((185 + 223.85) * 15) - 543)/2" |> should equal true
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Complex latex expression`` () =
     isPaired "\left(\begin{array}{cc} \frac{1}{3} & x\\ \mathrm{e}^{x} &... x^2 \end{array}\right)" |> should equal true
 

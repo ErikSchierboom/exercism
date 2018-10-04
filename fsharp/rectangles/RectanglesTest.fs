@@ -12,17 +12,17 @@ let ``No rows`` () =
     let strings = []
     rectangles strings |> should equal 0
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``No columns`` () =
     let strings = [""]
     rectangles strings |> should equal 0
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``No rectangles`` () =
     let strings = [" "]
     rectangles strings |> should equal 0
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``One rectangle`` () =
     let strings = 
         [ "+-+";
@@ -30,7 +30,7 @@ let ``One rectangle`` () =
           "+-+" ]
     rectangles strings |> should equal 1
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Two rectangles without shared parts`` () =
     let strings = 
         [ "  +-+";
@@ -40,7 +40,7 @@ let ``Two rectangles without shared parts`` () =
           "+-+  " ]
     rectangles strings |> should equal 2
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Five rectangles with shared parts`` () =
     let strings = 
         [ "  +-+";
@@ -50,14 +50,14 @@ let ``Five rectangles with shared parts`` () =
           "+-+-+" ]
     rectangles strings |> should equal 5
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Rectangle of height 1 is counted`` () =
     let strings = 
         [ "+--+";
           "+--+" ]
     rectangles strings |> should equal 1
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Rectangle of width 1 is counted`` () =
     let strings = 
         [ "++";
@@ -65,14 +65,14 @@ let ``Rectangle of width 1 is counted`` () =
           "++" ]
     rectangles strings |> should equal 1
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``1x1 square is counted`` () =
     let strings = 
         [ "++";
           "++" ]
     rectangles strings |> should equal 1
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Only complete rectangles are counted`` () =
     let strings = 
         [ "  +-+";
@@ -82,7 +82,7 @@ let ``Only complete rectangles are counted`` () =
           "+-+-+" ]
     rectangles strings |> should equal 1
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Rectangles can be of different sizes`` () =
     let strings = 
         [ "+------+----+";
@@ -92,7 +92,7 @@ let ``Rectangles can be of different sizes`` () =
           "+---+-------+" ]
     rectangles strings |> should equal 3
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Corner is required for a rectangle to be complete`` () =
     let strings = 
         [ "+------+----+";
@@ -102,7 +102,7 @@ let ``Corner is required for a rectangle to be complete`` () =
           "+---+-------+" ]
     rectangles strings |> should equal 2
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Large input with many rectangles`` () =
     let strings = 
         [ "+---+--+----+";

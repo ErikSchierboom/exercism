@@ -58,7 +58,7 @@ type GrepTest() =
         createFiles() |> ignore
         grep files flags pattern |> should equal expected
 
-    [<Fact(Skip = "Remove to run test")>]
+    [<Fact>]
     member this.``One file, one match, print line numbers flag`` () =
         let files = ["paradise-lost.txt"]
         let flags = ["-n"]
@@ -68,7 +68,7 @@ type GrepTest() =
         createFiles() |> ignore
         grep files flags pattern |> should equal expected
 
-    [<Fact(Skip = "Remove to run test")>]
+    [<Fact>]
     member this.``One file, one match, case-insensitive flag`` () =
         let files = ["paradise-lost.txt"]
         let flags = ["-i"]
@@ -78,7 +78,7 @@ type GrepTest() =
         createFiles() |> ignore
         grep files flags pattern |> should equal expected
 
-    [<Fact(Skip = "Remove to run test")>]
+    [<Fact>]
     member this.``One file, one match, print file names flag`` () =
         let files = ["paradise-lost.txt"]
         let flags = ["-l"]
@@ -88,7 +88,7 @@ type GrepTest() =
         createFiles() |> ignore
         grep files flags pattern |> should equal expected
 
-    [<Fact(Skip = "Remove to run test")>]
+    [<Fact>]
     member this.``One file, one match, match entire lines flag`` () =
         let files = ["paradise-lost.txt"]
         let flags = ["-x"]
@@ -98,7 +98,7 @@ type GrepTest() =
         createFiles() |> ignore
         grep files flags pattern |> should equal expected
 
-    [<Fact(Skip = "Remove to run test")>]
+    [<Fact>]
     member this.``One file, one match, multiple flags`` () =
         let files = ["iliad.txt"]
         let flags = ["-n"; "-i"; "-x"]
@@ -108,7 +108,7 @@ type GrepTest() =
         createFiles() |> ignore
         grep files flags pattern |> should equal expected
 
-    [<Fact(Skip = "Remove to run test")>]
+    [<Fact>]
     member this.``One file, several matches, no flags`` () =
         let files = ["midsummer-night.txt"]
         let flags = []
@@ -121,7 +121,7 @@ type GrepTest() =
         createFiles() |> ignore
         grep files flags pattern |> should equal expected
 
-    [<Fact(Skip = "Remove to run test")>]
+    [<Fact>]
     member this.``One file, several matches, print line numbers flag`` () =
         let files = ["midsummer-night.txt"]
         let flags = ["-n"]
@@ -134,7 +134,7 @@ type GrepTest() =
         createFiles() |> ignore
         grep files flags pattern |> should equal expected
 
-    [<Fact(Skip = "Remove to run test")>]
+    [<Fact>]
     member this.``One file, several matches, match entire lines flag`` () =
         let files = ["midsummer-night.txt"]
         let flags = ["-x"]
@@ -144,7 +144,7 @@ type GrepTest() =
         createFiles() |> ignore
         grep files flags pattern |> should equal expected
 
-    [<Fact(Skip = "Remove to run test")>]
+    [<Fact>]
     member this.``One file, several matches, case-insensitive flag`` () =
         let files = ["iliad.txt"]
         let flags = ["-i"]
@@ -156,7 +156,7 @@ type GrepTest() =
         createFiles() |> ignore
         grep files flags pattern |> should equal expected
 
-    [<Fact(Skip = "Remove to run test")>]
+    [<Fact>]
     member this.``One file, several matches, inverted flag`` () =
         let files = ["paradise-lost.txt"]
         let flags = ["-v"]
@@ -171,7 +171,7 @@ type GrepTest() =
         createFiles() |> ignore
         grep files flags pattern |> should equal expected
 
-    [<Fact(Skip = "Remove to run test")>]
+    [<Fact>]
     member this.``One file, no matches, various flags`` () =
         let files = ["iliad.txt"]
         let flags = ["-n"; "-l"; "-x"; "-i"]
@@ -181,7 +181,7 @@ type GrepTest() =
         createFiles() |> ignore
         grep files flags pattern |> should equal expected
 
-    [<Fact(Skip = "Remove to run test")>]
+    [<Fact>]
     member this.``Multiple files, one match, no flags`` () =
         let files = ["iliad.txt"; "midsummer-night.txt"; "paradise-lost.txt"]
         let flags = []
@@ -191,7 +191,7 @@ type GrepTest() =
         createFiles() |> ignore
         grep files flags pattern |> should equal expected
 
-    [<Fact(Skip = "Remove to run test")>]
+    [<Fact>]
     member this.``Multiple files, several matches, no flags`` () =
         let files = ["iliad.txt"; "midsummer-night.txt"; "paradise-lost.txt"]
         let flags = []
@@ -204,7 +204,7 @@ type GrepTest() =
         createFiles() |> ignore
         grep files flags pattern |> should equal expected
 
-    [<Fact(Skip = "Remove to run test")>]
+    [<Fact>]
     member this.``Multiple files, several matches, print line numbers flag`` () =
         let files = ["iliad.txt"; "midsummer-night.txt"; "paradise-lost.txt"]
         let flags = ["-n"]
@@ -218,7 +218,7 @@ type GrepTest() =
         createFiles() |> ignore
         grep files flags pattern |> should equal expected
 
-    [<Fact(Skip = "Remove to run test")>]
+    [<Fact>]
     member this.``Multiple files, one match, print file names flag`` () =
         let files = ["iliad.txt"; "midsummer-night.txt"; "paradise-lost.txt"]
         let flags = ["-l"]
@@ -230,7 +230,7 @@ type GrepTest() =
         createFiles() |> ignore
         grep files flags pattern |> should equal expected
 
-    [<Fact(Skip = "Remove to run test")>]
+    [<Fact>]
     member this.``Multiple files, several matches, case-insensitive flag`` () =
         let files = ["iliad.txt"; "midsummer-night.txt"; "paradise-lost.txt"]
         let flags = ["-i"]
@@ -250,7 +250,7 @@ type GrepTest() =
         createFiles() |> ignore
         grep files flags pattern |> should equal expected
 
-    [<Fact(Skip = "Remove to run test")>]
+    [<Fact>]
     member this.``Multiple files, several matches, inverted flag`` () =
         let files = ["iliad.txt"; "midsummer-night.txt"; "paradise-lost.txt"]
         let flags = ["-v"]
@@ -263,7 +263,7 @@ type GrepTest() =
         createFiles() |> ignore
         grep files flags pattern |> should equal expected
 
-    [<Fact(Skip = "Remove to run test")>]
+    [<Fact>]
     member this.``Multiple files, one match, match entire lines flag`` () =
         let files = ["iliad.txt"; "midsummer-night.txt"; "paradise-lost.txt"]
         let flags = ["-x"]
@@ -273,7 +273,7 @@ type GrepTest() =
         createFiles() |> ignore
         grep files flags pattern |> should equal expected
 
-    [<Fact(Skip = "Remove to run test")>]
+    [<Fact>]
     member this.``Multiple files, one match, multiple flags`` () =
         let files = ["iliad.txt"; "midsummer-night.txt"; "paradise-lost.txt"]
         let flags = ["-n"; "-i"; "-x"]
@@ -283,7 +283,7 @@ type GrepTest() =
         createFiles() |> ignore
         grep files flags pattern |> should equal expected
 
-    [<Fact(Skip = "Remove to run test")>]
+    [<Fact>]
     member this.``Multiple files, no matches, various flags`` () =
         let files = ["iliad.txt"; "midsummer-night.txt"; "paradise-lost.txt"]
         let flags = ["-n"; "-l"; "-x"; "-i"]

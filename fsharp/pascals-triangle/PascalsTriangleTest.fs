@@ -12,12 +12,12 @@ let ``Zero rows`` () =
     let expected: int list list option = [] |> Some
     rows 0 |> should equal expected
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Single row`` () =
     let expected = [[1]] |> Some
     rows 1 |> should equal expected
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Two rows`` () =
     let expected = 
         [ [1];
@@ -25,7 +25,7 @@ let ``Two rows`` () =
         |> Some
     rows 2 |> should equal expected
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Three rows`` () =
     let expected = 
         [ [1];
@@ -34,7 +34,7 @@ let ``Three rows`` () =
         |> Some
     rows 3 |> should equal expected
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Four rows`` () =
     let expected = 
         [ [1];
@@ -44,7 +44,7 @@ let ``Four rows`` () =
         |> Some
     rows 4 |> should equal expected
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Five rows`` () =
     let expected = 
         [ [1];
@@ -55,7 +55,7 @@ let ``Five rows`` () =
         |> Some
     rows 5 |> should equal expected
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Six rows`` () =
     let expected = 
         [ [1];
@@ -67,7 +67,7 @@ let ``Six rows`` () =
         |> Some
     rows 6 |> should equal expected
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Ten rows`` () =
     let expected = 
         [ [1];
@@ -83,7 +83,7 @@ let ``Ten rows`` () =
         |> Some
     rows 10 |> should equal expected
 
-[<Fact(Skip = "Remove to run test")>]
+[<Fact>]
 let ``Negative rows`` () =
     let expected = None
     rows -1 |> should equal expected
