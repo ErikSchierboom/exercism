@@ -3,7 +3,7 @@ export default class Transcriptor {
         return Array.prototype.map.call(dna, this.dnaToRna).join('')
     }
 
-    dnaToRna(nucleotide: string) {
+    private dnaToRna(nucleotide: string) {
         switch (nucleotide) {
             case 'G': return 'C'
             case 'C': return 'G'
