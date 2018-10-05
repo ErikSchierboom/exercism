@@ -11,17 +11,17 @@ describe('Solve the alphametics puzzle', () => {
     expect(solve(puzzle)).toEqual(expected);
   });
 
-  xtest('solution must have unique value for each letter', () => {
+  test('solution must have unique value for each letter', () => {
     const puzzle = 'A == B';
     expect(solve(puzzle)).toBeNull();
   });
 
-  xtest('leading zero solution is invalid', () => {
+  test('leading zero solution is invalid', () => {
     const puzzle = 'ACA + DD == BD';
     expect(solve(puzzle)).toBeNull();
   });
 
-  xtest('puzzle with four letters', () => {
+  test('puzzle with four letters', () => {
     const puzzle = 'AS + A == MOM';
     const expected = {
       A: 9,
@@ -32,7 +32,7 @@ describe('Solve the alphametics puzzle', () => {
     expect(solve(puzzle)).toEqual(expected);
   });
 
-  xtest('puzzle with six letters', () => {
+  test('puzzle with six letters', () => {
     const puzzle = 'NO + NO + TOO == LATE';
     const expected = {
       N: 7,
@@ -45,7 +45,7 @@ describe('Solve the alphametics puzzle', () => {
     expect(solve(puzzle)).toEqual(expected);
   });
 
-  xtest('puzzle with seven letters', () => {
+  test('puzzle with seven letters', () => {
     const puzzle = 'HE + SEES + THE == LIGHT';
     const expected = {
       E: 4,
@@ -59,7 +59,7 @@ describe('Solve the alphametics puzzle', () => {
     expect(solve(puzzle)).toEqual(expected);
   });
 
-  xtest('puzzle with eight letters', () => {
+  test('puzzle with eight letters', () => {
     const puzzle = 'SEND + MORE == MONEY';
     const expected = {
       S: 9,
@@ -74,7 +74,7 @@ describe('Solve the alphametics puzzle', () => {
     expect(solve(puzzle)).toEqual(expected);
   });
 
-  xtest('puzzle with ten letters', () => {
+  test('puzzle with ten letters', () => {
     const puzzle = 'AND + A + STRONG + OFFENSE + AS + A + GOOD == DEFENSE';
     const expected = {
       A: 5,

@@ -7,14 +7,14 @@ describe('CircularBuffer', () => {
     expect(() => buffer.read()).toThrow(BufferEmptyError);
   });
 
-  xtest('write and read back one item', () => {
+  test('write and read back one item', () => {
     const buffer = circularBuffer(1);
     buffer.write('1');
     expect(buffer.read()).toBe('1');
     expect(() => buffer.read()).toThrow(BufferEmptyError);
   });
 
-  xtest('write and read back multiple items', () => {
+  test('write and read back multiple items', () => {
     const buffer = circularBuffer(2);
     buffer.write('1');
     buffer.write('2');
@@ -23,7 +23,7 @@ describe('CircularBuffer', () => {
     expect(() => buffer.read()).toThrow(BufferEmptyError);
   });
 
-  xtest('clearing a buffer', () => {
+  test('clearing a buffer', () => {
     const buffer = circularBuffer(2);
     buffer.write('1');
     buffer.write('2');
@@ -35,7 +35,7 @@ describe('CircularBuffer', () => {
     expect(buffer.read()).toBe('4');
   });
 
-  xtest('alternate write and read', () => {
+  test('alternate write and read', () => {
     const buffer = circularBuffer(2);
     buffer.write('1');
     expect(buffer.read()).toBe('1');
@@ -43,7 +43,7 @@ describe('CircularBuffer', () => {
     expect(buffer.read()).toBe('2');
   });
 
-  xtest('reads back oldest item', () => {
+  test('reads back oldest item', () => {
     const buffer = circularBuffer(3);
     buffer.write('1');
     buffer.write('2');
@@ -53,7 +53,7 @@ describe('CircularBuffer', () => {
     expect(buffer.read()).toBe('3');
   });
 
-  xtest('writes of undefined or null don\'t occupy buffer', () => {
+  test('writes of undefined or null don\'t occupy buffer', () => {
     const buffer = circularBuffer(3);
     buffer.write(null);
     buffer.write(undefined);
@@ -61,14 +61,14 @@ describe('CircularBuffer', () => {
     expect(buffer.read()).toBe('1');
   });
 
-  xtest('writing to a full buffer throws a BufferFullError', () => {
+  test('writing to a full buffer throws a BufferFullError', () => {
     const buffer = circularBuffer(2);
     buffer.write('1');
     buffer.write('2');
     expect(() => buffer.write('A')).toThrow(BufferFullError);
   });
 
-  xtest('forced writes over write oldest item in a full buffer', () => {
+  test('forced writes over write oldest item in a full buffer', () => {
     const buffer = circularBuffer(2);
     buffer.write('1');
     buffer.write('2');
@@ -78,7 +78,7 @@ describe('CircularBuffer', () => {
     expect(() => buffer.read()).toThrow(BufferEmptyError);
   });
 
-  xtest('forced writes act like write in a non-full buffer', () => {
+  test('forced writes act like write in a non-full buffer', () => {
     const buffer = circularBuffer(2);
     buffer.write('1');
     buffer.forceWrite('2');
@@ -87,7 +87,7 @@ describe('CircularBuffer', () => {
     expect(() => buffer.read()).toThrow(BufferEmptyError);
   });
 
-  xtest('alternate force write and read into full buffer', () => {
+  test('alternate force write and read into full buffer', () => {
     const buffer = circularBuffer(5);
     [1, 2, 3].map(i => buffer.write(i.toString()));
     buffer.read();

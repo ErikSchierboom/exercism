@@ -7,43 +7,43 @@ describe('Pig Latin', () => {
     expect(translator.translate('apple')).toEqual('appleay');
   });
 
-  xtest('translates a word beginning with e', () => {
+  test('translates a word beginning with e', () => {
     expect(translator.translate('ear')).toEqual('earay');
   });
 
-  xtest('translates a word beginning with p', () => {
+  test('translates a word beginning with p', () => {
     expect(translator.translate('pig')).toEqual('igpay');
   });
 
-  xtest('translates a word beginning with k', () => {
+  test('translates a word beginning with k', () => {
     expect(translator.translate('koala')).toEqual('oalakay');
   });
 
-  xtest('translates a word beginning with ch', () => {
+  test('translates a word beginning with ch', () => {
     expect(translator.translate('chair')).toEqual('airchay');
   });
 
-  xtest('translates a word beginning with qu', () => {
+  test('translates a word beginning with qu', () => {
     expect(translator.translate('queen')).toEqual('eenquay');
   });
 
-  xtest('translates a word with a consonant preceding qu', () => {
+  test('translates a word with a consonant preceding qu', () => {
     expect(translator.translate('square')).toEqual('aresquay');
   });
 
-  xtest('translates a word beginning with th', () => {
+  test('translates a word beginning with th', () => {
     expect(translator.translate('therapy')).toEqual('erapythay');
   });
 
-  xtest('translates a word beginning with thr', () => {
+  test('translates a word beginning with thr', () => {
     expect(translator.translate('thrush')).toEqual('ushthray');
   });
 
-  xtest('translates a word beginning with sch', () => {
+  test('translates a word beginning with sch', () => {
     expect(translator.translate('school')).toEqual('oolschay');
   });
 
-  xtest('translates a phrase', () => {
+  test('translates a phrase', () => {
     expect(translator.translate('quick fast run'))
       .toEqual('ickquay astfay unray');
   });

@@ -36,31 +36,31 @@ describe('Grains', () => {
     expect(grains.square(1)).toBe('1');
   });
 
-  xtest('square 2', () => {
+  test('square 2', () => {
     expect(grains.square(2)).toBe('2');
   });
 
-  xtest('square 3', () => {
+  test('square 3', () => {
     expect(grains.square(3)).toBe('4');
   });
 
-  xtest('square 4', () => {
+  test('square 4', () => {
     expect(grains.square(4)).toBe('8');
   });
 
-  xtest('square 16', () => {
+  test('square 16', () => {
     expect(grains.square(16)).toBe('32768');
   });
 
-  xtest('square 32', () => {
+  test('square 32', () => {
     expect(grains.square(32)).toBe('2147483648');
   });
 
-  xtest('square 64', () => {
+  test('square 64', () => {
     expect(grains.square(64)).toBe('9223372036854775808');
   });
 
-  xtest('total', () => {
+  test('total', () => {
     expect(grains.total()).toBe('18446744073709551615');
   });
 });

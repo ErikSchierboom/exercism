@@ -10,12 +10,12 @@ describe('simple-linked-list', () => {
     expect(List).toBeDefined();
   });
 
-  xtest('exports a Element constructor', () => {
+  test('exports a Element constructor', () => {
     expect(Element).toBeDefined();
   });
 
   describe('Element', () => {
-    xtest('is a constructor', () => {
+    test('is a constructor', () => {
       const el = new Element(1);
       expect(el).toBeDefined();
 
@@ -24,31 +24,31 @@ describe('simple-linked-list', () => {
       }).toThrow();
     });
 
-    xtest('requires an argument', () => {
+    test('requires an argument', () => {
       const el = new Element(1);
       expect(el).toBeDefined();
 
       expect(() => new Element()).toThrow(ElementValueRequiredException);
     });
 
-    xtest('has as a value', () => {
+    test('has as a value', () => {
       const el = new Element(1);
       expect(el.value).toBe(1);
     });
 
-    xtest('reference to next is undefined by default', () => {
+    test('reference to next is undefined by default', () => {
       const el = new Element(1);
       expect(el.next).toBeUndefined();
     });
   });
 
-  xtest('accepts a reference to the next element', () => {
+  test('accepts a reference to the next element', () => {
     const elOne = new Element(1);
     const elTwo = new Element(2, elOne);
     expect(elTwo.next).toBe(elOne);
   });
 
-  xtest('requires an instance of Element as next element', () => {
+  test('requires an instance of Element as next element', () => {
     expect(() => new Element(1, true)).toThrow(ElementNextNotInstanceException);
     expect(() => new Element(1, 'lorem ipsum')).toThrow(ElementNextNotInstanceException);
     expect(() => new Element(1, [])).toThrow(ElementNextNotInstanceException);
@@ -56,12 +56,12 @@ describe('simple-linked-list', () => {
   });
 
   describe('List', () => {
-    xtest('is a constructor', () => {
+    test('is a constructor', () => {
       const ll = new List();
       expect(ll).toBeDefined();
     });
 
-    xtest('allows you to append an element', () => {
+    test('allows you to append an element', () => {
       const ll = new List();
       const el = new Element(1);
       ll.push(el);
@@ -75,7 +75,7 @@ describe('simple-linked-list', () => {
       expect(ll2.head.next).toBe(elTwo);
     });
 
-    xtest('allows you to prepend an element', () => {
+    test('allows you to prepend an element', () => {
       const ll = new List();
       const el = new Element(1);
       ll.unshift(el);
@@ -89,7 +89,7 @@ describe('simple-linked-list', () => {
       expect(ll2.head).toBe(elTwo);
     });
 
-    xtest('allows you to remove the first element', () => {
+    test('allows you to remove the first element', () => {
       const ll = new List();
       ll.push(new Element(1));
       ll.shift();
@@ -101,7 +101,7 @@ describe('simple-linked-list', () => {
       expect(ll.head.value).toBe(3);
     });
 
-    xtest('allows you to remove the last element', () => {
+    test('allows you to remove the last element', () => {
       const ll = new List();
       ll.push(new Element(1));
       ll.pop();
@@ -113,14 +113,14 @@ describe('simple-linked-list', () => {
       expect(ll.head.next).toBeUndefined();
     });
 
-    xtest('allows you to convert an array to a List', () => {
+    test('allows you to convert an array to a List', () => {
       const ll = List.fromArray([1, 2]);
 
       expect(ll.head.value).toBe(1);
       expect(ll.head.next.value).toBe(2);
     });
 
-    xtest('allows you to convert a List into an array', () => {
+    test('allows you to convert a List into an array', () => {
       const ll = new List();
       ll.push(new Element(1));
       ll.push(new Element(2));
@@ -134,7 +134,7 @@ describe('simple-linked-list', () => {
       expect(ll.head.value).toBe(1);
     });
 
-    xtest('allows you to reverse a List', () => {
+    test('allows you to reverse a List', () => {
       const ll = List.fromArray([1, 2, 3]);
       ll.reverse();
 

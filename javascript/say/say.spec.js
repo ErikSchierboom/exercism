@@ -6,56 +6,56 @@ describe('say', () => {
     expect(say.inEnglish(0)).toBe('zero');
   });
 
-  xtest('one', () => {
+  test('one', () => {
     expect(say.inEnglish(1)).toBe('one');
   });
 
-  xtest('fourteen', () => {
+  test('fourteen', () => {
     expect(say.inEnglish(14)).toBe('fourteen');
   });
 
-  xtest('twenty', () => {
+  test('twenty', () => {
     expect(say.inEnglish(20)).toBe('twenty');
   });
 
-  xtest('twenty-two', () => {
+  test('twenty-two', () => {
     expect(say.inEnglish(22)).toBe('twenty-two');
   });
 
-  xtest('one hundred', () => {
+  test('one hundred', () => {
     expect(say.inEnglish(100)).toBe('one hundred');
   });
 
-  xtest('one hundred twenty-three', () => {
+  test('one hundred twenty-three', () => {
     expect(say.inEnglish(123)).toBe('one hundred twenty-three');
   });
 
-  xtest('one thousand', () => {
+  test('one thousand', () => {
     expect(say.inEnglish(1000)).toBe('one thousand');
   });
 
-  xtest('one thousand two hundred thirty-four', () => {
+  test('one thousand two hundred thirty-four', () => {
     expect(say.inEnglish(1234)).toBe('one thousand two hundred thirty-four');
   });
 
-  xtest('one million', () => {
+  test('one million', () => {
     expect(say.inEnglish(1000000)).toBe('one million');
   });
 
-  xtest('one million two', () => {
+  test('one million two', () => {
     expect(say.inEnglish(1000002)).toBe('one million two');
   });
 
-  xtest('one million two thousand three hundred forty-five', () => {
+  test('one million two thousand three hundred forty-five', () => {
     expect(say.inEnglish(1002345))
       .toBe('one million two thousand three hundred forty-five');
   });
 
-  xtest('one billion', () => {
+  test('one billion', () => {
     expect(say.inEnglish(1000000000)).toBe('one billion');
   });
 
-  xtest('a really big number', () => {
+  test('a really big number', () => {
     let expected = 'nine hundred eighty-seven billion ';
     expected += 'six hundred fifty-four million ';
     expected += 'three hundred twenty-one thousand ';
@@ -63,13 +63,13 @@ describe('say', () => {
     expect(say.inEnglish(987654321123)).toBe(expected);
   });
 
-  xtest('raises an error below zero', () => {
+  test('raises an error below zero', () => {
     expect(() => {
       say.inEnglish(-1);
     }).toThrow(new Error('Number must be between 0 and 999,999,999,999.'));
   });
 
-  xtest('raises an error above 999,999,999,999', () => {
+  test('raises an error above 999,999,999,999', () => {
     expect(() => {
       say.inEnglish(1000000000000);
     }).toThrow(new Error('Number must be between 0 and 999,999,999,999.'));

@@ -13,73 +13,73 @@ describe('TwelveDays', () => {
     expect(twelveDaysObject.verse(1)).toEqual(expectedVerseOne);
   });
 
-  xtest('test verse two', () => {
+  test('test verse two', () => {
     const expectedVerseTwo =
       'On the second day of Christmas my true love gave to me, two Turtle Doves, and a Partridge in a Pear Tree.\n';
     expect(twelveDaysObject.verse(2)).toEqual(expectedVerseTwo);
   });
 
-  xtest('test verse three', () => {
+  test('test verse three', () => {
     const expectedVerseThree =
       'On the third day of Christmas my true love gave to me, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n';
     expect(twelveDaysObject.verse(3)).toEqual(expectedVerseThree);
   });
 
-  xtest('test verse four', () => {
+  test('test verse four', () => {
     const expectedVerseFour =
       'On the fourth day of Christmas my true love gave to me, four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n';
     expect(twelveDaysObject.verse(4)).toEqual(expectedVerseFour);
   });
 
-  xtest('test verse five', () => {
+  test('test verse five', () => {
     const expectedVerseFive =
       'On the fifth day of Christmas my true love gave to me, five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n';
     expect(twelveDaysObject.verse(5)).toEqual(expectedVerseFive);
   });
 
-  xtest('test verse six', () => {
+  test('test verse six', () => {
     const expectedVerseSix =
       'On the sixth day of Christmas my true love gave to me, six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n';
     expect(twelveDaysObject.verse(6)).toEqual(expectedVerseSix);
   });
 
-  xtest('test verse seven', () => {
+  test('test verse seven', () => {
     const expectedVerseSeven =
       'On the seventh day of Christmas my true love gave to me, seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n';
     expect(twelveDaysObject.verse(7)).toEqual(expectedVerseSeven);
   });
 
-  xtest('test verse eight', () => {
+  test('test verse eight', () => {
     const expectedVerseEight =
       'On the eighth day of Christmas my true love gave to me, eight Maids-a-Milking, seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n';
     expect(twelveDaysObject.verse(8)).toEqual(expectedVerseEight);
   });
 
-  xtest('test verse nine', () => {
+  test('test verse nine', () => {
     const expectedVerseNine =
       'On the ninth day of Christmas my true love gave to me, nine Ladies Dancing, eight Maids-a-Milking, seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n';
     expect(twelveDaysObject.verse(9)).toEqual(expectedVerseNine);
   });
 
-  xtest('test verse ten', () => {
+  test('test verse ten', () => {
     const expectedVerseTen =
       'On the tenth day of Christmas my true love gave to me, ten Lords-a-Leaping, nine Ladies Dancing, eight Maids-a-Milking, seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n';
     expect(twelveDaysObject.verse(10)).toEqual(expectedVerseTen);
   });
 
-  xtest('test verse eleven', () => {
+  test('test verse eleven', () => {
     const expectedVerseEleven =
       'On the eleventh day of Christmas my true love gave to me, eleven Pipers Piping, ten Lords-a-Leaping, nine Ladies Dancing, eight Maids-a-Milking, seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n';
     expect(twelveDaysObject.verse(11)).toEqual(expectedVerseEleven);
   });
 
-  xtest('test verse twelve', () => {
+  test('test verse twelve', () => {
     const expectedVerseTwelve =
       'On the twelfth day of Christmas my true love gave to me, twelve Drummers Drumming, eleven Pipers Piping, ten Lords-a-Leaping, nine Ladies Dancing, eight Maids-a-Milking, seven Swans-a-Swimming, six Geese-a-Laying, five Gold Rings, four Calling Birds, three French Hens, two Turtle Doves, and a Partridge in a Pear Tree.\n';
     expect(twelveDaysObject.verse(12)).toEqual(expectedVerseTwelve);
   });
 
-  xtest('test multiple verse', () => {
+  test('test multiple verse', () => {
     const expectedVerseOneToThree =
       'On the first day of Christmas my true love gave to me, a Partridge in a Pear Tree.\n\n' +
       'On the second day of Christmas my true love gave to me, two Turtle Doves, and a Partridge in a Pear Tree.\n\n' +
@@ -87,7 +87,7 @@ describe('TwelveDays', () => {
     expect(twelveDaysObject.verse(1, 3)).toEqual(expectedVerseOneToThree);
   });
 
-  xtest('test sing whole song', () => {
+  test('test sing whole song', () => {
     const expectedSong =
       'On the first day of Christmas my true love gave to me, a Partridge in a Pear Tree.\n\n' +
       'On the second day of Christmas my true love gave to me, two Turtle Doves, and a Partridge in a Pear Tree.\n\n' +

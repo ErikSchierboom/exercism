@@ -11,14 +11,14 @@ describe('School', () => {
     expect(school.roster()).toEqual({});
   });
 
-  xtest('adding a student adds them to the roster for the given grade', () => {
+  test('adding a student adds them to the roster for the given grade', () => {
     school.add('Aimee', 2);
 
     const expectedDb = { 2: ['Aimee'] };
     expect(school.roster()).toEqual(expectedDb);
   });
 
-  xtest('adding more students to the same grade adds them to the roster', () => {
+  test('adding more students to the same grade adds them to the roster', () => {
     school.add('Blair', 2);
     school.add('James', 2);
     school.add('Paul', 2);
@@ -27,7 +27,7 @@ describe('School', () => {
     expect(school.roster()).toEqual(expectedDb);
   });
 
-  xtest('adding students to different grades adds them to the roster', () => {
+  test('adding students to different grades adds them to the roster', () => {
     school.add('Chelsea', 3);
     school.add('Logan', 7);
 
@@ -35,7 +35,7 @@ describe('School', () => {
     expect(school.roster()).toEqual(expectedDb);
   });
 
-  xtest('grade returns the students in that grade in alphabetical order', () => {
+  test('grade returns the students in that grade in alphabetical order', () => {
     school.add('Franklin', 5);
     school.add('Bradley', 5);
     school.add('Jeff', 1);
@@ -44,11 +44,11 @@ describe('School', () => {
     expect(school.grade(5)).toEqual(expectedStudents);
   });
 
-  xtest('grade returns an empty array if there are no students in that grade', () => {
+  test('grade returns an empty array if there are no students in that grade', () => {
     expect(school.grade(1)).toEqual([]);
   });
 
-  xtest('the students names in each grade in the roster are sorted', () => {
+  test('the students names in each grade in the roster are sorted', () => {
     school.add('Jennifer', 4);
     school.add('Kareem', 6);
     school.add('Christopher', 4);
@@ -62,7 +62,7 @@ describe('School', () => {
     expect(school.roster()).toEqual(expectedSortedStudents);
   });
 
-  xtest('roster cannot be modified outside of module', () => {
+  test('roster cannot be modified outside of module', () => {
     school.add('Aimee', 2);
     const roster = school.roster();
     roster[2].push('Oops.');
@@ -70,7 +70,7 @@ describe('School', () => {
     expect(school.roster()).toEqual(expectedDb);
   });
 
-  xtest('roster cannot be modified outside of module using grade()', () => {
+  test('roster cannot be modified outside of module using grade()', () => {
     school.add('Aimee', 2);
     school.grade(2).push('Oops.');
     const expectedDb = { 2: ['Aimee'] };

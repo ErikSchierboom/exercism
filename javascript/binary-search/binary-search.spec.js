@@ -13,15 +13,15 @@ describe('BinarySearch', () => {
     expect(Array.isArray(validBinarySearch.array)).toEqual(true);
   });
 
-  xtest('should find the correct index of an included value', () => {
+  test('should find the correct index of an included value', () => {
     expect(new BinarySearch(sortedArray).indexOf(3)).toEqual(2);
   });
 
-  xtest('should search the middle of the array', () => {
+  test('should search the middle of the array', () => {
     expect(new BinarySearch(sortedArrayOfOddLength).indexOf(2)).toEqual(3);
   });
 
-  xtest('should return -1 for a value not in the array', () => {
+  test('should return -1 for a value not in the array', () => {
     expect(new BinarySearch(sortedArray).indexOf(10)).toEqual(-1);
   });
 });

@@ -13,7 +13,7 @@ describe('BinarySearchTree', () => {
     expect(new BinarySearchTree(4).data).toEqual(4);
   });
 
-  xtest('inserting less', () => {
+  test('inserting less', () => {
     const four = new BinarySearchTree(4);
     four.insert(2);
 
@@ -21,7 +21,7 @@ describe('BinarySearchTree', () => {
     expect(four.left.data).toEqual(2);
   });
 
-  xtest('inserting same', () => {
+  test('inserting same', () => {
     const four = new BinarySearchTree(4);
     four.insert(4);
 
@@ -29,7 +29,7 @@ describe('BinarySearchTree', () => {
     expect(four.left.data).toEqual(4);
   });
 
-  xtest('inserting right', () => {
+  test('inserting right', () => {
     const four = new BinarySearchTree(4);
     four.insert(5);
 
@@ -37,7 +37,7 @@ describe('BinarySearchTree', () => {
     expect(four.right.data).toEqual(5);
   });
 
-  xtest('complex tree', () => {
+  test('complex tree', () => {
     const four = new BinarySearchTree(4);
     four.insert(2);
     four.insert(6);
@@ -55,25 +55,25 @@ describe('BinarySearchTree', () => {
     expect(four.right.right.data).toEqual(7);
   });
 
-  xtest('iterating one element', () => {
+  test('iterating one element', () => {
     expect(recordAllData(new BinarySearchTree(4))).toEqual([4]);
   });
 
-  xtest('iterating over smaller element', () => {
+  test('iterating over smaller element', () => {
     const four = new BinarySearchTree(4);
     four.insert(2);
 
     expect(recordAllData(four)).toEqual([2, 4]);
   });
 
-  xtest('iterating over larger element', () => {
+  test('iterating over larger element', () => {
     const four = new BinarySearchTree(4);
     four.insert(5);
 
     expect(recordAllData(four)).toEqual([4, 5]);
   });
 
-  xtest('iterating over complex tree', () => {
+  test('iterating over complex tree', () => {
     const four = new BinarySearchTree(4);
     four.insert(2);
     four.insert(1);
