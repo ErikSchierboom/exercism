@@ -1,15 +1,15 @@
 export default class Transcriptor {
-    toRna(dna: string) {
-        return Array.prototype.map.call(dna, this.dnaToRna).join('')
+    toRna(dna: string): string {
+        return Array.from(dna).map(this.dnaToRna).join('')
     }
 
-    private dnaToRna(nucleotide: string) {
+    private dnaToRna(nucleotide: string): string {
         switch (nucleotide) {
             case 'G': return 'C'
             case 'C': return 'G'
             case 'T': return 'A'
             case 'A': return 'U'
-            default: throw 'Invalid input DNA.'
+            default: throw new Error('Invalid input DNA.')
         }
     }
 }
