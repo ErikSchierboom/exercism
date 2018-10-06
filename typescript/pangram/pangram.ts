@@ -8,6 +8,6 @@ export default class Pangram {
     public isPangram(): boolean {
         const letters = [..."abcdefghijklmnopqrstuvwxyz"]
         const lowerCaseInput = this.input.toLowerCase()
-        return letters.every((lettter) => lowerCaseInput.includes(lettter))
+        return letters.every((letter) => lowerCaseInput.includes(letter))
     }
 }
