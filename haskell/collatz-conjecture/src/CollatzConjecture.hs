@@ -1,11 +1,12 @@
 module CollatzConjecture (collatz) where
 
-collatz' :: Integer -> Integer -> Maybe Integer
-collatz' steps number
-    | number < 1 = Nothing
-    | number == 1 = Just steps
-    | number `mod` 2 == 0 = collatz' (steps + 1) (number `div` 2)
-    | otherwise = collatz' (steps + 1) (number * 3 + 1)
+import Data.List (genericLength)
 
 collatz :: Integer -> Maybe Integer
-collatz = collatz' 0
+collatz number = 
+    if number < 1 then
+        Nothing
+    else
+        Just . genericLength . takeWhile (/=1) $ iterate next number
+    where
+        next x = if even x then x `div` 2 else 3 * x + 1
