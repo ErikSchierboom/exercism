@@ -5,10 +5,10 @@ export default class ArmstrongNumbers {
     }
 
     static parseDigits(n: number) {
-        return n.toString().split('').map(Number)
+        return Array.from(n.toString(), Number)
     }
 
     static digitsToPower(digits: number[], exponent: number) {
-        return digits.reduce((acc, digit) => acc + Math.pow(digit, exponent), 0)
+        return digits.reduce((acc, digit) => acc + digit ** exponent, 0)
     }
 }
