@@ -12,7 +12,11 @@ function scoreLetter(letter: string): number {
     return letterScores[letter]
 }
 
+function normalizeInput(input: string | undefined) {
+    return (input || '').toUpperCase()
+}
+
 export default function score(input: string | undefined): number {
-    return Array.from((input || '').toUpperCase(), scoreLetter)
+    return Array.from(normalizeInput(input), scoreLetter)
         .reduce((x, y) => x + y, 0)
 }
