@@ -1,6 +1,6 @@
 export default class RunLengthEncoding {
     static encode(plainText: string) {
-        return [...this.encodeBlocks(plainText)].map(this.encodeBlock).join("")
+        return Array.from(this.encodeBlocks(plainText), this.encodeBlock).join("")
     }
 
     private static * encodeBlocks(plainText: string) {
@@ -32,7 +32,7 @@ export default class RunLengthEncoding {
     }
 
     static decode(encodedText: string) {
-        return [...this.decodeBlocks(encodedText)].map(this.decodeBlock).join("")
+        return Array.from(this.decodeBlocks(encodedText), this.decodeBlock).join("")
     }
 
     private static * decodeBlocks(encodedText: string) {
