@@ -229,6 +229,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParallelLetterFrequency", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RobotSimulator", "robot-simulator\RobotSimulator.csproj", "{30205215-0C4C-4790-B3C8-C238405C2B83}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestApi", "rest-api\RestApi.csproj", "{01C5F2B2-B6A7-42B1-B1BE-15C9329F4F83}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1598,5 +1600,17 @@ Global
 		{30205215-0C4C-4790-B3C8-C238405C2B83}.Release|x64.Build.0 = Release|Any CPU
 		{30205215-0C4C-4790-B3C8-C238405C2B83}.Release|x86.ActiveCfg = Release|Any CPU
 		{30205215-0C4C-4790-B3C8-C238405C2B83}.Release|x86.Build.0 = Release|Any CPU
+		{01C5F2B2-B6A7-42B1-B1BE-15C9329F4F83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01C5F2B2-B6A7-42B1-B1BE-15C9329F4F83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01C5F2B2-B6A7-42B1-B1BE-15C9329F4F83}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{01C5F2B2-B6A7-42B1-B1BE-15C9329F4F83}.Debug|x64.Build.0 = Debug|Any CPU
+		{01C5F2B2-B6A7-42B1-B1BE-15C9329F4F83}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{01C5F2B2-B6A7-42B1-B1BE-15C9329F4F83}.Debug|x86.Build.0 = Debug|Any CPU
+		{01C5F2B2-B6A7-42B1-B1BE-15C9329F4F83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01C5F2B2-B6A7-42B1-B1BE-15C9329F4F83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01C5F2B2-B6A7-42B1-B1BE-15C9329F4F83}.Release|x64.ActiveCfg = Release|Any CPU
+		{01C5F2B2-B6A7-42B1-B1BE-15C9329F4F83}.Release|x64.Build.0 = Release|Any CPU
+		{01C5F2B2-B6A7-42B1-B1BE-15C9329F4F83}.Release|x86.ActiveCfg = Release|Any CPU
+		{01C5F2B2-B6A7-42B1-B1BE-15C9329F4F83}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
