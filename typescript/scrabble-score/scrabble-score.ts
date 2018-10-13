@@ -8,8 +8,11 @@ const letterScores: { [letter: string]: number } = {
     Q: 10, Z: 10
 }
 
+function scoreLetter(letter: string): number {
+    return letterScores[letter]
+}
+
 export default function score(input: string | undefined): number {
-    return [...(input || '').toUpperCase()]
-        .map((letter) => letterScores[letter])
+    return Array.from((input || '').toUpperCase(), scoreLetter)
         .reduce((x, y) => x + y, 0)
 }
