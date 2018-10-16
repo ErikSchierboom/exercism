@@ -5,7 +5,7 @@ public struct Clock
 
     public Clock(int hours, int minutes)
     {
-        Hours = Mod((hours * MinutesPerHour + minutes) / (float)MinutesPerHour, HoursPerDay);
+        Hours = Mod((hours * MinutesPerHour + minutes) / MinutesPerHour, HoursPerDay);
         Minutes = Mod(minutes, MinutesPerHour);
     }
 
