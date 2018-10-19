@@ -231,6 +231,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RobotSimulator", "robot-sim
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestApi", "rest-api\RestApi.csproj", "{01C5F2B2-B6A7-42B1-B1BE-15C9329F4F83}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AffineCipher", "affine-cipher\AffineCipher.csproj", "{3051E3F6-B316-40E3-98DC-7C4A03F8F37C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1612,5 +1614,17 @@ Global
 		{01C5F2B2-B6A7-42B1-B1BE-15C9329F4F83}.Release|x64.Build.0 = Release|Any CPU
 		{01C5F2B2-B6A7-42B1-B1BE-15C9329F4F83}.Release|x86.ActiveCfg = Release|Any CPU
 		{01C5F2B2-B6A7-42B1-B1BE-15C9329F4F83}.Release|x86.Build.0 = Release|Any CPU
+		{3051E3F6-B316-40E3-98DC-7C4A03F8F37C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3051E3F6-B316-40E3-98DC-7C4A03F8F37C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3051E3F6-B316-40E3-98DC-7C4A03F8F37C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3051E3F6-B316-40E3-98DC-7C4A03F8F37C}.Debug|x64.Build.0 = Debug|Any CPU
+		{3051E3F6-B316-40E3-98DC-7C4A03F8F37C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3051E3F6-B316-40E3-98DC-7C4A03F8F37C}.Debug|x86.Build.0 = Debug|Any CPU
+		{3051E3F6-B316-40E3-98DC-7C4A03F8F37C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3051E3F6-B316-40E3-98DC-7C4A03F8F37C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3051E3F6-B316-40E3-98DC-7C4A03F8F37C}.Release|x64.ActiveCfg = Release|Any CPU
+		{3051E3F6-B316-40E3-98DC-7C4A03F8F37C}.Release|x64.Build.0 = Release|Any CPU
+		{3051E3F6-B316-40E3-98DC-7C4A03F8F37C}.Release|x86.ActiveCfg = Release|Any CPU
+		{3051E3F6-B316-40E3-98DC-7C4A03F8F37C}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
