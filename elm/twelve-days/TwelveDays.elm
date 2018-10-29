@@ -1,14 +1,14 @@
 module TwelveDays exposing (recite)
 
 
-toNumber : Int -> String
-toNumber n =
-    case n of
-        0 ->
-            "a"
-
+toNumber : Int -> Int -> String
+toNumber n num =
+    case num of
         1 ->
-            "and a"
+            if n == 1 then
+                "a"
+            else
+                "and a"
 
         2 ->
             "two"
@@ -136,9 +136,9 @@ toSubject n =
             "unknown subject"
 
 
-toVerseSubject : Int -> String
-toVerseSubject n =
-    toNumber n ++ " " ++ toSubject n
+toVerseSubject : Int -> Int -> String
+toVerseSubject n num =
+    toNumber n num ++ " " ++ toSubject num
 
 
 verseBegin : Int -> String
@@ -148,15 +148,10 @@ verseBegin n =
 
 verseEnd : Int -> String
 verseEnd n =
-    case n of
-        1 ->
-            toVerseSubject 0
-
-        _ ->
-            List.range 1 n
-                |> List.reverse
-                |> List.map toVerseSubject
-                |> String.join ", "
+    List.range 1 n
+        |> List.reverse
+        |> List.map (toVerseSubject n)
+        |> String.join ", "
 
 
 verse : Int -> String
