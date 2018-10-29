@@ -1,14 +1,11 @@
 module TwelveDays exposing (recite)
 
 
-toNumber : Int -> Int -> String
-toNumber n num =
-    case num of
+toNumber : Int -> String
+toNumber n =
+    case n of
         1 ->
-            if n == 1 then
-                "a"
-            else
-                "and a"
+            "a"
 
         2 ->
             "two"
@@ -138,7 +135,14 @@ toSubject n =
 
 toVerseSubject : Int -> Int -> String
 toVerseSubject n num =
-    toNumber n num ++ " " ++ toSubject num
+    let
+        prefix =
+            if n /= 1 && num == 1 then
+                "and "
+            else
+                ""
+    in
+        prefix ++ toNumber num ++ " " ++ toSubject num
 
 
 verseBegin : Int -> String
