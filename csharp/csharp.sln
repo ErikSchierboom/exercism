@@ -233,6 +233,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestApi", "rest-api\RestApi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AffineCipher", "affine-cipher\AffineCipher.csproj", "{3051E3F6-B316-40E3-98DC-7C4A03F8F37C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Darts", "darts\Darts.csproj", "{78D47612-9ECC-4702-8DC1-57F54E2C4BA7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -1626,5 +1628,17 @@ Global
 		{3051E3F6-B316-40E3-98DC-7C4A03F8F37C}.Release|x64.Build.0 = Release|Any CPU
 		{3051E3F6-B316-40E3-98DC-7C4A03F8F37C}.Release|x86.ActiveCfg = Release|Any CPU
 		{3051E3F6-B316-40E3-98DC-7C4A03F8F37C}.Release|x86.Build.0 = Release|Any CPU
+		{78D47612-9ECC-4702-8DC1-57F54E2C4BA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78D47612-9ECC-4702-8DC1-57F54E2C4BA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78D47612-9ECC-4702-8DC1-57F54E2C4BA7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{78D47612-9ECC-4702-8DC1-57F54E2C4BA7}.Debug|x64.Build.0 = Debug|Any CPU
+		{78D47612-9ECC-4702-8DC1-57F54E2C4BA7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{78D47612-9ECC-4702-8DC1-57F54E2C4BA7}.Debug|x86.Build.0 = Debug|Any CPU
+		{78D47612-9ECC-4702-8DC1-57F54E2C4BA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78D47612-9ECC-4702-8DC1-57F54E2C4BA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78D47612-9ECC-4702-8DC1-57F54E2C4BA7}.Release|x64.ActiveCfg = Release|Any CPU
+		{78D47612-9ECC-4702-8DC1-57F54E2C4BA7}.Release|x64.Build.0 = Release|Any CPU
+		{78D47612-9ECC-4702-8DC1-57F54E2C4BA7}.Release|x86.ActiveCfg = Release|Any CPU
+		{78D47612-9ECC-4702-8DC1-57F54E2C4BA7}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
