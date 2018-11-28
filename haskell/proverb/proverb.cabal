@@ -1,0 +1,35 @@
+-- This file has been generated from package.yaml by hpack version 0.28.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 62d010b9036889dc12fafb147968dfa9f5042f22725d76d5208bd678078ec202
+
+name:           proverb
+version:        1.1.0.2
+build-type:     Simple
+cabal-version:  >= 1.10
+
+library
+  exposed-modules:
+      Proverb
+  other-modules:
+      Paths_proverb
+  hs-source-dirs:
+      src
+  ghc-options: -Wall
+  build-depends:
+      base
+  default-language: Haskell2010
+
+test-suite test
+  type: exitcode-stdio-1.0
+  main-is: Tests.hs
+  other-modules:
+      Paths_proverb
+  hs-source-dirs:
+      test
+  build-depends:
+      base
+    , hspec
+    , proverb
+  default-language: Haskell2010
