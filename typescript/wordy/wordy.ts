@@ -1,6 +1,15 @@
 export class ArgumentError extends Error {}
 
 export class WordProblem {
+  private operationsMap: {
+    [index: string]: (x: number, y: number) => number;
+  } = {
+    plus: (x: number, y: number) => x + y,
+    minus: (x: number, y: number) => x - y,
+    "multiplied by": (x: number, y: number) => x * y,
+    "divided by": (x: number, y: number) => x / y
+  };
+
   private problem: string;
 
   constructor(problem: string) {
@@ -42,20 +51,7 @@ export class WordProblem {
         throw new ArgumentError();
       }
 
-      switch (operator) {
-        case "plus":
-          answer += parseInt(right);
-          break;
-        case "minus":
-          answer -= parseInt(right);
-          break;
-        case "multiplied by":
-          answer *= parseInt(right);
-          break;
-        case "divided by":
-          answer /= parseInt(right);
-          break;
-      }
+      answer = this.operationsMap[operator](answer, parseInt(right));
     }
 
     return answer;
