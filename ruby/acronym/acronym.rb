@@ -1,5 +1,5 @@
 module Acronym
   def self.abbreviate(input)
-    input.upcase.scan(/(?:^|\s|-)([A-Z])/).join
+    input.scan(/\b[A-Za-z]/).join.upcase
   end
 end
