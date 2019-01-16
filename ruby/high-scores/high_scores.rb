@@ -18,11 +18,8 @@ class HighScores
   end
 
   def report
-    difference = self.personal_best - self.latest
-
-    latest_report = "Your latest score was #{self.latest}."
-    latest_comparison_report = difference == 0 ? "That's your personal best!" : "That's #{difference} short of your personal best!"
-
-    "#{latest_report} #{latest_comparison_report}"
+    difference = personal_best - latest
+    difference_report = "#{difference} short of " unless difference == 0
+    "Your latest score was #{latest}. That's #{difference_report}your personal best!"
   end
 end
