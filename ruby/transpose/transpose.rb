@@ -1,17 +1,18 @@
 module Transpose
+
   def self.transpose(input)
     columns(padded_lines(input)).join("\n")
   end
 
-  private
-
   def self.padded_lines(input)
-    lines = input.each_line.map(&:chomp)
-
+    lines = input.split("\n")
     lines.each_with_index.flat_map do |line, index|
-      pad_length = lines.drop(index + 1).map(&:size).max.to_i
-      line.ljust(pad_length)
+      line.ljust(padding_length(lines, index))
     end
+  end
+
+  def self.padding_length(lines, index)
+    lines.drop(index + 1).map(&:size).max.to_i
   end
 
   def self.columns(lines)
