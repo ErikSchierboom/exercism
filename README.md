@@ -1,6 +1,6 @@
 # Exercism.io exercises
 
-This repository contains [my work](http://exercism.io/ErikSchierboom) on solving the programming exercises on [exercism.io](http://exercism.io).
+This repository contains [my work](https://exercism.io/profiles/ErikSchierboom) on solving the programming exercises on [exercism.io](http://exercism.io).
 
 ### Completed
 - [C#](http://exercism.io/languages/csharp)
