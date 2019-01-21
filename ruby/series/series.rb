@@ -9,9 +9,6 @@ class Series
   def slices(length)
     raise ArgumentError, 'Slice length must be less than or equal to input length' unless length <= numerals.length
 
-    numerals[0..-length]
-      .each_char
-      .each_with_index
-      .map { |_, index| numerals[index, length] }
+    numerals.each_char.each_cons(length).map(&:join)
   end
 end
