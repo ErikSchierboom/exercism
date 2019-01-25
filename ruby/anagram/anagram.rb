@@ -1,7 +1,7 @@
 class Anagram
-  def initialize(string)
-    @downcased_string = string.downcase
-    @normalized_string = normalize(string)
+  def initialize(input)
+    @input = input
+    @normalized_string = normalize(input)
   end
 
   def match(candidates)
@@ -11,7 +11,7 @@ class Anagram
   private
 
   def anagram?(candidate)
-    normalize(candidate) == @normalized_string unless candidate.downcase == @downcased_string
+    normalize(candidate) == @normalized_string unless candidate.casecmp?(@input)
   end
 
   def normalize(string)
