@@ -18,7 +18,7 @@ class Nucleotide
       empty_histogram = { 'A' => 0, 'T' => 0, 'C' => 0, 'G' => 0 }
 
       dna.each_char.each_with_object(empty_histogram) do |nucleotide, histogram|
-        raise ArgumentError, 'Unknown nucleotide' unless empty_histogram.include?(nucleotide)
+        raise ArgumentError, 'Unknown nucleotide' unless histogram.include?(nucleotide)
 
         histogram[nucleotide] += 1
       end
