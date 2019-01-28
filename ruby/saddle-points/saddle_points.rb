@@ -8,9 +8,9 @@ class Matrix
 
   def saddle_points
     rows_maximum = @rows.map(&:max)
-    cols_minimum = @columns.map(&:min)
+    columns_minimum = @columns.map(&:min)
 
-    coordinates.select { |row, column| rows_maximum[row] == cols_minimum[column] }
+    coordinates.select { |row, column| rows_maximum[row] == columns_minimum[column] }
   end
 
   private
