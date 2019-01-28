@@ -1,6 +1,13 @@
+require 'set'
+
 module Isogram
   def self.isogram?(word)
-    letters = word.downcase.scan(/\w/)
-    letters.length == letters.uniq.length
+    found_letters = Set.new([])
+
+    word.scan(/\w/).each do |letter|
+      return false if found_letters.include?(letter.downcase)
+
+      found_letters.add(letter.downcase)
+    end
   end
 end
