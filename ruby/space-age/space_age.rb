@@ -1,4 +1,6 @@
 class SpaceAge
+  SECONDS_PER_EARTH_YEAR = 31_557_600.00
+
   def initialize(age_in_seconds)
     @age_in_seconds = age_in_seconds
   end
@@ -36,8 +38,7 @@ class SpaceAge
   end
 
   def earth_years(orbital_period_in_earth_years)
-    seconds_per_earth_year = 31_557_600.00
-    earth_years = @age_in_seconds / (seconds_per_earth_year * orbital_period_in_earth_years)
+    earth_years = @age_in_seconds / (SECONDS_PER_EARTH_YEAR * orbital_period_in_earth_years)
     earth_years.round(2)
   end
 end
