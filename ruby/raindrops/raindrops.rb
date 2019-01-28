@@ -3,7 +3,7 @@ module Raindrops
 
   def self.convert(number)
     sounds = FACTORS_TO_SOUNDS.map do |factor, sound|
-      sound if number % factor == 0
+      sound if (number % factor).zero?
     end.join
 
     sounds.empty? ? number.to_s : sounds
