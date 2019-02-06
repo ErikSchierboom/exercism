@@ -1,33 +1,33 @@
 class Scrabble
   LETTER_SCORES = [
-    ['AEIOULNRST', 1],
-    ['DG', 2],
-    ['BCMP', 3],
-    ['FHVWY', 4],
-    ['K', 5],
-    ['JX', 8],
-    ['QZ', 10]
-  ].flat_map { |(word, score)| word.each_char.map { |letter| [letter, score] } }.to_h
+    [%w(A E I O U L N R S T), 1],
+    [%w(D G), 2],
+    [%w(B C M P), 3],
+    [%w(F H V W Y), 4],
+    [%w(K), 5],
+    [%w(J X), 8],
+    [%w(Q Z), 10]
+  ].flat_map { |(letters, score)| letters.map { |letter| [letter, score] } }.to_h
+
+  def self.score(*args)
+    new(*args).score
+  end
 
   def initialize(word)
     @word = word
   end
 
   def score
-    Scrabble.score(@word)
-  end
-
-  def self.score(word)
-    letters(word).map(&method(:score_letter)).sum
+    letters.map(&method(:score_letter)).sum
   end
 
   private
 
-  def self.letters(word)
-    word.to_s.strip.upcase.chars
+  def letters
+    @word.to_s.strip.upcase.chars
   end
 
-  def self.score_letter(letter)
+  def score_letter(letter)
     LETTER_SCORES[letter]
   end
 end
