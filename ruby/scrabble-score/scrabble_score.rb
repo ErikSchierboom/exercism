@@ -7,28 +7,26 @@ class Scrabble
     [%w(K), 5],
     [%w(J X), 8],
     [%w(Q Z), 10]
-  ].flat_map { |(letters, score)| letters.map { |letter| [letter, score] } }.to_h
+  ].flat_map do |(letters, score)|
+    letters.map { |letter| [letter, score] }
+  end.to_h
+
+  private_constant :LETTER_SCORES
 
   def self.score(*args)
     new(*args).score
   end
 
   def initialize(word)
-    @word = word
+    @letters = word.to_s.strip.upcase.chars
   end
 
   def score
-    letters.map(&method(:score_letter)).sum
+    letters.map { |letter| LETTER_SCORES[letter] }.sum
   end
 
   private
 
-  def letters
-    @word.to_s.strip.upcase.chars
-  end
-
-  def score_letter(letter)
-    LETTER_SCORES[letter]
-  end
+  attr_reader :letters
 end
 
