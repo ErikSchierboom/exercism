@@ -1,7 +1,4 @@
 class Nucleotide
-  EMPTY_HISTOGRAM = { 'A' => 0, 'T' => 0, 'C' => 0, 'G' => 0 }.freeze
-  private_constant :EMPTY_HISTOGRAM
-
   def self.from_dna(dna)
     new(dna)
   end
@@ -23,6 +20,8 @@ class Nucleotide
   end
 
   private
+
+  EMPTY_HISTOGRAM = { 'A' => 0, 'T' => 0, 'C' => 0, 'G' => 0 }.freeze
 
   attr_reader :dna
 end
