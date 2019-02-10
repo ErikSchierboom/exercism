@@ -1,28 +1,35 @@
-module Luhn
+class Luhn
   def self.valid?(number)
-    (checksum(digits(number)) % 10).zero?
+    new(number).valid?
+  end
+
+  def initialize(number)
+    @number = number
+  end
+
+  def valid?
+    (checksum % 10).zero? unless digits.nil? || digits.size < 2
   end
 
   private
 
-  def self.digits(number)
+  attr_reader :number
+
+  def digits
     number
       .delete(' ')
       .match(/^\d{2,}$/) { |m| m.string.each_char.map(&:to_i) }
-      .to_a
   end
 
-  def self.checksum(digits)
-    return -1 if digits.size < 2
-
+  def checksum
     digits
       .reverse_each
-      .each_with_index
-      .sum { |digit, i| correct_digit(digit, i) }
+      .each_slice(2)
+      .sum { |even_digit, odd_digit| even_digit + double(odd_digit.to_i) }
   end
 
-  def self.correct_digit(digit, index)
-    corrected_digit = index.even? ? digit : digit * 2
-    corrected_digit > 9 ? corrected_digit - 9 : corrected_digit
+  def double(digit)
+    doubled = digit * 2
+    doubled > 9 ? doubled - 9 : doubled
   end
 end
