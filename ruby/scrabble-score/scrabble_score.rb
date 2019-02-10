@@ -7,9 +7,9 @@ class Scrabble
     [%w(K), 5],
     [%w(J X), 8],
     [%w(Q Z), 10]
-  ].flat_map do |(letters, score)|
+  ].flat_map { |letters, score|
     letters.map { |letter| [letter, score] }
-  end.to_h
+  }.to_h
 
   private_constant :LETTER_SCORES
 
@@ -22,7 +22,7 @@ class Scrabble
   end
 
   def score
-    letters.map { |letter| LETTER_SCORES[letter] }.sum
+    letters.sum { |letter| LETTER_SCORES[letter] }
   end
 
   private
