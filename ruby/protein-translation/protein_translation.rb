@@ -31,9 +31,8 @@ module Translation
 
   def self.of_rna(rna)
     rna
-      .each_char
-      .each_slice(3)
-      .map { |codon| of_codon(codon.join) }
+      .scan(/.{3}/)
+      .map { |codon| of_codon(codon) }
       .take_while { |protein| protein != 'STOP' }
   end
 end
