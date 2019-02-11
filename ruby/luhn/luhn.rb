@@ -1,4 +1,7 @@
 class Luhn
+  VALID_NUMBER_REGEX = /^\d{2,}$/.freeze
+  private_constant :VALID_NUMBER_REGEX
+
   def self.valid?(number)
     new(number).valid?
   end
@@ -8,7 +11,9 @@ class Luhn
   end
 
   def valid?
-    (luhn_sum % 10).zero? if number_valid?
+    return unless number_valid?
+
+    (luhn_sum % 10).zero?
   end
 
   private
@@ -16,7 +21,7 @@ class Luhn
   attr_reader :number
 
   def number_valid?
-    number =~ /^\d{2,}$/
+    number =~ VALID_NUMBER_REGEX
   end
 
   def luhn_sum
