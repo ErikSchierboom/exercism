@@ -8,30 +8,26 @@ class Luhn
   end
 
   def valid?
-    (luhn_sum % 10).zero? if digits
+    (luhn_sum % 10).zero? if number_valid?
   end
 
   private
 
   attr_reader :number
 
+  def number_valid?
+    number =~ /^\d{2,}$/
+  end
+
   def luhn_sum
-    digits
-      .reverse_each
+    number
+      .to_i
+      .digits
       .each_slice(2)
       .sum { |even, odd| even + double(odd.to_i) }
   end
 
-  def digits
-    number.each_char.map(&:to_i) if digits_valid?
-  end
-
-  def digits_valid?
-    number =~ /^\d{2,}$/
-  end
-
   def double(digit)
-    doubled = digit * 2
-    doubled < 10 ? doubled : doubled - 9
+    (digit * 2).digits.sum
   end
 end
