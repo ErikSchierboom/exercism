@@ -25,6 +25,6 @@ class PerfectNumber
   end
 
   def factors
-    (1..number / 2).select { |n| (number % n).zero? }
+    1.upto(number / 2).select { |n| number.remainder(n).zero? }
   end
 end
