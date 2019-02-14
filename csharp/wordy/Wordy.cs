@@ -1,50 +1,49 @@
 using System;
 using System.Text.RegularExpressions;
 
-public class Wordy
+public static class Wordy
 {
-    private static readonly Regex EquationRegex = new Regex(@"(?<left>-?\d+) (?<operation>-?plus|minus|divided by|multiplied by) (?=(?<right>-?\d+))", RegexOptions.Compiled);
+    private static readonly Regex EquationRegex = new Regex(
+        @"^What is (?<left>-?\d+)(?<operations> (?<operand>plus|minus|multiplied by|divided by) (?<right>-?\d+))*\?$", RegexOptions.Compiled);
 
     public static int Answer(string question)
     {
-        var matches = EquationRegex.Matches(question);
-
-        if (matches.Count == 0)
-        {
-            throw new ArgumentException("The question could not be parsed.", "question");
-        }
-
-        var result = GetStartValue(matches);
-
-        foreach (Match match in matches)
-        {
-            switch (match.Groups["operation"].Value)
-            {
-                case "plus":
-                    result += GetRightValue(match);
-                    break;
-                case "minus":
-                    result -= GetRightValue(match);
-                    break;
-                case "multiplied by":
-                    result *= GetRightValue(match);
-                    break;
-                case "divided by":
-                    result /= GetRightValue(match);
-                    break;
-            }
-        }
-
-        return result;
+        var match = Parse(question);
+        if (match is null)
+            throw new ArgumentException();
+        
+        return Solve(match);
     }
 
-    private static int GetRightValue(Match match)
+    private static Match Parse(string question) => EquationRegex.Match(question);
+    
+    private static int Solve(Match match)
     {
-        return Convert.ToInt32(match.Groups["right"].Value);
+        if (!int.TryParse(match.Groups["left"].Value, out var left))
+            throw new ArgumentException();
+
+        for (var i = 0; i < match.Groups["operations"].Captures.Count; i++)
+        {
+            var operand = match.Groups["operand"].Captures[i].Value;
+            if (!int.TryParse(match.Groups["right"].Captures[i].Value, out var right))
+                throw new ArgumentException();
+
+            left = ApplyOperand(left, operand, right);
+        }
+        
+        return left;
     }
 
-    private static int GetStartValue(MatchCollection matches)
+    private static int ApplyOperand(int left, string operand, int right)
     {
-        return Convert.ToInt32(matches[0].Groups["left"].Value);
+        switch (operand)
+        {
+            case "plus": return left + right;
+            case "minus": return left - right;
+            case "multiplied by": return left * right;
+            case "divided by": return left / right;
+            default: throw new ArgumentException();
+
+        }
     }
 }
