@@ -1,26 +1,47 @@
-module Transpose
+class Transpose
 
-  def self.transpose(input)
-    columns(padded_lines(input)).join("\n")
+  def self.transpose(*args)
+    new(*args).transpose
   end
 
-  def self.padded_lines(input)
-    lines = input.split("\n")
-    lines.each_with_index.flat_map do |line, index|
-      line.ljust(padding_length(lines, index))
-    end
+  def transpose
+    columns.join("\n")
   end
 
-  def self.padding_length(lines, index)
-    lines.drop(index + 1).map(&:size).max.to_i
+  private
+
+  attr_reader :rows
+
+  def initialize(input)
+    @rows = input.split("\n")
   end
 
-  def self.columns(lines)
-    number_of_columns = lines.map(&:size).max.to_i
-    (0...number_of_columns).map { |column| column(lines, column) }
+  def padded_rows
+    rows.each_with_index.flat_map(&method(:pad_row))
   end
 
-  def self.column(lines, column)
-    lines.map { |line| line[column] }.join
+  def pad_row(row, index)
+    row.ljust(padding_length(index))
+  end
+
+  def padding_length(index)
+    rows
+      .drop(index + 1)
+      .map(&:size)
+      .max
+      .to_i
+  end
+
+  def columns
+    padded_rows
+      .map(&:size)
+      .max
+      .to_i
+      .times
+      .map(&method(:column))
+  end
+
+  def column(column)
+    padded_rows.map { |row| row[column] }.join
   end
 end
