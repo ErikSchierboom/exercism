@@ -1,30 +1,16 @@
-class Luhn
+module Luhn
   VALID_NUMBER_REGEX = /^\d{2,}$/.freeze
   private_constant :VALID_NUMBER_REGEX
 
   def self.valid?(number)
-    new(number).valid?
-  end
+    sanitized_number = number.delete(' ')
 
-  def initialize(number)
-    @number = number.delete(' ')
-  end
-
-  def valid?
-    return unless number_valid?
-
-    (luhn_sum % 10).zero?
+    (sanitized_number.then(&method(:luhn_sum)) % 10).zero? if sanitized_number =~ VALID_NUMBER_REGEX
   end
 
   private
 
-  attr_reader :number
-
-  def number_valid?
-    number =~ VALID_NUMBER_REGEX
-  end
-
-  def luhn_sum
+  def self.luhn_sum(number)
     number
       .to_i
       .digits
@@ -32,7 +18,7 @@ class Luhn
       .sum { |even, odd| even + double(odd.to_i) }
   end
 
-  def double(digit)
+  def self.double(digit)
     (digit * 2).digits.sum
   end
 end
