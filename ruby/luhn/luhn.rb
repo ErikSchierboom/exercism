@@ -3,12 +3,20 @@ module Luhn
   private_constant :VALID_NUMBER_REGEX
 
   def self.valid?(number)
-    sanitized_number = number.delete(' ')
+    return unless clean(number) =~ VALID_NUMBER_REGEX
 
-    (sanitized_number.then(&method(:luhn_sum)) % 10).zero? if sanitized_number =~ VALID_NUMBER_REGEX
+    number
+      .then(&method(:clean))
+      .then(&method(:luhn_sum))
+      .modulo(10)
+      .zero?
   end
 
   private
+
+  def self.clean(number)
+    number.delete(' ')
+  end
 
   def self.luhn_sum(number)
     number
