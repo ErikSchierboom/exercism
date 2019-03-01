@@ -5,43 +5,30 @@ class Transpose
   end
 
   def transpose
-    columns.join("\n")
+    rows = input.split("\n")
+    row_lengths = rows.map(&:size)
+    number_of_columns = row_lengths.max.to_i
+    transposed = Array.new(number_of_columns, '')
+
+    rows.each_with_index do |row, row_index|
+      row.each_char.each_with_index do |col, col_index|
+        transposed[col_index] += col
+      end
+
+      remainder_rows_max_length = row_lengths.drop(row_index + 1).max.to_i
+      row_lengths[row_index].upto(remainder_rows_max_length - 1).each do |k|
+        transposed[k] += ' '
+      end
+    end
+
+    transposed.join("\n")
   end
 
   private
 
-  attr_reader :rows
+  attr_reader :input
 
   def initialize(input)
-    @rows = input.split("\n")
-  end
-
-  def padded_rows
-    rows.each_with_index.flat_map(&method(:pad_row))
-  end
-
-  def pad_row(row, index)
-    row.ljust(padding_length(index))
-  end
-
-  def padding_length(index)
-    rows
-      .drop(index + 1)
-      .map(&:size)
-      .max
-      .to_i
-  end
-
-  def columns
-    padded_rows
-      .map(&:size)
-      .max
-      .to_i
-      .times
-      .map(&method(:column))
-  end
-
-  def column(column)
-    padded_rows.map { |row| row[column] }.join
+    @input = input
   end
 end
