@@ -9,7 +9,6 @@ module Luhn
 
     clean(number)
       .to_i
-      .digits
       .then(&method(:luhn_sum))
       .modulo(10)
       .zero?
@@ -21,6 +20,7 @@ module Luhn
 
   def luhn_sum(number)
     number
+      .digits
       .each_slice(2)
       .sum { |even, odd| even + double(odd.to_i) }
   end
