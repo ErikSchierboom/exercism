@@ -1,10 +1,10 @@
 class SecretHandshake
   ENCODED_COMMANDS = {
-    1 << 0 => ->(commands) { commands << 'wink' },
-    1 << 1 => ->(commands) { commands << 'double blink' },
-    1 << 2 => ->(commands) { commands << 'close your eyes' },
-    1 << 3 => ->(commands) { commands << 'jump' },
-    1 << 4 => ->(commands) { commands.reverse }
+    0b00001 => ->(commands) { commands << 'wink' },
+    0b00010 => ->(commands) { commands << 'double blink' },
+    0b00100 => ->(commands) { commands << 'close your eyes' },
+    0b01000 => ->(commands) { commands << 'jump' },
+    0b10000 => ->(commands) { commands.reverse }
   }.freeze
   private_constant :ENCODED_COMMANDS
 
@@ -13,10 +13,9 @@ class SecretHandshake
   end
 
   def commands
-    ENCODED_COMMANDS
-      .select { |mask, _| encoded_number.anybits?(mask) }
-      .each_value
-      .reduce([]) { |commands, operation| operation.call(commands) }
+    ENCODED_COMMANDS.inject([]) do |acc, (mask, operation)|
+      encoded_number.anybits?(mask) ? operation.call(acc) : acc
+    end
   end
 
   private
