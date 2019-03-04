@@ -1,34 +1,28 @@
 class Transpose
-
   def self.transpose(*args)
     new(*args).transpose
   end
 
+  def initialize(input)
+    @input = input
+  end
+
   def transpose
     rows = input.split("\n")
-    row_lengths = rows.map(&:size)
-    number_of_columns = row_lengths.max.to_i
-    transposed = Array.new(number_of_columns, '')
+    row_lengths = rows.map(&:size).max
 
-    rows.each_with_index do |row, row_index|
-      row.each_char.each_with_index do |col, col_index|
-        transposed[col_index] += col
-      end
-
-      remainder_rows_max_length = row_lengths.drop(row_index + 1).max.to_i
-      row_lengths[row_index].upto(remainder_rows_max_length - 1).each do |k|
-        transposed[k] += ' '
-      end
+    rows.map { |row| row.chars.values_at(0...row_lengths) }
+        .transpose
+        .map do |col|
+      col
+        .take(col.size - col.reverse.take_while(&:nil?).count)
+        .map { |c| c.nil? ? ' ' : c }
+        .join
     end
-
-    transposed.join("\n")
+        .join("\n")
   end
 
   private
 
   attr_reader :input
-
-  def initialize(input)
-    @input = input
-  end
 end
