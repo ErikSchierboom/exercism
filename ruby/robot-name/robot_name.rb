@@ -1,8 +1,4 @@
 class Robot
-  LETTERS = ('A'..'Z').to_a.freeze
-  DIGITS = ('0'..'9').to_a.freeze
-  private_constant :LETTERS, :DIGITS
-
   attr_reader :name
 
   def initialize
@@ -10,7 +6,7 @@ class Robot
   end
 
   def reset
-    @name = Robot.random_names.next.join
+    @name = Robot.random_names.pop
   end
 
   def self.forget
@@ -18,6 +14,6 @@ class Robot
   end
 
   def self.random_names
-    @@robot_names ||= LETTERS.product(LETTERS, DIGITS, DIGITS, DIGITS).shuffle.to_enum
+    @@robot_names ||= [*'AA000'..'ZZ999'].shuffle
   end
 end
