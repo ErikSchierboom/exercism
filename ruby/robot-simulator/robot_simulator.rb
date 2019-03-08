@@ -60,6 +60,9 @@ class Robot
 end
 
 class Simulator
+  LETTER_TO_INSTRUCTION = { 'A' => :advance, 'L' => :turn_left, 'R' => :turn_right }.freeze
+  private_constant :LETTER_TO_INSTRUCTION
+
   def place(robot, x:, y:, direction:)
     robot.at(x, y)
     robot.orient(direction)
@@ -67,32 +70,11 @@ class Simulator
 
   def evaluate(robot, word)
     instructions(word).each_with_object(robot) do |instruction, evaluatingRobot|
-      case instruction
-      when :advance
-        evaluatingRobot.advance
-      when :turn_left
-        evaluatingRobot.turn_left
-      when :turn_right
-        evaluatingRobot.turn_right
-      end
+      evaluatingRobot.send(instruction)
     end
   end
 
   def instructions(word)
-    word.each_char.map(&method(:instruction))
+    word.each_char.map { |letter| LETTER_TO_INSTRUCTION[letter] }
   end
-
-  private
-
-  def instruction(letter)
-    case letter
-    when 'A'
-      :advance
-    when 'L'
-      :turn_left
-    when 'R'
-      :turn_right
-    end
-  end
-
 end
