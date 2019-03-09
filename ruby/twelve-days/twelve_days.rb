@@ -1,7 +1,8 @@
 module TwelveDays
-  DAYS = %w[first second third fourth fifth sixth seventh eighth ninth tenth eleventh twelfth].freeze
-  COUNTS = %w[a two three four five six seven eight nine ten eleven twelve].freeze
+  DAYS = %w[nil first second third fourth fifth sixth seventh eighth ninth tenth eleventh twelfth].freeze
+  COUNTS = %w[nil a two three four five six seven eight nine ten eleven twelve].freeze
   GIFTS = [
+    nil,
     'Partridge in a Pear Tree',
     'Turtle Doves',
     'French Hens',
@@ -18,7 +19,7 @@ module TwelveDays
   private_constant :DAYS, :COUNTS, :GIFTS
 
   def self.song
-    1.upto(DAYS.size)
+    1.upto(DAYS.size - 1)
      .map(&method(:verse))
      .join("\n")
   end
@@ -26,25 +27,18 @@ module TwelveDays
   private
 
   def self.verse(n)
-    "On the #{day(n)} day of Christmas my true love gave to me: #{gifts(n)}.\n"
+    "On the #{DAYS[n]} day of Christmas my true love gave to me: #{gifts(n)}.\n"
   end
 
   def self.gifts(n)
-    n.downto(1)
-     .map { |n| "#{count(n)} #{gift(n)}" }
-     .join(', ')
-     .sub(', a', ', and a')
+    to_sentence(gifts_with_count(n))
   end
 
-  def self.day(n)
-    DAYS[n - 1]
+  def self.gifts_with_count(n)
+    n.downto(1).map { |idx| "#{COUNTS[idx]} #{GIFTS[idx]}" }
   end
 
-  def self.count(n)
-    COUNTS[n - 1]
-  end
-
-  def self.gift(n)
-    GIFTS[n - 1]
+  def self.to_sentence(gifts)
+    gifts.join(', ').sub(', a', ', and a')
   end
 end
