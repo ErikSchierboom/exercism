@@ -6,14 +6,14 @@ class Robot
   end
 
   def reset
-    @name = Robot.random_names.pop
+    @name = Robot.random_names.next
   end
 
   def self.forget
-    @@robot_names = nil
+    random_names.rewind
   end
 
   def self.random_names
-    @@robot_names ||= [*'AA000'..'ZZ999'].shuffle
+    @@robot_names ||= ('AA000'..'ZZ999').to_a.shuffle.to_enum
   end
 end
