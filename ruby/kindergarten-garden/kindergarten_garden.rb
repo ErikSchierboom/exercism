@@ -1,6 +1,11 @@
 class Garden
   STUDENTS = %w[Alice Bob Charlie David Eve Fred Ginny Harriet Ileana Joseph Kincaid Larry].freeze
-  INITIAL_TO_PLANT = { 'V' => :violets, 'C' => :clover, 'G' => :grass, 'R' => :radishes }
+  INITIAL_TO_PLANT = {
+    'V' => :violets,
+    'C' => :clover,
+    'G' => :grass,
+    'R' => :radishes
+  }.freeze
   private_constant :STUDENTS, :INITIAL_TO_PLANT
 
   def initialize(diagram, students = STUDENTS)
