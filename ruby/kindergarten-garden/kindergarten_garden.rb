@@ -1,5 +1,11 @@
 class Garden
-  STUDENTS = %w[Alice Bob Charlie David Eve Fred Ginny Harriet Ileana Joseph Kincaid Larry].freeze
+  # rubocop:disable Layout/SpaceInsideArrayPercentLiteral
+  STUDENTS = %w[
+    Alice      Bob     Charlie    David
+    Eve        Fred    Ginny      Harriet
+    Ileana     Joseph  Kincaid    Larry
+  ].freeze
+  # rubocop:enable Layout/SpaceInsideArrayPercentLiteral
   INITIAL_TO_PLANT = {
     'V' => :violets,
     'C' => :clover,
