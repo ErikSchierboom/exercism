@@ -1,4 +1,4 @@
 ﻿public static class TwoFer
 {
-    public static string Name(string input = "you") => $"One for {input}, one for me.";
+    public static string Speak(string name = "you") => $"One for {name}, one for me.";
 }
