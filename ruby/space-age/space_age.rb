@@ -16,8 +16,7 @@ class SpaceAge
     @age_in_seconds = age_in_seconds
   end
 
-  # Create an "on_<planet>" method for each planet that returns the person's age for that planet
-  PLANET_ORBITAL_PERIODS_IN_EARTH_YEARS.each do |planet, orbital_period_in_earth_years|
+  PLANET_ORBITAL_PERIODS_IN_EARTH_YEARS.each do |planet, orbital_period_in_earth_years|  #=> on_mars
     define_method "on_#{planet.downcase}" do
       earth_years = age_in_seconds / (SECONDS_PER_EARTH_YEAR * orbital_period_in_earth_years)
       earth_years.round(2)
