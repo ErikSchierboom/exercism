@@ -4,25 +4,29 @@ class Transpose
   end
 
   def initialize(input)
-    @input = input
+    @rows = input.split("\n")
   end
 
   def transpose
-    rows = input.split("\n")
-    row_lengths = rows.map(&:size).max
-
-    rows.map { |row| row.chars.values_at(0...row_lengths) }
-        .transpose
-        .map do |col|
-      col
-        .take(col.size - col.reverse.take_while(&:nil?).count)
-        .map { |c| c.nil? ? ' ' : c }
-        .join
-    end
-        .join("\n")
+    transposed_array
+      .map {|col| remove_trailing_newlines(col).join.tr("\n", ' ') }
+      .join("\n")
   end
 
   private
 
-  attr_reader :input
+  attr_reader :rows
+
+  def transposed_array
+    rows.map { |row| row.ljust(row_lengths, "\n").chars }
+        .transpose
+  end
+
+  def row_lengths
+    rows.map(&:size).max
+  end
+
+  def remove_trailing_newlines(col)
+    col.reverse.drop_while { |c| c == "\n" }.reverse
+  end
 end
