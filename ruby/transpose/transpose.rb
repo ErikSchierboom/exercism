@@ -1,4 +1,7 @@
 class Transpose
+  PADDING_CHAR = "\u0080".freeze
+  private_constant :PADDING_CHAR
+
   def self.transpose(*args)
     new(*args).transpose
   end
@@ -9,7 +12,7 @@ class Transpose
 
   def transpose
     transposed_array
-      .map {|col| remove_trailing_newlines(col).join.tr("\n", ' ') }
+      .map(&method(:normalize_col))
       .join("\n")
   end
 
@@ -18,15 +21,22 @@ class Transpose
   attr_reader :rows
 
   def transposed_array
-    rows.map { |row| row.ljust(row_lengths, "\n").chars }
+    rows.map(&method(:pad_row))
+        .map(&:chars)
         .transpose
   end
 
-  def row_lengths
+  def pad_row(row)
+    row.ljust(max_row_length, PADDING_CHAR)
+  end
+
+  def max_row_length
     rows.map(&:size).max
   end
 
-  def remove_trailing_newlines(col)
-    col.reverse.drop_while { |c| c == "\n" }.reverse
+  def normalize_col(col)
+    col.join
+       .gsub(/#{PADDING_CHAR}+$/, '')
+       .tr(PADDING_CHAR, ' ')
   end
 end
