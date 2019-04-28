@@ -17,26 +17,20 @@ class BinarySearch
 
     while left_index < right_index
       middle_index = (left_index + right_index) / 2
-      middle_value = list[middle_index]
+      middle_value_comparison = list[middle_index] <=> value
 
-      return middle_index if middle_value == value
+      return middle_index if middle_value_comparison.zero?
 
-      left_index = middle_index + 1 if middle_value < value
-      right_index = middle_index - 1 if middle_value > value
+      left_index = middle_index + 1 if middle_value_comparison < 0
+      right_index = middle_index - 1 if middle_value_comparison > 0
     end
 
     raise 'Could not find value in list'
-  end
-
-  private
-
-  def self.sorted(list)
-    list.each_cons(2).all?(&:<=)
   end
 end
 
 module Enumerable
   def sorted?
-    each_cons(2).all? { |a, b| (a <=> b) <= 0 }
+    each_cons(2).all? { |a, b| a <= b }
   end
 end
