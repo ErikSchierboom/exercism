@@ -17,15 +17,32 @@ class BinarySearch
 
     while left_index < right_index
       middle_index = (left_index + right_index) / 2
-      middle_value_comparison = list[middle_index] <=> value
+      middle_value = list[middle_index]
 
-      return middle_index if middle_value_comparison.zero?
-
-      left_index = middle_index + 1 if middle_value_comparison < 0
-      right_index = middle_index - 1 if middle_value_comparison > 0
+      case compare(middle_value, value)
+      when :smaller
+        left_index = middle_index + 1
+      when :larger
+        right_index = middle_index - 1
+      when :equal
+        return middle_index
+      end
     end
 
     raise 'Could not find value in list'
+  end
+
+  private
+
+  def compare(value1, value2)
+    case value1 <=> value2
+    when -1
+      :smaller
+    when 1
+      :larger
+    else
+      :equal
+    end
   end
 end
 
