@@ -17,53 +17,53 @@ class Team
   end
 end
 
-class TournamentPrinter
-  def self.print(teams)
-    new(teams).print
-  end
+class TournamentTable
+  attr_accessor :teams
 
-  def print
-    print_header + print_teams
+  def self.render(teams)
+    new(teams).render
   end
 
   def initialize(teams)
     @teams = teams
   end
 
+  def render
+    header + rows
+  end
+
   private
 
-  attr_accessor :teams
-
-  def print_header
+  def header
     "Team                           | MP |  W |  D |  L |  P\n"
   end
 
-  def print_teams
-    teams.map(&method(:print_team)).join
+  def rows
+    teams.map(&method(:row)).join
   end
 
-  def print_team(team)
+  def row(team)
     format("%-30s | %2d | %2d | %2d | %2d | %2d\n",
            team.name, team.played, team.wins, team.draws, team.losses, team.points)
   end
 end
 
 class Tournament
+  attr_reader :teams
+
   def self.tally(results)
     new(results).tally
-  end
-
-  def tally
-    TournamentPrinter.print(teams)
   end
 
   def initialize(results)
     @teams = to_teams(results.split("\n"))
   end
 
-  private
+  def tally
+    TournamentTable.render(teams)
+  end
 
-  attr_reader :teams
+  private
 
   def to_teams(matches)
     matches
@@ -75,8 +75,8 @@ class Tournament
   def process_match(match, teams)
     team1, team2, result = match.split(';')
 
-    teams[team1] = Team.new(team1) unless teams.key?(team1)
-    teams[team2] = Team.new(team2) unless teams.key?(team2)
+    teams[team1] ||= Team.new(team1)
+    teams[team2] ||= Team.new(team2)
 
     case result
     when 'loss'
