@@ -1,6 +1,6 @@
 module ResistorColorDuo
   def self.value(colors)
-    colors.reduce(0) { |acc, color| acc * 10 + COLORS.index(color) }
+    colors.map { |color| COLORS.index(color) }.join.to_i
   end
 
   private
