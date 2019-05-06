@@ -23,12 +23,22 @@ class Queens
   end
 
   def attack?
-    white.row == black.row ||
-      white.col == black.col ||
-      (white.row - black.row).abs == (white.col - black.col).abs
+    same_row? || same_col? || same_diagonal?
   end
 
   private
 
   attr_reader :white, :black
+
+  def same_row?
+    white.row == black.row
+  end
+
+  def same_col?
+    white.col == black.col
+  end
+
+  def same_diagonal?
+    (white.row - black.row).abs == (white.col - black.col).abs
+  end
 end
