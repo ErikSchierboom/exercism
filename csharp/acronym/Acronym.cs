@@ -4,9 +4,12 @@ using System.Text.RegularExpressions;
 
 public static class Acronym
 {
-    public static string Abbreviate(string phrase) => new string(Words(phrase).Select(AcronymLetter).ToArray());
+    public static string Abbreviate(string phrase) =>
+        new string(Words(phrase).Select(AbbreviateWord).ToArray());
 
-    private static IEnumerable<string> Words(string phrase) => Regex.Split(phrase, @"[^\w]+");
+    private static IEnumerable<string> Words(string phrase) =>
+        Regex.Split(phrase, @"[^\w]+");
 
-    private static char AcronymLetter(string word) => char.ToUpper(word[0]);
+    private static char AbbreviateWord(string word) =>
+        char.ToUpper(word[0]);
 }
