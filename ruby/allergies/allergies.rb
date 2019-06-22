@@ -1,19 +1,19 @@
 class Allergies
   def initialize(coded_allergens)
-    @coded_allergens = coded_allergens
+    @allergies = ALLERGENS.select { |_, mask| coded_allergens.anybits?(mask) }.keys
   end
 
   def allergic_to?(allergen)
-    ALLERGENS[allergen].anybits?(coded_allergens)
+    list.include?(allergen)
   end
 
   def list
-    ALLERGENS.select { |allergen, _| allergic_to?(allergen) }.keys
+    allergies
   end
 
   private
 
-  attr_reader :coded_allergens
+  attr_reader :allergies
 
   ALLERGENS = {
     'eggs'         => 0b00000001,
