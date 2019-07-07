@@ -1,21 +1,17 @@
+const SILENCE_REPLY: &str = "Fine. Be that way!";
+const FORCEFUL_QUESTION_REPLY: &str = "Calm down, I know what I'm doing!";
+const SHOUT_REPLY: &str = "Whoa, chill out!";
+const QUESTION_REPLY: &str = "Sure.";
+const DEFAULT_REPLY: &str = "Whatever.";
+
 pub fn reply(message: &str) -> &str {
-    if is_silence(message) {
-        return "Fine. Be that way!";
+    match message {
+        _ if is_silence(message) => SILENCE_REPLY,
+        _ if is_forceful_question(message) => FORCEFUL_QUESTION_REPLY,
+        _ if is_shout(message) => SHOUT_REPLY,
+        _ if is_question(message) => QUESTION_REPLY,
+        _ => DEFAULT_REPLY,
     }
-
-    if is_forceful_question(message) {
-        return "Calm down, I know what I'm doing!";
-    }
-
-    if is_shout(message) {
-        return "Whoa, chill out!";
-    }
-
-    if is_question(message) {
-        return "Sure.";
-    }
-
-    "Whatever."
 }
 
 fn is_silence(message: &str) -> bool {
