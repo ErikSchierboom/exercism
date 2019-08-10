@@ -10,12 +10,10 @@ class Matrix
     rows_maximum = @rows.map(&:max)
     columns_minimum = @columns.map(&:min)
 
-    coordinates.select { |row, column| rows_maximum[row] == columns_minimum[column] }
-  end
-
-  private
-
-  def coordinates
-    rows.each_index.to_a.product(columns.each_index.to_a)
+    rows.each_index.each_with_object([]) do |row, points|
+      columns.each_index do |column|
+        points << [row, column] if rows_maximum[row] == columns_minimum[column]
+      end
+    end
   end
 end

@@ -1,26 +1,44 @@
-module Transpose
-
-  def self.transpose(input)
-    columns(padded_lines(input)).join("\n")
+class Transpose
+  def self.transpose(*args)
+    new(*args).transpose
   end
 
-  def self.padded_lines(input)
-    lines = input.split("\n")
-    lines.each_with_index.flat_map do |line, index|
-      line.ljust(padding_length(lines, index))
-    end
+  def initialize(input)
+    @rows = input.lines(chomp: true)
   end
 
-  def self.padding_length(lines, index)
-    lines.drop(index + 1).map(&:size).max.to_i
+  def transpose
+    transposed_array
+      .map(&method(:unpad))
+      .join("\n")
   end
 
-  def self.columns(lines)
-    number_of_columns = lines.map(&:size).max.to_i
-    (0...number_of_columns).map { |column| column(lines, column) }
+  private
+
+  attr_reader :rows
+
+  def transposed_array
+    rows.map(&method(:pad))
+        .map(&:chars)
+        .transpose
   end
 
-  def self.column(lines, column)
-    lines.map { |line| line[column] }.join
+  def max_row_length
+    rows.map(&:length).max
   end
+
+  def pad(row)
+    row.ljust(max_row_length, PADDING_CHAR)
+  end
+
+  def unpad(col)
+    col.join
+       .gsub(TRAILING_PADDING_CHARS, '')
+       .tr(PADDING_CHAR, ' ')
+  end
+
+  PADDING_CHAR = "\u0080".freeze
+  TRAILING_PADDING_CHARS = /#{PADDING_CHAR}+$/.freeze
+
+  private_constant :PADDING_CHAR, :TRAILING_PADDING_CHARS
 end

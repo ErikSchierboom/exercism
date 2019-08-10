@@ -1,32 +1,25 @@
-class Luhn
+module Luhn
+  module_function
+
   VALID_NUMBER_REGEX = /^\d{2,}$/.freeze
   private_constant :VALID_NUMBER_REGEX
 
-  def self.valid?(number)
-    new(number).valid?
-  end
+  def valid?(number)
+    return unless clean(number) =~ VALID_NUMBER_REGEX
 
-  def initialize(number)
-    @number = number.delete(' ')
-  end
-
-  def valid?
-    return unless number_valid?
-
-    (luhn_sum % 10).zero?
-  end
-
-  private
-
-  attr_reader :number
-
-  def number_valid?
-    number =~ VALID_NUMBER_REGEX
-  end
-
-  def luhn_sum
-    number
+    clean(number)
       .to_i
+      .then(&method(:luhn_sum))
+      .modulo(10)
+      .zero?
+  end
+
+  def clean(number)
+    number.delete(' ')
+  end
+
+  def luhn_sum(number)
+    number
       .digits
       .each_slice(2)
       .sum { |even, odd| even + double(odd.to_i) }

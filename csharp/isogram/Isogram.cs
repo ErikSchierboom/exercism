@@ -2,9 +2,9 @@
 
 public static class Isogram
 {
-    public static bool IsIsogram(string input)
+    public static bool IsIsogram(string word)
     {
-        var lowerInput = input.ToLower().Where(char.IsLetter).ToList();
-        return lowerInput.Distinct().Count() == lowerInput.Count;
+        var lowerCaseLetters = word.ToLower().Where(char.IsLetter).ToList();
+        return lowerCaseLetters.Distinct().Count() == lowerCaseLetters.Count;
     }
 }

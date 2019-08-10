@@ -1,4 +1,4 @@
-// This file was auto-generated based on version 1.3.0 of the canonical data.
+// This file was auto-generated based on version 1.7.0 of the canonical data.
 
 using Xunit;
 
@@ -32,5 +32,29 @@ public class AcronymTest
     public void Punctuation_without_whitespace()
     {
         Assert.Equal("CMOS", Acronym.Abbreviate("Complementary metal-oxide semiconductor"));
+    }
+
+    [Fact]
+    public void Very_long_abbreviation()
+    {
+        Assert.Equal("ROTFLSHTMDCOALM", Acronym.Abbreviate("Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me"));
+    }
+
+    [Fact]
+    public void Consecutive_delimiters()
+    {
+        Assert.Equal("SIMUFTA", Acronym.Abbreviate("Something - I made up from thin air"));
+    }
+
+    [Fact]
+    public void Apostrophes()
+    {
+        Assert.Equal("HC", Acronym.Abbreviate("Halley's Comet"));
+    }
+
+    [Fact]
+    public void Underscore_emphasis()
+    {
+        Assert.Equal("TRNT", Acronym.Abbreviate("The Road _Not_ Taken"));
     }
 }
