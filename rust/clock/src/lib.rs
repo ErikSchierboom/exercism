@@ -1,38 +1,33 @@
+use modulo::Mod;
 use std::fmt;
 use std::fmt::Display;
 
 #[derive(Debug, PartialEq)]
 pub struct Clock {
-    hours: i32,
     minutes: i32,
 }
 
+const HOURS_PER_DAY: i32 = 24;
+const MINUTES_PER_HOUR: i32 = 60;
+const MINUTES_PER_DAY: i32 = MINUTES_PER_HOUR * HOURS_PER_DAY;
+
 impl Clock {
-    const HOURS_PER_DAY: i32 = 24;
-    const MINUTES_PER_HOUR: i32 = 60;
-
     pub fn new(hours: i32, minutes: i32) -> Self {
-        let total_minutes = hours * Self::MINUTES_PER_HOUR + minutes;
-        let normalized_minutes =
-            Self::modulo(total_minutes, Self::MINUTES_PER_HOUR * Self::HOURS_PER_DAY);
-
         Clock {
-            hours: normalized_minutes / Self::MINUTES_PER_HOUR,
-            minutes: normalized_minutes % Self::MINUTES_PER_HOUR,
+            minutes: (hours * MINUTES_PER_HOUR + minutes).modulo(MINUTES_PER_DAY),
         }
     }
 
     pub fn add_minutes(&self, minutes: i32) -> Self {
-        Self::new(self.hours, self.minutes + minutes)
-    }
-
-    fn modulo(x: i32, y: i32) -> i32 {
-        ((x % y) + y) % y
+        Self::new(0, self.minutes + minutes)
     }
 }
 
 impl Display for Clock {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "{:02}:{:02}", self.hours, self.minutes)
+        let hours = self.minutes / MINUTES_PER_HOUR;
+        let minutes = self.minutes % MINUTES_PER_HOUR;
+
+        write!(f, "{:02}:{:02}", hours, minutes)
     }
 }
