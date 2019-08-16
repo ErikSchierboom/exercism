@@ -11,10 +11,5 @@ const COLORS = [
   "white"
 ];
 
-function colorCode(color) {
-  return COLORS.indexOf(color);
-}
-
-export function value(colors) {
-  return colors.reduce((acc, color) => acc * 10 + colorCode(color), 0);
-}
+export const value = colors =>
+  colors.reduce((acc, color) => acc * 10 + COLORS.indexOf(color), 0);
