@@ -1,18 +1,21 @@
 module Clock
 
-type Clock = { hours: int; minutes: int }
+type Clock =
+    { minutes: int }
 
 let private modulo x y = int (((x % y) + y) % y)
 
-let create hours minutes =
-    let totalMinutes = hours * 60 + minutes
-    let normalizedHours = modulo (double totalMinutes / 60.0) 24.0
-    let normalizedMinutes = modulo (double minutes) 60.0
+let private minutesPerHour = 60
+let private minutesPerDay = 1440
 
-    { hours = normalizedHours; minutes = normalizedMinutes }
+let create hours minutes = { minutes = modulo (hours * minutesPerHour + minutes) minutesPerDay }
 
-let add minutes clock = create clock.hours (clock.minutes + minutes)
+let add minutes clock = create 0 (clock.minutes + minutes)
 
-let subtract minutes clock = create clock.hours (clock.minutes - minutes)
+let subtract minutes clock = create 0 (clock.minutes - minutes)
 
-let display clock = sprintf "%02i:%02i" clock.hours clock.minutes
+let private hours clock = clock.minutes / minutesPerHour
+
+let private minutes clock = clock.minutes % minutesPerHour
+
+let display clock = sprintf "%02i:%02i" (hours clock) (minutes clock)
