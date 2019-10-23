@@ -1,23 +1,21 @@
 public struct Clock
 {
-    private const int HoursPerDay = 24;
     private const int MinutesPerHour = 60;
+    private const int MinutesPerDay = 1440;
 
-    public Clock(int hours, int minutes)
-    {
-        Hours = Mod((hours * MinutesPerHour + minutes) / MinutesPerHour, HoursPerDay);
-        Minutes = Mod(minutes, MinutesPerHour);
-    }
+    private readonly int _minutes;
 
-    public int Hours { get; }
+    public Clock(int hours, int minutes = 0) => _minutes = Mod(hours * MinutesPerHour + minutes, MinutesPerDay);
 
-    public int Minutes { get; }
+    public Clock Add(int minutes) => new Clock(Hours, Minutes + minutes);
 
-    public Clock Add(int minutesToAdd) => new Clock(Hours, Minutes + minutesToAdd);
-
-    public Clock Subtract(int minutesToSubtract) => new Clock(Hours, Minutes - minutesToSubtract);
+    public Clock Subtract(int minutes) => new Clock(Hours, Minutes - minutes);
 
     public override string ToString() => $"{Hours:00}:{Minutes:00}";
 
-    private static int Mod(double x, double y) => (int)(((x % y) + y) % y);
+    public int Hours => _minutes / MinutesPerHour;
+
+    public int Minutes => _minutes % MinutesPerHour;
+
+    private static int Mod(int x, int y) => (int)((x % y + y) % y);
 }
