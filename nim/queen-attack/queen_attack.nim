@@ -25,11 +25,11 @@ proc canAttack*(queen1: Position, queen2: Position): bool =
 
 proc boardCell(position: Position, queen1: Position, queen2: Position): char =
   if position == queen1:
-    return 'W'
+    'W'
   elif position == queen2:
-    return 'B'
+    'B'
   else:
-    return '_'
+    '_'
 
 proc boardRow(row: int, queen1: Position, queen2: Position): string =
   for col in Cols:
