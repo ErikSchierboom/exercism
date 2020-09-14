@@ -4,7 +4,7 @@ proc latest*(scores: seq[int]): int =
   scores[^1]
 
 proc personalBest*(scores: seq[int]): int =
-  scores.sorted[^1]
+  scores.max
 
 proc personalTopThree*(scores: seq[int]): seq[int] =
-  scores.sorted[^3.min(scores.len)..scores.high].reversed
+  scores.sorted.reversed[0 ..< 3.min(scores.len)]
