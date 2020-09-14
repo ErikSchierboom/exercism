@@ -1,22 +1,14 @@
-import strutils, tables
-
-proc invert(lettersToScore: Table[string, int]): Table[char, int] =
-  for letters, score in lettersToScore:
-    for letter in letters:
-      result[letter] = score
-
-const LetterToScore = {
-  "AEIOULNRST": 1,
-  "DG": 2,
-  "BCMP": 3,
-  "FHVWY": 4,
-  "K": 5,
-  "JX": 8,
-  "QZ": 10
-}.toTable().invert()
+import strutils
 
 proc score(letter: char): int =
-  LetterToScore[letter.toUpperAscii]
+  case letter.toUpperAscii
+  of 'D', 'G': 2
+  of 'B', 'C', 'M', 'P': 3
+  of 'F', 'H', 'V', 'W', 'Y': 4
+  of 'K': 5
+  of 'J', 'X': 8
+  of 'Q', 'Z': 10
+  else: 1
 
 proc score*(word: string): int =
   for letter in word:
