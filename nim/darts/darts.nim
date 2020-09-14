@@ -9,11 +9,11 @@ const MiddleCircleScore = 5
 const OuterCircleScore = 1
 const OutsideBoardScore = 0
 
-proc radius(dart: (float, float)): float =
-  (dart[0].pow(2) + dart[1].pow(2)).sqrt
+proc distanceFromCenter(dart: (float, float)): float =
+  hypot(dart[0], dart[1])
 
-proc landedIn(dart: (float, float), radius: float): bool =
-  dart.radius <= radius
+proc landedIn(dart: (float, float), circleWidth: float): bool =
+  dart.distanceFromCenter <= circleWidth
 
 proc score*(dart: (float, float)): int =
   if dart.landedIn(InnerCircle): InnerCircleScore
