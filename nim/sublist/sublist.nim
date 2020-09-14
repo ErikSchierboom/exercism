@@ -2,12 +2,12 @@ type
   ListComparison* = enum
     Unequal, Equal, Sublist, Superlist
 
-iterator sublists(list: openArray[int], len: int): seq[int] =
+iterator slices(list: openArray[int], len: int): seq[int] =
   for i in 0..list.len - len:
     yield list[i..i + len - 1]
 
 proc isSublistOf(listA: openArray[int], listB: openArray[int]): bool =
-  for sublistB in listB.sublists(listA.len):
+  for sublistB in listB.slices(listA.len):
     if sublistB == listA:
       return true
 
