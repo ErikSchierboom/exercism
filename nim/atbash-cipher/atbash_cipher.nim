@@ -1,4 +1,4 @@
-import algorithm, sequtils, strutils
+import algorithm, sequtils, strutils, std/wordwrap
 
 const groupSize = 5
 const letters = toSeq('a'..'z')
@@ -7,7 +7,7 @@ const plain = letters & digits
 const cipher = letters.reversed & digits
 
 proc chunked(phrase: string): string =
-  phrase.reversed.join.insertSep(' ', groupSize).reversed.join
+  phrase.wrapWords(groupSize, newLine = " ")
 
 proc encode(letter: char): char =
   cipher[plain.find(letter)]
