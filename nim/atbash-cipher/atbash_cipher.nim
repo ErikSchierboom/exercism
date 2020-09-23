@@ -15,8 +15,5 @@ proc encode(letter: char): char =
 proc encode*(phrase: string): string =
   phrase.toLowerAscii.filter(isAlphaNumeric).map(encode).join.chunked
 
-proc decode(letter: char): char =
-  plain[cipher.find(letter)]
-
 proc decode*(phrase: string): string =
-  phrase.replace(" ").map(decode).join
+  encode(phrase).replace(" ")
