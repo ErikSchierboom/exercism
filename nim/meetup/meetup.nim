@@ -9,11 +9,13 @@ proc weekDaysInMonth(year: int, month: int, weekDay: WeekDay): seq[DateTime] =
     if getDayOfWeek(day, Month(month), year) == weekDay:
       result.add(initDateTime(day, Month(month), year, 0, 0, 0))
 
+proc formatted(dateTime: DateTime): string =
+  dateTime.format("yyyy-MM-dd")
+
 proc meetup*(year: int, month: int, descriptor: Descriptor, weekDay: WeekDay): string =
   let weekDays = weekDaysInMonth(year, month, weekDay)
 
   case descriptor
-  of Teenth: weekDays.filterIt(it.monthday >= 13)[0].format("yyyy-MM-dd")
-  of First, Second, Third, Fourth: weekDays[descriptor.ord].format("yyyy-MM-dd")
-  of Last: weekDays[^1].format("yyyy-MM-dd")
-
+  of Teenth: weekDays.filterIt(it.monthday >= 13)[0].formatted
+  of First, Second, Third, Fourth: weekDays[descriptor.ord].formatted
+  of Last: weekDays[^1].formatted
