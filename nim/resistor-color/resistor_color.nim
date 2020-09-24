@@ -7,4 +7,4 @@ type
 
 proc colorCode*(color: ResistorColor): int = color.ord
 
-proc colors*(): seq[ResistorColor] = toSeq(Black .. White)
+proc colors*(): seq[ResistorColor] = toSeq(ResistorColor.items)
