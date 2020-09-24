@@ -1,4 +1,4 @@
 import strformat
 
 proc twoFer*(name = "you"): string =
-    &"One for {name}, one for me."
+  &"One for {name}, one for me."
