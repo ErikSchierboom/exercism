@@ -4,9 +4,9 @@ const Cols = {0..7}
 type Position = tuple[row: int, col: int]
 
 proc validateQueen(queen: Position): void =
-  if not Rows.contains(queen.row):
+  if queen.row notin Rows:
     raise newException(ValueError, "Invalid row for queen")
-  if not Cols.contains(queen.col):
+  if queen.col notin Cols:
     raise newException(ValueError, "Invalid col for queen")
 
 proc validateQueens(queen1: Position, queen2: Position): void =
@@ -31,12 +31,9 @@ proc boardCell(position: Position, queen1: Position, queen2: Position): char =
   else:
     '_'
 
-proc boardRow(row: int, queen1: Position, queen2: Position): string =
-  for col in Cols:
-    result.add(boardCell((row, col), queen1, queen2))
-
 proc board*(queen1: Position, queen2: Position): array[Rows.len, string] =
   validateQueens(queen1, queen2)
 
   for row in Rows:
-    result[row] = boardRow(row, queen1, queen2)
+    for col in Cols:
+      result[row].add(boardCell((row, col), queen1, queen2))
