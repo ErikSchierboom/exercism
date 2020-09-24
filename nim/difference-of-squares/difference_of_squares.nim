@@ -1,5 +1,4 @@
-import math
-import sequtils
+import math, sequtils
 
 proc squareOfSum*(n: int): int =
   (1..n).toSeq.sum ^ 2
