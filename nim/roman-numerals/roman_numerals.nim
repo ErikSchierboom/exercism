@@ -20,6 +20,6 @@ proc roman*(n: int): string =
   var remainder = n
 
   for threshold, numeral in romanNumeralValues:
-      while remainder div threshold > 0:
-        result.add(numeral)        
-        remainder.dec threshold
+    while remainder div threshold > 0:
+      result.add(numeral)
+      remainder.dec threshold
