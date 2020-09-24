@@ -1,6 +1,4 @@
-import tables
-import strutils
-import re
+import re, strutils, tables
 
 proc words(phrase: string): seq[string] =
   phrase.findAll(re"\w+('\w+)?")
