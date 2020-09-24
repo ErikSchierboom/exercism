@@ -1,6 +1,4 @@
-import strutils
-import sequtils
-import tables
+import strutils, sequtils, tables
 
 proc isAnagram(candidate: string, word: string): bool =
   word.toLower.toCountTable == candidate.toLower.toCountTable
