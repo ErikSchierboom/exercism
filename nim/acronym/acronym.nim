@@ -1,7 +1,7 @@
-import strutils, sequtils, re
+import strutils, sequtils
 
 proc words(sentence: string): seq[string] =
-  sentence.split(re"\s*( |-|_)\s*")
+  sentence.replace("_").replace("-", " ").split().filterIt(not it.isEmptyOrWhitespace)
 
 proc acronymLetter(word: string): char = 
   word[0].toUpperAscii
