@@ -1,5 +1,4 @@
-import sequtils
-import math
+import math, sequtils
 
 proc toDigit(c: char): int =
   c.ord - '0'.ord
@@ -9,7 +8,7 @@ proc toDigits(number: int): seq[int] =
 
 proc armstrongSum(number: int): int =
   let digits = toDigits(number)
-  digits.foldl(a + (b ^ digits.len), 0)
+  digits.mapIt(it ^ digits.len).sum
 
 proc isArmstrongNumber*(number: int): bool =
-  armstrong_sum(number) == number
+  number == number.armstrongSum
