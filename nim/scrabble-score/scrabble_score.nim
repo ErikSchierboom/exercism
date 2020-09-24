@@ -12,4 +12,4 @@ proc score(letter: char): int =
 
 proc score*(word: string): int =
   for letter in word:
-    result += letter.score
+    result.inc letter.score
