@@ -5,4 +5,4 @@ proc sum*(number: int, multiples: seq[int]): int =
 
   for n in 1..<number:
     if isMultiple(n):
-      result += n
+      result.inc(n)
