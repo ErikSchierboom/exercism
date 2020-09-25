@@ -7,8 +7,8 @@ type
   Cell* = ref object of RootObj
     val: int
     nextCallback: int
-    callbacks*: Table[CallbackRef, Callback]
-    consumers*: seq[ComputeCell]
+    callbacks: Table[CallbackRef, Callback]
+    consumers: seq[ComputeCell]
 
   InputCell = ref object of Cell
 
