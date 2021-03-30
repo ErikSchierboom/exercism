@@ -1,18 +1,18 @@
-﻿module Change
+module Change
 
 let minimalCoins coins map target =
     coins
-    |> List.filter (fun x -> x <= target) 
-    |> List.choose (fun x -> map |> Map.tryFind (target - x) |> Option.map (fun y -> x :: y))
+    |> List.filter (fun x -> x <= target)
+    |> List.map (fun x -> x :: Map.find (target - x) map)
     |> List.sortBy List.length
-    |> List.tryHead 
+    |> List.tryHead
 
 let updateMinimalCoinsMap coins map target = 
     match minimalCoins coins map target with
     | Some x -> Map.add target x map
     | None   -> map
 
-let findFewestCoins coins target = 
+let change target coins = 
     [1..target]
     |> List.fold (updateMinimalCoinsMap coins) (Map.ofList [(0, [])])
     |> Map.tryFind target
