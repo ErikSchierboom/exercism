@@ -1,12 +1,8 @@
 (ns flatten-array)
 
 (defn flatten [arr]
-  (loop [acc []
-         remainder arr]
-    (if (empty? remainder)
-      acc
-      (let [[head & tail] remainder]
-        (cond
-          (sequential? head) (recur acc (concat head tail))
-          (nil? head) (recur acc tail)
-          :else (recur (conj acc head) tail))))))
+  (loop [acc [] [head & tail] arr]
+    (cond
+      (nil? head) (if (nil? tail) acc (recur acc tail))
+      (sequential? head) (recur acc (concat head tail))
+      :else (recur (conj acc head) tail))))
