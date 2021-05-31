@@ -1,14 +1,13 @@
 (ns anagram
-  (:require [clojure.string :refer [lower-case]]))
+  (:require [clojure.string :as str]))
 
-(defn normalize-word [word]
-  (sort (lower-case word)))
-
-(defn is-anagram? [word candidate-word]
-  (and
-    (not= (lower-case candidate-word) (lower-case word))
-    (= (normalize-word word) (normalize-word candidate-word))))
+(defn anagram-of? [word candidate]
+  (let [lower-word (str/lower-case word)
+        lower-candidate (str/lower-case candidate)]
+    (and
+      (not= lower-word lower-candidate)
+      (= (sort lower-word) (sort lower-candidate)))))
 
 (defn anagrams-for [word prospect-list]
-  (filter (partial is-anagram? word) prospect-list))
+  (filter (partial anagram-of? word) prospect-list))
 
