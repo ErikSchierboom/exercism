@@ -1,9 +1,8 @@
-(ns bob
-  (:require [clojure.string :refer [blank? ends-with? upper-case trim]]))
+(ns bob (:require [clojure.string :as str]))
 
-(defn- is-silence? [s] (blank? s))
-(defn- is-question? [s] (ends-with? (trim s) "?"))
-(defn- is-shout? [s] (and (= s (upper-case s)) (some #(Character/isLetter %) s)))
+(defn- is-silence? [s] (str/blank? s))
+(defn- is-question? [s] (str/ends-with? (str/trim s) "?"))
+(defn- is-shout? [s] (and (= s (str/upper-case s)) (some #(Character/isLetter %) s)))
 
 (defn response-for [s]
   (cond
