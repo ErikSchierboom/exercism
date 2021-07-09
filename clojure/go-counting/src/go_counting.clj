@@ -11,31 +11,35 @@
         stones (map parse-stone cells)]
     (zipmap coords stones)))
 
-(defn- neighbors [board [x y]]
+(defn- neighbor-coords [board [x y]]
   (let [offsets [[-1 0] [0 -1] [1 0] [0 1]]
         from-offset (fn [[dx dy]] [(- x dx) (- y dy)])]
     (->> offsets
          (map from-offset)
-         (filter #(contains? board %))
-         (map #(vector % (get board %))))))
+         (filter #(contains? board %)))))
+
+(defn- owner [owners]
+  (when (= 1 (count owners))
+    (first owners)))
 
 (defn territory
   ([grid coord]
    (let [board (parse-board grid)]
-     (println (neighbors board [0 1]))
-     )
-   )
-  ([grid empty-cells encircling-cells unchecked-cells]
-    (if (empty? unchecked-cells)
+     (territory board (set [coord]))))
+  ([board unchecked-coords checked-coords empty-coords owners]
+    (if (empty? unchecked-coords)
       (do
-        (println "empty-cells" empty-cells)
-        (println "encircling-cells" encircling-cells)
-        "TODO")
-      ()
-
-   )
-
-  )
+        (println "empty-coords" empty-coords)
+        (println "owners" owners)
+        {:stones empty-coords :owner (owner owners)})
+      (let [neighbors-unchecked-coords (set (mapcat #(neighbor-coords board %) unchecked-coords))
+            empty-neighbors (set (filter #(= :empty (get board %)) neighbors-unchecked-coords))
+            owner-neighbors (set (filter #(not= :empty (get board %)) neighbors-unchecked-coords))
+            new-checked-coords (set/union checked-coords neighbors-unchecked-coords)
+            new-empty-coords (set/union empty-coords empty-neighbors)
+            new-owners (set/union owners (set (map #(get board %) owner-neighbors)))
+            new-unchecked-coords (set/difference neighbors-unchecked-coords checked-coords)]
+        (territory board new-unchecked-coords new-checked-coords new-empty-coords new-owners)))))
 
 
 
@@ -45,12 +49,10 @@
   ;    (let [coords (territory-coords grid (set [coord]) (set [coord]))]
   ;      {:stones coords :owner (territory-owner grid coords)})
   ;    (throw (IllegalArgumentException. "Invalid coordinate"))))
-  )
 
 
-(defn- territory-owner [stones]
-  (when (= 1 (count stones))
-    (first stones)))
+
+
 
 ;(defn territory-coords
 ;  ([board coord]
