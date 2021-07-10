@@ -1,6 +1,10 @@
 (ns raindrops)
 
+(defn- divisible-by? [n m] (zero? (mod n m)))
+
 (defn convert [n]
-  (let [drop (fn [m str] (if (zero? (mod n m)) str nil))
-        drops (apply str (drop 3 "Pling") (drop 5 "Plang") (drop 7 "Plong"))]
-    (if (clojure.string/blank? drops) (str n) drops)))
+  (cond-> nil
+    (divisible-by? n 3) (str "Pling")
+    (divisible-by? n 5) (str "Plang")
+    (divisible-by? n 7) (str "Plong")
+    :always             (or (str n))))
