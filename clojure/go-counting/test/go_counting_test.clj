@@ -9,10 +9,6 @@
    " W W "
    "  W  "])
 
-(deftest territory2
-  (is (= (g/territory example [0 1])
-         {:stones #{[0 0] [0 1] [1 0]} :owner :black})))
-
 (deftest territory
   (is (= (g/territory example [0 1])
          {:stones #{[0 0] [0 1] [1 0]} :owner :black}))
