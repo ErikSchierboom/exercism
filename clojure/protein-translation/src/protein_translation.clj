@@ -1,8 +1,7 @@
 (ns protein-translation)
 
-(defn translate-codon [codon]
-  (case codon
-    "AUG" "Methionine"
+(def translate-codon
+  { "AUG" "Methionine"
     "UUU" "Phenylalanine"
     "UUC" "Phenylalanine"
     "UUA" "Leucine"
@@ -18,7 +17,10 @@
     "UGG" "Tryptophan"
     "UAA" "STOP"
     "UAG" "STOP"
-    "UGA" "STOP"))
+    "UGA" "STOP" })
 
 (defn translate-rna [rna]
-  (take-while #(not= "STOP" %) (map #(translate-codon (apply str %)) (partition 3 rna))))
+  (->> rna
+       (partition 3)
+       (map #(translate-codon (apply str %)))
+       (take-while #(not= "STOP" %))))
