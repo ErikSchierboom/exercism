@@ -1,7 +1,7 @@
 (ns queen-attack (:require [clojure.string :as str]))
 
-(def rows (range 0 8))
-(def cols (range 0 8))
+(def rows (range 8))
+(def cols (range 8))
 
 (defn- board-cell [queens row col]
   (condp = [row col]
