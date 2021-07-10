@@ -13,7 +13,7 @@
   (str (str/join " " (map #(board-cell queens row %) cols)) "\n"))
 
 (defn board-string [queens]
-  (apply str (map (partial board-row queens) rows)))
+  (apply str (map #(board-row queens %) rows)))
 
 (defn can-attack [queens]
   (let [[white-row white-col] (:w queens)
