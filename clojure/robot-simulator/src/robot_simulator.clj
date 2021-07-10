@@ -5,19 +5,17 @@
 (defn robot [coordinates bearing]
   (Robot. coordinates bearing))
 
-(defn turn-right [bearing]
-  (case bearing
-    :north :east
+(def turn-right
+  { :north :east
     :east :south
     :south :west
-    :west :north))
+    :west :north })
 
-(defn turn-left [bearing]
-  (case bearing
-    :north :west
-    :east :north
+(def turn-left
+  { :north :west
+    :east  :north
     :south :east
-    :west :south))
+    :west  :south })
 
 (defn- simulate-instruction [robot instruction]
   (case instruction
