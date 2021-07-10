@@ -22,45 +22,49 @@
   (when (= 1 (count owners))
     (first owners)))
 
-(defn territory
-  ([grid coord]
-   (let [board (parse-board grid)]
-     (condp = (get board coord)
-       nil (throw (IllegalArgumentException. "Invalid coordinate"))
-       :empty (territory board (set [coord]) (set [coord]) (set [coord]) (set []))
-       (territory board (set []) (set []) (set []) (set [])))))
+
+
+(defn board-territory
+  ([board coord]
+   (condp = (get board coord)
+     nil (throw (IllegalArgumentException. "Invalid coordinate"))
+     :empty (board-territory board (set [coord]) (set [coord]) (set [coord]) (set []))
+     (board-territory board (set []) (set []) (set []) (set []))))
   ([board unchecked-coords checked-coords empty-coords owners]
-    (if (empty? unchecked-coords)
-      {:stones empty-coords :owner (owner owners)}
-      (let [neighbors-unchecked-coords (set (mapcat #(neighbor-coords board %) unchecked-coords))
-            empty-neighbors (set (filter #(= :empty (get board %)) neighbors-unchecked-coords))
-            owner-neighbors (set (filter #(not= :empty (get board %)) neighbors-unchecked-coords))
-            new-checked-coords (set/union checked-coords neighbors-unchecked-coords)
-            new-empty-coords (set/union empty-coords empty-neighbors)
-            new-owners (set/union owners (set (map #(get board %) owner-neighbors)))
-            new-unchecked-coords (set/difference empty-neighbors checked-coords)]
-        (territory board new-unchecked-coords new-checked-coords new-empty-coords new-owners)))))
+   (if (empty? unchecked-coords)
+     {:stones empty-coords :owner (owner owners)}
+     (let [neighbors-unchecked-coords (set (mapcat #(neighbor-coords board %) unchecked-coords))
+           empty-neighbors (set (filter #(= :empty (get board %)) neighbors-unchecked-coords))
+           owner-neighbors (set (filter #(not= :empty (get board %)) neighbors-unchecked-coords))
+           new-checked-coords (set/union checked-coords neighbors-unchecked-coords)
+           new-empty-coords (set/union empty-coords empty-neighbors)
+           new-owners (set/union owners (set (map #(get board %) owner-neighbors)))
+           new-unchecked-coords (set/difference empty-neighbors checked-coords)]
+       (board-territory board new-unchecked-coords new-checked-coords new-empty-coords new-owners)))))
 
 (defn- empty-coords [board]
   (->> board
        (keep (fn [[k v]] (when (= :empty v) k)))
        set))
 
-(defn territories
-  ([grid]
-   (let [board (parse-board grid)]
-     (territories board (empty-coords board) {:black-territory #{}
-                                              :white-territory #{}
-                                              :null-territory  #{}})))
+(defn board-territories
+  ([board]
+    (board-territories board (empty-coords board) {:black-territory #{} :white-territory #{} :null-territory  #{}}))
   ([board unchecked-empty-coords acc]
-    (if
-      (empty? unchecked-empty-coords) acc
-      (let [coord (first unchecked-empty-coords)
-            terr (territory board (set [coord]) (set [coord]) (set [coord]) (set []))
-            new-unchecked-empty-coords (set/difference unchecked-empty-coords (:stones terr))
-            territory-key (case (:owner terr)
-                            :black :black-territory
-                            :white :white-territory
-                            :null-territory)
-            new-acc (assoc acc territory-key (set/union (get acc territory-key) (:stones terr)))]
-            (territories board new-unchecked-empty-coords new-acc)))))
+   (if
+     (empty? unchecked-empty-coords) acc
+     (let [coord (first unchecked-empty-coords)
+           terr (board-territory board coord)
+           new-unchecked-empty-coords (set/difference unchecked-empty-coords (:stones terr))
+           territory-key (case (:owner terr)
+                           :black :black-territory
+                           :white :white-territory
+                           :null-territory)
+           new-acc (merge-with set/union acc {territory-key (:stones terr)})]
+       (board-territories board new-unchecked-empty-coords new-acc)))))
+
+(defn territory [grid coord]
+  (board-territory (parse-board grid) coord))
+
+(defn territories [grid]
+  (board-territories (parse-board grid)))
