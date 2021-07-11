@@ -10,8 +10,7 @@
     \q 10 \z 10})
 
 (defn score-letter [letter]
-  (let [letter (Character/toLowerCase (first (str letter)))]
-    (get letter-to-score letter)))
+  (get letter-to-score (Character/toLowerCase^char (first (str letter)))))
 
 (defn score-word [word]
   (apply + (map score-letter word)))

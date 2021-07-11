@@ -1,7 +1,7 @@
 (ns queen-attack (:require [clojure.string :as str]))
 
-(def rows (range 0 8))
-(def cols (range 0 8))
+(def rows (range 8))
+(def cols (range 8))
 
 (defn- board-cell [queens row col]
   (condp = [row col]
@@ -13,7 +13,7 @@
   (str (str/join " " (map #(board-cell queens row %) cols)) "\n"))
 
 (defn board-string [queens]
-  (apply str (map (partial board-row queens) rows)))
+  (apply str (map #(board-row queens %) rows)))
 
 (defn can-attack [queens]
   (let [[white-row white-col] (:w queens)
