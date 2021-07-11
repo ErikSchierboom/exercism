@@ -3,39 +3,21 @@ import org.junit.Ignore
 import kotlin.test.assertEquals
 
 class RnaTranscriptionTest {
-
-    /*
-      In Kotlin functions can be declared at top level in a file, meaning
-      you do not need to create a class to hold a function, like languages
-      such as Java, C# or Scala.
-
-      http://kotlinlang.org/docs/reference/functions.html#function-scope
-
-     */
+    @Test
+    fun `empty RNA` ()= assertEquals("", transcribeToRna(""))
 
     @Test
-    fun cytosineComplementIsGuanine() {
-        assertEquals("G", transcribeToRna("C"))
-    }
+    fun `RNA complement of cytosine is guanine`() = assertEquals("G", transcribeToRna("C"))
 
     @Test
-    fun guanineComplementIsCytosine() {
-        assertEquals("C", transcribeToRna("G"))
-    }
+    fun `RNA complement of guanine is cytosine`() = assertEquals("C", transcribeToRna("G"))
 
     @Test
-    fun thymineComplementIsAdenine() {
-        assertEquals("A", transcribeToRna("T"))
-    }
+    fun `RNA complement of thymine is adenine`() = assertEquals("A", transcribeToRna("T"))
 
     @Test
-    fun adenineComplementIsUracil() {
-        assertEquals("U", transcribeToRna("A"))
-    }
+    fun `RNA complement of adenine is uracil`() = assertEquals("U", transcribeToRna("A"))
 
     @Test
-    fun rnaTranscription() {
-        assertEquals("UGCACCAGAAUU", transcribeToRna("ACGTGGTCTTAA"))
-    }
-
+    fun `compound RNA`() = assertEquals("UGCACCAGAAUU", transcribeToRna("ACGTGGTCTTAA"))
 }
