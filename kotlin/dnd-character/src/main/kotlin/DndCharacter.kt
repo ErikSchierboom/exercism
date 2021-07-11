@@ -10,12 +10,8 @@ class DndCharacter {
     val hitpoints: Int = 10 + modifier(constitution)
 
     companion object {
-        fun ability(): Int = List(4) { Die.roll() }.sorted().takeLast(3).sum()
+        fun ability(): Int = List(4) { Random.nextInt(1, 6.inc()) }.sorted().takeLast(3).sum()
 
         fun modifier(score: Int) = Math.floorDiv(score - 10, 2)
     }
-}
-
-object Die {
-    fun roll() = Random.nextInt(1, 6.inc())
 }
