@@ -1,8 +1,8 @@
-import kotlin.math.pow
+import kotlin.math.hypot
 
 object Darts {
     fun score(x: Number, y: Number): Int {
-        val distance = Math.sqrt(x.toDouble().pow(2) + y.toDouble().pow(2))
+        val distance = hypot(x.toDouble(), y.toDouble())
         return when {
             distance <= 1.0  -> 10
             distance <= 5.0  -> 5
