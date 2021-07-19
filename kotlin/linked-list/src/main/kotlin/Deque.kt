@@ -1,46 +1,22 @@
 data class Element<T>(val value: T, var prev: Element<T>?, var next: Element<T>?)
 
 class Deque<T> {
-    var first: Element<T>? = null
-    var last: Element<T>? = null
+    private var first: Element<T>? = null
+    private var last: Element<T>? = null
+
+    fun pop(): T? = last?.apply { last = prev }?.value
+
+    fun shift(): T? = first?.apply { first = next }?.value
 
     fun push(value: T) {
-        if (last == null) {
-            addToEmpty(value)
-        }
-        else {
-            val currentLast = last
-            last = Element(value, currentLast, currentLast?.next)
-            currentLast?.next = last;
-        }
-    }
-
-    fun pop(): T? {
         val currentLast = last
-        last = last?.prev
-        return currentLast?.value
-    }
-
-    fun shift(): T? {
-        val currentFirst = first
-        first = first?.next
-        return currentFirst?.value
+        last = Element(value, last, last?.next).apply { first = first ?: this }
+        currentLast?.next = last
     }
 
     fun unshift(value: T) {
-        if (first == null) {
-            addToEmpty(value)
-        }
-        else {
-            val currentFirst = first
-            first = Element(value, currentFirst?.prev, currentFirst)
-            currentFirst?.prev = first;
-        }
-    }
-
-    private fun addToEmpty(value: T) {
-        val newElement = Element(value, null, null)
-        first = newElement
-        last = newElement
+        val currentFirst = first
+        first = Element(value, first?.prev, first).apply { last = last ?: this }
+        currentFirst?.prev = first
     }
 }
