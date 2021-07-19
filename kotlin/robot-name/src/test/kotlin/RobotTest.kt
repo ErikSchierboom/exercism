@@ -1,5 +1,6 @@
 import org.junit.Test
 import org.junit.Ignore
+import kotlin.test.assertEquals
 import kotlin.test.assertNotEquals
 import kotlin.test.assertTrue
 
@@ -22,6 +23,11 @@ class RobotTest {
     fun differentRobotsHaveDifferentNames() {
         assertNotEquals(robot.name, Robot().name)
     }
+    
+    @Test
+    fun robotRemembersItsName() {
+        assertEquals(robot.name, robot.name)
+    }
 
     @Test
     fun resetName() {
@@ -31,6 +37,14 @@ class RobotTest {
         val name2 = robot.name
         assertNotEquals(name, name2)
         assertTrue(isValidName(name2), "Robot name $name2 didn't match expected pattern.")
+    }
+
+    @Test
+    fun isRandom() {
+        val iterations = 100000
+        val names = (0 until iterations).map { Robot().name }
+        assertEquals(iterations, names.size)
+        assertEquals(iterations, names.distinct().size)
     }
 
 }
