@@ -1,15 +1,14 @@
-import kotlin.coroutines.experimental.buildSequence
-
 class RailFenceCipher(private val rails: Int) {
     fun getEncryptedData(plainText: String): String =
-        plainText.asSequence().zip(tracks().take(plainText.length))
+        plainText.asSequence().zip(tracks.take(plainText.length))
                 .sortedBy { it.second }
                 .map { it.first }
                 .joinToString("")
 
     fun getDecryptedData(cipherText: String): String =
-        tracks().take(cipherText.length)
-                .mapIndexed { index, track -> index to track }.toList()
+        tracks.take(cipherText.length)
+                .mapIndexed { index, track -> index to track }
+                .toList()
                 .sortedBy { it.second }
                 .map { it.first }
                 .zip(cipherText.asIterable())
@@ -17,7 +16,7 @@ class RailFenceCipher(private val rails: Int) {
                 .map { it.second }
                 .joinToString("")
 
-    private fun tracks() = buildSequence {
+    private val tracks = sequence {
         var current = 0
         var up = true
 
