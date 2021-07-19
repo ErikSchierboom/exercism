@@ -1,10 +1,8 @@
-class Anagram(input: String) {
-    val input = input
-    val normalizedInput = normalize(input)
+class Anagram(private val input: String) {
+    private val normalizedInput = input.normalize()
 
-    fun match(list: List<String>): List<String> = list.filter {
-        normalize(it).equals(normalizedInput) && !it.toLowerCase().equals(input.toLowerCase())
-    }
+    fun match(candidates: Set<String>): Set<String> =
+        candidates.filter { !it.equals(input, ignoreCase = true) && it.normalize() == normalizedInput }.toSet()
 
-    private fun normalize(str: String): String = str.toLowerCase().toCharArray().sorted().joinToString(separator = "")
+    private fun String.normalize() = toLowerCase().asSequence().sorted().joinToString(separator = "")
 }
