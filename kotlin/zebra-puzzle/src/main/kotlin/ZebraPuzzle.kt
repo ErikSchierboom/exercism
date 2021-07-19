@@ -14,39 +14,26 @@ data class Solution(
     val smokes: List<Smoke>
 )
 
-
 class ZebraPuzzle {
     fun drinksWater() = solution.residents[solution.drinks.indexOf(Drink.Water)].name
     fun ownsZebra() = solution.residents[solution.pets.indexOf(Pet.Zebra)].name
 
-    private val solution: Solution by lazy {
-        val colorPermutations = Color.values().toList().permutations()
-        val residentPermutations = Resident.values().toList().permutations()
-        val petPermutations = Pet.values().toList().permutations()
-        val drinkPermutations = Drink.values().toList().permutations()
-        val smokePermutations = Smoke.values().toList().permutations()
+    private val solution = calculateSolution()
 
-        colorPermutations
-            .filter { it.matchesColorRules() }
-            .flatMap { colors ->
-                residentPermutations
-                    .filter { it.matchesResidentRules(colors) }
-                    .flatMap { residents ->
-                        petPermutations
-                            .filter { it.matchesPetRules(residents) }
-                            .flatMap { pets ->
-                                drinkPermutations
-                                    .filter { it.matchesDrinkRules(colors, residents) }
-                                    .flatMap { drinks ->
-                                        smokePermutations
-                                            .filter { it.matchesSmokeRules(colors, residents, drinks, pets) }
-                                            .map { smokes ->
-                                                Solution(colors, residents, pets, drinks, smokes)
-                                            }
-                                    }
-                            }
+    private fun calculateSolution(): Solution {
+        for (colors in permutations<Color>().filter { it.matchesColorRules() }) {
+            for (residents in permutations<Resident>().filter { it.matchesResidentRules(colors) }) {
+                for (pets in permutations<Pet>().filter { it.matchesPetRules(residents) }) {
+                    for (drinks in permutations<Drink>().filter { it.matchesDrinkRules(colors, residents) }) {
+                        for (smokes in permutations<Smoke>().filter { it.matchesSmokeRules(colors, residents, drinks, pets) }) {
+                            return Solution(colors, residents, pets, drinks, smokes)
+                        }
                     }
-            }.first()
+                }
+            }
+        }
+
+        throw Exception("No solution could be found")
     }
 
     private fun List<Color>.matchesColorRules() =
@@ -79,20 +66,8 @@ class ZebraPuzzle {
                 indexOf(Smoke.Parliaments) == residents.indexOf(Resident.Japanese)
 }
 
+private inline fun <reified T : Enum<T>> permutations() = enumValues<T>().toList().permutations()
 
-fun <T> List<T>.permutations(): List<List<T>> {
-    if (size == 1)
-        return listOf(this)
-
-    val perms = mutableListOf<List<T>>()
-    val toInsert = this[0]
-    for (perm in this.drop(1).permutations()) {
-        for (i in 0..perm.size) {
-            val newPerm = perm.toMutableList()
-            newPerm.add(i, toInsert)
-            perms.add(newPerm)
-        }
-    }
-
-    return perms
-}
+private fun <T> List<T>.permutations(): Sequence<List<T>> =
+    if (size <= 1) sequenceOf(this)
+    else asSequence().flatMap { seq -> (this - seq).permutations().map { listOf(seq) + it } }
