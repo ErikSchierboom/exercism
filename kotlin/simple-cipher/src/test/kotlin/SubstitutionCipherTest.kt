@@ -5,67 +5,39 @@ import kotlin.test.assertEquals
 
 class SubstitutionCipherTest {
 
-    private val KEY = "abcdefghij"
-    private lateinit var cipher: Cipher
-
-    @Before
-    fun setup() {
-        this.cipher = Cipher(KEY)
-    }
-
+    @Test
+    fun `can encode`() = "abcdefghij".let { assertEquals(it, Cipher(it).encode("aaaaaaaaaa")) }
 
     @Test
-    fun cipherKeepsTheSubmittedKey() {
-        assertEquals(KEY, cipher.key)
-    }
+    fun `can decode`() = "abcdefghij".let { assertEquals("aaaaaaaaaa", Cipher(it).decode(it)) }
 
     @Test
-    fun cipherCanEncodeWithGivenKey() {
-        val expectedOutput = "abcdefghij"
-
-        assertEquals(expectedOutput, cipher.encode("aaaaaaaaaa"))
-    }
+    fun `is reversible`() = with(Cipher("abcdefghij")) { assertEquals(key, decode(encode(key))) }
 
     @Test
-    fun cipherCanDecodeWithGivenKey() {
-        val expectedOutput = "aaaaaaaaaa"
-
-        assertEquals(expectedOutput, cipher.decode("abcdefghij"))
-    }
+    fun `can double shift encode`() =
+        "iamapandabear".let { assertEquals("qayaeaagaciai", Cipher(it).encode(it)) }
 
     @Test
-    fun cipherIsReversibleGivenKey() {
-        val plainText = "abcdefghij"
-
-        assertEquals(plainText, cipher.decode(cipher.encode("abcdefghij")))
-    }
+    fun `can wrap on encode`() =
+        assertEquals("zabcdefghi", Cipher("abcdefghij").encode("zzzzzzzzzz"))
 
     @Test
-    fun cipherCanDoubleShiftEncode() {
-        val plainText = "iamapandabear"
-        val expectedOutput = "qayaeaagaciai"
-
-        assertEquals(expectedOutput, Cipher(plainText).encode(plainText))
-    }
+    fun `can wrap on decode`() =
+        assertEquals("zzzzzzzzzz", Cipher("abcdefghij").decode("zabcdefghi"))
 
     @Test
-    fun cipherCanWrapEncode() {
-        val expectedOutput = "zabcdefghi"
-
-        assertEquals(expectedOutput, cipher.encode("zzzzzzzzzz"))
-    }
+    fun `can encode messages longer than the key`() =
+        assertEquals("iboaqcnecbfcr", Cipher("abc").encode("iamapandabear"))
 
     @Test
-    fun cipherCanEncodeMessageThatIsShorterThanTheKey() {
-        val expectedOutput = "abcde"
+    fun `can decode messages longer than the key`() =
+        assertEquals("iamapandabear", Cipher("abc").decode("iboaqcnecbfcr"))
 
-        assertEquals(expectedOutput, cipher.encode("aaaaa"))
-    }
+    // extra tests
 
     @Test
-    fun cipherCanDecodeMessageThatIsShorterThanTheKey() {
-        val expectedOutput = "aaaaa"
+    fun `keeps the given key`() = "abcdefghij".let { assertEquals(it, Cipher(it).key) }
 
-        assertEquals(expectedOutput, cipher.decode("abcde"))
-    }
+
 }
