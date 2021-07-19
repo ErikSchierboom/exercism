@@ -5,8 +5,7 @@ class Series(private val series: String) {
     }
 
     fun getLargestProduct(span: Int): Long {
-        require(span >= 0)
-        require(span <= series.length)
+        require(span in 0..series.length)
 
         return series
             .map { Character.getNumericValue(it).toLong() }
