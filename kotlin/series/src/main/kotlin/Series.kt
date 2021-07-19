@@ -1,7 +1,9 @@
 object Series {
     fun slices(size: Int, input: String): List<List<Int>> {
-        val digits = input.map { Integer.parseInt(it.toString()) }
+        require(size > 0 && size <= input.length)
 
-        return (0 .. digits.size - size).map { digits.subList(it, it + size) }
+        return input.map(Character::getNumericValue).let { digits ->
+            0.rangeTo(digits.size - size).map { digits.subList(it, it + size) }
+        }
     }
 }
