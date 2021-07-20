@@ -1,12 +1,13 @@
 object Bob {
-    fun hey(input: String): String = when {
-        input.isBlank() -> "Fine. Be that way!"
-        input.isYell() -> "Whoa, chill out!"
-        input.isQuestion() -> "Sure."
+    fun hey(response: String) = when {
+        response.isBlank() -> "Fine. Be that way!"
+        response.isYell() && response.isQuestion() -> "Calm down, I know what I'm doing!"
+        response.isYell() -> "Whoa, chill out!"
+        response.isQuestion() -> "Sure."
         else -> "Whatever."
     }
 
-    private fun String.isQuestion() = this.trimEnd().endsWith('?')
+    private fun String.isQuestion() = trimEnd().endsWith('?')
 
-    private fun String.isYell() = this.any(Char::isLetter) && this.toUpperCase() == this
+    private fun String.isYell() = any(Char::isLetter) && toUpperCase() == this
 }
