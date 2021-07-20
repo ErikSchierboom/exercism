@@ -1,9 +1,8 @@
 import java.time.LocalDate
 import java.time.LocalDateTime
 
-class Gigasecond(dateTime: LocalDateTime) {
-    constructor(date: LocalDate) : this(date.atStartOfDay()) {
-    }
+class Gigasecond(moment: LocalDateTime) {
+    constructor(moment: LocalDate) : this(moment.atStartOfDay())
 
-    val date = dateTime.plusSeconds(1e9.toLong())
+    val date = moment.plusSeconds(1e9.toLong())!!
 }
