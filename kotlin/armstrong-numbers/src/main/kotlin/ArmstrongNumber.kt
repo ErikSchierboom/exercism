@@ -1,12 +1,9 @@
 import kotlin.math.pow
 
 object ArmstrongNumber {
-    fun check(input: Int): Boolean {
-        val digits = input.digits()
-        return digits.sumBy { it.pow(digits.size) } == input
-    }
+    fun check(input: Int) = input.armstrongSum() == input
 
-    private fun Int.digits() = this.toString().map { Character.getNumericValue(it) }
-
-    private fun Int.pow(n: Int) = this.toDouble().pow(n).toInt()
+    private fun Int.armstrongSum() = digits().run { sumBy { it.pow(size) } }
+    private fun Int.digits() = toString().map(Character::getNumericValue)
+    private fun Int.pow(n: Int) = toDouble().pow(n).toInt()
 }
