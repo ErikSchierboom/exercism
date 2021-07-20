@@ -1,4 +1,5 @@
 import org.junit.Assert.assertArrayEquals
+import org.junit.Ignore
 import org.junit.Rule
 import org.junit.Test
 import org.junit.rules.ExpectedException
@@ -159,7 +160,7 @@ class BaseConverterTest {
         expectedException.expect(IllegalArgumentException::class.java)
         expectedException.expectMessage("Bases must be at least 2.")
 
-        BaseConverter(1, intArrayOf())
+        BaseConverter(1, intArrayOf(0))
     }
 
     @Test
@@ -175,7 +176,7 @@ class BaseConverterTest {
         expectedException.expect(IllegalArgumentException::class.java)
         expectedException.expectMessage("Bases must be at least 2.")
 
-        BaseConverter(-2, intArrayOf())
+        BaseConverter(-2, intArrayOf(1))
     }
 
     @Test
@@ -223,5 +224,4 @@ class BaseConverterTest {
 
         baseConverter.convertToBase(-7)
     }
-
 }

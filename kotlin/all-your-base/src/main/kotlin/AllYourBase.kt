@@ -12,27 +12,19 @@ class BaseConverter(base: Int, numbers: IntArray) {
     fun convertToBase(targetBase: Int): IntArray {
         require(targetBase >= 2) { "Bases must be at least 2." }
 
-        return when (baseNumber) {
-            0 -> intArrayOf(0)
-            else -> {
-                val digits = mutableListOf<Int>()
+        return sequence {
+            var remainder = baseNumber
+            var multiplier = 1
 
-                var remainder = baseNumber
-                var multiplier = 1
+            while (remainder > 0) {
+                multiplier *= targetBase
 
-                while (remainder > 0)
-                {
-                    multiplier *= targetBase
+                val value = remainder % multiplier
+                val digit = value / (multiplier / targetBase)
 
-                    val value = remainder % multiplier
-                    val digit = value/(multiplier/targetBase)
-
-                    digits.add(digit)
-                    remainder -= value
-                }
-
-                return digits.reversed().toIntArray()
+                yield(digit)
+                remainder -= value
             }
-        }
+        }.toList().ifEmpty { listOf(0) }.reversed().toIntArray()
     }
 }
