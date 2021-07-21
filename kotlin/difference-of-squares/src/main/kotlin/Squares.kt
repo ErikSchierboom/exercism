@@ -1,9 +1,7 @@
-class Squares(val number: Int) {
-    fun square(x: Int) = x * x
+class Squares(private val number: Int) {
+    fun squareOfSum() = 1.rangeTo(number).sum().square()
+    fun sumOfSquares() = 1.rangeTo(number).sumBy { it.square() }
+    fun difference() = squareOfSum() - sumOfSquares()
 
-    fun squareOfSum(): Int = square((1 .. number).sum())
-
-    fun sumOfSquares(): Int = (1 .. number).sumBy { square(it) }
-
-    fun difference(): Int = squareOfSum() - sumOfSquares()
+    private fun Int.square() = this * this
 }
