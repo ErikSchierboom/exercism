@@ -2,14 +2,14 @@ object Atbash {
     private val letters = 'a'..'z'
     private val encodingMap = letters.zip(letters.reversed()).toMap()
 
-    fun encode(input: String): String =
-        input.normalize()
+    fun encode(input: String) =
+        input.toLowerCase()
+            .filter(Char::isLetterOrDigit)
             .chunked(5)
-            .map { it.map { it.encode() }.joinToString("") }
+            .map { chunk -> chunk.map { it.encode() }.joinToString("") }
             .joinToString(separator = " ")
 
-    fun decode(input: String): String = encode(input).replace(" ", "")
+    fun decode(input: String) = encode(input).filter(Char::isLetterOrDigit)
 
-    private fun String.normalize() = toLowerCase().replace(Regex("[^a-z0-9]"), "")
     private fun Char.encode() = encodingMap.getOrElse(this) { this }
 }
