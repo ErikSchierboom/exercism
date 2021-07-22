@@ -9,12 +9,7 @@ class Series(private val series: String) {
 
         return series
             .map { Character.getNumericValue(it).toLong() }
-            .slices(span)
-            .map { it.product() }
-            .max() ?: 1
+            .let { if (span == 0) emptyList() else it.windowed(span) }
+            .maxOfOrNull { it.reduce(Long::times) } ?: 1L
     }
-
-    private fun List<Long>.slices(span: Int) = 0.rangeTo(size - span).map { slice(it until it + span) }
-
-    private fun List<Long>.product() = this.fold(1L, Long::times)
 }
