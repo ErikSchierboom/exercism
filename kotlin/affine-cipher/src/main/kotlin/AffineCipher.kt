@@ -5,7 +5,7 @@ object AffineCipher {
         require(a.coprime(ALPHABET.length)) { "a and m must be coprime." }
 
         return input
-            .transform { a * it + b }
+            .translate { a * it + b }
             .chunked(5)
             .joinToString(" ")
     }
@@ -14,10 +14,10 @@ object AffineCipher {
         require(a.coprime(ALPHABET.length)) { "a and m must be coprime." }
 
         val mmi = a.modularInverse(ALPHABET.length)
-        return input.transform { mmi * (it - b) }
+        return input.translate { mmi * (it - b) }
     }
 
-    fun String.transform(map: (Int) -> Int) =
+    private fun String.translate(map: (Int) -> Int) =
         filter(Char::isLetterOrDigit)
             .toLowerCase()
             .map {
