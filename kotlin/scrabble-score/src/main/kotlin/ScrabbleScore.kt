@@ -1,5 +1,5 @@
 object ScrabbleScore {
-    private fun scoreLetter(letter: Char) = when (letter.toUpperCase()) {
+    private fun scoreLetter(letter: Char) = when (letter.uppercaseChar()) {
         'Q', 'Z' -> 10
         'J', 'X' -> 8
         'K' -> 5
@@ -9,5 +9,5 @@ object ScrabbleScore {
         else -> 1
     }
 
-    fun scoreWord(word: String): Int = word.sumBy(::scoreLetter)
+    fun scoreWord(word: String) = word.sumOf(::scoreLetter)
 }
