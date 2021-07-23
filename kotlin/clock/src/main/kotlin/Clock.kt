@@ -15,7 +15,6 @@ data class Clock(private var minutesInDay: Int) {
 
     private val hours get() = minutesInDay.div(MINUTES_PER_HOUR)
     private val minutes get() = minutesInDay.modulo(MINUTES_PER_HOUR)
-
 }
 
 private fun Int.modulo(other: Int) = (this % other + other) % other
