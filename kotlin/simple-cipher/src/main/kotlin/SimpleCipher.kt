@@ -1,4 +1,4 @@
-const val ALPHABET = "abcdefghijklmnopqrstuvwxyz"
+private const val ALPHABET = "abcdefghijklmnopqrstuvwxyz"
 
 class Cipher(val key: String = Key.generate()) {
     init {
@@ -20,9 +20,7 @@ class Cipher(val key: String = Key.generate()) {
 }
 
 object Key {
-    fun generate() = ALPHABET.random(length = 100)
+    fun generate() = List(100) { ALPHABET.random() }.joinToString(separator = "")
 
     fun isValid(key: String) = key.isNotEmpty() && key.all { it in ALPHABET }
-
-    private fun String.random(length: Int) = 0.until(length).map { random() }.joinToString(separator = "")
 }
