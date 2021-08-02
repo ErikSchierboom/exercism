@@ -1,12 +1,16 @@
+data class Operation(val mask: Int, val map: (List<Signal>) -> List<Signal>)
+
 object HandshakeCalculator {
-    private val operations: List<Pair<Int, (List<Signal>) -> List<Signal>>> = listOf(
-        1 shl 0 to { it + Signal.WINK },
-        1 shl 1 to { it + Signal.DOUBLE_BLINK },
-        1 shl 2 to { it + Signal.CLOSE_YOUR_EYES },
-        1 shl 3 to { it + Signal.JUMP },
-        1 shl 4 to { it.reversed() }
+    private val operations = listOf(
+        Operation(1 shl 0) { it + Signal.WINK },
+        Operation(1 shl 1) { it + Signal.DOUBLE_BLINK },
+        Operation(1 shl 2) { it + Signal.CLOSE_YOUR_EYES },
+        Operation(1 shl 3) { it + Signal.JUMP },
+        Operation(1 shl 4) { it.reversed() }
     )
 
-    fun calculateHandshake(code: Int): List<Signal> =
-        operations.fold(emptyList()) { acc, op -> if (op.first.and(code) != 0) op.second(acc) else acc }
+    fun calculateHandshake(code: Int) =
+        operations.fold(emptyList<Signal>()) { handshake, operation ->
+            if (operation.mask.and(code) != 0) operation.map(handshake) else handshake
+        }
 }
