@@ -23,8 +23,8 @@ object Wordy {
             unevaluated[0] == "plus" -> evaluate(acc + unevaluated[1].toInt(), unevaluated.drop(2))
             unevaluated[0] == "minus" -> evaluate(acc - unevaluated[1].toInt(), unevaluated.drop(2))
             unevaluated[0] == "multiplied" && unevaluated[1] == "by" -> evaluate(acc * unevaluated[2].toInt(), unevaluated.drop(3))
-            unevaluated[0] == "divided" && unevaluated[1] == "by" -> evaluate(acc / unevaluated[2].toInt(), unevaluated.drop(3))
-            unevaluated[0] == "raised" && unevaluated[1] == "to" && unevaluated[2] == "the" && unevaluated[4] == "power" -> evaluate(acc.pow(unevaluated[3].replace("th", "").toInt()), unevaluated.drop(5))
+            unevaluated[0] == "divided"    && unevaluated[1] == "by" -> evaluate(acc / unevaluated[2].toInt(), unevaluated.drop(3))
+            unevaluated[0] == "raised"     && unevaluated[1] == "to" && unevaluated[2] == "the" && unevaluated[4] == "power" -> evaluate(acc.pow(unevaluated[3].replace("th", "").toInt()), unevaluated.drop(5))
             else -> throw IllegalStateException("Invalid equation")
         }
     }
