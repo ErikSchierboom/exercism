@@ -1,11 +1,6 @@
 object HandshakeCalculator {
-    private val operations = listOf<(List<Signal>) -> List<Signal>>(
-        { it + Signal.WINK },
-        { it + Signal.DOUBLE_BLINK },
-        { it + Signal.CLOSE_YOUR_EYES },
-        { it + Signal.JUMP },
-        { it.reversed() }
-    )
+    private val operations: List<(List<Signal>) -> List<Signal>> =
+        Signal.values().map { { signals: List<Signal> -> signals + it } } + { it.reversed() }
 
     fun calculateHandshake(code: Int) =
         operations.foldIndexed(emptyList<Signal>()) { leftShift, handshake, operation ->
