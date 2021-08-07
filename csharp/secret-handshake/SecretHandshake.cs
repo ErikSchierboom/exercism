@@ -1,25 +1,25 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System;
+using System.Collections.Generic;
 
 public static class SecretHandshake
 {
-    private const int ReverseCommand = 1 << 4;
-
-    private static readonly Dictionary<int, string> CommandsMapping = new Dictionary<int, string>
-                                                                         {
-                                                                             { 1 << 0, "wink" },
-                                                                             { 1 << 1, "double blink" },
-                                                                             { 1 << 2, "close your eyes" },
-                                                                             { 1 << 3, "jump" },
-                                                                         };
-
-    public static IEnumerable<string> Commands(int number)
+    private static readonly List<Action<List<string>>> Operations = new()
     {
-        var commands = CommandsMapping.Where(commandMapping => ContainsCommand(commandMapping.Key))
-                                      .Select(commandMapping => commandMapping.Value);
+        commands => commands.Add("wink"),
+        commands => commands.Add("double blink"),
+        commands => commands.Add("close your eyes"),
+        commands => commands.Add("jump"),
+        commands => commands.Reverse()
+    };
 
-        return ContainsCommand(ReverseCommand) ? commands.Reverse() : commands;
-        
-        bool ContainsCommand(int mask) => (number & mask) != 0;
+    public static IEnumerable<string> Commands(int code)
+    {
+        var commands = new List<string>();
+
+        for (var i = 0; i < Operations.Count; i++)
+            if ((code & 1 << i) != 0)
+                Operations[i](commands);
+
+        return commands;
     }
 }
