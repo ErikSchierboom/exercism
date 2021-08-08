@@ -1,18 +1,13 @@
-﻿using System;
-
-public static class Darts
+﻿public static class Darts
 {
-    public static int Score(double x, double y)
-    {
-        var distance = Math.Sqrt(x * x + y * y);
+    public static int Score(double x, double y) =>
+        Distance(x, y) switch
+        {
+            <=  1.0 => 10,
+            <=  5.0 => 5,
+            <= 10.0 => 1,
+            _ => 0
+        };
 
-        if (distance <= 1.0)
-            return 10;
-        if (distance <= 5.0)
-            return 5;
-        if (distance <= 10.0)
-            return 1;
-
-        return 0;
-    }
+    private static double Distance(double x, double y) => System.Math.Sqrt(x * x + y * y);
 }
