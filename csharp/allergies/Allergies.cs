@@ -1,26 +1,17 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+
+public enum Allergen { Eggs, Peanuts, Shellfish, Strawberries, Tomatoes, Chocolate, Pollen, Cats }
 
 public class Allergies
 {
-    private static readonly IReadOnlyDictionary<int, string> AllergensByBitMask = new Dictionary<int, string>
-    {
-        [1 << 0] = "eggs",
-        [1 << 1] = "peanuts",
-        [1 << 2] = "shellfish",
-        [1 << 3] = "strawberries",
-        [1 << 4] = "tomatoes",
-        [1 << 5] = "chocolate",
-        [1 << 6] = "pollen",
-        [1 << 7] = "cats",
-    };
-
     private readonly List<string> _allergies;
 
-    public Allergies(int codedAllergies)
-        => _allergies = AllergensByBitMask
-            .Where(allergenWithBitMask => (codedAllergies & allergenWithBitMask.Key) != 0)
-            .Select(allergenWithBitMask => allergenWithBitMask.Value)
+    public Allergies(int codedAllergies) =>
+        _allergies = Enum.GetValues<Allergen>()
+            .Where((_, shiftLeft) => (codedAllergies & 1 << shiftLeft) != 0)
+            .Select(allergen => allergen.ToString().ToLower())
             .ToList();
 
     public bool IsAllergicTo(string allergy) => _allergies.Contains(allergy);
