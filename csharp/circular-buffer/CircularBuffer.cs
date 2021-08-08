@@ -4,23 +4,20 @@ using System.Linq;
 
 public class CircularBuffer<T>
 {
-    private readonly int capacity;
-    private List<T> items;
+    private readonly int _capacity;
+    private List<T> _items;
 
     public CircularBuffer(int capacity)
     {
-        this.capacity = capacity;
-        items = new List<T>(capacity);
+        _capacity = capacity;
+        _items = new List<T>(capacity);
     }
 
     public T Read()
     {
-        if (items.Count == 0)
-        {
-            throw new InvalidOperationException("Cannot read from empty buffer");
-        }
+        if (_items.Count == 0) throw new InvalidOperationException("Cannot read from empty buffer");
 
-        var value = items[0];
+        var value = _items[0];
 
         DequeueHead();
 
@@ -29,25 +26,19 @@ public class CircularBuffer<T>
 
     public void Write(T value)
     {
-        if (items.Count == capacity)
-        {
-            throw new InvalidOperationException("Cannot write to full buffer");
-        }
+        if (_items.Count == _capacity) throw new InvalidOperationException("Cannot write to full buffer");
 
-        items.Add(value);
+        _items.Add(value);
     }
 
     public void Overwrite(T value)
     {
-        if (items.Count == capacity)
-        {
-            DequeueHead();
-        }
+        if (_items.Count == _capacity) DequeueHead();
 
         Write(value);
     }
 
-    public void Clear() => items.Clear();
+    public void Clear() => _items.Clear();
 
-    private void DequeueHead() => items = items.Skip(1).ToList();
+    private void DequeueHead() => _items = _items.Skip(1).ToList();
 }
