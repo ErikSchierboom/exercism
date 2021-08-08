@@ -4,33 +4,27 @@ using System.Linq;
 
 public static class CryptoSquare
 {
-    public static string NormalizedPlaintext(string plaintext) => new string(plaintext.ToLowerInvariant().Where(char.IsLetterOrDigit).ToArray());
+    public static string Ciphertext(string plaintext) =>
+        plaintext.Length == 0 ? string.Empty : string.Join(" ", plaintext.Normalized().Rows().Cols());
 
-    public static IEnumerable<string> PlaintextSegments(string plaintext)
+    private static string Normalized(this string str) =>
+        new(str.ToLowerInvariant().Where(char.IsLetterOrDigit).ToArray());
+
+    private static int Size(this string str) => (int)Math.Ceiling(Math.Sqrt(str.Length));
+
+    private static string[] Rows(this string str)
     {
-        var normalizedPlaintext = NormalizedPlaintext(plaintext);
-        return Chunks(normalizedPlaintext, Size(normalizedPlaintext));
+        var size = str.Size();
+        return str.Chunks(size).Select(row => row.PadRight(size)).ToArray();
     }
+    
+    private static IEnumerable<string> Cols(this string[] rows) =>
+        Enumerable.Range(0, rows[0].Length)
+            .Select(i => new string(rows.Select(row => row[i]).ToArray()));
 
-    public static string Encoded(string plaintext) => string.Join("", Transpose(PlaintextSegments(plaintext)));
-
-    public static string Ciphertext(string plaintext) => string.Join(" ", Transpose(PlaintextSegments(plaintext).Select(x => x.PadRight(Size(NormalizedPlaintext(plaintext))))));
-
-    private static int Size(string normalizedPlaintext) => (int)Math.Ceiling(Math.Sqrt(normalizedPlaintext.Length));
-
-    private static IEnumerable<string> Chunks(string str, int chunkSize)
+    private static IEnumerable<string> Chunks(this string str, int size)
     {
-        if (str.Length == 0)
-            return Enumerable.Empty<string>();
-
-        return Enumerable
-            .Range(0, (int) Math.Ceiling(str.Length / (double) chunkSize))
-            .Select(i => str.Substring(i * chunkSize, Math.Min(str.Length - i * chunkSize, chunkSize)));
+        for (var i = 0; i < str.Length; i += size)
+            yield return str.Substring(i, Math.Min(str.Length - i, size));
     }
-
-    private static IEnumerable<string> Transpose(IEnumerable<string> input) 
-        => input
-            .SelectMany(s => s.Select((c, i) => Tuple.Create(i, c)))
-            .GroupBy(x => x.Item1)
-            .Select(g => new string(g.Select(t => t.Item2).ToArray()));
 }
