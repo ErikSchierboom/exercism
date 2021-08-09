@@ -4,39 +4,32 @@ using System.Linq;
 
 public static class Dominoes
 {
-    public static bool CanChain(IEnumerable<Tuple<int, int>> dominoes)
+    public static bool CanChain(Tuple<int, int>[] dominoes)
     {
         if (!dominoes.Any())
-        {
             return true;
-        }
 
         var domino = dominoes.First();
 
-        if (dominoes.Count() == 1)
-        {
+        if (dominoes.Length == 1)
             return domino.Item1 == domino.Item2;
-        }
 
-        return dominoes.Skip(1).Rotate().Any(sublist => PossibleChains(domino, sublist).Any(CanChain));
+        return dominoes.Skip(1).Rotations().Any(sublist => PossibleChains(domino, sublist).Any(CanChain));
     }
 
-    public static IEnumerable<Tuple<int, int>[]> PossibleChains(Tuple<int, int> domino, IEnumerable<Tuple<int, int>> remainder)
+    private static IEnumerable<Tuple<int, int>[]> PossibleChains(Tuple<int, int> domino, IEnumerable<Tuple<int, int>> remainder)
     {
-        var head = remainder.First();
+        var (item1, item2) = remainder.First();
 
-        if (domino.Item2 == head.Item1)
-        {
-            yield return new[] { Tuple.Create(domino.Item1, head.Item2) }.Concat(remainder.Skip(1)).ToArray();
-        }
-        else if (domino.Item2 == head.Item2)
-        {
-            yield return new[] { Tuple.Create(domino.Item1, head.Item1) }.Concat(remainder.Skip(1)).ToArray();
-        }
+        if (domino.Item2 == item1)
+            yield return new[] { Tuple.Create(domino.Item1, item2) }.Concat(remainder.Skip(1)).ToArray();
+        else if (domino.Item2 == item2)
+            yield return new[] { Tuple.Create(domino.Item1, item1) }.Concat(remainder.Skip(1)).ToArray();
     }
 
-    private static IEnumerable<IEnumerable<T>> Rotate<T>(this IEnumerable<T> input)
-    {
-        return Enumerable.Range(0, input.Count()).Select(i => input.Skip(i).Take(input.Count() - i).Concat(input.Take(i)));
-    }
+    private static IEnumerable<IEnumerable<T>> Rotations<T>(this IEnumerable<T> input) =>
+        Enumerable.Range(0, input.Count()).Select(input.Rotate);
+    
+    private static IEnumerable<T> Rotate<T>(this IEnumerable<T> input, int offset) =>
+        input.Skip(offset).Take(input.Count() - offset).Concat(input.Take(offset));
 }
