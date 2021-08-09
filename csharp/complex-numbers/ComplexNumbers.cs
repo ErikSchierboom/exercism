@@ -1,37 +1,32 @@
 using System;
 
-public struct ComplexNumber
+public record ComplexNumber(double R, double I)
 {
-    private readonly double _real;
-    private readonly double _imaginary;
+    public double Real() => R;
 
-    public ComplexNumber(double real, double imaginary) => (_real, _imaginary) = (real, imaginary);
-
-    public double Real() => _real;
-
-    public double Imaginary() => _imaginary;
+    public double Imaginary() => I;
 
     public ComplexNumber Mul(ComplexNumber other) =>
-        new(_real * other._real - _imaginary * other._imaginary, _imaginary * other._real + _real * other._imaginary);
+        new(R * other.R - I * other.I, I * other.R + R * other.I);
 
     public ComplexNumber Add(ComplexNumber other) =>
-        new(_real + other._real, _imaginary + other._imaginary);
+        new(R + other.R, I + other.I);
 
     public ComplexNumber Sub(ComplexNumber other) =>
-        new(_real - other._real, _imaginary - other._imaginary);
+        new(R - other.R, I - other.I);
 
     public ComplexNumber Div(ComplexNumber other)
     {
         var numerator = Mul(other.Conjugate());
         var denominator = other.Mul(other.Conjugate());
 
-        return new(numerator._real / denominator._real, numerator._imaginary / denominator._real);
+        return new(numerator.R / denominator.R, numerator.I / denominator.R);
     }
 
     public ComplexNumber Exp()  =>
-        new(Math.Exp(_real) * Math.Cos(_imaginary), Math.Exp(_real) * Math.Sin(_imaginary));
+        new(Math.Exp(R) * Math.Cos(I), Math.Exp(R) * Math.Sin(I));
 
-    public ComplexNumber Conjugate() => new(_real, -_imaginary);
+    public ComplexNumber Conjugate() => new(R, -I);
 
-    public double Abs() => Math.Sqrt(Math.Pow(_real, 2) + Math.Pow(_imaginary, 2));
+    public double Abs() => Math.Sqrt(Math.Pow(R, 2) + Math.Pow(I, 2));
 }
