@@ -6,15 +6,14 @@ public static class FlattenArray
     {
         foreach (var element in input)
         {
-            var enumerable = element as IEnumerable;
-            if (enumerable != null)
+            if (element is IEnumerable enumerable)
             {
                 foreach (var flattenedElement in Flatten(enumerable))
                 {
                     yield return flattenedElement;
                 }
             }
-            else if (element != null)
+            else if (element is not null)
             {
                 yield return element;
             }
