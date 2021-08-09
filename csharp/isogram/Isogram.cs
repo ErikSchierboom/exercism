@@ -4,7 +4,7 @@ public static class Isogram
 {
     public static bool IsIsogram(string word)
     {
-        var lowerCaseLetters = word.ToLower().Where(char.IsLetter).ToList();
-        return lowerCaseLetters.Distinct().Count() == lowerCaseLetters.Count;
+        var lowerLetters = word.ToLower().Where(char.IsLetter).ToList();
+        return lowerLetters.Distinct().Count() == lowerLetters.Count;
     }
 }
