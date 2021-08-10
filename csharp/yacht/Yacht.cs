@@ -3,88 +3,56 @@ using System.Linq;
 
 public enum YachtCategory
 {
-    Ones = 1,
-    Twos = 2,
-    Threes = 3,
-    Fours = 4,
-    Fives = 5,
-    Sixes = 6,
-    FullHouse = 7,
-    FourOfAKind = 8,
-    LittleStraight = 9,
-    BigStraight = 10,
-    Choice = 11,
-    Yacht = 12,
+    Ones, Twos, Threes, Fours, Fives, Sixes,
+    FullHouse, FourOfAKind, LittleStraight, BigStraight, Choice, Yacht
 }
 
 public static class YachtGame
 {
-    public static int Score(int[] dice, YachtCategory category)
-    {
-        switch (category)
+    public static int Score(int[] dice, YachtCategory category) =>
+        category switch
         {
-            case YachtCategory.Ones:
-                return ScoreSingleDice(dice, 1);
-            case YachtCategory.Twos:
-                return ScoreSingleDice(dice, 2);
-            case YachtCategory.Threes:
-                return ScoreSingleDice(dice, 3);
-            case YachtCategory.Fours:
-                return ScoreSingleDice(dice, 4);
-            case YachtCategory.Fives:
-                return ScoreSingleDice(dice, 5);
-            case YachtCategory.Sixes:
-                return ScoreSingleDice(dice, 6);
-            case YachtCategory.FullHouse:
-                return ScoreFullHouse(dice);
-            case YachtCategory.FourOfAKind:
-                return ScoreFourOfAKind(dice);
-            case YachtCategory.LittleStraight:
-                return ScoreLittleStraight(dice);
-            case YachtCategory.BigStraight:
-                return ScoreBigStraight(dice); 
-            case YachtCategory.Choice:
-                return ScoreChoice(dice);
-            case YachtCategory.Yacht:
-                return ScoreYacht(dice);
-            default:
-                throw new ArgumentOutOfRangeException(nameof(category), "Invalid category");
-        }
-    }
-    
-    private static int ScoreSingleDice(int[] dice, int singleDice)
-        => dice.Where(x => x == singleDice).Sum();
+            YachtCategory.Ones => SingleDiceScore(dice, 1),
+            YachtCategory.Twos => SingleDiceScore(dice, 2),
+            YachtCategory.Threes => SingleDiceScore(dice, 3),
+            YachtCategory.Fours => SingleDiceScore(dice, 4),
+            YachtCategory.Fives => SingleDiceScore(dice, 5),
+            YachtCategory.Sixes => SingleDiceScore(dice, 6),
+            YachtCategory.FullHouse => FullHouseScore(dice),
+            YachtCategory.FourOfAKind => FourOfAKindScore(dice),
+            YachtCategory.LittleStraight => LittleStraightScore(dice),
+            YachtCategory.BigStraight => BigStraightScore(dice),
+            YachtCategory.Choice => ChoiceScore(dice),
+            YachtCategory.Yacht => YachtScore(dice),
+            _ => throw new ArgumentOutOfRangeException(nameof(category), "Invalid category")
+        };
 
-    private static int ScoreFullHouse(int[] dice)
+    private static int SingleDiceScore(int[] dice, int singleDice) =>
+        dice.Where(x => x == singleDice).Sum();
+
+    private static int FullHouseScore(int[] dice)
     {
-        var groupedDice = dice.GroupBy(x => x).ToArray();
-        return groupedDice.Length == 2 && groupedDice.Any(x => x.Count() == 2) ? dice.Sum() : 0;
+        var countForDice = dice.GroupBy(x => x).ToLookup(x => x.Count(), x => x.Key);
+        return countForDice.Contains(2) && countForDice.Contains(3) ? dice.Sum() : 0;
     }
 
-    private static int ScoreFourOfAKind(int[] dice)
+    private static int FourOfAKindScore(int[] dice)
     {
-        var groupedDice = dice.GroupBy(x => x).ToArray();
-        switch (groupedDice.Length)
-        {
-            case 1:
-                return dice.Take(4).Sum();
-            case 2 when groupedDice.Any(x => x.Count() == 4):
-                return groupedDice.First(x => x.Count() == 4).Sum();
-            default:
-                return 0;
-        }
+        var countForDice = dice.GroupBy(x => x).ToLookup(x => x.Count(), x => x.Key);
+        if (countForDice.Contains(5)) return countForDice[5].First() * 4;
+        if (countForDice.Contains(4)) return countForDice[4].First() * 4;
+        return 0;
     }
 
-    private static int ScoreLittleStraight(int[] dice) 
-        => dice.OrderBy(x => x).SequenceEqual(new[] {1, 2, 3, 4, 5}) ? 30 : 0;
+    private static int LittleStraightScore(int[] dice) =>
+        dice.Distinct().Count() == 5 && !dice.Contains(6) ? 30 : 0;
 
-    private static int ScoreBigStraight(int[] dice) 
-        => dice.OrderBy(x => x).SequenceEqual(new[] {2, 3, 4, 5, 6}) ? 30 : 0;
+    private static int BigStraightScore(int[] dice) =>
+        dice.Distinct().Count() == 5 && !dice.Contains(1) ? 30 : 0;
 
-    private static int ScoreChoice(int[] dice) 
-        => dice.Sum();
+    private static int YachtScore(int[] dice) =>
+        dice.Distinct().Count() == 1 ? 50 : 0;
 
-    private static int ScoreYacht(int[] dice) 
-        => dice.Distinct().Count() == 1 ? 50 : 0;
+    private static int ChoiceScore(int[] dice) => dice.Sum();
 }
 
