@@ -9,9 +9,10 @@ class Anagram
   end
 
   private
+  attr_reader :input, :normalized_string
 
   def anagram?(candidate)
-    normalize(candidate) == @normalized_string unless candidate.casecmp?(@input)
+    normalize(candidate) == normalized_string unless candidate.casecmp?(input)
   end
 
   def normalize(string)
