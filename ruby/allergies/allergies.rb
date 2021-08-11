@@ -1,21 +1,17 @@
 class Allergies
-  def initialize(coded_allergens)
-    @allergens = ALLERGENS.select.with_index do |allergen, left_shift|
-      coded_allergens.anybits?(1 << left_shift)
+  attr_reader :list
+
+  def initialize(code)
+    @list = ALLERGENS.select.with_index do |_, left_shift|
+      code.anybits?(1 << left_shift)
     end
   end
 
   def allergic_to?(allergen)
-    allergens.include?(allergen)
-  end
-
-  def list
-    allergens
+    list.include?(allergen)
   end
 
   private
-  attr_reader :allergens
-
   ALLERGENS = %w[eggs peanuts shellfish strawberries tomatoes chocolate pollen cats].freeze
   private_constant :ALLERGENS
 end
