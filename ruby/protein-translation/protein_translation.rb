@@ -2,6 +2,20 @@ class InvalidCodonError < StandardError
 end
 
 module Translation
+  def self.of_codon(codon)
+    raise InvalidCodonError unless CODONS_TO_PROTEINS.key?(codon)
+
+    CODONS_TO_PROTEINS[codon]
+  end
+
+  def self.of_rna(rna)
+    rna
+      .scan(/.{3}/)
+      .map(&method(:of_codon))
+      .take_while { |protein| protein != 'STOP' }
+  end
+
+  private
   CODONS_TO_PROTEINS = {
     'AUG' => 'Methionine',
     'UUU' => 'Phenylalanine',
@@ -22,17 +36,4 @@ module Translation
     'UGA' => 'STOP'
   }.freeze
   private_constant :CODONS_TO_PROTEINS
-
-  def self.of_codon(codon)
-    raise InvalidCodonError, 'Invalid codon' unless CODONS_TO_PROTEINS.key?(codon)
-
-    CODONS_TO_PROTEINS[codon]
-  end
-
-  def self.of_rna(rna)
-    rna
-      .scan(/.{3}/)
-      .map { |codon| of_codon(codon) }
-      .take_while { |protein| protein != 'STOP' }
-  end
 end
