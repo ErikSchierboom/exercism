@@ -1,33 +1,21 @@
 class Allergies
   def initialize(coded_allergens)
-    @coded_allergens = coded_allergens
+    @allergens = ALLERGENS.select.with_index do |allergen, left_shift|
+      coded_allergens.anybits?(1 << left_shift)
+    end
   end
 
   def allergic_to?(allergen)
-    ALLERGENS[allergen].anybits?(coded_allergens)
+    allergens.include?(allergen)
   end
 
   def list
-    ALLERGENS.select { |allergen, _| allergic_to?(allergen) }.keys
+    allergens
   end
 
   private
+  attr_reader :allergens
 
-  attr_reader :coded_allergens
-
-  def self.bit(n)
-    1 << (n - 1)
-  end
-
-  ALLERGENS = {
-      'eggs'         => bit(1),
-      'peanuts'      => bit(2),
-      'shellfish'    => bit(3),
-      'strawberries' => bit(4),
-      'tomatoes'     => bit(5),
-      'chocolate'    => bit(6),
-      'pollen'       => bit(7),
-      'cats'         => bit(8),
-  }.freeze
+  ALLERGENS = %w[eggs peanuts shellfish strawberries tomatoes chocolate pollen cats].freeze
   private_constant :ALLERGENS
 end
