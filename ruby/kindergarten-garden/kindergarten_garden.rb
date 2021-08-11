@@ -1,7 +1,7 @@
 class Garden
   def initialize(diagram, students = STUDENTS)
     rows(diagram).zip(students.sort) do |(top, bottom), student|
-      define_singleton_method student.downcase do
+      define_singleton_method student do
         top.concat(bottom)
       end
     end
