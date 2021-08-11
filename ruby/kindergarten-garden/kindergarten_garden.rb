@@ -1,23 +1,6 @@
 class Garden
-  # rubocop:disable Layout/SpaceInsideArrayPercentLiteral
-  STUDENTS = %w[
-    Alice      Bob     Charlie    David
-    Eve        Fred    Ginny      Harriet
-    Ileana     Joseph  Kincaid    Larry
-  ].freeze
-  # rubocop:enable Layout/SpaceInsideArrayPercentLiteral
-  INITIAL_TO_PLANT = {
-    'V' => :violets,
-    'C' => :clover,
-    'G' => :grass,
-    'R' => :radishes
-  }.freeze
-  private_constant :STUDENTS, :INITIAL_TO_PLANT
-
   def initialize(diagram, students = STUDENTS)
-    top_plants, bottom_plants = top_and_bottom_plants(diagram)
-
-    top_plants.zip(bottom_plants).zip(students.sort) do |(top, bottom), student|
+    rows(diagram).zip(students.sort) do |(top, bottom), student|
       define_singleton_method student.downcase do
         top.concat(bottom)
       end
@@ -26,14 +9,20 @@ class Garden
 
   private
 
-  def top_and_bottom_plants(diagram)
-    diagram.split("\n").map(&method(:plants))
+  def rows(diagram)
+    diagram.split("\n").map do |row|
+      row.chars.map { |code| ENCODED_PLANTS[code] }.each_slice(2)
+    end.then do |(top, bottom)|
+      top.zip(bottom)
+    end
   end
 
-  def plants(encoded_plants)
-    encoded_plants
-      .chars
-      .map { |initial| INITIAL_TO_PLANT[initial] }
-      .each_slice(2)
-  end
+  STUDENTS = %w[Alice Bob Charlie David Eve Fred Ginny Harriet Ileana Joseph Kincaid Larry].freeze
+  ENCODED_PLANTS = {
+    'V' => :violets,
+    'C' => :clover,
+    'G' => :grass,
+    'R' => :radishes
+  }.freeze
+  private_constant :STUDENTS, :ENCODED_PLANTS
 end
