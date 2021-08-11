@@ -7,6 +7,7 @@ module PigLatin
     end
   end
 
+  private
   VOWEL_REGEX = /(?<begin>^|\s+)(?<vowel>a|e|i|o|u|yt|xr)(?<rest>\w+)/.freeze
   VOWEL_REPLACEMENT = '\k<begin>\k<vowel>\k<rest>ay'.freeze
 
