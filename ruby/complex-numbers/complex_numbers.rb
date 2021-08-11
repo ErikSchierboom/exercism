@@ -23,15 +23,9 @@ class ComplexNumber
   end
 
   def /(other)
-    denominator = other.real**2 + other.imaginary**2
-    new_real = (real * other.real + imaginary * other.imaginary) / denominator
-    new_imaginary = (imaginary * other.real - real * other.imaginary) / denominator
-
-    ComplexNumber.new(new_real, new_imaginary)
-  end
-
-  def abs
-    Math.sqrt(real**2 + imaginary**2)
+    numerator = self * other.conjugate
+    denominator = other * other.conjugate
+    ComplexNumber.new(numerator.real / denominator.real, numerator.imaginary / denominator.real)
   end
 
   def conjugate
@@ -40,5 +34,9 @@ class ComplexNumber
 
   def exp
     ComplexNumber.new(Math.exp(real) * Math.cos(imaginary), Math.exp(real) * Math.sin(imaginary))
+  end
+
+  def abs
+    Math.sqrt(real**2 + imaginary**2)
   end
 end
