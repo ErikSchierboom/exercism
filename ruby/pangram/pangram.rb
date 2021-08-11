@@ -1,6 +1,5 @@
 module Pangram
   def self.pangram?(sentence)
-    lower_sentence = sentence.downcase
-    ('a'..'z').all? { |letter| lower_sentence.include?(letter) }
+    ([*'a'..'z'] - sentence.downcase.chars).empty?
   end
 end
