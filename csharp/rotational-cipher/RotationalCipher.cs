@@ -1,21 +1,19 @@
+using System.Collections.Generic;
 using System.Linq;
 
 public static class RotationalCipher
 {
-    private const string LowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
-    private const string UpperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    private const string Letters = "abcdefghijklmnopqrstuvwxyz";
 
-    public static string Rotate(string text, int shiftKey) 
-        => new string(text.Select(letter => Rotate(letter, shiftKey)).ToArray());
-
-    private static char Rotate(char letter, int shiftKey) 
+    public static string Rotate(string plaintext, int rotation)
     {
-        if (!char.IsLetter(letter))
-            return letter;
-        
-        return Rotate(letter, shiftKey, char.IsLower(letter) ? LowerCaseLetters : UpperCaseLetters);
+        var rotatedLetters = Letters.Rotated(rotation).Concat(Letters.ToUpper().Rotated(rotation)).ToDictionary();
+        return new string(plaintext.Select(c => rotatedLetters.GetValueOrDefault(c, c)).ToArray());
     }
 
-    private static char Rotate(char letter, int shiftKey, string key)
-        => key[(key.IndexOf(letter) + shiftKey) % key.Length];
+    private static IEnumerable<(char From, char To)> Rotated(this string key, int rotation) =>
+        key.Zip(key[rotation..] + key[..rotation]);
+    
+    private static Dictionary<TKey, TValue> ToDictionary<TKey, TValue>(this IEnumerable<(TKey From, TValue To)> keyValuePairs) =>
+        keyValuePairs.ToDictionary(kv => kv.From, kv => kv.To);
 }
