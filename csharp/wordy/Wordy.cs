@@ -3,30 +3,25 @@ using System.Text.RegularExpressions;
 
 public static class Wordy
 {
-    private static readonly Regex EquationRegex = new Regex(
+    private static readonly Regex EquationRegex = new(
         @"^What is (?<left>-?\d+)(?<operations> (?<operand>plus|minus|multiplied by|divided by) (?<right>-?\d+))*\?$", RegexOptions.Compiled);
 
-    public static int Answer(string question)
-    {
-        var match = Parse(question);
-        if (match is null)
-            throw new ArgumentException();
-        
-        return Solve(match);
-    }
+    public static int Answer(string question) => Solve(Parse(question));
 
     private static Match Parse(string question) => EquationRegex.Match(question);
     
     private static int Solve(Match match)
     {
+        if (match is null) throw new ArgumentException(nameof(match));
+        
         if (!int.TryParse(match.Groups["left"].Value, out var left))
-            throw new ArgumentException();
+            throw new ArgumentException(nameof(match));
 
         for (var i = 0; i < match.Groups["operations"].Captures.Count; i++)
         {
             var operand = match.Groups["operand"].Captures[i].Value;
             if (!int.TryParse(match.Groups["right"].Captures[i].Value, out var right))
-                throw new ArgumentException();
+                throw new ArgumentException(nameof(match));
 
             left = ApplyOperand(left, operand, right);
         }
@@ -34,16 +29,13 @@ public static class Wordy
         return left;
     }
 
-    private static int ApplyOperand(int left, string operand, int right)
-    {
-        switch (operand)
+    private static int ApplyOperand(int left, string operand, int right) =>
+        operand switch
         {
-            case "plus": return left + right;
-            case "minus": return left - right;
-            case "multiplied by": return left * right;
-            case "divided by": return left / right;
-            default: throw new ArgumentException();
-
-        }
-    }
+            "plus" => left + right,
+            "minus" => left - right,
+            "multiplied by" => left * right,
+            "divided by" => left / right,
+            _ => throw new ArgumentException(nameof(operand))
+        };
 }
