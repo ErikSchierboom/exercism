@@ -3,7 +3,7 @@ using System.Linq;
 
 public static class BracketPush
 {
-    private static readonly Dictionary<char, char> ClosingToOpeningBrackets = new Dictionary<char, char>
+    private static readonly Dictionary<char, char> ClosingToOpeningBrackets = new()
     {
         [']'] = '[',
         ['}'] = '{',
@@ -32,12 +32,11 @@ public static class BracketPush
         return !unpairedBrackets.Any();
     }
 
-    private static bool IsOpeningBracket(char character)
-        => ClosingToOpeningBrackets.Values.Contains(character);
+    private static bool IsOpeningBracket(char character) => ClosingToOpeningBrackets.Values.Contains(character);
 
-    private static bool TryGetOpeningBracketForClosingBracket(char character, out char openingBracket)
-        => ClosingToOpeningBrackets.TryGetValue(character, out openingBracket);
+    private static bool TryGetOpeningBracketForClosingBracket(char character, out char openingBracket) =>
+        ClosingToOpeningBrackets.TryGetValue(character, out openingBracket);
 
-    private static bool ClosingBracketMatchesLastUnpairedBracket(Stack<char> unpairedBrackets, char openingBracket)
-        => unpairedBrackets.TryPeek(out var topUnpairedBracket) && topUnpairedBracket == openingBracket;
+    private static bool ClosingBracketMatchesLastUnpairedBracket(Stack<char> unpairedBrackets, char openingBracket) =>
+        unpairedBrackets.TryPeek(out var topUnpairedBracket) && topUnpairedBracket == openingBracket;
 }
