@@ -1,21 +1,21 @@
+using System;
+
 public struct Clock
 {
     private const int MinutesPerHour = 60;
     private const int MinutesPerDay = 1440;
 
     private readonly int _minutes;
+    private readonly int _hours;
 
-    public Clock(int hours, int minutes = 0) => _minutes = Mod(hours * MinutesPerHour + minutes, MinutesPerDay);
+    public Clock(int hours, int minutes = 0) =>
+        _hours = Math.DivRem(Mod(hours * MinutesPerHour + minutes, MinutesPerDay), MinutesPerHour, out _minutes);
 
-    public Clock Add(int minutes) => new Clock(Hours, Minutes + minutes);
+    public Clock Add(int minutes) => new(_hours, _minutes + minutes);
 
-    public Clock Subtract(int minutes) => new Clock(Hours, Minutes - minutes);
+    public Clock Subtract(int minutes) => new(_hours, _minutes - minutes);
 
-    public override string ToString() => $"{Hours:00}:{Minutes:00}";
+    public override string ToString() => $"{_hours:00}:{_minutes:00}";
 
-    public int Hours => _minutes / MinutesPerHour;
-
-    public int Minutes => _minutes % MinutesPerHour;
-
-    private static int Mod(int x, int y) => (int)((x % y + y) % y);
+    private static int Mod(int x, int y) => (x % y + y) % y;
 }
