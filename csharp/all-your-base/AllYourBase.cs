@@ -17,15 +17,13 @@ public static class AllYourBase
         return ToDigits(outputBase, FromDigits(inputBase, inputDigitsWithoutLeadingZeros));
     }
 
-    private static int FromDigits(int fromBase, int[] fromDigits)
-    {
-        return fromDigits.Aggregate(0, (acc, x) =>
+    private static int FromDigits(int fromBase, int[] fromDigits) =>
+        fromDigits.Aggregate(0, (acc, x) =>
         {
             if (x < 0 || x >= fromBase) throw new ArgumentException("Invalid input digit");
 
-            return acc*fromBase + x;
+            return acc * fromBase + x;
         });
-    }
 
     private static int[] ToDigits(int toBase, int x)
     {
