@@ -1,65 +1,22 @@
-﻿public class SpaceAge
+﻿public record SpaceAge(ulong Seconds)
 {
     private const ulong SecondsOnEarth = 31557600;
 
-    private const double MercuryPeriod = 0.2408467d;
-    private const double VenusPeriod = 0.61519726d;
-    private const double EarthPeriod = 1.0d;
-    private const double MarsPeriod = 1.8808158d;
-    private const double JupiterPeriod = 11.862615d;
-    private const double SaturnPeriod = 29.447498d;
-    private const double UranusPeriod = 84.016846d;
-    private const double NeptunePeriod = 164.79132d;
+    public double OnEarth() => FromPeriodInEarthYears(1.0d);
 
-    public SpaceAge(ulong seconds)
-    {
-        Seconds = seconds;
-    }
+    public double OnMercury() => FromPeriodInEarthYears(0.2408467d);
 
-    public ulong Seconds { get; }
+    public double OnVenus() => FromPeriodInEarthYears(0.61519726d);
 
-    public double OnEarth()
-    {
-        return SecondsWithPlanetPeriod(EarthPeriod);
-    }
+    public double OnMars() => FromPeriodInEarthYears(1.8808158d);
 
-    public double OnMercury()
-    {
-        return SecondsWithPlanetPeriod(MercuryPeriod);
-    }
+    public double OnJupiter() => FromPeriodInEarthYears(11.862615d);
 
-    public double OnVenus()
-    {
-        return SecondsWithPlanetPeriod(VenusPeriod);
-    }
+    public double OnSaturn() => FromPeriodInEarthYears(29.447498d);
 
-    public double OnMars()
-    {
-        return SecondsWithPlanetPeriod(MarsPeriod);
-    }
+    public double OnUranus() => FromPeriodInEarthYears(84.016846d);
 
-    public double OnJupiter()
-    {
-        return SecondsWithPlanetPeriod(JupiterPeriod);
-    }
+    public double OnNeptune() => FromPeriodInEarthYears(164.79132d);
 
-    public double OnSaturn()
-    {
-        return SecondsWithPlanetPeriod(SaturnPeriod);
-    }
-
-    public double OnUranus()
-    {
-        return SecondsWithPlanetPeriod(UranusPeriod);
-    }
-
-    public double OnNeptune()
-    {
-        return SecondsWithPlanetPeriod(NeptunePeriod);
-    }
-
-    private double SecondsWithPlanetPeriod(double period)
-    {
-        return (Seconds / period) / SecondsOnEarth;
-    }
+    private double FromPeriodInEarthYears(double period) => Seconds / period / SecondsOnEarth;
 }
