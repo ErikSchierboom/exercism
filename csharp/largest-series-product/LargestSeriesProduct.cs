@@ -1,34 +1,27 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 
 public static class LargestSeriesProduct
 {
-    public static long GetLargestProduct(string digits, int span) => GetSlices(ParseDigits(digits), span).Max(l => GetProduct(l));
-
-    private static IEnumerable<IEnumerable<long>> GetSlices(long[] digits, int span)
+    public static int GetLargestProduct(string input, int span)
     {
-        if (span < 0 || span > digits.Length)
-        {
-            throw new ArgumentException("Invalid span.");
-        }
+        if (span < 0 || span > input.Length) throw new ArgumentException("Invalid size");
+        if (!input.All(char.IsDigit)) throw new ArgumentException("Invalid input");
+        
+        return input.Digits().Windowed(span).Max(Product);
+    }
+    
+    private static int[] Digits(this string str) =>
+        str.Select(CharUnicodeInfo.GetDecimalDigitValue).ToArray();
 
-        return Enumerable.Range(0, GetNumberOfSlices(digits, span)).Select(i => digits.Skip(i).Take(span));
+    private static IEnumerable<IEnumerable<T>> Windowed<T>(this T[] enumerable, int size)
+    {
+        for (var i = 0; i < enumerable.Length - size + 1; i++)
+            yield return enumerable.Skip(i).Take(size);
     }
 
-    private static long[] ParseDigits(string digits) => digits.ToCharArray().Select(ParseDigit).ToArray();
-
-    private static long ParseDigit(char c)
-    {
-        if (!char.IsDigit(c))
-        {
-            throw new ArgumentException("Invalid digit.");
-        }
-
-        return long.Parse(c.ToString());
-    }
-
-    private static long GetProduct(IEnumerable<long> numbers) => numbers.Aggregate(1L, (x, product) => x * product);
-
-    private static int GetNumberOfSlices(long[] digits, int span) => digits.Length + 1 - span;
+    private static int Product(this IEnumerable<int> numbers) =>
+        numbers.Aggregate(1, (x, product) => x * product);
 }
