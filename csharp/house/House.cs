@@ -34,21 +34,13 @@ public static class House
         ""
     };
     
-    public static string Recite(int verseNumber)
-    {
-        return Recite(verseNumber, verseNumber);
-    }
-    
-    public static string Recite(int startVerse, int endVerse)
-    {
-        var numberOfVerses = endVerse - startVerse + 1;
-        return string.Join("\n", Enumerable.Range(startVerse, numberOfVerses).Select(Verse));
-    }
+    public static string Recite(int verseNumber) => Recite(verseNumber, verseNumber);
 
-    private static string Verse(int number)
-    {
-        return string.Join(" ", Enumerable.Range(1, number).Reverse().Select(index => Line(number, index)));
-    }
+    public static string Recite(int startVerse, int endVerse) =>
+        string.Join("\n", Enumerable.Range(startVerse, endVerse - startVerse + 1).Select(Verse));
+
+    private static string Verse(int number) =>
+        string.Join(" ", Enumerable.Range(1, number).Reverse().Select(index => Line(number, index)));
 
     private static string Line(int number, int index)
     {
