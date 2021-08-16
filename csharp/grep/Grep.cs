@@ -6,12 +6,7 @@ using System.Text.RegularExpressions;
 
 public static class Grep
 {
-    private class Line
-    {
-        public int Number { get; set; }
-        public string Text { get; set; }
-        public string File { get; set; }
-    }
+    private record Line(int Number, string Text, string File);
 
     [Flags]
     private enum Flags
@@ -28,28 +23,23 @@ public static class Grep
     {
         var parsedFlags = ParseFlags(flags);
 
-        if (parsedFlags.HasFlag(Flags.PrintFileNames))
-        {
-            return FormatMatchingFiles(pattern, parsedFlags, files);
-        }
-
-        return FormatMatchingLines(pattern, parsedFlags, files);
+        return parsedFlags.HasFlag(Flags.PrintFileNames)
+            ? FormatMatchingFiles(pattern, parsedFlags, files)
+            : FormatMatchingLines(pattern, parsedFlags, files);
     }
 
     private static Flags ParseFlags(string flags) => flags.Split(' ').Aggregate(Flags.None, (acc, flag) => acc | ParseFlag(flag));
 
-    private static Flags ParseFlag(string flag)
-    {
-        switch (flag)
+    private static Flags ParseFlag(string flag) =>
+        flag switch
         {
-            case "-n": return Flags.PrintLineNumbers;
-            case "-l": return Flags.PrintFileNames;
-            case "-i": return Flags.CaseInsensitive;
-            case "-v": return Flags.Invert;
-            case "-x": return Flags.MatchEntireLines;
-            default: return Flags.None;
-        }
-    }
+            "-n" => Flags.PrintLineNumbers,
+            "-l" => Flags.PrintFileNames,
+            "-i" => Flags.CaseInsensitive,
+            "-v" => Flags.Invert,
+            "-x" => Flags.MatchEntireLines,
+            _ => Flags.None
+        };
 
     private static Func<Line, bool> IsMatch(string pattern, Flags flags)
     {
@@ -65,50 +55,37 @@ public static class Grep
         var isMatch = IsMatch(pattern, flags);
 
         return File.ReadAllLines(file)
-            .Select((line, index) => CreateLine(file, index, line))
+            .Select((line, index) => new Line(index + 1, line, file))
             .Where(isMatch);
     }
 
-    private static Line CreateLine(string file, int index, string text) => new Line { File = file, Number = index + 1, Text = text };
-
     private static string FormatMatchingFile(string file) => $"{file}";
 
-    private static string FormatMatchingFiles(string pattern, Flags flags, string[] files)
-    {
-        var matchingFiles = files
+    private static string FormatMatchingFiles(string pattern, Flags flags, string[] files) =>
+        files
             .Where(file => FindMatchingLines(pattern, flags, file).Any())
-            .Select(FormatMatchingFile);
+            .Select(FormatMatchingFile)
+            .JoinToString();
 
-        return string.Join("\n", matchingFiles);
-    }
-    
     private static string FormatMatchingLine(Flags flags, string[] files, Line line)
     {
         var printLineNumbers = flags.HasFlag(Flags.PrintLineNumbers);
         var printFileName = files.Length > 1;
 
-        if (printLineNumbers && printFileName)
+        return (printLineNumbers, printFileName) switch
         {
-            return $"{line.File}:{line.Number}:{line.Text}";
-        }
-        if (printLineNumbers && !printFileName)
-        {
-            return $"{line.Number}:{line.Text}";
-        }
-        if (!printLineNumbers && printFileName)
-        {
-            return $"{line.File}:{line.Text}";
-        }
-
-        return $"{line.Text}";
+            (true, true) => $"{line.File}:{line.Number}:{line.Text}",
+            (true, false) => $"{line.Number}:{line.Text}",
+            (false, true) => $"{line.File}:{line.Text}",
+            (false, false) => $"{line.Text}"
+        };
     }
 
-    private static string FormatMatchingLines(string pattern, Flags flags, string[] files)
-    {
-        var matchingFiles = files
+    private static string FormatMatchingLines(string pattern, Flags flags, string[] files) =>
+        files
             .SelectMany(file => FindMatchingLines(pattern, flags, file))
-            .Select(line => FormatMatchingLine(flags, files, line));
+            .Select(line => FormatMatchingLine(flags, files, line))
+            .JoinToString();
 
-        return string.Join("\n", matchingFiles);
-    }
+    private static string JoinToString(this IEnumerable<string> strings) => string.Join("\n", strings);
 }
