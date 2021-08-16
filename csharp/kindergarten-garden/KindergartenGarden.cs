@@ -1,61 +1,42 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-public enum Plant
-{
-    Violets,
-    Radishes,
-    Clover,
-    Grass
-}
+public enum Plant { Violets, Radishes, Clover, Grass }
 
 public class KindergartenGarden
 {
-    private static readonly string[] DefaultChildren =
+    private static readonly string[] Students =
     {
-        "Alice", "Bob", "Charlie", "David",
-        "Eve", "Fred", "Ginny", "Harriet",
-        "Ileana", "Joseph", "Kincaid", "Larry"
+        "Alice", "Bob", "Charlie", "David", "Eve", "Fred", "Ginny", "Harriet", "Ileana", "Joseph", "Kincaid", "Larry"
     };
 
-    private readonly IReadOnlyDictionary<string, Plant[]> _plantsPerChild;
+    private readonly IDictionary<string, IEnumerable<Plant>> _studentPlants;
 
-    public KindergartenGarden(string diagram) : this(diagram, DefaultChildren)
+    public KindergartenGarden(string diagram) => _studentPlants = StudentPlants(diagram);
+
+    public IEnumerable<Plant> Plants(string student) => _studentPlants[student];
+
+    private static IDictionary<string, IEnumerable<Plant>> StudentPlants(string diagram)
     {
+        var rows = diagram.Split('\n');
+
+        return rows[0].Chunk(2)
+            .Zip(rows[1].Chunk(2), (left, right) => left.Concat(right).Select(ToPlant))
+            .Zip(Students)
+            .ToDictionary(pair => pair.Second, pair => pair.First);
     }
 
-    public KindergartenGarden(string diagram, IEnumerable<string> students)
-        => _plantsPerChild = GetPlantsPerChild(diagram, students);
+    private static Plant ToPlant(char encodedPlant) =>
+        Enum.GetValues<Plant>().First(plant => plant.ToString().StartsWith(encodedPlant));
+}
 
-    public IEnumerable<Plant> Plants(string student) => _plantsPerChild[student];
-
-    private static IReadOnlyDictionary<string, Plant[]> GetPlantsPerChild(string diagram, IEnumerable<string> students)
+public static class EnumerableExtensions
+{
+    public static IEnumerable<IEnumerable<T>> Chunk<T>(this IEnumerable<T> enumerable, int size)
     {
-        return students
-            .Select((student, index) => (student: student, plants: Plants(index)))
-            .ToDictionary(x => x.student, x => x.plants);
-
-        Plant[] Plants(int index)
-        {
-            var rows = diagram.Split('\n');
-            var plantsOnRowOne = PlantsOnRow(0);
-            var plantsOnRowTwo = PlantsOnRow(1);
-            return plantsOnRowOne.Concat(plantsOnRowTwo).ToArray();
-
-            IEnumerable<Plant> PlantsOnRow(int row) => rows[row].Skip(index * 2).Take(2).Select(ParsePlant);
-        }
-    }
-
-    private static Plant ParsePlant(char encodedPlant)
-    {
-        switch (encodedPlant)
-        {
-            case 'V': return Plant.Violets;
-            case 'R': return Plant.Radishes;
-            case 'C': return Plant.Clover;
-            case 'G': return Plant.Grass;
-            default: throw new ArgumentOutOfRangeException();
-        }
+        for (var i = 0; i < enumerable.Count(); i += size)
+            yield return enumerable.Skip(i).Take(size);
     }
 }
