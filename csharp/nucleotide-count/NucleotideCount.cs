@@ -4,19 +4,14 @@ using System.Linq;
 
 public class NucleotideCount
 {
-    private static readonly char[] Nucleotides = new[] { 'A', 'C', 'G', 'T' };
+    private const string Nucleotides = "ACGT";
 
     public NucleotideCount(string sequence)
     {
-        if (!sequence.All(IsValidNucleotide))
-        {
-            throw new InvalidNucleotideException();
-        }
+        if (!sequence.All(n => Nucleotides.Contains(n))) throw new InvalidNucleotideException();
 
-        NucleotideCounts = Nucleotides.ToDictionary(nucleotide => nucleotide, nucleotide => sequence.Count(c => c == nucleotide));
+        NucleotideCounts = Nucleotides.ToDictionary(n => n, n => sequence.Count(c => c == n));
     }
-
-    private static bool IsValidNucleotide(char nucleotide) => Nucleotides.Contains(nucleotide);
 
     public IDictionary<char, int> NucleotideCounts { get; }
 }
