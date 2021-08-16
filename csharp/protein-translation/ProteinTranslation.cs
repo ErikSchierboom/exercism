@@ -1,58 +1,38 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 public static class ProteinTranslation
 {
-    public static string[] Proteins(string strand)
-    {
-        var results = new List<string>();
+    public static string[] Proteins(string strand) =>
+        strand.Chunked(3).Select(ToProtein).TakeWhile(protein => protein != "STOP").ToArray();
 
-        for (int i = 0; i < strand.Length / 3; i++)
+    private static string ToProtein(string input) =>
+        input switch
         {
-            var protein = ConvertToProtein(strand.Substring(3 * i, 3));
+            "AUG" => "Methionine",
+            "UUU" => "Phenylalanine",
+            "UUC" => "Phenylalanine",
+            "UUA" => "Leucine",
+            "UUG" => "Leucine",
+            "UCU" => "Serine",
+            "UCC" => "Serine",
+            "UCA" => "Serine",
+            "UCG" => "Serine",
+            "UAU" => "Tyrosine",
+            "UAC" => "Tyrosine",
+            "UGU" => "Cysteine",
+            "UGC" => "Cysteine",
+            "UGG" => "Tryptophan",
+            "UAA" => "STOP",
+            "UAG" => "STOP",
+            "UGA" => "STOP",
+            _ => throw new Exception("Invalid sequence")
+        };
 
-            if (protein == "STOP")
-            {
-                break;
-            }
-
-            results.Add(protein);
-        }
-
-        return results.ToArray();
-    }
-
-    private static string ConvertToProtein(string input)
+    private static IEnumerable<string> Chunked(this string input, int size)
     {
-        switch (input)
-        {
-            case "AUG":
-                return "Methionine";
-            case "UUU":
-            case "UUC":
-                return "Phenylalanine";
-            case "UUA":
-            case "UUG":
-                return "Leucine";
-            case "UCU":
-            case "UCC":
-            case "UCA":
-            case "UCG":
-                return "Serine";
-            case "UAU":
-            case "UAC":
-                return "Tyrosine";
-            case "UGU":
-            case "UGC":
-                return "Cysteine";
-            case "UGG":
-                return "Tryptophan";
-            case "UAA":
-            case "UAG":
-            case "UGA":
-                return "STOP";
-            default:
-                throw new Exception("Invalid sequence");
-        }
+        for (var i = 0; i < input.Length; i += size)
+            yield return input[i .. (i + size)];
     }
 }
