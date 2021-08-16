@@ -1,5 +1,4 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 
 public static class Diamond
 {
@@ -7,23 +6,25 @@ public static class Diamond
     {
         var letters = GetLetters(target);
         var diamondLetters = letters.Concat(letters.Reverse().Skip(1)).ToArray();
+        var lines = diamondLetters.Select(diamondLetter => MakeLine(letters.Length, diamondLetter));
 
-        return string.Join("\n", diamondLetters.Select(diamondLetter => MakeLine(letters.Length, diamondLetter)));
+        return string.Join("\n", lines);
     }
 
-    private static Tuple<char, int>[] GetLetters(char target) =>
+    private static (char, int)[] GetLetters(char target) =>
         Enumerable
             .Range('A', target - 'A' + 1)
-            .Select((c, i) => Tuple.Create((char)c, i))
+            .Select((c, i) => ((char)c, i))
             .ToArray();
 
-    private static string MakeLine(int letterCount, Tuple<char, int> rowLetter)
+    private static string MakeLine(int letterCount, (char, int) rowLetter)
     {
-        var letter = rowLetter.Item1;
-        var row = rowLetter.Item2;
+        var (letter, row) = rowLetter;
         var outerSpaces = "".PadRight(letterCount - row - 1);
         var innerSpaces = "".PadRight(row == 0 ? 0 : row*2 - 1);
 
-        return letter == 'A' ? $"{outerSpaces}{letter}{outerSpaces}" : $"{outerSpaces}{letter}{innerSpaces}{letter}{outerSpaces}";
+        return letter == 'A' ?
+            $"{outerSpaces}{letter}{outerSpaces}" :
+            $"{outerSpaces}{letter}{innerSpaces}{letter}{outerSpaces}";
     }
 }
