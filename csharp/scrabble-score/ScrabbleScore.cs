@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
 
-public class ScrabbleScore
+public static class ScrabbleScore
 {
-    private static readonly Dictionary<char, int> LetterScores = new Dictionary<char, int>
+    private static readonly Dictionary<char, int> LetterScores = new()
     {
         { 'A', 1 }, { 'E', 1 }, { 'I', 1 }, { 'O', 1 }, { 'U', 1 }, { 'L', 1 }, { 'N', 1 }, { 'R', 1 }, { 'S', 1 }, { 'T', 1 },
         { 'D', 2 }, { 'G', 2 },
@@ -14,25 +14,6 @@ public class ScrabbleScore
         { 'Q', 10 }, { 'Z', 10 },
     };
 
-    private readonly string word;
-
-    public ScrabbleScore(string word)
-    {
-        this.word = word;
-    }
-
-    public int Score()
-    {
-        return Score(word);
-    }
-
-    private static int LetterScore(char c)
-    {
-        return LetterScores.ContainsKey(c) ? LetterScores[c] : 0;
-    }
-
-    public static int Score(string word)
-    {
-        return word == null ? 0 : word.ToUpperInvariant().Sum(c => LetterScore(c));
-    }
+    public static int Score(string word) =>
+        word.Select(char.ToUpper).Sum(LetterScores.GetValueOrDefault);
 }
