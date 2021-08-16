@@ -7,6 +7,6 @@ public static class Hamming
     {
         if (strand1.Length != strand2.Length) throw new ArgumentException("Strands have different length");
 
-        return strand1.Zip(strand2).Count(nucleotidePair => nucleotidePair.First != nucleotidePair.Second);
+        return strand1.Zip(strand2).Count(pair => pair.First != pair.Second);
     }
 }
