@@ -8,7 +8,7 @@ public class Deque<T>
         var previousLast = last;
 
         last = new Element { Value = value, Prev = previousLast };
-        first = first ?? last;
+        first ??= last;
         
         if (previousLast != null)
         {
@@ -37,7 +37,7 @@ public class Deque<T>
         var previousFirst = first;
 
         first = new Element { Value = value, Next = previousFirst };
-        last = last ?? first;
+        last ??= first;
 
         if (previousFirst != null)
         {
