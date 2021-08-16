@@ -1,43 +1,21 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 
 public class Series
 {
-    private readonly IList<int> digits;
+    private readonly int[] digits;
 
-    public Series(string input)
+    public Series(string input) => digits = Digits(input);
+
+    public IEnumerable<int[]> Slices(int length)
     {
-        if (InInvalidInput(input))
-        {
-            throw new ArgumentException("Invalid input.", "input");
-        }
+        if (length > digits.Length) throw new ArgumentException(nameof(length));
 
-        digits = input.Select(c => c - '0').ToList();
+        for (var i = 0; i < digits.Length - length + 1; i++)
+            yield return digits[i..(i + length)];
     }
 
-    public IEnumerable<IEnumerable<int>> Slices(int length)
-    {
-        if (length > digits.Count)
-        {
-            throw new ArgumentException("length must not exceed input length.", "length");
-        }
-
-        return Enumerable.Range(0, GetMaximumIndex(length)).Select(i => GetSlice(i, length));
-    }
-
-    private int GetMaximumIndex(int length)
-    {
-        return digits.Count - (length - 1);
-    }
-
-    private IEnumerable<int> GetSlice(int index, int length)
-    {
-        return digits.Skip(index).Take(length);
-    }
-
-    private static bool InInvalidInput(string input)
-    {
-        return string.IsNullOrWhiteSpace(input) || !input.All(char.IsDigit);
-    }
+    private static int[] Digits(string str) => str.Select(CharUnicodeInfo.GetDecimalDigitValue).ToArray();
 }
