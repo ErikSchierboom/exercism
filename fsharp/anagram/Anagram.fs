@@ -2,16 +2,10 @@ module Anagram
 
 open System
 
-let lower (str: string) = str.ToLower()
-
-let normalize str = 
-    str 
-    |> lower 
-    |> Seq.sort 
-    |> Seq.toList
+let private sortedLowerCase (str: string) =  str.ToLower() |> Seq.sort |> Seq.toArray |> String
     
-let isAnagram target =
-    let normalizedTarget = normalize target    
-    fun source -> lower source <> lower target && normalize source = normalizedTarget
+let isAnagram word candidate =
+    sortedLowerCase candidate = sortedLowerCase word &&
+    candidate.ToLower() <> word.ToLower()
        
-let anagrams sources target = List.filter (isAnagram target) sources
+let anagrams candidates word = List.filter (isAnagram word) candidates
