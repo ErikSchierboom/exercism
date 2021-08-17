@@ -12,11 +12,9 @@ type Allergen =
    | Pollen       = 0b01000000
    | Cats         = 0b10000000
 
-let private allergens =
-    Enum.GetValues(typeof<Allergen>) 
-    |> Seq.cast<Allergen>
-    |> Seq.toList
-
 let allergicTo codedAllergies allergen = codedAllergies &&& int allergen <> 0
 
-let list codedAllergies = List.filter (allergicTo codedAllergies) allergens
+let list codedAllergies =
+   Enum.GetValues<Allergen>()
+   |> Seq.filter (allergicTo codedAllergies)
+   |> Seq.toList
