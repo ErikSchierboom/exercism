@@ -1,8 +1,9 @@
 using System.Collections.Generic;
+using System.Text;
 
 public static class RomanNumeralExtension
 {
-    private static readonly Dictionary<int, string> RomanNumeralValues = new Dictionary<int, string>
+    private static readonly Dictionary<int, string> NumeralThresholds = new()
     {
         { 1000, "M"  },
         { 900,  "CM" },
@@ -21,14 +22,18 @@ public static class RomanNumeralExtension
     
     public static string ToRoman(this int value)
     {
-        foreach (var romanNumeral in RomanNumeralValues)
+        var remainder = value;
+        var output = new StringBuilder();
+
+        foreach (var (threshold, numeral) in NumeralThresholds)
         {
-            if (value >= romanNumeral.Key)
+            while (remainder / threshold > 0)
             {
-                return romanNumeral.Value + (value - romanNumeral.Key).ToRoman();
+                remainder -= threshold;
+                output.Append(numeral);
             }
         }
 
-        return string.Empty;
+        return output.ToString();
     }
 }
