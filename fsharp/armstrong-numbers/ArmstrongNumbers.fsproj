@@ -9,7 +9,6 @@
   <ItemGroup>
     <Compile Include="ArmstrongNumbers.fs" />
     <Compile Include="ArmstrongNumbersTest.fs" />
-    <Compile Include="Program.fs" />
   </ItemGroup>
 
   <ItemGroup>

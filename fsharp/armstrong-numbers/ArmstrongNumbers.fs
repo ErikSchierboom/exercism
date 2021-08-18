@@ -1,9 +1,10 @@
 ﻿module ArmstrongNumbers
 
-let isArmstrongNumber number = 
-    let charToDigit char = int char - int '0'
-    let digits = number |> string |> Seq.map charToDigit |> Seq.toList
-    let numberOfDigits = List.length digits
-    let digitToPower digit = pown digit numberOfDigits
+open System.Globalization
 
-    List.sumBy digitToPower digits = number
+let private armstrongSum number =
+    let digits = number.ToString() |> Seq.map CharUnicodeInfo.GetDigitValue |> Seq.toList
+    let digitToPower digit = pown digit digits.Length
+    List.sumBy digitToPower digits
+
+let isArmstrongNumber number = armstrongSum number = number
