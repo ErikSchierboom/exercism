@@ -9,7 +9,6 @@
   <ItemGroup>
     <Compile Include="Etl.fs" />
     <Compile Include="EtlTest.fs" />
-    <Compile Include="Program.fs" />
   </ItemGroup>
 
   <ItemGroup>

@@ -9,7 +9,6 @@
   <ItemGroup>
     <Compile Include="BankAccount.fs" />
     <Compile Include="BankAccountTest.fs" />
-    <Compile Include="Program.fs" />
   </ItemGroup>
 
   <ItemGroup>

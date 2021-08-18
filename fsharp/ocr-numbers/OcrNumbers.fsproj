@@ -9,7 +9,6 @@
   <ItemGroup>
     <Compile Include="OcrNumbers.fs" />
     <Compile Include="OcrNumbersTest.fs" />
-    <Compile Include="Program.fs" />
   </ItemGroup>
 
   <ItemGroup>

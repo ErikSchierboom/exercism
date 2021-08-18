@@ -6,7 +6,6 @@
   <ItemGroup>
     <Compile Include="Wordy.fs" />
     <Compile Include="WordyTest.fs" />
-    <Compile Include="Program.fs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="FParsec" Version="1.0.3" />

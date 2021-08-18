@@ -9,7 +9,6 @@
   <ItemGroup>
     <Compile Include="BracketPush.fs" />
     <Compile Include="BracketPushTest.fs" />
-    <Compile Include="Program.fs" />
   </ItemGroup>
 
   <ItemGroup>

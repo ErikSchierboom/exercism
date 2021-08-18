@@ -9,7 +9,6 @@
   <ItemGroup>
     <Compile Include="LensPerson.fs" />
     <Compile Include="LensPersonTest.fs" />
-    <Compile Include="Program.fs" />
   </ItemGroup>
 
   <ItemGroup>

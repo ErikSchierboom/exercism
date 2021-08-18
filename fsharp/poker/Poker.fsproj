@@ -9,7 +9,6 @@
   <ItemGroup>
     <Compile Include="Poker.fs" />
     <Compile Include="PokerTest.fs" />
-    <Compile Include="Program.fs" />
   </ItemGroup>
 
   <ItemGroup>

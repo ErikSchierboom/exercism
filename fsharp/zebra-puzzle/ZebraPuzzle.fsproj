@@ -9,7 +9,6 @@
   <ItemGroup>
     <Compile Include="ZebraPuzzle.fs" />
     <Compile Include="ZebraPuzzleTest.fs" />
-    <Compile Include="Program.fs" />
   </ItemGroup>
 
   <ItemGroup>

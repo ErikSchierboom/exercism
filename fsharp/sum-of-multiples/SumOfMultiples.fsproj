@@ -9,7 +9,6 @@
   <ItemGroup>
     <Compile Include="SumOfMultiples.fs" />
     <Compile Include="SumOfMultiplesTest.fs" />
-    <Compile Include="Program.fs" />
   </ItemGroup>
 
   <ItemGroup>

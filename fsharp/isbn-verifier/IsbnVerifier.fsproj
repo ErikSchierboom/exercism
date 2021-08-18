@@ -9,7 +9,6 @@
   <ItemGroup>
     <Compile Include="IsbnVerifier.fs" />
     <Compile Include="IsbnVerifierTest.fs" />
-    <Compile Include="Program.fs" />
   </ItemGroup>
 
   <ItemGroup>

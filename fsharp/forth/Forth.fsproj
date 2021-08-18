@@ -9,7 +9,6 @@
   <ItemGroup>
     <Compile Include="Forth.fs" />
     <Compile Include="ForthTest.fs" />
-    <Compile Include="Program.fs" />
   </ItemGroup>
 
   <ItemGroup>

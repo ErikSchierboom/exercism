@@ -9,7 +9,6 @@
   <ItemGroup>
     <Compile Include="Acronym.fs" />
     <Compile Include="AcronymTest.fs" />
-    <Compile Include="Program.fs" />
   </ItemGroup>
 
   <ItemGroup>

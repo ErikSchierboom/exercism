@@ -9,7 +9,6 @@
   <ItemGroup>
     <Compile Include="Raindrops.fs" />
     <Compile Include="RaindropsTest.fs" />
-    <Compile Include="Program.fs" />
   </ItemGroup>
 
   <ItemGroup>

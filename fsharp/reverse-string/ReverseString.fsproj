@@ -9,7 +9,6 @@
   <ItemGroup>
     <Compile Include="ReverseString.fs" />
     <Compile Include="ReverseStringTest.fs" />
-    <Compile Include="Program.fs" />
   </ItemGroup>
 
   <ItemGroup>

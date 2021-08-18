@@ -9,7 +9,6 @@
   <ItemGroup>
     <Compile Include="House.fs" />
     <Compile Include="HouseTest.fs" />
-    <Compile Include="Program.fs" />
   </ItemGroup>
 
   <ItemGroup>

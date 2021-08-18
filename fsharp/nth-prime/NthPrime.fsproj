@@ -9,7 +9,6 @@
   <ItemGroup>
     <Compile Include="NthPrime.fs" />
     <Compile Include="NthPrimeTest.fs" />
-    <Compile Include="Program.fs" />
   </ItemGroup>
 
   <ItemGroup>

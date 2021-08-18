@@ -9,7 +9,6 @@
   <ItemGroup>
     <Compile Include="Gigasecond.fs" />
     <Compile Include="GigasecondTest.fs" />
-    <Compile Include="Program.fs" />
   </ItemGroup>
 
   <ItemGroup>

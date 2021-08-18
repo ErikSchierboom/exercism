@@ -9,7 +9,6 @@
   <ItemGroup>
     <Compile Include="ComplexNumbers.fs" />
     <Compile Include="ComplexNumbersTest.fs" />
-    <Compile Include="Program.fs" />
   </ItemGroup>
 
   <ItemGroup>
