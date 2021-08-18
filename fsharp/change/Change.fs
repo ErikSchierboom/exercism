@@ -1,18 +1,18 @@
 ﻿module Change
 
-let minimalCoins coins map target =
+let calculateFewestCoins coins map target =
     coins
-    |> List.filter (fun x -> x <= target) 
-    |> List.choose (fun x -> map |> Map.tryFind (target - x) |> Option.map (fun y -> x :: y))
+    |> List.filter (fun coin -> coin <= target) 
+    |> List.choose (fun coin -> Map.tryFind (target - coin) map |> Option.map (fun change -> coin :: change))
     |> List.sortBy List.length
     |> List.tryHead 
 
-let updateMinimalCoinsMap coins map target = 
-    match minimalCoins coins map target with
-    | Some x -> Map.add target x map
-    | None   -> map
+let updateFewestCoinsMap coins fewestCoinsMap amount = 
+    match calculateFewestCoins coins fewestCoinsMap amount with
+    | Some fewestCoins -> Map.add amount fewestCoins fewestCoinsMap
+    | None -> fewestCoinsMap
 
-let findFewestCoins coins target = 
-    [1..target]
-    |> List.fold (updateMinimalCoinsMap coins) (Map.ofList [(0, [])])
-    |> Map.tryFind target
+let findFewestCoins coins amount = 
+    [1..amount]
+    |> List.fold (updateFewestCoinsMap coins) (Map.ofList [(0, [])])
+    |> Map.tryFind amount
