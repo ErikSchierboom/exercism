@@ -1,31 +1,21 @@
 ﻿module BracketPush
 
-open System
+let private delimiterPairs = Map.ofList [('[', ']'); ('{', '}'); ('(', ')')]
 
-let bracketPairs = [('[', ']'); ('{', '}'); ('(', ')')]
+let private isClosingDelimiter closeDelimiter =
+    Map.exists (fun _ value -> value = closeDelimiter) delimiterPairs
 
-let findBracketPair character =
-    let isMatch = fun (open', close') -> open' = character || close' = character
-    List.tryFind isMatch bracketPairs
+let private isOpenDelimiter openDelimiter =
+    Map.containsKey openDelimiter delimiterPairs
      
 let isPaired (input: string) =        
-    let rec loop stack =
-        function
-        | [] -> 
-            List.isEmpty stack
-        | x::xs ->
-            match findBracketPair x with
-            | Some (opening, _) when x = opening ->
-                loop (x::stack) xs
-            | Some (opening, closing) when x = closing ->
-                match stack with
-                | [] -> 
-                    false
-                | y::ys when y = opening ->
-                    loop ys xs
-                | _ -> 
-                    false
-            | _ -> 
-                loop stack xs
+    let rec loop unpaired unchecked =
+        match unpaired, unchecked with
+        | [], [] -> true
+        | _,  [] -> false
+        | _, y::ys when isOpenDelimiter y -> loop (y :: unpaired) ys
+        | x::xs, y::ys when isClosingDelimiter y && Map.find x delimiterPairs = y -> loop xs ys
+        | _, y::_ when isClosingDelimiter y -> false
+        | _, _::ys -> loop unpaired ys
         
     loop [] (List.ofSeq input)
