@@ -1,11 +1,9 @@
 module Dominoes
 
-let rotate xs =
-    let length = xs |> List.length
-    let perm n = xs |> List.permute (fun index -> (index + n) % length)
-    [ 0 .. length - 1 ] |> List.map perm
+let private rotations (xs: 'T list) =
+    Seq.init xs.Length (fun shift -> List.permute (fun i -> (i + shift) % xs.Length) xs)
 
-let chainPair (x, y) list =
+let private tryChain (x, y) list =
     match list with
     | (x', y') :: xs when y = x' -> (x, y') :: xs |> Some
     | (x', y') :: xs when y = y' -> (x, x') :: xs |> Some
@@ -14,8 +12,5 @@ let chainPair (x, y) list =
 let rec canChain input =
     match input with
     | [] -> true
-    | (x, y) :: [] -> x = y
-    | x :: xs ->
-        rotate xs
-        |> List.choose (chainPair x)
-        |> List.exists canChain
+    | [ (x, y) ] -> x = y
+    | x :: xs -> rotations xs |> Seq.choose (tryChain x) |> Seq.exists canChain
