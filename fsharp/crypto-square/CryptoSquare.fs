@@ -2,43 +2,22 @@ module CryptoSquare
 
 open System
 
-let charsToString chars = new String(chars |> Array.ofSeq)
+let private normalize (plaintext: string) =
+    plaintext.ToLower() |> Seq.filter Char.IsLetterOrDigit |> Seq.toArray |> String
+    
+let private size (plaintext: string) = int (Math.Ceiling(Math.Sqrt(float plaintext.Length)))
 
-let chunksOfSize n seq = 
-    seq 
-    |> Seq.mapi(fun i x -> i / n, x)
-    |> Seq.groupBy fst
-    |> Seq.map (fun (_, g) -> g |> Seq.map snd |> charsToString)
+let private rows (plaintext: string) =
+    let n = size plaintext
 
-let transpose seq = 
-    seq
-    |> Seq.collect(fun s -> s |> Seq.mapi(fun i e -> (i, e)))
-    |> Seq.groupBy(fst)
-    |> Seq.map(fun (_, s) -> s |> Seq.map snd |> charsToString)    
+    plaintext.ToCharArray()
+    |> Array.chunkBySize (max 1 n)
+    |> Array.map (fun row -> Array.append row (Array.replicate (n - row.Length) ' '))
 
-let normalizePlaintext (input: string) = seq { for c in input do if Char.IsLetterOrDigit c then yield Char.ToLowerInvariant c } |> charsToString
-
-let size (input: string) = 
-    input 
-    |> normalizePlaintext 
-    |> String.length 
-    |> float 
-    |> Math.Sqrt 
-    |> ceil 
-    |> int
-
-let plaintextSegments (input: string) = 
-    chunksOfSize (size input) (normalizePlaintext input) 
-    |> List.ofSeq
-
-let ciphertext (input: string) = 
-    input 
-    |> plaintextSegments 
-    |> transpose 
-    |> String.concat ""
-
-let normalizeCiphertext (input: string) = 
-    input 
-    |> plaintextSegments 
-    |> transpose 
+let ciphertext (plaintext: string) = 
+    plaintext
+    |> normalize
+    |> rows
+    |> Array.transpose
+    |> Array.map String 
     |> String.concat " "
