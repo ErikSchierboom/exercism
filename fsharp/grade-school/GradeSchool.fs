@@ -2,14 +2,8 @@
 
 let empty = Map.empty<int, string list>
 
-let add student grade school = 
-    match Map.tryFind grade school with
-    | Some existing -> Map.add grade (student :: existing |> List.sort) school
-    | None -> Map.add grade [student] school
+let grade number school =  Map.tryFind number school |> Option.defaultValue []
+
+let add student number school = Map.add number (List.sort (student :: grade number school)) school
 
 let roster school = Map.toList school
-
-let grade number school = 
-    match Map.tryFind number school with
-    | Some students -> students
-    | None -> []
