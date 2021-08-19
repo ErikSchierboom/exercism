@@ -2,28 +2,27 @@
 
 open System
 
-type ComplexNumber = { real: float; imaginary: float }
+type ComplexNumber = { r: float; i: float }
 
-let create real imaginary = { real = real; imaginary = imaginary }
+let real z = z.r
 
-let mul z1 z2 = create (z1.real * z2.real - z1.imaginary * z2.imaginary) (z1.imaginary * z2.real + z1.real * z2.imaginary)
+let imaginary z = z.i
 
-let add z1 z2 = create (z1.real + z2.real) (z1.imaginary + z2.imaginary)
+let create real imaginary = { r = real; i = imaginary }
 
-let sub z1 z2 = { real = z1.real - z2.real; imaginary = z1.imaginary - z2.imaginary }
+let exp z = create (Math.Exp(z.r) * Math.Cos(z.i)) (Math.Exp(z.r) * Math.Sin(z.i))
+
+let abs z = Math.Sqrt(z.r * z.r + z.i * z.i)
+
+let conjugate z = create z.r -z.i
+
+let mul z1 z2 = create (z1.r * z2.r - z1.i * z2.i) (z1.i * z2.r + z1.r * z2.i)
+
+let add z1 z2 = create (z1.r + z2.r) (z1.i + z2.i)
+
+let sub z1 z2 = create (z1.r - z2.r) (z1.i - z2.i)
 
 let div z1 z2 = 
-    let denominator = z2.real * z2.real + z2.imaginary * z2.imaginary
-    let real = (z1.real * z2.real + z1.imaginary * z2.imaginary) / denominator
-    let imaginary = (z1.imaginary * z2.real - z1.real * z2.imaginary) / denominator
-    create real imaginary
-
-let abs z = Math.Sqrt(z.real * z.real + z.imaginary * z.imaginary)
-
-let conjugate z = create z.real -z.imaginary
-
-let real z = z.real
-
-let imaginary z = z.imaginary
-
-let exp z = create (Math.Exp(z.real) * Math.Cos(z.imaginary)) (Math.Exp(z.real) * Math.Sin(z.imaginary))
+    let numerator = mul z1 (conjugate z2)
+    let denominator = mul z2 (conjugate z2)    
+    create (numerator.r / denominator.r) (numerator.i / denominator.r)

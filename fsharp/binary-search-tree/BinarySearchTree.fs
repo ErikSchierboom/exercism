@@ -9,15 +9,14 @@ let data node = node.value
 let private singleton value = { left = None; right = None; value = value }
 
 let rec private insert newValue (tree: Node) =
-    let loop newValue = 
-        function
-        | Some x -> Some <| insert newValue x
-        | None   -> Some <| singleton newValue
+    let loop newValue parentOpt =
+        match parentOpt with
+        | Some parent -> Some (insert newValue parent)
+        | None -> Some (singleton newValue)
 
-    match newValue with
-    | x when x <= tree.value -> 
-        { tree with left  = loop newValue tree.left }
-    | _ -> 
+    if newValue <= tree.value then
+        { tree with left = loop newValue tree.left }
+    else
         { tree with right = loop newValue tree.right }
 
 let sortedData tree = 
@@ -26,7 +25,7 @@ let sortedData tree =
         | Some node -> loop node.left @ [node.value] @ loop node.right
         | None -> []
 
-    loop <| Some tree
+    loop (Some tree)
 
 let create = 
     function
