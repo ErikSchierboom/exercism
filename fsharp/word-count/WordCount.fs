@@ -3,7 +3,6 @@
 open System.Text.RegularExpressions
 
 let countWords (phrase: string) = 
-    Regex.Matches(phrase.ToLowerInvariant(), @"\w+('\w+)*") 
-    |> Seq.cast<Match> 
+    Regex.Matches(phrase.ToLowerInvariant(), @"\w+('\w+)*")
     |> Seq.countBy (fun m -> m.Value)
     |> Map.ofSeq
