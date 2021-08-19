@@ -1,12 +1,9 @@
 ﻿module Triangle
 
-let private isValid triangle = 
-    let nonZero = List.sum triangle <> 0.0
-    let equality =
-        let [x; y; z] = triangle
-        x + y >= z && x + z >= y && y + z >= x
-    
-    equality && nonZero
+let private isValid triangle =
+    let [x; y; z] = triangle    
+    x > 0. && y > 0. && z > 0. &&
+    x + y >= z && x + z >= y && y + z >= x
 
 let private distinctSides triangle = triangle |> List.distinct |> List.length
 
