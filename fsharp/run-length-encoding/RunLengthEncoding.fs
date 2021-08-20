@@ -1,37 +1,16 @@
 module RunLengthEncoding
 
 open System
-
-let digitToInt c = int c - int '0'
-
-let partitionConsecutive list =
-    let folder item acc = 
-        match acc with 
-        | (x::xs)::ys when x = item -> (item::x::xs) :: ys
-        | _  -> [item] :: acc
-
-    List.foldBack folder list []
+open System.Text.RegularExpressions
 
 let encode (input: string) =
-    let encodePartition (partition: char list) = 
-        match partition with
-        | [x]   -> string x
-        | x::xs -> sprintf "%i%O" (List.length partition) x
-        | _     -> failwith "Can't encode empty partition"
+    Regex("(.)\\1*").Matches(input)
+    |> Seq.map (fun m -> m.Value.[0], m.Value.Length)
+    |> Seq.map (fun (letter, count) -> if count = 1 then $"{letter}" else $"{count}{letter}")
+    |> String.concat ""
 
-    input.ToCharArray()
-    |> List.ofArray
-    |> partitionConsecutive
-    |> List.map encodePartition
-    |> List.reduce (+)
-
-let decode (input: string) = 
-    let folder ((decoded: string), (count: int option)) item =
-        let updatedCount = Option.fold (fun acc x -> acc + x * 10) (digitToInt item) count |> Some
-        let updateDecoded = Option.fold (fun acc x -> acc + new String(item, x - 1)) (decoded + string item) count
-
-        if Char.IsDigit item then (decoded, updatedCount) else (updateDecoded, None)
-
-    input 
-    |> Seq.fold folder ("", None)
-    |> fst
+let decode (input: string) =
+    Regex("(\\d*)(.)").Matches(input)
+    |> Seq.map (fun m -> m.Groups.[2].Value.[0], if m.Groups.[1].Length = 0 then 1 else int m.Groups.[1].Value)
+    |> Seq.map String
+    |> String.concat ""
