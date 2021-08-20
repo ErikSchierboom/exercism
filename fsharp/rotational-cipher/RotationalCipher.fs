@@ -1,24 +1,10 @@
 ﻿module RotationalCipher
 
-open System
+let rotate n plaintext =
+    let rotateMap n list = List.zip list (List.skip n list @ List.take n list)
+    let letterMap = Seq.append (rotateMap n ['a'..'z']) (rotateMap n ['A'..'Z']) |> Map.ofSeq 
 
-let private lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz"
-let private upperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-
-let private keyForLetter letter = if Char.IsLower(letter) then lowerCaseLetters else upperCaseLetters
-
-let private rotateLetterUsingKey shiftKey (letter: char) (key: string) = 
-    let shiftIndex = key.IndexOf(letter) + shiftKey
-    key.[shiftIndex % key.Length]
-
-let private rotateLetter shiftKey letter =
-    if Char.IsLetter(letter) then
-        rotateLetterUsingKey shiftKey letter  (keyForLetter letter)
-    else
-        letter
-
-let rotate shiftKey text =
-    text
-    |> Seq.map (rotateLetter shiftKey)
+    plaintext
+    |> Seq.map (fun letter -> Map.tryFind letter letterMap |> Option.defaultValue letter)
     |> Seq.toArray
-    |> String
+    |> System.String
