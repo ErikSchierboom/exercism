@@ -9,7 +9,7 @@ type Token =
     | Operand of int
     | Operator of Operators
 
-let (|Int|_|) str =
+let (|Int|_|) (str: string) =
    match Int32.TryParse(str) with
    | (true, i) -> Some i
    | _ -> None
@@ -30,8 +30,8 @@ let breakBy item list =
     
 let tokenize (str: string) = 
     str.Split() 
-    |> List.ofArray
-    |> List.map token
+    |> Seq.map token
+    |> Seq.toList
     |> breakBy (Operator Eq) 
 
 let operators = 
@@ -54,7 +54,7 @@ let equationIsCorrect input =
     | None -> false
     | Some equation -> solveEquation equation
 
-let chars (str: string) = str |> Seq.filter (Char.IsLetter) |> Set.ofSeq
+let chars (str: string) = Seq.filter Char.IsLetter str |> Set.ofSeq
 
 let generateCombinations length =
     let rec helper remaining options =
