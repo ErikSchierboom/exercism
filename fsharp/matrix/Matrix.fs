@@ -1,21 +1,8 @@
 ﻿module Matrix
 
-let private parseRow (row: string) =
-    row.Split(' ')
-    |> Seq.map int
-    |> List.ofSeq
+let private rows (matrix: string) =
+    matrix.Split('\n') |> Seq.map (fun row -> row.Split() |> Seq.map int |> Seq.toList)
 
-let private parseRows (matrix: string) =
-    matrix.Split('\n') 
-    |> Seq.map parseRow
-    |> List.ofSeq
+let row index matrix = rows matrix |> Seq.item index
 
-let row index matrix = 
-    matrix
-    |> parseRows
-    |> List.item index
-
-let column index matrix =
-    matrix
-    |> parseRows
-    |> List.map (List.item index)
+let column index matrix = rows matrix |> List.transpose |> Seq.item index
