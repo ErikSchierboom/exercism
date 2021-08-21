@@ -2,20 +2,13 @@
 
 type SublistType = Equal | Sublist | Superlist | Unequal
 
-let rec isSublist xs ys lx ly = 
-    let rec helper xs' ys' =
-        match (xs', ys') with
-        | [], _ -> true
-        | x'::xs'', y'::ys'' when x' = y' -> helper xs'' ys''
-        | _ -> false
+let private isSublist (list1: List<'T>) (list2: List<'T>) =
+    list1.IsEmpty || List.windowed list1.Length list2 |> List.exists (fun window -> window = list1)
 
-    if lx > ly then false
-    elif helper xs ys then true
-    else isSublist xs (List.tail ys) lx (ly - 1)
-
-let sublist xs ys = 
-    match (List.length xs, List.length ys) with
-    | x, y when x < y && isSublist xs ys x y -> Sublist
-    | x, y when x > y && isSublist ys xs y x -> Superlist
-    | _ when xs = ys -> Equal
-    | _ -> Unequal
+let sublist (list1: List<'T>) (list2: List<'T>) =
+    if list1.Length < list2.Length then
+        if isSublist list1 list2 then Sublist else Unequal
+    elif list1.Length > list2.Length then
+        if isSublist list2 list1 then Superlist else Unequal
+    else
+        if list1 = list2 then Equal else Unequal
