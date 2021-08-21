@@ -29,17 +29,10 @@ let private scoreFourOfAKind dice =
     | [(number, 5)] | [_; (number, 4)] | [(number, 4); _] -> number * 4
     | _ -> 0
 
-let private scoreLittleStraight dice =
-    if List.sort dice = [1 .. 5] then 30 else 0
-
-let private scoreBigStraight dice =
-    if List.sort dice = [2 .. 6] then 30 else 0
-
-let private scoreChoice dice =
-    List.sum dice
-
-let private scoreYacht dice = 
-    if dice |> List.distinct |> List.length = 1 then 50 else 0
+let private scoreLittleStraight dice = if List.sort dice = [1 .. 5] then 30 else 0
+let private scoreBigStraight dice = if List.sort dice = [2 .. 6] then 30 else 0
+let private scoreChoice dice = List.sum dice
+let private scoreYacht dice = if List.distinct dice |> List.length = 1 then 50 else 0
 
 let score category dice =
     match category with
