@@ -21,14 +21,12 @@ type SimpleCipher(key: string) =
             
     let shift op (input:string) =
         let modulo x y = ((x % y) + y) % y
-        
-        input
-        |> Seq.mapi (fun i c ->
+        let shiftLetter i c =
             let alphabetIndex = Array.IndexOf(letters, c)
             let keyIndex = Array.IndexOf(letters, key.[modulo i key.Length])
             letters.[modulo (op alphabetIndex keyIndex) letters.Length])
-        |> Seq.toArray
-        |> String
+        
+        String.mapi shiftLetter input
     
     member _.Key with get() = key
 
