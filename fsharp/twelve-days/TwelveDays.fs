@@ -1,6 +1,6 @@
 ﻿module TwelveDays
 
-let numberToStr = 
+let private numberToStr = 
     function
     | 0  -> "a"
     | 1  -> "and a"
@@ -17,7 +17,7 @@ let numberToStr =
     | 12 -> "twelve"
     | _  -> failwith "Invalid day"
 
-let countToStr = 
+let private countToStr = 
     function
     | 1  -> "first"
     | 2  -> "second"
@@ -33,7 +33,7 @@ let countToStr =
     | 12 -> "twelfth"
     | _  -> failwith "Invalid count"
 
-let subject = 
+let private subject = 
     function
     | 0  -> "Partridge in a Pear Tree";
     | 1  -> "Partridge in a Pear Tree";
@@ -50,11 +50,11 @@ let subject =
     | 12 -> "Drummers Drumming"
     | _  -> failwith "Invalid subject"
 
-let subjectToStr number = sprintf "%s %s" (numberToStr number) (subject number)
+let private subjectToStr number = $"%s{numberToStr number} %s{subject number}"
 
-let verseBegin number = sprintf "On the %s day of Christmas my true love gave to me, " (countToStr number)
+let private verseBegin number = $"On the %s{countToStr number} day of Christmas my true love gave to me, "
 
-let verseEnd = 
+let private verseEnd = 
     function
     | 1 -> 
         subjectToStr 0
@@ -63,6 +63,6 @@ let verseEnd =
         |> List.map subjectToStr 
         |> List.reduce (fun x y -> x + ", " + y)
 
-let verse number = sprintf "%s%s." (verseBegin number) (verseEnd number)
+let private verse number = $"%s{verseBegin number}%s{verseEnd number}."
 
 let recite start stop = List.map verse [start..stop]
