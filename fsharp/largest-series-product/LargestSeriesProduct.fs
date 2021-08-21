@@ -1,27 +1,16 @@
-module LargestSeriesProduct
+﻿module LargestSeriesProduct
 
 open System
 
-let digits (str: string) = 
-    str
-    |> Seq.map (string >> int)
-    |> Seq.toList
-
-let slices size list = 
-    let slice i = 
-        list 
-        |> List.skip i 
-        |> List.take size
-
-    let sliceCount = List.length list + 1 - size
-
-    List.init sliceCount slice
-
-let largestProduct input seriesLength = 
-    if seriesLength > String.length input then failwith "Slice size is too big"
+let largestProduct (input: string) span = 
+    if span < 0 || span > input.Length || Seq.exists (Char.IsDigit >> not) input then
+        None
+    elif span = 0 then
+        Some 1
     else 
-        input 
-        |> digits 
-        |> slices seriesLength
-        |> List.map (List.fold (*) 1)
-        |> List.max
+        input
+        |> Seq.map System.Globalization.CharUnicodeInfo.GetDigitValue
+        |> Seq.windowed span
+        |> Seq.map (Seq.reduce (*))
+        |> Seq.max
+        |> Some
