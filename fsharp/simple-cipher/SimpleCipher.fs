@@ -24,7 +24,7 @@ type SimpleCipher(key: string) =
         let shiftLetter i c =
             let alphabetIndex = Array.IndexOf(letters, c)
             let keyIndex = Array.IndexOf(letters, key.[modulo i key.Length])
-            letters.[modulo (op alphabetIndex keyIndex) letters.Length])
+            letters.[modulo (op alphabetIndex keyIndex) letters.Length]
         
         String.mapi shiftLetter input
     
