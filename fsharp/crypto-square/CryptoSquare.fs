@@ -3,7 +3,7 @@ module CryptoSquare
 open System
 
 let private normalize (plaintext: string) =
-    plaintext.ToLower() |> Seq.filter Char.IsLetterOrDigit |> Seq.toArray |> String
+    plaintext.ToLower() |> String.filter Char.IsLetterOrDigit
     
 let private size (plaintext: string) = int (Math.Ceiling(Math.Sqrt(float plaintext.Length)))
 
