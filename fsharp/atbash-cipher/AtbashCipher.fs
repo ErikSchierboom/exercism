@@ -2,15 +2,15 @@
 
 let private letters = ['a' .. 'z']
 
-let private encodingMap = List.zip letters (List.rev letters) |> Map.ofList
+let private encodingMap = Seq.zip letters (Seq.rev letters) |> Map.ofSeq
 
-let private encodeChar (c: char) = Map.tryFind c encodingMap |> Option.defaultValue c 
+let private encodeChar c = Map.tryFind c encodingMap |> Option.defaultValue c 
 
 let encode (str:string) =
     str.ToLower()
     |> Seq.filter System.Char.IsLetterOrDigit
     |> Seq.chunkBySize 5
-    |> Seq.map (fun chunk -> Seq.map encodeChar chunk |> Seq.toArray |> System.String)
+    |> Seq.map (Array.map encodeChar >> System.String)
     |> String.concat " "
 
-let decode (str:string) = (encode str).Replace(" ", "")
+let decode (str:string) = encode str |> String.filter System.Char.IsLetterOrDigit
