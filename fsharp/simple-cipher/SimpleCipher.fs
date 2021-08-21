@@ -2,43 +2,37 @@
 
 open System
 
-let private letters = ['a'..'z']
-let private keyLength = 100
+let private letters = [| 'a'..'z' |]
 
-let private random = System.Random()
-
-let private generateKey() = 
-    let numberOfLetters = List.length letters 
-    Array.init keyLength (fun _ -> List.item (random.Next(numberOfLetters)) letters) 
-    |> String
+module Key =
+    let private random = Random()
+    let private keyLength = 100
     
-let private isInvalidKey key = Seq.length key = 0 || not (Seq.forall (fun c -> List.contains c letters) key)
-
-let private modulo x y = ((x % y) + y) % y
-
-let private charToInt (c:char) = (int c) - (int 'a')
-let private intToChar (i:int) = (char)((int 'a') + (modulo i 26))
-
-let private shiftChar operation key char = operation (charToInt char) (charToInt key) |> intToChar
-
-let shift operation (key:string) (input:string) =
-    input
-    |> Seq.mapi (fun i c -> shiftChar operation key.[i % key.Length] c) 
-    |> Seq.toArray
-    |> String
+    let isValid key = System.Text.RegularExpressions.Regex.IsMatch(key, @"^[a-z]+$")
     
-let encode key input = shift (+) key input   
-let decode key input = shift (-) key input
+    let generate() = 
+        Array.init keyLength (fun _ -> letters.[random.Next(letters.Length)]) 
+        |> String
 
 type SimpleCipher(key: string) =
     do 
-        if isInvalidKey key then 
+        if not (Key.isValid key) then 
             invalidArg "key" "Invalid key"
+            
+    let shift op (input:string) =
+        let modulo x y = ((x % y) + y) % y
+        
+        input
+        |> Seq.mapi (fun i c ->
+            let alphabetIndex = Array.IndexOf(letters, c)
+            let keyIndex = Array.IndexOf(letters, key.[modulo i key.Length])
+            letters.[modulo (op alphabetIndex keyIndex) letters.Length])
+        |> Seq.toArray
+        |> String
     
-    member __.Key with get() = key
+    member _.Key with get() = key
+
+    member _.Encode(plaintext: string) = shift (+) plaintext    
+    member _.Decode(ciphertext: string) = shift (-) ciphertext
     
-    member __.Encode(plaintext: string) = encode key plaintext
-    
-    member __.Decode(ciphertext: string) = decode key ciphertext
-    
-    new() = SimpleCipher(generateKey())
+    new() = SimpleCipher(Key.generate())
