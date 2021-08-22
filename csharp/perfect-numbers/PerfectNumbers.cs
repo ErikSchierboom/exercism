@@ -15,13 +15,13 @@ public class PerfectNumbers
         if (number < 1)
             throw new ArgumentOutOfRangeException();
         
-        var sumOfFactors = Enumerable.Range(1, number/2).Where(x => number%x == 0).Sum();
-
-        if (sumOfFactors == number)
-        { 
-            return Classification.Perfect;
-        }
-
-        return sumOfFactors < number ? Classification.Deficient : Classification.Abundant;
+        var sumOfFactors = Enumerable.Range(1, number / 2).Where(x => number%x == 0).Sum();
+        if (sumOfFactors < number)
+            return Classification.Deficient;
+        
+        if (sumOfFactors > number)
+            return Classification.Abundant;
+        
+        return Classification.Perfect;
     }
 }
