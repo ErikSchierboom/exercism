@@ -1,8 +1,5 @@
 module Pangram
 
-let alphabet = set ['a'..'z']
-
-let isPangram (input: string) =  
-    input.ToLowerInvariant()
-    |> set
-    |> Set.isSubset alphabet
+let isPangram (input: string) =
+    Set.isSubset (set ['a'..'z']) (input.ToLowerInvariant() |> set) 
+ 
