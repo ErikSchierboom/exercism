@@ -3,8 +3,8 @@ val STUDENTS = arrayOf("Alice", "Bob", "Charlie", "David", "Eve", "Fred", "Ginny
 
 class KindergartenGarden(diagram: String) {
     val plantsForStudent = diagram.lines()
-        .map { line -> line.map { code -> PLANTS.first { it[0].toUpperCase() == code } } }
-        .let { it[0].chunked(2).zip(it[1].chunked(2)) { top, bottom -> top + bottom } }
+        .map { line -> line.map { code -> PLANTS.first { it[0].uppercase() == code.toString() } } }
+        .let { it[0].chunked(2).zip(it[1].chunked(2), { top, bottom -> top + bottom }) }
         .mapIndexed { i, plants -> STUDENTS[i] to plants}
         .toMap()
 
