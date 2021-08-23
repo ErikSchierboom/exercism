@@ -9,5 +9,5 @@ object Bob {
 
     private fun String.isQuestion() = trimEnd().endsWith('?')
 
-    private fun String.isYell() = any(Char::isLetter) && toUpperCase() == this
+    private fun String.isYell() = any(Char::isLetter) && uppercase() == this
 }
