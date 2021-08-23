@@ -9,7 +9,7 @@ object ResistorColorTrio {
         val unit = Unit.values().first { exponent < 1000.pow(it.ordinal + 1) }
         val unitModifier = Math.max(1000.pow(unit.ordinal - 1), 1)
 
-        return "${ohms / unitModifier} ${unit.toString().toLowerCase()}"
+        return "${ohms / unitModifier} ${unit.toString().lowercase()}"
     }
 
     private fun Int.pow(n: Int) = this.toDouble().pow(n).toInt()
