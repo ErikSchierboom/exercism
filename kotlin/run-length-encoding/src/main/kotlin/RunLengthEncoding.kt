@@ -7,7 +7,7 @@ object RunLengthEncoding {
 
     private fun Char.encode(count: Int) = if (count == 1) "$this" else "$count$this"
 
-    private fun Char.decode(count: Int) = this.toString().repeat(count)
+    private fun Char.decode(count: Int) = toString().repeat(count)
 
     private fun String.encodeRuns() =
         Regex("(.)\\1*").findAll(this).map { it.value[0] to it.value.length }
