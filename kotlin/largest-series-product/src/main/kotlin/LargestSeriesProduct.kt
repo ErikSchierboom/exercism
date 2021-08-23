@@ -1,5 +1,4 @@
 class Series(private val series: String) {
-
     init {
         require(series.all(Char::isDigit))
     }
@@ -8,7 +7,7 @@ class Series(private val series: String) {
         require(span in 0..series.length)
 
         return series
-            .map { Character.getNumericValue(it).toLong() }
+            .map { it.digitToInt().toLong() }
             .let { if (span == 0) emptyList() else it.windowed(span) }
             .maxOfOrNull { it.reduce(Long::times) } ?: 1L
     }
