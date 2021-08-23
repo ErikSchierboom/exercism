@@ -12,15 +12,13 @@ object BeerSong {
     }
 
     private fun verseFirstLine(number: Int) =
-            "${bottlesOfBeer(number)} on the wall, ${bottlesOfBeer(number).toLowerCase()}.\n"
+        "${bottlesOfBeer(number)} on the wall, ${bottlesOfBeer(number).lowercase()}.\n"
 
     private fun verseSecondLine(number: Int) =
-            "${instruction(number)}, ${bottlesOfBeer(if (number == 0) 99 else number - 1).toLowerCase()} on the wall.\n"
+        "${instruction(number)}, ${bottlesOfBeer(if (number == 0) 99 else number - 1).lowercase()} on the wall.\n"
 
     private fun verse(number: Int) = "${verseFirstLine(number)}${verseSecondLine(number)}"
 
     fun verses(stop: Int, start: Int): String =
-        (stop downTo start)
-            .map(::verse)
-            .joinToString(separator = "\n" )
+        stop.downTo(start).joinToString(separator = "\n", transform = ::verse)
 }
