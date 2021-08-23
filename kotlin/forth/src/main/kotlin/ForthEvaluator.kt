@@ -37,10 +37,10 @@ class ForthEvaluator {
 
     private fun evaluate(operation: ForthOperation): Unit = when(operation) {
         is ForthNumber -> stack.push(operation.number)
-        is ForthUserWord -> userOperations[operation.name.toUpperCase()] = operation.operations
+        is ForthUserWord -> userOperations[operation.name.uppercase()] = operation.operations
         is ForthOperand -> when {
-            userOperations.containsKey(operation.operand.toUpperCase()) -> userOperations.getValue(operation.operand.toUpperCase()).forEach(this::evaluate)
-            builtInOperations.containsKey(operation.operand.toUpperCase()) -> builtInOperations.getValue(operation.operand.toUpperCase()).invoke(stack)
+            userOperations.containsKey(operation.operand.uppercase()) -> userOperations.getValue(operation.operand.uppercase()).forEach(this::evaluate)
+            builtInOperations.containsKey(operation.operand.uppercase()) -> builtInOperations.getValue(operation.operand.uppercase()).invoke(stack)
             else -> throw IllegalArgumentException("No operations available for operator \"${operation.operand}\"")
         }
     }
