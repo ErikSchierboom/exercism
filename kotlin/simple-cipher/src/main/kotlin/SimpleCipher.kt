@@ -1,4 +1,4 @@
-private const val ALPHABET = "abcdefghijklmnopqrstuvwxyz"
+private val ALPHABET = ('a'..'z').toList()
 
 class Cipher(val key: String = Key.generate()) {
     init {
@@ -12,11 +12,9 @@ class Cipher(val key: String = Key.generate()) {
     private fun String.shift(op: (Int, Int) -> Int) =
         mapIndexed { i, c ->
             val alphabetIndex = ALPHABET.indexOf(c)
-            val keyIndex = ALPHABET.indexOf(key[i.modulo(key.length)])
-            ALPHABET[op(alphabetIndex, keyIndex).modulo(ALPHABET.length)]
+            val keyIndex = ALPHABET.indexOf(key[i.mod(key.length)])
+            ALPHABET[op(alphabetIndex, keyIndex).mod(ALPHABET.size)]
         }.joinToString(separator = "")
-
-    private fun Int.modulo(other: Int) = ((this % other) + other) % other
 }
 
 object Key {
