@@ -3,7 +3,7 @@ object Atbash {
     private val encodingMap = letters.zip(letters.reversed()).toMap()
 
     fun encode(input: String) =
-        input.toLowerCase()
+        input.lowercase()
             .filter(Char::isLetterOrDigit)
             .chunked(5)
             .map { chunk -> chunk.map { it.encode() }.joinToString("") }
