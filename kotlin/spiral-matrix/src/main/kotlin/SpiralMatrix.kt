@@ -1,34 +1,15 @@
 object SpiralMatrix {
-    fun ofSize(size: Int): Array<IntArray> {
-        val matrix = Array(size) { IntArray(size) { 0 } }
+    fun ofSize(size: Int): Array<IntArray> =
+        0.until(size).map { row ->
+            0.until(size).map { col ->
+                spiralValue(size, 1, row, col) }.toIntArray() }.toTypedArray()
 
-        var rowOffset = 0
-        var columnOffset = 0
-
-        val totalNumbers = size * size
-        var currentNumber = 1
-
-        while (currentNumber <= totalNumbers) {
-            (columnOffset until size - columnOffset).forEach {
-                matrix.get(rowOffset).set(it, currentNumber++)
-            }
-
-            (rowOffset + 1 until size - rowOffset).forEach {
-                matrix.get(it).set(size - columnOffset - 1, currentNumber++)
-            }
-
-            (size - columnOffset - 2 downTo columnOffset).forEach {
-                matrix.get(size - rowOffset - 1).set(it, currentNumber++)
-            }
-
-            (size - rowOffset - 2 downTo rowOffset + 1).forEach {
-                matrix.get(it).set(columnOffset, currentNumber++)
-            }
-
-            rowOffset += 1
-            columnOffset += 1
+    private tailrec fun spiralValue(size: Int, startValue: Int, row: Int, col: Int): Int =
+        when {
+            row == 0 -> startValue + col
+            col == size - 1 -> startValue + size + row - 1
+            row == size - 1 -> startValue + size * 3 - 3 - col
+            col == 0 -> startValue + size * 4 - 4 - row
+            else -> spiralValue(size - 2, startValue + size * 4 - 4, row - 1, col - 1)
         }
-
-        return matrix
-    }
 }
