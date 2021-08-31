@@ -1,0 +1,23 @@
+{
+  "blurb": "Learn about booleans while helping Annalyn rescue her friend.",
+  "contributors": [
+    "yzAlvin"
+  ],
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "forked_from": [
+    "fsharp/annalyns-infiltration"
+  ],
+  "files": {
+    "solution": [
+      "AnnalynsInfiltration.cs"
+    ],
+    "test": [
+      "AnnalynsInfiltrationTests.cs"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.cs"
+    ]
+  }
+}
