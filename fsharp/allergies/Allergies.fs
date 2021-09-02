@@ -2,6 +2,7 @@
 
 open System
 
+[<Flags>]
 type Allergen =
    | Eggs         = 0b00000001
    | Peanuts      = 0b00000010
@@ -12,7 +13,7 @@ type Allergen =
    | Pollen       = 0b01000000
    | Cats         = 0b10000000
 
-let allergicTo codedAllergies allergen = codedAllergies &&& int allergen <> 0
+let allergicTo codedAllergies allergen = enum<Allergen>(codedAllergies).HasFlag(allergen)
 
 let list codedAllergies =
    Enum.GetValues<Allergen>()
