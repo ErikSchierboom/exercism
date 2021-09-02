@@ -1,8 +1,6 @@
 ﻿module ProteinTranslation
 
-open System
-
-let codonToProtein = 
+let private codonToProtein = 
     function
     | "AUG" -> "Methionine"
     | "UUC" -> "Phenylalanine"
@@ -26,6 +24,6 @@ let codonToProtein =
 let proteins (input: string) =
     input 
     |> Seq.chunkBySize 3 
-    |> Seq.map (String >> codonToProtein)
+    |> Seq.map (System.String >> codonToProtein)
     |> Seq.takeWhile (fun str -> str <> "STOP")
     |> Seq.toList
