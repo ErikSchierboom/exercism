@@ -1,6 +1,5 @@
 ﻿module React
 
-open System
 
 type Cell(ord: int, initialValue: int, changed: (Cell -> int -> unit)) = 
     let changedEvent = new Event<int>()
