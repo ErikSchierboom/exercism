@@ -7,4 +7,4 @@ let private lettersToScore =
 
 let scoreLetter letter = Map.tryFind letter lettersToScore |> Option.defaultValue 0
 
-let score (word:string) = word.ToUpperInvariant() |> Seq.sumBy scoreLetter
+let score (word:string) = Seq.sumBy scoreLetter (word.ToUpperInvariant()) 
