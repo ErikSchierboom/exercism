@@ -1,11 +1,6 @@
 ﻿module Say
 
-let quotRem (x: int64) (y: int64) =
-    let div = x / y
-    let rem = x % y
-    (div, rem)
-
-let bases n = 
+let private bases n = 
     let values = 
         [| "one"
            "two";
@@ -29,7 +24,7 @@ let bases n =
 
     Array.tryItem (n - 1) values
                         
-let tens n = 
+let private tens n = 
     if n < 20 then 
         bases n
     else 
@@ -43,7 +38,7 @@ let tens n =
                "eighty"
                "ninety" |]
         
-        let (count, remainder) = quotRem (int64 n) 10L
+        let count, remainder = System.Math.DivRem(int64 n, 10L)
         let countStr = Array.item ((int count) - 2) values
         let basesStr = Option.fold (fun acc item -> "-" + item) "" (bases (int remainder))
         Some (countStr + basesStr)
@@ -52,7 +47,7 @@ let hundreds n =
     if n < 100L then 
         tens (int n)
     else 
-        let (count, remainder) = quotRem (int64 n) 100L
+        let count, remainder = System.Math.DivRem(int64 n, 100L)
         let tensStr = Option.fold (fun acc item -> " " + item) "" (tens (int remainder))
         Option.bind (fun item -> Some (item + " hundred" + tensStr)) (bases (int count))
 
@@ -62,9 +57,9 @@ let millions = chunk "million"
 let billions = chunk "billion"
 
 let parts number = 
-    let (billionsCount,  billionsRemainder)  = quotRem number            1000000000L
-    let (millionsCount,  millionsRemainder)  = quotRem billionsRemainder 1000000L
-    let (thousandsCount, thousandsRemainder) = quotRem millionsRemainder 1000L
+    let billionsCount,  billionsRemainder  = System.Math.DivRem(number, 1000000000L)             
+    let millionsCount,  millionsRemainder  = System.Math.DivRem(billionsRemainder, 1000000L)  
+    let thousandsCount, thousandsRemainder = System.Math.DivRem(millionsRemainder, 1000L)  
     (billionsCount, millionsCount, thousandsCount, thousandsRemainder)
     
 let say number = 
@@ -74,12 +69,12 @@ let say number =
     | 0L -> 
         Some "zero"
     | _ -> 
-        let (billionsCount, millionsCount, thousandsCount, remainder) = parts number
+        let billionsCount, millionsCount, thousandsCount, remainder = parts number
 
-        [ billions billionsCount; 
-          millions millionsCount;
-          thousands thousandsCount;
+        [ billions billionsCount 
+          millions millionsCount
+          thousands thousandsCount
           hundreds remainder ]
-        |> List.choose id
-        |> List.reduce (fun x y -> x + " " + y)
+        |> Seq.choose id
+        |> String.concat " "
         |> Some
