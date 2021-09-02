@@ -10,9 +10,7 @@ module Key =
     
     let isValid key = System.Text.RegularExpressions.Regex.IsMatch(key, @"^[a-z]+$")
     
-    let generate() = 
-        Array.init keyLength (fun _ -> letters.[random.Next(letters.Length)]) 
-        |> String
+    let generate() = String.init keyLength (fun _ -> string letters.[random.Next(letters.Length)])
 
 type SimpleCipher(key: string) =
     do 
