@@ -1,6 +1,5 @@
 ﻿module Rectangles
 
-open System
 
 type Coord = int * int
 
