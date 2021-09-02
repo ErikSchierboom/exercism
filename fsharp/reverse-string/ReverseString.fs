@@ -1,5 +1,3 @@
 ﻿module ReverseString
 
-open System
-
-let reverse input = input |> Seq.rev |> Seq.toArray |> String
+let reverse input = Seq.rev input |> Seq.toArray |> System.String
