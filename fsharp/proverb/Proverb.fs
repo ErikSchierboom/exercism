@@ -1,13 +1,12 @@
 ﻿module Proverb
 
-let line (want, lost) = sprintf "For want of a %s the %s was lost." want lost
+let private line (want, lost) = $"For want of a %s{want} the %s{lost} was lost."
 
-let ending input = sprintf "And all for the want of a %s." (List.head input)
+let private ending input = $"And all for the want of a %s{List.head input}."
 
 let recite input =
-    match List.isEmpty input with
-    | true -> 
+    if List.isEmpty input then
         []
-    | false ->
-        let lines = input |> List.pairwise |> List.map line
-        List.append lines [ending input]
+    else
+        List.append (List.pairwise input |> List.map line) [ending input]
+    
