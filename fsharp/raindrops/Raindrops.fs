@@ -1,6 +1,5 @@
 module Raindrops
 
-open System
 open System.Globalization
 
 let convert (number:int) =
