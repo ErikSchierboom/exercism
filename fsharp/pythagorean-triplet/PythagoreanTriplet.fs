@@ -5,7 +5,7 @@ open System
 type Triplet = { x: int; y: int; z: int }
 
 let private square x = x * x
-let private squareRoot x = Math.Sqrt(x |> float) |> Math.Floor |> int
+let private squareRoot x = Math.Sqrt(float x) |> Math.Floor |> int
 
 let triplet x y z =     
     match [x; y; z] |> List.sort with
