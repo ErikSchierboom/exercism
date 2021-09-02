@@ -22,7 +22,7 @@ let turnRight robot =
     | West  -> { robot with direction = North }
 
 let advance robot = 
-    let (x, y) = robot.position
+    let x, y = robot.position
 
     match robot.direction with
     | North -> { robot with position = (x    , y + 1) }
