@@ -1,5 +1,10 @@
 # All Your Base
 
+Welcome to All Your Base on Exercism's Kotlin Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Convert a number, represented as a sequence of digits in one base, to any other base.
 
 Implement general base conversion. Given a number in base **a**,
@@ -31,30 +36,20 @@ I think you got the idea!
 
 *Yes. Those three numbers above are exactly the same. Congratulations!*
 
-## Setup
+## Source
 
-Go through the setup instructions for Kotlin to install the necessary
-dependencies:
+### Created by
 
-[https://exercism.io/tracks/kotlin/installation](https://exercism.io/tracks/kotlin/installation)
+- @stkent
 
-## Making the test suite pass
+### Contributed to by
 
-Execute the tests with:
-
-```bash
-$ gradlew test
-```
-
-> Use `gradlew.bat` if you're on Windows
-
-In the test suites all tests but the first have been skipped.
-
-Once you get a test passing, you can enable the next one by removing the
-`@Ignore` annotation.
-
-
-## Submitting Incomplete Solutions
-
-It's possible to submit an incomplete solution so you can see how others have
-completed the exercise.
+- @dector
+- @eparovyshnaya
+- @lihofm
+- @mdowds
+- @sdavids13
+- @sjwarner-bp
+- @SleeplessByte
+- @sophiekoonin
+- @uzilan

@@ -1,5 +1,10 @@
 # Rectangles
 
+Welcome to Rectangles on Exercism's C# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Count the rectangles in an ASCII diagram like the one below.
 
 ```text
@@ -63,6 +68,14 @@ The above diagram contains 6 rectangles:
 You may assume that the input is always a proper rectangle (i.e. the length of
 every line equals the length of the first line).
 
+## Source
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+### Created by
+
+- @ErikSchierboom
+
+### Contributed to by
+
+- @j2jensen
+- @robkeim
+- @wolf99

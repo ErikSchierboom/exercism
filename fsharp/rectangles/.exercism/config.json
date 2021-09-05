@@ -1,0 +1,25 @@
+{
+  "blurb": "Count the rectangles in an ASCII diagram.",
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "contributors": [
+    "jrr",
+    "lestephane",
+    "robkeim",
+    "roman-shuhov",
+    "valentin-p",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "Rectangles.fs"
+    ],
+    "test": [
+      "RectanglesTests.fs"
+    ],
+    "example": [
+      ".meta/Example.fs"
+    ]
+  }
+}

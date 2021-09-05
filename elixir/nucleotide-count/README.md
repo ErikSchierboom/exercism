@@ -1,55 +1,59 @@
 # Nucleotide Count
 
-Given a single stranded DNA string, compute how many times each nucleotide occurs in the string.
+Welcome to Nucleotide Count on Exercism's Elixir Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
 
-The genetic language of every living thing on the planet is DNA.
-DNA is a large molecule that is built from an extremely long sequence of individual elements called nucleotides.
-4 types exist in DNA and these differ only slightly and can be represented as the following symbols: 'A' for adenine, 'C' for cytosine, 'G' for guanine, and 'T' thymine.
+## Instructions
 
-Here is an analogy:
-- twigs are to birds nests as
-- nucleotides are to DNA as
-- legos are to lego houses as
-- words are to sentences as...
+Each of us inherits from our biological parents a set of chemical instructions known as DNA that influence how our bodies are constructed. All known life depends on DNA!
 
-## Running tests
+> Note: You do not need to understand anything about nucleotides or DNA to complete this exercise.
 
-Execute the tests with:
+DNA is a long chain of other chemicals and the most important are the four nucleotides, adenine, cytosine, guanine and thymine. A single DNA chain can contain billions of these four nucleotides and the order in which they occur is important!
+We call the order of these nucleotides in a bit of DNA a "DNA sequence".
 
-```bash
-$ elixir nucleotide_count_test.exs
-```
+We represent a DNA sequence as an ordered collection of these four nucleotides and a common way to do that is with a string of characters such as "ATTACG" for a DNA sequence of 6 nucleotides.
+'A' for adenine, 'C' for cytosine, 'G' for guanine, and 'T' for thymine.
 
-### Pending tests
-
-In the test suites, all but the first test have been skipped.
-
-Once you get a test passing, you can unskip the next one by
-commenting out the relevant `@tag :pending` with a `#` symbol.
+Given a string representing a DNA sequence, count how many of each nucleotide is present.
+If the string contains characters that aren't A, C, G, or T then it is invalid and you should signal an error.
 
 For example:
 
-```elixir
-# @tag :pending
-test "shouting" do
-  assert Bob.hey("WATCH OUT!") == "Whoa, chill out!"
-end
 ```
-
-Or, you can enable all the tests by commenting out the
-`ExUnit.configure` line in the test suite.
-
-```elixir
-# ExUnit.configure exclude: :pending, trace: true
+"GATTACA" -> 'A': 3, 'C': 1, 'G': 1, 'T': 2
+"INVALID" -> error
 ```
-
-If you're stuck on something, it may help to look at some of
-the [available resources](https://exercism.io/tracks/elixir/resources)
-out there where answers might be found.
 
 ## Source
 
-The Calculating DNA Nucleotides_problem at Rosalind [http://rosalind.info/problems/dna/](http://rosalind.info/problems/dna/)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @rubysolo
+
+### Contributed to by
+
+- @andrewsardone
+- @angelikatyborska
+- @Cohen-Carlisle
+- @dalexj
+- @dantswain
+- @devonestes
+- @henrik
+- @jinyeow
+- @kytrinyx
+- @leikind
+- @lpil
+- @MarcosX
+- @neenjaw
+- @nimser
+- @parkerl
+- @rud
+- @sotojuan
+- @Teapane
+- @toriejw
+- @waiting-for-dev
+
+### Based on
+
+The Calculating DNA Nucleotides_problem at Rosalind - http://rosalind.info/problems/dna/

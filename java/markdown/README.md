@@ -1,5 +1,10 @@
 # Markdown
 
+Welcome to Markdown on Exercism's Java Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Refactor a Markdown parser.
 
 The markdown exercise is a refactoring exercise. There is code that parses a
@@ -14,16 +19,23 @@ It would be helpful if you made notes of what you did in your refactoring in
 comments so reviewers can see that, but it isn't strictly necessary. The most
 important thing is to make the code better!
 
-# Running the tests
+## Source
 
-You can run all the tests for an exercise by entering
+### Created by
 
-```sh
-$ gradle test
-```
+- @bmkiefer
 
-in your terminal.
+### Contributed to by
 
-## Submitting Incomplete Solutions
-
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @aadityakulkarni
+- @FridaTveit
+- @jmrunkle
+- @Kyle-Pu
+- @lemoncurry
+- @LukBukkit
+- @mirkoperillo
+- @msomji
+- @muzimuzhi
+- @SleeplessByte
+- @sshine
+- @stkent

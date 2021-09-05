@@ -3,6 +3,7 @@
 import Data.Foldable     (for_)
 import Test.Hspec        (Spec, describe, it, shouldBe)
 import Test.Hspec.Runner (configFastFail, defaultConfig, hspecWith)
+import Data.String       (fromString)
 
 import RotationalCipher (rotate)
 
@@ -15,7 +16,7 @@ specs = describe "rotate" $ for_ cases test
 
     test Case{..} = it description assertion
       where
-        assertion = rotate number phrase `shouldBe` expected
+        assertion = rotate number (fromString phrase) `shouldBe` fromString expected
 
 data Case = Case { description :: String
                  , number      :: Int
@@ -75,3 +76,5 @@ cases = [ Case { description = "rotate a by 0, same output as input"
                , expected    = "Gur dhvpx oebja sbk whzcf bire gur ynml qbt."
                }
         ]
+
+-- ba8ee0c507d7af6fd21397a805e7353f6227a48e

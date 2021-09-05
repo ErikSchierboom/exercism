@@ -1,0 +1,19 @@
+{
+  "blurb": "Insert and search for numbers in a binary tree.",
+  "authors": ["rchavarria"],
+  "contributors": [
+    "ankorGH",
+    "Futuro212",
+    "matthewmorgan",
+    "ryanplusplus",
+    "SleeplessByte",
+    "tejasbubane"
+  ],
+  "files": {
+    "solution": ["binary-search-tree.js"],
+    "test": ["binary-search-tree.spec.js"],
+    "example": [".meta/proof.ci.js"]
+  },
+  "source": "Josh Cheek",
+  "source_url": "https://twitter.com/josh_cheek"
+}

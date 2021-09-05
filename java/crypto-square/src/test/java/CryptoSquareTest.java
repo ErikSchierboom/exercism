@@ -1,9 +1,6 @@
 import org.junit.Test;
 import org.junit.Ignore;
 
-import java.util.Arrays;
-import java.util.List;
-
 import static org.junit.Assert.assertEquals;
 
 public class CryptoSquareTest {
@@ -16,7 +13,6 @@ public class CryptoSquareTest {
         assertEquals(expectedOutput, cryptoSquare.getCiphertext());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void lettersAreLowerCasedDuringEncryption() {
         CryptoSquare cryptoSquare = new CryptoSquare("A");
@@ -25,7 +21,6 @@ public class CryptoSquareTest {
         assertEquals(expectedOutput, cryptoSquare.getCiphertext());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void spacesAreRemovedDuringEncryption() {
         CryptoSquare cryptoSquare = new CryptoSquare(" b ");
@@ -34,7 +29,6 @@ public class CryptoSquareTest {
         assertEquals(expectedOutput, cryptoSquare.getCiphertext());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void punctuationIsRemovedDuringEncryption() {
         CryptoSquare cryptoSquare = new CryptoSquare("@1,%!");
@@ -43,7 +37,6 @@ public class CryptoSquareTest {
         assertEquals(expectedOutput, cryptoSquare.getCiphertext());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void nineCharacterPlaintextResultsInThreeChunksOfThreeCharacters() {
         CryptoSquare cryptoSquare = new CryptoSquare("This is fun!");
@@ -52,7 +45,6 @@ public class CryptoSquareTest {
         assertEquals(expectedOutput, cryptoSquare.getCiphertext());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void eightCharacterPlaintextResultsInThreeChunksWithATrailingSpace() {
         CryptoSquare cryptoSquare = new CryptoSquare("Chill out.");
@@ -61,10 +53,10 @@ public class CryptoSquareTest {
         assertEquals(expectedOutput, cryptoSquare.getCiphertext());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void fiftyFourCharacterPlaintextResultsInSevenChunksWithTrailingSpaces() {
-        CryptoSquare cryptoSquare = new CryptoSquare("If man was meant to stay on the ground, god would have given us roots.");
+        CryptoSquare cryptoSquare = new CryptoSquare("If man was meant to stay on the ground, god would have " +
+                                                     "given us roots.");
         String expectedOutput = "imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn  sseoau ";
 
         assertEquals(expectedOutput, cryptoSquare.getCiphertext());

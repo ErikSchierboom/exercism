@@ -6,7 +6,7 @@ class Clock
 
   def initialize(hour: 0, minute: 0)
     @minutes = (hour * MINUTES_PER_HOUR + minute).modulo(MINUTES_PER_DAY)
-  end
+  end 
 
   def +(other)
     Clock.new(minute: minutes + other.minutes)

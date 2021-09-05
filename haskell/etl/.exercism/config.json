@@ -1,0 +1,32 @@
+{
+  "blurb": "We are going to do the `Transform` step of an Extract-Transform-Load.",
+  "authors": [
+    "etrepum"
+  ],
+  "contributors": [
+    "iHiD",
+    "kotp",
+    "kytrinyx",
+    "lpalma",
+    "navossoc",
+    "petertseng",
+    "ppartarr",
+    "rbasso",
+    "sshine",
+    "tejasbubane",
+    "thalesmg"
+  ],
+  "files": {
+    "solution": [
+      "src/ETL.hs"
+    ],
+    "test": [
+      "test/Tests.hs"
+    ],
+    "example": [
+      "examples/success-standard/src/ETL.hs"
+    ]
+  },
+  "source": "The Jumpstart Lab team",
+  "source_url": "http://jumpstartlab.com"
+}

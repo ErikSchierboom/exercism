@@ -1,0 +1,27 @@
+{
+  "blurb": "We are going to do the `Transform` step of an Extract-Transform-Load.",
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "contributors": [
+    "jrr",
+    "kytrinyx",
+    "lestephane",
+    "robkeim",
+    "valentin-p",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "Etl.fs"
+    ],
+    "test": [
+      "EtlTests.fs"
+    ],
+    "example": [
+      ".meta/Example.fs"
+    ]
+  },
+  "source": "The Jumpstart Lab team",
+  "source_url": "http://jumpstartlab.com"
+}

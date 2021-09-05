@@ -1,0 +1,33 @@
+{
+  "blurb": "Detect saddle points in a matrix.",
+  "authors": [
+    "etrepum"
+  ],
+  "contributors": [
+    "Alexhans",
+    "bitfield",
+    "iHiD",
+    "kytrinyx",
+    "lpalma",
+    "N-Parsons",
+    "navossoc",
+    "petertseng",
+    "ppartarr",
+    "rbasso",
+    "sshine",
+    "tejasbubane"
+  ],
+  "files": {
+    "solution": [
+      "src/Matrix.hs"
+    ],
+    "test": [
+      "test/Tests.hs"
+    ],
+    "example": [
+      "examples/success-standard/src/Matrix.hs"
+    ]
+  },
+  "source": "J Dalbey's Programming Practice problems",
+  "source_url": "http://users.csc.calpoly.edu/~jdalbey/103/Projects/ProgrammingPractice.html"
+}

@@ -1,85 +1,35 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Linq;
-
-public delegate void HangmanChangedEventHandler(object sender, HangmanState state);
+using System.Reactive;
+using System.Reactive.Subjects;
 
 public class HangmanState
 {
-    public HangmanStatus Status { get; set; }
-    public int RemainingGuesses { get; set; }
-    public string MaskedWord { get; set; }
-    public HashSet<char> Guesses { get; set; }
+    public string MaskedWord { get; }
+    public ImmutableHashSet<char> GuessedChars { get; }
+    public int RemainingGuesses { get; }
+
+    public HangmanState(string maskedWord, ImmutableHashSet<char> guessedChars, int remainingGuesses)
+    {
+        MaskedWord = maskedWord;
+        GuessedChars = guessedChars;
+        RemainingGuesses = remainingGuesses;
+    }
 }
 
-public enum HangmanStatus
+public class TooManyGuessesException : Exception
 {
-    Busy,
-    Win,
-    Lose
 }
 
-public class HangmanGame
+public class Hangman
 {
-    private const int NumberOfAllowedGuesses = 9;
-    private const char UnguessedCharacterPlaceHolder = '_';
-
-    private readonly string word;
-    private readonly HangmanState state;
-
-    public HangmanGame(string word)
+    public IObservable<HangmanState> StateObservable { get => throw new NotImplementedException("You need to implement this function."); }
+    public IObserver<char> GuessObserver { get => throw new NotImplementedException("You need to implement this function."); }
+  
+    public Hangman(string word)
     {
-        this.word = word;
-
-        state = new HangmanState
-        {
-            RemainingGuesses = NumberOfAllowedGuesses,
-            Guesses = new HashSet<char>()
-        };
-
-        UpdateMaskedWord();
-        UpdateStatus();
-    }
-
-    public event HangmanChangedEventHandler StateChanged;
-
-    public void Start()
-    {
-        StateChanged?.Invoke(this, state);
-    }
-
-    public void Guess(char c)
-    {
-        UpdateRemainingGuesses(c);
-        UpdateMaskedWord();
-        UpdateStatus();
-
-        StateChanged?.Invoke(this, state);
-    }
-
-    private void UpdateRemainingGuesses(char c)
-    {
-        if (UnknownCharacter(c) || CharacterAlreadyGuessed(c))
-            state.RemainingGuesses--;
-
-        state.Guesses.Add(c);
-    }
-
-    private bool UnknownCharacter(char c) => word.All(x => x != c);
-
-    private bool CharacterAlreadyGuessed(char c) => state.Guesses.Contains(c);    
-
-    private void UpdateMaskedWord()
-    {
-        state.MaskedWord = new string(word.Select(c => state.Guesses.Contains(c) ? c : UnguessedCharacterPlaceHolder).ToArray());
-    }
-
-    private void UpdateStatus()
-    {
-        if (state.MaskedWord == word)
-            state.Status = HangmanStatus.Win;
-        else if (state.RemainingGuesses < 0)
-            state.Status = HangmanStatus.Lose;
-        else
-            state.Status = HangmanStatus.Busy;
+        throw new NotImplementedException("You need to implement this function.");
     }
 }

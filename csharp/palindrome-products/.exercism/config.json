@@ -1,0 +1,26 @@
+{
+  "blurb": "Detect palindrome products in a given range.",
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "contributors": [
+    "bressain",
+    "j2jensen",
+    "jmbradnan",
+    "robkeim",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "PalindromeProducts.cs"
+    ],
+    "test": [
+      "PalindromeProductsTests.cs"
+    ],
+    "example": [
+      ".meta/Example.cs"
+    ]
+  },
+  "source": "Problem 4 at Project Euler",
+  "source_url": "http://projecteuler.net/problem=4"
+}

@@ -1,24 +1,18 @@
-module GradeSchool exposing (..)
+module GradeSchool exposing (addStudent, allStudents, empty, studentsInGrade)
 
-import Dict exposing (Dict, empty, get, foldr, insert, foldr)
-import Maybe exposing (withDefault)
-import List exposing (sort)
-
-
-type alias Student =
-    String
-
-
-type alias Students =
-    List Student
+import Dict exposing (Dict)
 
 
 type alias Grade =
     Int
 
 
+type alias Student =
+    String
+
+
 type alias School =
-    Dict Grade Students
+    Dict Grade (List Student)
 
 
 empty : School
@@ -27,20 +21,15 @@ empty =
 
 
 addStudent : Grade -> Student -> School -> School
-addStudent grade name school =
-    case (get grade school) of
-        Just names ->
-            insert grade (name :: names |> sort) school
-
-        Nothing ->
-            insert grade [ name ] school
+addStudent grade student school =
+    Debug.todo "Please implement this function"
 
 
-studentsInGrade : Grade -> School -> Students
+studentsInGrade : Grade -> School -> List Student
 studentsInGrade grade school =
-    get grade school |> withDefault []
+    Debug.todo "Please implement this function"
 
 
-allStudents : School -> List ( Grade, Students )
+allStudents : School -> List ( Grade, List Student )
 allStudents school =
-    foldr (\grade students acc -> ( grade, students ) :: acc) [] school
+    Debug.todo "Please implement this function"

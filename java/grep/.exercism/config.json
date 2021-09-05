@@ -1,0 +1,29 @@
+{
+  "blurb": "Search a file for lines matching a regular expression pattern. Return the line number and contents of each matching line.",
+  "authors": [
+    "FridaTveit"
+  ],
+  "contributors": [
+    "aadityakulkarni",
+    "ericbalawejder",
+    "jmrunkle",
+    "lemoncurry",
+    "msomji",
+    "muzimuzhi",
+    "SleeplessByte",
+    "sshine"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/GrepTool.java"
+    ],
+    "test": [
+      "src/test/java/GrepToolTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/GrepTool.java"
+    ]
+  },
+  "source": "Conversation with Nate Foster.",
+  "source_url": "http://www.cs.cornell.edu/Courses/cs3110/2014sp/hw/0/ps0.pdf"
+}

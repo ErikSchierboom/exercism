@@ -1,0 +1,24 @@
+{
+  "blurb": "Determine if a number is an Armstrong number",
+  "authors": [
+    "robkeim"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "j2jensen",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "ArmstrongNumbers.cs"
+    ],
+    "test": [
+      "ArmstrongNumbersTests.cs"
+    ],
+    "example": [
+      ".meta/Example.cs"
+    ]
+  },
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Narcissistic_number"
+}

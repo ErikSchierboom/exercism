@@ -1,5 +1,10 @@
 # Crypto Square
 
+Welcome to Crypto Square on Exercism's Java Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Implement the classic method for composing secret messages called a square code.
 
 Given an English text, output the encoded version of that text.
@@ -59,7 +64,7 @@ chunks with a single trailing space.
 ```
 
 Notice that were we to stack these, we could visually decode the
-cyphertext back in to the original message:
+ciphertext back in to the original message:
 
 ```text
 "imtgdvs"
@@ -72,20 +77,32 @@ cyphertext back in to the original message:
 "sseoau "
 ```
 
-# Running the tests
-
-You can run all the tests for an exercise by entering
-
-```sh
-$ gradle test
-```
-
-in your terminal.
-
 ## Source
 
-J Dalbey's Programming Practice problems [http://users.csc.calpoly.edu/~jdalbey/103/Projects/ProgrammingPractice.html](http://users.csc.calpoly.edu/~jdalbey/103/Projects/ProgrammingPractice.html)
+### Contributed to by
 
-## Submitting Incomplete Solutions
+- @aadityakulkarni
+- @bmkiefer
+- @FridaTveit
+- @jmluy
+- @jmrunkle
+- @jtigger
+- @Kyle-Pu
+- @kytrinyx
+- @lemoncurry
+- @matthewmorgan
+- @mirkoperillo
+- @msomji
+- @muzimuzhi
+- @PaulNoth
+- @sjwarner-bp
+- @SleeplessByte
+- @Smarticles101
+- @sshine
+- @stkent
+- @vdemeester
+- @Zaldrick
 
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+### Based on
+
+J Dalbey's Programming Practice problems - http://users.csc.calpoly.edu/~jdalbey/103/Projects/ProgrammingPractice.html

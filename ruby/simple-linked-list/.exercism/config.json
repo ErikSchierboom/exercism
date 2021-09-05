@@ -1,0 +1,35 @@
+{
+  "blurb": "Write a simple linked list implementation that uses Elements and a List",
+  "authors": [
+    "vosechu"
+  ],
+  "contributors": [
+    "alxndr",
+    "budmc29",
+    "cadwallion",
+    "copiousfreetime",
+    "dkinzer",
+    "etrepum",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "jpotts244",
+    "kotp",
+    "kytrinyx",
+    "tryantwit",
+    "zvkemp"
+  ],
+  "files": {
+    "solution": [
+      "simple_linked_list.rb"
+    ],
+    "test": [
+      "simple_linked_list_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/simple_linked_list.rb"
+    ]
+  },
+  "source": "Inspired by 'Data Structures and Algorithms with Object-Oriented Design Patterns in Ruby', singly linked-lists.",
+  "source_url": "https://web.archive.org/web/20160731005714/http://brpreiss.com/books/opus8/html/page96.html"
+}

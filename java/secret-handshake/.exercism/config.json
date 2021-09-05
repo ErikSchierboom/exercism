@@ -1,0 +1,36 @@
+{
+  "blurb": "Given a decimal number, convert it to the appropriate sequence of events for a secret handshake.",
+  "authors": [
+    "stkent"
+  ],
+  "contributors": [
+    "c-thornton",
+    "FridaTveit",
+    "jmrunkle",
+    "kytrinyx",
+    "lemoncurry",
+    "morrme",
+    "msomji",
+    "muzimuzhi",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine",
+    "vasouv",
+    "vivshaw",
+    "Zaldrick"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/HandshakeCalculator.java"
+    ],
+    "test": [
+      "src/test/java/HandshakeCalculatorTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/HandshakeCalculator.java"
+    ]
+  },
+  "source": "Bert, in Mary Poppins",
+  "source_url": "http://www.imdb.com/title/tt0058331/quotes/qt0437047"
+}

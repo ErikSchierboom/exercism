@@ -1,4 +1,9 @@
-# Dnd Character
+# D&D Character
+
+Welcome to D&D Character on Exercism's C# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
 
 For a game of [Dungeons & Dragons][DND], each player starts by generating a
 character they can play with. This character has, among other things, six
@@ -32,23 +37,18 @@ programming languages are designed to roll dice. One such language is [Troll].
 [DND]: https://en.wikipedia.org/wiki/Dungeons_%26_Dragons
 [Troll]: http://hjemmesider.diku.dk/~torbenm/Troll/
 
-## Running the tests
-
-To run the tests, run the command `dotnet test` from within the exercise directory.
-
-Initially, only the first test will be enabled. This is to encourage you to solve the exercise one step at a time.
-Once you get the first test passing, remove the `Skip` property from the next test and work on getting that test passing.
-Once none of the tests are skipped and they are all passing, you can submit your solution 
-using `exercism submit DndCharacter.cs`
-
-## Further information
-
-For more detailed information about the C# track, including how to get help if
-you're having trouble, please visit the exercism.io [C# language page](http://exercism.io/languages/csharp/resources).
-
 ## Source
 
-Simon Shine, Erik Schierboom [https://github.com/exercism/problem-specifications/issues/616#issuecomment-437358945](https://github.com/exercism/problem-specifications/issues/616#issuecomment-437358945)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @ErikSchierboom
+
+### Contributed to by
+
+- @jdehaan
+- @robkeim
+- @wolf99
+
+### Based on
+
+Simon Shine, Erik Schierboom - https://github.com/exercism/problem-specifications/issues/616#issuecomment-437358945

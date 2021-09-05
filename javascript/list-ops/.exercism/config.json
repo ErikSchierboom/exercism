@@ -1,0 +1,19 @@
+{
+  "blurb": "Implement basic list operations",
+  "authors": ["matthewmorgan"],
+  "contributors": [
+    "ankorGH",
+    "archanid",
+    "hayashi-ay",
+    "paparomeo",
+    "rchavarria",
+    "SleeplessByte",
+    "tejasbubane",
+    "xarxziux"
+  ],
+  "files": {
+    "solution": ["list-ops.js"],
+    "test": ["list-ops.spec.js"],
+    "example": [".meta/proof.ci.js"]
+  }
+}

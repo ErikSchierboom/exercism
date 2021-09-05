@@ -1,11 +1,16 @@
 # Word Search
 
+Welcome to Word Search on Exercism's F# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 In word search puzzles you get a square of letters and have to find specific
 words in them.
 
 For example:
 
-```
+```text
 jefblpepre
 camdcimgtc
 oivokprjsm
@@ -26,5 +31,16 @@ vertical and diagonal.
 Given a puzzle and a list of words return the location of the first and last
 letter of each word.
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+## Source
+
+### Created by
+
+- @ErikSchierboom
+
+### Contributed to by
+
+- @jrr
+- @lestephane
+- @robkeim
+- @valentin-p
+- @wolf99

@@ -1,0 +1,37 @@
+{
+  "blurb": "Output the lyrics to 'The Twelve Days of Christmas'",
+  "authors": [
+    "FridaTveit"
+  ],
+  "contributors": [
+    "c-thornton",
+    "jmrunkle",
+    "Kyle-Pu",
+    "kytrinyx",
+    "lemoncurry",
+    "mirkoperillo",
+    "morrme",
+    "msomji",
+    "muzimuzhi",
+    "PatrickMcSweeny",
+    "rootulp",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine",
+    "stkent",
+    "Zaldrick"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/TwelveDays.java"
+    ],
+    "test": [
+      "src/test/java/TwelveDaysTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/TwelveDays.java"
+    ]
+  },
+  "source": "Wikipedia",
+  "source_url": "http://en.wikipedia.org/wiki/The_Twelve_Days_of_Christmas_(song)"
+}

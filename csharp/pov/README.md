@@ -1,4 +1,9 @@
-# POV
+# Pov
+
+Welcome to Pov on Exercism's C# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
 
 Reparent a graph on a selected node.
 
@@ -37,10 +42,18 @@ a different leaf node) can be seen to follow the path 6-2-0-3-9
 This exercise involves taking an input graph and re-orientating it from the point
 of view of one of the nodes.
 
-
 ## Source
 
-Adaptation of exercise from 4clojure [https://www.4clojure.com/](https://www.4clojure.com/)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @ErikSchierboom
+
+### Contributed to by
+
+- @j2jensen
+- @robkeim
+- @wolf99
+
+### Based on
+
+Adaptation of exercise from 4clojure - https://www.4clojure.com/

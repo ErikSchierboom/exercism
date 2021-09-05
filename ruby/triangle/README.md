@@ -1,5 +1,10 @@
 # Triangle
 
+Welcome to Triangle on Exercism's Ruby Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Determine if a triangle is equilateral, isosceles, or scalene.
 
 An _equilateral_ triangle has all three sides the same length.
@@ -22,32 +27,27 @@ The case where the sum of the lengths of two sides _equals_ that of the
 third is known as a _degenerate_ triangle - it has zero area and looks like
 a single line. Feel free to add your own code/tests to check for degenerate triangles.
 
-* * * *
-
-For installation and learning resources, refer to the
-[Ruby resources page](http://exercism.io/languages/ruby/resources).
-
-For running the tests provided, you will need the Minitest gem. Open a
-terminal window and run the following command to install minitest:
-
-    gem install minitest
-
-If you would like color output, you can `require 'minitest/pride'` in
-the test file, or note the alternative instruction, below, for running
-the test file.
-
-Run the tests from the exercise directory using the following command:
-
-    ruby triangle_test.rb
-
-To include color from the command line:
-
-    ruby -r minitest/pride triangle_test.rb
-
-
 ## Source
 
-The Ruby Koans triangle project, parts 1 & 2 [http://rubykoans.com](http://rubykoans.com)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @kytrinyx
+
+### Contributed to by
+
+- @budmc29
+- @cadwallion
+- @durrellchamorro
+- @favrik
+- @hilary
+- @iHiD
+- @Insti
+- @jpotts244
+- @kotp
+- @Pavling
+- @securitylater
+- @tryantwit
+
+### Based on
+
+The Ruby Koans triangle project, parts 1 & 2 - http://rubykoans.com

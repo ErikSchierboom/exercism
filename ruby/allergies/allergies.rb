@@ -1,9 +1,9 @@
 class Allergies
   attr_reader :list
 
-  def initialize(code)
+  def initialize(coded_allergens)
     @list = ALLERGENS.select.with_index do |_, left_shift|
-      code.anybits?(1 << left_shift)
+      coded_allergens.anybits?(1 << left_shift)
     end
   end
 

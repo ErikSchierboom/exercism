@@ -9,6 +9,7 @@ class SpaceAgeTest < Minitest::Test
   DELTA = 0.01
 
   def test_age_on_earth
+    # skip
     age = SpaceAge.new(1_000_000_000)
     assert_in_delta 31.69, age.on_earth, DELTA
   end

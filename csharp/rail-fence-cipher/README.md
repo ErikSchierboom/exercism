@@ -1,5 +1,10 @@
 # Rail Fence Cipher
 
+Welcome to Rail Fence Cipher on Exercism's C# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Implement encoding and decoding for the rail fence cipher.
 
 The Rail Fence cipher is a form of transposition cipher that gets its name from
@@ -58,10 +63,18 @@ W . . . E . . . C . . . R . . . L . . . T . . . E
 
 If you now read along the zig-zag shape you can read the original message.
 
-
 ## Source
 
-Wikipedia [https://en.wikipedia.org/wiki/Transposition_cipher#Rail_Fence_cipher](https://en.wikipedia.org/wiki/Transposition_cipher#Rail_Fence_cipher)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @ErikSchierboom
+
+### Contributed to by
+
+- @j2jensen
+- @robkeim
+- @wolf99
+
+### Based on
+
+Wikipedia - https://en.wikipedia.org/wiki/Transposition_cipher#Rail_Fence_cipher

@@ -1,0 +1,25 @@
+{
+  "blurb": "Given a phrase, count the occurrences of each word in that phrase.",
+  "authors": [
+    "sgrif"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "kytrinyx",
+    "ppartarr",
+    "rajeshpg",
+    "ricemery"
+  ],
+  "files": {
+    "solution": [
+      "src/main/scala/WordCount.scala"
+    ],
+    "test": [
+      "src/test/scala/WordCountTest.scala"
+    ],
+    "example": [
+      ".meta/Example.scala"
+    ]
+  },
+  "source": "This is a classic toy problem, but we were reminded of it by seeing it in the Go Tour."
+}

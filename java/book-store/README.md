@@ -1,5 +1,10 @@
 # Book Store
 
+Welcome to Book Store on Exercism's Java Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 To try and encourage more sales of different books from a popular 5 book
 series, a bookshop has decided to offer discounts on multiple book purchases.
 
@@ -67,20 +72,32 @@ For a total of $51.20
 
 And $51.20 is the price with the biggest discount.
 
-# Running the tests
-
-You can run all the tests for an exercise by entering
-
-```sh
-$ gradle test
-```
-
-in your terminal.
-
 ## Source
 
-Inspired by the harry potter kata from Cyber-Dojo. [http://cyber-dojo.org](http://cyber-dojo.org)
+### Created by
 
-## Submitting Incomplete Solutions
+- @Twisti
 
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+### Contributed to by
+
+- @aadityakulkarni
+- @FridaTveit
+- @hgvanpariya
+- @jmrunkle
+- @kytrinyx
+- @lemoncurry
+- @LukBukkit
+- @mirkoperillo
+- @msomji
+- @muzimuzhi
+- @sjwarner-bp
+- @SleeplessByte
+- @Smarticles101
+- @sshine
+- @stkent
+- @vasouv
+- @Zaldrick
+
+### Based on
+
+Inspired by the harry potter kata from Cyber-Dojo. - http://cyber-dojo.org

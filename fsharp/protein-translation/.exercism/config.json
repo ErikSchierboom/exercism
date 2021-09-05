@@ -1,0 +1,25 @@
+{
+  "blurb": "Translate RNA sequences into proteins.",
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "contributors": [
+    "jrr",
+    "lestephane",
+    "robkeim",
+    "valentin-p",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "ProteinTranslation.fs"
+    ],
+    "test": [
+      "ProteinTranslationTests.fs"
+    ],
+    "example": [
+      ".meta/Example.fs"
+    ]
+  },
+  "source": "Tyler Long"
+}

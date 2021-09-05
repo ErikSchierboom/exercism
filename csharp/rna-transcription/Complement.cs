@@ -1,36 +1,39 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-
-public static class Complement
+﻿namespace rna_transcription
 {
-    private static readonly IDictionary<char, char> RnaComplements = new Dictionary<char, char>
-                                                                            {
-                                                                                { 'G', 'C' },
-                                                                                { 'C', 'G' },
-                                                                                { 'U', 'A' },
-                                                                                { 'A', 'T' }
-                                                                            };
+    using System.Collections.Generic;
+    using System.Linq;
 
-    private static readonly IDictionary<char, char> DnaComplements = new Dictionary<char, char>
-                                                                            {
-                                                                                { 'G', 'C' },
-                                                                                { 'C', 'G' },
-                                                                                { 'T', 'A' },
-                                                                                { 'A', 'U' }
-                                                                            };
-
-    public static string OfRna(string rna)
+    public static class Complement
     {
-        return Transcribe(rna, RnaComplements);
-    }
+        private static readonly IDictionary<char, char> RnaComplements = new Dictionary<char, char>
+                                                                                {
+                                                                                    { 'G', 'C' },
+                                                                                    { 'C', 'G' },
+                                                                                    { 'U', 'A' },
+                                                                                    { 'A', 'T' }
+                                                                                };
 
-    public static string OfDna(string dna)
-    {
-        return Transcribe(dna, DnaComplements);
-    }
+        private static readonly IDictionary<char, char> DnaComplements = new Dictionary<char, char>
+                                                                                {
+                                                                                    { 'G', 'C' },
+                                                                                    { 'C', 'G' },
+                                                                                    { 'T', 'A' },
+                                                                                    { 'A', 'U' }
+                                                                                };
 
-    private static string Transcribe(string strand, IDictionary<char, char> complements)
-    {
-        return new string(strand.Select(n => complements[n]).ToArray());
+        public static string OfRna(string rna)
+        {
+            return Transcribe(rna, RnaComplements);
+        }
+
+        public static string OfDna(string dna)
+        {
+            return Transcribe(dna, DnaComplements);
+        }
+
+        private static string Transcribe(string strand, IDictionary<char, char> complements)
+        {
+            return new string(strand.Select(n => complements[n]).ToArray());
+        }
     }
 }

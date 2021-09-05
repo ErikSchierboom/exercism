@@ -1,0 +1,24 @@
+{
+  "blurb": "Given a string of digits, output all the contiguous substrings of length `n` in that string.",
+  "authors": ["sdavids13"],
+  "contributors": [
+    "dector",
+    "eparovyshnaya",
+    "jtigger",
+    "lihofm",
+    "mdowds",
+    "mikegehard",
+    "nithia",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "stkent",
+    "uzilan"
+  ],
+  "files": {
+    "solution": ["src/main/kotlin/Series.kt"],
+    "test": ["src/test/kotlin/SeriesTest.kt"],
+    "example": [".meta/src/reference/kotlin/Series.kt"]
+  },
+  "source": "A subset of the Problem 8 at Project Euler",
+  "source_url": "http://projecteuler.net/problem=8"
+}

@@ -1,0 +1,30 @@
+{
+  "blurb": "Given a person's allergy score, determine whether or not they're allergic to a given item, and their full list of allergies.",
+  "authors": [
+    "etrepum"
+  ],
+  "contributors": [
+    "iHiD",
+    "kytrinyx",
+    "lpalma",
+    "navossoc",
+    "petertseng",
+    "ppartarr",
+    "rbasso",
+    "sshine",
+    "tejasbubane"
+  ],
+  "files": {
+    "solution": [
+      "src/Allergies.hs"
+    ],
+    "test": [
+      "test/Tests.hs"
+    ],
+    "example": [
+      "examples/success-standard/src/Allergies.hs"
+    ]
+  },
+  "source": "Jumpstart Lab Warm-up",
+  "source_url": "http://jumpstartlab.com"
+}

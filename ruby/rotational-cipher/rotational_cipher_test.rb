@@ -8,7 +8,7 @@ class RotationalCipherTest < Minitest::Test
     assert_equal "a", RotationalCipher.rotate("a", 0)
   end
 
-  def test_rotate_a_by_1
+  def test_rotate_a_by_1 # rubocop:disable Naming/VariableNumber
     assert_equal "b", RotationalCipher.rotate("a", 1)
   end
 
@@ -16,7 +16,7 @@ class RotationalCipherTest < Minitest::Test
     assert_equal "a", RotationalCipher.rotate("a", 26)
   end
 
-  def test_rotate_m_by_13
+  def test_rotate_m_by_13 # rubocop:disable Naming/VariableNumber
     assert_equal "z", RotationalCipher.rotate("m", 13)
   end
 
@@ -41,6 +41,7 @@ class RotationalCipherTest < Minitest::Test
   end
 
   def test_rotate_all_letters
-    assert_equal "Gur dhvpx oebja sbk whzcf bire gur ynml qbt.", RotationalCipher.rotate("The quick brown fox jumps over the lazy dog.", 13)
+    assert_equal "Gur dhvpx oebja sbk whzcf bire gur ynml qbt.",
+      RotationalCipher.rotate("The quick brown fox jumps over the lazy dog.", 13)
   end
 end

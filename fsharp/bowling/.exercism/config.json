@@ -1,0 +1,26 @@
+{
+  "blurb": "Score a bowling game",
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "contributors": [
+    "jrr",
+    "lestephane",
+    "robkeim",
+    "valentin-p",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "Bowling.fs"
+    ],
+    "test": [
+      "BowlingTests.fs"
+    ],
+    "example": [
+      ".meta/Example.fs"
+    ]
+  },
+  "source": "The Bowling Game Kata at but UncleBob",
+  "source_url": "http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata"
+}

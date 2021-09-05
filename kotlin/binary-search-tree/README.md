@@ -1,5 +1,10 @@
 # Binary Search Tree
 
+Welcome to Binary Search Tree on Exercism's Kotlin Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Insert and search for numbers in a binary tree.
 
 When we need to represent sorted data, an array does not make a good
@@ -53,33 +58,18 @@ And if we then added 1, 5, and 7, it would look like this
      / \     / \
     1   3   5   7
 
-## Setup
-
-Go through the setup instructions for Kotlin to install the necessary
-dependencies:
-
-[https://exercism.io/tracks/kotlin/installation](https://exercism.io/tracks/kotlin/installation)
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ ./gradlew test
-```
-
-> Use `gradlew.bat` if you're on Windows
-
-In the test suites all tests but the first have been skipped.
-
-Once you get a test passing, you can enable the next one by removing the
-`@Ignore` annotation.
-
 ## Source
 
-Josh Cheek [https://twitter.com/josh\_cheek](https://twitter.com/josh_cheek)
+### Created by
 
-## Submitting Incomplete Solutions
+- @lathspell
 
-It's possible to submit an incomplete solution so you can see how others have
-completed the exercise.
+### Contributed to by
+
+- @eparovyshnaya
+- @glennj
+- @uzilan
+
+### Based on
+
+Josh Cheek - https://twitter.com/josh_cheek

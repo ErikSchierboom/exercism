@@ -1,5 +1,10 @@
 # Resistor Color Trio
 
+Welcome to Resistor Color Trio on Exercism's Kotlin Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 If you want to build something using a Raspberry Pi, you'll probably use _resistors_. For this exercise, you need to know only three things about them:
 
 - Each resistor has a resistance value.
@@ -44,33 +49,17 @@ So an input of `"orange", "orange", "orange"` should return:
 
 > "33 kiloohms"
 
-## Setup
-
-Go through the setup instructions for Kotlin to install the necessary
-dependencies:
-
-[https://exercism.io/tracks/kotlin/installation](https://exercism.io/tracks/kotlin/installation)
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ ./gradlew test
-```
-
-> Use `gradlew.bat` if you're on Windows
-
-In the test suites all tests but the first have been skipped.
-
-Once you get a test passing, you can enable the next one by removing the
-`@Ignore` annotation.
-
 ## Source
 
-Maud de Vries, Erik Schierboom [https://github.com/exercism/problem-specifications/issues/1549](https://github.com/exercism/problem-specifications/issues/1549)
+### Created by
 
-## Submitting Incomplete Solutions
+- @lathspell
 
-It's possible to submit an incomplete solution so you can see how others have
-completed the exercise.
+### Contributed to by
+
+- @eparovyshnaya
+- @uzilan
+
+### Based on
+
+Maud de Vries, Erik Schierboom - https://github.com/exercism/problem-specifications/issues/1549

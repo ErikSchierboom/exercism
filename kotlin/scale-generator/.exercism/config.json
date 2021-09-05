@@ -1,0 +1,10 @@
+{
+  "blurb": "Generate musical scales, given a starting note and a set of intervals. ",
+  "authors": ["lathspell"],
+  "contributors": ["jmrunkle"],
+  "files": {
+    "solution": ["src/main/kotlin/Scale.kt"],
+    "test": ["src/test/kotlin/ScaleTest.kt"],
+    "example": [".meta/src/reference/kotlin/Scale.kt"]
+  }
+}

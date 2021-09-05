@@ -1,5 +1,10 @@
 # Book Store
 
+Welcome to Book Store on Exercism's Scala Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 To try and encourage more sales of different books from a popular 5 book
 series, a bookshop has decided to offer discounts on multiple book purchases.
 
@@ -67,19 +72,18 @@ For a total of $51.20
 
 And $51.20 is the price with the biggest discount.
 
-The Scala exercises assume an SBT project scheme. The exercise solution source
-should be placed within the exercise directory/src/main/scala. The exercise
-unit tests can be found within the exercise directory/src/test/scala.
-
-To run the tests simply run the command `sbt test` in the exercise directory.
-
-For more detailed info about the Scala track see the [help
-page](http://exercism.io/languages/scala).
-
-
 ## Source
 
-Inspired by the harry potter kata from Cyber-Dojo. [http://cyber-dojo.org](http://cyber-dojo.org)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @ricemery
+
+### Contributed to by
+
+- @ErikSchierboom
+- @ppartarr
+- @rajeshpg
+
+### Based on
+
+Inspired by the harry potter kata from Cyber-Dojo. - http://cyber-dojo.org

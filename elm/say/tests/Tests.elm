@@ -1,13 +1,13 @@
-module Tests exposing (..)
+module Tests exposing (tests)
 
 import Expect
-import Say exposing (SayError(Negative, TooLarge), say)
+import Say exposing (SayError(..), say)
 import Test exposing (..)
 
 
 tests : Test
 tests =
-    describe "Series"
+    describe "Say"
         [ test "one" <|
             \() ->
                 Expect.equal (Ok "one")

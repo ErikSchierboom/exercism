@@ -1,5 +1,10 @@
 # Atbash Cipher
 
+Welcome to Atbash Cipher on Exercism's Clojure Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Create an implementation of the atbash cipher, an ancient encryption system created in the Middle East.
 
 The Atbash cipher is a simple substitution cipher that relies on
@@ -27,9 +32,24 @@ things based on word boundaries.
 - Encoding `test` gives `gvhg`
 - Decoding `gvhg` gives `test`
 - Decoding `gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt` gives `thequickbrownfoxjumpsoverthelazydog`
+
 ## Source
 
-Wikipedia [http://en.wikipedia.org/wiki/Atbash](http://en.wikipedia.org/wiki/Atbash)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @rubysolo
+
+### Contributed to by
+
+- @AndreaCrotti
+- @canweriotnow
+- @dkinzer
+- @haus
+- @kytrinyx
+- @mathias
+- @sjwarner-bp
+- @yurrriq
+
+### Based on
+
+Wikipedia - http://en.wikipedia.org/wiki/Atbash

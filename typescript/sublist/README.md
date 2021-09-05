@@ -1,5 +1,10 @@
 # Sublist
 
+Welcome to Sublist on Exercism's TypeScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given two lists determine if the first list is contained within the second
 list, if the second list is contained within the first list, if both lists are
 contained within each other or if none of these are true.
@@ -10,37 +15,20 @@ that's completely equal to A.
 
 Examples:
 
- * A = [1, 2, 3], B = [1, 2, 3, 4, 5], A is a sublist of B
- * A = [3, 4, 5], B = [1, 2, 3, 4, 5], A is a sublist of B
- * A = [3, 4], B = [1, 2, 3, 4, 5], A is a sublist of B
- * A = [1, 2, 3], B = [1, 2, 3], A is equal to B
- * A = [1, 2, 3, 4, 5], B = [2, 3, 4], A is a superlist of B
- * A = [1, 2, 4], B = [1, 2, 3, 4, 5], A is not a superlist of, sublist of or equal to B
+- A = [1, 2, 3], B = [1, 2, 3, 4, 5], A is a sublist of B
+- A = [3, 4, 5], B = [1, 2, 3, 4, 5], A is a sublist of B
+- A = [3, 4], B = [1, 2, 3, 4, 5], A is a sublist of B
+- A = [1, 2, 3], B = [1, 2, 3], A is equal to B
+- A = [1, 2, 3, 4, 5], B = [2, 3, 4], A is a superlist of B
+- A = [1, 2, 4], B = [1, 2, 3, 4, 5], A is not a superlist of, sublist of or equal to B
 
-## Setup
+## Source
 
-Go through the setup instructions for TypeScript to
-install the necessary dependencies:
+### Created by
 
-http://exercism.io/languages/typescript
+- @CRivasGomez
 
-## Requirements
+### Contributed to by
 
-Install assignment dependencies:
-
-```bash
-$ yarn install
-```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ yarn test
-```
-
-
-
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @masters3d
+- @SleeplessByte

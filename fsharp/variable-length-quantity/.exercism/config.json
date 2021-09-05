@@ -1,0 +1,27 @@
+{
+  "blurb": "Implement variable length quantity encoding and decoding.",
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "contributors": [
+    "jrr",
+    "lestephane",
+    "nemesv",
+    "robkeim",
+    "valentin-p",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "VariableLengthQuantity.fs"
+    ],
+    "test": [
+      "VariableLengthQuantityTests.fs"
+    ],
+    "example": [
+      ".meta/Example.fs"
+    ]
+  },
+  "source": "A poor Splice developer having to implement MIDI encoding/decoding.",
+  "source_url": "https://splice.com"
+}

@@ -16,7 +16,7 @@ export default class List {
   foldr(func, initial) {
     let acc = initial;
 
-    for (let i = this.values.length - 1; i >= 0; i - 1)
+    for (let i = this.values.length - 1; i >= 0; i--)
       acc = func(acc, this.values[i]);
 
     return acc;

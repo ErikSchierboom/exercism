@@ -1,9 +1,10 @@
 require 'minitest/autorun'
 require_relative 'high_scores'
 
-# Common test data version: 2.0.0 7a386a2
+# Common test data version: 5.0.0 7dfb96c
 class HighScoresTest < Minitest::Test
   def test_list_of_scores
+    # skip
     scores = [30, 50, 20, 70]
     expected = [30, 50, 20, 70]
     assert_equal expected, HighScores.new(scores).scores
@@ -21,57 +22,43 @@ class HighScoresTest < Minitest::Test
     assert_equal expected, HighScores.new(scores).personal_best
   end
 
-  def test_personal_top
-    scores = [50, 30, 10]
-    expected = [50, 30, 10]
-    assert_equal expected, HighScores.new(scores).personal_top
+  def test_personal_top_three_from_a_list_of_scores
+    scores = [10, 30, 90, 30, 100, 20, 10, 0, 30, 40, 40, 70, 70]
+    expected = [100, 90, 70]
+    assert_equal expected, HighScores.new(scores).personal_top_three
   end
 
   def test_personal_top_highest_to_lowest
     scores = [20, 10, 30]
     expected = [30, 20, 10]
-    assert_equal expected, HighScores.new(scores).personal_top
+    assert_equal expected, HighScores.new(scores).personal_top_three
   end
 
   def test_personal_top_when_there_is_a_tie
     scores = [40, 20, 40, 30]
     expected = [40, 40, 30]
-    assert_equal expected, HighScores.new(scores).personal_top
+    assert_equal expected, HighScores.new(scores).personal_top_three
   end
 
-  def test_personal_top_when_there_are_less_than_3
+  def test_personal_top_when_there_are_less_than_3 # rubocop:disable Naming/VariableNumber
     scores = [30, 70]
     expected = [70, 30]
-    assert_equal expected, HighScores.new(scores).personal_top
+    assert_equal expected, HighScores.new(scores).personal_top_three
   end
 
   def test_personal_top_when_there_is_only_one
     scores = [40]
     expected = [40]
-    assert_equal expected, HighScores.new(scores).personal_top
+    assert_equal expected, HighScores.new(scores).personal_top_three
   end
 
-  def test_personal_top_from_a_long_list
-    scores = [10, 30, 90, 30, 100, 20, 10, 0, 30, 40, 40, 70, 70]
-    expected = [100, 90, 70]
-    assert_equal expected, HighScores.new(scores).personal_top
+  def test_latest_score_is_not_the_personal_best
+    scores = [100, 40, 10, 70]
+    refute HighScores.new(scores).latest_is_personal_best?
   end
 
-  def test_message_for_new_personal_best
-    scores = [20, 40, 0, 30, 70]
-    expected = "Your latest score was 70. That's your personal best!"
-    assert_equal expected, HighScores.new(scores).report
-  end
-
-  def test_message_when_latest_score_is_not_the_highest_score
-    scores = [20, 100, 0, 30, 70]
-    expected = "Your latest score was 70. That's 30 short of your personal best!"
-    assert_equal expected, HighScores.new(scores).report
-  end
-
-  def test_message_for_repeated_personal_best
-    scores = [20, 70, 50, 70, 30]
-    expected = "Your latest score was 30. That's 40 short of your personal best!"
-    assert_equal expected, HighScores.new(scores).report
+  def test_latest_score_is_the_personal_best
+    scores = [70, 40, 10, 100]
+    assert HighScores.new(scores).latest_is_personal_best?
   end
 end

@@ -1,5 +1,10 @@
 # Word Search
 
+Welcome to Word Search on Exercism's JavaScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 In word search puzzles you get a square of letters and have to find specific
 words in them.
 
@@ -26,34 +31,16 @@ vertical and diagonal.
 Given a puzzle and a list of words return the location of the first and last
 letter of each word.
 
-## Setup
+## Source
 
-Go through the setup instructions for ECMAScript to
-install the necessary dependencies:
+### Created by
 
-http://exercism.io/languages/ecmascript
+- @matthewmorgan
 
-## Requirements
+### Contributed to by
 
-Install assignment dependencies:
-
-```bash
-$ npm install
-```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ npm test
-```
-
-In the test suites all tests but the first have been skipped.
-
-Once you get a test passing, you can enable the next one by
-changing `xtest` to `test`.
-
-
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @hyuko21
+- @ivanvotti
+- @msomji
+- @rchavarria
+- @SleeplessByte

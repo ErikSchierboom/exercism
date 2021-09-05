@@ -1,0 +1,25 @@
+{
+  "blurb": "Implement basic list operations",
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "contributors": [
+    "hobbitjoe",
+    "jrr",
+    "lestephane",
+    "robkeim",
+    "valentin-p",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "ListOps.fs"
+    ],
+    "test": [
+      "ListOpsTests.fs"
+    ],
+    "example": [
+      ".meta/Example.fs"
+    ]
+  }
+}

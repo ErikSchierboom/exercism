@@ -1,0 +1,25 @@
+{
+  "blurb": "Determine if a sentence is a pangram.",
+  "authors": ["sdavids13"],
+  "contributors": [
+    "dector",
+    "enixander",
+    "eparovyshnaya",
+    "jtigger",
+    "lihofm",
+    "markhobson",
+    "mdowds",
+    "nithia",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "stkent",
+    "uzilan"
+  ],
+  "files": {
+    "solution": ["src/main/kotlin/Pangram.kt"],
+    "test": ["src/test/kotlin/PangramTest.kt"],
+    "example": [".meta/src/reference/kotlin/Pangram.kt"]
+  },
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Pangram"
+}

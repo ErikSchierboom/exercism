@@ -1,0 +1,29 @@
+{
+  "blurb": "Write a robot simulator.",
+  "authors": [
+    "kytrinyx"
+  ],
+  "contributors": [
+    "budmc29",
+    "dkinzer",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "kotp",
+    "pendletons",
+    "tryantwit",
+    "vosechu"
+  ],
+  "files": {
+    "solution": [
+      "robot_simulator.rb"
+    ],
+    "test": [
+      "robot_simulator_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/robot_simulator.rb"
+    ]
+  },
+  "source": "Inspired by an interview question at a famous company."
+}

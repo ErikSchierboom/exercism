@@ -1,48 +1,45 @@
 # Raindrops
 
-Convert a number to a string, the contents of which depend on the number's factors.
+Welcome to Raindrops on Exercism's Ruby Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
 
-- If the number has 3 as a factor, output 'Pling'.
-- If the number has 5 as a factor, output 'Plang'.
-- If the number has 7 as a factor, output 'Plong'.
-- If the number does not have 3, 5, or 7 as a factor,
-  just pass the number's digits straight through.
+## Instructions
+
+Your task is to convert a number into a string that contains raindrop sounds corresponding to certain potential factors. A factor is a number that evenly divides into another number, leaving no remainder. The simplest way to test if a one number is a factor of another is to use the [modulo operation](https://en.wikipedia.org/wiki/Modulo_operation).
+
+The rules of `raindrops` are that if a given number:
+
+- has 3 as a factor, add 'Pling' to the result.
+- has 5 as a factor, add 'Plang' to the result.
+- has 7 as a factor, add 'Plong' to the result.
+- _does not_ have any of 3, 5, or 7 as a factor, the result should be the digits of the number.
 
 ## Examples
 
-- 28's factors are 1, 2, 4, **7**, 14, 28.
-  - In raindrop-speak, this would be a simple "Plong".
-- 30's factors are 1, 2, **3**, **5**, 6, 10, 15, 30.
-  - In raindrop-speak, this would be a "PlingPlang".
-- 34 has four factors: 1, 2, 17, and 34.
-  - In raindrop-speak, this would be "34".
-
-* * * *
-
-For installation and learning resources, refer to the
-[Ruby resources page](http://exercism.io/languages/ruby/resources).
-
-For running the tests provided, you will need the Minitest gem. Open a
-terminal window and run the following command to install minitest:
-
-    gem install minitest
-
-If you would like color output, you can `require 'minitest/pride'` in
-the test file, or note the alternative instruction, below, for running
-the test file.
-
-Run the tests from the exercise directory using the following command:
-
-    ruby raindrops_test.rb
-
-To include color from the command line:
-
-    ruby -r minitest/pride raindrops_test.rb
-
+- 28 has 7 as a factor, but not 3 or 5, so the result would be "Plong".
+- 30 has both 3 and 5 as factors, but not 7, so the result would be "PlingPlang".
+- 34 is not factored by 3, 5, or 7, so the result would be "34".
 
 ## Source
 
-A variation on a famous interview question intended to weed out potential candidates. [http://jumpstartlab.com](http://jumpstartlab.com)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @kytrinyx
+
+### Contributed to by
+
+- @bmulvihill
+- @budmc29
+- @cadwallion
+- @hilary
+- @iHiD
+- @Insti
+- @jpotts244
+- @kotp
+- @mike-hewitson
+- @notapatch
+- @tryantwit
+
+### Based on
+
+A variation on FizzBuzz, a famous technical interview question that is intended to weed out potential candidates. That question is itself derived from Fizz Buzz, a popular children's game for teaching division. - https://en.wikipedia.org/wiki/Fizz_buzz

@@ -1,5 +1,10 @@
 # Scale Generator
 
+Welcome to Scale Generator on Exercism's Ruby Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given a tonic, or starting note, and a set of intervals, generate
 the musical scale starting with the tonic and following the
 specified interval pattern.
@@ -43,33 +48,27 @@ a "whole step" or "major second" (written as an upper-case "M"). The
 diatonic scales are built using only these two intervals between
 adjacent notes.
 
-Non-diatonic scales can contain other intervals.  An "augmented first"
-interval, written "A", has two interceding notes (e.g., from A to C or
-Db to E). There are also smaller and larger intervals, but they will not
-figure into this exercise.
+Non-diatonic scales can contain other intervals.  An "augmented second"
+interval, written "A", has two interceding notes (e.g., from A to C or Db to E)
+or a "whole step" plus a "half step". There are also smaller and larger
+intervals, but they will not figure into this exercise.
 
-* * * *
+## Source
 
-For installation and learning resources, refer to the
-[Ruby resources page](http://exercism.io/languages/ruby/resources).
+### Created by
 
-For running the tests provided, you will need the Minitest gem. Open a
-terminal window and run the following command to install minitest:
+- @fluxusfrequency
 
-    gem install minitest
+### Contributed to by
 
-If you would like color output, you can `require 'minitest/pride'` in
-the test file, or note the alternative instruction, below, for running
-the test file.
-
-Run the tests from the exercise directory using the following command:
-
-    ruby scale_generator_test.rb
-
-To include color from the command line:
-
-    ruby -r minitest/pride scale_generator_test.rb
-
-
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @budmc29
+- @cadwallion
+- @chrisvroberts
+- @dkinzer
+- @hilary
+- @iHiD
+- @Insti
+- @kotp
+- @kytrinyx
+- @srabuini
+- @tryantwit

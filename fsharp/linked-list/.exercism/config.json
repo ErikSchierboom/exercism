@@ -1,0 +1,27 @@
+{
+  "blurb": "Implement a doubly linked list",
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "contributors": [
+    "balazsbotond",
+    "jrr",
+    "lestephane",
+    "robkeim",
+    "theprash",
+    "valentin-p",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "LinkedList.fs"
+    ],
+    "test": [
+      "LinkedListTests.fs"
+    ],
+    "example": [
+      ".meta/Example.fs"
+    ]
+  },
+  "source": "Classic computer science topic"
+}

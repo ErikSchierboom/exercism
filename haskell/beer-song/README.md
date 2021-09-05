@@ -1,5 +1,10 @@
 # Beer Song
 
+Welcome to Beer Song on Exercism's Haskell Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Recite the lyrics to that beloved classic, that field-trip favorite: 99 Bottles of Beer on the Wall.
 
 Note that not all verses are identical.
@@ -320,8 +325,6 @@ are some additional things you could try:
 Then please share your thoughts in a comment on the submission. Did this
 experiment make the code better? Worse? Did you learn anything from it?
 
-## Hints
-
 This exercise is about [code refactoring](https://en.wikipedia.org/wiki/Refactoring),
 so we are providing you with a solution that already passes the tests.
 
@@ -339,63 +342,23 @@ Change one thing at a time and check if your solution still passes the tests.
 
 Have fun!
 
-
-
-## Getting Started
-
-For installation and learning resources, refer to the
-[exercism help page](http://exercism.io/languages/haskell).
-
-## Running the tests
-
-To run the test suite, execute the following command:
-
-```bash
-stack test
-```
-
-#### If you get an error message like this...
-
-```
-No .cabal file found in directory
-```
-
-You are probably running an old stack version and need
-to upgrade it.
-
-#### Otherwise, if you get an error message like this...
-
-```
-No compiler found, expected minor version match with...
-Try running "stack setup" to install the correct GHC...
-```
-
-Just do as it says and it will download and install
-the correct compiler version:
-
-```bash
-stack setup
-```
-
-## Running *GHCi*
-
-If you want to play with your solution in GHCi, just run the command:
-
-```bash
-stack ghci
-```
-
-## Feedback, Issues, Pull Requests
-
-The [exercism/haskell](https://github.com/exercism/haskell) repository on
-GitHub is the home for all of the Haskell exercises.
-
-If you have feedback about an exercise, or want to help implementing a new
-one, head over there and create an issue.  We'll do our best to help you!
-
 ## Source
 
-Learn to Program by Chris Pine [http://pine.fm/LearnToProgram/?Chapter=06](http://pine.fm/LearnToProgram/?Chapter=06)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @etrepum
+
+### Contributed to by
+
+- @iHiD
+- @kytrinyx
+- @navossoc
+- @petertseng
+- @ppartarr
+- @rbasso
+- @sshine
+- @tejasbubane
+
+### Based on
+
+Learn to Program by Chris Pine - http://pine.fm/LearnToProgram/?Chapter=06

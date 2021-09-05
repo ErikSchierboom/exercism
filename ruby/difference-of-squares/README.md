@@ -1,5 +1,10 @@
 # Difference Of Squares
 
+Welcome to Difference Of Squares on Exercism's Ruby Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Find the difference between the square of the sum and the sum of the squares of the first N natural numbers.
 
 The square of the sum of the first ten natural numbers is
@@ -12,32 +17,31 @@ Hence the difference between the square of the sum of the first
 ten natural numbers and the sum of the squares of the first ten
 natural numbers is 3025 - 385 = 2640.
 
-* * * *
-
-For installation and learning resources, refer to the
-[Ruby resources page](http://exercism.io/languages/ruby/resources).
-
-For running the tests provided, you will need the Minitest gem. Open a
-terminal window and run the following command to install minitest:
-
-    gem install minitest
-
-If you would like color output, you can `require 'minitest/pride'` in
-the test file, or note the alternative instruction, below, for running
-the test file.
-
-Run the tests from the exercise directory using the following command:
-
-    ruby difference_of_squares_test.rb
-
-To include color from the command line:
-
-    ruby -r minitest/pride difference_of_squares_test.rb
-
+You are not expected to discover an efficient solution to this yourself from
+first principles; research is allowed, indeed, encouraged. Finding the best
+algorithm for the problem is a key skill in software engineering.
 
 ## Source
 
-Problem 6 at Project Euler [http://projecteuler.net/problem=6](http://projecteuler.net/problem=6)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @kytrinyx
+
+### Contributed to by
+
+- @bjmllr
+- @budmc29
+- @cadwallion
+- @dkinzer
+- @hilary
+- @iHiD
+- @Insti
+- @jpotts244
+- @kotp
+- @landongrindheim
+- @mike-hewitson
+- @tryantwit
+
+### Based on
+
+Problem 6 at Project Euler - http://projecteuler.net/problem=6

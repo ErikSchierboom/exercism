@@ -1,0 +1,12 @@
+{
+  "blurb": "Output the lyrics to 'The Twelve Days of Christmas'",
+  "authors": ["CRivasGomez"],
+  "contributors": ["masters3d", "PatrickMcSweeny", "SleeplessByte"],
+  "files": {
+    "solution": ["twelve-days.ts"],
+    "test": ["twelve-days.test.ts"],
+    "example": [".meta/proof.ci.ts"]
+  },
+  "source": "Wikipedia",
+  "source_url": "http://en.wikipedia.org/wiki/The_Twelve_Days_of_Christmas_(song)"
+}

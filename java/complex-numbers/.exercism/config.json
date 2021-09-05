@@ -1,0 +1,32 @@
+{
+  "blurb": "Implement complex numbers.",
+  "authors": [
+    "stkent"
+  ],
+  "contributors": [
+    "aadityakulkarni",
+    "FridaTveit",
+    "jackattack24",
+    "jmrunkle",
+    "kytrinyx",
+    "lemoncurry",
+    "msomji",
+    "muzimuzhi",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/ComplexNumber.java"
+    ],
+    "test": [
+      "src/test/java/ComplexNumberTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/ComplexNumber.java"
+    ]
+  },
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Complex_number"
+}

@@ -1,0 +1,29 @@
+{
+  "blurb": "Given a number n, determine what the nth prime is.",
+  "authors": [
+    "etrepum"
+  ],
+  "contributors": [
+    "iHiD",
+    "kytrinyx",
+    "lpalma",
+    "petertseng",
+    "ppartarr",
+    "rbasso",
+    "sshine",
+    "tejasbubane"
+  ],
+  "files": {
+    "solution": [
+      "src/Prime.hs"
+    ],
+    "test": [
+      "test/Tests.hs"
+    ],
+    "example": [
+      "examples/success-standard/src/Prime.hs"
+    ]
+  },
+  "source": "A variation on Problem 7 at Project Euler",
+  "source_url": "http://projecteuler.net/problem=7"
+}

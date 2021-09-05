@@ -1,0 +1,24 @@
+{
+  "blurb": "Implement a binary search algorithm.",
+  "authors": [
+    "ricemery"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "ppartarr",
+    "rajeshpg"
+  ],
+  "files": {
+    "solution": [
+      "src/main/scala/BinarySearch.scala"
+    ],
+    "test": [
+      "src/test/scala/BinarySearchTest.scala"
+    ],
+    "example": [
+      ".meta/Example.scala"
+    ]
+  },
+  "source": "Wikipedia",
+  "source_url": "http://en.wikipedia.org/wiki/Binary_search_algorithm"
+}

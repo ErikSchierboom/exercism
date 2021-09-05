@@ -1,0 +1,29 @@
+{
+  "blurb": "Compute the result for a game of Hex / Polygon",
+  "authors": [
+    "pminten"
+  ],
+  "contributors": [
+    "etrepum",
+    "iHiD",
+    "kytrinyx",
+    "lpalma",
+    "navossoc",
+    "petertseng",
+    "ppartarr",
+    "rbasso",
+    "sshine",
+    "tejasbubane"
+  ],
+  "files": {
+    "solution": [
+      "src/Connect.hs"
+    ],
+    "test": [
+      "test/Tests.hs"
+    ],
+    "example": [
+      "examples/success-standard/src/Connect.hs"
+    ]
+  }
+}

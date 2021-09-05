@@ -1,7 +1,6 @@
 (ns acronym-test
   (:require [clojure.test :refer [deftest is]]
             acronym))
-(re-find #"^([A-Zaz])" "Complementary metal-oxide semiconductor" )
 
 (deftest test-acronym
   (is (= "" (acronym/acronym "")))

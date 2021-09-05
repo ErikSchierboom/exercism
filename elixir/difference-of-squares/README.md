@@ -1,5 +1,10 @@
 # Difference Of Squares
 
+Welcome to Difference Of Squares on Exercism's Elixir Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Find the difference between the square of the sum and the sum of the squares of the first N natural numbers.
 
 The square of the sum of the first ten natural numbers is
@@ -12,44 +17,34 @@ Hence the difference between the square of the sum of the first
 ten natural numbers and the sum of the squares of the first ten
 natural numbers is 3025 - 385 = 2640.
 
-## Running tests
-
-Execute the tests with:
-
-```bash
-$ elixir difference_of_squares_test.exs
-```
-
-### Pending tests
-
-In the test suites, all but the first test have been skipped.
-
-Once you get a test passing, you can unskip the next one by
-commenting out the relevant `@tag :pending` with a `#` symbol.
-
-For example:
-
-```elixir
-# @tag :pending
-test "shouting" do
-  assert Bob.hey("WATCH OUT!") == "Whoa, chill out!"
-end
-```
-
-Or, you can enable all the tests by commenting out the
-`ExUnit.configure` line in the test suite.
-
-```elixir
-# ExUnit.configure exclude: :pending, trace: true
-```
-
-If you're stuck on something, it may help to look at some of
-the [available resources](https://exercism.io/tracks/elixir/resources)
-out there where answers might be found.
+You are not expected to discover an efficient solution to this yourself from
+first principles; research is allowed, indeed, encouraged. Finding the best
+algorithm for the problem is a key skill in software engineering.
 
 ## Source
 
-Problem 6 at Project Euler [http://projecteuler.net/problem=6](http://projecteuler.net/problem=6)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @petehuang
+
+### Contributed to by
+
+- @andrewsardone
+- @angelikatyborska
+- @Cohen-Carlisle
+- @dalexj
+- @devonestes
+- @jinyeow
+- @kytrinyx
+- @lpil
+- @neenjaw
+- @parkerl
+- @rubysolo
+- @Scientifica96
+- @sotojuan
+- @Teapane
+- @waiting-for-dev
+
+### Based on
+
+Problem 6 at Project Euler - http://projecteuler.net/problem=6

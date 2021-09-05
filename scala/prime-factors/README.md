@@ -1,5 +1,10 @@
 # Prime Factors
 
+Welcome to Prime Factors on Exercism's Scala Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Compute the prime factors of a given natural number.
 
 A prime number is only evenly divisible by itself and 1.
@@ -29,19 +34,18 @@ You can check this yourself:
 - = 60
 - Success!
 
-The Scala exercises assume an SBT project scheme. The exercise solution source
-should be placed within the exercise directory/src/main/scala. The exercise
-unit tests can be found within the exercise directory/src/test/scala.
-
-To run the tests simply run the command `sbt test` in the exercise directory.
-
-For more detailed info about the Scala track see the [help
-page](http://exercism.io/languages/scala).
-
-
 ## Source
 
-The Prime Factors Kata by Uncle Bob [http://butunclebob.com/ArticleS.UncleBob.ThePrimeFactorsKata](http://butunclebob.com/ArticleS.UncleBob.ThePrimeFactorsKata)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @ricemery
+
+### Contributed to by
+
+- @ErikSchierboom
+- @ppartarr
+- @rajeshpg
+
+### Based on
+
+The Prime Factors Kata by Uncle Bob - http://butunclebob.com/ArticleS.UncleBob.ThePrimeFactorsKata

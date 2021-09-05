@@ -1,5 +1,10 @@
 # Dominoes
 
+Welcome to Dominoes on Exercism's Kotlin Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Make a chain of dominoes.
 
 Compute a way to order a given set of dominoes in such a way that they form a
@@ -14,29 +19,13 @@ For stones `[1|2]`, `[4|1]` and `[2|3]` the resulting chain is not valid: `[4|1]
 
 Some test cases may use duplicate stones in a chain solution, assume that multiple Domino sets are being used.
 
-## Setup
+## Source
 
-Go through the setup instructions for Kotlin to install the necessary
-dependencies:
+### Created by
 
-[https://exercism.io/tracks/kotlin/installation](https://exercism.io/tracks/kotlin/installation)
+- @lathspell
 
-## Making the test suite pass
+### Contributed to by
 
-Execute the tests with:
-
-```bash
-$ ./gradlew test
-```
-
-> Use `gradlew.bat` if you're on Windows
-
-In the test suites all tests but the first have been skipped.
-
-Once you get a test passing, you can enable the next one by removing the
-`@Ignore` annotation.
-
-## Submitting Incomplete Solutions
-
-It's possible to submit an incomplete solution so you can see how others have
-completed the exercise.
+- @eparovyshnaya
+- @uzilan

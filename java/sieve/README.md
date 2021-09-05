@@ -1,5 +1,10 @@
 # Sieve
 
+Welcome to Sieve on Exercism's Java Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Use the Sieve of Eratosthenes to find all the primes from 2 up to a given
 number.
 
@@ -29,20 +34,31 @@ correct list of primes. A good first test is to check that you do not use
 division or remainder operations (div, /, mod or % depending on the
 language).
 
-# Running the tests
-
-You can run all the tests for an exercise by entering
-
-```sh
-$ gradle test
-```
-
-in your terminal.
-
 ## Source
 
-Sieve of Eratosthenes at Wikipedia [http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes](http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)
+### Contributed to by
 
-## Submitting Incomplete Solutions
+- @aadityakulkarni
+- @FridaTveit
+- @jmrunkle
+- @jtigger
+- @Kyle-Pu
+- @kytrinyx
+- @lemoncurry
+- @matthewmorgan
+- @mirkoperillo
+- @morrme
+- @msomji
+- @muzimuzhi
+- @sjwarner-bp
+- @SleeplessByte
+- @Smarticles101
+- @sshine
+- @stkent
+- @vasouv
+- @vdemeester
+- @Zaldrick
 
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+### Based on
+
+Sieve of Eratosthenes at Wikipedia - http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes

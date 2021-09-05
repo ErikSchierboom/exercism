@@ -1,54 +1,68 @@
 # Word Count
 
-Given a phrase, count the occurrences of each word in that phrase.
+Welcome to Word Count on Exercism's Elixir Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
 
-For example for the input `"olly olly in come free"`
+## Instructions
+
+Given a phrase, count the occurrences of each _word_ in that phrase.
+
+For the purposes of this exercise you can expect that a _word_ will always be one of:
+
+1. A _number_ composed of one or more ASCII digits (ie "0" or "1234") OR
+2. A _simple word_ composed of one or more ASCII letters (ie "a" or "they") OR
+3. A _contraction_ of two _simple words_ joined by a single apostrophe (ie "it's" or "they're")
+
+When counting words you can assume the following rules:
+
+1. The count is _case insensitive_ (ie "You", "you", and "YOU" are 3 uses of the same word)
+2. The count is _unordered_; the tests will ignore how words and counts are ordered
+3. Other than the apostrophe in a _contraction_ all forms of _punctuation_ are ignored
+4. The words can be separated by _any_ form of whitespace (ie "\t", "\n", " ")
+
+For example, for the phrase `"That's the password: 'PASSWORD 123'!", cried the Special Agent.\nSo I fled.` the count would be:
 
 ```text
-olly: 2
-in: 1
-come: 1
-free: 1
+that's: 1
+the: 2
+password: 2
+123: 1
+cried: 1
+special: 1
+agent: 1
+so: 1
+i: 1
+fled: 1
 ```
-
-## Running tests
-
-Execute the tests with:
-
-```bash
-$ elixir word_count_test.exs
-```
-
-### Pending tests
-
-In the test suites, all but the first test have been skipped.
-
-Once you get a test passing, you can unskip the next one by
-commenting out the relevant `@tag :pending` with a `#` symbol.
-
-For example:
-
-```elixir
-# @tag :pending
-test "shouting" do
-  assert Bob.hey("WATCH OUT!") == "Whoa, chill out!"
-end
-```
-
-Or, you can enable all the tests by commenting out the
-`ExUnit.configure` line in the test suite.
-
-```elixir
-# ExUnit.configure exclude: :pending, trace: true
-```
-
-If you're stuck on something, it may help to look at some of
-the [available resources](https://exercism.io/tracks/elixir/resources)
-out there where answers might be found.
 
 ## Source
 
-This is a classic toy problem, but we were reminded of it by seeing it in the Go Tour.
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @rubysolo
+
+### Contributed to by
+
+- @andrewsardone
+- @angelikatyborska
+- @chriseyre2000
+- @Cohen-Carlisle
+- @dalexj
+- @dantswain
+- @devonestes
+- @henrik
+- @kronn
+- @kytrinyx
+- @lpil
+- @lucasprag
+- @MarcosX
+- @neenjaw
+- @parkerl
+- @patrickgombert
+- @sotojuan
+- @Teapane
+- @waiting-for-dev
+
+### Based on
+
+This is a classic toy problem, but we were reminded of it by seeing it in the Go Tour.

@@ -1,0 +1,40 @@
+{
+  "blurb": "Given a DNA strand, return its RNA Complement Transcription.",
+  "authors": [
+    "kytrinyx"
+  ],
+  "contributors": [
+    "alxndr",
+    "budmc29",
+    "cadwallion",
+    "Cohen-Carlisle",
+    "connorlay",
+    "dkinzer",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "jmay",
+    "jpotts244",
+    "kickinbahk",
+    "kotp",
+    "mhelmetag",
+    "mike-hewitson",
+    "NobbZ",
+    "pck",
+    "tryantwit",
+    "tylerferraro"
+  ],
+  "files": {
+    "solution": [
+      "rna_transcription.rb"
+    ],
+    "test": [
+      "rna_transcription_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/rna_transcription.rb"
+    ]
+  },
+  "source": "Hyperphysics",
+  "source_url": "http://hyperphysics.phy-astr.gsu.edu/hbase/Organic/transcription.html"
+}

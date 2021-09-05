@@ -1,0 +1,24 @@
+{
+  "blurb": "Compute the prime factors of a given natural number.",
+  "authors": [
+    "ricemery"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "ppartarr",
+    "rajeshpg"
+  ],
+  "files": {
+    "solution": [
+      "src/main/scala/Primefactors.scala"
+    ],
+    "test": [
+      "src/test/scala/PrimefactorsTest.scala"
+    ],
+    "example": [
+      ".meta/Example.scala"
+    ]
+  },
+  "source": "The Prime Factors Kata by Uncle Bob",
+  "source_url": "http://butunclebob.com/ArticleS.UncleBob.ThePrimeFactorsKata"
+}

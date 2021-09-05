@@ -1,5 +1,10 @@
 # Kindergarten Garden
 
+Welcome to Kindergarten Garden on Exercism's F# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given a diagram, determine which plants each child in the kindergarten class is
 responsible for.
 
@@ -59,22 +64,20 @@ While asking for Bob's plants would yield:
 
 - Clover, grass, clover, clover
 
-## Running the tests
-
-To run the tests, run the command `dotnet test` from within the exercise directory.
-
-## Autoformatting the code
-
-F# source code can be formatted with the [Fantomas](https://github.com/fsprojects/fantomas) tool.
-
-After installing it with `dotnet tool restore`, run `dotnet fantomas .` to format code within the current directory.
-
-## Further information
-
-For more detailed information about the F# track, including how to get help if
-you're having trouble, please visit the exercism.io [F# language page](http://exercism.io/languages/fsharp/resources).
-
 ## Source
 
-Random musings during airplane trip. [http://jumpstartlab.com](http://jumpstartlab.com)
+### Created by
 
+- @ErikSchierboom
+
+### Contributed to by
+
+- @jrr
+- @lestephane
+- @robkeim
+- @valentin-p
+- @wolf99
+
+### Based on
+
+Random musings during airplane trip. - http://jumpstartlab.com

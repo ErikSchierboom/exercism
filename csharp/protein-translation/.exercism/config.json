@@ -1,0 +1,23 @@
+{
+  "blurb": "Translate RNA sequences into proteins.",
+  "authors": [
+    "robkeim"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "j2jensen",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "ProteinTranslation.cs"
+    ],
+    "test": [
+      "ProteinTranslationTests.cs"
+    ],
+    "example": [
+      ".meta/Example.cs"
+    ]
+  },
+  "source": "Tyler Long"
+}

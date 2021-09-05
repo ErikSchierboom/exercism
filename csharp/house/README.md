@@ -1,5 +1,10 @@
 # House
 
+Welcome to House on Exercism's C# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Recite the nursery rhyme 'This is the House that Jack Built'.
 
 > [The] process of placing a phrase of clause within another phrase of
@@ -105,14 +110,20 @@ that ate the malt
 that lay in the house that Jack built.
 ```
 
-## Hints
-
 Try to capture the structure of the song in your code, where you build up the song by composing its parts.
-
 
 ## Source
 
-British nursery rhyme [http://en.wikipedia.org/wiki/This_Is_The_House_That_Jack_Built](http://en.wikipedia.org/wiki/This_Is_The_House_That_Jack_Built)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @ErikSchierboom
+
+### Contributed to by
+
+- @j2jensen
+- @robkeim
+- @wolf99
+
+### Based on
+
+British nursery rhyme - http://en.wikipedia.org/wiki/This_Is_The_House_That_Jack_Built

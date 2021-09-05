@@ -1,22 +1,38 @@
-# series
+# Series
 
-A Clojure library designed to ... well, that part is up to you.
+Welcome to Series on Exercism's Clojure Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
 
-## Usage
+## Instructions
 
-FIXME
+Given a string of digits, output all the contiguous substrings of length `n` in
+that string in the order that they appear.
 
-## License
+For example, the string "49142" has the following 3-digit series:
 
-Copyright © 2021 FIXME
+- "491"
+- "914"
+- "142"
 
-This program and the accompanying materials are made available under the
-terms of the Eclipse Public License 2.0 which is available at
-http://www.eclipse.org/legal/epl-2.0.
+And the following 4-digit series:
 
-This Source Code may also be made available under the following Secondary
-Licenses when the conditions for such availability set forth in the Eclipse
-Public License, v. 2.0 are satisfied: GNU General Public License as published by
-the Free Software Foundation, either version 2 of the License, or (at your
-option) any later version, with the GNU Classpath Exception which is available
-at https://www.gnu.org/software/classpath/license.html.
+- "4914"
+- "9142"
+
+And if you ask for a 6-digit series from a 5-digit string, you deserve
+whatever you get.
+
+Note that these series are only required to occupy *adjacent positions*
+in the input; the digits need not be *numerically consecutive*.
+
+## Source
+
+### Contributed to by
+
+- @AndreaCrotti
+- @haus
+- @sjwarner-bp
+
+### Based on
+
+A subset of the Problem 8 at Project Euler - http://projecteuler.net/problem=8

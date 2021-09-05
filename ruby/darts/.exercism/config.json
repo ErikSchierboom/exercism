@@ -1,0 +1,21 @@
+{
+  "blurb": "Write a function that returns the earned points in a single toss of a Darts game",
+  "authors": [
+    "Thrillberg"
+  ],
+  "contributors": [
+    "sas2job"
+  ],
+  "files": {
+    "solution": [
+      "darts.rb"
+    ],
+    "test": [
+      "darts_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/darts.rb"
+    ]
+  },
+  "source": "Inspired by an exercise created by a professor Della Paolera in Argentina"
+}

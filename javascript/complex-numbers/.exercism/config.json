@@ -1,0 +1,19 @@
+{
+  "blurb": "Implement complex numbers.",
+  "authors": ["MattH-be"],
+  "contributors": [
+    "ankorGH",
+    "burennto",
+    "cmccandless",
+    "SleeplessByte",
+    "tejasbubane",
+    "trvrfrd"
+  ],
+  "files": {
+    "solution": ["complex-numbers.js"],
+    "test": ["complex-numbers.spec.js"],
+    "example": [".meta/proof.ci.js"]
+  },
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Complex_number"
+}

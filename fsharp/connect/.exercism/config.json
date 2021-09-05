@@ -1,0 +1,24 @@
+{
+  "blurb": "Compute the result for a game of Hex / Polygon",
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "contributors": [
+    "jrr",
+    "lestephane",
+    "robkeim",
+    "valentin-p",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "Connect.fs"
+    ],
+    "test": [
+      "ConnectTests.fs"
+    ],
+    "example": [
+      ".meta/Example.fs"
+    ]
+  }
+}

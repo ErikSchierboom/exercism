@@ -1,5 +1,10 @@
 # Say
 
+Welcome to Say on Exercism's Clojure Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given a number from 0 to 999,999,999,999, spell out that number in English.
 
 ## Step 1
@@ -61,9 +66,19 @@ Use _and_ (correctly) when spelling out the number in English:
 - 120 becomes "one hundred and twenty".
 - 1002 becomes "one thousand and two".
 - 1323 becomes "one thousand three hundred and twenty-three".
+
 ## Source
 
-A variation on JavaRanch CattleDrive, exercise 4a [http://www.javaranch.com/say.jsp](http://www.javaranch.com/say.jsp)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @sjwarner-bp
+
+### Contributed to by
+
+- @AndreaCrotti
+- @CrowsVeldt
+- @haus
+
+### Based on
+
+A variation on JavaRanch CattleDrive, exercise 4a - http://www.javaranch.com/say.jsp

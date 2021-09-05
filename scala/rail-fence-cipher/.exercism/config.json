@@ -1,0 +1,24 @@
+{
+  "blurb": "Implement encoding and decoding for the rail fence cipher.",
+  "authors": [
+    "ricemery"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "ppartarr",
+    "rajeshpg"
+  ],
+  "files": {
+    "solution": [
+      "src/main/scala/RailFenceCipher.scala"
+    ],
+    "test": [
+      "src/test/scala/RailFenceCipherTest.scala"
+    ],
+    "example": [
+      ".meta/Example.scala"
+    ]
+  },
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Transposition_cipher#Rail_Fence_cipher"
+}

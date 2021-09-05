@@ -1,0 +1,24 @@
+{
+  "blurb": "Given a number determine whether or not it is valid per the Luhn formula.",
+  "authors": ["sdavids13"],
+  "contributors": [
+    "dector",
+    "enixander",
+    "eparovyshnaya",
+    "jtigger",
+    "lihofm",
+    "mdowds",
+    "nithia",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "stkent",
+    "uzilan"
+  ],
+  "files": {
+    "solution": ["src/main/kotlin/Luhn.kt"],
+    "test": ["src/test/kotlin/LuhnTest.kt"],
+    "example": [".meta/src/reference/kotlin/Luhn.kt"]
+  },
+  "source": "The Luhn Algorithm on Wikipedia",
+  "source_url": "http://en.wikipedia.org/wiki/Luhn_algorithm"
+}

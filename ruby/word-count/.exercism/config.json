@@ -1,0 +1,33 @@
+{
+  "blurb": "Given a phrase, count the occurrences of each word in that phrase.",
+  "authors": [
+    "kytrinyx"
+  ],
+  "contributors": [
+    "budmc29",
+    "cadwallion",
+    "claytonflesher",
+    "dkinzer",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "jmay",
+    "jpotts244",
+    "kickinbahk",
+    "kotp",
+    "pvcarrera",
+    "tryantwit"
+  ],
+  "files": {
+    "solution": [
+      "word_count.rb"
+    ],
+    "test": [
+      "word_count_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/word_count.rb"
+    ]
+  },
+  "source": "This is a classic toy problem, but we were reminded of it by seeing it in the Go Tour."
+}

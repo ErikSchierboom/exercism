@@ -1,5 +1,10 @@
 # Difference Of Squares
 
+Welcome to Difference Of Squares on Exercism's TypeScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Find the difference between the square of the sum and the sum of the squares of the first N natural numbers.
 
 The square of the sum of the first ten natural numbers is
@@ -12,34 +17,18 @@ Hence the difference between the square of the sum of the first
 ten natural numbers and the sum of the squares of the first ten
 natural numbers is 3025 - 385 = 2640.
 
-## Setup
-
-Go through the setup instructions for TypeScript to
-install the necessary dependencies:
-
-http://exercism.io/languages/typescript
-
-## Requirements
-
-Install assignment dependencies:
-
-```bash
-$ yarn install
-```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ yarn test
-```
-
-
+You are not expected to discover an efficient solution to this yourself from
+first principles; research is allowed, indeed, encouraged. Finding the best
+algorithm for the problem is a key skill in software engineering.
 
 ## Source
 
-Problem 6 at Project Euler [http://projecteuler.net/problem=6](http://projecteuler.net/problem=6)
+### Contributed to by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @masters3d
+- @Scientifica96
+- @SleeplessByte
+
+### Based on
+
+Problem 6 at Project Euler - http://projecteuler.net/problem=6

@@ -1,5 +1,10 @@
 # Binary Search Tree
 
+Welcome to Binary Search Tree on Exercism's TypeScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Insert and search for numbers in a binary tree.
 
 When we need to represent sorted data, an array does not make a good
@@ -53,34 +58,18 @@ And if we then added 1, 5, and 7, it would look like this
      / \     / \
     1   3   5   7
 
-## Setup
-
-Go through the setup instructions for TypeScript to
-install the necessary dependencies:
-
-http://exercism.io/languages/typescript
-
-## Requirements
-
-Install assignment dependencies:
-
-```bash
-$ yarn install
-```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ yarn test
-```
-
-
-
 ## Source
 
-Josh Cheek [https://twitter.com/josh_cheek](https://twitter.com/josh_cheek)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @Sn0wFox
+
+### Contributed to by
+
+- @masters3d
+- @peerreynders
+- @SleeplessByte
+
+### Based on
+
+Josh Cheek - https://twitter.com/josh_cheek

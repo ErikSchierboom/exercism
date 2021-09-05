@@ -1,4 +1,7 @@
-import CircularBuffer, { BufferOverflowError, BufferEmptyError } from './circular-buffer'
+import CircularBuffer, {
+  BufferFullError,
+  BufferEmptyError,
+} from './circular-buffer'
 
 describe('CircularBuffer', () => {
   it('reading an empty buffer throws a BufferEmptyError', () => {
@@ -52,11 +55,11 @@ describe('CircularBuffer', () => {
     expect(buffer.read()).toBe('3')
   })
 
-  it('writing to a full buffer throws a BufferOverflowError', () => {
+  it('writing to a full buffer throws a BufferFullError', () => {
     const buffer = new CircularBuffer<string>(2)
     buffer.write('1')
     buffer.write('2')
-    expect(() => buffer.write('A')).toThrow(BufferOverflowError)
+    expect(() => buffer.write('A')).toThrow(BufferFullError)
   })
 
   it('forced writes over write oldest item in a full buffer', () => {

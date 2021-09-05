@@ -4,6 +4,7 @@ require_relative 'hamming'
 # Common test data version: 2.2.0 4c453c8
 class HammingTest < Minitest::Test
   def test_empty_strands
+    # skip
     assert_equal 0, Hamming.compute('', '')
   end
 

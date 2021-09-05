@@ -1,5 +1,10 @@
 # Diamond
 
+Welcome to Diamond on Exercism's Kotlin Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 The diamond kata takes as its input a letter, and outputs it in a diamond
 shape. Given a letter, it prints a diamond starting with 'A', with the
 supplied letter at the widest point.
@@ -52,11 +57,23 @@ E·······E
 ····A····
 ```
 
-
-
 ## Source
 
-Seb Rose [http://claysnow.co.uk/recycling-tests-in-tdd/](http://claysnow.co.uk/recycling-tests-in-tdd/)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @stkent
+
+### Contributed to by
+
+- @dector
+- @eparovyshnaya
+- @lihofm
+- @mdowds
+- @sdavids13
+- @sjwarner-bp
+- @SleeplessByte
+- @uzilan
+
+### Based on
+
+Seb Rose - http://claysnow.co.uk/recycling-tests-in-tdd/

@@ -1,6 +1,8 @@
+{-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE RecordWildCards #-}
 
 import Data.Foldable     (for_)
+import Data.String       (fromString)
 import Test.Hspec        (Spec, describe, it, shouldBe)
 import Test.Hspec.Runner (configFastFail, defaultConfig, hspecWith)
 
@@ -12,7 +14,8 @@ main = hspecWith defaultConfig {configFastFail = True} specs
 specs :: Spec
 specs = describe "abbreviate" $ for_ cases test
   where
-    test Case {..} = it description $ abbreviate input `shouldBe` expected
+    test Case {..} = it description $
+      abbreviate (fromString input) `shouldBe` fromString expected
 
 data Case = Case { description :: String
                  , input       :: String
@@ -51,4 +54,18 @@ cases = [ Case { description = "basic"
                , input       = "Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me"
                , expected    = "ROTFLSHTMDCOALM"
                }
+        , Case { description = "consecutive delimiters"
+               , input       = "Something - I made up from thin air"
+               , expected    = "SIMUFTA"
+               }
+        , Case { description = "apostrophes"
+               , input       = "Halley's Comet"
+               , expected    = "HC"
+               }
+        , Case { description = "underscore emphasis"
+               , input       = "The Road _Not_ Taken"
+               , expected    = "TRNT"
+               }
         ]
+
+-- ad42f2da40183e017f9c52fd00efe33c6bfe7037

@@ -1,0 +1,28 @@
+{
+  "blurb": "Manage robot factory settings.",
+  "authors": [
+    "jwood803"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "jrr",
+    "kytrinyx",
+    "lestephane",
+    "MagnusMikkelsen",
+    "robkeim",
+    "valentin-p",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "RobotName.fs"
+    ],
+    "test": [
+      "RobotNameTests.fs"
+    ],
+    "example": [
+      ".meta/Example.fs"
+    ]
+  },
+  "source": "A debugging session with Paul Blackwell at gSchool."
+}

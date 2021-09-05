@@ -1,5 +1,10 @@
 # Beer Song
 
+Welcome to Beer Song on Exercism's Java Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Recite the lyrics to that beloved classic, that field-trip favorite: 99 Bottles of Beer on the Wall.
 
 Note that not all verses are identical.
@@ -320,20 +325,34 @@ are some additional things you could try:
 Then please share your thoughts in a comment on the submission. Did this
 experiment make the code better? Worse? Did you learn anything from it?
 
-# Running the tests
-
-You can run all the tests for an exercise by entering
-
-```sh
-$ gradle test
-```
-
-in your terminal.
-
 ## Source
 
-Learn to Program by Chris Pine [http://pine.fm/LearnToProgram/?Chapter=06](http://pine.fm/LearnToProgram/?Chapter=06)
+### Created by
 
-## Submitting Incomplete Solutions
+- @jeseekia
 
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+### Contributed to by
+
+- @FridaTveit
+- @javaeeeee
+- @jmrunkle
+- @jtigger
+- @kytrinyx
+- @lemoncurry
+- @matthewmorgan
+- @michaelspets
+- @mirkoperillo
+- @msomji
+- @muzimuzhi
+- @redshirt4
+- @sjwarner-bp
+- @SleeplessByte
+- @Smarticles101
+- @sshine
+- @stkent
+- @vasouv
+- @Zaldrick
+
+### Based on
+
+Learn to Program by Chris Pine - http://pine.fm/LearnToProgram/?Chapter=06

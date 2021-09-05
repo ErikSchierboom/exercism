@@ -1,0 +1,26 @@
+{
+  "blurb": "Create an implementation of the Affine cipher, an ancient encryption algorithm from the Middle East.",
+  "authors": [
+    "davidelettieri"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "j2jensen",
+    "robkeim",
+    "wolf99",
+    "Zureka"
+  ],
+  "files": {
+    "solution": [
+      "AffineCipher.cs"
+    ],
+    "test": [
+      "AffineCipherTests.cs"
+    ],
+    "example": [
+      ".meta/Example.cs"
+    ]
+  },
+  "source": "Wikipedia",
+  "source_url": "http://en.wikipedia.org/wiki/Affine_cipher"
+}

@@ -13,10 +13,11 @@ public static class Minesweeper
     private const char MineCell = '*';
     private const char EmptyCell = ' ';
 
-    public static string[] Annotate(string[] input)
+    public static string Annotate(string input)
     {
         var grid = ParseGrid(input);
-        return Enumerable.Range(0, Rows(grid)).Select(row => AnnotateRow(row, grid)).ToArray();
+        var rows = Enumerable.Range(0, Rows(grid)).Select(row => AnnotateRow(row, grid));
+        return string.Join("\n", rows);
     }
 
     private static string AnnotateRow(int row, CellType[][] grid)
@@ -37,7 +38,7 @@ public static class Minesweeper
         return neighboringMines == 0 ? EmptyCell : neighboringMines.ToString()[0];
     }
 
-    private static CellType[][] ParseGrid(string[] input) => input.Select(ParseRow).ToArray();
+    private static CellType[][] ParseGrid(string input) => input.Split('\n').Select(ParseRow).ToArray();
 
     private static CellType[] ParseRow(string row) => row.Select(ParseCell).ToArray();
 

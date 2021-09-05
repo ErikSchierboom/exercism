@@ -1,0 +1,33 @@
+{
+  "blurb": "Take input text and output it transposed.",
+  "authors": [
+    "gchan"
+  ],
+  "contributors": [
+    "budmc29",
+    "cadwallion",
+    "ccouzens",
+    "emcoding",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "jbergenson",
+    "jpotts244",
+    "kotp",
+    "pgaspar",
+    "tryantwit"
+  ],
+  "files": {
+    "solution": [
+      "transpose.rb"
+    ],
+    "test": [
+      "transpose_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/transpose.rb"
+    ]
+  },
+  "source": "Reddit r/dailyprogrammer challenge #270 [Easy].",
+  "source_url": "https://www.reddit.com/r/dailyprogrammer/comments/4msu2x/challenge_270_easy_transpose_the_input_text"
+}

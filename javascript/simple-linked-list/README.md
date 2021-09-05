@@ -1,5 +1,10 @@
 # Simple Linked List
 
+Welcome to Simple Linked List on Exercism's JavaScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Write a simple linked list implementation that uses Elements and a List.
 
 The linked list is a fundamental data structure in computer science,
@@ -21,38 +26,19 @@ and provide functions to reverse a linked list and convert to and from arrays.
 When implementing this in a language with built-in linked lists,
 implement your own abstract data type.
 
-## Setup
-
-Go through the setup instructions for ECMAScript to
-install the necessary dependencies:
-
-http://exercism.io/languages/ecmascript
-
-## Requirements
-
-Install assignment dependencies:
-
-```bash
-$ npm install
-```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ npm test
-```
-
-In the test suites all tests but the first have been skipped.
-
-Once you get a test passing, you can enable the next one by
-changing `xtest` to `test`.
-
-
 ## Source
 
-Inspired by 'Data Structures and Algorithms with Object-Oriented Design Patterns in Ruby', singly linked-lists. [http://www.brpreiss.com/books/opus8/html/page96.html#SECTION004300000000000000000](http://www.brpreiss.com/books/opus8/html/page96.html#SECTION004300000000000000000)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @apapirovski
+
+### Contributed to by
+
+- @maruthimohan
+- @matthewmorgan
+- @rchavarria
+- @SleeplessByte
+
+### Based on
+
+Inspired by 'Data Structures and Algorithms with Object-Oriented Design Patterns in Ruby', singly linked-lists. - https://web.archive.org/web/20160731005714/http://brpreiss.com/books/opus8/html/page96.html

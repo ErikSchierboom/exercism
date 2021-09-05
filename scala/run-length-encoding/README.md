@@ -1,5 +1,10 @@
 # Run Length Encoding
 
+Welcome to Run Length Encoding on Exercism's Scala Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Implement run-length encoding and decoding.
 
 Run-length encoding (RLE) is a simple form of data compression, where runs
@@ -23,19 +28,18 @@ the letters A through Z (either lower or upper case) and whitespace. This way
 data to be encoded will never contain any numbers and numbers inside data to
 be decoded always represent the count for the following character.
 
-The Scala exercises assume an SBT project scheme. The exercise solution source
-should be placed within the exercise directory/src/main/scala. The exercise
-unit tests can be found within the exercise directory/src/test/scala.
-
-To run the tests simply run the command `sbt test` in the exercise directory.
-
-For more detailed info about the Scala track see the [help
-page](http://exercism.io/languages/scala).
-
-
 ## Source
 
-Wikipedia [https://en.wikipedia.org/wiki/Run-length_encoding](https://en.wikipedia.org/wiki/Run-length_encoding)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @abo64
+
+### Contributed to by
+
+- @ppartarr
+- @rajeshpg
+- @ricemery
+
+### Based on
+
+Wikipedia - https://en.wikipedia.org/wiki/Run-length_encoding

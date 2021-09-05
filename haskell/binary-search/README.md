@@ -1,5 +1,10 @@
 # Binary Search
 
+Welcome to Binary Search on Exercism's Haskell Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Implement a binary search algorithm.
 
 Searching a sorted collection is a common task. A dictionary is a sorted
@@ -34,8 +39,6 @@ A binary search halves the number of items to check with each iteration,
 so locating an item (or determining its absence) takes logarithmic time.
 A binary search is a dichotomic divide and conquer search algorithm.
 
-## Hints
-
 Haskell has support for many types of arrays. This exercise uses immutable,
 boxed, non-strict arrays from `Data.Array`. You can read more about the use of
 these arrays on:
@@ -50,63 +53,19 @@ not necessarily 0.
 [1]: https://www.haskell.org/tutorial/arrays.html
 [2]: http://hackage.haskell.org/package/array/docs/Data-Array.html
 
-
-
-## Getting Started
-
-For installation and learning resources, refer to the
-[exercism help page](http://exercism.io/languages/haskell).
-
-## Running the tests
-
-To run the test suite, execute the following command:
-
-```bash
-stack test
-```
-
-#### If you get an error message like this...
-
-```
-No .cabal file found in directory
-```
-
-You are probably running an old stack version and need
-to upgrade it.
-
-#### Otherwise, if you get an error message like this...
-
-```
-No compiler found, expected minor version match with...
-Try running "stack setup" to install the correct GHC...
-```
-
-Just do as it says and it will download and install
-the correct compiler version:
-
-```bash
-stack setup
-```
-
-## Running *GHCi*
-
-If you want to play with your solution in GHCi, just run the command:
-
-```bash
-stack ghci
-```
-
-## Feedback, Issues, Pull Requests
-
-The [exercism/haskell](https://github.com/exercism/haskell) repository on
-GitHub is the home for all of the Haskell exercises.
-
-If you have feedback about an exercise, or want to help implementing a new
-one, head over there and create an issue.  We'll do our best to help you!
-
 ## Source
 
-Wikipedia [http://en.wikipedia.org/wiki/Binary_search_algorithm](http://en.wikipedia.org/wiki/Binary_search_algorithm)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @sshine
+
+### Contributed to by
+
+- @iHiD
+- @petertseng
+- @ppartarr
+- @tejasbubane
+
+### Based on
+
+Wikipedia - http://en.wikipedia.org/wiki/Binary_search_algorithm

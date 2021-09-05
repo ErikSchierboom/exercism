@@ -17,13 +17,12 @@ specs = describe "encode" $ for_ cases test
 
     test Case{..} = describe description $ do
 
-      let shouldMatchWords  = shouldBe        `on` words
-          shouldMatchString = shouldBe        `on` filter (not . isSpace)
+      let shouldMatchString = shouldBe        `on` filter (not . isSpace)
           shouldMatchChars  = shouldMatchList `on` filter (not . isSpace)
 
       it "normalizes the input"    $ encode input `shouldMatchChars`  expected
       it "reorders the characters" $ encode input `shouldMatchString` expected
-      it "groups the output"       $ encode input `shouldMatchWords`  expected
+      it "groups the output"       $ encode input `shouldBe`          expected
 
 data Case = Case { description :: String
                  , input       :: String
@@ -60,3 +59,5 @@ cases = [ Case { description = "empty plaintext results in an empty ciphertext"
                , expected    = "imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn  sseoau "
                }
         ]
+
+-- de97c99c0d129ce1af95e8986917ac3964292f42

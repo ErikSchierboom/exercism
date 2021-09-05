@@ -1,14 +1,17 @@
 # Pov
 
-Reparent a graph on a selected node.
+Welcome to Pov on Exercism's F# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
 
-# Tree Reparenting
+## Instructions
+
+Reparent a graph on a selected node.
 
 This exercise is all about re-orientating a graph to see things from a different
 point of view. For example family trees are usually presented from the
 ancestor's perspective:
 
-```
+```text
     +------0------+
     |      |      |
   +-1-+  +-2-+  +-3-+
@@ -20,7 +23,7 @@ But the same information can be presented from the perspective of any other node
 in the graph, by pulling it up to the root and dragging its relationships along
 with it. So the same graph from 6's perspective would look like:
 
-```
+```text
         6
         |
   +-----2-----+
@@ -38,9 +41,23 @@ a different leaf node) can be seen to follow the path 6-2-0-3-9
 
 This exercise involves taking an input graph and re-orientating it from the point
 of view of one of the nodes.
+
 ## Source
 
-Adaptation of exercise from 4clojure [https://www.4clojure.com/](https://www.4clojure.com/)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @ErikSchierboom
+
+### Contributed to by
+
+- @jrr
+- @lestephane
+- @petertseng
+- @robkeim
+- @roman-shuhov
+- @valentin-p
+- @wolf99
+
+### Based on
+
+Adaptation of exercise from 4clojure - https://www.4clojure.com/

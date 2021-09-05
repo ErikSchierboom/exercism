@@ -31,7 +31,6 @@ public class BowlingTest {
         assertEquals(0, game.score());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void shouldBeAbleToScoreAGameWithNoStrikesOrSpares() {
         int[] rolls = {3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6};
@@ -40,7 +39,6 @@ public class BowlingTest {
         assertEquals(90, game.score());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void aSpareFollowedByZerosIsWorthTenPoints() {
         int[] rolls = {6, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -49,7 +47,6 @@ public class BowlingTest {
         assertEquals(10, game.score());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void pointsScoredInTheRollAfterASpareAreCountedTwice() {
         int[] rolls = {6, 4, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -58,7 +55,6 @@ public class BowlingTest {
         assertEquals(16, game.score());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void consecutiveSparesEachGetAOneRollBonus() {
         int[] rolls = {5, 5, 3, 7, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -67,7 +63,6 @@ public class BowlingTest {
         assertEquals(31, game.score());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void aSpareInTheLastFrameGetsAOneRollBonusThatIsCountedOnce() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 3, 7};
@@ -76,7 +71,6 @@ public class BowlingTest {
         assertEquals(17, game.score());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void aStrikeEarnsTenPointsInFrameWithASingleRoll() {
         int[] rolls = {10, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -85,7 +79,6 @@ public class BowlingTest {
         assertEquals(10, game.score());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void pointsScoredInTheTwoRollsAfterAStrikeAreCountedTwiceAsABonus() {
         int[] rolls = {10, 5, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -94,7 +87,6 @@ public class BowlingTest {
         assertEquals(26, game.score());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void consecutiveStrikesEachGetTheTwoRollBonus() {
         int[] rolls = {10, 10, 10, 5, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -103,7 +95,6 @@ public class BowlingTest {
         assertEquals(81, game.score());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void aStrikeInTheLastFrameGetsATwoRollBonusThatIsCountedOnce() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 7, 1};
@@ -112,7 +103,6 @@ public class BowlingTest {
         assertEquals(18, game.score());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void rollingASpareWithTheTwoRollBonusDoesNotGetABonusRoll() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 7, 3};
@@ -121,7 +111,6 @@ public class BowlingTest {
         assertEquals(20, game.score());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void strikesWithTheTwoRollBonusDoNotGetBonusRolls() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10, 10};
@@ -130,7 +119,6 @@ public class BowlingTest {
         assertEquals(30, game.score());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void aStrikeWithTheOneRollBonusAfterASpareInTheLastFrameDoesNotGetABonus() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 3, 10};
@@ -139,7 +127,6 @@ public class BowlingTest {
         assertEquals(20, game.score());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void allStrikesIsAPerfectGame() {
         int[] rolls = {10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10};
@@ -148,7 +135,6 @@ public class BowlingTest {
         assertEquals(300, game.score());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void rollsCanNotScoreNegativePoints() {
         int[] rolls = {-1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -161,7 +147,6 @@ public class BowlingTest {
         game.score();
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void aRollCanNotScoreMoreThan10Points() {
         int[] rolls = {11, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -174,7 +159,6 @@ public class BowlingTest {
         game.score();
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void twoRollsInAFrameCanNotScoreMoreThan10Points() {
         int[] rolls = {5, 6, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -187,7 +171,6 @@ public class BowlingTest {
         game.score();
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void bonusRollAfterAStrikeInTheLastFrameCanNotScoreMoreThan10Points() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 11, 0};
@@ -200,7 +183,6 @@ public class BowlingTest {
         game.score();
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void twoBonusRollsAfterAStrikeInTheLastFrameCanNotScoreMoreThan10Points() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 5, 6};
@@ -213,7 +195,6 @@ public class BowlingTest {
         game.score();
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void twoBonusRollsAfterAStrikeInTheLastFrameCanScoreMoreThan10PointsIfOneIsAStrike() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10, 6};
@@ -223,7 +204,6 @@ public class BowlingTest {
         assertEquals(26, game.score());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void theSecondBonusRollsAfterAStrikeInTheLastFrameCanNotBeAStrikeIfTheFirstOneIsNotAStrike() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 6, 10};
@@ -236,7 +216,6 @@ public class BowlingTest {
         game.score();
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void secondBonusRollAfterAStrikeInTheLastFrameCanNotScoreMoreThan10Points() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10, 11};
@@ -249,7 +228,6 @@ public class BowlingTest {
         game.score();
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void anUnstartedGameCanNotBeScored() {
         int[] rolls = new int[0];
@@ -262,7 +240,6 @@ public class BowlingTest {
         game.score();
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void anIncompleteGameCanNotBeScored() {
         int[] rolls = {0, 0};
@@ -275,7 +252,6 @@ public class BowlingTest {
         game.score();
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void canNotRollIfGameAlreadyHasTenFrames() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
@@ -288,7 +264,6 @@ public class BowlingTest {
         game.score();
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void bonusRollsForAStrikeInTheLastFrameMustBeRolledBeforeScoreCanBeCalculated() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10};
@@ -301,7 +276,6 @@ public class BowlingTest {
         game.score();
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void bothBonusRollsForAStrikeInTheLastFrameMustBeRolledBeforeScoreCanBeCalculated() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 10};
@@ -314,7 +288,6 @@ public class BowlingTest {
         game.score();
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void bonusRollForASpareInTheLastFrameMustBeRolledBeforeScoreCanBeCalculated() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 3};
@@ -327,7 +300,6 @@ public class BowlingTest {
         game.score();
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void canNotRollAfterBonusRollForSpare() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 3, 2, 2};
@@ -340,7 +312,6 @@ public class BowlingTest {
         game.score();
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void canNotRollAfterBonusRollForStrike() {
         int[] rolls = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 3, 2, 2};

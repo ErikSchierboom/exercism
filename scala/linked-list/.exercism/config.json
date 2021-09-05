@@ -1,0 +1,23 @@
+{
+  "blurb": "Implement a doubly linked list",
+  "authors": [
+    "ricemery"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "ppartarr",
+    "rajeshpg"
+  ],
+  "files": {
+    "solution": [
+      "src/main/scala/Deque.scala"
+    ],
+    "test": [
+      "src/test/scala/DequeTest.scala"
+    ],
+    "example": [
+      ".meta/Example.scala"
+    ]
+  },
+  "source": "Classic computer science topic"
+}

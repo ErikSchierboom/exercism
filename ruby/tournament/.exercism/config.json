@@ -1,0 +1,28 @@
+{
+  "blurb": "Tally the results of a small football competition.",
+  "authors": [
+    "gchan"
+  ],
+  "contributors": [
+    "budmc29",
+    "cadwallion",
+    "ccouzens",
+    "emcoding",
+    "hilary",
+    "Insti",
+    "jpotts244",
+    "kotp",
+    "tryantwit"
+  ],
+  "files": {
+    "solution": [
+      "tournament.rb"
+    ],
+    "test": [
+      "tournament_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/tournament.rb"
+    ]
+  }
+}

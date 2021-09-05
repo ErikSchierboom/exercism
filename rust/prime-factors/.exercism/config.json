@@ -1,0 +1,35 @@
+{
+  "blurb": "Compute the prime factors of a given natural number.",
+  "authors": [
+    "sacherjj"
+  ],
+  "contributors": [
+    "attilahorvath",
+    "coriolinus",
+    "cwhakes",
+    "eddyp",
+    "efx",
+    "ErikSchierboom",
+    "lutostag",
+    "nathanielknight",
+    "nfiles",
+    "petertseng",
+    "rofrol",
+    "stringparser",
+    "xakon",
+    "ZapAnton"
+  ],
+  "files": {
+    "solution": [
+      "src/lib.rs"
+    ],
+    "test": [
+      "tests/prime-factors.rs"
+    ],
+    "example": [
+      ".meta/example.rs"
+    ]
+  },
+  "source": "The Prime Factors Kata by Uncle Bob",
+  "source_url": "http://butunclebob.com/ArticleS.UncleBob.ThePrimeFactorsKata"
+}

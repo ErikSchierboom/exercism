@@ -1,5 +1,10 @@
 # Go Counting
 
+Welcome to Go Counting on Exercism's Haskell Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Count the scored points on a Go board.
 
 In the game of go (also known as baduk, igo, cờ vây and wéiqí) points
@@ -35,8 +40,6 @@ For more information see
 [wikipedia](https://en.wikipedia.org/wiki/Go_%28game%29) or [Sensei's
 Library](http://senseis.xmp.net/).
 
-## Hints
-
 To complete this exercise, you need to implement the following functions:
 
 - `territories` returns the coordinates (1 based, top left is (1,1))
@@ -52,59 +55,16 @@ are the only stones adjacent to the territory.
 You will find the type signatures already in place, but it is up to you
 to define the functions.
 
+## Source
 
+### Contributed to by
 
-## Getting Started
-
-For installation and learning resources, refer to the
-[exercism help page](http://exercism.io/languages/haskell).
-
-## Running the tests
-
-To run the test suite, execute the following command:
-
-```bash
-stack test
-```
-
-#### If you get an error message like this...
-
-```
-No .cabal file found in directory
-```
-
-You are probably running an old stack version and need
-to upgrade it.
-
-#### Otherwise, if you get an error message like this...
-
-```
-No compiler found, expected minor version match with...
-Try running "stack setup" to install the correct GHC...
-```
-
-Just do as it says and it will download and install
-the correct compiler version:
-
-```bash
-stack setup
-```
-
-## Running *GHCi*
-
-If you want to play with your solution in GHCi, just run the command:
-
-```bash
-stack ghci
-```
-
-## Feedback, Issues, Pull Requests
-
-The [exercism/haskell](https://github.com/exercism/haskell) repository on
-GitHub is the home for all of the Haskell exercises.
-
-If you have feedback about an exercise, or want to help implementing a new
-one, head over there and create an issue.  We'll do our best to help you!
-
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @iHiD
+- @kytrinyx
+- @lpalma
+- @navossoc
+- @petertseng
+- @ppartarr
+- @rbasso
+- @sshine
+- @tejasbubane

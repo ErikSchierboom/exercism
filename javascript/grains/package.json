@@ -1,79 +1,31 @@
 {
-  "name": "xecmascript",
-  "version": "0.0.0",
-  "description": "Exercism exercises in ECMAScript 6.",
+  "name": "@exercism/javascript-grains",
+  "description": "Exercism exercises in Javascript.",
   "author": "Katrina Owen",
   "private": true,
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/exercism/xecmascript"
+    "url": "https://github.com/exercism/javascript",
+    "directory": "exercises/practice/grains"
   },
   "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.15.0",
+    "@babel/plugin-syntax-bigint": "^7.8.3",
+    "@babel/preset-env": "^7.15.0",
+    "@exercism/eslint-config-javascript": "^0.4.0",
+    "@types/jest": "^26.0.24",
+    "@types/node": "^16.4.13",
     "babel-jest": "^27.0.6",
-    "babel-plugin-transform-builtin-extend": "^1.1.2",
-    "babel-preset-env": "^1.7.0",
+    "core-js": "^3.16.0",
     "eslint": "^7.32.0",
-    "eslint-config-airbnb": "^18.2.1",
-    "eslint-plugin-import": "^2.24.1",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-react": "^7.24.0",
-    "jest": "^27.0.6"
+    "jest": "^26.6.3"
   },
-  "jest": {
-    "modulePathIgnorePatterns": [
-      "package.json"
-    ]
-  },
-  "babel": {
-    "presets": [
-      [
-        "env",
-        {
-          "targets": [
-            {
-              "node": "current"
-            }
-          ]
-        }
-      ]
-    ],
-    "plugins": [
-      [
-        "babel-plugin-transform-builtin-extend",
-        {
-          "globals": [
-            "Error"
-          ]
-        }
-      ],
-      [
-        "transform-regenerator"
-      ]
-    ]
-  },
+  "dependencies": {},
   "scripts": {
     "test": "jest --no-cache ./*",
     "watch": "jest --no-cache --watch ./*",
-    "lint": "eslint .",
-    "lint-test": "eslint . && jest --no-cache ./* "
-  },
-  "eslintConfig": {
-    "parserOptions": {
-      "ecmaVersion": 6,
-      "sourceType": "module"
-    },
-    "env": {
-      "es6": true,
-      "node": true,
-      "jest": true
-    },
-    "extends": "airbnb",
-    "rules": {
-      "import/no-unresolved": "off",
-      "import/extensions": "off"
-    }
-  },
-  "licenses": [
-    "MIT"
-  ]
+    "lint": "eslint ."
+  }
 }

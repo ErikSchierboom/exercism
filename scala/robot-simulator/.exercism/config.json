@@ -1,0 +1,24 @@
+{
+  "blurb": "Write a robot simulator.",
+  "authors": [
+    "ricemery"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "mlopes",
+    "ppartarr",
+    "rajeshpg"
+  ],
+  "files": {
+    "solution": [
+      "src/main/scala/RobotSimulator.scala"
+    ],
+    "test": [
+      "src/test/scala/RobotSimulatorTest.scala"
+    ],
+    "example": [
+      ".meta/Example.scala"
+    ]
+  },
+  "source": "Inspired by an interview question at a famous company."
+}

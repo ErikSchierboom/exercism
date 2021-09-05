@@ -1,5 +1,10 @@
 # Say
 
+Welcome to Say on Exercism's Scala Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given a number from 0 to 999,999,999,999, spell out that number in English.
 
 ## Step 1
@@ -24,7 +29,7 @@ Some good test cases for this program are:
 ### Extension
 
 If you're on a Mac, shell out to Mac OS X's `say` program to talk out
-loud.
+loud. If you're on Linux or Windows, eSpeakNG may be available with the command `espeak`.
 
 ## Step 2
 
@@ -62,19 +67,19 @@ Use _and_ (correctly) when spelling out the number in English:
 - 1002 becomes "one thousand and two".
 - 1323 becomes "one thousand three hundred and twenty-three".
 
-The Scala exercises assume an SBT project scheme. The exercise solution source
-should be placed within the exercise directory/src/main/scala. The exercise
-unit tests can be found within the exercise directory/src/test/scala.
-
-To run the tests simply run the command `sbt test` in the exercise directory.
-
-For more detailed info about the Scala track see the [help
-page](http://exercism.io/languages/scala).
-
-
 ## Source
 
-A variation on JavaRanch CattleDrive, exercise 4a [http://www.javaranch.com/say.jsp](http://www.javaranch.com/say.jsp)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @ricemery
+
+### Contributed to by
+
+- @ErikSchierboom
+- @nlochschmidt
+- @ppartarr
+- @rajeshpg
+
+### Based on
+
+A variation on JavaRanch CattleDrive, exercise 4a - http://www.javaranch.com/say.jsp

@@ -1,0 +1,39 @@
+{
+  "blurb": "Implement a doubly linked list",
+  "authors": [
+    "counterleft"
+  ],
+  "contributors": [
+    "aryasaatvik",
+    "FridaTveit",
+    "hugueschabot",
+    "javaeeeee",
+    "jmrunkle",
+    "jtigger",
+    "kytrinyx",
+    "lemoncurry",
+    "matthewmorgan",
+    "mirkoperillo",
+    "mraediaz",
+    "msomji",
+    "muzimuzhi",
+    "Ppapierski",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine",
+    "stkent",
+    "Zaldrick"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/DoublyLinkedList.java"
+    ],
+    "test": [
+      "src/test/java/DoublyLinkedListTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/DoublyLinkedList.java"
+    ]
+  },
+  "source": "Classic computer science topic"
+}

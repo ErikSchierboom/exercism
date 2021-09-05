@@ -7,24 +7,24 @@ pending :-
 :- begin_tests(leap_tests).
 
     test(leap_year, condition(true)) :-
-    leap(1996).
+        leap(1996).
 
-    test(standard_and_odd_year, condition(true)) :-
-    not(leap(1997)).
+    test(standard_and_odd_year, condition(pending)) :-
+        not(leap(1997)).
 
-    test(standard_even_year, condition(true)) :-
-    not(leap(1998)).
+    test(standard_even_year, condition(pending)) :-
+        not(leap(1998)).
 
-    test(standard_nineteeth_century, condition(true)) :-
-    not(leap(1900)).
+    test(standard_nineteeth_century, condition(pending)) :-
+        not(leap(1900)).
 
-    test(standard_eighteenth_century, condition(true)) :-
-    not(leap(1800)).
+    test(standard_eighteenth_century, condition(pending)) :-
+        not(leap(1800)).
 
-    test(leap_twenty_fourth_century, condition(true)) :-
-    leap(2400).
+    test(leap_twenty_fourth_century, condition(pending)) :-
+        leap(2400).
 
-    test(leap_y2k, condition(true)) :-
-    leap(2000).
+    test(leap_y2k, condition(pending)) :-
+        leap(2000).
 
 :- end_tests(leap_tests).

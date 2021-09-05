@@ -1,0 +1,118 @@
+using Xunit;
+
+public class RomanNumeralsTests
+{
+    [Fact]
+    public void Number_1_is_i()
+    {
+        Assert.Equal("I", 1.ToRoman());
+    }
+
+    [Fact]
+    public void Number_2_is_ii()
+    {
+        Assert.Equal("II", 2.ToRoman());
+    }
+
+    [Fact]
+    public void Number_3_is_iii()
+    {
+        Assert.Equal("III", 3.ToRoman());
+    }
+
+    [Fact]
+    public void Number_4_is_iv()
+    {
+        Assert.Equal("IV", 4.ToRoman());
+    }
+
+    [Fact]
+    public void Number_5_is_v()
+    {
+        Assert.Equal("V", 5.ToRoman());
+    }
+
+    [Fact]
+    public void Number_6_is_vi()
+    {
+        Assert.Equal("VI", 6.ToRoman());
+    }
+
+    [Fact]
+    public void Number_9_is_ix()
+    {
+        Assert.Equal("IX", 9.ToRoman());
+    }
+
+    [Fact]
+    public void Number_27_is_xxvii()
+    {
+        Assert.Equal("XXVII", 27.ToRoman());
+    }
+
+    [Fact]
+    public void Number_48_is_xlviii()
+    {
+        Assert.Equal("XLVIII", 48.ToRoman());
+    }
+
+    [Fact]
+    public void Number_49_is_xlix()
+    {
+        Assert.Equal("XLIX", 49.ToRoman());
+    }
+
+    [Fact]
+    public void Number_59_is_lix()
+    {
+        Assert.Equal("LIX", 59.ToRoman());
+    }
+
+    [Fact]
+    public void Number_93_is_xciii()
+    {
+        Assert.Equal("XCIII", 93.ToRoman());
+    }
+
+    [Fact]
+    public void Number_141_is_cxli()
+    {
+        Assert.Equal("CXLI", 141.ToRoman());
+    }
+
+    [Fact]
+    public void Number_163_is_clxiii()
+    {
+        Assert.Equal("CLXIII", 163.ToRoman());
+    }
+
+    [Fact]
+    public void Number_402_is_cdii()
+    {
+        Assert.Equal("CDII", 402.ToRoman());
+    }
+
+    [Fact]
+    public void Number_575_is_dlxxv()
+    {
+        Assert.Equal("DLXXV", 575.ToRoman());
+    }
+
+    [Fact]
+    public void Number_911_is_cmxi()
+    {
+        Assert.Equal("CMXI", 911.ToRoman());
+    }
+
+    [Fact]
+    public void Number_1024_is_mxxiv()
+    {
+        Assert.Equal("MXXIV", 1024.ToRoman());
+    }
+
+    [Fact]
+    public void Number_3000_is_mmm()
+    {
+        Assert.Equal("MMM", 3000.ToRoman());
+    }
+}

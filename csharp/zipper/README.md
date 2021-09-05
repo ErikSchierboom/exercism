@@ -1,5 +1,10 @@
 # Zipper
 
+Welcome to Zipper on Exercism's C# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Creating a zipper for a binary tree.
 
 [Zippers](https://en.wikipedia.org/wiki/Zipper_%28data_structure%29) are
@@ -27,10 +32,16 @@ list of child nodes) a zipper might support these operations:
   `next` node if possible otherwise to the `prev` node if possible,
   otherwise to the parent node, returns a new zipper)
 
-## Hints
 This exercise deals with custom equality. For more information see [this page.](http://www.loganfranken.com/blog/687/overriding-equals-in-c-part-1/)
 
+## Source
 
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @ErikSchierboom
+
+### Contributed to by
+
+- @j2jensen
+- @robkeim
+- @wolf99

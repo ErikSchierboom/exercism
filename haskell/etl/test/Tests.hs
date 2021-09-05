@@ -1,4 +1,5 @@
 {-# OPTIONS_GHC -fno-warn-type-defaults #-}
+{-# LANGUAGE OverloadedStrings #-}
 
 import Data.Map          (fromList)
 import Test.Hspec        (Spec, describe, it, shouldBe)
@@ -14,7 +15,7 @@ specs =
 
   describe "transform" $ do
 
-    it "a single letter" $
+    it "single letter" $
       transform (fromList [(1, "A")])
       `shouldBe` fromList [('a', 1)]
 
@@ -47,3 +48,5 @@ specs =
                  , ('q', 10) , ('r',  1) , ('s',  1) , ('t',  1)
                  , ('u',  1) , ('v',  4) , ('w',  4) , ('x',  8)
                  , ('y',  4) , ('z', 10) ]
+
+-- 53bb23ebc612803e7562d7df36d847bf1979b9a0

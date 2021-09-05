@@ -1,25 +1,23 @@
-import Prime from './nth-prime'
+import { nth } from './nth-prime'
 
 describe('Prime', () => {
-  const prime = new Prime()
-
   it('first', () => {
-    expect(prime.nth(1)).toEqual(2)
+    expect(nth(1)).toEqual(2)
   })
 
-  it('second', () => {
-    expect(prime.nth(2)).toEqual(3)
+  xit('second', () => {
+    expect(nth(2)).toEqual(3)
   })
 
-  it('sixth', () => {
-    expect(prime.nth(6)).toEqual(13)
+  xit('sixth', () => {
+    expect(nth(6)).toEqual(13)
   })
 
-  it('big prime', () => {
-    expect(prime.nth(10001)).toEqual(104743)
+  xit('big prime', () => {
+    expect(nth(10001)).toEqual(104743)
   })
 
-  it('weird case', () => {
-    expect(() => prime.nth(0)).toThrowError('Prime is not possible')
+  xit('weird case', () => {
+    expect(() => nth(0)).toThrowError('Prime is not possible')
   })
 })

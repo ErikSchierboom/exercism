@@ -1,5 +1,10 @@
 # Wordy
 
+Welcome to Wordy on Exercism's C# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Parse and evaluate simple math word problems returning the answer as an integer.
 
 ## Iteration 0 — Numbers
@@ -67,27 +72,24 @@ If you'd like, handle exponentials.
 
 32
 
-## Hints
 - To parse the text, you could try to use the [Sprache](https://github.com/sprache/Sprache/blob/develop/README.md) library. You can also find a good tutorial [here](https://www.thomaslevesque.com/2017/02/23/easy-text-parsing-in-c-with-sprache/).
-
-
-## Running the tests
-
-To run the tests, run the command `dotnet test` from within the exercise directory.
-
-Initially, only the first test will be enabled. This is to encourage you to solve the exercise one step at a time.
-Once you get the first test passing, remove the `Skip` property from the next test and work on getting that test passing.
-Once none of the tests are skipped and they are all passing, you can submit your solution 
-using `exercism submit Wordy.cs`
-
-## Further information
-
-For more detailed information about the C# track, including how to get help if
-you're having trouble, please visit the exercism.io [C# language page](http://exercism.io/languages/csharp/resources).
 
 ## Source
 
-Inspired by one of the generated questions in the Extreme Startup game. [https://github.com/rchatley/extreme_startup](https://github.com/rchatley/extreme_startup)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @bressain
+
+### Contributed to by
+
+- @deniscapeto
+- @ErikSchierboom
+- @j2jensen
+- @jwood803
+- @robkeim
+- @tushartyagi
+- @wolf99
+
+### Based on
+
+Inspired by one of the generated questions in the Extreme Startup game. - https://github.com/rchatley/extreme_startup

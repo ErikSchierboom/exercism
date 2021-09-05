@@ -1,5 +1,10 @@
 # Saddle Points
 
+Welcome to Saddle Points on Exercism's Kotlin Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Detect saddle points in a matrix.
 
 So say you have a matrix like so:
@@ -28,33 +33,22 @@ The matrix can have a different number of rows and columns (Non square).
 Note that you may find other definitions of matrix saddle points online,
 but the tests for this exercise follow the above unambiguous definition.
 
-## Setup
-
-Go through the setup instructions for Kotlin to install the necessary
-dependencies:
-
-[https://exercism.io/tracks/kotlin/installation](https://exercism.io/tracks/kotlin/installation)
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ gradlew test
-```
-
-> Use `gradlew.bat` if you're on Windows
-
-In the test suites all tests but the first have been skipped.
-
-Once you get a test passing, you can enable the next one by removing the
-`@Ignore` annotation.
-
 ## Source
 
-J Dalbey's Programming Practice problems [http://users.csc.calpoly.edu/~jdalbey/103/Projects/ProgrammingPractice.html](http://users.csc.calpoly.edu/~jdalbey/103/Projects/ProgrammingPractice.html)
+### Created by
 
-## Submitting Incomplete Solutions
+- @stkent
 
-It's possible to submit an incomplete solution so you can see how others have
-completed the exercise.
+### Contributed to by
+
+- @dector
+- @eparovyshnaya
+- @lihofm
+- @mdowds
+- @sjwarner-bp
+- @SleeplessByte
+- @uzilan
+
+### Based on
+
+J Dalbey's Programming Practice problems - http://users.csc.calpoly.edu/~jdalbey/103/Projects/ProgrammingPractice.html

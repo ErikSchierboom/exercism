@@ -1,5 +1,10 @@
 # Strain
 
+Welcome to Strain on Exercism's Ruby Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Implement the `keep` and `discard` operation on collections. Given a collection
 and a predicate on the collection's elements, `keep` returns a new collection
 containing those elements where the predicate is true, while `discard` returns
@@ -33,32 +38,23 @@ Keep your hands off that filter/reject/whatchamacallit functionality
 provided by your standard library!  Solve this one yourself using other
 basic tools instead.
 
-* * * *
-
-For installation and learning resources, refer to the
-[Ruby resources page](http://exercism.io/languages/ruby/resources).
-
-For running the tests provided, you will need the Minitest gem. Open a
-terminal window and run the following command to install minitest:
-
-    gem install minitest
-
-If you would like color output, you can `require 'minitest/pride'` in
-the test file, or note the alternative instruction, below, for running
-the test file.
-
-Run the tests from the exercise directory using the following command:
-
-    ruby strain_test.rb
-
-To include color from the command line:
-
-    ruby -r minitest/pride strain_test.rb
-
-
 ## Source
 
-Conversation with James Edward Gray II [https://twitter.com/jeg2](https://twitter.com/jeg2)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @kytrinyx
+
+### Contributed to by
+
+- @budmc29
+- @dkinzer
+- @hilary
+- @iHiD
+- @Insti
+- @kotp
+- @pendletons
+- @tryantwit
+
+### Based on
+
+Conversation with James Edward Gray II - https://twitter.com/jeg2

@@ -1,0 +1,37 @@
+{
+  "blurb": "Calculate the number of steps to reach 1 using the Collatz conjecture",
+  "authors": [
+    "stkent"
+  ],
+  "contributors": [
+    "aadityakulkarni",
+    "FridaTveit",
+    "jackattack24",
+    "jmrunkle",
+    "kytrinyx",
+    "lemoncurry",
+    "mirkoperillo",
+    "msomji",
+    "muzimuzhi",
+    "redshirt4",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine",
+    "ThomasVitale",
+    "Zaldrick"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/CollatzCalculator.java"
+    ],
+    "test": [
+      "src/test/java/CollatzCalculatorTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/CollatzCalculator.java"
+    ]
+  },
+  "source": "An unsolved problem in mathematics named after mathematician Lothar Collatz",
+  "source_url": "https://en.wikipedia.org/wiki/3x_%2B_1_problem"
+}

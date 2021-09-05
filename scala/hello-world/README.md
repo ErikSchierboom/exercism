@@ -1,5 +1,10 @@
 # Hello World
 
+Welcome to Hello World on Exercism's Scala Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 The classical introductory exercise. Just say "Hello, World!".
 
 ["Hello, World!"](http://en.wikipedia.org/wiki/%22Hello,_world!%22_program) is
@@ -14,25 +19,23 @@ The objectives are simple:
 
 If everything goes well, you will be ready to fetch your first real exercise.
 
-## Hints
-
-#### Common pitfalls that you should avoid
+## Common pitfalls that you should avoid
 - Usually there is no need in Scala to use `return`. For a discussion see [here](http://stackoverflow.com/questions/24856106/return-in-a-scala-function-literal). Or as a quote from that discussion: *Don't use return, it makes Scala cry.*
-
-
-The Scala exercises assume an SBT project scheme. The exercise solution source
-should be placed within the exercise directory/src/main/scala. The exercise
-unit tests can be found within the exercise directory/src/test/scala.
-
-To run the tests simply run the command `sbt test` in the exercise directory.
-
-For more detailed info about the Scala track see the [help
-page](http://exercism.io/languages/scala).
-
 
 ## Source
 
-This is an exercise to introduce users to using Exercism [http://en.wikipedia.org/wiki/%22Hello,_world!%22_program](http://en.wikipedia.org/wiki/%22Hello,_world!%22_program)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @ricemery
+
+### Contributed to by
+
+- @abo64
+- @ErikSchierboom
+- @ppartarr
+- @rajeshpg
+- @skeskali
+
+### Based on
+
+This is an exercise to introduce users to using Exercism - http://en.wikipedia.org/wiki/%22Hello,_world!%22_program

@@ -1,5 +1,10 @@
 # Hello World
 
+Welcome to Hello World on Exercism's F# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 The classical introductory exercise. Just say "Hello, World!".
 
 ["Hello, World!"](http://en.wikipedia.org/wiki/%22Hello,_world!%22_program) is
@@ -14,22 +19,19 @@ The objectives are simple:
 
 If everything goes well, you will be ready to fetch your first real exercise.
 
-## Running the tests
-
-To run the tests, run the command `dotnet test` from within the exercise directory.
-
-## Autoformatting the code
-
-F# source code can be formatted with the [Fantomas](https://github.com/fsprojects/fantomas) tool.
-
-After installing it with `dotnet tool restore`, run `dotnet fantomas .` to format code within the current directory.
-
-## Further information
-
-For more detailed information about the F# track, including how to get help if
-you're having trouble, please visit the exercism.io [F# language page](http://exercism.io/languages/fsharp/resources).
-
 ## Source
 
-This is an exercise to introduce users to using Exercism [http://en.wikipedia.org/wiki/%22Hello,_world!%22_program](http://en.wikipedia.org/wiki/%22Hello,_world!%22_program)
+### Created by
 
+- @ErikSchierboom
+
+### Contributed to by
+
+- @jrr
+- @lestephane
+- @robkeim
+- @valentin-p
+
+### Based on
+
+This is an exercise to introduce users to using Exercism - http://en.wikipedia.org/wiki/%22Hello,_world!%22_program

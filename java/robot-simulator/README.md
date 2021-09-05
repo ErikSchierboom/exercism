@@ -1,5 +1,10 @@
 # Robot Simulator
 
+Welcome to Robot Simulator on Exercism's Java Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Write a robot simulator.
 
 A robot factory's test facility needs a program to verify robot movements.
@@ -27,20 +32,35 @@ direction it is pointing.
 - Say a robot starts at {7, 3} facing north. Then running this stream
   of instructions should leave it at {9, 4} facing west.
 
-# Running the tests
-
-You can run all the tests for an exercise by entering
-
-```sh
-$ gradle test
-```
-
-in your terminal.
-
 ## Source
 
+### Created by
+
+- @stkent
+
+### Contributed to by
+
+- @aadityakulkarni
+- @FridaTveit
+- @hgvanpariya
+- @javaeeeee
+- @jmrunkle
+- @jtigger
+- @Kyle-Pu
+- @kytrinyx
+- @lemoncurry
+- @matthewstyler
+- @mirkoperillo
+- @morrme
+- @msomji
+- @muzimuzhi
+- @redshirt4
+- @SleeplessByte
+- @Smarticles101
+- @sshine
+- @vivshaw
+- @Zaldrick
+
+### Based on
+
 Inspired by an interview question at a famous company.
-
-## Submitting Incomplete Solutions
-
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.

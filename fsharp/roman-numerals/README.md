@@ -1,5 +1,10 @@
 # Roman Numerals
 
+Welcome to Roman Numerals on Exercism's F# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Write a function to convert from normal numbers to Roman Numerals.
 
 The Romans were a clever bunch. They conquered most of Europe and ruled
@@ -14,7 +19,7 @@ The Romans wrote numbers using letters - I, V, X, L, C, D, M. (notice
 these letters have lots of straight lines and are hence easy to hack
 into stone tablets).
 
-```
+```text
  1  => I
 10  => X
  7  => VII
@@ -41,9 +46,22 @@ In Roman numerals 1990 is MCMXC:
 8=VIII
 
 See also: http://www.novaroma.org/via_romana/numbers.html
+
 ## Source
 
-The Roman Numeral Kata [http://codingdojo.org/cgi-bin/index.pl?KataRomanNumerals](http://codingdojo.org/cgi-bin/index.pl?KataRomanNumerals)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @ErikSchierboom
+
+### Contributed to by
+
+- @jrr
+- @kytrinyx
+- @lestephane
+- @robkeim
+- @valentin-p
+- @wolf99
+
+### Based on
+
+The Roman Numeral Kata - http://codingdojo.org/cgi-bin/index.pl?KataRomanNumerals

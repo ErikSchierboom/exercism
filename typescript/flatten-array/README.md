@@ -1,5 +1,10 @@
 # Flatten Array
 
+Welcome to Flatten Array on Exercism's TypeScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Take a nested list and return a single flattened list with all values except nil/null.
 
 The challenge is to write a function that accepts an arbitrarily-deep nested list-like structure and returns a flattened structure without any nil/null values.
@@ -10,34 +15,17 @@ input: [1,[2,3,null,4],[null],5]
 
 output: [1,2,3,4,5]
 
-## Setup
-
-Go through the setup instructions for TypeScript to
-install the necessary dependencies:
-
-http://exercism.io/languages/typescript
-
-## Requirements
-
-Install assignment dependencies:
-
-```bash
-$ yarn install
-```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ yarn test
-```
-
-
-
 ## Source
 
-Interview Question [https://reference.wolfram.com/language/ref/Flatten.html](https://reference.wolfram.com/language/ref/Flatten.html)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @CRivasGomez
+
+### Contributed to by
+
+- @masters3d
+- @SleeplessByte
+
+### Based on
+
+Interview Question - https://reference.wolfram.com/language/ref/Flatten.html

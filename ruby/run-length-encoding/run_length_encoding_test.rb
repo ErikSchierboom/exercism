@@ -4,6 +4,7 @@ require_relative 'run_length_encoding'
 # Common test data version: 1.1.0 1b7900e
 class RunLengthEncodingTest < Minitest::Test
   def test_encode_empty_string
+    # skip
     input = ''
     output = ''
     assert_equal output, RunLengthEncoding.encode(input)

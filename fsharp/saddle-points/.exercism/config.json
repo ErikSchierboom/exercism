@@ -1,0 +1,26 @@
+{
+  "blurb": "Detect saddle points in a matrix.",
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "contributors": [
+    "jrr",
+    "lestephane",
+    "robkeim",
+    "valentin-p",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "SaddlePoints.fs"
+    ],
+    "test": [
+      "SaddlePointsTests.fs"
+    ],
+    "example": [
+      ".meta/Example.fs"
+    ]
+  },
+  "source": "J Dalbey's Programming Practice problems",
+  "source_url": "http://users.csc.calpoly.edu/~jdalbey/103/Projects/ProgrammingPractice.html"
+}

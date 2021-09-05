@@ -1,44 +1,55 @@
-import { solve } from "./darts";
+import { score } from './darts';
 
-describe("Return the correct amount earned by a dart landing in a given point in the target problem", () => {
-  test("A dart lands outside the target", () => {
-    const x = 15.3;
-    const y = 13.2;
-    const expected = 0;
-    expect(solve(x, y)).toEqual(expected);
+describe('Darts', () => {
+  test('Missed target', () => {
+    expect(score(-9, 9)).toEqual(0);
   });
 
-  test("A dart lands just in the border of the target", () => {
-    const x = 10;
-    const y = 0;
-    const expected = 1;
-    expect(solve(x, y)).toEqual(expected);
+  xtest('On the outer circle', () => {
+    expect(score(0, 10)).toEqual(1);
   });
 
-  test("Input is not a number", () => {
-    const x = "WRONG";
-    const y = 10;
-    expect(solve(x, y)).toBeNull();
+  xtest('On the middle circle', () => {
+    expect(score(-5, 0)).toEqual(5);
   });
 
-  test("A dart lands in the middle circle", () => {
-    const x = 3;
-    const y = 3.7;
-    const expected = 5;
-    expect(solve(x, y)).toEqual(expected);
+  xtest('On the inner circle', () => {
+    expect(score(0, -1)).toEqual(10);
   });
 
-  test("A dart lands right in the border between outside and middle circles", () => {
-    const x = 0;
-    const y = 5;
-    const expected = 5;
-    expect(solve(x, y)).toEqual(expected);
+  xtest('Exactly on centre', () => {
+    expect(score(0, 0)).toEqual(10);
   });
 
-  test("A dart lands in the inner circle", () => {
-    const x = 0;
-    const y = 0;
-    const expected = 10;
-    expect(solve(x, y)).toEqual(expected);
+  xtest('Near the centre', () => {
+    expect(score(-0.1, -0.1)).toEqual(10);
+  });
+
+  xtest('Just within the inner circle', () => {
+    expect(score(0.7, 0.7)).toEqual(10);
+  });
+
+  xtest('Just outside the inner circle', () => {
+    expect(score(0.8, -0.8)).toEqual(5);
+  });
+
+  xtest('Just within the middle circle', () => {
+    expect(score(-3.5, 3.5)).toEqual(5);
+  });
+
+  xtest('Just outside the middle circle', () => {
+    expect(score(-3.6, -3.6)).toEqual(1);
+  });
+
+  xtest('Just within the outer circle', () => {
+    expect(score(-7.0, 7.0)).toEqual(1);
+  });
+
+  xtest('Just outside the outer circle', () => {
+    expect(score(7.1, -7.1)).toEqual(0);
+  });
+
+  xtest('Asymmetric position between the inner and middle circles', () => {
+    expect(score(0.5, -4)).toEqual(5);
   });
 });

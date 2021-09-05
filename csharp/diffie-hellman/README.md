@@ -1,5 +1,10 @@
 # Diffie Hellman
 
+Welcome to Diffie Hellman on Exercism's C# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Diffie-Hellman key exchange.
 
 Alice and Bob use Diffie-Hellman key exchange to share secrets.  They
@@ -37,15 +42,21 @@ Bob calculates
 The calculations produce the same result!  Alice and Bob now share
 secret s.
 
-## Hints
 This exercise requires you to perform calculations on large numbers. To correctly represent large numbers, the
-[BigInteger](https://msdn.microsoft.com/en-us/library/system.numerics.biginteger(v=vs.110).aspx) struct is used.
-
-
+[BigInteger](https://docs.microsoft.com/en-us/dotnet/api/system.numerics.biginteger?view=net-5.0) struct is used.
 
 ## Source
 
-Wikipedia, 1024 bit key from www.cryptopp.com/wiki. [http://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange](http://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @ErikSchierboom
+
+### Contributed to by
+
+- @j2jensen
+- @robkeim
+- @wolf99
+
+### Based on
+
+Wikipedia, 1024 bit key from www.cryptopp.com/wiki. - http://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange

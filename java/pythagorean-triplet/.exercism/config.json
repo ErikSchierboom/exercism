@@ -1,0 +1,39 @@
+{
+  "blurb": "There exists exactly one Pythagorean triplet for which a + b + c = 1000. Find the product a * b * c.",
+  "authors": [
+    "javaeeeee"
+  ],
+  "contributors": [
+    "aadityakulkarni",
+    "FridaTveit",
+    "jmrunkle",
+    "jsertel",
+    "kytrinyx",
+    "lemoncurry",
+    "michaelspets",
+    "mirkoperillo",
+    "mraediaz",
+    "msomji",
+    "muzimuzhi",
+    "princerachit",
+    "redshirt4",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine",
+    "stkent",
+    "Zaldrick"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/PythagoreanTriplet.java"
+    ],
+    "test": [
+      "src/test/java/PythagoreanTripletTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/PythagoreanTriplet.java"
+    ]
+  },
+  "source": "Problem 9 at Project Euler",
+  "source_url": "http://projecteuler.net/problem=9"
+}

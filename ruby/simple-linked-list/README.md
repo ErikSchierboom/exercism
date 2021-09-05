@@ -1,5 +1,10 @@
 # Simple Linked List
 
+Welcome to Simple Linked List on Exercism's Ruby Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Write a simple linked list implementation that uses Elements and a List.
 
 The linked list is a fundamental data structure in computer science,
@@ -21,32 +26,29 @@ and provide functions to reverse a linked list and convert to and from arrays.
 When implementing this in a language with built-in linked lists,
 implement your own abstract data type.
 
-* * * *
-
-For installation and learning resources, refer to the
-[Ruby resources page](http://exercism.io/languages/ruby/resources).
-
-For running the tests provided, you will need the Minitest gem. Open a
-terminal window and run the following command to install minitest:
-
-    gem install minitest
-
-If you would like color output, you can `require 'minitest/pride'` in
-the test file, or note the alternative instruction, below, for running
-the test file.
-
-Run the tests from the exercise directory using the following command:
-
-    ruby simple_linked_list_test.rb
-
-To include color from the command line:
-
-    ruby -r minitest/pride simple_linked_list_test.rb
-
-
 ## Source
 
-Inspired by 'Data Structures and Algorithms with Object-Oriented Design Patterns in Ruby', singly linked-lists. [http://www.brpreiss.com/books/opus8/html/page96.html#SECTION004300000000000000000](http://www.brpreiss.com/books/opus8/html/page96.html#SECTION004300000000000000000)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @vosechu
+
+### Contributed to by
+
+- @alxndr
+- @budmc29
+- @cadwallion
+- @copiousfreetime
+- @dkinzer
+- @etrepum
+- @hilary
+- @iHiD
+- @Insti
+- @jpotts244
+- @kotp
+- @kytrinyx
+- @tryantwit
+- @zvkemp
+
+### Based on
+
+Inspired by 'Data Structures and Algorithms with Object-Oriented Design Patterns in Ruby', singly linked-lists. - https://web.archive.org/web/20160731005714/http://brpreiss.com/books/opus8/html/page96.html

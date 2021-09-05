@@ -1,5 +1,10 @@
 # Run Length Encoding
 
+Welcome to Run Length Encoding on Exercism's Nim Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Implement run-length encoding and decoding.
 
 Run-length encoding (RLE) is a simple form of data compression, where runs
@@ -23,32 +28,16 @@ the letters A through Z (either lower or upper case) and whitespace. This way
 data to be encoded will never contain any numbers and numbers inside data to
 be decoded always represent the count for the following character.
 
-## Running the tests
-
-To compile and run the tests, just run the following in your exercise directory:
-```bash
-$ nim c -r run_length_encoding_test.nim
-```
-
-## Submitting Exercises
-
-Note that, when trying to submit an exercise, make sure the solution is in the `$EXERCISM_WORKSPACE/nim/run-length-encoding` directory.
-
-You can find your Exercism workspace by running `exercism debug` and looking for the line that starts with `Exercises Directory`.
-
-## Need help?
-
-These guides should help you,
-* [Installing Nim](https://exercism.io/tracks/nim/installation)
-* [Running the Tests](https://exercism.io/tracks/nim/tests)
-* [Learning Nim](https://exercism.io/tracks/nim/learning)
-* [Useful Nim Resources](https://exercism.io/tracks/nim/resources)
-
-
 ## Source
 
-Wikipedia [https://en.wikipedia.org/wiki/Run-length_encoding](https://en.wikipedia.org/wiki/Run-length_encoding)
+### Created by
 
-## Submitting Incomplete Solutions
+- @amscotti
 
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+### Contributed to by
+
+- @ee7
+
+### Based on
+
+Wikipedia - https://en.wikipedia.org/wiki/Run-length_encoding

@@ -1,5 +1,10 @@
 # Ledger
 
+Welcome to Ledger on Exercism's F# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Refactor a ledger printer.
 
 The ledger exercise is a refactoring exercise. There is code that prints a
@@ -14,5 +19,15 @@ working version.  Version control tools like git can help here as well.
 Please keep a log of what changes you've made and make a comment on the exercise
 containing that log, this will help reviewers.
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+## Source
+
+### Created by
+
+- @ErikSchierboom
+
+### Contributed to by
+
+- @jrr
+- @lestephane
+- @robkeim
+- @valentin-p

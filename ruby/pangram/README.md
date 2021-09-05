@@ -1,5 +1,10 @@
 # Pangram
 
+Welcome to Pangram on Exercism's Ruby Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Determine if a sentence is a pangram. A pangram (Greek: παν γράμμα, pan gramma,
 "every letter") is a sentence using every letter of the alphabet at least once.
 The best known English pangram is:
@@ -8,32 +13,25 @@ The best known English pangram is:
 The alphabet used consists of ASCII letters `a` to `z`, inclusive, and is case
 insensitive. Input will not contain non-ASCII symbols.
 
-* * * *
-
-For installation and learning resources, refer to the
-[Ruby resources page](http://exercism.io/languages/ruby/resources).
-
-For running the tests provided, you will need the Minitest gem. Open a
-terminal window and run the following command to install minitest:
-
-    gem install minitest
-
-If you would like color output, you can `require 'minitest/pride'` in
-the test file, or note the alternative instruction, below, for running
-the test file.
-
-Run the tests from the exercise directory using the following command:
-
-    ruby pangram_test.rb
-
-To include color from the command line:
-
-    ruby -r minitest/pride pangram_test.rb
-
-
 ## Source
 
-Wikipedia [https://en.wikipedia.org/wiki/Pangram](https://en.wikipedia.org/wiki/Pangram)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @Cohen-Carlisle
+
+### Contributed to by
+
+- @budmc29
+- @cadwallion
+- @hilary
+- @iHiD
+- @Insti
+- @jpotts244
+- @kotp
+- @kytrinyx
+- @rpalo
+- @tryantwit
+
+### Based on
+
+Wikipedia - https://en.wikipedia.org/wiki/Pangram

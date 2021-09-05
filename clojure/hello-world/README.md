@@ -1,5 +1,10 @@
 # Hello World
 
+Welcome to Hello World on Exercism's Clojure Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 The classical introductory exercise. Just say "Hello, World!".
 
 ["Hello, World!"](http://en.wikipedia.org/wiki/%22Hello,_world!%22_program) is
@@ -14,7 +19,7 @@ The objectives are simple:
 
 If everything goes well, you will be ready to fetch your first real exercise.
 
-### Project Structure
+## Project Structure
 
 Clojure exercises in exercism use [leiningen](http://leiningen.org/) to configure and run your code
 and use [leiningen standard directory structure](https://github.com/technomancy/leiningen/blob/master/doc/TUTORIAL.md#directory-layout).
@@ -22,7 +27,7 @@ and use [leiningen standard directory structure](https://github.com/technomancy/
 You will find a test file named `hello_world_test.clj` inside `test` directory.
 Write your code in `src/hello_world.clj`. It should use the namespace `hello-world` so that tests can pick it up.
 
-### Running tests
+## Running tests
 
 Run the tests using `lein test` command and make them pass:
 
@@ -31,7 +36,7 @@ $ lein test
 
 lein test hello-world-test
 
-Ran 1 tests containing 1 assertions.
+Ran 3 tests containing 3 assertions.
 0 failures, 0 errors.
 ```
 
@@ -45,7 +50,16 @@ For more detailed instructions and learning resources refer [exercism's clojure 
 
 ## Source
 
-This is an exercise to introduce users to using Exercism [http://en.wikipedia.org/wiki/%22Hello,_world!%22_program](http://en.wikipedia.org/wiki/%22Hello,_world!%22_program)
+### Contributed to by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @AndreaCrotti
+- @christianpoveda
+- @haus
+- @jcorrado
+- @sjwarner-bp
+- @tejasbubane
+- @yurrriq
+
+### Based on
+
+This is an exercise to introduce users to using Exercism - http://en.wikipedia.org/wiki/%22Hello,_world!%22_program

@@ -1,5 +1,10 @@
 # Complex Numbers
 
+Welcome to Complex Numbers on Exercism's TypeScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 A complex number is a number in the form `a + b * i` where `a` and `b` are real and `i` satisfies `i^2 = -1`.
 
 `a` is called the real part and `b` is called the imaginary part of `z`.
@@ -19,46 +24,26 @@ The reciprocal of a non-zero complex number is
 Dividing a complex number `a + i * b` by another `c + i * d` gives:
 `(a + i * b) / (c + i * d) = (a * c + b * d)/(c^2 + d^2) + (b * c - a * d)/(c^2 + d^2) * i`.
 
-Exponent of a complex number can be expressed as
-`exp(a + i * b) = exp(a) * exp(i * b)`,
-and the last term is given by Euler's formula `exp(i * b) = cos(b) + i * sin(b)`.
-
+Raising e to a complex exponent can be expressed as `e^(a + i * b) = e^a * e^(i * b)`, the last term of which is given by Euler's formula `e^(i * b) = cos(b) + i * sin(b)`.
 
 Implement the following operations:
- - addition, subtraction, multiplication and division of two complex numbers,
- - conjugate, absolute value, exponent of a given complex number.
 
+- addition, subtraction, multiplication and division of two complex numbers,
+- conjugate, absolute value, exponent of a given complex number.
 
 Assume the programming language you are using does not have an implementation of complex numbers.
 
-## Setup
-
-Go through the setup instructions for TypeScript to
-install the necessary dependencies:
-
-http://exercism.io/languages/typescript
-
-## Requirements
-
-Install assignment dependencies:
-
-```bash
-$ yarn install
-```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ yarn test
-```
-
-
-
 ## Source
 
-Wikipedia [https://en.wikipedia.org/wiki/Complex_number](https://en.wikipedia.org/wiki/Complex_number)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @CRivasGomez
+
+### Contributed to by
+
+- @masters3d
+- @SleeplessByte
+
+### Based on
+
+Wikipedia - https://en.wikipedia.org/wiki/Complex_number

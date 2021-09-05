@@ -1,22 +1,27 @@
 # Connect
 
+Welcome to Connect on Exercism's Haskell Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Compute the result for a game of Hex / Polygon.
 
 The abstract boardgame known as
 [Hex](https://en.wikipedia.org/wiki/Hex_%28board_game%29) / Polygon /
 CON-TAC-TIX is quite simple in rules, though complex in practice. Two players
-place stones on a rhombus with hexagonal fields. The player to connect his/her
-stones to the opposite side first wins. The four sides of the rhombus are
+place stones on a parallelogram with hexagonal fields. The player to connect his/her
+stones to the opposite side first wins. The four sides of the parallelogram are
 divided between the two players (i.e. one player gets assigned a side and the
 side directly opposite it and the other player gets assigned the two other
 sides).
 
 Your goal is to build a program that given a simple representation of a board
 computes the winner (or lack thereof). Note that all games need not be "fair".
-(For example, players may have mismatched piece counts.)
+(For example, players may have mismatched piece counts or the game's board might
+have a different width and height.)
 
-The boards look like this (with spaces added for readability, which won't be in
-the representation passed to your code):
+The boards look like this:
 
 ```text
 . O . X .
@@ -30,58 +35,21 @@ the representation passed to your code):
 the above example `O` has made a connection from left to right but nobody has
 won since `O` didn't connect top and bottom.
 
+## Source
 
-## Getting Started
+### Created by
 
-For installation and learning resources, refer to the
-[exercism help page](http://exercism.io/languages/haskell).
+- @pminten
 
-## Running the tests
+### Contributed to by
 
-To run the test suite, execute the following command:
-
-```bash
-stack test
-```
-
-#### If you get an error message like this...
-
-```
-No .cabal file found in directory
-```
-
-You are probably running an old stack version and need
-to upgrade it.
-
-#### Otherwise, if you get an error message like this...
-
-```
-No compiler found, expected minor version match with...
-Try running "stack setup" to install the correct GHC...
-```
-
-Just do as it says and it will download and install
-the correct compiler version:
-
-```bash
-stack setup
-```
-
-## Running *GHCi*
-
-If you want to play with your solution in GHCi, just run the command:
-
-```bash
-stack ghci
-```
-
-## Feedback, Issues, Pull Requests
-
-The [exercism/haskell](https://github.com/exercism/haskell) repository on
-GitHub is the home for all of the Haskell exercises.
-
-If you have feedback about an exercise, or want to help implementing a new
-one, head over there and create an issue.  We'll do our best to help you!
-
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @etrepum
+- @iHiD
+- @kytrinyx
+- @lpalma
+- @navossoc
+- @petertseng
+- @ppartarr
+- @rbasso
+- @sshine
+- @tejasbubane

@@ -1,5 +1,10 @@
 # Series
 
+Welcome to Series on Exercism's Kotlin Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given a string of digits, output all the contiguous substrings of length `n` in
 that string in the order that they appear.
 
@@ -20,33 +25,26 @@ whatever you get.
 Note that these series are only required to occupy *adjacent positions*
 in the input; the digits need not be *numerically consecutive*.
 
-## Setup
-
-Go through the setup instructions for Kotlin to install the necessary
-dependencies:
-
-[https://exercism.io/tracks/kotlin/installation](https://exercism.io/tracks/kotlin/installation)
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ gradlew test
-```
-
-> Use `gradlew.bat` if you're on Windows
-
-In the test suites all tests but the first have been skipped.
-
-Once you get a test passing, you can enable the next one by removing the
-`@Ignore` annotation.
-
 ## Source
 
-A subset of the Problem 8 at Project Euler [http://projecteuler.net/problem=8](http://projecteuler.net/problem=8)
+### Created by
 
-## Submitting Incomplete Solutions
+- @sdavids13
 
-It's possible to submit an incomplete solution so you can see how others have
-completed the exercise.
+### Contributed to by
+
+- @dector
+- @eparovyshnaya
+- @jtigger
+- @lihofm
+- @mdowds
+- @mikegehard
+- @nithia
+- @sjwarner-bp
+- @SleeplessByte
+- @stkent
+- @uzilan
+
+### Based on
+
+A subset of the Problem 8 at Project Euler - http://projecteuler.net/problem=8

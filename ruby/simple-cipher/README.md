@@ -1,5 +1,10 @@
 # Simple Cipher
 
+Welcome to Simple Cipher on Exercism's Ruby Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Implement a simple shift cipher like Caesar and a more secure substitution cipher.
 
 ## Step 1
@@ -61,10 +66,7 @@ substitution cipher a little more fault tolerant by providing a source
 of randomness and ensuring that the key contains only lowercase letters.
 
 If someone doesn't submit a key at all, generate a truly random key of
-at least 100 characters in length.
-
-If the key submitted is not composed only of lowercase letters, your
-solution should handle the error in a language-appropriate way.
+at least 100 lowercase characters in length.
 
 ## Extensions
 
@@ -81,32 +83,26 @@ on Wikipedia][dh] for one of the first implementations of this scheme.
 [1]: https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Caesar_cipher_left_shift_of_3.svg/320px-Caesar_cipher_left_shift_of_3.svg.png
 [dh]: http://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange
 
-* * * *
-
-For installation and learning resources, refer to the
-[Ruby resources page](http://exercism.io/languages/ruby/resources).
-
-For running the tests provided, you will need the Minitest gem. Open a
-terminal window and run the following command to install minitest:
-
-    gem install minitest
-
-If you would like color output, you can `require 'minitest/pride'` in
-the test file, or note the alternative instruction, below, for running
-the test file.
-
-Run the tests from the exercise directory using the following command:
-
-    ruby simple_cipher_test.rb
-
-To include color from the command line:
-
-    ruby -r minitest/pride simple_cipher_test.rb
-
-
 ## Source
 
-Substitution Cipher at Wikipedia [http://en.wikipedia.org/wiki/Substitution_cipher](http://en.wikipedia.org/wiki/Substitution_cipher)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @vosechu
+
+### Contributed to by
+
+- @budmc29
+- @dalexj
+- @dkinzer
+- @hilary
+- @iHiD
+- @Insti
+- @kotp
+- @kytrinyx
+- @markijbema
+- @snoozer05
+- @tryantwit
+
+### Based on
+
+Substitution Cipher at Wikipedia - http://en.wikipedia.org/wiki/Substitution_cipher

@@ -1,0 +1,27 @@
+{
+  "blurb": "Create an implementation of the atbash cipher, an ancient encryption system created in the Middle East.",
+  "authors": [
+    "bressain"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "j2jensen",
+    "jwood803",
+    "robkeim",
+    "tushartyagi",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "AtbashCipher.cs"
+    ],
+    "test": [
+      "AtbashCipherTests.cs"
+    ],
+    "example": [
+      ".meta/Example.cs"
+    ]
+  },
+  "source": "Wikipedia",
+  "source_url": "http://en.wikipedia.org/wiki/Atbash"
+}

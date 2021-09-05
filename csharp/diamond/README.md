@@ -1,5 +1,10 @@
 # Diamond
 
+Welcome to Diamond on Exercism's C# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 The diamond kata takes as its input a letter, and outputs it in a diamond
 shape. Given a letter, it prints a diamond starting with 'A', with the
 supplied letter at the widest point.
@@ -52,8 +57,7 @@ E·······E
 ····A····
 ```
 
-## Hints
-The tests in this exercise are different from your usual tests. Normally, a test checks if for a given input, the output matches the expected value. This is called *value-based testing*. However, this exercise uses *property-based testing*, where the tests check if for a range of inputs, the output has a specific property. The two key differences that differentiate property-based testing from value-based testing are:
+The tests in this exercise are different from your usual tests. Normally, a test checks if for a given input, the output matches the expected value. This is called _value-based testing_. However, this exercise uses _property-based testing_, where the tests check if for a range of inputs, the output has a specific property. The two key differences that differentiate property-based testing from value-based testing are:
 
 1. A property-based test works not with a single input value, but with many.
 1. A property-based test verifies properties, not concrete values.
@@ -64,10 +68,18 @@ In order to facilitate propery-based testing, the tests in this exercise leverag
 
 If you would like more information on property-based testing, see [this article](http://www.erikschierboom.com/2016/02/22/property-based-testing/).
 
-
 ## Source
 
-Seb Rose [http://claysnow.co.uk/recycling-tests-in-tdd/](http://claysnow.co.uk/recycling-tests-in-tdd/)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @ErikSchierboom
+
+### Contributed to by
+
+- @j2jensen
+- @robkeim
+- @wolf99
+
+### Based on
+
+Seb Rose - http://claysnow.co.uk/recycling-tests-in-tdd/

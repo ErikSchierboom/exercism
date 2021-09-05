@@ -1,5 +1,10 @@
 # Roman Numerals
 
+Welcome to Roman Numerals on Exercism's Java Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Write a function to convert from normal numbers to Roman Numerals.
 
 The Romans were a clever bunch. They conquered most of Europe and ruled
@@ -42,20 +47,30 @@ In Roman numerals 1990 is MCMXC:
 
 See also: http://www.novaroma.org/via_romana/numbers.html
 
-# Running the tests
-
-You can run all the tests for an exercise by entering
-
-```sh
-$ gradle test
-```
-
-in your terminal.
-
 ## Source
 
-The Roman Numeral Kata [http://codingdojo.org/cgi-bin/index.pl?KataRomanNumerals](http://codingdojo.org/cgi-bin/index.pl?KataRomanNumerals)
+### Contributed to by
 
-## Submitting Incomplete Solutions
+- @aadityakulkarni
+- @elrolfe
+- @FridaTveit
+- @jmrunkle
+- @jtigger
+- @katmpatz
+- @kytrinyx
+- @lemoncurry
+- @LuLechuan
+- @matthewmorgan
+- @msomji
+- @muzimuzhi
+- @sjwarner-bp
+- @SleeplessByte
+- @Smarticles101
+- @sshine
+- @stkent
+- @vdemeester
+- @Zaldrick
 
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+### Based on
+
+The Roman Numeral Kata - http://codingdojo.org/cgi-bin/index.pl?KataRomanNumerals

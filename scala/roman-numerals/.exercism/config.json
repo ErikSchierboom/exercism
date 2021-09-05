@@ -1,0 +1,29 @@
+{
+  "blurb": "Write a function to convert from normal numbers to Roman Numerals.",
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "contributors": [
+    "abo64",
+    "kytrinyx",
+    "oujesky",
+    "ppartarr",
+    "rajeshpg",
+    "ricemery",
+    "sathish316",
+    "yanick"
+  ],
+  "files": {
+    "solution": [
+      "src/main/scala/RomanNumerals.scala"
+    ],
+    "test": [
+      "src/test/scala/RomanNumeralsTest.scala"
+    ],
+    "example": [
+      ".meta/Example.scala"
+    ]
+  },
+  "source": "The Roman Numeral Kata",
+  "source_url": "http://codingdojo.org/cgi-bin/index.pl?KataRomanNumerals"
+}

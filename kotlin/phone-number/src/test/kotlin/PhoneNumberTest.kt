@@ -1,92 +1,91 @@
 import org.junit.Ignore
 import org.junit.Test
+import java.lang.IllegalArgumentException
 import kotlin.test.assertEquals
 import kotlin.test.assertNull
 
 class PhoneNumberTest {
 
     @Test
-    fun cleansNumber() {
-        val expectedNumber = "2234567890"
-        val actualNumber = PhoneNumber("(223) 456-7890").number
+    fun `valid | simple number`() = assertNumberEquals("(223) 456-7890", "2234567890")
 
-        assertEquals(expectedNumber, actualNumber)
+    @Test
+    fun `valid | number with dots`() = assertNumberEquals("223.456.7890", "2234567890")
+
+    @Test
+    fun `valid | numbers with multiple spaces`() = assertNumberEquals("223 456   7890   ", "2234567890")
+
+    @Test(expected = IllegalArgumentException::class)
+    fun `invalid | 9 digit`() {
+        PhoneNumber("123456789")
+    }
+
+    @Test(expected = IllegalArgumentException::class)
+    fun `invalid | when 11 digits does not start with a 1`() {
+        PhoneNumber("22234567890")
     }
 
     @Test
-    fun cleansNumberWithDots() {
-        val expectedNumber = "2234567890"
-        val actualNumber = PhoneNumber("223.456.7890").number
-
-        assertEquals(expectedNumber, actualNumber)
-    }
+    fun `valid | 11 digits and starting with 1`() = assertNumberEquals("12234567890", "2234567890")
 
     @Test
-    fun cleansNumberWithMultipleSpaces() {
-        val expectedNumber = "2234567890"
-        val actualNumber = PhoneNumber("223 456   7890   ").number
+    fun `valid | 11 digits starting with 1 with punctuation`() = assertNumberEquals("+1 (223) 456-7890", "2234567890")
 
-        assertEquals(expectedNumber, actualNumber)
+    @Test(expected = IllegalArgumentException::class)
+    fun `invalid | more than 11 digits`() {
+        PhoneNumber("321234567890")
     }
 
-    @Test
-    fun invalidWhen9Digits() {
-        assertNull(PhoneNumber("123456789").number)
+    @Test(expected = IllegalArgumentException::class)
+    fun `invalid | letters`() {
+        PhoneNumber("123-abc-7890")
     }
 
-    @Test
-    fun invalidWhen11DigitsAndFirstIsNot1() {
-        assertNull(PhoneNumber("22234567890").number)
+    @Test(expected = IllegalArgumentException::class)
+    fun `invalid | punctuations`() {
+        PhoneNumber("123-@:!-7890")
     }
 
-    @Test
-    fun validWhen11DigitsAndFirstIs1() {
-        val expectedNumber = "2234567890"
-        val actualNumber = PhoneNumber("12234567890").number
-
-        assertEquals(expectedNumber, actualNumber)
+    @Test(expected = IllegalArgumentException::class)
+    fun `invalid | area code starts with 0`() {
+        PhoneNumber("(023) 456-7890")
     }
 
-    @Test
-    fun validWhen11DigitsAndFirstIs1WithPunctuation() {
-        val expectedNumber = "2234567890"
-        val actualNumber = PhoneNumber("+1 (223) 456-7890").number
-
-        assertEquals(expectedNumber, actualNumber)
+    @Test(expected = IllegalArgumentException::class)
+    fun `invalid | area code starts with 1`() {
+        PhoneNumber("(123) 456-7890")
     }
 
-    @Test
-    fun invalidWhenMoreThan11Digits() {
-        val expectedNumber = null
-        val actualNumber = PhoneNumber("321234567890").number
-
-        assertEquals(expectedNumber, actualNumber)
+    @Test(expected = IllegalArgumentException::class)
+    fun `invalid | exchange code starts with 0`() {
+        PhoneNumber("(223) 056-7890")
     }
 
-    @Test
-    fun invalidWithLetters() {
-        val expectedNumber = null
-        val actualNumber = PhoneNumber("123-abc-7890").number
-
-        assertEquals(expectedNumber, actualNumber)
+    @Test(expected = IllegalArgumentException::class)
+    fun `invalid | exchange code starts with 1`() {
+        PhoneNumber("(223) 156-7890")
     }
 
-    @Test
-    fun invalidWithInvalidPunctuation() {
-        val expectedNumber = null
-        val actualNumber = PhoneNumber("123-@:!-7890").number
-
-        assertEquals(expectedNumber, actualNumber)
+    @Test(expected = IllegalArgumentException::class)
+    fun `invalid | area code starts with 0 on valid 11-digit number`() {
+        PhoneNumber("1 (023) 456-7890")
     }
 
-    @Test
-    fun invalidWhenAreaCodeStartsWith0or1() {
-        assertNull(PhoneNumber("(123) 456-7890").number)
+
+    @Test(expected = IllegalArgumentException::class)
+    fun `invalid | area code starts with 1 on valid 11-digit number`() {
+        PhoneNumber("1 (123) 456-7890")
     }
 
-    @Test
-    fun invalidWhenExchangeCodeStartsWith0or1() {
-        assertNull(PhoneNumber("(223) 056-7890").number)
+    @Test(expected = IllegalArgumentException::class)
+    fun `invalid | exchange code starts with 0 on valid 11-digit number`() {
+        PhoneNumber("1 (223) 056-7890")
     }
 
+    @Test(expected = IllegalArgumentException::class)
+    fun `invalid | exchange code starts with 1 on valid 11-digit number`() {
+        PhoneNumber("1 (223) 156-7890")
+    }
 }
+
+private fun assertNumberEquals(input: String, expectation: String) = assertEquals(expectation, PhoneNumber(input).number)

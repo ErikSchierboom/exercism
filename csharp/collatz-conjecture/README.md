@@ -1,5 +1,10 @@
 # Collatz Conjecture
 
+Welcome to Collatz Conjecture on Exercism's C# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 The Collatz Conjecture or 3x+1 problem can be summarized as follows:
 
 Take any positive integer n. If n is even, divide n by 2 to get n / 2. If n is
@@ -26,10 +31,21 @@ Starting with n = 12, the steps would be as follows:
 
 Resulting in 9 steps. So for input n = 12, the return value would be 9.
 
-
 ## Source
 
-An unsolved problem in mathematics named after mathematician Lothar Collatz [https://en.wikipedia.org/wiki/3x_%2B_1_problem](https://en.wikipedia.org/wiki/3x_%2B_1_problem)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @jpreese
+
+### Contributed to by
+
+- @ErikSchierboom
+- @FizzBuzz791
+- @j2jensen
+- @robkeim
+- @ruanha
+- @wolf99
+
+### Based on
+
+An unsolved problem in mathematics named after mathematician Lothar Collatz - https://en.wikipedia.org/wiki/3x_%2B_1_problem

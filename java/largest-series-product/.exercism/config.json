@@ -1,0 +1,41 @@
+{
+  "blurb": "Given a string of digits, calculate the largest product for a contiguous substring of digits of length n.",
+  "authors": [
+    "stkent"
+  ],
+  "contributors": [
+    "aadityakulkarni",
+    "artamonovkirill",
+    "aryasaatvik",
+    "delbertlegg",
+    "FridaTveit",
+    "jmrunkle",
+    "jsertel",
+    "jtigger",
+    "kytrinyx",
+    "lemoncurry",
+    "matthewstyler",
+    "morrme",
+    "msomji",
+    "muzimuzhi",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "Smarticles101",
+    "sonapraneeth-a",
+    "sshine",
+    "Zaldrick"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/LargestSeriesProductCalculator.java"
+    ],
+    "test": [
+      "src/test/java/LargestSeriesProductCalculatorTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/LargestSeriesProductCalculator.java"
+    ]
+  },
+  "source": "A variation on Problem 8 at Project Euler",
+  "source_url": "http://projecteuler.net/problem=8"
+}

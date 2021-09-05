@@ -1,0 +1,20 @@
+{
+  "blurb": "Detect saddle points in a matrix.",
+  "authors": ["stkent"],
+  "contributors": [
+    "dector",
+    "eparovyshnaya",
+    "lihofm",
+    "mdowds",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "uzilan"
+  ],
+  "files": {
+    "solution": ["src/main/kotlin/Matrix.kt"],
+    "test": ["src/test/kotlin/MatrixTest.kt"],
+    "example": [".meta/src/reference/kotlin/Matrix.kt"]
+  },
+  "source": "J Dalbey's Programming Practice problems",
+  "source_url": "http://users.csc.calpoly.edu/~jdalbey/103/Projects/ProgrammingPractice.html"
+}

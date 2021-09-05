@@ -1,5 +1,10 @@
 # Scale Generator
 
+Welcome to Scale Generator on Exercism's Nim Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given a tonic, or starting note, and a set of intervals, generate
 the musical scale starting with the tonic and following the
 specified interval pattern.
@@ -48,28 +53,8 @@ interval, written "A", has two interceding notes (e.g., from A to C or Db to E)
 or a "whole step" plus a "half step". There are also smaller and larger
 intervals, but they will not figure into this exercise.
 
-## Running the tests
+## Source
 
-To compile and run the tests, just run the following in your exercise directory:
-```bash
-$ nim c -r scale_generator_test.nim
-```
+### Created by
 
-## Submitting Exercises
-
-Note that, when trying to submit an exercise, make sure the solution is in the `$EXERCISM_WORKSPACE/nim/scale-generator` directory.
-
-You can find your Exercism workspace by running `exercism debug` and looking for the line that starts with `Exercises Directory`.
-
-## Need help?
-
-These guides should help you,
-* [Installing Nim](https://exercism.io/tracks/nim/installation)
-* [Running the Tests](https://exercism.io/tracks/nim/tests)
-* [Learning Nim](https://exercism.io/tracks/nim/learning)
-* [Useful Nim Resources](https://exercism.io/tracks/nim/resources)
-
-
-## Submitting Incomplete Solutions
-
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @ee7

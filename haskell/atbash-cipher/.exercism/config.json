@@ -1,0 +1,32 @@
+{
+  "blurb": "Create an implementation of the atbash cipher, an ancient encryption system created in the Middle East.",
+  "authors": [
+    "etrepum"
+  ],
+  "contributors": [
+    "iHiD",
+    "JavierGelatti",
+    "kytrinyx",
+    "lpalma",
+    "navossoc",
+    "petertseng",
+    "ppartarr",
+    "rbasso",
+    "sshine",
+    "stevejb71",
+    "tejasbubane"
+  ],
+  "files": {
+    "solution": [
+      "src/Atbash.hs"
+    ],
+    "test": [
+      "test/Tests.hs"
+    ],
+    "example": [
+      "examples/success-standard/src/Atbash.hs"
+    ]
+  },
+  "source": "Wikipedia",
+  "source_url": "http://en.wikipedia.org/wiki/Atbash"
+}

@@ -1,0 +1,26 @@
+{
+  "blurb": "Insert and search for numbers in a binary tree.",
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "contributors": [
+    "bressain",
+    "j2jensen",
+    "robkeim",
+    "ShamilS",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "BinarySearchTree.cs"
+    ],
+    "test": [
+      "BinarySearchTreeTests.cs"
+    ],
+    "example": [
+      ".meta/Example.cs"
+    ]
+  },
+  "source": "Josh Cheek",
+  "source_url": "https://twitter.com/josh_cheek"
+}

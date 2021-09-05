@@ -1,37 +1,28 @@
 # High Scores
 
+Welcome to High Scores on Exercism's JavaScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Manage a game player's High Score list.
 
-Your task is to build a high-score component of the classic Frogger game, one of the highest selling and addictive games of all time, and a classic of the arcade era. Your task is to write methods that return the highest score from the list, the last added score, the three highest scores, and a report on the difference between the last and the highest scores.
+Your task is to build a high-score component of the classic Frogger game, one of the highest selling and addictive games of all time, and a classic of the arcade era. Your task is to write methods that return the highest score from the list, the last added score and the three highest scores.
 
-## Setup
+## Source
 
-Go through the setup instructions for Javascript to
-install the necessary dependencies:
+### Created by
 
-[https://exercism.io/tracks/javascript/installation](https://exercism.io/tracks/javascript/installation)
+- @PakkuDon
 
-## Requirements
+### Contributed to by
 
-Install assignment dependencies:
+- @ankorGH
+- @cmccandless
+- @ffflorian
+- @hayashi-ay
+- @SleeplessByte
 
-```bash
-$ npm install
-```
+### Based on
 
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ npm test
-```
-
-In the test suites all tests but the first have been skipped.
-
-Once you get a test passing, you can enable the next one by
-changing `xtest` to `test`.
-
-
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+Tribute to the eighties' arcade game Frogger

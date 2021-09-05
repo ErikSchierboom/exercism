@@ -1,0 +1,24 @@
+{
+  "blurb": "Given a string of digits, output all the contiguous substrings of length `n` in that string.",
+  "authors": [
+    "tgecho"
+  ],
+  "contributors": [
+    "nathanielknight",
+    "parkerl",
+    "tuxagon"
+  ],
+  "files": {
+    "solution": [
+      "src/Series.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
+    "example": [
+      ".meta/src/Series.example.elm"
+    ]
+  },
+  "source": "A subset of the Problem 8 at Project Euler",
+  "source_url": "http://projecteuler.net/problem=8"
+}

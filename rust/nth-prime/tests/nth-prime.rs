@@ -11,26 +11,11 @@ fn test_second_prime() {
 }
 
 #[test]
-fn test_third_prime() {
-    assert_eq!(np::nth(2), 5);
-}
-
-#[test]
-fn test_fourth_prime() {
-    assert_eq!(np::nth(3), 7);
-}
-
-#[test]
-fn test_fifth_prime() {
-    assert_eq!(np::nth(4), 11);
-}
-
-#[test]
 fn test_sixth_prime() {
     assert_eq!(np::nth(5), 13);
 }
 
 #[test]
 fn test_big_prime() {
-    assert_eq!(np::nth(10000), 104743);
+    assert_eq!(np::nth(10_000), 104_743);
 }

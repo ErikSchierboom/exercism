@@ -1,0 +1,25 @@
+{
+  "blurb": "Determine if a sentence is a pangram.",
+  "authors": [
+    "ricemery"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "ppartarr",
+    "rajeshpg",
+    "Trevoke"
+  ],
+  "files": {
+    "solution": [
+      "src/main/scala/Pangram.scala"
+    ],
+    "test": [
+      "src/test/scala/PangramTest.scala"
+    ],
+    "example": [
+      ".meta/Example.scala"
+    ]
+  },
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Pangram"
+}

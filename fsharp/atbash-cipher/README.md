@@ -1,5 +1,10 @@
 # Atbash Cipher
 
+Welcome to Atbash Cipher on Exercism's F# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Create an implementation of the atbash cipher, an ancient encryption system created in the Middle East.
 
 The Atbash cipher is a simple substitution cipher that relies on
@@ -9,7 +14,7 @@ letter, the second with the second-last, and so on.
 
 An Atbash cipher for the Latin alphabet would be as follows:
 
-```plain
+```text
 Plain:  abcdefghijklmnopqrstuvwxyz
 Cipher: zyxwvutsrqponmlkjihgfedcba
 ```
@@ -23,12 +28,26 @@ being 5 letters, and punctuation is excluded. This is to make it harder to guess
 things based on word boundaries.
 
 ## Examples
+
 - Encoding `test` gives `gvhg`
 - Decoding `gvhg` gives `test`
 - Decoding `gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt` gives `thequickbrownfoxjumpsoverthelazydog`
+
 ## Source
 
-Wikipedia [http://en.wikipedia.org/wiki/Atbash](http://en.wikipedia.org/wiki/Atbash)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @ErikSchierboom
+
+### Contributed to by
+
+- @balazsbotond
+- @jrr
+- @lestephane
+- @robkeim
+- @valentin-p
+- @wolf99
+
+### Based on
+
+Wikipedia - http://en.wikipedia.org/wiki/Atbash

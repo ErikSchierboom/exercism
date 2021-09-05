@@ -1,0 +1,37 @@
+{
+  "blurb": "Make sure the brackets and braces all match.",
+  "authors": [
+    "petertseng"
+  ],
+  "contributors": [
+    "ashleygwilliams",
+    "coriolinus",
+    "cwhakes",
+    "efx",
+    "Emerentius",
+    "ErikSchierboom",
+    "IanWhitney",
+    "ironhaven",
+    "lutostag",
+    "mkantor",
+    "nfiles",
+    "omer-g",
+    "petertseng",
+    "rofrol",
+    "stringparser",
+    "xakon",
+    "ZapAnton"
+  ],
+  "files": {
+    "solution": [
+      "src/lib.rs"
+    ],
+    "test": [
+      "tests/matching-brackets.rs"
+    ],
+    "example": [
+      ".meta/example.rs"
+    ]
+  },
+  "source": "Ginna Baker"
+}

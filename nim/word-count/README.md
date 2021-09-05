@@ -1,5 +1,10 @@
 # Word Count
 
+Welcome to Word Count on Exercism's Nim Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given a phrase, count the occurrences of each _word_ in that phrase.
 
 For the purposes of this exercise you can expect that a _word_ will always be one of:
@@ -30,8 +35,6 @@ i: 1
 fled: 1
 ```
 
-## Hints
-
 The return from `countWords` can be any hash table type with a key of `string` and a value of `int`.
 
 Hash tables (also known as "dictionaries" or "maps" in other programming languages) are implemented by the `tables` module - see the documentation at https://nim-lang.org/docs/tables.html
@@ -43,33 +46,18 @@ proc countWords*(sentence: string): TableRef[string, int] =
   ...
 ```
 
-
-## Running the tests
-
-To compile and run the tests, just run the following in your exercise directory:
-```bash
-$ nim c -r word_count_test.nim
-```
-
-## Submitting Exercises
-
-Note that, when trying to submit an exercise, make sure the solution is in the `$EXERCISM_WORKSPACE/nim/word-count` directory.
-
-You can find your Exercism workspace by running `exercism debug` and looking for the line that starts with `Exercises Directory`.
-
-## Need help?
-
-These guides should help you,
-* [Installing Nim](https://exercism.io/tracks/nim/installation)
-* [Running the Tests](https://exercism.io/tracks/nim/tests)
-* [Learning Nim](https://exercism.io/tracks/nim/learning)
-* [Useful Nim Resources](https://exercism.io/tracks/nim/resources)
-
-
 ## Source
 
+### Created by
+
+- @sjakobi
+
+### Contributed to by
+
+- @amscotti
+- @cmc333333
+- @ee7
+
+### Based on
+
 This is a classic toy problem, but we were reminded of it by seeing it in the Go Tour.
-
-## Submitting Incomplete Solutions
-
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.

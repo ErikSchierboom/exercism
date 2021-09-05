@@ -1,0 +1,32 @@
+{
+  "blurb": " Given the size, return a square matrix of numbers in spiral order.",
+  "authors": [
+    "stkent"
+  ],
+  "contributors": [
+    "FridaTveit",
+    "jmrunkle",
+    "Kyle-Pu",
+    "kytrinyx",
+    "lemoncurry",
+    "mirkoperillo",
+    "msomji",
+    "muzimuzhi",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/SpiralMatrixBuilder.java"
+    ],
+    "test": [
+      "src/test/java/SpiralMatrixBuilderTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/SpiralMatrixBuilder.java"
+    ]
+  },
+  "source": "Reddit r/dailyprogrammer challenge #320 [Easy] Spiral Ascension.",
+  "source_url": "https://www.reddit.com/r/dailyprogrammer/comments/6i60lr/20170619_challenge_320_easy_spiral_ascension/"
+}

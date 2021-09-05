@@ -1,51 +1,49 @@
-import Squares from './difference-of-squares';
+import { Squares } from './difference-of-squares';
 
-describe('Squares', () => {
-  describe('up to 5', () => {
-    const squares = new Squares(5);
+describe('difference-of-squares', () => {
+  const squares1 = new Squares(1);
+  const squares5 = new Squares(5);
+  const squares100 = new Squares(100);
 
-    test('gets the square of sums', () => {
-      expect(squares.squareOfSums).toBe(225);
+  describe('Square the sum of the numbers up to the given number', () => {
+    test('square of sum 1', () => {
+      expect(squares1.squareOfSum).toBe(1);
     });
 
-    test('gets the sum of squares', () => {
-      expect(squares.sumOfSquares).toBe(55);
+    xtest('square of sum 5', () => {
+      expect(squares5.squareOfSum).toBe(225);
     });
 
-    test('gets the difference', () => {
-      expect(squares.difference).toBe(170);
-    });
-  });
-
-  describe('up to 10', () => {
-    const squares = new Squares(10);
-
-    test('gets the square of sums', () => {
-      expect(squares.squareOfSums).toBe(3025);
-    });
-
-    test('gets the sum of squares', () => {
-      expect(squares.sumOfSquares).toBe(385);
-    });
-
-    test('gets the difference', () => {
-      expect(squares.difference).toBe(2640);
+    xtest('square of sum 100', () => {
+      expect(squares100.squareOfSum).toBe(25502500);
     });
   });
 
-  describe('up to 100', () => {
-    const squares = new Squares(100);
-
-    test('gets the square of sums', () => {
-      expect(squares.squareOfSums).toBe(25502500);
+  describe('Sum the squares of the numbers up to the given number', () => {
+    xtest('sum of squares 1', () => {
+      expect(squares1.sumOfSquares).toBe(1);
     });
 
-    test('gets the sum of squares', () => {
-      expect(squares.sumOfSquares).toBe(338350);
+    xtest('sum of squares 5', () => {
+      expect(squares5.sumOfSquares).toBe(55);
     });
 
-    test('gets the difference', () => {
-      expect(squares.difference).toBe(25164150);
+    xtest('sum of squares 100', () => {
+      expect(squares100.sumOfSquares).toBe(338350);
+    });
+  });
+
+  describe('Subtract sum of squares from square of sums', () => {
+    xtest('difference of squares 1', () => {
+      expect(squares1.difference).toBe(0);
+    });
+
+    xtest('difference of squares 5', () => {
+      expect(squares5.difference).toBe(170);
+    });
+
+    xtest('difference of squares 100', () => {
+      expect(squares100.difference).toBe(25164150);
     });
   });
 });

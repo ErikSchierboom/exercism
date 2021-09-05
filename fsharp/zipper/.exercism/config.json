@@ -1,0 +1,24 @@
+{
+  "blurb": "Creating a zipper for a binary tree.",
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "contributors": [
+    "jrr",
+    "lestephane",
+    "robkeim",
+    "valentin-p",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "Zipper.fs"
+    ],
+    "test": [
+      "ZipperTests.fs"
+    ],
+    "example": [
+      ".meta/Example.fs"
+    ]
+  }
+}

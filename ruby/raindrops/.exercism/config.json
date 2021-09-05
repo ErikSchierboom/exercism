@@ -1,0 +1,32 @@
+{
+  "blurb": "Convert a number to a string, the content of which depends on the number's factors.",
+  "authors": [
+    "kytrinyx"
+  ],
+  "contributors": [
+    "bmulvihill",
+    "budmc29",
+    "cadwallion",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "jpotts244",
+    "kotp",
+    "mike-hewitson",
+    "notapatch",
+    "tryantwit"
+  ],
+  "files": {
+    "solution": [
+      "raindrops.rb"
+    ],
+    "test": [
+      "raindrops_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/raindrops.rb"
+    ]
+  },
+  "source": "A variation on FizzBuzz, a famous technical interview question that is intended to weed out potential candidates. That question is itself derived from Fizz Buzz, a popular children's game for teaching division.",
+  "source_url": "https://en.wikipedia.org/wiki/Fizz_buzz"
+}

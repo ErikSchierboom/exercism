@@ -12,7 +12,6 @@ class DnaTest {
         assertEquals(expected, dna.nucleotideCounts)
     }
 
-    
     @Test
     fun canCountOneNucleotideInSingleCharacterInput() {
         val dna = Dna("G")
@@ -21,7 +20,6 @@ class DnaTest {
         assertEquals(expected, dna.nucleotideCounts)
     }
 
-    
     @Test
     fun canCountRepeatedNucleotide() {
         val dna = Dna("GGGGGGG")
@@ -30,7 +28,6 @@ class DnaTest {
         assertEquals(expected, dna.nucleotideCounts)
     }
 
-    
     @Test
     fun canCountMultipleNucleotides() {
         val dna = Dna("AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC")
@@ -39,7 +36,6 @@ class DnaTest {
         assertEquals(expected, dna.nucleotideCounts)
     }
 
-    
     @Test(expected = IllegalArgumentException::class)
     fun validatesNucleotides() {
         Dna("AGXXACT")

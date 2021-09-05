@@ -1,0 +1,23 @@
+{
+  "blurb": "Output the lyrics to 'The Twelve Days of Christmas'",
+  "authors": [
+    "tuxagon"
+  ],
+  "contributors": [
+    "nathanielknight",
+    "rebelwarrior"
+  ],
+  "files": {
+    "solution": [
+      "src/TwelveDays.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
+    "example": [
+      ".meta/src/TwelveDays.example.elm"
+    ]
+  },
+  "source": "Wikipedia",
+  "source_url": "http://en.wikipedia.org/wiki/The_Twelve_Days_of_Christmas_(song)"
+}

@@ -1,0 +1,39 @@
+{
+  "blurb": "Implement a clock that handles times without dates.",
+  "authors": [
+    "sacherjj"
+  ],
+  "contributors": [
+    "attilahorvath",
+    "coriolinus",
+    "cwhakes",
+    "danieljl",
+    "eddyp",
+    "efx",
+    "ErikSchierboom",
+    "felix91gr",
+    "kunaltyagi",
+    "lutostag",
+    "nfiles",
+    "petertseng",
+    "rofrol",
+    "shaaraddalvi",
+    "stringparser",
+    "tmccombs",
+    "xakon",
+    "ZapAnton"
+  ],
+  "files": {
+    "solution": [
+      "src/lib.rs"
+    ],
+    "test": [
+      "tests/clock.rs"
+    ],
+    "example": [
+      ".meta/example.rs"
+    ]
+  },
+  "source": "Pairing session with Erin Drummond",
+  "source_url": "https://twitter.com/ebdrummond"
+}

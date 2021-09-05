@@ -1,8 +1,13 @@
 # Meetup
 
+Welcome to Meetup on Exercism's JavaScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Calculate the date of meetups.
 
-Typically meetups happen on the same day of the week.  In this exercise, you
+Typically meetups happen on the same day of the week. In this exercise, you
 will take a description of a meetup date, and return the actual meetup date.
 
 Examples of general descriptions are:
@@ -23,41 +28,36 @@ that end in '-teenth'. Therefore, one is guaranteed that each day of the week
 in every month.
 
 Given examples of a meetup dates, each containing a month, day, year, and
-descriptor calculate the date of the actual meetup.  For example, if given
+descriptor calculate the date of the actual meetup. For example, if given
 "The first Monday of January 2017", the correct meetup date is 2017/1/2.
 
-## Setup
+In Javascript, the Date object month's index ranges from 0 to 11.
 
-Go through the setup instructions for ECMAScript to
-install the necessary dependencies:
-
-http://exercism.io/languages/ecmascript
-
-## Requirements
-
-Install assignment dependencies:
-
-```bash
-$ npm install
+```javascript
+const date = new Date('2020-06-13');
+date.getFullYear();
+// => 2020
+date.getMonth();
+// => 5 (instead of 6)
+date.getDate();
+// => 13
 ```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ npm test
-```
-
-In the test suites all tests but the first have been skipped.
-
-Once you get a test passing, you can enable the next one by
-changing `xtest` to `test`.
-
 
 ## Source
 
-Jeremy Hinegardner mentioned a Boulder meetup that happens on the Wednesteenth of every month [https://twitter.com/copiousfreetime](https://twitter.com/copiousfreetime)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @matthewmorgan
+
+### Contributed to by
+
+- @ovidiu141
+- @rchavarria
+- @rsuttles58
+- @ryanplusplus
+- @serixscorpio
+- @SleeplessByte
+
+### Based on
+
+Jeremy Hinegardner mentioned a Boulder meetup that happens on the Wednesteenth of every month - https://twitter.com/copiousfreetime

@@ -1,0 +1,23 @@
+{
+  "blurb": "Refactor a Markdown parser",
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "contributors": [
+    "balazsbotond",
+    "bcwood",
+    "j2jensen",
+    "robkeim"
+  ],
+  "files": {
+    "solution": [
+      "Markdown.cs"
+    ],
+    "test": [
+      "MarkdownTests.cs"
+    ],
+    "example": [
+      ".meta/Example.cs"
+    ]
+  }
+}

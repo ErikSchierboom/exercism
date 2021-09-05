@@ -31,4 +31,9 @@ class MatrixTest < Minitest::Test
     matrix = Matrix.new("89 1903 3\n18 3 1\n9 4 800")
     assert_equal [1903, 3, 4], matrix.columns[1]
   end
+
+  def test_extract_last_column
+    matrix = Matrix.new("1 2 3\n10 20 30\n100 200 300")
+    assert_equal [3, 30, 300], matrix.columns.last
+  end
 end

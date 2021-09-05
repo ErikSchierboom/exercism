@@ -1,0 +1,24 @@
+{
+  "blurb": "Manage a player's High Score list",
+  "authors": [
+    "pgaspar"
+  ],
+  "contributors": [
+    "emcoding",
+    "iHiD",
+    "Insti",
+    "kotp"
+  ],
+  "files": {
+    "solution": [
+      "high_scores.rb"
+    ],
+    "test": [
+      "high_scores_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/high_scores.rb"
+    ]
+  },
+  "source": "Tribute to the eighties' arcade game Frogger"
+}

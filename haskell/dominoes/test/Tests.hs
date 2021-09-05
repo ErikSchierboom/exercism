@@ -74,6 +74,10 @@ cases = [ Case { description = "empty input = empty output"
                , input       = [(1, 2), (1, 3), (2, 3)]
                , expected    = True
                }
+        , Case { description = "cannot use the same domino in both directions"
+               , input       = [(1, 2), (2, 3), (2, 1)]
+               , expected    = False
+               }
         , Case { description = "can't be chained"
                , input       = [(1, 2), (4, 1), (2, 3)]
                , expected    = False
@@ -102,4 +106,10 @@ cases = [ Case { description = "empty input = empty output"
                , input       = [(1, 2), (5, 3), (3, 1), (1, 2), (2, 4), (1, 6), (2, 3), (3, 4), (5, 6)]
                , expected    = True
                }
+        , Case { description = "twelve elements - no loop"
+               , input       = [(1, 2), (5, 3), (3, 1), (1, 2), (2, 4), (1, 6), (2, 3), (3, 4), (5, 6), (3,6), (4,5), (2,1)]
+               , expected    = False
+               }
         ]
+
+-- c8e6138b7a5fb057269e7d470c9d651d30e40bf6

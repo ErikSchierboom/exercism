@@ -1,5 +1,10 @@
 # Binary Search Tree
 
+Welcome to Binary Search Tree on Exercism's C# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Insert and search for numbers in a binary tree.
 
 When we need to represent sorted data, an array does not make a good
@@ -53,10 +58,20 @@ And if we then added 1, 5, and 7, it would look like this
      / \     / \
     1   3   5   7
 
-
 ## Source
 
-Josh Cheek [https://twitter.com/josh_cheek](https://twitter.com/josh_cheek)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @ErikSchierboom
+
+### Contributed to by
+
+- @bressain
+- @j2jensen
+- @robkeim
+- @ShamilS
+- @wolf99
+
+### Based on
+
+Josh Cheek - https://twitter.com/josh_cheek

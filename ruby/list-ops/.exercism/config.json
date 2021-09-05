@@ -1,0 +1,27 @@
+{
+  "blurb": "Implement basic list operations",
+  "authors": [
+    "rhoprhh"
+  ],
+  "contributors": [
+    "budmc29",
+    "cadwallion",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "kotp",
+    "srabuini",
+    "tryantwit"
+  ],
+  "files": {
+    "solution": [
+      "list_ops.rb"
+    ],
+    "test": [
+      "list_ops_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/list_ops.rb"
+    ]
+  }
+}

@@ -1,5 +1,10 @@
 # Variable Length Quantity
 
+Welcome to Variable Length Quantity on Exercism's C# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Implement variable length quantity encoding and decoding.
 
 The goal of this exercise is to implement [VLQ](https://en.wikipedia.org/wiki/Variable-length_quantity) encoding/decoding.
@@ -31,15 +36,21 @@ Here are examples of integers as 32-bit values, and the variable length quantiti
 0FFFFFFF          FF FF FF 7F
 ```
 
-## Hints
-This exercise requires you to use bitwise operations. For more information, see [this page]
-(https://msdn.microsoft.com/en-us/library/6a71f45d.aspx). 
-
-
+This exercise requires you to use bitwise operations. For more information, see [this page](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/bitwise-and-shift-operators).
 
 ## Source
 
-A poor Splice developer having to implement MIDI encoding/decoding. [https://splice.com](https://splice.com)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @ErikSchierboom
+
+### Contributed to by
+
+- @j2jensen
+- @nicolastarzia
+- @robkeim
+- @wolf99
+
+### Based on
+
+A poor Splice developer having to implement MIDI encoding/decoding. - https://splice.com

@@ -1,22 +1,40 @@
-# anagram
+# Anagram
 
-A Clojure library designed to ... well, that part is up to you.
+Welcome to Anagram on Exercism's Clojure Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
 
-## Usage
+## Instructions
 
-FIXME
+An anagram is a rearrangement of letters to form a new word.
+Given a word and a list of candidates, select the sublist of anagrams of the given word.
 
-## License
+Given `"listen"` and a list of candidates like `"enlists" "google"
+"inlets" "banana"` the program should return a list containing
+`"inlets"`.
 
-Copyright © 2021 FIXME
+## Source
 
-This program and the accompanying materials are made available under the
-terms of the Eclipse Public License 2.0 which is available at
-http://www.eclipse.org/legal/epl-2.0.
+### Created by
 
-This Source Code may also be made available under the following Secondary
-Licenses when the conditions for such availability set forth in the Eclipse
-Public License, v. 2.0 are satisfied: GNU General Public License as published by
-the Free Software Foundation, either version 2 of the License, or (at your
-option) any later version, with the GNU Classpath Exception which is available
-at https://www.gnu.org/software/classpath/license.html.
+- @rubysolo
+
+### Contributed to by
+
+- @achengs
+- @AndreaCrotti
+- @canweriotnow
+- @crazymykl
+- @dkinzer
+- @haus
+- @henrik
+- @jgwhite
+- @kytrinyx
+- @markijbema
+- @mascip
+- @mathias
+- @tejasbubane
+- @yurrriq
+
+### Based on
+
+Inspired by the Extreme Startup game - https://github.com/rchatley/extreme_startup

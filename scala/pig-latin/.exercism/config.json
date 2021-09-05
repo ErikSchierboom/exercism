@@ -1,0 +1,24 @@
+{
+  "blurb": "Implement a program that translates from English to Pig Latin",
+  "authors": [
+    "ricemery"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "ppartarr",
+    "rajeshpg"
+  ],
+  "files": {
+    "solution": [
+      "src/main/scala/PigLatin.scala"
+    ],
+    "test": [
+      "src/test/scala/PigLatinTest.scala"
+    ],
+    "example": [
+      ".meta/Example.scala"
+    ]
+  },
+  "source": "The Pig Latin exercise at Test First Teaching by Ultrasaurus",
+  "source_url": "https://github.com/ultrasaurus/test-first-teaching/blob/master/learn_ruby/pig_latin/"
+}

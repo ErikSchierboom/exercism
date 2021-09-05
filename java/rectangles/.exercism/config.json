@@ -1,0 +1,36 @@
+{
+  "blurb": "Count the rectangles in an ASCII diagram.",
+  "authors": [
+    "stkent"
+  ],
+  "contributors": [
+    "aadityakulkarni",
+    "FridaTveit",
+    "jmrunkle",
+    "jtigger",
+    "kytrinyx",
+    "lemoncurry",
+    "mirkoperillo",
+    "morrme",
+    "msomji",
+    "muzimuzhi",
+    "redshirt4",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine",
+    "tendaitt",
+    "vivshaw",
+    "Zaldrick"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/RectangleCounter.java"
+    ],
+    "test": [
+      "src/test/java/RectangleCounterTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/RectangleCounter.java"
+    ]
+  }
+}

@@ -1,5 +1,10 @@
 # Kindergarten Garden
 
+Welcome to Kindergarten Garden on Exercism's C# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given a diagram, determine which plants each child in the kindergarten class is
 responsible for.
 
@@ -59,10 +64,20 @@ While asking for Bob's plants would yield:
 
 - Clover, grass, clover, clover
 
-
 ## Source
 
-Random musings during airplane trip. [http://jumpstartlab.com](http://jumpstartlab.com)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @ErikSchierboom
+
+### Contributed to by
+
+- @ChrisPritchard
+- @j2jensen
+- @jwood803
+- @robkeim
+- @wolf99
+
+### Based on
+
+Random musings during airplane trip. - http://jumpstartlab.com

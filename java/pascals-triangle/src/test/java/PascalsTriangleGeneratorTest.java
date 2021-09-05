@@ -1,24 +1,12 @@
-import org.junit.Before;
+import static org.junit.Assert.assertArrayEquals;
+
 import org.junit.Test;
 import org.junit.Ignore;
-import org.junit.Rule;
-import org.junit.rules.ExpectedException;
-
-
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
 
 public class PascalsTriangleGeneratorTest {
 
-    private PascalsTriangleGenerator pascalsTriangleGenerator;
-
-    @Before
-    public void setUp() {
-        pascalsTriangleGenerator = new PascalsTriangleGenerator();
-    }
-
-    @Rule
-    public ExpectedException expectedException = ExpectedException.none();
+    private PascalsTriangleGenerator pascalsTriangleGenerator =
+        new PascalsTriangleGenerator();
 
     @Test
     public void testTriangleWithZeroRows() {
@@ -27,7 +15,6 @@ public class PascalsTriangleGeneratorTest {
         assertArrayEquals(expectedOutput, pascalsTriangleGenerator.generateTriangle(0));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testTriangleWithOneRow() {
         int[][] expectedOutput = new int[][]{
@@ -37,7 +24,6 @@ public class PascalsTriangleGeneratorTest {
         assertArrayEquals(expectedOutput, pascalsTriangleGenerator.generateTriangle(1));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testTriangleWithTwoRows() {
         int[][] expectedOutput = new int[][]{
@@ -48,7 +34,6 @@ public class PascalsTriangleGeneratorTest {
         assertArrayEquals(expectedOutput, pascalsTriangleGenerator.generateTriangle(2));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testTriangleWithThreeRows() {
         int[][] expectedOutput = new int[][]{
@@ -60,7 +45,6 @@ public class PascalsTriangleGeneratorTest {
         assertArrayEquals(expectedOutput, pascalsTriangleGenerator.generateTriangle(3));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testTriangleWithFourRows() {
         int[][] expectedOutput = new int[][]{
@@ -73,7 +57,6 @@ public class PascalsTriangleGeneratorTest {
         assertArrayEquals(expectedOutput, pascalsTriangleGenerator.generateTriangle(4));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testTriangleWithFiveRows() {
         int[][] expectedOutput = new int[][]{
@@ -87,7 +70,6 @@ public class PascalsTriangleGeneratorTest {
         assertArrayEquals(expectedOutput, pascalsTriangleGenerator.generateTriangle(5));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testTriangleWithSixRows() {
         int[][] expectedOutput = new int[][]{
@@ -102,7 +84,6 @@ public class PascalsTriangleGeneratorTest {
         assertArrayEquals(expectedOutput, pascalsTriangleGenerator.generateTriangle(6));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testTriangleWithTenRows() {
         int[][] expectedOutput = new int[][]{
@@ -120,12 +101,4 @@ public class PascalsTriangleGeneratorTest {
 
         assertArrayEquals(expectedOutput, pascalsTriangleGenerator.generateTriangle(10));
     }
-
-    @Ignore("Remove to run test")
-    @Test
-    public void testValidatesNotNegativeRows() {
-        expectedException.expect(IllegalArgumentException.class);
-        pascalsTriangleGenerator.generateTriangle(-1);
-    }
-
 }

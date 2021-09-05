@@ -1,7 +1,6 @@
-module Accumulate exposing (..)
+module Accumulate exposing (accumulate)
 
 
 accumulate : (a -> b) -> List a -> List b
-accumulate f list =
-    list
-        |> List.foldr (\x acc -> f x :: acc) []
+accumulate func input =
+    Debug.todo "Please implement this function"

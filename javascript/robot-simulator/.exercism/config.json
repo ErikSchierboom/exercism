@@ -1,0 +1,20 @@
+{
+  "blurb": "Write a robot simulator.",
+  "authors": ["rchavarria"],
+  "contributors": [
+    "ankorGH",
+    "jscheffner",
+    "matthewmorgan",
+    "ntshcalleia",
+    "ryanplusplus",
+    "SleeplessByte",
+    "tejasbubane"
+  ],
+  "files": {
+    "solution": ["robot-simulator.js"],
+    "test": ["robot-simulator.spec.js"],
+    "example": [".meta/proof.ci.js"]
+  },
+  "source": "Inspired by an interview question at a famous company.",
+  "source_url": ""
+}

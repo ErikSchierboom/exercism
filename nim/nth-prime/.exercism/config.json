@@ -1,0 +1,22 @@
+{
+  "blurb": "Given a number n, determine what the nth prime is.",
+  "authors": [
+    "amscotti"
+  ],
+  "contributors": [
+    "ee7"
+  ],
+  "files": {
+    "solution": [
+      "nth_prime.nim"
+    ],
+    "test": [
+      "test_nth_prime.nim"
+    ],
+    "example": [
+      ".meta/example.nim"
+    ]
+  },
+  "source": "A variation on Problem 7 at Project Euler",
+  "source_url": "http://projecteuler.net/problem=7"
+}

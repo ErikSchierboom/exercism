@@ -1,0 +1,28 @@
+{
+  "blurb": "Reparent a graph on a selected node",
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "contributors": [
+    "jrr",
+    "lestephane",
+    "petertseng",
+    "robkeim",
+    "roman-shuhov",
+    "valentin-p",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "Pov.fs"
+    ],
+    "test": [
+      "PovTests.fs"
+    ],
+    "example": [
+      ".meta/Example.fs"
+    ]
+  },
+  "source": "Adaptation of exercise from 4clojure",
+  "source_url": "https://www.4clojure.com/"
+}

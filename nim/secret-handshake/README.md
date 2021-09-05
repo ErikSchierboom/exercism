@@ -1,5 +1,10 @@
 # Secret Handshake
 
+Welcome to Secret Handshake on Exercism's Nim Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 > There are 10 types of people in the world: Those who understand
 > binary, and those who don't.
 
@@ -28,32 +33,16 @@ Given the input 19, the function would return the array
 Notice that the addition of 16 (10000 in binary)
 has caused the array to be reversed.
 
-## Running the tests
-
-To compile and run the tests, just run the following in your exercise directory:
-```bash
-$ nim c -r secret_handshake_test.nim
-```
-
-## Submitting Exercises
-
-Note that, when trying to submit an exercise, make sure the solution is in the `$EXERCISM_WORKSPACE/nim/secret-handshake` directory.
-
-You can find your Exercism workspace by running `exercism debug` and looking for the line that starts with `Exercises Directory`.
-
-## Need help?
-
-These guides should help you,
-* [Installing Nim](https://exercism.io/tracks/nim/installation)
-* [Running the Tests](https://exercism.io/tracks/nim/tests)
-* [Learning Nim](https://exercism.io/tracks/nim/learning)
-* [Useful Nim Resources](https://exercism.io/tracks/nim/resources)
-
-
 ## Source
 
-Bert, in Mary Poppins [http://www.imdb.com/title/tt0058331/quotes/qt0437047](http://www.imdb.com/title/tt0058331/quotes/qt0437047)
+### Created by
 
-## Submitting Incomplete Solutions
+- @amscotti
 
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+### Contributed to by
+
+- @ee7
+
+### Based on
+
+Bert, in Mary Poppins - http://www.imdb.com/title/tt0058331/quotes/qt0437047

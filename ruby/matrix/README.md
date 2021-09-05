@@ -1,5 +1,10 @@
 # Matrix
 
+Welcome to Matrix on Exercism's Ruby Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given a string representing a matrix of numbers, return the rows and columns of
 that matrix.
 
@@ -14,11 +19,11 @@ So given a string with embedded newlines like:
 representing this matrix:
 
 ```text
-    0  1  2
+    1  2  3
   |---------
-0 | 9  8  7
-1 | 5  3  2
-2 | 6  6  7
+1 | 9  8  7
+2 | 5  3  2
+3 | 6  6  7
 ```
 
 your code should be able to spit out:
@@ -40,32 +45,22 @@ And its columns:
 - 8, 3, 6
 - 7, 2, 7
 
-* * * *
-
-For installation and learning resources, refer to the
-[Ruby resources page](http://exercism.io/languages/ruby/resources).
-
-For running the tests provided, you will need the Minitest gem. Open a
-terminal window and run the following command to install minitest:
-
-    gem install minitest
-
-If you would like color output, you can `require 'minitest/pride'` in
-the test file, or note the alternative instruction, below, for running
-the test file.
-
-Run the tests from the exercise directory using the following command:
-
-    ruby matrix_test.rb
-
-To include color from the command line:
-
-    ruby -r minitest/pride matrix_test.rb
-
-
 ## Source
 
-Warmup to the `saddle-points` warmup. [http://jumpstartlab.com](http://jumpstartlab.com)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @kytrinyx
+
+### Contributed to by
+
+- @budmc29
+- @coolbrg
+- @hilary
+- @iHiD
+- @Insti
+- @kotp
+- @tryantwit
+
+### Based on
+
+Warmup to the `saddle-points` warmup. - http://jumpstartlab.com

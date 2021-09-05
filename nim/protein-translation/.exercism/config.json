@@ -1,0 +1,19 @@
+{
+  "blurb": "Translate RNA sequences into proteins.",
+  "authors": [
+    "ee7"
+  ],
+  "contributors": [],
+  "files": {
+    "solution": [
+      "protein_translation.nim"
+    ],
+    "test": [
+      "test_protein_translation.nim"
+    ],
+    "example": [
+      ".meta/example.nim"
+    ]
+  },
+  "source": "Tyler Long"
+}

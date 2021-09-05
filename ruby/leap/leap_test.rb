@@ -4,7 +4,7 @@ require_relative 'leap'
 # Common test data version: 1.4.0 3134d31
 class Date
   def leap?
-    raise RuntimeError, "Implement this yourself instead of using Ruby's implementation."
+    raise "Implement this yourself instead of using Ruby's implementation."
   end
 
   alias gregorian_leap? leap?
@@ -13,6 +13,7 @@ end
 
 class YearTest < Minitest::Test
   def test_year_not_divisible_by_4_common_year
+    # skip
     refute Year.leap?(2015), "Expected 'false', 2015 is not a leap year."
   end
 

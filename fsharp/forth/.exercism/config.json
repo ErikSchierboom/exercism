@@ -1,0 +1,24 @@
+{
+  "blurb": "Implement an evaluator for a very simple subset of Forth",
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "contributors": [
+    "jrr",
+    "lestephane",
+    "robkeim",
+    "valentin-p",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "Forth.fs"
+    ],
+    "test": [
+      "ForthTests.fs"
+    ],
+    "example": [
+      ".meta/Example.fs"
+    ]
+  }
+}

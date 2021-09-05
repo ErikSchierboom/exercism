@@ -1,5 +1,10 @@
 # Rectangles
 
+Welcome to Rectangles on Exercism's TypeScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Count the rectangles in an ASCII diagram like the one below.
 
 ```text
@@ -63,30 +68,13 @@ The above diagram contains 6 rectangles:
 You may assume that the input is always a proper rectangle (i.e. the length of
 every line equals the length of the first line).
 
-## Setup
+## Source
 
-Go through the setup instructions for TypeScript to
-install the necessary dependencies:
+### Created by
 
-http://exercism.io/languages/typescript
+- @CRivasGomez
 
-## Requirements
+### Contributed to by
 
-Install assignment dependencies:
-
-```bash
-$ yarn install
-```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ yarn test
-```
-
-
-
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @masters3d
+- @SleeplessByte

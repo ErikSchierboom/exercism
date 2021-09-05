@@ -1,10 +1,15 @@
 # Zipper
 
+Welcome to Zipper on Exercism's JavaScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Creating a zipper for a binary tree.
 
 [Zippers](https://en.wikipedia.org/wiki/Zipper_%28data_structure%29) are
 a purely functional way of navigating within a data structure and
-manipulating it.  They essentially contain a data structure and a
+manipulating it. They essentially contain a data structure and a
 pointer into that data structure (called the focus).
 
 For example given a rose tree (where each node contains a value and a
@@ -27,34 +32,17 @@ list of child nodes) a zipper might support these operations:
   `next` node if possible otherwise to the `prev` node if possible,
   otherwise to the parent node, returns a new zipper)
 
-## Setup
+## Source
 
-Go through the setup instructions for Javascript to
-install the necessary dependencies:
+### Created by
 
-[https://exercism.io/tracks/javascript/installation](https://exercism.io/tracks/javascript/installation)
+- @matthewmorgan
 
-## Requirements
+### Contributed to by
 
-Install assignment dependencies:
-
-```bash
-$ npm install
-```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ npm test
-```
-
-In the test suites all tests but the first have been skipped.
-
-Once you get a test passing, you can enable the next one by
-changing `xtest` to `test`.
-
-
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @felbit
+- @ganderzz
+- @hyuko21
+- @joshgoebel
+- @SleeplessByte
+- @tejasbubane

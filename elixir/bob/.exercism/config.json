@@ -1,0 +1,46 @@
+{
+  "blurb": "Bob is a lackadaisical teenager. In conversation, his responses are very limited.",
+  "authors": [
+    "rubysolo"
+  ],
+  "contributors": [
+    "andrewsardone",
+    "angelikatyborska",
+    "austinlyons",
+    "cbliard",
+    "Cohen-Carlisle",
+    "dalexj",
+    "devonestes",
+    "digitalronin",
+    "doncruse",
+    "etrepum",
+    "ghajba",
+    "kytrinyx",
+    "lpil",
+    "neenjaw",
+    "parkerl",
+    "pminten",
+    "rsslldnphy",
+    "seeflanigan",
+    "sotojuan",
+    "Teapane",
+    "tjcelaya",
+    "Tonkpils",
+    "victorpre",
+    "vladimir-tikhonov",
+    "waiting-for-dev"
+  ],
+  "files": {
+    "solution": [
+      "lib/bob.ex"
+    ],
+    "test": [
+      "test/bob_test.exs"
+    ],
+    "example": [
+      ".meta/example.ex"
+    ]
+  },
+  "source": "Inspired by the 'Deaf Grandma' exercise in Chris Pine's Learn to Program tutorial.",
+  "source_url": "http://pine.fm/LearnToProgram/?Chapter=06"
+}

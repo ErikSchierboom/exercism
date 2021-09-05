@@ -1,5 +1,10 @@
 # Zipper
 
+Welcome to Zipper on Exercism's Java Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Creating a zipper for a binary tree.
 
 [Zippers](https://en.wikipedia.org/wiki/Zipper_%28data_structure%29) are
@@ -27,16 +32,19 @@ list of child nodes) a zipper might support these operations:
   `next` node if possible otherwise to the `prev` node if possible,
   otherwise to the parent node, returns a new zipper)
 
-# Running the tests
+## Source
 
-You can run all the tests for an exercise by entering
+### Created by
 
-```sh
-$ gradle test
-```
+- @LuLechuan
 
-in your terminal.
+### Contributed to by
 
-## Submitting Incomplete Solutions
-
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @FridaTveit
+- @jmrunkle
+- @lemoncurry
+- @msomji
+- @muzimuzhi
+- @sjwarner-bp
+- @SleeplessByte
+- @sshine

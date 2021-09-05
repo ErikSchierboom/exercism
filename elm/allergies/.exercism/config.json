@@ -1,0 +1,25 @@
+{
+  "blurb": "Given a person's allergy score, determine whether or not they're allergic to a given item, and their full list of allergies.",
+  "authors": [
+    "tgecho"
+  ],
+  "contributors": [
+    "edgerunner",
+    "nathanielknight",
+    "parkerl",
+    "tuxagon"
+  ],
+  "files": {
+    "solution": [
+      "src/Allergies.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
+    "example": [
+      ".meta/src/Allergies.example.elm"
+    ]
+  },
+  "source": "Jumpstart Lab Warm-up",
+  "source_url": "http://jumpstartlab.com"
+}

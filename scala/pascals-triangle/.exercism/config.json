@@ -1,0 +1,24 @@
+{
+  "blurb": "Compute Pascal's triangle up to a given number of rows.",
+  "authors": [
+    "ricemery"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "ppartarr",
+    "rajeshpg"
+  ],
+  "files": {
+    "solution": [
+      "src/main/scala/PascalsTriangle.scala"
+    ],
+    "test": [
+      "src/test/scala/PascalsTriangleTest.scala"
+    ],
+    "example": [
+      ".meta/Example.scala"
+    ]
+  },
+  "source": "Pascal's Triangle at Wolfram Math World",
+  "source_url": "http://mathworld.wolfram.com/PascalsTriangle.html"
+}

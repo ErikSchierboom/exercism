@@ -1,0 +1,25 @@
+{
+  "blurb": "Given a number, find the sum of all the multiples of particular numbers up to but not including that number.",
+  "authors": [
+    "tgecho"
+  ],
+  "contributors": [
+    "michaelkpfeifer",
+    "nathanielknight",
+    "parkerl",
+    "tuxagon"
+  ],
+  "files": {
+    "solution": [
+      "src/SumOfMultiples.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
+    "example": [
+      ".meta/src/SumOfMultiples.example.elm"
+    ]
+  },
+  "source": "A variation on Problem 1 at Project Euler",
+  "source_url": "http://projecteuler.net/problem=1"
+}

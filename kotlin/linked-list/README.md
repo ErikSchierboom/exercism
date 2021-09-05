@@ -1,5 +1,10 @@
 # Linked List
 
+Welcome to Linked List on Exercism's Kotlin Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Implement a doubly linked list.
 
 Like an array, a linked list is a simple linear data structure. Several
@@ -27,11 +32,25 @@ empty list.
 
 If you want to know more about linked lists, check [Wikipedia](https://en.wikipedia.org/wiki/Linked_list).
 
-
-
 ## Source
 
-Classic computer science topic
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @sdavids13
+
+### Contributed to by
+
+- @dector
+- @eparovyshnaya
+- @jtigger
+- @lihofm
+- @mdowds
+- @nithia
+- @sjwarner-bp
+- @SleeplessByte
+- @stkent
+- @uzilan
+
+### Based on
+
+Classic computer science topic

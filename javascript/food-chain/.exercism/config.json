@@ -1,0 +1,21 @@
+{
+  "blurb": "Generate the lyrics of the song 'I Know an Old Lady Who Swallowed a Fly'",
+  "authors": ["rchavarria"],
+  "contributors": [
+    "ankorGH",
+    "draalger",
+    "kytrinyx",
+    "matthewmorgan",
+    "ryanplusplus",
+    "SleeplessByte",
+    "tejasbubane",
+    "xarxziux"
+  ],
+  "files": {
+    "solution": ["food-chain.js"],
+    "test": ["food-chain.spec.js"],
+    "example": [".meta/proof.ci.js"]
+  },
+  "source": "Wikipedia",
+  "source_url": "http://en.wikipedia.org/wiki/There_Was_an_Old_Lady_Who_Swallowed_a_Fly"
+}

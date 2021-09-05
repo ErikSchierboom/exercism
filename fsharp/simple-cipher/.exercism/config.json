@@ -1,0 +1,27 @@
+{
+  "blurb": "Implement a simple shift cipher like Caesar and a more secure substitution cipher",
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "contributors": [
+    "balazsbotond",
+    "jrr",
+    "lestephane",
+    "robkeim",
+    "valentin-p",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "SimpleCipher.fs"
+    ],
+    "test": [
+      "SimpleCipherTests.fs"
+    ],
+    "example": [
+      ".meta/Example.fs"
+    ]
+  },
+  "source": "Substitution Cipher at Wikipedia",
+  "source_url": "http://en.wikipedia.org/wiki/Substitution_cipher"
+}

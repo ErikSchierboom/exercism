@@ -1,0 +1,24 @@
+{
+  "blurb": "Manage a player's High Score list",
+  "authors": [
+    "ricemery"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "ppartarr",
+    "rajeshpg",
+    "tqa236"
+  ],
+  "files": {
+    "solution": [
+      "src/main/scala/HighScores.scala"
+    ],
+    "test": [
+      "src/test/scala/HighScoresTest.scala"
+    ],
+    "example": [
+      ".meta/Example.scala"
+    ]
+  },
+  "source": "Tribute to the eighties' arcade game Frogger"
+}

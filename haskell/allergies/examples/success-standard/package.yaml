@@ -1,0 +1,17 @@
+name: allergies
+
+dependencies:
+  - base
+
+library:
+  exposed-modules: Allergies
+  source-dirs: src
+
+tests:
+  test:
+    main: Tests.hs
+    source-dirs: test
+    dependencies:
+      - allergies
+      - hspec
+      - QuickCheck

@@ -1,28 +1,39 @@
-import transform from './etl';
+import { transform } from './etl';
 
-describe('Transform', () => {
-  test('transforms one value', () => {
+describe('Transform legacy to new', () => {
+  test('single letter', () => {
     const old = { 1: ['A'] };
     const expected = { a: 1 };
 
     expect(transform(old)).toEqual(expected);
   });
 
-  test('transforms more values', () => {
+  xtest('single score with multiple letters', () => {
     const old = { 1: ['A', 'E', 'I', 'O', 'U'] };
-    const expected = { a: 1, e: 1, i: 1, o: 1, u: 1 };
+    const expected = {
+      a: 1,
+      e: 1,
+      i: 1,
+      o: 1,
+      u: 1,
+    };
 
     expect(transform(old)).toEqual(expected);
   });
 
-  test('transforms more keys', () => {
+  xtest('multiple scores with multiple letters', () => {
     const old = { 1: ['A', 'E'], 2: ['D', 'G'] };
-    const expected = { a: 1, e: 1, d: 2, g: 2 };
+    const expected = {
+      a: 1,
+      e: 1,
+      d: 2,
+      g: 2,
+    };
 
     expect(transform(old)).toEqual(expected);
   });
 
-  test('transforms a full dataset', () => {
+  xtest('multiple scores with differing numbers of letters', () => {
     const old = {
       1: ['A', 'E', 'I', 'O', 'U', 'L', 'N', 'R', 'S', 'T'],
       2: ['D', 'G'],

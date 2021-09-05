@@ -1,5 +1,10 @@
 # Word Search
 
+Welcome to Word Search on Exercism's C# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 In word search puzzles you get a square of letters and have to find specific
 words in them.
 
@@ -26,13 +31,21 @@ vertical and diagonal.
 Given a puzzle and a list of words return the location of the first and last
 letter of each word.
 
-## HINTS
-
-One of the uses of Tuples is returning multiple values from a function.   In this exercise, write
+One of the uses of Tuples is returning multiple values from a function. In this exercise, write
 a function that returns a Tuple (the x- and y- part of a coordinate).
 
-For more information on Tuples, see [this link](https://msdn.microsoft.com/en-us/library/system.tuple(v=vs.110).aspx).
+For more information on Tuples, see [this link](https://docs.microsoft.com/en-us/dotnet/api/system.tuple?view=net-5.0).
 
+## Source
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+### Created by
+
+- @ErikSchierboom
+
+### Contributed to by
+
+- @ChrisPritchard
+- @j2jensen
+- @jmbradnan
+- @robkeim
+- @wolf99

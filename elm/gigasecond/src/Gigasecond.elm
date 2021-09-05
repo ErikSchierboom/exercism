@@ -1,14 +1,8 @@
 module Gigasecond exposing (add)
 
-import Date exposing (Date, toTime, fromTime)
-import Time exposing (Time, second)
+import Time
 
 
-gigasecond : Time
-gigasecond =
-    second * 1000000000
-
-
-add : Date -> Date
-add date =
-    toTime date + gigasecond |> fromTime
+add : Time.Posix -> Time.Posix
+add timestamp =
+    Debug.todo "Please implement this function"

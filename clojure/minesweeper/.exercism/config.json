@@ -1,0 +1,21 @@
+{
+  "blurb": "Add the numbers to a minesweeper board",
+  "authors": [
+    "leeqleeq"
+  ],
+  "contributors": [
+    "AndreaCrotti",
+    "haus"
+  ],
+  "files": {
+    "solution": [
+      "src/minesweeper.clj"
+    ],
+    "test": [
+      "test/minesweeper_test.clj"
+    ],
+    "example": [
+      ".meta/src/example.clj"
+    ]
+  }
+}

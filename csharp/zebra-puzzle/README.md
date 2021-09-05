@@ -1,5 +1,10 @@
 # Zebra Puzzle
 
+Welcome to Zebra Puzzle on Exercism's C# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Solve the zebra puzzle.
 
 1. There are five houses.
@@ -25,15 +30,21 @@ drink different beverages and smoke different brands of cigarettes.
 Which of the residents drinks water?
 Who owns the zebra?
 
-## Hints
 This exercise requires you to process a collection of data. You can simplify your code by using lazy sequences to improve performance.
 For more information, see [this page](https://xosfaere.wordpress.com/2010/03/21/lazy-evaluation-in-csharp/).
 
-
-
 ## Source
 
-Wikipedia [https://en.wikipedia.org/wiki/Zebra_Puzzle](https://en.wikipedia.org/wiki/Zebra_Puzzle)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @ErikSchierboom
+
+### Contributed to by
+
+- @j2jensen
+- @robkeim
+- @wolf99
+
+### Based on
+
+Wikipedia - https://en.wikipedia.org/wiki/Zebra_Puzzle

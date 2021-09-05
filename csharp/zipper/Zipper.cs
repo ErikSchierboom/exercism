@@ -1,145 +1,61 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 
-public class BinTree : IEquatable<BinTree>
+public class BinTree
 {
     public BinTree(int value, BinTree left, BinTree right)
     {
-        Value = value;
-        Left = left;
-        Right = right;
-    }
-
-    public BinTree(BinTree tree) : this(tree.Value, tree.Left, tree.Right)
-    {
+        throw new NotImplementedException("You need to implement this function.");
     }
 
     public int Value { get; }
     public BinTree Left { get; }
     public BinTree Right { get; }
-
-    public bool Equals(BinTree other)
-    {
-        if (other == null || !Equals(Value, other.Value))
-            return false;
-
-        if (!ReferenceEquals(Left, other.Left) && (!Left?.Equals(other.Left) ?? false))
-            return false;
-
-        if (!ReferenceEquals(Right, other.Right) && (!Right?.Equals(other.Right) ?? false))
-            return false;
-
-        return true;
-    }
 }
 
-public abstract class BinTreeCrumb
-{
-    public BinTreeCrumb(int value, BinTree tree)
+public class Zipper
+{   
+    public int Value()
     {
-        Value = value;
-        Tree = tree;
+        throw new NotImplementedException("You need to implement this function.");
     }
 
-    public int Value { get; }
-    public BinTree Tree { get; }
-}
-
-public class BinTreeLeftCrumb : BinTreeCrumb
-{
-    public BinTreeLeftCrumb(int value, BinTree tree) : base(value, tree)
+    public Zipper SetValue(int newValue)
     {
+        throw new NotImplementedException("You need to implement this function.");
     }
-}
 
-public class BinTreeRightCrumb : BinTreeCrumb
-{
-    public BinTreeRightCrumb(int value, BinTree tree) : base(value, tree)
+    public Zipper SetLeft(BinTree binTree)
     {
+        throw new NotImplementedException("You need to implement this function.");
     }
-}
 
-public class Zipper : IEquatable<Zipper>
-{
-    private readonly int value;
-    private readonly BinTree left;
-    private readonly BinTree right;
-    private readonly List<BinTreeCrumb> crumbs;
-
-    public Zipper(int value, BinTree left, BinTree right, List<BinTreeCrumb> crumbs)
+    public Zipper SetRight(BinTree binTree) 
     {
-        this.value = value;
-        this.left = left;
-        this.right = right;
-        this.crumbs = crumbs;
+        throw new NotImplementedException("You need to implement this function.");
     }
-    
-    public int Value() => value;
-
-    public Zipper SetValue(int newValue) => new Zipper(newValue, left, right, crumbs);
-
-    public Zipper SetLeft(BinTree binTree) => new Zipper(value, binTree, right, crumbs);
-
-    public Zipper SetRight(BinTree binTree) => new Zipper(value, left, binTree, crumbs);
 
     public Zipper Left()
     {
-        if (left == null)
-            return null;
-        
-        var newCrumbs = new[] { new BinTreeLeftCrumb(value, right) }.Concat(crumbs).ToList();
-        return new Zipper(left.Value, left.Left, left.Right, newCrumbs);
+        throw new NotImplementedException("You need to implement this function.");
     }
 
     public Zipper Right()
     {
-        if (right == null)
-            return null;
-
-        var newCrumbs = new[] { new BinTreeRightCrumb(value, left) }.Concat(crumbs).ToList();
-        return new Zipper(right.Value, right.Left, right.Right, newCrumbs);
+        throw new NotImplementedException("You need to implement this function.");
     }
 
     public Zipper Up()
     {
-        if (crumbs.Count == 0)
-            return null;
-
-        var firstCrumb = crumbs[0];
-        var remainingCrumbs = crumbs.Skip(1).ToList();
-        
-        if (firstCrumb is BinTreeLeftCrumb)
-            return new Zipper(firstCrumb.Value, new BinTree(value, left, right), firstCrumb.Tree, remainingCrumbs);
-        
-        if (firstCrumb is BinTreeRightCrumb)
-            return new Zipper(firstCrumb.Value, firstCrumb.Tree, new BinTree(value, left, right), remainingCrumbs);
-        
-        return null;
+        throw new NotImplementedException("You need to implement this function.");
     }
 
     public BinTree ToTree()
     {
-        var tree = new BinTree(value, left, right);
-
-        foreach (var crumb in crumbs)
-        {
-            if (crumb is BinTreeLeftCrumb)
-                tree = new BinTree(crumb.Value, new BinTree(tree), crumb.Tree);
-            if (crumb is BinTreeRightCrumb)
-                tree = new BinTree(crumb.Value, crumb.Tree, new BinTree(tree));
-        }
-
-        return tree;
+        throw new NotImplementedException("You need to implement this function.");
     }
 
-    public bool Equals(Zipper other)
+    public static Zipper FromTree(BinTree tree)
     {
-        if (other == null)
-            return false;
-
-        return ToTree().Equals(other.ToTree());
+        throw new NotImplementedException("You need to implement this function.");
     }
-
-    public static Zipper FromTree(BinTree tree) => new Zipper(tree.Value, tree.Left, tree.Right, new List<BinTreeCrumb>());
 }

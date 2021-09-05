@@ -1,12 +1,18 @@
 # Spiral Matrix
 
+Welcome to Spiral Matrix on Exercism's Java Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given the size, return a square matrix of numbers in spiral order.
 
 The matrix should be filled with natural numbers, starting from 1
 in the top-left corner, increasing in an inward, clockwise spiral order,
 like these examples:
 
-###### Spiral matrix of size 3
+## Examples
+### Spiral matrix of size 3
 
 ```text
 1 2 3
@@ -14,7 +20,7 @@ like these examples:
 7 6 5
 ```
 
-###### Spiral matrix of size 4
+### Spiral matrix of size 4
 
 ```text
  1  2  3 4
@@ -23,20 +29,26 @@ like these examples:
 10  9  8 7
 ```
 
-# Running the tests
-
-You can run all the tests for an exercise by entering
-
-```sh
-$ gradle test
-```
-
-in your terminal.
-
 ## Source
 
-Reddit r/dailyprogrammer challenge #320 [Easy] Spiral Ascension. [https://www.reddit.com/r/dailyprogrammer/comments/6i60lr/20170619_challenge_320_easy_spiral_ascension/](https://www.reddit.com/r/dailyprogrammer/comments/6i60lr/20170619_challenge_320_easy_spiral_ascension/)
+### Created by
 
-## Submitting Incomplete Solutions
+- @stkent
 
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+### Contributed to by
+
+- @FridaTveit
+- @jmrunkle
+- @Kyle-Pu
+- @kytrinyx
+- @lemoncurry
+- @mirkoperillo
+- @msomji
+- @muzimuzhi
+- @SleeplessByte
+- @Smarticles101
+- @sshine
+
+### Based on
+
+Reddit r/dailyprogrammer challenge #320 [Easy] Spiral Ascension. - https://www.reddit.com/r/dailyprogrammer/comments/6i60lr/20170619_challenge_320_easy_spiral_ascension/

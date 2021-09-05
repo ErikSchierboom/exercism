@@ -1,0 +1,37 @@
+{
+  "blurb": "Given a string representing a matrix of numbers, return the rows and columns of that matrix.",
+  "authors": [
+    "FridaTveit"
+  ],
+  "contributors": [
+    "hugueschabot",
+    "jmrunkle",
+    "jssander",
+    "kytrinyx",
+    "lemoncurry",
+    "mirkoperillo",
+    "morrme",
+    "msomji",
+    "muzimuzhi",
+    "pratikpalashikar",
+    "SleeplessByte",
+    "Smarticles101",
+    "sonapraneeth-a",
+    "sshine",
+    "stkent",
+    "Zaldrick"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/Matrix.java"
+    ],
+    "test": [
+      "src/test/java/MatrixTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/Matrix.java"
+    ]
+  },
+  "source": "Warmup to the `saddle-points` warmup.",
+  "source_url": "http://jumpstartlab.com"
+}

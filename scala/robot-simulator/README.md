@@ -1,5 +1,10 @@
 # Robot Simulator
 
+Welcome to Robot Simulator on Exercism's Scala Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Write a robot simulator.
 
 A robot factory's test facility needs a program to verify robot movements.
@@ -27,19 +32,19 @@ direction it is pointing.
 - Say a robot starts at {7, 3} facing north. Then running this stream
   of instructions should leave it at {9, 4} facing west.
 
-The Scala exercises assume an SBT project scheme. The exercise solution source
-should be placed within the exercise directory/src/main/scala. The exercise
-unit tests can be found within the exercise directory/src/test/scala.
-
-To run the tests simply run the command `sbt test` in the exercise directory.
-
-For more detailed info about the Scala track see the [help
-page](http://exercism.io/languages/scala).
-
-
 ## Source
 
-Inspired by an interview question at a famous company.
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @ricemery
+
+### Contributed to by
+
+- @ErikSchierboom
+- @mlopes
+- @ppartarr
+- @rajeshpg
+
+### Based on
+
+Inspired by an interview question at a famous company.

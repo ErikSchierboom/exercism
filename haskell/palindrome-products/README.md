@@ -1,12 +1,17 @@
 # Palindrome Products
 
+Welcome to Palindrome Products on Exercism's Haskell Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Detect palindrome products in a given range.
 
 A palindromic number is a number that remains the same when its digits are
 reversed. For example, `121` is a palindromic number but `112` is not.
 
 Given a range of numbers, find the largest and smallest palindromes which
-are products of numbers within that range.
+are products of two numbers within that range.
 
 Your solution should return the largest and smallest palindromes, along with the
 factors of each within the range. If the largest or smallest palindrome has more
@@ -32,8 +37,6 @@ Given the range `[10, 99]` (both inclusive)...
 The smallest palindrome product is `121`. Its factors are `(11, 11)`.
 The largest palindrome product is `9009`. Its factors are `(91, 99)`.
 
-## Hints
-
 To solve this exercise you need to implement these two functions:
 
 - `largestPalindrome`
@@ -52,63 +55,28 @@ is irrelevant.
 You should consider using a slightly different algorithm to find small or
 large palindromes.
 
-
-
-## Getting Started
-
-For installation and learning resources, refer to the
-[exercism help page](http://exercism.io/languages/haskell).
-
-## Running the tests
-
-To run the test suite, execute the following command:
-
-```bash
-stack test
-```
-
-#### If you get an error message like this...
-
-```
-No .cabal file found in directory
-```
-
-You are probably running an old stack version and need
-to upgrade it.
-
-#### Otherwise, if you get an error message like this...
-
-```
-No compiler found, expected minor version match with...
-Try running "stack setup" to install the correct GHC...
-```
-
-Just do as it says and it will download and install
-the correct compiler version:
-
-```bash
-stack setup
-```
-
-## Running *GHCi*
-
-If you want to play with your solution in GHCi, just run the command:
-
-```bash
-stack ghci
-```
-
-## Feedback, Issues, Pull Requests
-
-The [exercism/haskell](https://github.com/exercism/haskell) repository on
-GitHub is the home for all of the Haskell exercises.
-
-If you have feedback about an exercise, or want to help implementing a new
-one, head over there and create an issue.  We'll do our best to help you!
-
 ## Source
 
-Problem 4 at Project Euler [http://projecteuler.net/problem=4](http://projecteuler.net/problem=4)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @etrepum
+
+### Contributed to by
+
+- @dkinzer
+- @DmitrySamoylov
+- @iHiD
+- @insideoutclub
+- @jeeger
+- @kytrinyx
+- @petertseng
+- @ppartarr
+- @rbasso
+- @soapie
+- @sshine
+- @stevejb71
+- @tejasbubane
+
+### Based on
+
+Problem 4 at Project Euler - http://projecteuler.net/problem=4

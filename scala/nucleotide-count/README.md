@@ -1,18 +1,30 @@
 # Nucleotide Count
 
-Given a single stranded DNA string, compute how many times each nucleotide occurs in the string.
+Welcome to Nucleotide Count on Exercism's Scala Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
 
-The genetic language of every living thing on the planet is DNA.
-DNA is a large molecule that is built from an extremely long sequence of individual elements called nucleotides.
-4 types exist in DNA and these differ only slightly and can be represented as the following symbols: 'A' for adenine, 'C' for cytosine, 'G' for guanine, and 'T' thymine.
+## Instructions
 
-Here is an analogy:
-- twigs are to birds nests as
-- nucleotides are to DNA as
-- legos are to lego houses as
-- words are to sentences as...
+Each of us inherits from our biological parents a set of chemical instructions known as DNA that influence how our bodies are constructed. All known life depends on DNA!
 
-## Hints
+> Note: You do not need to understand anything about nucleotides or DNA to complete this exercise.
+
+DNA is a long chain of other chemicals and the most important are the four nucleotides, adenine, cytosine, guanine and thymine. A single DNA chain can contain billions of these four nucleotides and the order in which they occur is important!
+We call the order of these nucleotides in a bit of DNA a "DNA sequence".
+
+We represent a DNA sequence as an ordered collection of these four nucleotides and a common way to do that is with a string of characters such as "ATTACG" for a DNA sequence of 6 nucleotides.
+'A' for adenine, 'C' for cytosine, 'G' for guanine, and 'T' for thymine.
+
+Given a string representing a DNA sequence, count how many of each nucleotide is present.
+If the string contains characters that aren't A, C, G, or T then it is invalid and you should signal an error.
+
+For example:
+
+```
+"GATTACA" -> 'A': 3, 'C': 1, 'G': 1, 'T': 2
+"INVALID" -> error
+```
+
 A common use of `Either` is to indicate a computation that may possibly result in an error
 (if the actual error is of no interest then the simpler `Option` type might be a better choice).
 In the absence of an error the result is usually a `Right` (mnemonic: the "right" value)
@@ -24,7 +36,7 @@ in this case error handling.
 Proper use of Monads can result in very concise yet elegant
 and readable code. Improper use can easily result in the contrary.
 Watch [this video](https://www.youtube.com/watch?v=Mw_Jnn_Y5iA) to learn more.
-#### Common pitfalls that you should avoid
+## Common pitfalls that you should avoid
 There are a few rules of thumbs for `Either`:
 1. If you don't need it don't use it. Instead of
 ```scala
@@ -74,20 +86,23 @@ for {
 } yield x + y + z
 ```
 
-
-The Scala exercises assume an SBT project scheme. The exercise solution source
-should be placed within the exercise directory/src/main/scala. The exercise
-unit tests can be found within the exercise directory/src/test/scala.
-
-To run the tests simply run the command `sbt test` in the exercise directory.
-
-For more detailed info about the Scala track see the [help
-page](http://exercism.io/languages/scala).
-
-
 ## Source
 
-The Calculating DNA Nucleotides_problem at Rosalind [http://rosalind.info/problems/dna/](http://rosalind.info/problems/dna/)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @sgrif
+
+### Contributed to by
+
+- @abo64
+- @astradamus
+- @ErikSchierboom
+- @kytrinyx
+- @ppartarr
+- @rajeshpg
+- @ricemery
+- @sjakobi
+
+### Based on
+
+The Calculating DNA Nucleotides_problem at Rosalind - http://rosalind.info/problems/dna/

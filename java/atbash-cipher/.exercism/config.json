@@ -1,0 +1,42 @@
+{
+  "blurb": "Create an implementation of the atbash cipher, an ancient encryption system created in the Middle East.",
+  "authors": [],
+  "contributors": [
+    "c-thornton",
+    "FridaTveit",
+    "jackattack24",
+    "jmluy",
+    "jmrunkle",
+    "jtigger",
+    "kytrinyx",
+    "lemoncurry",
+    "LuLechuan",
+    "matthewmorgan",
+    "mirkoperillo",
+    "msomji",
+    "muzimuzhi",
+    "PaulNoth",
+    "rohit1104",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine",
+    "stkent",
+    "vdemeester",
+    "Zaldrick",
+    "Zhiyuan-Amos"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/Atbash.java"
+    ],
+    "test": [
+      "src/test/java/AtbashTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/Atbash.java"
+    ]
+  },
+  "source": "Wikipedia",
+  "source_url": "http://en.wikipedia.org/wiki/Atbash"
+}

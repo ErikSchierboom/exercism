@@ -1,0 +1,16 @@
+{
+  "blurb": "Create a program to solve a word search puzzle.",
+  "authors": ["matthewmorgan"],
+  "contributors": [
+    "hyuko21",
+    "ivanvotti",
+    "msomji",
+    "rchavarria",
+    "SleeplessByte"
+  ],
+  "files": {
+    "solution": ["word-search.js"],
+    "test": ["word-search.spec.js"],
+    "example": [".meta/proof.ci.js"]
+  }
+}

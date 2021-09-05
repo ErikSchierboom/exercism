@@ -1,5 +1,10 @@
 # Sieve
 
+Welcome to Sieve on Exercism's Nim Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Use the Sieve of Eratosthenes to find all the primes from 2 up to a given
 number.
 
@@ -29,32 +34,12 @@ correct list of primes. A good first test is to check that you do not use
 division or remainder operations (div, /, mod or % depending on the
 language).
 
-## Running the tests
-
-To compile and run the tests, just run the following in your exercise directory:
-```bash
-$ nim c -r sieve_test.nim
-```
-
-## Submitting Exercises
-
-Note that, when trying to submit an exercise, make sure the solution is in the `$EXERCISM_WORKSPACE/nim/sieve` directory.
-
-You can find your Exercism workspace by running `exercism debug` and looking for the line that starts with `Exercises Directory`.
-
-## Need help?
-
-These guides should help you,
-* [Installing Nim](https://exercism.io/tracks/nim/installation)
-* [Running the Tests](https://exercism.io/tracks/nim/tests)
-* [Learning Nim](https://exercism.io/tracks/nim/learning)
-* [Useful Nim Resources](https://exercism.io/tracks/nim/resources)
-
-
 ## Source
 
-Sieve of Eratosthenes at Wikipedia [http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes](http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes)
+### Created by
 
-## Submitting Incomplete Solutions
+- @ee7
 
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+### Based on
+
+Sieve of Eratosthenes at Wikipedia - http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes

@@ -1,59 +1,10 @@
+using System;
 using System.Collections.Generic;
 
-using System;
-using System.Linq;
-
-public class Triplet
+public static class PythagoreanTriplet
 {
-    private readonly int x;
-    private readonly int y;
-    private readonly int z;
-
-    public Triplet(int x, int y, int z)
+    public static IEnumerable<(int a, int b, int c)> TripletsWithSum(int sum)
     {
-        this.x = x;
-        this.y = y;
-        this.z = z;
-    }
-
-    public int Sum()
-    {
-        return Sum(x, y, z);
-    }
-
-    public int Product()
-    {
-        return x * y * z;
-    }
-
-    public bool IsPythagorean()
-    {
-        return IsPythagorean(x, y, z);
-    }
-
-    public static IEnumerable<Triplet> Where(int maxFactor, int? minFactor = null, int? sum = null)
-    {
-        return Where(maxFactor, minFactor ?? 1, sum);
-    }
-
-    private static IEnumerable<Triplet> Where(int maxFactor, int minFactor, int? sum = null)
-    {
-        return (from x in Enumerable.Range(minFactor, maxFactor - minFactor + 1)
-            from y in Enumerable.Range(x + 1, maxFactor - x)
-            let z = (int)Math.Sqrt(x * x + y * y)
-            where z <= maxFactor
-            where IsPythagorean(x, y, z)
-            where sum == null || Sum(x, y, z) == sum.Value
-            select new Triplet(x, y, z));
-    }
-
-    private static bool IsPythagorean(int x, int y, int z)
-    {
-        return x * x + y * y == z * z;
-    }
-
-    private static int Sum(int x, int y, int z)
-    {
-        return x + y + z;
+        throw new NotImplementedException("You need to implement this function.");
     }
 }

@@ -1,21 +1,24 @@
 # Robot Name
 
+Welcome to Robot Name on Exercism's Java Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Manage robot factory settings.
 
-When robots come off the factory floor, they have no name.
+When a robot comes off the factory floor, it has no name.
 
-The first time you boot them up, a random name is generated in the format
+The first time you turn on a robot, a random name is generated in the format
 of two uppercase letters followed by three digits, such as RX837 or BC811.
 
 Every once in a while we need to reset a robot to its factory settings,
-which means that their name gets wiped. The next time you ask, it will
+which means that its name gets wiped. The next time you ask, that robot will
 respond with a new random name.
 
 The names must be random: they should not follow a predictable sequence.
-Random names means a risk of collisions. Your solution must ensure that
+Using random names means a risk of collisions. Your solution must ensure that
 every existing robot has a unique name.
-
-# Java Tips
 
 Since this exercise has difficulty 5 it doesn't come with any starter implementation.
 This is so that you get to practice creating classes and methods which is an important part of programming in Java.
@@ -76,21 +79,31 @@ The new error should tell you which type it's expecting.
 
 After having resolved these errors you should be ready to start making the tests pass!
 
-
-# Running the tests
-
-You can run all the tests for an exercise by entering
-
-```sh
-$ gradle test
-```
-
-in your terminal.
-
 ## Source
 
-A debugging session with Paul Blackwell at gSchool. [http://gschool.it](http://gschool.it)
+### Contributed to by
 
-## Submitting Incomplete Solutions
+- @c-thornton
+- @FridaTveit
+- @jmluy
+- @jmrunkle
+- @jtigger
+- @kytrinyx
+- @lemoncurry
+- @matthewmorgan
+- @mirkoperillo
+- @morrme
+- @msomji
+- @muzimuzhi
+- @SleeplessByte
+- @Smarticles101
+- @sshine
+- @stkent
+- @superklamer
+- @vasouv
+- @vdemeester
+- @Zaldrick
 
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+### Based on
+
+A debugging session with Paul Blackwell at gSchool.

@@ -1,0 +1,24 @@
+{
+  "blurb": "Given a string representing a matrix of numbers, return the rows and columns of that matrix.",
+  "authors": [
+    "ricemery"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "ppartarr",
+    "rajeshpg"
+  ],
+  "files": {
+    "solution": [
+      "src/main/scala/Matrix.scala"
+    ],
+    "test": [
+      "src/test/scala/MatrixTest.scala"
+    ],
+    "example": [
+      ".meta/Example.scala"
+    ]
+  },
+  "source": "Warmup to the `saddle-points` warmup.",
+  "source_url": "http://jumpstartlab.com"
+}

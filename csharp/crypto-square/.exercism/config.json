@@ -1,0 +1,29 @@
+{
+  "blurb": "Implement the classic method for composing secret messages called a square code.",
+  "authors": [
+    "bressain"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "j2jensen",
+    "jwood803",
+    "kytrinyx",
+    "robkeim",
+    "rprouse",
+    "wolf99",
+    "Zureka"
+  ],
+  "files": {
+    "solution": [
+      "CryptoSquare.cs"
+    ],
+    "test": [
+      "CryptoSquareTests.cs"
+    ],
+    "example": [
+      ".meta/Example.cs"
+    ]
+  },
+  "source": "J Dalbey's Programming Practice problems",
+  "source_url": "http://users.csc.calpoly.edu/~jdalbey/103/Projects/ProgrammingPractice.html"
+}

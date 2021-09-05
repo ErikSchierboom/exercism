@@ -1,0 +1,26 @@
+{
+  "blurb": "Given a word and a list of possible anagrams, select the correct sublist.",
+  "authors": [
+    "sgrif"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "kytrinyx",
+    "ppartarr",
+    "rajeshpg",
+    "ricemery"
+  ],
+  "files": {
+    "solution": [
+      "src/main/scala/Anagram.scala"
+    ],
+    "test": [
+      "src/test/scala/AnagramTest.scala"
+    ],
+    "example": [
+      ".meta/Example.scala"
+    ]
+  },
+  "source": "Inspired by the Extreme Startup game",
+  "source_url": "https://github.com/rchatley/extreme_startup"
+}

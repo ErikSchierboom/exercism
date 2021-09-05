@@ -1,5 +1,10 @@
 # Largest Series Product
 
+Welcome to Largest Series Product on Exercism's F# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given a string of digits, calculate the largest product for a contiguous
 substring of digits of length n.
 
@@ -13,22 +18,21 @@ in the input; the digits need not be *numerically consecutive*.
 For the input `'73167176531330624919225119674426574742355349194934'`,
 the largest product for a series of 6 digits is 23520.
 
-## Running the tests
-
-To run the tests, run the command `dotnet test` from within the exercise directory.
-
-## Autoformatting the code
-
-F# source code can be formatted with the [Fantomas](https://github.com/fsprojects/fantomas) tool.
-
-After installing it with `dotnet tool restore`, run `dotnet fantomas .` to format code within the current directory.
-
-## Further information
-
-For more detailed information about the F# track, including how to get help if
-you're having trouble, please visit the exercism.io [F# language page](http://exercism.io/languages/fsharp/resources).
-
 ## Source
 
-A variation on Problem 8 at Project Euler [http://projecteuler.net/problem=8](http://projecteuler.net/problem=8)
+### Created by
 
+- @ErikSchierboom
+
+### Contributed to by
+
+- @jrr
+- @lestephane
+- @robkeim
+- @valentin-p
+- @vrnithinkumar
+- @wolf99
+
+### Based on
+
+A variation on Problem 8 at Project Euler - http://projecteuler.net/problem=8

@@ -1,5 +1,10 @@
 # Food Chain
 
+Welcome to Food Chain on Exercism's JavaScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Generate the lyrics of the song 'I Know an Old Lady Who Swallowed a Fly'.
 
 While you could copy/paste the lyrics,
@@ -63,38 +68,23 @@ I know an old lady who swallowed a horse.
 She's dead, of course!
 ```
 
-## Setup
-
-Go through the setup instructions for ECMAScript to
-install the necessary dependencies:
-
-http://exercism.io/languages/ecmascript
-
-## Requirements
-
-Install assignment dependencies:
-
-```bash
-$ npm install
-```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ npm test
-```
-
-In the test suites all tests but the first have been skipped.
-
-Once you get a test passing, you can enable the next one by
-changing `xtest` to `test`.
-
-
 ## Source
 
-Wikipedia [http://en.wikipedia.org/wiki/There_Was_an_Old_Lady_Who_Swallowed_a_Fly](http://en.wikipedia.org/wiki/There_Was_an_Old_Lady_Who_Swallowed_a_Fly)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @rchavarria
+
+### Contributed to by
+
+- @ankorGH
+- @draalger
+- @kytrinyx
+- @matthewmorgan
+- @ryanplusplus
+- @SleeplessByte
+- @tejasbubane
+- @xarxziux
+
+### Based on
+
+Wikipedia - http://en.wikipedia.org/wiki/There_Was_an_Old_Lady_Who_Swallowed_a_Fly

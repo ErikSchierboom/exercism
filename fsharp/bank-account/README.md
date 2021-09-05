@@ -1,5 +1,10 @@
 # Bank Account
 
+Welcome to Bank Account on Exercism's F# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Simulate a bank account supporting opening/closing, withdrawals, and deposits
 of money. Watch out for concurrent transactions!
 
@@ -26,5 +31,19 @@ it.
 
 Have fun!
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+## Source
+
+### Created by
+
+- @jwood803
+
+### Contributed to by
+
+- @ErikSchierboom
+- @jbtule
+- @jrr
+- @kytrinyx
+- @lestephane
+- @robkeim
+- @valentin-p
+- @wolf99

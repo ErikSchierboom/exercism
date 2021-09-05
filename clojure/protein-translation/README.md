@@ -1,5 +1,10 @@
 # Protein Translation
 
+Welcome to Protein Translation on Exercism's Clojure Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Translate RNA sequences into proteins.
 
 RNA can be broken into three nucleotide sequences called codons, and then translated to a polypeptide like so:
@@ -40,9 +45,19 @@ UGG                   | Tryptophan
 UAA, UAG, UGA         | STOP
 
 Learn more about [protein translation on Wikipedia](http://en.wikipedia.org/wiki/Translation_(biology))
+
 ## Source
 
-Tyler Long
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @querenker
+
+### Contributed to by
+
+- @AndreaCrotti
+- @haus
+- @sjwarner-bp
+
+### Based on
+
+Tyler Long

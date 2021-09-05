@@ -1,5 +1,10 @@
 # Go Counting
 
+Welcome to Go Counting on Exercism's Java Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Count the scored points on a Go board.
 
 In the game of go (also known as baduk, igo, cờ vây and wéiqí) points
@@ -35,16 +40,22 @@ For more information see
 [wikipedia](https://en.wikipedia.org/wiki/Go_%28game%29) or [Sensei's
 Library](http://senseis.xmp.net/).
 
-# Running the tests
+## Source
 
-You can run all the tests for an exercise by entering
+### Created by
 
-```sh
-$ gradle test
-```
+- @jssander
 
-in your terminal.
+### Contributed to by
 
-## Submitting Incomplete Solutions
-
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @aadityakulkarni
+- @cmccandless
+- @FridaTveit
+- @jmrunkle
+- @lemoncurry
+- @mirkoperillo
+- @msomji
+- @muzimuzhi
+- @sjwarner-bp
+- @SleeplessByte
+- @sshine

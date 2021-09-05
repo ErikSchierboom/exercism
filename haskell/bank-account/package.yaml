@@ -1,5 +1,5 @@
 name: bank-account
-version: 0.1.0.2
+version: 0.1.0.4
 
 dependencies:
   - base
@@ -7,6 +7,7 @@ dependencies:
 library:
   exposed-modules: BankAccount
   source-dirs: src
+  ghc-options: -Wall
   # dependencies:
   # - foo       # List here the packages you
   # - bar       # want to use in your solution.
@@ -15,6 +16,7 @@ tests:
   test:
     main: Tests.hs
     source-dirs: test
+    ghc-options: -threaded -rtsopts -with-rtsopts=-N
     dependencies:
       - bank-account
       - hspec

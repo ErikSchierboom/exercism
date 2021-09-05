@@ -1,5 +1,10 @@
 # Allergies
 
+Welcome to Allergies on Exercism's Ruby Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given a person's allergy score, determine whether or not they're allergic to a given item, and their full list of allergies.
 
 An allergy test produces a single numeric score which contains the
@@ -29,32 +34,26 @@ allergens that score 256, 512, 1024, etc.).  Your program should
 ignore those components of the score.  For example, if the allergy
 score is 257, your program should only report the eggs (1) allergy.
 
-* * * *
-
-For installation and learning resources, refer to the
-[Ruby resources page](http://exercism.io/languages/ruby/resources).
-
-For running the tests provided, you will need the Minitest gem. Open a
-terminal window and run the following command to install minitest:
-
-    gem install minitest
-
-If you would like color output, you can `require 'minitest/pride'` in
-the test file, or note the alternative instruction, below, for running
-the test file.
-
-Run the tests from the exercise directory using the following command:
-
-    ruby allergies_test.rb
-
-To include color from the command line:
-
-    ruby -r minitest/pride allergies_test.rb
-
-
 ## Source
 
-Jumpstart Lab Warm-up [http://jumpstartlab.com](http://jumpstartlab.com)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @kytrinyx
+
+### Contributed to by
+
+- @ajwann
+- @budmc29
+- @cadwallion
+- @hilary
+- @iHiD
+- @Insti
+- @jpotts244
+- @kotp
+- @mikegehard
+- @pendletons
+- @tryantwit
+
+### Based on
+
+Jumpstart Lab Warm-up - http://jumpstartlab.com

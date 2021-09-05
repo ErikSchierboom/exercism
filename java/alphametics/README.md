@@ -1,5 +1,10 @@
 # Alphametics
 
+Welcome to Alphametics on Exercism's Java Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Write a function to solve alphametics puzzles.
 
 [Alphametics](https://en.wikipedia.org/wiki/Alphametics) is a puzzle where
@@ -31,16 +36,22 @@ a multi-digit number must not be zero.
 
 Write a function to solve alphametics puzzles.
 
-# Running the tests
+## Source
 
-You can run all the tests for an exercise by entering
+### Created by
 
-```sh
-$ gradle test
-```
+- @Zhiyuan-Amos
 
-in your terminal.
+### Contributed to by
 
-## Submitting Incomplete Solutions
-
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @aadityakulkarni
+- @FridaTveit
+- @jmrunkle
+- @Kyle-Pu
+- @lemoncurry
+- @mirkoperillo
+- @msomji
+- @muzimuzhi
+- @sjwarner-bp
+- @SleeplessByte
+- @sshine

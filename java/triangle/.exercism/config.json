@@ -1,0 +1,40 @@
+{
+  "blurb": "Determine if a triangle is equilateral, isosceles, or scalene.",
+  "authors": [],
+  "contributors": [
+    "FridaTveit",
+    "jackattack24",
+    "javaeeeee",
+    "jmrunkle",
+    "jtigger",
+    "Kyle-Pu",
+    "kytrinyx",
+    "lemoncurry",
+    "matthewmorgan",
+    "michaelspets",
+    "mirkoperillo",
+    "morrme",
+    "msomji",
+    "muzimuzhi",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine",
+    "stkent",
+    "ThiagoSousaSantana",
+    "vdemeester",
+    "Zaldrick"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/Triangle.java"
+    ],
+    "test": [
+      "src/test/java/TriangleTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/Triangle.java"
+    ]
+  },
+  "source": "The Ruby Koans triangle project, parts 1 & 2",
+  "source_url": "http://rubykoans.com"
+}

@@ -1,0 +1,27 @@
+{
+  "blurb": "Pick the best hand(s) from a list of poker hands.",
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "contributors": [
+    "jrr",
+    "lestephane",
+    "robkeim",
+    "roman-shuhov",
+    "valentin-p",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "Poker.fs"
+    ],
+    "test": [
+      "PokerTests.fs"
+    ],
+    "example": [
+      ".meta/Example.fs"
+    ]
+  },
+  "source": "Inspired by the training course from Udacity.",
+  "source_url": "https://www.udacity.com/course/viewer#!/c-cs212/"
+}

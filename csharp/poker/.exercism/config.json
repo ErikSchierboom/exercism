@@ -1,0 +1,25 @@
+{
+  "blurb": "Pick the best hand(s) from a list of poker hands.",
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "contributors": [
+    "j2jensen",
+    "robkeim",
+    "rpottsoh",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "Poker.cs"
+    ],
+    "test": [
+      "PokerTests.cs"
+    ],
+    "example": [
+      ".meta/Example.cs"
+    ]
+  },
+  "source": "Inspired by the training course from Udacity.",
+  "source_url": "https://www.udacity.com/course/viewer#!/c-cs212/"
+}

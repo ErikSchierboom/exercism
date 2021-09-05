@@ -1,5 +1,10 @@
 # Grep
 
+Welcome to Grep on Exercism's Java Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Search a file for lines matching a regular expression pattern. Return the line
 number and contents of each matching line.
 
@@ -33,7 +38,7 @@ hello
 hello again
 ```
 
-### Flags
+## Flags
 
 As said earlier, the `grep` command should also support the following flags:
 
@@ -63,8 +68,6 @@ The `grep` command should support multiple flags at once.
 
 For example, running `grep -l -v "hello" file1.txt file2.txt` should
 print the names of files that do not contain the string "hello".
-
-# Java Tips
 
 Since this exercise has difficulty 5 it doesn't come with any starter implementation.
 This is so that you get to practice creating classes and methods which is an important part of programming in Java.
@@ -125,21 +128,23 @@ The new error should tell you which type it's expecting.
 
 After having resolved these errors you should be ready to start making the tests pass!
 
-
-# Running the tests
-
-You can run all the tests for an exercise by entering
-
-```sh
-$ gradle test
-```
-
-in your terminal.
-
 ## Source
 
-Conversation with Nate Foster. [http://www.cs.cornell.edu/Courses/cs3110/2014sp/hw/0/ps0.pdf](http://www.cs.cornell.edu/Courses/cs3110/2014sp/hw/0/ps0.pdf)
+### Created by
 
-## Submitting Incomplete Solutions
+- @FridaTveit
 
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+### Contributed to by
+
+- @aadityakulkarni
+- @ericbalawejder
+- @jmrunkle
+- @lemoncurry
+- @msomji
+- @muzimuzhi
+- @SleeplessByte
+- @sshine
+
+### Based on
+
+Conversation with Nate Foster. - http://www.cs.cornell.edu/Courses/cs3110/2014sp/hw/0/ps0.pdf

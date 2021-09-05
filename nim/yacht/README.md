@@ -1,6 +1,9 @@
 # Yacht
 
-# Score a single throw of dice in *Yacht*
+Welcome to Yacht on Exercism's Nim Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
 
 The dice game [Yacht](https://en.wikipedia.org/wiki/Yacht_(dice_game)) is from
 the same family as Poker Dice, Generala and particularly Yahtzee, of which it
@@ -36,32 +39,12 @@ of the category your solution should return 0. You can assume that five values
 will always be presented, and the value of each will be between one and six
 inclusively. You should not assume that the dice are ordered.
 
-## Running the tests
-
-To compile and run the tests, just run the following in your exercise directory:
-```bash
-$ nim c -r yacht_test.nim
-```
-
-## Submitting Exercises
-
-Note that, when trying to submit an exercise, make sure the solution is in the `$EXERCISM_WORKSPACE/nim/yacht` directory.
-
-You can find your Exercism workspace by running `exercism debug` and looking for the line that starts with `Exercises Directory`.
-
-## Need help?
-
-These guides should help you,
-* [Installing Nim](https://exercism.io/tracks/nim/installation)
-* [Running the Tests](https://exercism.io/tracks/nim/tests)
-* [Learning Nim](https://exercism.io/tracks/nim/learning)
-* [Useful Nim Resources](https://exercism.io/tracks/nim/resources)
-
-
 ## Source
 
-James Kilfiger, using wikipedia [https://en.wikipedia.org/wiki/Yacht_(dice_game)](https://en.wikipedia.org/wiki/Yacht_(dice_game))
+### Created by
 
-## Submitting Incomplete Solutions
+- @ee7
 
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+### Based on
+
+James Kilfiger, using wikipedia - https://en.wikipedia.org/wiki/Yacht_(dice_game)

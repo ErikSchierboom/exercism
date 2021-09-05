@@ -1,0 +1,25 @@
+{
+  "blurb": "Simulate a bank account supporting opening/closing, withdraws, and deposits of money. Watch out for concurrent transactions!",
+  "authors": [
+    "ricemery"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "Freshwood",
+    "kytrinyx",
+    "nlochschmidt",
+    "ppartarr",
+    "rajeshpg"
+  ],
+  "files": {
+    "solution": [
+      "src/main/scala/BankAccount.scala"
+    ],
+    "test": [
+      "src/test/scala/BankAccountTest.scala"
+    ],
+    "example": [
+      ".meta/Example.scala"
+    ]
+  }
+}

@@ -3,7 +3,7 @@ end
 
 module Translation
   def self.of_codon(codon)
-    raise InvalidCodonError unless CODONS_TO_PROTEINS.key?(codon)
+    raise InvalidCodonError, 'Invalid codon' unless CODONS_TO_PROTEINS.key?(codon)
 
     CODONS_TO_PROTEINS[codon]
   end

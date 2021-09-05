@@ -1,0 +1,20 @@
+{
+  "blurb": "Clean up user-entered phone numbers so that they can be sent SMS messages.",
+  "authors": [
+    "ee7"
+  ],
+  "contributors": [],
+  "files": {
+    "solution": [
+      "phone_number.nim"
+    ],
+    "test": [
+      "test_phone_number.nim"
+    ],
+    "example": [
+      ".meta/example.nim"
+    ]
+  },
+  "source": "Event Manager by JumpstartLab",
+  "source_url": "http://tutorials.jumpstartlab.com/projects/eventmanager.html"
+}

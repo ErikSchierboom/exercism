@@ -1,0 +1,20 @@
+{
+  "blurb": "Detect saddle points in a matrix.",
+  "authors": [
+    "ee7"
+  ],
+  "contributors": [],
+  "files": {
+    "solution": [
+      "saddle_points.nim"
+    ],
+    "test": [
+      "test_saddle_points.nim"
+    ],
+    "example": [
+      ".meta/example.nim"
+    ]
+  },
+  "source": "J Dalbey's Programming Practice problems",
+  "source_url": "http://users.csc.calpoly.edu/~jdalbey/103/Projects/ProgrammingPractice.html"
+}

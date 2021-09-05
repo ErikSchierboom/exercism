@@ -25,7 +25,8 @@ specs = describe "parseSgf" $ for_ cases test
             , (";"                                  , Nothing                                                )
             , ("(;)"                                , Just  $ Node [] []                                     )
             , ("(;A[B])"                            , Just  $ Node [("A", ["B"])] []                         )
-            , ("(;a)"                               , Nothing                                                )
+            , ("(;A[b]C[d])"                        , Just  $ Node [("A", ["b"]), ("C", ["d"])] []           )
+            , ("(;A)"                               , Nothing                                                )
             , ("(;a[b])"                            , Nothing                                                )
             , ("(;Aa[b])"                           , Nothing                                                )
             , ("(;A[B];B[C])"                       , Just  $ Node [("A", ["B"])] [ Node [("B", ["C"])] [] ] )
@@ -33,3 +34,5 @@ specs = describe "parseSgf" $ for_ cases test
                                                                                   , Node [("C", ["D"])] [] ] )
             , ("(;A[b][c][d])"                      , Just  $ Node [("A", ["b", "c", "d" ])] []              )
             , ("(;A[\\]b\nc\\\nd\t\te\\\\ \\\n\\]])", Just  $ Node [("A", ["]b cd  e\\ ]"])] []              ) ]
+
+-- b74debc3be24b5c81650189935c9bbfa019b367e

@@ -1,0 +1,32 @@
+{
+  "blurb": "Given a year, report if it is a leap year.",
+  "authors": [
+    "etrepum"
+  ],
+  "contributors": [
+    "iHiD",
+    "karen-pal",
+    "kytrinyx",
+    "navossoc",
+    "paulrex",
+    "petertseng",
+    "ppartarr",
+    "rbasso",
+    "sshine",
+    "tejasbubane",
+    "tofische"
+  ],
+  "files": {
+    "solution": [
+      "src/LeapYear.hs"
+    ],
+    "test": [
+      "test/Tests.hs"
+    ],
+    "example": [
+      "examples/success-standard/src/LeapYear.hs"
+    ]
+  },
+  "source": "JavaRanch Cattle Drive, exercise 3",
+  "source_url": "http://www.javaranch.com/leap.jsp"
+}

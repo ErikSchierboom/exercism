@@ -1,47 +1,45 @@
 # Robot Name
 
+Welcome to Robot Name on Exercism's Kotlin Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Manage robot factory settings.
 
-When robots come off the factory floor, they have no name.
+When a robot comes off the factory floor, it has no name.
 
-The first time you boot them up, a random name is generated in the format
+The first time you turn on a robot, a random name is generated in the format
 of two uppercase letters followed by three digits, such as RX837 or BC811.
 
 Every once in a while we need to reset a robot to its factory settings,
-which means that their name gets wiped. The next time you ask, it will
+which means that its name gets wiped. The next time you ask, that robot will
 respond with a new random name.
 
 The names must be random: they should not follow a predictable sequence.
-Random names means a risk of collisions. Your solution must ensure that
+Using random names means a risk of collisions. Your solution must ensure that
 every existing robot has a unique name.
-
-## Setup
-
-Go through the setup instructions for Kotlin to install the necessary
-dependencies:
-
-[https://exercism.io/tracks/kotlin/installation](https://exercism.io/tracks/kotlin/installation)
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ gradlew test
-```
-
-> Use `gradlew.bat` if you're on Windows
-
-In the test suites all tests but the first have been skipped.
-
-Once you get a test passing, you can enable the next one by removing the
-`@Ignore` annotation.
 
 ## Source
 
-A debugging session with Paul Blackwell at gSchool. [http://gschool.it](http://gschool.it)
+### Created by
 
-## Submitting Incomplete Solutions
+- @sdavids13
 
-It's possible to submit an incomplete solution so you can see how others have
-completed the exercise.
+### Contributed to by
+
+- @dector
+- @eparovyshnaya
+- @jtigger
+- @lihofm
+- @mdowds
+- @mikegehard
+- @nithia
+- @sjwarner-bp
+- @SleeplessByte
+- @stkent
+- @uzilan
+
+### Based on
+
+A debugging session with Paul Blackwell at gSchool.

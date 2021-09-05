@@ -1,9 +1,14 @@
 # Perfect Numbers
 
-Determine if a number is perfect, abundant, or deficient based on
-Nicomachus' (60 - 120 CE) classification scheme for natural numbers.
+Welcome to Perfect Numbers on Exercism's TypeScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
 
-The Greek mathematician [Nicomachus](https://en.wikipedia.org/wiki/Nicomachus) devised a classification scheme for natural numbers, identifying each as belonging uniquely to the categories of **perfect**, **abundant**, or **deficient** based on their [aliquot sum](https://en.wikipedia.org/wiki/Aliquot_sum). The aliquot sum is defined as the sum of the factors of a number not including the number itself. For example, the aliquot sum of 15 is (1 + 3 + 5) = 9
+## Instructions
+
+Determine if a number is perfect, abundant, or deficient based on
+Nicomachus' (60 - 120 CE) classification scheme for positive integers.
+
+The Greek mathematician [Nicomachus](https://en.wikipedia.org/wiki/Nicomachus) devised a classification scheme for positive integers, identifying each as belonging uniquely to the categories of **perfect**, **abundant**, or **deficient** based on their [aliquot sum](https://en.wikipedia.org/wiki/Aliquot_sum). The aliquot sum is defined as the sum of the factors of a number not including the number itself. For example, the aliquot sum of 15 is (1 + 3 + 5) = 9
 
 - **Perfect**: aliquot sum = number
   - 6 is a perfect number because (1 + 2 + 3) = 6
@@ -17,34 +22,19 @@ The Greek mathematician [Nicomachus](https://en.wikipedia.org/wiki/Nicomachus) d
 
 Implement a way to determine whether a given number is **perfect**. Depending on your language track, you may also need to implement a way to determine whether a given number is **abundant** or **deficient**.
 
-## Setup
-
-Go through the setup instructions for TypeScript to
-install the necessary dependencies:
-
-http://exercism.io/languages/typescript
-
-## Requirements
-
-Install assignment dependencies:
-
-```bash
-$ yarn install
-```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ yarn test
-```
-
-
-
 ## Source
 
-Taken from Chapter 2 of Functional Thinking by Neal Ford. [http://shop.oreilly.com/product/0636920029687.do](http://shop.oreilly.com/product/0636920029687.do)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @CRivasGomez
+
+### Contributed to by
+
+- @G-Rath
+- @masters3d
+- @SleeplessByte
+- @vjba
+
+### Based on
+
+Taken from Chapter 2 of Functional Thinking by Neal Ford. - http://shop.oreilly.com/product/0636920029687.do

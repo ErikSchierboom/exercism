@@ -1,0 +1,24 @@
+{
+  "blurb": "Take input text and output it transposed.",
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "contributors": [
+    "j2jensen",
+    "robkeim",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "Transpose.cs"
+    ],
+    "test": [
+      "TransposeTests.cs"
+    ],
+    "example": [
+      ".meta/Example.cs"
+    ]
+  },
+  "source": "Reddit r/dailyprogrammer challenge #270 [Easy].",
+  "source_url": "https://www.reddit.com/r/dailyprogrammer/comments/4msu2x/challenge_270_easy_transpose_the_input_text"
+}

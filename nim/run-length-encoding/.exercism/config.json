@@ -1,0 +1,22 @@
+{
+  "blurb": "Implement run-length encoding and decoding.",
+  "authors": [
+    "amscotti"
+  ],
+  "contributors": [
+    "ee7"
+  ],
+  "files": {
+    "solution": [
+      "run_length_encoding.nim"
+    ],
+    "test": [
+      "test_run_length_encoding.nim"
+    ],
+    "example": [
+      ".meta/example.nim"
+    ]
+  },
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Run-length_encoding"
+}

@@ -1,5 +1,10 @@
 # Prime Factors
 
+Welcome to Prime Factors on Exercism's Ruby Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Compute the prime factors of a given natural number.
 
 A prime number is only evenly divisible by itself and 1.
@@ -29,32 +34,23 @@ You can check this yourself:
 - = 60
 - Success!
 
-* * * *
-
-For installation and learning resources, refer to the
-[Ruby resources page](http://exercism.io/languages/ruby/resources).
-
-For running the tests provided, you will need the Minitest gem. Open a
-terminal window and run the following command to install minitest:
-
-    gem install minitest
-
-If you would like color output, you can `require 'minitest/pride'` in
-the test file, or note the alternative instruction, below, for running
-the test file.
-
-Run the tests from the exercise directory using the following command:
-
-    ruby prime_factors_test.rb
-
-To include color from the command line:
-
-    ruby -r minitest/pride prime_factors_test.rb
-
-
 ## Source
 
-The Prime Factors Kata by Uncle Bob [http://butunclebob.com/ArticleS.UncleBob.ThePrimeFactorsKata](http://butunclebob.com/ArticleS.UncleBob.ThePrimeFactorsKata)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @kytrinyx
+
+### Contributed to by
+
+- @budmc29
+- @dkinzer
+- @hilary
+- @iHiD
+- @Insti
+- @joshgoebel
+- @kotp
+- @tryantwit
+
+### Based on
+
+The Prime Factors Kata by Uncle Bob - http://butunclebob.com/ArticleS.UncleBob.ThePrimeFactorsKata

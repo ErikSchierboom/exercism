@@ -1,0 +1,24 @@
+{
+  "blurb": "Determine if a sentence is a pangram.",
+  "authors": [
+    "robkeim"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "j2jensen",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "Pangram.cs"
+    ],
+    "test": [
+      "PangramTests.cs"
+    ],
+    "example": [
+      ".meta/Example.cs"
+    ]
+  },
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Pangram"
+}

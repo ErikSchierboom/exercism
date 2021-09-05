@@ -4,7 +4,7 @@ import Data.Foldable     (for_)
 import Test.Hspec        (Spec, describe, it, shouldBe)
 import Test.Hspec.Runner (configFastFail, defaultConfig, hspecWith)
 
-import PerfectNumbers
+import PerfectNumbers (Classification(Deficient, Perfect, Abundant), classify)
 
 main :: IO ()
 main = hspecWith defaultConfig {configFastFail = True} specs
@@ -77,3 +77,5 @@ cases = [ Case { description = "Smallest perfect number is classified correctly"
                , expected    = Nothing
                }
         ]
+
+-- 902c030d3257e9db948990912598c9f9cec34ffd

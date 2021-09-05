@@ -1,0 +1,30 @@
+{
+  "blurb": "Calculate the date of meetups.",
+  "authors": [
+    "etrepum"
+  ],
+  "contributors": [
+    "iHiD",
+    "Insti",
+    "kytrinyx",
+    "navossoc",
+    "petertseng",
+    "ppartarr",
+    "rbasso",
+    "sshine",
+    "tejasbubane"
+  ],
+  "files": {
+    "solution": [
+      "src/Meetup.hs"
+    ],
+    "test": [
+      "test/Tests.hs"
+    ],
+    "example": [
+      "examples/success-standard/src/Meetup.hs"
+    ]
+  },
+  "source": "Jeremy Hinegardner mentioned a Boulder meetup that happens on the Wednesteenth of every month",
+  "source_url": "https://twitter.com/copiousfreetime"
+}

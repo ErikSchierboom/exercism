@@ -1,5 +1,10 @@
 # Diffie Hellman
 
+Welcome to Diffie Hellman on Exercism's Nim Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Diffie-Hellman key exchange.
 
 Alice and Bob use Diffie-Hellman key exchange to share secrets.  They
@@ -37,32 +42,12 @@ Bob calculates
 The calculations produce the same result!  Alice and Bob now share
 secret s.
 
-## Running the tests
-
-To compile and run the tests, just run the following in your exercise directory:
-```bash
-$ nim c -r diffie_hellman_test.nim
-```
-
-## Submitting Exercises
-
-Note that, when trying to submit an exercise, make sure the solution is in the `$EXERCISM_WORKSPACE/nim/diffie-hellman` directory.
-
-You can find your Exercism workspace by running `exercism debug` and looking for the line that starts with `Exercises Directory`.
-
-## Need help?
-
-These guides should help you,
-* [Installing Nim](https://exercism.io/tracks/nim/installation)
-* [Running the Tests](https://exercism.io/tracks/nim/tests)
-* [Learning Nim](https://exercism.io/tracks/nim/learning)
-* [Useful Nim Resources](https://exercism.io/tracks/nim/resources)
-
-
 ## Source
 
-Wikipedia, 1024 bit key from www.cryptopp.com/wiki. [http://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange](http://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange)
+### Created by
 
-## Submitting Incomplete Solutions
+- @ee7
 
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+### Based on
+
+Wikipedia, 1024 bit key from www.cryptopp.com/wiki. - http://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange

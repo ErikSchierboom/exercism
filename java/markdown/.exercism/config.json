@@ -1,0 +1,31 @@
+{
+  "blurb": "Refactor a Markdown parser",
+  "authors": [
+    "bmkiefer"
+  ],
+  "contributors": [
+    "aadityakulkarni",
+    "FridaTveit",
+    "jmrunkle",
+    "Kyle-Pu",
+    "lemoncurry",
+    "LukBukkit",
+    "mirkoperillo",
+    "msomji",
+    "muzimuzhi",
+    "SleeplessByte",
+    "sshine",
+    "stkent"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/Markdown.java"
+    ],
+    "test": [
+      "src/test/java/MarkdownTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/Markdown.java"
+    ]
+  }
+}

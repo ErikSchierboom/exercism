@@ -1,0 +1,38 @@
+{
+  "blurb": "Implement basic list operations",
+  "authors": [
+    "javaeeeee"
+  ],
+  "contributors": [
+    "aadityakulkarni",
+    "FridaTveit",
+    "hgvanpariya",
+    "ikhadykin",
+    "jmrunkle",
+    "Kyle-Pu",
+    "kytrinyx",
+    "lemoncurry",
+    "markhobson",
+    "mirkoperillo",
+    "mraediaz",
+    "msomji",
+    "muzimuzhi",
+    "RonakLakhotia",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine",
+    "stkent",
+    "Zaldrick"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/ListOps.java"
+    ],
+    "test": [
+      "src/test/java/ListOpsTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/ListOps.java"
+    ]
+  }
+}

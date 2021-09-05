@@ -1,5 +1,10 @@
 # Rotational Cipher
 
+Welcome to Rotational Cipher on Exercism's Scala Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Create an implementation of the rotational cipher, also sometimes called the Caesar cipher.
 
 The Caesar cipher is a simple shift cipher that relies on
@@ -30,19 +35,18 @@ Ciphertext is written out in the same formatting as the input including spaces a
 - ROT13 `The quick brown fox jumps over the lazy dog.` gives `Gur dhvpx oebja sbk whzcf bire gur ynml qbt.`
 - ROT13 `Gur dhvpx oebja sbk whzcf bire gur ynml qbt.` gives `The quick brown fox jumps over the lazy dog.`
 
-The Scala exercises assume an SBT project scheme. The exercise solution source
-should be placed within the exercise directory/src/main/scala. The exercise
-unit tests can be found within the exercise directory/src/test/scala.
-
-To run the tests simply run the command `sbt test` in the exercise directory.
-
-For more detailed info about the Scala track see the [help
-page](http://exercism.io/languages/scala).
-
-
 ## Source
 
-Wikipedia [https://en.wikipedia.org/wiki/Caesar_cipher](https://en.wikipedia.org/wiki/Caesar_cipher)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @ricemery
+
+### Contributed to by
+
+- @ErikSchierboom
+- @ppartarr
+- @rajeshpg
+
+### Based on
+
+Wikipedia - https://en.wikipedia.org/wiki/Caesar_cipher

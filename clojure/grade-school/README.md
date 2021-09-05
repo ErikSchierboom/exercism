@@ -1,5 +1,10 @@
 # Grade School
 
+Welcome to Grade School on Exercism's Clojure Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given students' names along with the grade that they are in, create a roster
 for the school.
 
@@ -14,9 +19,12 @@ In the end, you should be able to:
 - Get a sorted list of all students in all grades.  Grades should sort
   as 1, 2, 3, etc., and students within a grade should be sorted
   alphabetically by name.
-  - "Who all is enrolled in school right now?"
-  - "Grade 1: Anna, Barb, and Charlie. Grade 2: Alex, Peter, and Zoe.
-    Grade 3…"
+  - "Who is enrolled in school right now?"
+  - "Let me think. We have
+  Anna, Barb, and Charlie in grade 1,
+  Alex, Peter, and Zoe in grade 2
+  and Jim in grade 5.
+  So the answer is: Anna, Barb, Charlie, Alex, Peter, Zoe and Jim"
 
 Note that all our students only have one name.  (It's a small town, what
 do you want?)
@@ -33,9 +41,27 @@ are some additional things you could try:
 
 Then please share your thoughts in a comment on the submission. Did this
 experiment make the code better? Worse? Did you learn anything from it?
+
 ## Source
 
-A pairing session with Phil Battos at gSchool [http://gschool.it](http://gschool.it)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @rubysolo
+
+### Contributed to by
+
+- @7enderhead
+- @AndreaCrotti
+- @canweriotnow
+- @dkinzer
+- @haus
+- @jgwhite
+- @kytrinyx
+- @mathias
+- @sjwarner-bp
+- @thomchop
+- @yurrriq
+
+### Based on
+
+A pairing session with Phil Battos at gSchool - http://gschool.it

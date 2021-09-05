@@ -1,0 +1,35 @@
+{
+  "blurb": "Implement a clock that handles times without dates.",
+  "authors": [
+    "kytrinyx"
+  ],
+  "contributors": [
+    "alxndr",
+    "budmc29",
+    "cadwallion",
+    "guygastineau",
+    "henrik",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "jpotts244",
+    "kotp",
+    "pendletons",
+    "pgaspar",
+    "tryantwit",
+    "wvmitchell"
+  ],
+  "files": {
+    "solution": [
+      "clock.rb"
+    ],
+    "test": [
+      "clock_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/clock.rb"
+    ]
+  },
+  "source": "Pairing session with Erin Drummond",
+  "source_url": "https://twitter.com/ebdrummond"
+}

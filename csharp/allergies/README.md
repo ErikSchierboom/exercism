@@ -1,5 +1,10 @@
 # Allergies
 
+Welcome to Allergies on Exercism's C# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given a person's allergy score, determine whether or not they're allergic to a given item, and their full list of allergies.
 
 An allergy test produces a single numeric score which contains the
@@ -29,13 +34,23 @@ allergens that score 256, 512, 1024, etc.).  Your program should
 ignore those components of the score.  For example, if the allergy
 score is 257, your program should only report the eggs (1) allergy.
 
-## Hints
-This exercise requires you to use bitwise operations. For more information, see [this page](https://msdn.microsoft.com/en-us/library/6a71f45d.aspx). 
-
+This exercise requires you to use bitwise operations. For more information, see [this page](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/operators/bitwise-and-shift-operators).
 
 ## Source
 
-Jumpstart Lab Warm-up [http://jumpstartlab.com](http://jumpstartlab.com)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @bressain
+
+### Contributed to by
+
+- @ErikSchierboom
+- @j2jensen
+- @jwood803
+- @NextNebula
+- @robkeim
+- @wolf99
+
+### Based on
+
+Jumpstart Lab Warm-up - http://jumpstartlab.com

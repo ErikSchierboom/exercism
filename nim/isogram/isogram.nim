@@ -1,4 +1,5 @@
-import sequtils, strutils
+import sequtils
+import strutils
 
 proc isIsogram*(phrase: string): bool =
     let letters = phrase.toLowerAscii.filterIt(it.isLowerAscii)

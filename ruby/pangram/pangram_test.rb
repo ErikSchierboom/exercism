@@ -4,6 +4,7 @@ require_relative 'pangram'
 # Common test data version: 1.4.1 2c020bc
 class PangramTest < Minitest::Test
   def test_sentence_empty
+    # skip
     sentence = ''
     result = Pangram.pangram?(sentence)
     refute result, "Expected false, got: #{result.inspect}. #{sentence.inspect} is NOT a pangram"

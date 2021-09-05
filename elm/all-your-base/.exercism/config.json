@@ -1,0 +1,23 @@
+{
+  "blurb": "Convert a number, represented as a sequence of digits in one base, to any other base.",
+  "authors": [
+    "mcmillhj"
+  ],
+  "contributors": [
+    "bobwhitelock",
+    "nathanielknight",
+    "tgecho",
+    "tuxagon"
+  ],
+  "files": {
+    "solution": [
+      "src/AllYourBase.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
+    "example": [
+      ".meta/src/AllYourBase.example.elm"
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "blurb": "Insert and search for numbers in a binary tree.",
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "contributors": [
+    "jrr",
+    "lestephane",
+    "robkeim",
+    "theprash",
+    "valentin-p",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "BinarySearchTree.fs"
+    ],
+    "test": [
+      "BinarySearchTreeTests.fs"
+    ],
+    "example": [
+      ".meta/Example.fs"
+    ]
+  },
+  "source": "Josh Cheek",
+  "source_url": "https://twitter.com/josh_cheek"
+}

@@ -1,5 +1,10 @@
 # Wordy
 
+Welcome to Wordy on Exercism's Clojure Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Parse and evaluate simple math word problems returning the answer as an integer.
 
 ## Iteration 0 — Numbers
@@ -66,9 +71,20 @@ If you'd like, handle exponentials.
 > What is 2 raised to the 5th power?
 
 32
+
 ## Source
 
-Inspired by one of the generated questions in the Extreme Startup game. [https://github.com/rchatley/extreme_startup](https://github.com/rchatley/extreme_startup)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @leetwinski
+
+### Contributed to by
+
+- @AndreaCrotti
+- @haus
+- @sjwarner-bp
+- @yurrriq
+
+### Based on
+
+Inspired by one of the generated questions in the Extreme Startup game. - https://github.com/rchatley/extreme_startup

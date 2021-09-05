@@ -1,0 +1,19 @@
+{
+  "blurb": "Manage robot factory settings.",
+  "authors": [
+    "ee7"
+  ],
+  "contributors": [],
+  "files": {
+    "solution": [
+      "robot_name.nim"
+    ],
+    "test": [
+      "test_robot_name.nim"
+    ],
+    "example": [
+      ".meta/example.nim"
+    ]
+  },
+  "source": "A debugging session with Paul Blackwell at gSchool."
+}

@@ -1,5 +1,10 @@
 # Acronym
 
+Welcome to Acronym on Exercism's F# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Convert a phrase to its acronym.
 
 Techies love their TLA (Three Letter Acronyms)!
@@ -9,7 +14,20 @@ like Portable Network Graphics to its acronym (PNG).
 
 ## Source
 
-Julien Vanier [https://github.com/monkbroc](https://github.com/monkbroc)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @ErikSchierboom
+
+### Contributed to by
+
+- @balazsbotond
+- @jrr
+- @lestephane
+- @robkeim
+- @valentin-p
+- @vrnithinkumar
+- @wolf99
+
+### Based on
+
+Julien Vanier - https://github.com/monkbroc

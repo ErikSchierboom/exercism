@@ -1,7 +1,12 @@
 # Diamond
 
-The diamond kata takes as its input a letter, and outputs it in a diamond 
-shape. Given a letter, it prints a diamond starting with 'A', with the 
+Welcome to Diamond on Exercism's F# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
+The diamond kata takes as its input a letter, and outputs it in a diamond
+shape. Given a letter, it prints a diamond starting with 'A', with the
 supplied letter at the widest point.
 
 ## Requirements
@@ -15,7 +20,7 @@ supplied letter at the widest point.
 * The diamond has a square shape (width equals height).
 * The letters form a diamond shape.
 * The top half has the letters in ascending order.
-* The bottom half has the letters in descending order. 
+* The bottom half has the letters in descending order.
 * The four corners (containing the spaces) are triangles.
 
 ## Examples
@@ -24,13 +29,13 @@ In the following examples, spaces are indicated by `·` characters.
 
 Diamond for letter 'A':
 
-```plain
+```text
 A
 ```
 
 Diamond for letter 'C':
 
-```plain
+```text
 ··A··
 ·B·B·
 C···C
@@ -40,7 +45,7 @@ C···C
 
 Diamond for letter 'E':
 
-```plain
+```text
 ····A····
 ···B·B···
 ··C···C··
@@ -52,12 +57,22 @@ E·······E
 ····A····
 ```
 
-## Hints
-- Testing this one can be tricky without simply hardcoding a bunch of inputs and outputs. [Property based testing](https://fsharpforfunandprofit.com/posts/property-based-testing/) is another way to think about testing that allows you to more easily test this type of algorithm. The test suite uses the [FsCheck](https://fscheck.github.io/FsCheck/) property-based testing framework to define the tests.
+- Testing this one can be tricky without simply hardcoding a bunch of inputs and outputs. [Property based testing](https://fsharpforfunandprofit.com/posts/property-based-testing/) is another way to think about testing that allows you to more easily test this type of algorithm.
 
 ## Source
 
-Seb Rose [http://claysnow.co.uk/recycling-tests-in-tdd/](http://claysnow.co.uk/recycling-tests-in-tdd/)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @ErikSchierboom
+
+### Contributed to by
+
+- @jrr
+- @lestephane
+- @robkeim
+- @valentin-p
+- @wolf99
+
+### Based on
+
+Seb Rose - http://claysnow.co.uk/recycling-tests-in-tdd/

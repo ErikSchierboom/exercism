@@ -1,55 +1,48 @@
 # Two Fer
 
+Welcome to Two Fer on Exercism's Elixir Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 `Two-fer` or `2-fer` is short for two for one. One for you and one for me.
 
+Given a name, return a string with the message:
+
 ```text
-"One for X, one for me."
+One for name, one for me.
 ```
 
-When X is a name or "you".
+Where "name" is the given name.
 
-If the given name is "Alice", the result should be "One for Alice, one for me."
-If no name is given, the result should be "One for you, one for me."
+However, if the name is missing, return the string:
 
-
-## Running tests
-
-Execute the tests with:
-
-```bash
-$ elixir two_fer_test.exs
+```text
+One for you, one for me.
 ```
 
-### Pending tests
+Here are some examples:
 
-In the test suites, all but the first test have been skipped.
-
-Once you get a test passing, you can unskip the next one by
-commenting out the relevant `@tag :pending` with a `#` symbol.
-
-For example:
-
-```elixir
-# @tag :pending
-test "shouting" do
-  assert Bob.hey("WATCH OUT!") == "Whoa, chill out!"
-end
-```
-
-Or, you can enable all the tests by commenting out the
-`ExUnit.configure` line in the test suite.
-
-```elixir
-# ExUnit.configure exclude: :pending, trace: true
-```
-
-If you're stuck on something, it may help to look at some of
-the [available resources](https://exercism.io/tracks/elixir/resources)
-out there where answers might be found.
+|Name    |String to return
+|:-------|:------------------
+|Alice   |One for Alice, one for me.
+|Bob     |One for Bob, one for me.
+|        |One for you, one for me.
+|Zaphod  |One for Zaphod, one for me.
 
 ## Source
 
-[https://en.wikipedia.org/wiki/Two-fer](https://en.wikipedia.org/wiki/Two-fer)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @Bscruz19
+
+### Contributed to by
+
+- @angelikatyborska
+- @Cohen-Carlisle
+- @devonestes
+- @neenjaw
+
+### Based on
+
+https://github.com/exercism/problem-specifications/issues/757

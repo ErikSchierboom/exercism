@@ -1,0 +1,28 @@
+{
+  "blurb": "Manage robot factory settings.",
+  "authors": [
+    "bressain"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "haus",
+    "j2jensen",
+    "jwood803",
+    "kytrinyx",
+    "robkeim",
+    "vgrigoriu",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "RobotName.cs"
+    ],
+    "test": [
+      "RobotNameTests.cs"
+    ],
+    "example": [
+      ".meta/Example.cs"
+    ]
+  },
+  "source": "A debugging session with Paul Blackwell at gSchool."
+}

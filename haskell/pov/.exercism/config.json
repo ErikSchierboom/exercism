@@ -1,0 +1,33 @@
+{
+  "blurb": "Reparent a graph on a selected node",
+  "authors": [
+    "alexkalderimis"
+  ],
+  "contributors": [
+    "etrepum",
+    "iHiD",
+    "kytrinyx",
+    "lpalma",
+    "N-Parsons",
+    "navossoc",
+    "ozan",
+    "petertseng",
+    "ppartarr",
+    "rbasso",
+    "sshine",
+    "tejasbubane"
+  ],
+  "files": {
+    "solution": [
+      "src/POV.hs"
+    ],
+    "test": [
+      "test/Tests.hs"
+    ],
+    "example": [
+      "examples/success-standard/src/POV.hs"
+    ]
+  },
+  "source": "Adaptation of exercise from 4clojure",
+  "source_url": "https://www.4clojure.com/"
+}

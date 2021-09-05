@@ -49,7 +49,7 @@ class AtbashTest {
             )
         }
 
-        @Test
+            @Test
         fun test() {
             assertEquals(expectedOutput, Atbash.decode(input))
         }

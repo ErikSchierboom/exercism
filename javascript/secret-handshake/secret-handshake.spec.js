@@ -1,44 +1,59 @@
-import SecretHandshake from './secret-handshake';
+import { commands } from './secret-handshake';
 
 describe('Secret Handshake', () => {
-  test('binary 1 (hexadecimal 0x01) is a wink', () => {
-    const handshake = new SecretHandshake(0x01);
-    expect(handshake.commands()).toEqual(['wink']);
-  });
+  describe('Create A Handshake For A Number', () => {
+    test('wink for 1', () => {
+      expect(commands(1)).toEqual(['wink']);
+    });
 
-  test('binary 10 (hexadecimal 0x02) is a double blink', () => {
-    const handshake = new SecretHandshake(0x02);
-    expect(handshake.commands()).toEqual(['double blink']);
-  });
+    xtest('double blink for 10', () => {
+      expect(commands(2)).toEqual(['double blink']);
+    });
 
-  test('binary 100 (hexadecimal 0x04) is close your eyes', () => {
-    const handshake = new SecretHandshake(0x04);
-    expect(handshake.commands()).toEqual(['close your eyes']);
-  });
+    xtest('close your eyes for 100', () => {
+      expect(commands(4)).toEqual(['close your eyes']);
+    });
 
-  test('binary 1000 (hexadecimal 0x08) is jump', () => {
-    const handshake = new SecretHandshake(0x08);
-    expect(handshake.commands()).toEqual(['jump']);
-  });
+    xtest('jump for 1000', () => {
+      expect(commands(8)).toEqual(['jump']);
+    });
 
-  test('binary 11 (hexadecimal 0x03) is wink and double blink', () => {
-    const handshake = new SecretHandshake(0x03);
-    expect(handshake.commands()).toEqual(['wink', 'double blink']);
-  });
+    xtest('combine two actions', () => {
+      expect(commands(3)).toEqual(['wink', 'double blink']);
+    });
 
-  test('binary 10011 (hexadecimal 0x13) is double blink and wink', () => {
-    const handshake = new SecretHandshake(0x13);
-    expect(handshake.commands()).toEqual(['double blink', 'wink']);
-  });
+    xtest('reverse two actions', () => {
+      expect(commands(19)).toEqual(['double blink', 'wink']);
+    });
 
-  test('binary 11111 (hexadecimal 0x1F) is jump, close your eyes, double blink, and wink', () => {
-    const handshake = new SecretHandshake(0x1F);
-    expect(handshake.commands()).toEqual(['jump', 'close your eyes', 'double blink', 'wink']);
-  });
+    xtest('reversing one action gives the same action', () => {
+      expect(commands(24)).toEqual(['jump']);
+    });
 
-  test('text is an invalid secret handshake', () => {
-    expect(() => new SecretHandshake('piggies'))
-      .toThrow(new Error('Handshake must be a number'));
+    xtest('reversing no actions still gives no actions', () => {
+      expect(commands(16)).toEqual([]);
+    });
+
+    xtest('all possible actions', () => {
+      expect(commands(15)).toEqual([
+        'wink',
+        'double blink',
+        'close your eyes',
+        'jump',
+      ]);
+    });
+
+    xtest('reverse all possible actions', () => {
+      expect(commands(31)).toEqual([
+        'jump',
+        'close your eyes',
+        'double blink',
+        'wink',
+      ]);
+    });
+
+    xtest('do nothing for zero', () => {
+      expect(commands(0)).toEqual([]);
+    });
   });
 });
-

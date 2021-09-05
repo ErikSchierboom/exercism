@@ -1,5 +1,10 @@
 # Triangle
 
+Welcome to Triangle on Exercism's Kotlin Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Determine if a triangle is equilateral, isosceles, or scalene.
 
 An _equilateral_ triangle has all three sides the same length.
@@ -22,11 +27,24 @@ The case where the sum of the lengths of two sides _equals_ that of the
 third is known as a _degenerate_ triangle - it has zero area and looks like
 a single line. Feel free to add your own code/tests to check for degenerate triangles.
 
-
-
 ## Source
 
-The Ruby Koans triangle project, parts 1 & 2 [http://rubykoans.com](http://rubykoans.com)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @nithia
+
+### Contributed to by
+
+- @dector
+- @eparovyshnaya
+- @lihofm
+- @mdowds
+- @sdavids13
+- @sjwarner-bp
+- @SleeplessByte
+- @stkent
+- @uzilan
+
+### Based on
+
+The Ruby Koans triangle project, parts 1 & 2 - http://rubykoans.com

@@ -1,0 +1,34 @@
+{
+  "blurb": "Create a program to solve a word search puzzle.",
+  "authors": [
+    "stkent"
+  ],
+  "contributors": [
+    "aadityakulkarni",
+    "FridaTveit",
+    "hgvanpariya",
+    "jmrunkle",
+    "kytrinyx",
+    "lemoncurry",
+    "mirkoperillo",
+    "msomji",
+    "muzimuzhi",
+    "PTrottier",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine",
+    "Zaldrick"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/WordSearcher.java"
+    ],
+    "test": [
+      "src/test/java/WordSearcherTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/WordSearcher.java"
+    ]
+  }
+}

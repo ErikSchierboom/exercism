@@ -1,0 +1,29 @@
+{
+  "blurb": "Detect saddle points in a matrix.",
+  "authors": [
+    "kytrinyx"
+  ],
+  "contributors": [
+    "budmc29",
+    "dkinzer",
+    "etrepum",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "kotp",
+    "tryantwit"
+  ],
+  "files": {
+    "solution": [
+      "saddle_points.rb"
+    ],
+    "test": [
+      "saddle_points_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/saddle_points.rb"
+    ]
+  },
+  "source": "J Dalbey's Programming Practice problems",
+  "source_url": "http://users.csc.calpoly.edu/~jdalbey/103/Projects/ProgrammingPractice.html"
+}

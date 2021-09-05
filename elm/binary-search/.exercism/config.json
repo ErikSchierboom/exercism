@@ -1,0 +1,24 @@
+{
+  "blurb": "Implement a binary search algorithm.",
+  "authors": [
+    "churchie317"
+  ],
+  "contributors": [
+    "michaelglass",
+    "nathanielknight",
+    "tuxagon"
+  ],
+  "files": {
+    "solution": [
+      "src/BinarySearch.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
+    "example": [
+      ".meta/src/BinarySearch.example.elm"
+    ]
+  },
+  "source": "Wikipedia",
+  "source_url": "http://en.wikipedia.org/wiki/Binary_search_algorithm"
+}

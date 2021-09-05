@@ -1,0 +1,28 @@
+{
+  "blurb": "Given a string representing a matrix of numbers, return the rows and columns of that matrix.",
+  "authors": [
+    "kytrinyx"
+  ],
+  "contributors": [
+    "budmc29",
+    "coolbrg",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "kotp",
+    "tryantwit"
+  ],
+  "files": {
+    "solution": [
+      "matrix.rb"
+    ],
+    "test": [
+      "matrix_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/matrix.rb"
+    ]
+  },
+  "source": "Warmup to the `saddle-points` warmup.",
+  "source_url": "http://jumpstartlab.com"
+}

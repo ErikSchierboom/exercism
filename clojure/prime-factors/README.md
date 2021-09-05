@@ -1,5 +1,10 @@
 # Prime Factors
 
+Welcome to Prime Factors on Exercism's Clojure Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Compute the prime factors of a given natural number.
 
 A prime number is only evenly divisible by itself and 1.
@@ -28,9 +33,24 @@ You can check this yourself:
 - = 4 * 15
 - = 60
 - Success!
+
 ## Source
 
-The Prime Factors Kata by Uncle Bob [http://butunclebob.com/ArticleS.UncleBob.ThePrimeFactorsKata](http://butunclebob.com/ArticleS.UncleBob.ThePrimeFactorsKata)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @rubysolo
+
+### Contributed to by
+
+- @AndreaCrotti
+- @canweriotnow
+- @dkinzer
+- @haus
+- @jgwhite
+- @kytrinyx
+- @mathias
+- @yurrriq
+
+### Based on
+
+The Prime Factors Kata by Uncle Bob - http://butunclebob.com/ArticleS.UncleBob.ThePrimeFactorsKata

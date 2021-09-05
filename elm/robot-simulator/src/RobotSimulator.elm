@@ -1,96 +1,49 @@
-module RobotSimulator exposing (..)
-
-import String exposing (foldl)
+module RobotSimulator exposing
+    ( Bearing(..)
+    , Robot
+    , advance
+    , defaultRobot
+    , simulate
+    , turnLeft
+    , turnRight
+    )
 
 
 type Bearing
     = North
     | East
-    | West
     | South
-
-
-type alias Coordinates =
-    { x : Int
-    , y : Int
-    }
+    | West
 
 
 type alias Robot =
     { bearing : Bearing
-    , coordinates : Coordinates
+    , coordinates : { x : Int, y : Int }
     }
 
 
 defaultRobot : Robot
 defaultRobot =
-    Robot North { x = 0, y = 0 }
-
-
-turnLeft : Robot -> Robot
-turnLeft { bearing, coordinates } =
-    case bearing of
-        North ->
-            Robot West coordinates
-
-        East ->
-            Robot North coordinates
-
-        West ->
-            Robot South coordinates
-
-        South ->
-            Robot East coordinates
+    { bearing = North
+    , coordinates = { x = 0, y = 0 }
+    }
 
 
 turnRight : Robot -> Robot
-turnRight { bearing, coordinates } =
-    case bearing of
-        North ->
-            Robot East coordinates
+turnRight robot =
+    Debug.todo "Please implement this function"
 
-        East ->
-            Robot South coordinates
 
-        West ->
-            Robot North coordinates
-
-        South ->
-            Robot West coordinates
+turnLeft : Robot -> Robot
+turnLeft robot =
+    Debug.todo "Please implement this function"
 
 
 advance : Robot -> Robot
-advance { bearing, coordinates } =
-    case bearing of
-        North ->
-            Robot bearing { coordinates | y = coordinates.y + 1 }
-
-        East ->
-            Robot bearing { coordinates | x = coordinates.x + 1 }
-
-        West ->
-            Robot bearing { coordinates | x = coordinates.x - 1 }
-
-        South ->
-            Robot bearing { coordinates | y = coordinates.y - 1 }
-
-
-applyInstruction : Char -> Robot -> Robot
-applyInstruction instruction robot =
-    case instruction of
-        'L' ->
-            turnLeft robot
-
-        'R' ->
-            turnRight robot
-
-        'A' ->
-            advance robot
-
-        _ ->
-            robot
+advance robot =
+    Debug.todo "Please implement this function"
 
 
 simulate : String -> Robot -> Robot
-simulate instructions robot =
-    foldl applyInstruction robot instructions
+simulate directions robot =
+    Debug.todo "Please implement this function"

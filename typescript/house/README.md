@@ -1,5 +1,10 @@
 # House
 
+Welcome to House on Exercism's TypeScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Recite the nursery rhyme 'This is the House that Jack Built'.
 
 > [The] process of placing a phrase of clause within another phrase of
@@ -105,34 +110,17 @@ that ate the malt
 that lay in the house that Jack built.
 ```
 
-## Setup
-
-Go through the setup instructions for TypeScript to
-install the necessary dependencies:
-
-http://exercism.io/languages/typescript
-
-## Requirements
-
-Install assignment dependencies:
-
-```bash
-$ yarn install
-```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ yarn test
-```
-
-
-
 ## Source
 
-British nursery rhyme [http://en.wikipedia.org/wiki/This_Is_The_House_That_Jack_Built](http://en.wikipedia.org/wiki/This_Is_The_House_That_Jack_Built)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @CRivasGomez
+
+### Contributed to by
+
+- @masters3d
+- @SleeplessByte
+
+### Based on
+
+British nursery rhyme - http://en.wikipedia.org/wiki/This_Is_The_House_That_Jack_Built

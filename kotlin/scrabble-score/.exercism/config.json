@@ -1,0 +1,23 @@
+{
+  "blurb": "Given a word, compute the Scrabble score for that word.",
+  "authors": ["sdavids13"],
+  "contributors": [
+    "dector",
+    "eparovyshnaya",
+    "jtigger",
+    "lihofm",
+    "mdowds",
+    "nithia",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "stkent",
+    "uzilan"
+  ],
+  "files": {
+    "solution": ["src/main/kotlin/ScrabbleScore.kt"],
+    "test": ["src/test/kotlin/ScrabbleScoreTest.kt"],
+    "example": [".meta/src/reference/kotlin/ScrabbleScore.kt"]
+  },
+  "source": "Inspired by the Extreme Startup game",
+  "source_url": "https://github.com/rchatley/extreme_startup"
+}

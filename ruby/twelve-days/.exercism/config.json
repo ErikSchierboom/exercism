@@ -1,0 +1,33 @@
+{
+  "blurb": "Output the lyrics to 'The Twelve Days of Christmas'",
+  "authors": [
+    "kytrinyx"
+  ],
+  "contributors": [
+    "alexpchin",
+    "budmc29",
+    "cadwallion",
+    "dkinzer",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "kenliu",
+    "kickinbahk",
+    "kotp",
+    "PatrickMcSweeny",
+    "tryantwit"
+  ],
+  "files": {
+    "solution": [
+      "twelve_days.rb"
+    ],
+    "test": [
+      "twelve_days_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/twelve_days.rb"
+    ]
+  },
+  "source": "Wikipedia",
+  "source_url": "http://en.wikipedia.org/wiki/The_Twelve_Days_of_Christmas_(song)"
+}

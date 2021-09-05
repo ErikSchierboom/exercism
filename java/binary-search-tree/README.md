@@ -1,5 +1,10 @@
 # Binary Search Tree
 
+Welcome to Binary Search Tree on Exercism's Java Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Insert and search for numbers in a binary tree.
 
 When we need to represent sorted data, an array does not make a good
@@ -53,20 +58,36 @@ And if we then added 1, 5, and 7, it would look like this
      / \     / \
     1   3   5   7
 
-# Running the tests
-
-You can run all the tests for an exercise by entering
-
-```sh
-$ gradle test
-```
-
-in your terminal.
-
 ## Source
 
-Josh Cheek [https://twitter.com/josh_cheek](https://twitter.com/josh_cheek)
+### Created by
 
-## Submitting Incomplete Solutions
+- @javaeeeee
 
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+### Contributed to by
+
+- @aadityakulkarni
+- @delbertlegg
+- @FridaTveit
+- @hgvanpariya
+- @jackattack24
+- @jmrunkle
+- @kytrinyx
+- @lemoncurry
+- @michaelspets
+- @morrme
+- @msomji
+- @muzimuzhi
+- @sjwarner-bp
+- @SleeplessByte
+- @Smarticles101
+- @sshine
+- @stkent
+- @superklamer
+- @szielinski
+- @vasouv
+- @Zaldrick
+
+### Based on
+
+Josh Cheek - https://twitter.com/josh_cheek

@@ -1,0 +1,30 @@
+{
+  "blurb": "Create an implementation of the atbash cipher, an ancient encryption system created in the Middle East.",
+  "authors": [
+    "kytrinyx"
+  ],
+  "contributors": [
+    "budmc29",
+    "dkinzer",
+    "guygastineau",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "kotp",
+    "pendletons",
+    "tryantwit"
+  ],
+  "files": {
+    "solution": [
+      "atbash_cipher.rb"
+    ],
+    "test": [
+      "atbash_cipher_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/atbash_cipher.rb"
+    ]
+  },
+  "source": "Wikipedia",
+  "source_url": "http://en.wikipedia.org/wiki/Atbash"
+}

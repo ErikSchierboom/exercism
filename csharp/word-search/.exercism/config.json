@@ -1,0 +1,24 @@
+{
+  "blurb": "Create a program to solve a word search puzzle.",
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "contributors": [
+    "ChrisPritchard",
+    "j2jensen",
+    "jmbradnan",
+    "robkeim",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "WordSearch.cs"
+    ],
+    "test": [
+      "WordSearchTests.cs"
+    ],
+    "example": [
+      ".meta/Example.cs"
+    ]
+  }
+}

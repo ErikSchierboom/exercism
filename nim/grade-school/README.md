@@ -1,5 +1,10 @@
 # Grade School
 
+Welcome to Grade School on Exercism's Nim Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given students' names along with the grade that they are in, create a roster
 for the school.
 
@@ -37,8 +42,6 @@ are some additional things you could try:
 Then please share your thoughts in a comment on the submission. Did this
 experiment make the code better? Worse? Did you learn anything from it?
 
-## Hints
-
 To get the test passing, you are going to need to create some types for your code to work on, you need an object for `School` to hold a sequence of type `Student`, which will be a tuple of `string` and `int` to hold name and grade for the students.
 
 Here is some code for the types that could be helpful when getting started
@@ -50,33 +53,16 @@ type
     students*: seq[Student]
 ```
 
-
-## Running the tests
-
-To compile and run the tests, just run the following in your exercise directory:
-```bash
-$ nim c -r grade_school_test.nim
-```
-
-## Submitting Exercises
-
-Note that, when trying to submit an exercise, make sure the solution is in the `$EXERCISM_WORKSPACE/nim/grade-school` directory.
-
-You can find your Exercism workspace by running `exercism debug` and looking for the line that starts with `Exercises Directory`.
-
-## Need help?
-
-These guides should help you,
-* [Installing Nim](https://exercism.io/tracks/nim/installation)
-* [Running the Tests](https://exercism.io/tracks/nim/tests)
-* [Learning Nim](https://exercism.io/tracks/nim/learning)
-* [Useful Nim Resources](https://exercism.io/tracks/nim/resources)
-
-
 ## Source
 
-A pairing session with Phil Battos at gSchool [http://gschool.it](http://gschool.it)
+### Created by
 
-## Submitting Incomplete Solutions
+- @amscotti
 
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+### Contributed to by
+
+- @ee7
+
+### Based on
+
+A pairing session with Phil Battos at gSchool - http://gschool.it

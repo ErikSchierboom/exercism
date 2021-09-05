@@ -37,7 +37,7 @@ cases = [ Case { description = "zero steps for one"
                , number      = 12
                , expected    = Just 9
                }
-        , Case { description = "Large number of even and odd steps"
+        , Case { description = "large number of even and odd steps"
                , number      = 1000000
                , expected    = Just 152
                }
@@ -50,3 +50,5 @@ cases = [ Case { description = "zero steps for one"
                , expected    = Nothing
                }
         ]
+
+-- 553e2f7a6ce638a6cf622985b9138e6013626eb3

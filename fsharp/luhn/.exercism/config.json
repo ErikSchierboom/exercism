@@ -1,0 +1,27 @@
+{
+  "blurb": "Given a number determine whether or not it is valid per the Luhn formula.",
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "contributors": [
+    "balazsbotond",
+    "jrr",
+    "lestephane",
+    "robkeim",
+    "valentin-p",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "Luhn.fs"
+    ],
+    "test": [
+      "LuhnTests.fs"
+    ],
+    "example": [
+      ".meta/Example.fs"
+    ]
+  },
+  "source": "The Luhn Algorithm on Wikipedia",
+  "source_url": "http://en.wikipedia.org/wiki/Luhn_algorithm"
+}

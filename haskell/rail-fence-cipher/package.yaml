@@ -1,5 +1,5 @@
 name: rail-fence-cipher
-version: 1.1.0.3
+version: 1.1.0.4
 
 dependencies:
   - base
@@ -7,8 +7,10 @@ dependencies:
 library:
   exposed-modules: RailFenceCipher
   source-dirs: src
-  dependencies:
-    - ilist
+  ghc-options: -Wall
+  # dependencies:
+  # - foo       # List here the packages you
+  # - bar       # want to use in your solution.
 
 tests:
   test:

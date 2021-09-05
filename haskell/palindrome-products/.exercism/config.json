@@ -1,0 +1,34 @@
+{
+  "blurb": "Detect palindrome products in a given range.",
+  "authors": [
+    "etrepum"
+  ],
+  "contributors": [
+    "dkinzer",
+    "DmitrySamoylov",
+    "iHiD",
+    "insideoutclub",
+    "jeeger",
+    "kytrinyx",
+    "petertseng",
+    "ppartarr",
+    "rbasso",
+    "soapie",
+    "sshine",
+    "stevejb71",
+    "tejasbubane"
+  ],
+  "files": {
+    "solution": [
+      "src/Palindromes.hs"
+    ],
+    "test": [
+      "test/Tests.hs"
+    ],
+    "example": [
+      "examples/success-standard/src/Palindromes.hs"
+    ]
+  },
+  "source": "Problem 4 at Project Euler",
+  "source_url": "http://projecteuler.net/problem=4"
+}

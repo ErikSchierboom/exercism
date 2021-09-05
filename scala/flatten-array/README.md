@@ -1,5 +1,10 @@
 # Flatten Array
 
+Welcome to Flatten Array on Exercism's Scala Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Take a nested list and return a single flattened list with all values except nil/null.
 
 The challenge is to write a function that accepts an arbitrarily-deep nested list-like structure and returns a flattened structure without any nil/null values.
@@ -10,19 +15,19 @@ input: [1,[2,3,null,4],[null],5]
 
 output: [1,2,3,4,5]
 
-The Scala exercises assume an SBT project scheme. The exercise solution source
-should be placed within the exercise directory/src/main/scala. The exercise
-unit tests can be found within the exercise directory/src/test/scala.
-
-To run the tests simply run the command `sbt test` in the exercise directory.
-
-For more detailed info about the Scala track see the [help
-page](http://exercism.io/languages/scala).
-
-
 ## Source
 
-Interview Question [https://reference.wolfram.com/language/ref/Flatten.html](https://reference.wolfram.com/language/ref/Flatten.html)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @dmitryn
+
+### Contributed to by
+
+- @ErikSchierboom
+- @ppartarr
+- @rajeshpg
+- @ricemery
+
+### Based on
+
+Interview Question - https://reference.wolfram.com/language/ref/Flatten.html

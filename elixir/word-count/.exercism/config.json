@@ -1,0 +1,39 @@
+{
+  "blurb": "Given a phrase, count the occurrences of each word in that phrase.",
+  "authors": [
+    "rubysolo"
+  ],
+  "contributors": [
+    "andrewsardone",
+    "angelikatyborska",
+    "chriseyre2000",
+    "Cohen-Carlisle",
+    "dalexj",
+    "dantswain",
+    "devonestes",
+    "henrik",
+    "kronn",
+    "kytrinyx",
+    "lpil",
+    "lucasprag",
+    "MarcosX",
+    "neenjaw",
+    "parkerl",
+    "patrickgombert",
+    "sotojuan",
+    "Teapane",
+    "waiting-for-dev"
+  ],
+  "files": {
+    "solution": [
+      "lib/word_count.ex"
+    ],
+    "test": [
+      "test/word_count_test.exs"
+    ],
+    "example": [
+      ".meta/example.ex"
+    ]
+  },
+  "source": "This is a classic toy problem, but we were reminded of it by seeing it in the Go Tour."
+}

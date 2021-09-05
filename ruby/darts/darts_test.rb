@@ -4,6 +4,7 @@ require_relative 'darts'
 # Common test data version: 2.2.0 f60c43b
 class DartsTest < Minitest::Test
   def test_missed_target
+    # skip
     darts = Darts.new(-9, 9)
     assert_equal(0, darts.score)
   end

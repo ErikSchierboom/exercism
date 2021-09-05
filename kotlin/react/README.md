@@ -1,5 +1,10 @@
 # React
 
+Welcome to React on Exercism's Kotlin Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Implement a basic reactive system.
 
 Reactive programming is a programming paradigm that focuses on how values
@@ -15,8 +20,20 @@ In addition, compute cells should allow for registering change notification
 callbacks.  Call a cell’s callbacks when the cell’s value in a new stable
 state has changed from the previous stable state.
 
+## Source
 
+### Created by
 
+- @petertseng
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+### Contributed to by
+
+- @dector
+- @lihofm
+- @mdowds
+- @nithia
+- @sdavids13
+- @sjwarner-bp
+- @SleeplessByte
+- @stkent
+- @uzilan

@@ -1,5 +1,10 @@
 # Phone Number
 
+Welcome to Phone Number on Exercism's Elm Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Clean up user-entered phone numbers so that they can be sent SMS messages.
 
 The **North American Numbering Plan (NANP)** is a telephone numbering system used by many countries in North America like the United States, Canada or Bermuda. All NANP-countries share the same international country code: `1`.
@@ -28,38 +33,22 @@ should all produce the output
 
 **Note:** As this exercise only deals with telephone numbers used in NANP-countries, only 1 is considered a valid country code.
 
-## Elm Installation
-
-Refer to the [Exercism help page](http://exercism.io/languages/elm) for Elm
-installation and learning resources.
-
-## Writing the Code
-
-The first time you start an exercise, you'll need to ensure you have the
-appropriate dependencies installed.
-
-```bash
-$ elm-package install --yes
-```
-
-Execute the tests with:
-
-```bash
-$ elm-test
-```
-
-Automatically run tests again when you save changes:
-
-```bash
-$ elm-test --watch
-```
-
-As you work your way through the test suite, be sure to remove the `skip <|`
-calls from each test until you get them all passing!
-
 ## Source
 
-Event Manager by JumpstartLab [http://tutorials.jumpstartlab.com/projects/eventmanager.html](http://tutorials.jumpstartlab.com/projects/eventmanager.html)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @tgecho
+
+### Contributed to by
+
+- @mpizenberg
+- @mrattner
+- @nathanielknight
+- @parkerl
+- @Phippsaurus
+- @SiriusStarr
+- @tuxagon
+
+### Based on
+
+Event Manager by JumpstartLab - http://tutorials.jumpstartlab.com/projects/eventmanager.html

@@ -1,5 +1,10 @@
 # Bowling
 
+Welcome to Bowling on Exercism's TypeScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Score a bowling game.
 
 Bowling is a game where players roll a heavy ball to knock down pins
@@ -12,15 +17,15 @@ The game consists of 10 frames. A frame is composed of one or two ball
 throws with 10 pins standing at frame initialization. There are three
 cases for the tabulation of a frame.
 
-* An open frame is where a score of less than 10 is recorded for the
+- An open frame is where a score of less than 10 is recorded for the
   frame. In this case the score for the frame is the number of pins
   knocked down.
 
-* A spare is where all ten pins are knocked down by the second
+- A spare is where all ten pins are knocked down by the second
   throw. The total value of a spare is 10 plus the number of pins
   knocked down in their next throw.
 
-* A strike is where all ten pins are knocked down by the first
+- A strike is where all ten pins are knocked down by the first
   throw. The total value of a strike is 10 plus the number of pins
   knocked down in the next two throws. If a strike is immediately
   followed by a second strike, then the value of the first strike
@@ -28,9 +33,9 @@ cases for the tabulation of a frame.
 
 Here is a three frame example:
 
-| Frame 1         | Frame 2       | Frame 3                |
-| :-------------: |:-------------:| :---------------------:|
-| X (strike)      | 5/ (spare)    | 9 0 (open frame)       |
+|  Frame 1   |  Frame 2   |     Frame 3      |
+| :--------: | :--------: | :--------------: |
+| X (strike) | 5/ (spare) | 9 0 (open frame) |
 
 Frame 1 is (10 + 5 + 5) = 20
 
@@ -55,39 +60,22 @@ For a tenth frame of XXX (three strikes), the total value is 30.
 Write code to keep track of the score of a game of bowling. It should
 support two operations:
 
-* `roll(pins : int)` is called each time the player rolls a ball.  The
+- `roll(pins : int)` is called each time the player rolls a ball. The
   argument is the number of pins knocked down.
-* `score() : int` is called only at the very end of the game.  It
+- `score() : int` is called only at the very end of the game. It
   returns the total score for that game.
-
-## Setup
-
-Go through the setup instructions for TypeScript to
-install the necessary dependencies:
-
-http://exercism.io/languages/typescript
-
-## Requirements
-
-Install assignment dependencies:
-
-```bash
-$ yarn install
-```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ yarn test
-```
-
-
 
 ## Source
 
-The Bowling Game Kata at but UncleBob [http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata](http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @CRivasGomez
+
+### Contributed to by
+
+- @masters3d
+- @SleeplessByte
+
+### Based on
+
+The Bowling Game Kata at but UncleBob - http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata
