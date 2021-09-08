@@ -5,5 +5,5 @@ nucleotide_complement('A', X) :- X = 'U'.
 
 rna_transcription(Rna, Dna) :-
     string_chars(Rna, Nucleotides),
-    maplist(nucleotide_complement, Nucleotides, Complements),
-    atomics_to_string(Complements, Dna).
+    maplist(nucleotide_complement, Nucleotides, Complement),
+    string_chars(Dna, Complement).
