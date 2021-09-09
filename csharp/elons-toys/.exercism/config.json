@@ -1,0 +1,20 @@
+{
+  "blurb": "Learn about classes by working on a remote controlled car.",
+  "contributors": [
+    "yzAlvin"
+  ],
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "files": {
+    "solution": [
+      "ElonsToys.cs"
+    ],
+    "test": [
+      "ElonsToysTests.cs"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.cs"
+    ]
+  }
+}
