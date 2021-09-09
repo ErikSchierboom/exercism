@@ -1,0 +1,21 @@
+{
+  "blurb": "Learn about the DateTime class by working on an appointment scheduler for a beauty salon.",
+  "contributors": [
+    "valentin-p",
+    "yzAlvin"
+  ],
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "files": {
+    "solution": [
+      "BookingUpForBeauty.cs"
+    ],
+    "test": [
+      "BookingUpForBeautyTests.cs"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.cs"
+    ]
+  }
+}
