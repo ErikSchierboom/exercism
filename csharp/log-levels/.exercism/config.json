@@ -1,0 +1,20 @@
+{
+  "blurb": "Learn about strings by processing logs.",
+  "contributors": [
+    "yzAlvin"
+  ],
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "files": {
+    "solution": [
+      "LogLevels.cs"
+    ],
+    "test": [
+      "LogLevelsTests.cs"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.cs"
+    ]
+  }
+}
