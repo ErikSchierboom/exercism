@@ -4,6 +4,7 @@ require_relative 'sieve'
 # Common test data version: 1.1.0 8bbb634
 class SieveTest < Minitest::Test
   def test_no_primes_under_two
+    # skip
     expected = []
     assert_equal expected, Sieve.new(1).primes
   end
@@ -13,7 +14,7 @@ class SieveTest < Minitest::Test
     assert_equal expected, Sieve.new(2).primes
   end
 
-  def test_find_primes_up_to_10
+  def test_find_primes_up_to_10 # rubocop:disable Naming/VariableNumber
     expected = [2, 3, 5, 7]
     assert_equal expected, Sieve.new(10).primes
   end
@@ -23,7 +24,7 @@ class SieveTest < Minitest::Test
     assert_equal expected, Sieve.new(13).primes
   end
 
-  def test_find_primes_up_to_1000
+  def test_find_primes_up_to_1000 # rubocop:disable Naming/VariableNumber
     expected = [
       2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59,
       61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139,

@@ -1,5 +1,10 @@
 # Bank Account
 
+Welcome to Bank Account on Exercism's Haskell Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Simulate a bank account supporting opening/closing, withdrawals, and deposits
 of money. Watch out for concurrent transactions!
 
@@ -26,8 +31,6 @@ it.
 
 Have fun!
 
-## Hints
-
 To complete this exercise you need to implement the following functions:
 
 - `openAccount` - Called at the start of each test. Returns a BankAccount.
@@ -43,59 +46,25 @@ You will find a dummy data declaration and type signatures already in place,
 but it is up to you to define the functions and create a meaningful data type,
 newtype or type synonym.
 
+If you need help, here are some additional resources:
 
+- Read about [concurrency](https://en.wikipedia.org/wiki/Concurrent_Haskell) in Haskell.
+- Look into the [Software Transactional Memory](https://hackage.haskell.org/package/stm) package and its Transactional Variables.
 
-## Getting Started
+## Source
 
-For installation and learning resources, refer to the
-[exercism help page](http://exercism.io/languages/haskell).
+### Created by
 
-## Running the tests
+- @etrepum
 
-To run the test suite, execute the following command:
+### Contributed to by
 
-```bash
-stack test
-```
-
-#### If you get an error message like this...
-
-```
-No .cabal file found in directory
-```
-
-You are probably running an old stack version and need
-to upgrade it.
-
-#### Otherwise, if you get an error message like this...
-
-```
-No compiler found, expected minor version match with...
-Try running "stack setup" to install the correct GHC...
-```
-
-Just do as it says and it will download and install
-the correct compiler version:
-
-```bash
-stack setup
-```
-
-## Running *GHCi*
-
-If you want to play with your solution in GHCi, just run the command:
-
-```bash
-stack ghci
-```
-
-## Feedback, Issues, Pull Requests
-
-The [exercism/haskell](https://github.com/exercism/haskell) repository on
-GitHub is the home for all of the Haskell exercises.
-
-If you have feedback about an exercise, or want to help implementing a new
-one, head over there and create an issue.  We'll do our best to help you!
-
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @iHiD
+- @kytrinyx
+- @lpalma
+- @nicuveo
+- @petertseng
+- @ppartarr
+- @rbasso
+- @sshine
+- @tejasbubane

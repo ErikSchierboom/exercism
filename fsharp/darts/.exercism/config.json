@@ -1,0 +1,24 @@
+{
+  "blurb": "Write a function that returns the earned points in a single toss of a Darts game",
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "contributors": [
+    "jrr",
+    "robkeim",
+    "valentin-p",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "Darts.fs"
+    ],
+    "test": [
+      "DartsTests.fs"
+    ],
+    "example": [
+      ".meta/Example.fs"
+    ]
+  },
+  "source": "Inspired by an exercise created by a professor Della Paolera in Argentina"
+}

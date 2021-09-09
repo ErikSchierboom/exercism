@@ -1,0 +1,20 @@
+{
+  "blurb": "Create an implementation of the rotational cipher, also sometimes called the Caesar cipher.",
+  "authors": ["stkent"],
+  "contributors": [
+    "dector",
+    "eparovyshnaya",
+    "lihofm",
+    "mdowds",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "uzilan"
+  ],
+  "files": {
+    "solution": ["src/main/kotlin/RotationalCipher.kt"],
+    "test": ["src/test/kotlin/RotationalCipherTest.kt"],
+    "example": [".meta/src/reference/kotlin/RotationalCipher.kt"]
+  },
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Caesar_cipher"
+}

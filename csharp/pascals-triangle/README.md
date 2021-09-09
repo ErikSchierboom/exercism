@@ -1,4 +1,9 @@
-# Pascal's Triangle
+# Pascals Triangle
+
+Welcome to Pascals Triangle on Exercism's C# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
 
 Compute Pascal's triangle up to a given number of rows.
 
@@ -14,10 +19,21 @@ the right and left of the current position in the previous row.
 # ... etc
 ```
 
-
 ## Source
 
-Pascal's Triangle at Wolfram Math World [http://mathworld.wolfram.com/PascalsTriangle.html](http://mathworld.wolfram.com/PascalsTriangle.html)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @ErikSchierboom
+
+### Contributed to by
+
+- @bcwood
+- @bmeverett
+- @j2jensen
+- @jwood803
+- @robkeim
+- @wolf99
+
+### Based on
+
+Pascal's Triangle at Wolfram Math World - http://mathworld.wolfram.com/PascalsTriangle.html

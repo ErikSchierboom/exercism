@@ -1,0 +1,31 @@
+{
+  "blurb": "Implement basic list operations",
+  "authors": [
+    "etrepum"
+  ],
+  "contributors": [
+    "ffflorian",
+    "iHiD",
+    "kytrinyx",
+    "lpalma",
+    "petertseng",
+    "ppartarr",
+    "rbasso",
+    "rsslldnphy",
+    "sshine",
+    "stesie",
+    "tejasbubane",
+    "yawpitch"
+  ],
+  "files": {
+    "solution": [
+      "src/ListOps.hs"
+    ],
+    "test": [
+      "test/Tests.hs"
+    ],
+    "example": [
+      "examples/success-standard/src/ListOps.hs"
+    ]
+  }
+}

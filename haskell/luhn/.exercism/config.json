@@ -1,0 +1,34 @@
+{
+  "blurb": "Given a number determine whether or not it is valid per the Luhn formula.",
+  "authors": [
+    "etrepum"
+  ],
+  "contributors": [
+    "alexkalderimis",
+    "bitfield",
+    "iHiD",
+    "kytrinyx",
+    "lpalma",
+    "navossoc",
+    "ozan",
+    "petertseng",
+    "ppartarr",
+    "rbasso",
+    "sshine",
+    "tejasbubane",
+    "workingjubilee"
+  ],
+  "files": {
+    "solution": [
+      "src/Luhn.hs"
+    ],
+    "test": [
+      "test/Tests.hs"
+    ],
+    "example": [
+      "examples/success-standard/src/Luhn.hs"
+    ]
+  },
+  "source": "The Luhn Algorithm on Wikipedia",
+  "source_url": "http://en.wikipedia.org/wiki/Luhn_algorithm"
+}

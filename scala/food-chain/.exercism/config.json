@@ -1,0 +1,24 @@
+{
+  "blurb": "Generate the lyrics of the song 'I Know an Old Lady Who Swallowed a Fly'",
+  "authors": [
+    "ricemery"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "ppartarr",
+    "rajeshpg"
+  ],
+  "files": {
+    "solution": [
+      "src/main/scala/FoodChain.scala"
+    ],
+    "test": [
+      "src/test/scala/FoodChainTest.scala"
+    ],
+    "example": [
+      ".meta/Example.scala"
+    ]
+  },
+  "source": "Wikipedia",
+  "source_url": "http://en.wikipedia.org/wiki/There_Was_an_Old_Lady_Who_Swallowed_a_Fly"
+}

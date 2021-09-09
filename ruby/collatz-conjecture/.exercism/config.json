@@ -1,0 +1,28 @@
+{
+  "blurb": "Calculate the number of steps to reach 1 using the Collatz conjecture",
+  "authors": [
+    "Insti"
+  ],
+  "contributors": [
+    "ajwann",
+    "budmc29",
+    "cadwallion",
+    "iHiD",
+    "jpotts244",
+    "kotp",
+    "tryantwit"
+  ],
+  "files": {
+    "solution": [
+      "collatz_conjecture.rb"
+    ],
+    "test": [
+      "collatz_conjecture_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/collatz_conjecture.rb"
+    ]
+  },
+  "source": "An unsolved problem in mathematics named after mathematician Lothar Collatz",
+  "source_url": "https://en.wikipedia.org/wiki/3x_%2B_1_problem"
+}

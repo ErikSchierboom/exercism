@@ -4,6 +4,7 @@ require_relative 'flatten_array'
 # Common test data version: 1.2.0 0290376
 class FlattenArrayTest < Minitest::Test
   def test_no_nesting
+    # skip
     flat_array = FlattenArray.flatten([0, 1, 2])
     assert_equal [0, 1, 2], flat_array
   end

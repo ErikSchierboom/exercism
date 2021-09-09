@@ -1,0 +1,21 @@
+{
+  "blurb": "Make sure the brackets and braces all match.",
+  "authors": [
+    "amscotti"
+  ],
+  "contributors": [
+    "ee7"
+  ],
+  "files": {
+    "solution": [
+      "matching_brackets.nim"
+    ],
+    "test": [
+      "test_matching_brackets.nim"
+    ],
+    "example": [
+      ".meta/example.nim"
+    ]
+  },
+  "source": "Ginna Baker"
+}

@@ -4,6 +4,7 @@ require_relative 'phone_number'
 # Common test data version: 1.6.1 fc57696
 class PhoneNumberTest < Minitest::Test
   def test_cleans_the_number
+    # skip
     assert_equal "2234567890", PhoneNumber.clean("(223) 456-7890")
   end
 
@@ -19,11 +20,11 @@ class PhoneNumberTest < Minitest::Test
     assert_nil PhoneNumber.clean("123456789")
   end
 
-  def test_invalid_when_11_digits_does_not_start_with_a_1
+  def test_invalid_when_11_digits_does_not_start_with_a_1 # rubocop:disable Naming/VariableNumber
     assert_nil PhoneNumber.clean("22234567890")
   end
 
-  def test_valid_when_11_digits_and_starting_with_1
+  def test_valid_when_11_digits_and_starting_with_1 # rubocop:disable Naming/VariableNumber
     assert_equal "2234567890", PhoneNumber.clean("12234567890")
   end
 
@@ -43,19 +44,19 @@ class PhoneNumberTest < Minitest::Test
     assert_nil PhoneNumber.clean("123-@:!-7890")
   end
 
-  def test_invalid_if_area_code_starts_with_0
+  def test_invalid_if_area_code_starts_with_0 # rubocop:disable Naming/VariableNumber
     assert_nil PhoneNumber.clean("(023) 456-7890")
   end
 
-  def test_invalid_if_area_code_starts_with_1
+  def test_invalid_if_area_code_starts_with_1 # rubocop:disable Naming/VariableNumber
     assert_nil PhoneNumber.clean("(123) 456-7890")
   end
 
-  def test_invalid_if_exchange_code_starts_with_0
+  def test_invalid_if_exchange_code_starts_with_0 # rubocop:disable Naming/VariableNumber
     assert_nil PhoneNumber.clean("(223) 056-7890")
   end
 
-  def test_invalid_if_exchange_code_starts_with_1
+  def test_invalid_if_exchange_code_starts_with_1 # rubocop:disable Naming/VariableNumber
     assert_nil PhoneNumber.clean("(223) 156-7890")
   end
 

@@ -1,5 +1,10 @@
 # Rotational Cipher
 
+Welcome to Rotational Cipher on Exercism's Haskell Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Create an implementation of the rotational cipher, also sometimes called the Caesar cipher.
 
 The Caesar cipher is a simple shift cipher that relies on
@@ -30,62 +35,53 @@ Ciphertext is written out in the same formatting as the input including spaces a
 - ROT13 `The quick brown fox jumps over the lazy dog.` gives `Gur dhvpx oebja sbk whzcf bire gur ynml qbt.`
 - ROT13 `Gur dhvpx oebja sbk whzcf bire gur ynml qbt.` gives `The quick brown fox jumps over the lazy dog.`
 
+You need to implement the `rotate` function, which takes an `Int` and a `String`, and then encodes it using an rotational cipher.
+You can use the provided signature if you are unsure about the types, but don't let it restrict your creativity.
 
-## Getting Started
+This exercise works with textual data. For historical reasons, Haskell's
+`String` type is synonymous with `[Char]`, a list of characters. For more
+efficient handling of textual data, the `Text` type can be used.
 
-For installation and learning resources, refer to the
-[exercism help page](http://exercism.io/languages/haskell).
+As an optional extension to this exercise, you can
 
-## Running the tests
+- read about [string types](https://haskell-lang.org/tutorial/string-types) in
+  Haskell.
+- add `- text` to your list of dependencies in package.yaml.
+- import `Data.Text` in [the following
+  way](https://hackernoon.com/4-steps-to-a-better-imports-list-in-haskell-43a3d868273c):
 
-To run the test suite, execute the following command:
-
-```bash
-stack test
+```haskell
+import qualified Data.Text as T
+import           Data.Text (Text)
 ```
 
-#### If you get an error message like this...
+- use the `Text` type e.g. `rotate :: Int -> Text -> Text` and refer to
+  `Data.Text` combinators as e.g. `T.pack`.
+- look up the documentation for
+  [`Data.Text`](https://hackage.haskell.org/package/text/docs/Data-Text.html).
+- replace all occurrences of `String` with `Text` in RotationalCipher.hs, i.e.:
 
-```
-No .cabal file found in directory
-```
-
-You are probably running an old stack version and need
-to upgrade it.
-
-#### Otherwise, if you get an error message like this...
-
-```
-No compiler found, expected minor version match with...
-Try running "stack setup" to install the correct GHC...
+```haskell
+rotate :: Int -> Text -> Text
 ```
 
-Just do as it says and it will download and install
-the correct compiler version:
-
-```bash
-stack setup
-```
-
-## Running *GHCi*
-
-If you want to play with your solution in GHCi, just run the command:
-
-```bash
-stack ghci
-```
-
-## Feedback, Issues, Pull Requests
-
-The [exercism/haskell](https://github.com/exercism/haskell) repository on
-GitHub is the home for all of the Haskell exercises.
-
-If you have feedback about an exercise, or want to help implementing a new
-one, head over there and create an issue.  We'll do our best to help you!
+This part is entirely optional.
 
 ## Source
 
-Wikipedia [https://en.wikipedia.org/wiki/Caesar_cipher](https://en.wikipedia.org/wiki/Caesar_cipher)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @Average-user
+
+### Contributed to by
+
+- @iHiD
+- @JavierGelatti
+- @petertseng
+- @ppartarr
+- @sshine
+- @tejasbubane
+
+### Based on
+
+Wikipedia - https://en.wikipedia.org/wiki/Caesar_cipher

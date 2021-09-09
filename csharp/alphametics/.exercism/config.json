@@ -1,0 +1,22 @@
+{
+  "blurb": "Write a function to solve alphametics puzzles.",
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "contributors": [
+    "j2jensen",
+    "robkeim",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "Alphametics.cs"
+    ],
+    "test": [
+      "AlphameticsTests.cs"
+    ],
+    "example": [
+      ".meta/Example.cs"
+    ]
+  }
+}

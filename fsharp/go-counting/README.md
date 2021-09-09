@@ -1,5 +1,10 @@
 # Go Counting
 
+Welcome to Go Counting on Exercism's F# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Count the scored points on a Go board.
 
 In the game of go (also known as baduk, igo, cờ vây and wéiqí) points
@@ -11,12 +16,14 @@ Write a function that determines the territory of each player. You may
 assume that any stones that have been stranded in enemy territory have
 already been taken off the board.
 
+Write a function that determines the territory which includes a specified coordinate.
+
 Multiple empty intersections may be encircled at once and for encircling
 only horizontal and vertical neighbours count. In the following diagram
 the stones which matter are marked "O" and the stones that don't are
 marked "I" (ignored).  Empty spaces represent empty intersections.
 
-```
+```text
 +----+
 |IOOI|
 |O  O|
@@ -33,5 +40,16 @@ For more information see
 [wikipedia](https://en.wikipedia.org/wiki/Go_%28game%29) or [Sensei's
 Library](http://senseis.xmp.net/).
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+## Source
+
+### Created by
+
+- @ErikSchierboom
+
+### Contributed to by
+
+- @jrr
+- @lestephane
+- @robkeim
+- @valentin-p
+- @wolf99

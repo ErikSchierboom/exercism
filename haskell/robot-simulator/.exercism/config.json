@@ -1,0 +1,29 @@
+{
+  "blurb": "Write a robot simulator.",
+  "authors": [
+    "etrepum"
+  ],
+  "contributors": [
+    "iHiD",
+    "kytrinyx",
+    "lpalma",
+    "petertseng",
+    "ppartarr",
+    "rbasso",
+    "sshine",
+    "tejasbubane",
+    "thalesmg"
+  ],
+  "files": {
+    "solution": [
+      "src/Robot.hs"
+    ],
+    "test": [
+      "test/Tests.hs"
+    ],
+    "example": [
+      "examples/success-standard/src/Robot.hs"
+    ]
+  },
+  "source": "Inspired by an interview question at a famous company."
+}

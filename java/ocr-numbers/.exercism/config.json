@@ -1,0 +1,37 @@
+{
+  "blurb": "Given a 3 x 4 grid of pipes, underscores, and spaces, determine which number is represented, or whether it is garbled.",
+  "authors": [
+    "stkent"
+  ],
+  "contributors": [
+    "aadityakulkarni",
+    "FridaTveit",
+    "hgvanpariya",
+    "jmrunkle",
+    "kytrinyx",
+    "lemoncurry",
+    "morrme",
+    "msomji",
+    "muzimuzhi",
+    "redshirt4",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine",
+    "vivshaw",
+    "vpondala",
+    "Zaldrick"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/OpticalCharacterReader.java"
+    ],
+    "test": [
+      "src/test/java/OpticalCharacterReaderTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/OpticalCharacterReader.java"
+    ]
+  },
+  "source": "Inspired by the Bank OCR kata",
+  "source_url": "http://codingdojo.org/cgi-bin/wiki.pl?KataBankOCR"
+}

@@ -1,12 +1,14 @@
 name: robot-name
-version: 0.1.0.2
+version: 0.1.0.4
 
 dependencies:
   - base
+  - mtl
 
 library:
   exposed-modules: Robot
   source-dirs: src
+  ghc-options: -Wall
   # dependencies:
   # - foo       # List here the packages you
   # - bar       # want to use in your solution.

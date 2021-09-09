@@ -1,0 +1,24 @@
+{
+  "blurb": "Implement various kinds of error handling and resource management",
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "contributors": [
+    "jrr",
+    "lestephane",
+    "robkeim",
+    "valentin-p",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "ErrorHandling.fs"
+    ],
+    "test": [
+      "ErrorHandlingTests.fs"
+    ],
+    "example": [
+      ".meta/Example.fs"
+    ]
+  }
+}

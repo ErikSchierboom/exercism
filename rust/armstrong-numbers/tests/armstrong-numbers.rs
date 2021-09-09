@@ -1,6 +1,11 @@
 use armstrong_numbers::*;
 
 #[test]
+fn test_zero_is_an_armstrong_number() {
+    assert!(is_armstrong_number(0))
+}
+
+#[test]
 fn test_single_digit_numbers_are_armstrong_numbers() {
     assert!(is_armstrong_number(5))
 }
@@ -32,10 +37,10 @@ fn test_four_digit_non_armstrong_number() {
 
 #[test]
 fn test_seven_digit_armstrong_number() {
-    assert!(is_armstrong_number(9926315))
+    assert!(is_armstrong_number(9_926_315))
 }
 
 #[test]
 fn test_seven_digit_non_armstrong_number() {
-    assert!(!is_armstrong_number(9926316))
+    assert!(!is_armstrong_number(9_926_316))
 }

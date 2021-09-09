@@ -4,6 +4,7 @@ require_relative 'luhn'
 # Common test data version: 1.4.0 4a80663
 class LuhnTest < Minitest::Test
   def test_single_digit_strings_can_not_be_valid
+    # skip
     refute Luhn.valid?("1")
   end
 
@@ -59,7 +60,7 @@ class LuhnTest < Minitest::Test
     assert Luhn.valid?("0000 0")
   end
 
-  def test_input_digit_9_is_correctly_converted_to_output_digit_9
+  def test_input_digit_9_is_correctly_converted_to_output_digit_9 # rubocop:disable Naming/VariableNumber
     assert Luhn.valid?("091")
   end
 

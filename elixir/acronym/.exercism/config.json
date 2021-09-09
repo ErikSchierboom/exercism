@@ -1,0 +1,35 @@
+{
+  "blurb": "Convert a long phrase to its acronym",
+  "authors": [
+    "Teapane"
+  ],
+  "contributors": [
+    "angelikatyborska",
+    "Cohen-Carlisle",
+    "dalexj",
+    "devonestes",
+    "gmile",
+    "henrik",
+    "jwworth",
+    "lpil",
+    "martinsvalin",
+    "neenjaw",
+    "parkerl",
+    "rubysolo",
+    "sotojuan",
+    "waiting-for-dev"
+  ],
+  "files": {
+    "solution": [
+      "lib/acronym.ex"
+    ],
+    "test": [
+      "test/acronym_test.exs"
+    ],
+    "example": [
+      ".meta/example.ex"
+    ]
+  },
+  "source": "Julien Vanier",
+  "source_url": "https://github.com/monkbroc"
+}

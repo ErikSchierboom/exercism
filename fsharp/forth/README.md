@@ -1,5 +1,10 @@
 # Forth
 
+Welcome to Forth on Exercism's F# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Implement an evaluator for a very simple subset of Forth.
 
 [Forth](https://en.wikipedia.org/wiki/Forth_%28programming_language%29)
@@ -25,5 +30,16 @@ enough.)
 
 Words are case-insensitive.
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+## Source
+
+### Created by
+
+- @ErikSchierboom
+
+### Contributed to by
+
+- @jrr
+- @lestephane
+- @robkeim
+- @valentin-p
+- @wolf99

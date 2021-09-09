@@ -57,7 +57,7 @@ specs = do
                            , "_ _ _ _ _ _ _ _" ]
 
     -- The function described by the reference file as `create` doesn't
-    -- exist in this track, so only the `canAttack` test cases where
+    -- exist in this track, so only the `canAttack` test cases were
     -- implemented here
 
     describe "canAttack" $ do
@@ -74,3 +74,5 @@ specs = do
                   , ("can attack on fourth diagonal", (2, 2), (5, 5), True ) ]
 
       for_ cases test
+
+-- cc646595d39e13c4d310da2629599bcc45e92bd9

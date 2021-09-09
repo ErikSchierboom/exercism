@@ -1,5 +1,10 @@
 # Go Counting
 
+Welcome to Go Counting on Exercism's C# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Count the scored points on a Go board.
 
 In the game of go (also known as baduk, igo, cờ vây and wéiqí) points
@@ -10,6 +15,8 @@ territory.
 Write a function that determines the territory of each player. You may
 assume that any stones that have been stranded in enemy territory have
 already been taken off the board.
+
+Write a function that determines the territory which includes a specified coordinate.
 
 Multiple empty intersections may be encircled at once and for encircling
 only horizontal and vertical neighbours count. In the following diagram
@@ -33,6 +40,15 @@ For more information see
 [wikipedia](https://en.wikipedia.org/wiki/Go_%28game%29) or [Sensei's
 Library](http://senseis.xmp.net/).
 
+## Source
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+### Created by
+
+- @ErikSchierboom
+
+### Contributed to by
+
+- @ChrisPritchard
+- @j2jensen
+- @robkeim
+- @wolf99

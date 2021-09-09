@@ -1,4 +1,9 @@
-# Dnd Character
+# D&D Character
+
+Welcome to D&D Character on Exercism's F# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
 
 For a game of [Dungeons & Dragons][DND], each player starts by generating a
 character they can play with. This character has, among other things, six
@@ -32,14 +37,20 @@ programming languages are designed to roll dice. One such language is [Troll].
 [DND]: https://en.wikipedia.org/wiki/Dungeons_%26_Dragons
 [Troll]: http://hjemmesider.diku.dk/~torbenm/Troll/
 
-## Running the tests
+## Source
 
-To run the tests, run the command `dotnet test` from within the exercise directory.
+### Created by
 
-## Further information
+- @davidelettieri
 
-For more detailed information about the F# track, including how to get help if
-you're having trouble, please visit the exercism.io [F# language page](http://exercism.io/languages/fsharp/resources).
+### Contributed to by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @ErikSchierboom
+- @jrr
+- @robkeim
+- @valentin-p
+- @wolf99
+
+### Based on
+
+Simon Shine, Erik Schierboom - https://github.com/exercism/problem-specifications/issues/616#issuecomment-437358945

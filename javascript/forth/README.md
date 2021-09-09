@@ -1,5 +1,10 @@
 # Forth
 
+Welcome to Forth on Exercism's JavaScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Implement an evaluator for a very simple subset of Forth.
 
 [Forth](https://en.wikipedia.org/wiki/Forth_%28programming_language%29)
@@ -25,30 +30,17 @@ enough.)
 
 Words are case-insensitive.
 
-## Setup
+## Source
 
-Go through the setup instructions for ECMAScript to
-install the necessary dependencies:
+### Created by
 
-http://exercism.io/languages/ecmascript
+- @matthewmorgan
 
-## Requirements
+### Contributed to by
 
-Install assignment dependencies:
-
-```bash
-$ npm install
-```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ npm test
-```
-
-In the test suites all tests but the first have been skipped.
-
-Once you get a test passing, you can enable the next one by
-changing `xtest` to `test`.
+- @brendanmckeown
+- @slaymance
+- @SleeplessByte
+- @tejasbubane
+- @tgujar
+- @xarxziux

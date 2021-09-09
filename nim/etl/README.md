@@ -1,8 +1,13 @@
-# ETL
+# Etl
+
+Welcome to Etl on Exercism's Nim Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
 
 We are going to do the `Transform` step of an Extract-Transform-Load.
 
-### ETL
+## ETL
 
 Extract-Transform-Load (ETL) is a fancy way of saying, "We have some crufty, legacy data over in this system, and now we need it in this shiny new system over here, so
 we're going to migrate this."
@@ -11,7 +16,7 @@ we're going to migrate this."
 once." That's then typically followed by much forehead slapping and
 moaning about how stupid we could possibly be.)
 
-### The goal
+## The goal
 
 We're going to extract some Scrabble scores from a legacy system.
 
@@ -39,39 +44,19 @@ input letters:
 Your mission, should you choose to accept it, is to transform the legacy data
 format to the shiny new format.
 
-### Notes
+## Notes
 
 A final note about scoring, Scrabble is played around the world in a
 variety of languages, each with its own unique scoring table. For
 example, an "E" is scored at 2 in the Māori-language version of the
 game while being scored at 4 in the Hawaiian-language version.
 
-## Running the tests
-
-To compile and run the tests, just run the following in your exercise directory:
-```bash
-$ nim c -r etl_test.nim
-```
-
-## Submitting Exercises
-
-Note that, when trying to submit an exercise, make sure the solution is in the `$EXERCISM_WORKSPACE/nim/etl` directory.
-
-You can find your Exercism workspace by running `exercism debug` and looking for the line that starts with `Exercises Directory`.
-
-## Need help?
-
-These guides should help you,
-* [Installing Nim](https://exercism.io/tracks/nim/installation)
-* [Running the Tests](https://exercism.io/tracks/nim/tests)
-* [Learning Nim](https://exercism.io/tracks/nim/learning)
-* [Useful Nim Resources](https://exercism.io/tracks/nim/resources)
-
-
 ## Source
 
-The Jumpstart Lab team [http://jumpstartlab.com](http://jumpstartlab.com)
+### Created by
 
-## Submitting Incomplete Solutions
+- @ee7
 
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+### Based on
+
+The Jumpstart Lab team - http://jumpstartlab.com

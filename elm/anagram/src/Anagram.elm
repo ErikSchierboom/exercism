@@ -1,23 +1,6 @@
-module Anagram exposing (..)
-
-import String exposing (toLower, toList, fromList)
-import List exposing (sort, map, filter)
-
-
-normalize : String -> String
-normalize str =
-    str
-        |> toLower
-        |> toList
-        |> sort
-        |> fromList
+module Anagram exposing (detect)
 
 
 detect : String -> List String -> List String
-detect target inputs =
-    let
-        normalizedTarget =
-            normalize target
-    in
-        inputs
-            |> filter (\input -> normalize input == normalizedTarget && toLower input /= toLower target)
+detect word candidates =
+    Debug.todo "Please implement this function"

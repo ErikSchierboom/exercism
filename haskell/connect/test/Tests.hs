@@ -15,8 +15,7 @@ specs = describe "winner" $ for_ cases test
 
     test Case{..} = it description assertion
       where
-        assertion  = winner testBoard `shouldBe` expected
-        testBoard  = filter (/=' ') <$> board
+        assertion  = winner board `shouldBe` expected
 
 data Case = Case { description :: String
                  , board       :: [String]
@@ -100,3 +99,5 @@ cases = [ Case { description = "an empty board has no winner"
                , expected    = Just Cross
                }
         ]
+
+-- 0dca144b3fec2cd562de152ee482d3f4b24a29ec

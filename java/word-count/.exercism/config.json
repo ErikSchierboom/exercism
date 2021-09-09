@@ -1,0 +1,46 @@
+{
+  "blurb": "Given a phrase, count the occurrences of each word in that phrase.",
+  "authors": [
+    "sagarsane"
+  ],
+  "contributors": [
+    "aadityakulkarni",
+    "c-thornton",
+    "FridaTveit",
+    "jackattack24",
+    "jmrunkle",
+    "jtigger",
+    "kytrinyx",
+    "lemoncurry",
+    "matthewmorgan",
+    "matthewstyler",
+    "mirkoperillo",
+    "monil",
+    "morrme",
+    "msomji",
+    "muzimuzhi",
+    "redshirt4",
+    "sit",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine",
+    "stkent",
+    "TimoleonLatinopoulos",
+    "vdemeester",
+    "Zaldrick",
+    "zwaltman"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/WordCount.java"
+    ],
+    "test": [
+      "src/test/java/WordCountTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/WordCount.java"
+    ]
+  },
+  "source": "This is a classic toy problem, but we were reminded of it by seeing it in the Go Tour."
+}

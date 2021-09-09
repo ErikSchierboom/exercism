@@ -5,7 +5,7 @@ let private isValid triangle =
     x > 0. && y > 0. && z > 0. &&
     x + y >= z && x + z >= y && y + z >= x
 
-let private distinctSides triangle = triangle |> List.distinct |> List.length
+let private distinctSides triangle = List.distinct triangle |> List.length
 
 let equilateral triangle = isValid triangle && distinctSides triangle = 1
 

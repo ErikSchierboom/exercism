@@ -1,0 +1,31 @@
+{
+  "blurb": "Implement an evaluator for a very simple subset of Forth",
+  "authors": [
+    "stkent"
+  ],
+  "contributors": [
+    "aadityakulkarni",
+    "FridaTveit",
+    "hgvanpariya",
+    "jmrunkle",
+    "kytrinyx",
+    "lemoncurry",
+    "mirkoperillo",
+    "msomji",
+    "muzimuzhi",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "sshine"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/ForthEvaluator.java"
+    ],
+    "test": [
+      "src/test/java/ForthEvaluatorTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/ForthEvaluator.java"
+    ]
+  }
+}

@@ -1,5 +1,10 @@
 # Strain
 
+Welcome to Strain on Exercism's Clojure Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Implement the `keep` and `discard` operation on collections. Given a collection
 and a predicate on the collection's elements, `keep` returns a new collection
 containing those elements where the predicate is true, while `discard` returns
@@ -32,9 +37,19 @@ language.
 Keep your hands off that filter/reject/whatchamacallit functionality
 provided by your standard library!  Solve this one yourself using other
 basic tools instead.
+
 ## Source
 
-Conversation with James Edward Gray II [https://twitter.com/jeg2](https://twitter.com/jeg2)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @cayennes
+
+### Contributed to by
+
+- @AndreaCrotti
+- @haus
+- @yurrriq
+
+### Based on
+
+Conversation with James Edward Gray II - https://twitter.com/jeg2

@@ -1,0 +1,27 @@
+{
+  "blurb": "Write a robot simulator.",
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "contributors": [
+    "jrr",
+    "lestephane",
+    "robkeim",
+    "roman-shuhov",
+    "valentin-p",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "RobotSimulator.fs"
+    ],
+    "test": [
+      "RobotSimulatorTests.fs"
+    ],
+    "example": [
+      ".meta/Example.fs"
+    ]
+  },
+  "source": "Inspired by an interview question at a famous company.",
+  "source_url": ""
+}

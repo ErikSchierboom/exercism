@@ -1,0 +1,10 @@
+{
+  "blurb": "Add the numbers to a minesweeper board",
+  "authors": ["CRivasGomez"],
+  "contributors": ["iignatov", "masters3d", "SleeplessByte"],
+  "files": {
+    "solution": ["minesweeper.ts"],
+    "test": ["minesweeper.test.ts"],
+    "example": [".meta/proof.ci.ts"]
+  }
+}

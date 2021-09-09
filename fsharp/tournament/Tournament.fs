@@ -60,10 +60,10 @@ let calculateStandings (games: MatchResult list) =
     |> List.sortWith compareTeamResults
 
 let formatTeamResult teamResult =  
-    sprintf "%-30s | %2i | %2i | %2i | %2i | %2i" teamResult.name teamResult.played teamResult.wins teamResult.draws teamResult.losses teamResult.points
+    $"%-30s{teamResult.name} | %2i{teamResult.played} | %2i{teamResult.wins} | %2i{teamResult.draws} | %2i{teamResult.losses} | %2i{teamResult.points}"
 
 let formatTable standings = 
-    let header =  sprintf "%-30s | %2s | %2s | %2s | %2s | %2s" "Team" "MP" "W" "D" "L" "P"
+    let header = sprintf "%-30s | %2s | %2s | %2s | %2s | %2s" "Team" "MP" "W" "D" "L" "P"
     let teams = standings |> List.map formatTeamResult
     header::teams
     

@@ -1,0 +1,20 @@
+{
+  "blurb": " Given the size, return a square matrix of numbers in spiral order.",
+  "authors": [
+    "ee7"
+  ],
+  "contributors": [],
+  "files": {
+    "solution": [
+      "spiral_matrix.nim"
+    ],
+    "test": [
+      "test_spiral_matrix.nim"
+    ],
+    "example": [
+      ".meta/example.nim"
+    ]
+  },
+  "source": "Reddit r/dailyprogrammer challenge #320 [Easy] Spiral Ascension.",
+  "source_url": "https://www.reddit.com/r/dailyprogrammer/comments/6i60lr/20170619_challenge_320_easy_spiral_ascension/"
+}

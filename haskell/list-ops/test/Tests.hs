@@ -49,6 +49,8 @@ specs = do
         reverse ([] :: [Int]) `shouldBe` []
       it "of non-empty list" $
         reverse [1 .. 100 :: Int] `shouldBe` [100 , 99 .. 1]
+      it "of nested lists" $
+        reverse [[1, 2], [3], [], [4, 5, 6] :: [Int]] `shouldBe` [[4, 5, 6], [], [3], [1, 2]]
 
     describe "map" $ do
       it "of empty list" $
@@ -77,7 +79,7 @@ specs = do
         foldl' (flip (:)) [] "asdf" `shouldBe` "fdsa"
       -- Track-specific test
       it "is accumulator-strict (use seq or BangPatterns)" $
-        evaluate (foldl' (flip const) () [throw StrictException, ()])
+        evaluate (foldl' (const id) () [throw StrictException, ()])
         `shouldThrow` (== StrictException)
 
     describe "foldr" $ do
@@ -112,6 +114,10 @@ specs = do
         concat ([] :: [[Int]]) `shouldBe` []
       it "of list of lists" $
         concat [[1, 2], [3], [], [4, 5, 6 :: Int]] `shouldBe` [1 .. 6]
+      it "of list of nested lists" $
+        concat [[[1], [2]], [[3]], [[]], [[4, 5, 6 :: Int]]] `shouldBe` [[1], [2], [3], [], [4, 5, 6 :: Int]]
       -- Track-specific test
       it "of large list of small lists" $
         concat (map (:[]) [1 .. big]) `shouldBe` [1 .. big]
+
+-- 51d6e908fdf1165cc9a7de7846d704b17dfd5e40

@@ -4,6 +4,7 @@ require_relative 'roman_numerals'
 # Common test data version: 1.2.0 3c78ac4
 class RomanNumeralsTest < Minitest::Test
   def test_1_is_a_single_i
+    # skip
     assert_equal 'I', 1.to_roman
   end
 
@@ -35,11 +36,11 @@ class RomanNumeralsTest < Minitest::Test
     assert_equal 'XXVII', 27.to_roman
   end
 
-  def test_48_is_not_50_2_but_rather_40_8
+  def test_48_is_not_50_2_but_rather_40_8 # rubocop:disable Naming/VariableNumber
     assert_equal 'XLVIII', 48.to_roman
   end
 
-  def test_49_is_not_40_5_4_but_rather_50_10_10_1
+  def test_49_is_not_40_5_4_but_rather_50_10_10_1 # rubocop:disable Naming/VariableNumber
     assert_equal 'XLIX', 49.to_roman
   end
 

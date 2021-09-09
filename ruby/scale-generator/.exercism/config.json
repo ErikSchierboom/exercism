@@ -1,0 +1,30 @@
+{
+  "blurb": "Generate musical scales, given a starting note and a set of intervals. ",
+  "authors": [
+    "fluxusfrequency"
+  ],
+  "contributors": [
+    "budmc29",
+    "cadwallion",
+    "chrisvroberts",
+    "dkinzer",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "kotp",
+    "kytrinyx",
+    "srabuini",
+    "tryantwit"
+  ],
+  "files": {
+    "solution": [
+      "scale_generator.rb"
+    ],
+    "test": [
+      "scale_generator_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/scale_generator.rb"
+    ]
+  }
+}

@@ -1,4 +1,4 @@
-module Tests exposing (..)
+module Tests exposing (anyCharacter, character, gibberish, gibberishQuestion, listOfCharacters, tests, uppercaseCharacter, uppercaseGibberish)
 
 import Bob
 import Char
@@ -50,19 +50,19 @@ tests =
                 \() ->
                     Expect.equal
                         "Whatever."
-                        (Bob.hey "Let's go make out behind the gym!")
+                        (Bob.hey "Hi there!")
         , skip <|
             test "using acronyms in regular speech" <|
                 \() ->
                     Expect.equal
                         "Whatever."
-                        (Bob.hey "It's OK if you don't want to go to the DMV.")
+                        (Bob.hey "It's OK if you don't want to go work for NASA.")
         , skip <|
             test "forceful questions" <|
                 \() ->
                     Expect.equal
                         "Calm down, I know what I'm doing!"
-                        (Bob.hey "WHAT THE HELL WERE YOU THINKING?")
+                        (Bob.hey "WHAT'S GOING ON?")
         , skip <|
             test "shouting numbers" <|
                 \() ->
@@ -92,7 +92,7 @@ tests =
                 \() ->
                     Expect.equal
                         "Whoa, chill out!"
-                        (Bob.hey "I HATE YOU")
+                        (Bob.hey "I HATE THE DENTIST")
         , skip <|
             test "statement containing a question mark" <|
                 \() ->
@@ -129,6 +129,54 @@ tests =
                     Expect.equal
                         "Whatever."
                         (Bob.hey "\nDoes this cryogenic chamber make me look fat?\nno")
+        , skip <|
+            test "ending with whitespace" <|
+                \() ->
+                    Expect.equal
+                        "Sure."
+                        (Bob.hey "Okay if like my  spacebar  quite a bit?   ")
+        , skip <|
+            test "no letters" <|
+                \() ->
+                    Expect.equal
+                        "Whatever."
+                        (Bob.hey "1, 2, 3")
+        , skip <|
+            test "question with no letters" <|
+                \() ->
+                    Expect.equal
+                        "Sure."
+                        (Bob.hey "4?")
+        , skip <|
+            test "statement containing question mark" <|
+                \() ->
+                    Expect.equal
+                        "Whatever."
+                        (Bob.hey "Ending with ? means a question.")
+        , skip <|
+            test "non-letters with question" <|
+                \() ->
+                    Expect.equal
+                        "Sure."
+                        (Bob.hey ":) ?")
+        , skip <|
+            test "starting with whitespace" <|
+                \() ->
+                    Expect.equal
+                        "Whatever."
+                        (Bob.hey "         hmmmmmmm...")
+        , skip <|
+            test "other whitespace" <|
+                \() ->
+                    Expect.equal
+                        "Fine. Be that way!"
+                        (Bob.hey "\n\u{000D} \t")
+        , skip <|
+            test "non-question ending with whitespace" <|
+                \() ->
+                    Expect.equal
+                        "Whatever."
+                        (Bob.hey "This is a statement ending with whitespace      ")
         ]
 
 

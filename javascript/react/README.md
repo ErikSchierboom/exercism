@@ -1,5 +1,10 @@
 # React
 
+Welcome to React on Exercism's JavaScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Implement a basic reactive system.
 
 Reactive programming is a programming paradigm that focuses on how values
@@ -12,37 +17,19 @@ cells). Implement updates so that when an input value is changed, values
 propagate to reach a new stable system state.
 
 In addition, compute cells should allow for registering change notification
-callbacks.  Call a cell’s callbacks when the cell’s value in a new stable
+callbacks. Call a cell’s callbacks when the cell’s value in a new stable
 state has changed from the previous stable state.
 
-## Setup
+## Source
 
-Go through the setup instructions for Javascript to
-install the necessary dependencies:
+### Created by
 
-[https://exercism.io/tracks/javascript/installation](https://exercism.io/tracks/javascript/installation)
+- @matthewmorgan
 
-## Requirements
+### Contributed to by
 
-Install assignment dependencies:
-
-```bash
-$ npm install
-```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ npm test
-```
-
-In the test suites all tests but the first have been skipped.
-
-Once you get a test passing, you can enable the next one by
-changing `xtest` to `test`.
-
-
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @Boto1
+- @joshgoebel
+- @PakkuDon
+- @rchavarria
+- @SleeplessByte

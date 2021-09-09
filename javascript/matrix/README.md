@@ -1,5 +1,10 @@
 # Matrix
 
+Welcome to Matrix on Exercism's JavaScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given a string representing a matrix of numbers, return the rows and columns of
 that matrix.
 
@@ -14,11 +19,11 @@ So given a string with embedded newlines like:
 representing this matrix:
 
 ```text
-    0  1  2
+    1  2  3
   |---------
-0 | 9  8  7
-1 | 5  3  2
-2 | 6  6  7
+1 | 9  8  7
+2 | 5  3  2
+3 | 6  6  7
 ```
 
 your code should be able to spit out:
@@ -40,38 +45,24 @@ And its columns:
 - 8, 3, 6
 - 7, 2, 7
 
-## Setup
-
-Go through the setup instructions for ECMAScript to
-install the necessary dependencies:
-
-http://exercism.io/languages/ecmascript
-
-## Requirements
-
-Install assignment dependencies:
-
-```bash
-$ npm install
-```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ npm test
-```
-
-In the test suites all tests but the first have been skipped.
-
-Once you get a test passing, you can enable the next one by
-changing `xtest` to `test`.
-
-
 ## Source
 
-Warmup to the `saddle-points` warmup. [http://jumpstartlab.com](http://jumpstartlab.com)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @rchavarria
+
+### Contributed to by
+
+- @amscotti
+- @ankorGH
+- @brendan-c
+- @DagmarTimmreck
+- @matthewmorgan
+- @ryanplusplus
+- @serixscorpio
+- @SleeplessByte
+- @xarxziux
+
+### Based on
+
+Warmup to the `saddle-points` warmup. - http://jumpstartlab.com

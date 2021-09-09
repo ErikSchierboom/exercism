@@ -1,5 +1,10 @@
 # Rna Transcription
 
+Welcome to Rna Transcription on Exercism's F# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given a DNA strand, return its RNA complement (per RNA transcription).
 
 Both DNA and RNA strands are a sequence of nucleotides.
@@ -18,12 +23,26 @@ each nucleotide with its complement:
 * `T` -> `A`
 * `A` -> `U`
 
-## Hints
 For this exercise the following F# feature comes in handy:
+
 - [Match Expressions](https://fsharpforfunandprofit.com/posts/match-expression/) While this can be solved using a dictionary, using a match expression is more idiomatic.
+
 ## Source
 
-Rosalind [http://rosalind.info/problems/rna](http://rosalind.info/problems/rna)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @ErikSchierboom
+
+### Contributed to by
+
+- @jrr
+- @kytrinyx
+- @lestephane
+- @robkeim
+- @roman-shuhov
+- @valentin-p
+- @wolf99
+
+### Based on
+
+Hyperphysics - http://hyperphysics.phy-astr.gsu.edu/hbase/Organic/transcription.html

@@ -1,0 +1,44 @@
+{
+  "blurb": "Convert a long phrase to its acronym",
+  "authors": [
+    "matthewmorgan"
+  ],
+  "contributors": [
+    "aadityakulkarni",
+    "FridaTveit",
+    "jmrunkle",
+    "jtigger",
+    "kytrinyx",
+    "lemoncurry",
+    "miranikaran01",
+    "mirkoperillo",
+    "moaxcp",
+    "msomji",
+    "muzimuzhi",
+    "rohit1104",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine",
+    "stkent",
+    "TimoleonLatinopoulos",
+    "vasouv",
+    "victorvess",
+    "vivshaw",
+    "Zaldrick",
+    "Zhiyuan-Amos"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/Acronym.java"
+    ],
+    "test": [
+      "src/test/java/AcronymTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/Acronym.java"
+    ]
+  },
+  "source": "Julien Vanier",
+  "source_url": "https://github.com/monkbroc"
+}

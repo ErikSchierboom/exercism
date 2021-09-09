@@ -1,43 +1,35 @@
 # Clock
 
+Welcome to Clock on Exercism's JavaScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Implement a clock that handles times without dates.
 
 You should be able to add and subtract minutes to it.
 
 Two clocks that represent the same time should be equal to each other.
 
-## Setup
-
-Go through the setup instructions for ECMAScript to
-install the necessary dependencies:
-
-http://exercism.io/languages/ecmascript
-
-## Requirements
-
-Install assignment dependencies:
-
-```bash
-$ npm install
-```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ npm test
-```
-
-In the test suites all tests but the first have been skipped.
-
-Once you get a test passing, you can enable the next one by
-changing `xtest` to `test`.
-
+Using the built-in [Date class](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) and its methods is not allowed.
 
 ## Source
 
-Pairing session with Erin Drummond [https://twitter.com/ebdrummond](https://twitter.com/ebdrummond)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @matthewmorgan
+
+### Contributed to by
+
+- @ankorGH
+- @ovidiu141
+- @rchavarria
+- @ryanplusplus
+- @SleeplessByte
+- @tejasbubane
+- @Tyresius92
+- @xarxziux
+
+### Based on
+
+Pairing session with Erin Drummond - https://twitter.com/ebdrummond

@@ -1,5 +1,10 @@
 # Sublist
 
+Welcome to Sublist on Exercism's Scala Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given two lists determine if the first list is contained within the second
 list, if the second list is contained within the first list, if both lists are
 contained within each other or if none of these are true.
@@ -17,15 +22,15 @@ Examples:
  * A = [1, 2, 3, 4, 5], B = [2, 3, 4], A is a superlist of B
  * A = [1, 2, 4], B = [1, 2, 3, 4, 5], A is not a superlist of, sublist of or equal to B
 
-The Scala exercises assume an SBT project scheme. The exercise solution source
-should be placed within the exercise directory/src/main/scala. The exercise
-unit tests can be found within the exercise directory/src/test/scala.
+## Source
 
-To run the tests simply run the command `sbt test` in the exercise directory.
+### Created by
 
-For more detailed info about the Scala track see the [help
-page](http://exercism.io/languages/scala).
+- @ricemery
 
+### Contributed to by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @ErikSchierboom
+- @petertseng
+- @ppartarr
+- @rajeshpg

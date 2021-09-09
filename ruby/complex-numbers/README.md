@@ -1,5 +1,10 @@
 # Complex Numbers
 
+Welcome to Complex Numbers on Exercism's Ruby Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 A complex number is a number in the form `a + b * i` where `a` and `b` are real and `i` satisfies `i^2 = -1`.
 
 `a` is called the real part and `b` is called the imaginary part of `z`.
@@ -28,32 +33,22 @@ Implement the following operations:
 
 Assume the programming language you are using does not have an implementation of complex numbers.
 
-* * * *
-
-For installation and learning resources, refer to the
-[Ruby resources page](http://exercism.io/languages/ruby/resources).
-
-For running the tests provided, you will need the Minitest gem. Open a
-terminal window and run the following command to install minitest:
-
-    gem install minitest
-
-If you would like color output, you can `require 'minitest/pride'` in
-the test file, or note the alternative instruction, below, for running
-the test file.
-
-Run the tests from the exercise directory using the following command:
-
-    ruby complex_numbers_test.rb
-
-To include color from the command line:
-
-    ruby -r minitest/pride complex_numbers_test.rb
-
-
 ## Source
 
-Wikipedia [https://en.wikipedia.org/wiki/Complex_number](https://en.wikipedia.org/wiki/Complex_number)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @m1kal
+
+### Contributed to by
+
+- @cadwallion
+- @iHiD
+- @Insti
+- @jpotts244
+- @kotp
+- @mftaff
+- @tryantwit
+
+### Based on
+
+Wikipedia - https://en.wikipedia.org/wiki/Complex_number

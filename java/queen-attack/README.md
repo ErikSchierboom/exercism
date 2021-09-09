@@ -1,5 +1,10 @@
 # Queen Attack
 
+Welcome to Queen Attack on Exercism's Java Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given the position of two queens on a chess board, indicate whether or not they
 are positioned so that they can attack each other.
 
@@ -26,20 +31,34 @@ You'd also be able to answer whether the queens can attack each other.
 In this case, that answer would be yes, they can, because both pieces
 share a diagonal.
 
-# Running the tests
-
-You can run all the tests for an exercise by entering
-
-```sh
-$ gradle test
-```
-
-in your terminal.
-
 ## Source
 
-J Dalbey's Programming Practice problems [http://users.csc.calpoly.edu/~jdalbey/103/Projects/ProgrammingPractice.html](http://users.csc.calpoly.edu/~jdalbey/103/Projects/ProgrammingPractice.html)
+### Created by
 
-## Submitting Incomplete Solutions
+- @stkent
 
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+### Contributed to by
+
+- @aadityakulkarni
+- @FridaTveit
+- @jmrunkle
+- @jtigger
+- @kytrinyx
+- @lemoncurry
+- @michaelspets
+- @morrme
+- @msomji
+- @muzimuzhi
+- @NewtonCesarRoncari
+- @princerachit
+- @redshirt4
+- @sjwarner-bp
+- @SleeplessByte
+- @Smarticles101
+- @sshine
+- @vivshaw
+- @Zaldrick
+
+### Based on
+
+J Dalbey's Programming Practice problems - http://users.csc.calpoly.edu/~jdalbey/103/Projects/ProgrammingPractice.html

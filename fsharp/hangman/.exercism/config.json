@@ -1,0 +1,24 @@
+{
+  "blurb": "Implement the logic of the hangman game using functional reactive programming.",
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "contributors": [
+    "jrr",
+    "lestephane",
+    "robkeim",
+    "valentin-p",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "Hangman.fs"
+    ],
+    "test": [
+      "HangmanTests.fs"
+    ],
+    "example": [
+      ".meta/Example.fs"
+    ]
+  }
+}

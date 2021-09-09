@@ -1,0 +1,27 @@
+{
+  "blurb": "The classical introductory exercise. Just say \"Hello, World!\"",
+  "authors": [
+    "kytrinyx"
+  ],
+  "contributors": [
+    "benreyn",
+    "nathanielknight",
+    "parkerl",
+    "tgecho",
+    "TrevorBramble",
+    "tuxagon"
+  ],
+  "files": {
+    "solution": [
+      "src/HelloWorld.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
+    "example": [
+      ".meta/src/HelloWorld.example.elm"
+    ]
+  },
+  "source": "This is an exercise to introduce users to using Exercism",
+  "source_url": "http://en.wikipedia.org/wiki/%22Hello,_world!%22_program"
+}

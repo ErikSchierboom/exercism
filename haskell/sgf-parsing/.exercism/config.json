@@ -1,0 +1,28 @@
+{
+  "blurb": "Parsing a Smart Game Format string.",
+  "authors": [],
+  "contributors": [
+    "cmccandless",
+    "elyashiv",
+    "iHiD",
+    "kytrinyx",
+    "lpalma",
+    "navossoc",
+    "petertseng",
+    "ppartarr",
+    "rbasso",
+    "sshine",
+    "tejasbubane"
+  ],
+  "files": {
+    "solution": [
+      "src/Sgf.hs"
+    ],
+    "test": [
+      "test/Tests.hs"
+    ],
+    "example": [
+      "examples/success-standard/src/Sgf.hs"
+    ]
+  }
+}

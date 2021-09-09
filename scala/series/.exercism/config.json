@@ -1,0 +1,24 @@
+{
+  "blurb": "Given a string of digits, output all the contiguous substrings of length `n` in that string.",
+  "authors": [
+    "ricemery"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "ppartarr",
+    "rajeshpg"
+  ],
+  "files": {
+    "solution": [
+      "src/main/scala/Series.scala"
+    ],
+    "test": [
+      "src/test/scala/SeriesTest.scala"
+    ],
+    "example": [
+      ".meta/Example.scala"
+    ]
+  },
+  "source": "A subset of the Problem 8 at Project Euler",
+  "source_url": "http://projecteuler.net/problem=8"
+}

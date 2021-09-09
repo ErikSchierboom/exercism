@@ -1,47 +1,34 @@
-﻿using System.Linq;
+﻿using System;
 
 public class Matrix
 {
-    private readonly int[][] _rows;
-    private readonly int[][] _cols;
-
     public Matrix(string input)
     {
-        _rows = ParseRows(input);
-        _cols = ParseCols(_rows);
     }
 
-    public int Rows => _rows.Length;
-    public int Cols => _cols.Length;
-
-    public int[] Row(int row) => _rows[row];
-    public int[] Column(int col) => _cols[col];
-
-    private static int[][] ParseRows(string input)
+    public int Rows
     {
-        return input.Split('\n')
-            .Select(ParseRow)
-            .ToArray();
+        get
+        {
+            throw new NotImplementedException("You need to implement this function.");
+        }
     }
 
-    private static int[] ParseRow(string row)
+    public int Cols
     {
-        return row.Split(' ')
-            .Select(int.Parse)
-            .ToArray();
+        get
+        {
+            throw new NotImplementedException("You need to implement this function.");
+        }
     }
 
-    private static int[][] ParseCols(int[][] rows)
+    public int[] Row(int row)
     {
-        return Enumerable.Range(0, rows[0].Length)
-            .Select(y => ParseCol(rows, y))
-            .ToArray();
+        throw new NotImplementedException("You need to implement this function.");
     }
 
-    private static int[] ParseCol(int[][] rows, int y)
+    public int[] Column(int col)
     {
-        return Enumerable.Range(0, rows.Length)
-            .Select(x => rows[x][y])
-            .ToArray();
+        throw new NotImplementedException("You need to implement this function.");
     }
 }

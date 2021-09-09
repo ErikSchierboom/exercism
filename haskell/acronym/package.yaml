@@ -1,5 +1,5 @@
 name: acronym
-version: 1.4.0.6
+version: 1.7.0.11
 
 dependencies:
   - base
@@ -7,8 +7,10 @@ dependencies:
 library:
   exposed-modules: Acronym
   source-dirs: src
-  dependencies:
-    - split
+  ghc-options: -Wall
+  # dependencies:
+  # - foo       # List here the packages you
+  # - bar       # want to use in your solution.
 
 tests:
   test:

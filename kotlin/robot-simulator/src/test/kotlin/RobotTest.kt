@@ -5,206 +5,166 @@ import kotlin.test.assertEquals
 class RobotTest {
 
     @Test
-    fun testRobotIsCreatedWithCorrectPositionAndOrientationByDefault() {
-        val robot = Robot()
+    fun `brand new - at origin facing north`() =
+        Robot()
+            .should {
+                face(Orientation.NORTH)
+                beAt(x = 0, y = 0)
+            }
 
-        assertEquals(GridPosition(x = 0, y = 0), robot.gridPosition)
-        assertEquals(Orientation.NORTH, robot.orientation)
-    }
-
-    
     @Test
-    fun testRobotCanBeCreatedWithCustomPositionAndOrientation() {
-        val robot = Robot(GridPosition(x = -1, y = -1), Orientation.SOUTH)
+    fun `brand new - at negative position facing south`() =
+        Robot(GridPosition(x = -1, y = -1), Orientation.SOUTH)
+            .should {
+                face(Orientation.SOUTH)
+                beAt(x = -1, y = -1)
+            }
 
-        assertEquals(GridPosition(x = -1, y = -1), robot.gridPosition)
-        assertEquals(Orientation.SOUTH, robot.orientation)
-    }
-
-    
     @Test
-    fun testTurningRightDoesNotChangePosition() {
-        val initialGridPosition = GridPosition(x = 0, y = 0)
-        val robot = Robot(initialGridPosition, Orientation.NORTH)
+    fun `rotating clockwise - changes north to east`() =
+        Robot(GridPosition(x = 0, y = 0), Orientation.NORTH)
+            .instructed("R")
+            .should {
+                face(Orientation.EAST)
+            }
 
-        robot.turnRight()
-
-        assertEquals(initialGridPosition, robot.gridPosition)
-    }
-
-    
     @Test
-    fun testTurningRightCorrectlyChangesOrientationFromNorthToEast() {
-        val robot = Robot(GridPosition(x = 0, y = 0), Orientation.NORTH)
+    fun `rotating clockwise - changes east to south`() =
+        Robot(GridPosition(x = 0, y = 0), Orientation.EAST)
+            .instructed("R")
+            .should {
+                face(Orientation.SOUTH)
+            }
 
-        robot.turnRight()
-
-        assertEquals(Orientation.EAST, robot.orientation)
-    }
-
-    
     @Test
-    fun testTurningRightCorrectlyChangesOrientationFromEastToSouth() {
-        val robot = Robot(GridPosition(x = 0, y = 0), Orientation.EAST)
+    fun `rotating clockwise - changes south to west`() =
+        Robot(GridPosition(x = 0, y = 0), Orientation.SOUTH)
+            .instructed("R")
+            .should {
+                face(Orientation.WEST)
+            }
 
-        robot.turnRight()
-
-        assertEquals(Orientation.SOUTH, robot.orientation)
-    }
-
-    
     @Test
-    fun testTurningRightCorrectlyChangesOrientationFromSouthToWest() {
-        val robot = Robot(GridPosition(x = 0, y = 0), Orientation.SOUTH)
+    fun `rotating clockwise - changes west to north`() =
+        Robot(GridPosition(x = 0, y = 0), Orientation.WEST)
+            .instructed("R")
+            .should {
+                face(Orientation.NORTH)
+            }
 
-        robot.turnRight()
-
-        assertEquals(Orientation.WEST, robot.orientation)
-    }
-
-    
     @Test
-    fun testTurningRightCorrectlyChangesOrientationFromWestToNorth() {
-        val robot = Robot(GridPosition(x = 0, y = 0), Orientation.WEST)
+    fun `rotating counter-clockwise - changes north to west`() =
+        Robot(GridPosition(x = 0, y = 0), Orientation.NORTH)
+            .instructed("L")
+            .should {
+                face(Orientation.WEST)
+            }
 
-        robot.turnRight()
-
-        assertEquals(Orientation.NORTH, robot.orientation)
-    }
-
-    
     @Test
-    fun testTurningLeftDoesNotChangePosition() {
-        val initialGridPosition = GridPosition(x = 0, y = 0)
-        val robot = Robot(initialGridPosition, Orientation.NORTH)
+    fun `rotating counter-clockwise - changes west to south`() =
+        Robot(GridPosition(x = 0, y = 0), Orientation.WEST)
+            .instructed("L")
+            .should {
+                face(Orientation.SOUTH)
+            }
 
-        robot.turnLeft()
-
-        assertEquals(initialGridPosition, robot.gridPosition)
-    }
-
-    
     @Test
-    fun testTurningLeftCorrectlyChangesOrientationFromNorthToWest() {
-        val robot = Robot(GridPosition(x = 0, y = 0), Orientation.NORTH)
+    fun `rotating counter-clockwise - changes south to east`() =
+        Robot(GridPosition(x = 0, y = 0), Orientation.SOUTH)
+            .instructed("L")
+            .should {
+                face(Orientation.EAST)
+            }
 
-        robot.turnLeft()
-
-        assertEquals(Orientation.WEST, robot.orientation)
-    }
-
-    
     @Test
-    fun testTurningLeftCorrectlyChangesOrientationFromWestToSouth() {
-        val robot = Robot(GridPosition(x = 0, y = 0), Orientation.WEST)
+    fun `rotating counter-clockwise - changes east to north`() =
+        Robot(GridPosition(x = 0, y = 0), Orientation.EAST)
+            .instructed("L")
+            .should {
+                face(Orientation.NORTH)
+            }
 
-        robot.turnLeft()
-
-        assertEquals(Orientation.SOUTH, robot.orientation)
-    }
-
-    
     @Test
-    fun testTurningLeftCorrectlyChangesOrientationFromSouthToEast() {
-        val robot = Robot(GridPosition(x = 0, y = 0), Orientation.SOUTH)
+    fun `moving forward - facing north increments Y`() =
+        Robot(GridPosition(x = 0, y = 0), Orientation.NORTH)
+            .instructed("A")
+            .should {
+                face(Orientation.NORTH)
+                beAt(x = 0, y = 1)
+            }
 
-        robot.turnLeft()
-
-        assertEquals(Orientation.EAST, robot.orientation)
-    }
-
-    
     @Test
-    fun testTurningLeftCorrectlyChangesOrientationFromEastToNorth() {
-        val robot = Robot(GridPosition(x = 0, y = 0), Orientation.EAST)
+    fun `moving forward - facing south decrements Y`() =
+        Robot(GridPosition(x = 0, y = 0), Orientation.SOUTH)
+            .instructed("A")
+            .should {
+                face (Orientation.SOUTH)
+                beAt(x = 0, y = -1)
+            }
 
-        robot.turnLeft()
-
-        assertEquals(Orientation.NORTH, robot.orientation)
-    }
-
-    
     @Test
-    fun testAdvancingDoesNotChangeOrientation() {
-        val initialOrientation = Orientation.NORTH
-        val robot = Robot(GridPosition(x = 0, y = 0), initialOrientation)
+    fun `moving forward - facing east increments X`() =
+        Robot(GridPosition(x = 0, y = 0), Orientation.EAST)
+            .instructed("A")
+            .should {
+                face (Orientation.EAST)
+                beAt(x = 1, y = 0)
+            }
 
-        robot.advance()
-
-        assertEquals(initialOrientation, robot.orientation)
-    }
-
-    
     @Test
-    fun testAdvancingWhenFacingNorthIncreasesYCoordinateByOne() {
-        val robot = Robot(GridPosition(x = 0, y = 0), Orientation.NORTH)
+    fun `moving forward - facing west decrements X`() =
+        Robot(GridPosition(x = 0, y = 0), Orientation.WEST)
+            .instructed("A")
+            .should {
+                face (Orientation.WEST)
+                beAt(x = -1, y = 0)
+            }
 
-        robot.advance()
-
-        assertEquals(GridPosition(x = 0, y = 1), robot.gridPosition)
-    }
-
-    
     @Test
-    fun testAdvancingWhenFacingSouthDecreasesYCoordinateByOne() {
-        val robot = Robot(GridPosition(x = 0, y = 0), Orientation.SOUTH)
+    fun `series of instructions - moving east and north example`() =
+        Robot(GridPosition(x = 7, y = 3), Orientation.NORTH)
+            .instructed("RAALAL")
+            .should {
+                face(Orientation.WEST)
+                beAt(x = 9, y = 4)
+            }
 
-        robot.advance()
-
-        assertEquals(GridPosition(x = 0, y = -1), robot.gridPosition)
-    }
-
-    
     @Test
-    fun testAdvancingWhenFacingEastIncreasesXCoordinateByOne() {
-        val robot = Robot(GridPosition(x = 0, y = 0), Orientation.EAST)
+    fun `series of instructions - moving west and north`() =
+        Robot(GridPosition(x = 0, y = 0), Orientation.NORTH)
+            .instructed("LAAARALA")
+            .should {
+                face(Orientation.WEST)
+                beAt(x = -4, y = 1)
+            }
 
-        robot.advance()
-
-        assertEquals(GridPosition(x = 1, y = 0), robot.gridPosition)
-    }
-
-    
     @Test
-    fun testAdvancingWhenFacingWestDecreasesXCoordinateByOne() {
-        val robot = Robot(GridPosition(x = 0, y = 0), Orientation.WEST)
+    fun `series of instructions - moving west and south`() =
+        Robot(GridPosition(x = 2, y = -7), Orientation.EAST)
+            .instructed("RRAAAAALA")
+            .should {
+                face(Orientation.SOUTH)
+                beAt(x = -3, y = -8)
+            }
 
-        robot.advance()
-
-        assertEquals(GridPosition(x = -1, y = 0), robot.gridPosition)
-    }
-
-    
     @Test
-    fun testInstructionsToMoveWestAndNorth() {
-        val robot = Robot(GridPosition(x = 0, y = 0), Orientation.NORTH)
+    fun `series of instructions - moving east and north`() =
+        Robot(GridPosition(x = 8, y = 4), Orientation.SOUTH)
+            .instructed("LAAARRRALLLL")
+            .should {
+                face(Orientation.NORTH)
+                beAt(x = 11, y = 5)
+            }
+}
 
-        robot.simulate("LAAARALA")
+private fun Robot.instructed(moves: String): Robot {
+    simulate(moves)
+    return this
+}
 
-        assertEquals(GridPosition(x = -4, y = 1), robot.gridPosition)
-        assertEquals(Orientation.WEST, robot.orientation)
-    }
+private fun Robot.should(what: RobotShould.() -> Unit) = what(RobotShould(this))
 
-    
-    @Test
-    fun testInstructionsToMoveWestAndSouth() {
-        val robot = Robot(GridPosition(x = 2, y = -7), Orientation.EAST)
-
-        robot.simulate("RRAAAAALA")
-
-        assertEquals(GridPosition(x = -3, y = -8), robot.gridPosition)
-        assertEquals(Orientation.SOUTH, robot.orientation)
-    }
-
-    
-    @Test
-    fun testInstructionsToMoveEastAndNorth() {
-        val robot = Robot(GridPosition(x = 8, y = 4), Orientation.SOUTH)
-
-        robot.simulate("LAAARRRALLLL")
-
-        assertEquals(GridPosition(x = 11, y = 5), robot.gridPosition)
-        assertEquals(Orientation.NORTH, robot.orientation)
-    }
-
+private class RobotShould(private val robot: Robot) {
+    fun face(expected: Orientation) = assertEquals(expected, robot.orientation)
+    fun beAt(x: Int, y: Int) = assertEquals(GridPosition(x = x, y = y), robot.gridPosition)
 }

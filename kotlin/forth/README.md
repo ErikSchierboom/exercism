@@ -1,5 +1,10 @@
 # Forth
 
+Welcome to Forth on Exercism's Kotlin Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Implement an evaluator for a very simple subset of Forth.
 
 [Forth](https://en.wikipedia.org/wiki/Forth_%28programming_language%29)
@@ -25,8 +30,19 @@ enough.)
 
 Words are case-insensitive.
 
+## Source
 
+### Created by
 
+- @stkent
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+### Contributed to by
+
+- @eparovyshnaya
+- @lathspell
+- @lihofm
+- @luoken
+- @mdowds
+- @mikegehard
+- @sjwarner-bp
+- @uzilan

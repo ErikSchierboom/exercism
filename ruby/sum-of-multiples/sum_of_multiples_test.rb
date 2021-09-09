@@ -4,6 +4,7 @@ require_relative 'sum_of_multiples'
 # Common test data version: 1.4.1 8f89751
 class SumOfMultiplesTest < Minitest::Test
   def test_no_multiples_within_limit
+    # skip
     sum_of_multiples = SumOfMultiples.new(3, 5)
     assert_equal 0, sum_of_multiples.to(1)
   end
@@ -58,22 +59,22 @@ class SumOfMultiplesTest < Minitest::Test
     assert_equal 2_203_160, sum_of_multiples.to(10_000)
   end
 
-  def test_all_numbers_are_multiples_of_1
+  def test_all_numbers_are_multiples_of_1 # rubocop:disable Naming/VariableNumber
     sum_of_multiples = SumOfMultiples.new(1)
     assert_equal 4_950, sum_of_multiples.to(100)
   end
 
   def test_no_factors_means_an_empty_sum
-    sum_of_multiples = SumOfMultiples.new()
+    sum_of_multiples = SumOfMultiples.new
     assert_equal 0, sum_of_multiples.to(10_000)
   end
 
-  def test_the_only_multiple_of_0_is_0
+  def test_the_only_multiple_of_0_is_0 # rubocop:disable Naming/VariableNumber
     sum_of_multiples = SumOfMultiples.new(0)
     assert_equal 0, sum_of_multiples.to(1)
   end
 
-  def test_solutions_using_include_exclude_must_extend_to_cardinality_greater_than_3
+  def test_solutions_using_include_exclude_must_extend_to_cardinality_greater_than_3 # rubocop:disable Naming/VariableNumber
     sum_of_multiples = SumOfMultiples.new(2, 3, 5, 7, 11)
     assert_equal 39_614_537, sum_of_multiples.to(10_000)
   end

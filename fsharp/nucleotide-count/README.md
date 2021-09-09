@@ -1,33 +1,45 @@
 # Nucleotide Count
 
-Given a DNA string, compute how many times each nucleotide occurs in the string.
+Welcome to Nucleotide Count on Exercism's F# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
 
-DNA is represented by an alphabet of the following symbols: 'A', 'C',
-'G', and 'T'.
+## Instructions
 
-Each symbol represents a nucleotide, which is a fancy name for the
-particular molecules that happen to make up a large part of DNA.
+Each of us inherits from our biological parents a set of chemical instructions known as DNA that influence how our bodies are constructed. All known life depends on DNA!
 
-Shortest intro to biochemistry EVAR:
+> Note: You do not need to understand anything about nucleotides or DNA to complete this exercise.
 
-- twigs are to birds nests as
-- nucleotides are to DNA and RNA as
-- amino acids are to proteins as
-- sugar is to starch as
-- oh crap lipids
+DNA is a long chain of other chemicals and the most important are the four nucleotides, adenine, cytosine, guanine and thymine. A single DNA chain can contain billions of these four nucleotides and the order in which they occur is important!
+We call the order of these nucleotides in a bit of DNA a "DNA sequence".
 
-I'm not going to talk about lipids because they're crazy complex.
+We represent a DNA sequence as an ordered collection of these four nucleotides and a common way to do that is with a string of characters such as "ATTACG" for a DNA sequence of 6 nucleotides.
+'A' for adenine, 'C' for cytosine, 'G' for guanine, and 'T' for thymine.
 
-So back to nucleotides.
+Given a string representing a DNA sequence, count how many of each nucleotide is present.
+If the string contains characters that aren't A, C, G, or T then it is invalid and you should signal an error.
 
-DNA contains four types of them: adenine (`A`), cytosine (`C`), guanine
-(`G`), and thymine (`T`).
+For example:
 
-RNA contains a slightly different set of nucleotides, but we don't care
-about that for now.
+```
+"GATTACA" -> 'A': 3, 'C': 1, 'G': 1, 'T': 2
+"INVALID" -> error
+```
+
 ## Source
 
-The Calculating DNA Nucleotides_problem at Rosalind [http://rosalind.info/problems/dna/](http://rosalind.info/problems/dna/)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @ErikSchierboom
+
+### Contributed to by
+
+- @jrr
+- @lestephane
+- @ricemery
+- @robkeim
+- @valentin-p
+- @wolf99
+
+### Based on
+
+The Calculating DNA Nucleotides_problem at Rosalind - http://rosalind.info/problems/dna/

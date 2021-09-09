@@ -1,5 +1,10 @@
 # Triangle
 
+Welcome to Triangle on Exercism's Elm Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Determine if a triangle is equilateral, isosceles, or scalene.
 
 An _equilateral_ triangle has all three sides the same length.
@@ -22,38 +27,21 @@ The case where the sum of the lengths of two sides _equals_ that of the
 third is known as a _degenerate_ triangle - it has zero area and looks like
 a single line. Feel free to add your own code/tests to check for degenerate triangles.
 
-## Elm Installation
-
-Refer to the [Exercism help page](http://exercism.io/languages/elm) for Elm
-installation and learning resources.
-
-## Writing the Code
-
-The first time you start an exercise, you'll need to ensure you have the
-appropriate dependencies installed.
-
-```bash
-$ elm-package install --yes
-```
-
-Execute the tests with:
-
-```bash
-$ elm-test
-```
-
-Automatically run tests again when you save changes:
-
-```bash
-$ elm-test --watch
-```
-
-As you work your way through the test suite, be sure to remove the `skip <|`
-calls from each test until you get them all passing!
-
 ## Source
 
-The Ruby Koans triangle project, parts 1 & 2 [http://rubykoans.com](http://rubykoans.com)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @tgecho
+
+### Contributed to by
+
+- @Emiluren
+- @lpil
+- @nathanielknight
+- @parkerl
+- @tuxagon
+- @ulve
+
+### Based on
+
+The Ruby Koans triangle project, parts 1 & 2 - http://rubykoans.com

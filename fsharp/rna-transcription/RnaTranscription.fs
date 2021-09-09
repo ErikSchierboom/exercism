@@ -1,6 +1,6 @@
-module RNATranscription
+module RnaTranscription
 
-let dnaToRna = 
+let private dnaToRna = 
     function
     | 'G' -> 'C'
     | 'C' -> 'G'

@@ -5,11 +5,11 @@ using System.Text.RegularExpressions;
 public static class Acronym
 {
     public static string Abbreviate(string phrase) =>
-        new string(Words(phrase).Select(AbbreviateWord).ToArray());
+        new(phrase.Words().Select(FirstLetter).ToArray());
 
-    private static IEnumerable<string> Words(string phrase) =>
+    private static IEnumerable<string> Words(this string phrase) =>
         Regex.Split(phrase, @"[^\w]+");
 
-    private static char AbbreviateWord(string word) =>
+    private static char FirstLetter(string word) =>
         char.ToUpper(word[0]);
 }

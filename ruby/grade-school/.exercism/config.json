@@ -1,0 +1,34 @@
+{
+  "blurb": "Given students' names along with the grade that they are in, create a roster for the school",
+  "authors": [
+    "kytrinyx"
+  ],
+  "contributors": [
+    "alxndr",
+    "budmc29",
+    "cadwallion",
+    "dkinzer",
+    "henrik",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "JikkuJose",
+    "kotp",
+    "markijbema",
+    "notapatch",
+    "tryantwit"
+  ],
+  "files": {
+    "solution": [
+      "grade_school.rb"
+    ],
+    "test": [
+      "grade_school_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/grade_school.rb"
+    ]
+  },
+  "source": "A pairing session with Phil Battos at gSchool",
+  "source_url": "http://gschool.it"
+}

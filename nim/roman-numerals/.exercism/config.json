@@ -1,0 +1,22 @@
+{
+  "blurb": "Write a function to convert from normal numbers to Roman Numerals.",
+  "authors": [
+    "amscotti"
+  ],
+  "contributors": [
+    "ee7"
+  ],
+  "files": {
+    "solution": [
+      "roman_numerals.nim"
+    ],
+    "test": [
+      "test_roman_numerals.nim"
+    ],
+    "example": [
+      ".meta/example.nim"
+    ]
+  },
+  "source": "The Roman Numeral Kata",
+  "source_url": "http://codingdojo.org/cgi-bin/index.pl?KataRomanNumerals"
+}

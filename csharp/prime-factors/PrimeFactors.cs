@@ -1,21 +1,24 @@
-﻿using System.Collections.Generic;
-
-public static class PrimeFactors
+﻿namespace Exercism
 {
-    public static IEnumerable<int> Factors(long number)
+    using System.Collections.Generic;
+
+    public static class PrimeFactors
     {
-        var factor = 2;
-
-        while (number > 1)
+        public static IEnumerable<long> For(long number)
         {
-            while (number % factor != 0)
+            var factor = 2;
+
+            while (number > 1)
             {
-                factor += factor == 2 ? 1 : 2;
+                while (number % factor != 0)
+                {
+                    factor += factor == 2 ? 1 : 2;
+                }
+
+                number /= factor;
+
+                yield return factor;
             }
-
-            number /= factor;
-
-            yield return factor;
         }
     }
 }

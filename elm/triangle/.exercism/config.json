@@ -1,0 +1,27 @@
+{
+  "blurb": "Determine if a triangle is equilateral, isosceles, or scalene.",
+  "authors": [
+    "tgecho"
+  ],
+  "contributors": [
+    "Emiluren",
+    "lpil",
+    "nathanielknight",
+    "parkerl",
+    "tuxagon",
+    "ulve"
+  ],
+  "files": {
+    "solution": [
+      "src/Triangle.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
+    "example": [
+      ".meta/src/Triangle.example.elm"
+    ]
+  },
+  "source": "The Ruby Koans triangle project, parts 1 & 2",
+  "source_url": "http://rubykoans.com"
+}

@@ -1,0 +1,26 @@
+{
+  "blurb": "Implement run-length encoding and decoding.",
+  "authors": [
+    "tgecho"
+  ],
+  "contributors": [
+    "mrattner",
+    "nathanielknight",
+    "parkerl",
+    "tuxagon",
+    "ulve"
+  ],
+  "files": {
+    "solution": [
+      "src/RunLengthEncoding.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
+    "example": [
+      ".meta/src/RunLengthEncoding.example.elm"
+    ]
+  },
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Run-length_encoding"
+}

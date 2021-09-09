@@ -1,21 +1,17 @@
-class Markdown {
-  
+
     String parse(String markdown) {
-
         String[] lines = markdown.split("\n");
-
         String result = "";
-
         boolean activeList = false;
 
         for (int i = 0; i < lines.length; i++) {
 
             String theLine = parseHeader(lines[i]);
-          
+
             if (theLine == null) {
               theLine = parseListItem(lines[i]);
             }
-    
+
             if (theLine == null) 
             {
                 theLine = parseParagraph(lines[i]);
@@ -26,7 +22,7 @@ class Markdown {
               result = result + "<ul>";
                 result = result + theLine;
             } 
-            
+
             else if (!theLine.matches("(<li>).*") && activeList) {
                 activeList = false;
                 result = result + "</ul>";
@@ -80,4 +76,4 @@ class Markdown {
         update = "<em>$1</em>";
         return workingOn.replaceAll(lookingFor, update);
     }
-}
+} 

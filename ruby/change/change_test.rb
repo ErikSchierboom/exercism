@@ -4,6 +4,7 @@ require_relative 'change'
 # Common test data version: 1.3.0 258c807
 class ChangeTest < Minitest::Test
   def test_single_coin_change
+    # skip
     assert_equal [25], Change.generate([1, 5, 10, 25, 100], 25)
   end
 
@@ -16,12 +17,12 @@ class ChangeTest < Minitest::Test
   end
 
   def test_change_with_lower_elbonia_coins
-    # skip
     assert_equal [21, 21, 21], Change.generate([1, 5, 10, 21, 25], 63)
   end
 
   def test_large_target_values
-    assert_equal [2, 2, 5, 20, 20, 50, 100, 100, 100, 100, 100, 100, 100, 100, 100], Change.generate([1, 2, 5, 10, 20, 50, 100], 999)
+    assert_equal [2, 2, 5, 20, 20, 50, 100, 100, 100, 100, 100, 100, 100, 100, 100],
+      Change.generate([1, 2, 5, 10, 20, 50, 100], 999)
   end
 
   def test_possible_change_without_unit_coins_available

@@ -1,0 +1,26 @@
+{
+  "blurb": "Given a number n, determine what the nth prime is.",
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "contributors": [
+    "bressain",
+    "j2jensen",
+    "jmbradnan",
+    "robkeim",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "NthPrime.cs"
+    ],
+    "test": [
+      "NthPrimeTests.cs"
+    ],
+    "example": [
+      ".meta/Example.cs"
+    ]
+  },
+  "source": "A variation on Problem 7 at Project Euler",
+  "source_url": "http://projecteuler.net/problem=7"
+}

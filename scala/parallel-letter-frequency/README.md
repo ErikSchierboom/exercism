@@ -1,5 +1,10 @@
 # Parallel Letter Frequency
 
+Welcome to Parallel Letter Frequency on Exercism's Scala Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Count the frequency of letters in texts using parallel computation.
 
 Parallelism is about doing things in parallel that can also be done
@@ -7,7 +12,6 @@ sequentially. A common example is counting the frequency of letters.
 Create a function that returns the total frequency of each letter in a
 list of texts and that employs parallelism.
 
-## Hints
 According to [this terminology](http://chimera.labs.oreilly.com/books/1230000000929/ch01.html#sec_terminology) you should write a *parallel* and *deterministic*
 program and (by all means!) let Scala deal with the *concurrency* aspect.
 Or else your code could quickly get messy and error-prone with all kinds of nasty
@@ -34,16 +38,15 @@ Make sure that you
 parallel and asynchronous programming in Scala. So it is essential for mastering
 the language and it should become part of your Scala armory.
 
+## Source
 
-The Scala exercises assume an SBT project scheme. The exercise solution source
-should be placed within the exercise directory/src/main/scala. The exercise
-unit tests can be found within the exercise directory/src/test/scala.
+### Created by
 
-To run the tests simply run the command `sbt test` in the exercise directory.
+- @ricemery
 
-For more detailed info about the Scala track see the [help
-page](http://exercism.io/languages/scala).
+### Contributed to by
 
-
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @abo64
+- @ErikSchierboom
+- @ppartarr
+- @rajeshpg

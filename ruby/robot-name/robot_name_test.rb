@@ -2,7 +2,7 @@ require 'minitest/autorun'
 require_relative 'robot_name'
 
 class RobotTest < Minitest::Test
-  NAME_REGEXP = /^[A-Z]{2}\d{3}$/
+  NAME_REGEXP = /^[A-Z]{2}\d{3}$/.freeze
 
   def setup
     Robot.forget
@@ -55,12 +55,12 @@ class RobotTest < Minitest::Test
   def test_different_name_when_chosen_name_is_taken
     same_seed = 1234
     Kernel.srand same_seed
-    robot_1 = Robot.new
-    name_1  = robot_1.name
+    robot1 = Robot.new
+    name1  = robot1.name
     Kernel.srand same_seed
-    robot_2 = Robot.new
-    name_2 = robot_2.name
-    refute_equal name_1, name_2
+    robot2 = Robot.new
+    name2 = robot2.name
+    refute_equal name1, name2
   end
 
   def test_generate_all_robots

@@ -1,0 +1,23 @@
+{
+  "blurb": "Given a phrase, count the occurrences of each word in that phrase.",
+  "authors": [
+    "sjakobi"
+  ],
+  "contributors": [
+    "amscotti",
+    "cmc333333",
+    "ee7"
+  ],
+  "files": {
+    "solution": [
+      "word_count.nim"
+    ],
+    "test": [
+      "test_word_count.nim"
+    ],
+    "example": [
+      ".meta/example.nim"
+    ]
+  },
+  "source": "This is a classic toy problem, but we were reminded of it by seeing it in the Go Tour."
+}

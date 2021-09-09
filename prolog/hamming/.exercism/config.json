@@ -1,0 +1,22 @@
+{
+  "blurb": "Calculate the Hamming difference between two DNA strands.",
+  "authors": [
+    "qjd2413"
+  ],
+  "contributors": [
+    "parkerl"
+  ],
+  "files": {
+    "solution": [
+      "hamming.pl"
+    ],
+    "test": [
+      "hamming_tests.plt"
+    ],
+    "example": [
+      ".meta/hamming.example"
+    ]
+  },
+  "source": "The Calculating Point Mutations problem at Rosalind",
+  "source_url": "http://rosalind.info/problems/hamm/"
+}

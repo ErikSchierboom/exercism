@@ -1,0 +1,24 @@
+{
+  "blurb": "Create a custom set type.",
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "contributors": [
+    "jrr",
+    "lestephane",
+    "robkeim",
+    "valentin-p",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "CustomSet.fs"
+    ],
+    "test": [
+      "CustomSetTests.fs"
+    ],
+    "example": [
+      ".meta/Example.fs"
+    ]
+  }
+}

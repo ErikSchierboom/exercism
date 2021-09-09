@@ -1,8 +1,13 @@
 # Diffie Hellman
 
+Welcome to Diffie Hellman on Exercism's JavaScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Diffie-Hellman key exchange.
 
-Alice and Bob use Diffie-Hellman key exchange to share secrets.  They
+Alice and Bob use Diffie-Hellman key exchange to share secrets. They
 start with prime numbers, pick private keys, generate and share public
 keys, and then generate a shared secret key.
 
@@ -12,7 +17,7 @@ The test program supplies prime numbers p and g.
 
 ## Step 1
 
-Alice picks a private key, a, greater than 1 and less than p.  Bob does
+Alice picks a private key, a, greater than 1 and less than p. Bob does
 the same to pick a private key b.
 
 ## Step 2
@@ -26,7 +31,7 @@ private key b.
 
 ## Step 3
 
-Alice and Bob exchange public keys.  Alice calculates secret key s.
+Alice and Bob exchange public keys. Alice calculates secret key s.
 
     s = B**a mod p
 
@@ -34,41 +39,23 @@ Bob calculates
 
     s = A**b mod p
 
-The calculations produce the same result!  Alice and Bob now share
+The calculations produce the same result! Alice and Bob now share
 secret s.
-
-## Setup
-
-Go through the setup instructions for ECMAScript to
-install the necessary dependencies:
-
-http://exercism.io/languages/ecmascript
-
-## Requirements
-
-Install assignment dependencies:
-
-```bash
-$ npm install
-```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ npm test
-```
-
-In the test suites all tests but the first have been skipped.
-
-Once you get a test passing, you can enable the next one by
-changing `xtest` to `test`.
-
 
 ## Source
 
-Wikipedia, 1024 bit key from www.cryptopp.com/wiki. [http://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange](http://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @matthewmorgan
+
+### Contributed to by
+
+- @ankorGH
+- @rchavarria
+- @serixscorpio
+- @SleeplessByte
+- @tejasbubane
+
+### Based on
+
+Wikipedia, 1024 bit key from www.cryptopp.com/wiki. - http://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange

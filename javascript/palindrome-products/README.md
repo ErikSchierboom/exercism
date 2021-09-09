@@ -1,12 +1,17 @@
 # Palindrome Products
 
+Welcome to Palindrome Products on Exercism's JavaScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Detect palindrome products in a given range.
 
 A palindromic number is a number that remains the same when its digits are
 reversed. For example, `121` is a palindromic number but `112` is not.
 
 Given a range of numbers, find the largest and smallest palindromes which
-are products of numbers within that range.
+are products of two numbers within that range.
 
 Your solution should return the largest and smallest palindromes, along with the
 factors of each within the range. If the largest or smallest palindrome has more
@@ -32,38 +37,23 @@ Given the range `[10, 99]` (both inclusive)...
 The smallest palindrome product is `121`. Its factors are `(11, 11)`.
 The largest palindrome product is `9009`. Its factors are `(91, 99)`.
 
-## Setup
-
-Go through the setup instructions for ECMAScript to
-install the necessary dependencies:
-
-http://exercism.io/languages/ecmascript
-
-## Requirements
-
-Install assignment dependencies:
-
-```bash
-$ npm install
-```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ npm test
-```
-
-In the test suites all tests but the first have been skipped.
-
-Once you get a test passing, you can enable the next one by
-changing `xtest` to `test`.
-
-
 ## Source
 
-Problem 4 at Project Euler [http://projecteuler.net/problem=4](http://projecteuler.net/problem=4)
+### Contributed to by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @ankorGH
+- @cmccandless
+- @draalger
+- @ErikSchierboom
+- @javaeeeee
+- @kytrinyx
+- @matthewmorgan
+- @rchavarria
+- @ryanplusplus
+- @SleeplessByte
+- @smb26
+- @xarxziux
+
+### Based on
+
+Problem 4 at Project Euler - http://projecteuler.net/problem=4

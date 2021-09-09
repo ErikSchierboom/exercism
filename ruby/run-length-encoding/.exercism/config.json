@@ -1,0 +1,30 @@
+{
+  "blurb": "Implement run-length encoding and decoding.",
+  "authors": [
+    "Cohen-Carlisle"
+  ],
+  "contributors": [
+    "budmc29",
+    "cadwallion",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "jpotts244",
+    "kotp",
+    "kytrinyx",
+    "tryantwit"
+  ],
+  "files": {
+    "solution": [
+      "run_length_encoding.rb"
+    ],
+    "test": [
+      "run_length_encoding_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/run_length_encoding.rb"
+    ]
+  },
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Run-length_encoding"
+}

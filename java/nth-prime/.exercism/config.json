@@ -1,0 +1,43 @@
+{
+  "blurb": "Given a number n, determine what the nth prime is.",
+  "authors": [
+    "counterleft"
+  ],
+  "contributors": [
+    "aadityakulkarni",
+    "ajayboseac",
+    "bmkiefer",
+    "FridaTveit",
+    "jackattack24",
+    "javaeeeee",
+    "jmrunkle",
+    "jtigger",
+    "Kyle-Pu",
+    "kytrinyx",
+    "lemoncurry",
+    "matthewmorgan",
+    "morrme",
+    "msomji",
+    "muzimuzhi",
+    "odzeno",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine",
+    "stkent",
+    "Zaldrick"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/PrimeCalculator.java"
+    ],
+    "test": [
+      "src/test/java/PrimeCalculatorTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/PrimeCalculator.java"
+    ]
+  },
+  "source": "A variation on Problem 7 at Project Euler",
+  "source_url": "http://projecteuler.net/problem=7"
+}

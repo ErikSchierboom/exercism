@@ -1,0 +1,28 @@
+{
+  "blurb": "Simulate a bank account supporting opening/closing, withdraws, and deposits of money. Watch out for concurrent transactions!",
+  "authors": [
+    "geofflane"
+  ],
+  "contributors": [
+    "alexkalderimis",
+    "AndreaCrotti",
+    "canweriotnow",
+    "dkinzer",
+    "haus",
+    "kytrinyx",
+    "mathias",
+    "rubysolo",
+    "yurrriq"
+  ],
+  "files": {
+    "solution": [
+      "src/bank_account.clj"
+    ],
+    "test": [
+      "test/bank_account_test.clj"
+    ],
+    "example": [
+      ".meta/src/example.clj"
+    ]
+  }
+}

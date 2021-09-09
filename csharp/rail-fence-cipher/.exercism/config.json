@@ -1,0 +1,24 @@
+{
+  "blurb": "Implement encoding and decoding for the rail fence cipher.",
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "contributors": [
+    "j2jensen",
+    "robkeim",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "RailFenceCipher.cs"
+    ],
+    "test": [
+      "RailFenceCipherTests.cs"
+    ],
+    "example": [
+      ".meta/Example.cs"
+    ]
+  },
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Transposition_cipher#Rail_Fence_cipher"
+}

@@ -1,5 +1,10 @@
 # Sublist
 
+Welcome to Sublist on Exercism's C# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given two lists determine if the first list is contained within the second
 list, if the second list is contained within the first list, if both lists are
 contained within each other or if none of these are true.
@@ -17,11 +22,18 @@ Examples:
  * A = [1, 2, 3, 4, 5], B = [2, 3, 4], A is a superlist of B
  * A = [1, 2, 4], B = [1, 2, 3, 4, 5], A is not a superlist of, sublist of or equal to B
 
-## Hints
 To be able to compare data, the IComparable interface is used.
-For more information, see [this page](https://msdn.microsoft.com/en-us/library/system.icomparable(v=vs.110).aspx).
+For more information, see [this page](https://docs.microsoft.com/en-us/dotnet/api/system.icomparable?view=net-5.0).
 
+## Source
 
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @ErikSchierboom
+
+### Contributed to by
+
+- @j2jensen
+- @robkeim
+- @ShamilS
+- @wolf99

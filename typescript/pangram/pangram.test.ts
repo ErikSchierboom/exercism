@@ -1,48 +1,47 @@
-import Pangram from './pangram'
+import { isPangram } from './pangram'
 
 describe('Pangram()', () => {
-  it('empty sentence', () => {
-    const pangram = new Pangram('')
-    expect(pangram.isPangram()).toBe(false)
+  test('empty sentence', () => {
+    expect(isPangram('')).toBe(false)
   })
 
-  it('pangram with only lower case', () => {
-    const pangram = new Pangram("the quick brown fox jumps over the lazy dog")
-    expect(pangram.isPangram()).toBe(true)
+  xtest('perfect lower case', () => {
+    expect(isPangram('abcdefghijklmnopqrstuvwxyz')).toBe(true)
   })
 
-  it("missing character 'x'", () => {
-    const pangram = new Pangram("a quick movement of the enemy will jeopardize five gunboats")
-    expect(pangram.isPangram()).toBe(false)
+  xtest('only lower case', () => {
+    expect(isPangram('the quick brown fox jumps over the lazy dog')).toBe(true)
   })
 
-  it("another missing character 'x'", () => {
-    const pangram = new Pangram("the quick brown fish jumps over the lazy dog")
-    expect(pangram.isPangram()).toBe(false)
+  xtest("missing the letter 'x'", () => {
+    expect(
+      isPangram('a quick movement of the enemy will jeopardize five gunboats')
+    ).toBe(false)
   })
 
-  it("pangram with underscores", () => {
-    const pangram = new Pangram("the_quick_brown_fox_jumps_over_the_lazy_dog")
-    expect(pangram.isPangram()).toBe(true)
+  xtest("missing the letter 'h'", () => {
+    expect(isPangram('five boxing wizards jump quickly at it')).toBe(false)
   })
 
-  it("pangram with numbers", () => {
-    const pangram = new Pangram("the 1 quick brown fox jumps over the 2 lazy dogs")
-    expect(pangram.isPangram()).toBe(true)
+  xtest('with underscores', () => {
+    expect(isPangram('the_quick_brown_fox_jumps_over_the_lazy_dog')).toBe(true)
   })
 
-  it('missing letters replaced by numbers', () => {
-    const pangram = new Pangram("7h3 qu1ck brown fox jumps ov3r 7h3 lazy dog")
-    expect(pangram.isPangram()).toBe(false)
+  xtest('with numbers', () => {
+    expect(isPangram('the 1 quick brown fox jumps over the 2 lazy dogs')).toBe(
+      true
+    )
   })
 
-  it('pangram with mixed case and punctuation', () => {
-    const pangram = new Pangram("\"Five quacking Zephyrs jolt my wax bed.\"")
-    expect(pangram.isPangram()).toBe(true)
+  xtest('missing letters replaced by numbers', () => {
+    expect(isPangram('7h3 qu1ck brown fox jumps ov3r 7h3 lazy dog')).toBe(false)
   })
 
-  it('pangram with non-ascii characters', () => {
-    const pangram = new Pangram("Victor jagt zwölf Boxkämpfer quer über den großen Sylter Deich.")
-    expect(pangram.isPangram()).toBe(true)
+  xtest('mixed case and punctuation', () => {
+    expect(isPangram('"Five quacking Zephyrs jolt my wax bed."')).toBe(true)
+  })
+
+  xtest('case insensitive', () => {
+    expect(isPangram('the quick brown fox jumps over with lazy FX')).toBe(false)
   })
 })

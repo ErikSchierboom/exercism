@@ -1,27 +1,52 @@
-import Acronyms from './acronym';
+import { parse } from './acronym';
 
 describe('Acronyms are produced from', () => {
+  // basic
   test('title cased phrases', () => {
-    expect(Acronyms.parse('Portable Network Graphics')).toEqual('PNG');
+    expect(parse('Portable Network Graphics')).toEqual('PNG');
   });
 
-  test('other title cased phrases', () => {
-    expect(Acronyms.parse('Ruby on Rails')).toEqual('ROR');
+  // lowercase words
+  xtest('other title cased phrases', () => {
+    expect(parse('Ruby on Rails')).toEqual('ROR');
   });
 
-  test('inconsistently cased phrases', () => {
-    expect(Acronyms.parse('HyperText Markup Language')).toEqual('HTML');
+  // punctuation
+  xtest('phrases with punctuation', () => {
+    expect(parse('First In, First Out')).toEqual('FIFO');
   });
 
-  test('phrases with punctuation', () => {
-    expect(Acronyms.parse('First In, First Out')).toEqual('FIFO');
+  // all caps word
+  xtest('phrases with all uppercase words', () => {
+    expect(parse('GNU Image Manipulation Program')).toEqual('GIMP');
   });
 
-  test('other phrases with punctuation', () => {
-    expect(Acronyms.parse('PHP: Hypertext Preprocessor')).toEqual('PHP');
+  // punctuation without whitespace
+  xtest('phrases with punctuation without whitespace', () => {
+    expect(parse('Complementary metal-oxide semiconductor')).toEqual('CMOS');
   });
 
-  test('phrases with punctuation and sentence casing', () => {
-    expect(Acronyms.parse('Complementary metal-oxide semiconductor')).toEqual('CMOS');
+  // very long abbreviation
+  xtest('long phrases', () => {
+    expect(
+      parse(
+        'Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me'
+      )
+    ).toEqual('ROTFLSHTMDCOALM');
+  });
+
+  // consecutive delimiters
+  xtest('phrases with consecutive delimiters', () => {
+    expect(parse('Something - I made up from thin air')).toEqual('SIMUFTA');
+  });
+
+  // apostrophes
+  xtest('phrases with apostrophes', () => {
+    expect(parse("Halley's Comet")).toEqual('HC');
+  });
+
+  // underscore emphasis
+  xtest('phrases with underscore emphasis', () => {
+    expect(parse('The Road _Not_ Taken')).toEqual('TRNT');
   });
 });

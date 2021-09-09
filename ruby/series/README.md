@@ -1,5 +1,10 @@
 # Series
 
+Welcome to Series on Exercism's Ruby Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given a string of digits, output all the contiguous substrings of length `n` in
 that string in the order that they appear.
 
@@ -20,32 +25,30 @@ whatever you get.
 Note that these series are only required to occupy *adjacent positions*
 in the input; the digits need not be *numerically consecutive*.
 
-* * * *
+In this exercise you're practicing iterating over an array, meaning: executing an operation on each element of an array. Ruby has many useful built-in methods for iterations. Take a look at [this article](http://jeromedalbert.com/ruby-how-to-iterate-the-right-way/).
 
-For installation and learning resources, refer to the
-[Ruby resources page](http://exercism.io/languages/ruby/resources).
-
-For running the tests provided, you will need the Minitest gem. Open a
-terminal window and run the following command to install minitest:
-
-    gem install minitest
-
-If you would like color output, you can `require 'minitest/pride'` in
-the test file, or note the alternative instruction, below, for running
-the test file.
-
-Run the tests from the exercise directory using the following command:
-
-    ruby series_test.rb
-
-To include color from the command line:
-
-    ruby -r minitest/pride series_test.rb
-
+Most of the methods listed in the article are not methods specifically for Array, but come from [Enumerable](https://ruby-doc.org/core/Enumerable.html). The article doesn't list iterating over _consecutive elements_. The first challenge is to find a method that does.
 
 ## Source
 
-A subset of the Problem 8 at Project Euler [http://projecteuler.net/problem=8](http://projecteuler.net/problem=8)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @kytrinyx
+
+### Contributed to by
+
+- @budmc29
+- @emcoding
+- @hilary
+- @iHiD
+- @Insti
+- @jeporcher
+- @kotp
+- @mikegehard
+- @pgaspar
+- @stevensonmt
+- @tryantwit
+
+### Based on
+
+A subset of the Problem 8 at Project Euler - http://projecteuler.net/problem=8

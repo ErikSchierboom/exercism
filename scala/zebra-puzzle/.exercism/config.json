@@ -1,0 +1,25 @@
+{
+  "blurb": "Solve the zebra puzzle.",
+  "authors": [
+    "abo64"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "ppartarr",
+    "rajeshpg",
+    "ricemery"
+  ],
+  "files": {
+    "solution": [
+      "src/main/scala/ZebraPuzzle.scala"
+    ],
+    "test": [
+      "src/test/scala/ZebraPuzzleTest.scala"
+    ],
+    "example": [
+      ".meta/Example.scala"
+    ]
+  },
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Zebra_Puzzle"
+}

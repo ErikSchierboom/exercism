@@ -1,5 +1,10 @@
 # Largest Series Product
 
+Welcome to Largest Series Product on Exercism's Elm Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given a string of digits, calculate the largest product for a contiguous
 substring of digits of length n.
 
@@ -13,38 +18,17 @@ in the input; the digits need not be *numerically consecutive*.
 For the input `'73167176531330624919225119674426574742355349194934'`,
 the largest product for a series of 6 digits is 23520.
 
-## Elm Installation
-
-Refer to the [Exercism help page](http://exercism.io/languages/elm) for Elm
-installation and learning resources.
-
-## Writing the Code
-
-The first time you start an exercise, you'll need to ensure you have the
-appropriate dependencies installed.
-
-```bash
-$ elm-package install --yes
-```
-
-Execute the tests with:
-
-```bash
-$ elm-test
-```
-
-Automatically run tests again when you save changes:
-
-```bash
-$ elm-test --watch
-```
-
-As you work your way through the test suite, be sure to remove the `skip <|`
-calls from each test until you get them all passing!
-
 ## Source
 
-A variation on Problem 8 at Project Euler [http://projecteuler.net/problem=8](http://projecteuler.net/problem=8)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @tgecho
+
+### Contributed to by
+
+- @nathanielknight
+- @tuxagon
+
+### Based on
+
+A variation on Problem 8 at Project Euler - http://projecteuler.net/problem=8

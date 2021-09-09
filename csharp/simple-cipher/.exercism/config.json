@@ -1,0 +1,28 @@
+{
+  "blurb": "Implement a simple shift cipher like Caesar and a more secure substitution cipher",
+  "authors": [
+    "bressain"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "j2jensen",
+    "jwood803",
+    "robkeim",
+    "sjwarner",
+    "wolf99",
+    "Zureka"
+  ],
+  "files": {
+    "solution": [
+      "SimpleCipher.cs"
+    ],
+    "test": [
+      "SimpleCipherTests.cs"
+    ],
+    "example": [
+      ".meta/Example.cs"
+    ]
+  },
+  "source": "Substitution Cipher at Wikipedia",
+  "source_url": "http://en.wikipedia.org/wiki/Substitution_cipher"
+}

@@ -1,3 +1,5 @@
+# Tutorial
+
 NOTE: You can also view the HTML version of this file here:
 https://github.com/exercism/kotlin/blob/master/exercises/hello-world/TUTORIAL.md
 
@@ -26,7 +28,7 @@ so now.  For help with this, see: http://exercism.io/languages/kotlin/installati
 This guide picks-up where [Running the Tests (in Kotlin)](http://exercism.io/languages/kotlin/tests)
 left off.  If you haven't reviewed those instructions, do so now.
 
-The following instructions work equally well on Windows, Mac OS X and Linux.
+The following instructions work equally well on Windows, macOS and Linux.
 
 # Exercise Structure
 
@@ -220,13 +222,10 @@ $ exercism submit src/main/kotlin/HelloWorld.kt
 From here, there are a number of paths you can take.
 
 
-## Move on to the next exercise
+## Move on to another exercise
 
-There are many more exercises you can practice with.  Grab the next one!
-
-```
-$ exercism fetch kotlin
-```
+There are many more exercises you can practice with.  Grab another one
+from the [Kotlin track](https://exercism.io/my/tracks/kotlin).
 
 
 ## Review (and comment on) others' submissions to this exercise

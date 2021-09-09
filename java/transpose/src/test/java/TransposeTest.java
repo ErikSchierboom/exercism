@@ -21,7 +21,6 @@ public class TransposeTest {
         assertEquals(expected, transpose.transpose(input));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void twoCharactersInARow() {
         String input = "A1";
@@ -32,7 +31,6 @@ public class TransposeTest {
         assertEquals(expected, transpose.transpose(input));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void twoCharactersInAColumn() {
         String input = "A\n" +
@@ -43,7 +41,6 @@ public class TransposeTest {
         assertEquals(expected, transpose.transpose(input));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void simple() {
         String input = "ABC\n" +
@@ -56,7 +53,6 @@ public class TransposeTest {
         assertEquals(expected, transpose.transpose(input));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void singleLine() {
         String input = "Single line.";
@@ -77,7 +73,6 @@ public class TransposeTest {
         assertEquals(expected, transpose.transpose(input));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void firstLineLongerThanSecondLine() {
         String input = "The fourth line.\n" +
@@ -103,7 +98,6 @@ public class TransposeTest {
         assertEquals(expected, transpose.transpose(input));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void secondLineLongerThanFirstLine() {
         String input = "The first line.\n" +
@@ -129,7 +123,6 @@ public class TransposeTest {
         assertEquals(expected, transpose.transpose(input));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void mixedLineLength() {
         String input = "The longest line.\n" +
@@ -158,7 +151,6 @@ public class TransposeTest {
         assertEquals(expected, transpose.transpose(input));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void square() {
         String input = "HEART\n" +
@@ -176,7 +168,6 @@ public class TransposeTest {
         assertEquals(expected, transpose.transpose(input));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void rectangle() {
         String input = "FRACTURE\n" +
@@ -196,7 +187,6 @@ public class TransposeTest {
         assertEquals(expected, transpose.transpose(input));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void triangle() {
         String input = "T\n" +

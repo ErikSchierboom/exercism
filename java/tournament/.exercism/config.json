@@ -1,0 +1,31 @@
+{
+  "blurb": "Tally the results of a small football competition.",
+  "authors": [
+    "mortenaa"
+  ],
+  "contributors": [
+    "aadityakulkarni",
+    "FridaTveit",
+    "hgvanpariya",
+    "jmrunkle",
+    "Kyle-Pu",
+    "lemoncurry",
+    "mirkoperillo",
+    "msomji",
+    "muzimuzhi",
+    "SleeplessByte",
+    "sshine",
+    "stkent"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/Tournament.java"
+    ],
+    "test": [
+      "src/test/java/TournamentTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/Tournament.java"
+    ]
+  }
+}

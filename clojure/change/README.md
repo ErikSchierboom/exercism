@@ -1,5 +1,10 @@
 # Change
 
+Welcome to Change on Exercism's Clojure Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Correctly determine the fewest number of coins to be given to a customer such
 that the sum of the coins' value would equal the correct amount of change.
 
@@ -15,9 +20,20 @@ that the sum of the coins' value would equal the correct amount of change.
 - Does your algorithm work for any given set of coins?
 - Can you ask for negative change?
 - Can you ask for a change value smaller than the smallest coin value?
+
 ## Source
 
-Software Craftsmanship - Coin Change Kata [https://web.archive.org/web/20130115115225/http://craftsmanship.sv.cmu.edu:80/exercises/coin-change-kata](https://web.archive.org/web/20130115115225/http://craftsmanship.sv.cmu.edu:80/exercises/coin-change-kata)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @leetwinski
+
+### Contributed to by
+
+- @AndreaCrotti
+- @haus
+- @sjwarner-bp
+- @yurrriq
+
+### Based on
+
+Software Craftsmanship - Coin Change Kata - https://web.archive.org/web/20130115115225/http://craftsmanship.sv.cmu.edu:80/exercises/coin-change-kata

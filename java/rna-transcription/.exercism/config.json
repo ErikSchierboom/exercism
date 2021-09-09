@@ -1,0 +1,41 @@
+{
+  "blurb": "Given a DNA strand, return its RNA Complement Transcription.",
+  "authors": [
+    "PaulNoth"
+  ],
+  "contributors": [
+    "aadityakulkarni",
+    "alis0nc",
+    "FridaTveit",
+    "jmrunkle",
+    "jsertel",
+    "jtigger",
+    "kytrinyx",
+    "lemoncurry",
+    "matthewmorgan",
+    "McEileen",
+    "msomji",
+    "muzimuzhi",
+    "sjwarner",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine",
+    "stkent",
+    "vdemeester",
+    "Zaldrick"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/RnaTranscription.java"
+    ],
+    "test": [
+      "src/test/java/RnaTranscriptionTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/RnaTranscription.java"
+    ]
+  },
+  "source": "Hyperphysics",
+  "source_url": "http://hyperphysics.phy-astr.gsu.edu/hbase/Organic/transcription.html"
+}

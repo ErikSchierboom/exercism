@@ -1,0 +1,26 @@
+{
+  "blurb": "Implement a RESTful API for tracking IOUs.",
+  "authors": [
+    "yvincent"
+  ],
+  "contributors": [
+    "ChrisPritchard",
+    "ErikSchierboom",
+    "j2jensen",
+    "robkeim",
+    "vgrigoriu",
+    "wolf99",
+    "Zureka"
+  ],
+  "files": {
+    "solution": [
+      "RestApi.cs"
+    ],
+    "test": [
+      "RestApiTests.cs"
+    ],
+    "example": [
+      ".meta/Example.cs"
+    ]
+  }
+}

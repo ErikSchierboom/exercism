@@ -1,0 +1,21 @@
+{
+  "blurb": "Determine if a word or phrase is an isogram.",
+  "authors": [
+    "Average-user"
+  ],
+  "contributors": [
+  ],
+  "files": {
+    "solution": [
+      "isogram.pl"
+    ],
+    "test": [
+      "isogram_tests.plt"
+    ],
+    "example": [
+      ".meta/isogram.example"
+    ]
+  },
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Isogram"
+}

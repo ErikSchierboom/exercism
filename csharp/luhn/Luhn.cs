@@ -1,32 +1,70 @@
-﻿using System.Linq;
-
-public static class Luhn
+﻿namespace Exercism.luhn
 {
-    public static bool IsValid(string input)
-    {
-        var digits = GetDigits(input.Replace(" ", ""));
-        if (digits.Length < 2)
-            return false;
-        
-        var checksum = digits
-            .Reverse()
-            .Select(GetDigitValue)
-            .Reverse()
-            .Sum();
-        
-        return checksum % 10 == 0;
-    }
-    
-    private static int[] GetDigits(string input) => input.Select(c => c - '0').ToArray();
+    using System.Collections.Generic;
+    using System.Globalization;
+    using System.Linq;
 
-    private static int GetDigitValue(int digit, int index)
+    public class Luhn
     {
-        if (index % 2 == 0)
+        public Luhn(long number)
         {
-            return digit;
+            this.Addends = GetDigits(number).Reverse().Select(GetDigitValue).Reverse();
         }
 
-        var doubledValue = digit * 2;
-        return doubledValue > 9 ? doubledValue - 9 : doubledValue;
+        public IEnumerable<int> Addends { get; private set; }
+
+        public int CheckDigit
+        {
+            get
+            {
+                return this.Addends.Last();
+            }
+        }
+
+        public int Checksum
+        {
+            get
+            {
+                return this.Addends.Sum();
+            }
+        }
+
+        public bool Valid
+        {
+            get
+            {
+                return this.Checksum % 10 == 0;
+            }
+        }
+
+        public static long Create(long number)
+        {
+            var targetNumber = number * 10;
+
+            var luhn = new Luhn(targetNumber);
+
+            if (!luhn.Valid)
+            {
+                targetNumber += 10 - (luhn.Checksum % 10);    
+            }
+
+            return targetNumber;
+        }
+
+        private static IEnumerable<int> GetDigits(long i)
+        {
+            return i.ToString(CultureInfo.InvariantCulture).Select(c => c - '0');
+        }
+
+        private static int GetDigitValue(int digit, int index)
+        {
+            if (index % 2 == 0)
+            {
+                return digit;
+            }
+
+            var doubledValue = digit * 2;
+            return doubledValue > 9 ? doubledValue - 9 : doubledValue;
+        }
     }
 }

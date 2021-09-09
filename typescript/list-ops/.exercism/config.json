@@ -1,0 +1,10 @@
+{
+  "blurb": "Implement basic list operations",
+  "authors": ["CRivasGomez"],
+  "contributors": ["archanid", "masters3d", "paparomeo", "SleeplessByte"],
+  "files": {
+    "solution": ["list-ops.ts"],
+    "test": ["list-ops.test.ts"],
+    "example": [".meta/proof.ci.ts"]
+  }
+}

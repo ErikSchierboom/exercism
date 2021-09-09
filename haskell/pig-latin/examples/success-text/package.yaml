@@ -1,0 +1,17 @@
+name: pig-latin
+
+dependencies:
+  - base
+  - text
+
+library:
+  exposed-modules: PigLatin
+  source-dirs: src
+
+tests:
+  test:
+    main: Tests.hs
+    source-dirs: test
+    dependencies:
+      - pig-latin
+      - hspec

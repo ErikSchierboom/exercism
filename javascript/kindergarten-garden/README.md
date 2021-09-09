@@ -1,5 +1,10 @@
 # Kindergarten Garden
 
+Welcome to Kindergarten Garden on Exercism's JavaScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given a diagram, determine which plants each child in the kindergarten class is
 responsible for.
 
@@ -36,7 +41,7 @@ VR......................
 RG......................
 ```
 
-In the first row, nearest the windows, she has a violet and a radish.  In the
+In the first row, nearest the windows, she has a violet and a radish. In the
 second row she has a radish and some grass.
 
 Your program will be given the plants from left-to-right starting with
@@ -59,38 +64,21 @@ While asking for Bob's plants would yield:
 
 - Clover, grass, clover, clover
 
-## Setup
-
-Go through the setup instructions for ECMAScript to
-install the necessary dependencies:
-
-http://exercism.io/languages/ecmascript
-
-## Requirements
-
-Install assignment dependencies:
-
-```bash
-$ npm install
-```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ npm test
-```
-
-In the test suites all tests but the first have been skipped.
-
-Once you get a test passing, you can enable the next one by
-changing `xtest` to `test`.
-
-
 ## Source
 
-Random musings during airplane trip. [http://jumpstartlab.com](http://jumpstartlab.com)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @rchavarria
+
+### Contributed to by
+
+- @brendanmckeown
+- @matthewmorgan
+- @ryanplusplus
+- @SleeplessByte
+- @tejasbubane
+- @xarxziux
+
+### Based on
+
+Random musings during airplane trip. - http://jumpstartlab.com

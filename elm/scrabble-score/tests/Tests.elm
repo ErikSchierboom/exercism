@@ -1,4 +1,4 @@
-module Tests exposing (..)
+module Tests exposing (tests)
 
 import Expect
 import ScrabbleScore exposing (scoreWord)
@@ -7,7 +7,7 @@ import Test exposing (..)
 
 tests : Test
 tests =
-    describe "Grains"
+    describe "ScrabbleScore"
         [ test "lowercase letter" <|
             \() -> Expect.equal 1 (scoreWord "a")
         , skip <|

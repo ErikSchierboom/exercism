@@ -1,0 +1,27 @@
+{
+  "blurb": "Determine if a sentence is a pangram.",
+  "authors": [
+    "tgecho"
+  ],
+  "contributors": [
+    "bdukes",
+    "duckmole",
+    "liammccartney",
+    "nathanielknight",
+    "parkerl",
+    "tuxagon"
+  ],
+  "files": {
+    "solution": [
+      "src/Pangram.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
+    "example": [
+      ".meta/src/Pangram.example.elm"
+    ]
+  },
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Pangram"
+}

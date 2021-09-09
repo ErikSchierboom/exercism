@@ -21,62 +21,53 @@ public class SimpleCipherStepTwoTest {
         cipherWithSetKey = new Cipher(key);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void cipherKeepsTheSubmittedKey() {
         assertEquals(key, cipherWithSetKey.getKey());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void cipherThrowsWithEmptyKey() {
         expectedException.expect(IllegalArgumentException.class);
         new Cipher("");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void cipherCanEncodeWithGivenKey() {
         String cipherText = "abcdefghij";
         assertEquals(cipherText, cipherWithSetKey.encode("aaaaaaaaaa"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void cipherCanDecodeWithGivenKey() {
         String cipherText = "aaaaaaaaaa";
         assertEquals(cipherText, cipherWithSetKey.decode("abcdefghij"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void cipherIsReversibleGivenKey() {
         String plainText = "abcdefghij";
         assertEquals(plainText, cipherWithSetKey.decode(cipherWithSetKey.encode("abcdefghij")));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void cipherCanWrapEncode() {
         String cipherText = "zabcdefghi";
         assertEquals(cipherText, cipherWithSetKey.encode("zzzzzzzzzz"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void cipherCanEncodeMessageThatIsShorterThanTheKey() {
         String cipherText = "abcde";
         assertEquals(cipherText, cipherWithSetKey.encode("aaaaa"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void cipherCanDecodeMessageThatIsShorterThanTheKey() {
         String cipherText = "aaaaa";
         assertEquals(cipherText, cipherWithSetKey.decode("abcde"));
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void cipherCanDoubleShiftEncode() {
         String plainText = "iamapandabear";

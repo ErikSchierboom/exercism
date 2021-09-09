@@ -1,43 +1,31 @@
 # Hamming
 
-Calculate the Hamming difference between two DNA strands.
+Welcome to Hamming on Exercism's Java Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
 
-A mutation is simply a mistake that occurs during the creation or
-copying of a nucleic acid, in particular DNA. Because nucleic acids are
-vital to cellular functions, mutations tend to cause a ripple effect
-throughout the cell. Although mutations are technically mistakes, a very
-rare mutation may equip the cell with a beneficial attribute. In fact,
-the macro effects of evolution are attributable by the accumulated
-result of beneficial microscopic mutations over many generations.
+## Instructions
 
-The simplest and most common type of nucleic acid mutation is a point
-mutation, which replaces one base with another at a single nucleotide.
+Calculate the Hamming Distance between two DNA strands.
 
-By counting the number of differences between two homologous DNA strands
-taken from different genomes with a common ancestor, we get a measure of
-the minimum number of point mutations that could have occurred on the
-evolutionary path between the two strands.
+Your body is made up of cells that contain DNA. Those cells regularly wear out and need replacing, which they achieve by dividing into daughter cells. In fact, the average human body experiences about 10 quadrillion cell divisions in a lifetime!
 
-This is called the 'Hamming distance'.
+When cells divide, their DNA replicates too. Sometimes during this process mistakes happen and single pieces of DNA get encoded with the incorrect information. If we compare two strands of DNA and count the differences between them we can see how many mistakes occurred. This is known as the "Hamming Distance".
 
-It is found by comparing two DNA strands and counting how many of the
-nucleotides are different from their equivalent in the other string.
+We read DNA using the letters C,A,G and T. Two strands might look like this:
 
     GAGCCTACTAACGGGAT
     CATCGTAATGACGGCCT
     ^ ^ ^  ^ ^    ^^
 
-The Hamming distance between these two DNA strands is 7.
+They have 7 differences, and therefore the Hamming Distance is 7.
 
-# Implementation notes
+The Hamming Distance is useful for lots of things in science, not just biology, so it's a nice phrase to be familiar with :)
 
-The Hamming distance is only defined for sequences of equal length. This means
-that based on the definition, each language could deal with getting sequences
-of equal length differently.
 
-# Java Tips
-
-## Hints
+The Hamming distance is only defined for sequences of equal length, so
+an attempt to calculate it between sequences of different lengths should
+not work. The general handling of this situation (e.g., raising an
+exception vs returning a special value) may differ between languages.
 
 This is the first exercise with tests that require you to throw an
 [`Exception`](https://docs.oracle.com/javase/8/docs/api/java/lang/Exception.html). `Exception`s are typically thrown to
@@ -50,21 +38,40 @@ are:
 1. instances of a specified Java type;
 2. (optionally) initialized with a specified message.
 
-
-# Running the tests
-
-You can run all the tests for an exercise by entering
-
-```sh
-$ gradle test
-```
-
-in your terminal.
-
 ## Source
 
-The Calculating Point Mutations problem at Rosalind [http://rosalind.info/problems/hamm/](http://rosalind.info/problems/hamm/)
+### Created by
 
-## Submitting Incomplete Solutions
+- @wdjunaidi
 
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+### Contributed to by
+
+- @c-thornton
+- @ChristianWilkie
+- @FridaTveit
+- @javaeeeee
+- @jmrunkle
+- @jonnynabors
+- @jtigger
+- @kytrinyx
+- @lemoncurry
+- @matthewmorgan
+- @michael-berger-FR
+- @michaelspets
+- @mirkoperillo
+- @msomji
+- @muzimuzhi
+- @odzeno
+- @sjwarner-bp
+- @SleeplessByte
+- @Smarticles101
+- @sshine
+- @stkent
+- @t0dd
+- @Valkryst
+- @vasouv
+- @Zaldrick
+
+### Based on
+
+The Calculating Point Mutations problem at Rosalind - http://rosalind.info/problems/hamm/

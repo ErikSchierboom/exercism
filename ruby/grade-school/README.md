@@ -1,5 +1,10 @@
 # Grade School
 
+Welcome to Grade School on Exercism's Ruby Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given students' names along with the grade that they are in, create a roster
 for the school.
 
@@ -15,8 +20,11 @@ In the end, you should be able to:
   as 1, 2, 3, etc., and students within a grade should be sorted
   alphabetically by name.
   - "Who all is enrolled in school right now?"
-  - "Grade 1: Anna, Barb, and Charlie. Grade 2: Alex, Peter, and Zoe.
-    Grade 3…"
+  - "Let me think. We have
+  Anna, Barb, and Charlie in grade 1,
+  Alex, Peter, and Zoe in grade 2
+  and Jim in grade 5.
+  So the answer is: Anna, Barb, Charlie, Alex, Peter, Zoe and Jim"
 
 Note that all our students only have one name.  (It's a small town, what
 do you want?)
@@ -34,32 +42,28 @@ are some additional things you could try:
 Then please share your thoughts in a comment on the submission. Did this
 experiment make the code better? Worse? Did you learn anything from it?
 
-* * * *
-
-For installation and learning resources, refer to the
-[Ruby resources page](http://exercism.io/languages/ruby/resources).
-
-For running the tests provided, you will need the Minitest gem. Open a
-terminal window and run the following command to install minitest:
-
-    gem install minitest
-
-If you would like color output, you can `require 'minitest/pride'` in
-the test file, or note the alternative instruction, below, for running
-the test file.
-
-Run the tests from the exercise directory using the following command:
-
-    ruby grade_school_test.rb
-
-To include color from the command line:
-
-    ruby -r minitest/pride grade_school_test.rb
-
-
 ## Source
 
-A pairing session with Phil Battos at gSchool [http://gschool.it](http://gschool.it)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @kytrinyx
+
+### Contributed to by
+
+- @alxndr
+- @budmc29
+- @cadwallion
+- @dkinzer
+- @henrik
+- @hilary
+- @iHiD
+- @Insti
+- @JikkuJose
+- @kotp
+- @markijbema
+- @notapatch
+- @tryantwit
+
+### Based on
+
+A pairing session with Phil Battos at gSchool - http://gschool.it

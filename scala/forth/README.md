@@ -1,5 +1,10 @@
 # Forth
 
+Welcome to Forth on Exercism's Scala Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Implement an evaluator for a very simple subset of Forth.
 
 [Forth](https://en.wikipedia.org/wiki/Forth_%28programming_language%29)
@@ -25,15 +30,14 @@ enough.)
 
 Words are case-insensitive.
 
-The Scala exercises assume an SBT project scheme. The exercise solution source
-should be placed within the exercise directory/src/main/scala. The exercise
-unit tests can be found within the exercise directory/src/test/scala.
+## Source
 
-To run the tests simply run the command `sbt test` in the exercise directory.
+### Created by
 
-For more detailed info about the Scala track see the [help
-page](http://exercism.io/languages/scala).
+- @ricemery
 
+### Contributed to by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @ErikSchierboom
+- @ppartarr
+- @rajeshpg

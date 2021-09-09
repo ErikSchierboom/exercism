@@ -1,0 +1,33 @@
+{
+  "blurb": "Implement a doubly linked list",
+  "authors": [
+    "vosechu"
+  ],
+  "contributors": [
+    "alxndr",
+    "budmc29",
+    "dkinzer",
+    "etrepum",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "kewlar",
+    "kotp",
+    "kytrinyx",
+    "pendletons",
+    "ryanplusplus",
+    "tryantwit"
+  ],
+  "files": {
+    "solution": [
+      "linked_list.rb"
+    ],
+    "test": [
+      "linked_list_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/linked_list.rb"
+    ]
+  },
+  "source": "Classic computer science topic"
+}

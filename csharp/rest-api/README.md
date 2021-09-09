@@ -1,4 +1,9 @@
-# REST API
+# Rest Api
+
+Welcome to Rest Api on Exercism's C# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
 
 Implement a RESTful API for tracking IOUs.
 
@@ -6,9 +11,9 @@ Four roommates have a habit of borrowing money from each other frequently, and h
 
 Your task is to implement a simple [RESTful API](https://en.wikipedia.org/wiki/Representational_state_transfer) that receives [IOU](https://en.wikipedia.org/wiki/IOU)s as POST requests, and can deliver specified summary information via GET requests.
 
-### API Specification
+## API Specification
 
-#### User object
+### User object
 ```json
 {
   "name": "Adam",
@@ -25,7 +30,7 @@ Your task is to implement a simple [RESTful API](https://en.wikipedia.org/wiki/R
 }
 ```
 
-#### Methods
+### Methods
 
 | Description | HTTP Method | URL | Payload Format | Response w/o Payload | Response w/ Payload |
 | --- | --- | --- | --- | --- | --- |
@@ -33,20 +38,24 @@ Your task is to implement a simple [RESTful API](https://en.wikipedia.org/wiki/R
 | Create user | POST | /add | `{"user":<name of new user (unique)>}` | N/A | `<User object for new user>` |
 | Create IOU | POST | /iou | `{"lender":<name of lender>,"borrower":<name of borrower>,"amount":5.25}` | N/A | `{"users":<updated User objects for <lender> and <borrower> (sorted by name)>}` |
 
-### Other Resources:
+## Other Resources:
 - https://restfulapi.net/
 - Example RESTful APIs
   - [GitHub](https://developer.github.com/v3/)
   - [Reddit](https://www.reddit.com/dev/api/)
 
-## Running the tests
+## Source
 
-To run the tests, run the command `dotnet test` from within the exercise directory.
+### Created by
 
-## Further information
+- @yvincent
 
-For more detailed information about the C# track, including how to get help if
-you're having trouble, please visit the exercism.io [C# language page](http://exercism.io/languages/csharp/resources).
+### Contributed to by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @ChrisPritchard
+- @ErikSchierboom
+- @j2jensen
+- @robkeim
+- @vgrigoriu
+- @wolf99
+- @Zureka

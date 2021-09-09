@@ -1,0 +1,26 @@
+{
+  "blurb": "Write a function to solve alphametics puzzles.",
+  "authors": [],
+  "contributors": [
+    "iHiD",
+    "kytrinyx",
+    "navossoc",
+    "omer-g",
+    "petertseng",
+    "ppartarr",
+    "rbasso",
+    "sshine",
+    "tejasbubane"
+  ],
+  "files": {
+    "solution": [
+      "src/Alphametics.hs"
+    ],
+    "test": [
+      "test/Tests.hs"
+    ],
+    "example": [
+      "examples/success-standard/src/Alphametics.hs"
+    ]
+  }
+}

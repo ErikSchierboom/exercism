@@ -4,6 +4,7 @@ require_relative 'largest_series_product'
 # Common test data version: 1.2.0 85da7a5
 class LargestSeriesProductTest < Minitest::Test
   def test_finds_the_largest_product_if_span_equals_length
+    # skip
     assert_equal 18, Series.new('29').largest_product(2)
   end
 
@@ -11,7 +12,7 @@ class LargestSeriesProductTest < Minitest::Test
     assert_equal 72, Series.new('0123456789').largest_product(2)
   end
 
-  def test_can_find_the_largest_product_of_2
+  def test_can_find_the_largest_product_of_2 # rubocop:disable Naming/VariableNumber
     assert_equal 48, Series.new('576802143').largest_product(2)
   end
 
@@ -19,16 +20,16 @@ class LargestSeriesProductTest < Minitest::Test
     assert_equal 504, Series.new('0123456789').largest_product(3)
   end
 
-  def test_can_find_the_largest_product_of_3
+  def test_can_find_the_largest_product_of_3 # rubocop:disable Naming/VariableNumber
     assert_equal 270, Series.new('1027839564').largest_product(3)
   end
 
   def test_can_find_the_largest_product_of_5_with_numbers_in_order
-    assert_equal 15120, Series.new('0123456789').largest_product(5)
+    assert_equal 15_120, Series.new('0123456789').largest_product(5)
   end
 
   def test_can_get_the_largest_product_of_a_big_number
-    assert_equal 23520, Series.new('73167176531330624919225119674426574742355349194934').largest_product(6)
+    assert_equal 23_520, Series.new('73167176531330624919225119674426574742355349194934').largest_product(6)
   end
 
   def test_reports_zero_if_the_only_digits_are_zero

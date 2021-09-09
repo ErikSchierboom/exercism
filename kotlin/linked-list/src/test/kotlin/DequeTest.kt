@@ -20,7 +20,6 @@ class DequeTest {
         assertEquals(10, subject.pop())
     }
 
-    
     @Test
     fun pushShift() {
         subject.push(10)
@@ -29,7 +28,6 @@ class DequeTest {
         assertEquals(20, subject.shift())
     }
 
-    
     @Test
     fun unshiftShift() {
         subject.unshift(10)
@@ -38,7 +36,6 @@ class DequeTest {
         assertEquals(10, subject.shift())
     }
 
-    
     @Test
     fun unshiftPop() {
         subject.unshift(10)
@@ -47,7 +44,6 @@ class DequeTest {
         assertEquals(20, subject.pop())
     }
 
-    
     @Test
     fun example() {
         subject.push(10)

@@ -1,0 +1,31 @@
+{
+  "blurb": "Detect palindrome products in a given range.",
+  "authors": [
+    "kytrinyx"
+  ],
+  "contributors": [
+    "alxndr",
+    "budmc29",
+    "dalexj",
+    "dkinzer",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "kotp",
+    "markijbema",
+    "tryantwit"
+  ],
+  "files": {
+    "solution": [
+      "palindrome_products.rb"
+    ],
+    "test": [
+      "palindrome_products_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/palindrome_products.rb"
+    ]
+  },
+  "source": "Problem 4 at Project Euler",
+  "source_url": "http://projecteuler.net/problem=4"
+}

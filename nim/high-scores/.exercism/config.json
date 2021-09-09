@@ -1,0 +1,19 @@
+{
+  "blurb": "Manage a player's High Score list",
+  "authors": [
+    "ee7"
+  ],
+  "contributors": [],
+  "files": {
+    "solution": [
+      "high_scores.nim"
+    ],
+    "test": [
+      "test_high_scores.nim"
+    ],
+    "example": [
+      ".meta/example.nim"
+    ]
+  },
+  "source": "Tribute to the eighties' arcade game Frogger"
+}

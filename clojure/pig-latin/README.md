@@ -1,5 +1,10 @@
 # Pig Latin
 
+Welcome to Pig Latin on Exercism's Clojure Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Implement a program that translates from English to Pig Latin.
 
 Pig Latin is a made-up children's language that's intended to be
@@ -16,9 +21,21 @@ There are a few more rules for edge cases, and there are regional
 variants too.
 
 See <http://en.wikipedia.org/wiki/Pig_latin> for more details.
+
 ## Source
 
-The Pig Latin exercise at Test First Teaching by Ultrasaurus [https://github.com/ultrasaurus/test-first-teaching/blob/master/learn_ruby/pig_latin/](https://github.com/ultrasaurus/test-first-teaching/blob/master/learn_ruby/pig_latin/)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @lmccombes
+
+### Contributed to by
+
+- @AndreaCrotti
+- @haus
+- @querenker
+- @sjwarner-bp
+- @thomchop
+
+### Based on
+
+The Pig Latin exercise at Test First Teaching by Ultrasaurus - https://github.com/ultrasaurus/test-first-teaching/blob/master/learn_ruby/pig_latin/

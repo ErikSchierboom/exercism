@@ -1,0 +1,25 @@
+{
+  "blurb": "Make a chain of dominoes.",
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "contributors": [
+    "jrr",
+    "lestephane",
+    "robkeim",
+    "valentin-p",
+    "vrnithinkumar",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "Dominoes.fs"
+    ],
+    "test": [
+      "DominoesTests.fs"
+    ],
+    "example": [
+      ".meta/Example.fs"
+    ]
+  }
+}

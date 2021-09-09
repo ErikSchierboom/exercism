@@ -1,0 +1,23 @@
+{
+  "blurb": "Parsing a Smart Game Format string.",
+  "authors": [
+    "abo64"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "ppartarr",
+    "rajeshpg",
+    "ricemery"
+  ],
+  "files": {
+    "solution": [
+      "src/main/scala/Sgf.scala"
+    ],
+    "test": [
+      "src/test/scala/SgfTest.scala"
+    ],
+    "example": [
+      ".meta/Example.scala"
+    ]
+  }
+}

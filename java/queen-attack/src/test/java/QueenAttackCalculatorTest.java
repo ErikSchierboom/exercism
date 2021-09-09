@@ -1,58 +1,63 @@
-import org.junit.Ignore;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
-
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
 
-public class QueenAttackCalculatorTest {
+import org.junit.Ignore;
+import org.junit.Test;
 
-    @Rule
-    public ExpectedException expectedException = ExpectedException.none();
+
+public class QueenAttackCalculatorTest {
 
     @Test
     public void testCreateQueenWithAValidPosition() {
         new Queen(2, 2);
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testCreateQueenMustHavePositiveRow() {
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("Queen position must have positive row.");
+        IllegalArgumentException expected =
+            assertThrows(
+                IllegalArgumentException.class,
+                () -> new Queen(-2, 2));
 
-        new Queen(-2, 2);
+        assertThat(expected)
+            .hasMessage("Queen position must have positive row.");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testCreateQueenMustHaveRowOnBoard() {
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("Queen position must have row <= 7.");
+        IllegalArgumentException expected =
+            assertThrows(
+                IllegalArgumentException.class,
+                () -> new Queen(8, 4));
 
-        new Queen(8, 4);
+        assertThat(expected)
+            .hasMessage("Queen position must have row <= 7.");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testCreateQueenMustHavePositiveColumn() {
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("Queen position must have positive column.");
+        IllegalArgumentException expected =
+            assertThrows(
+                IllegalArgumentException.class,
+                () -> new Queen(2, -2));
 
-        new Queen(2, -2);
+        assertThat(expected)
+            .hasMessage("Queen position must have positive column.");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testCreateQueenMustHaveColumnOnBoard() {
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("Queen position must have column <= 7.");
+        IllegalArgumentException expected =
+            assertThrows(
+                IllegalArgumentException.class,
+                () -> new Queen(4, 8));
 
-        new Queen(4, 8);
+        assertThat(expected)
+            .hasMessage("Queen position must have column <= 7.");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testQueensCannotAttack() {
         QueenAttackCalculator calculator
@@ -61,7 +66,6 @@ public class QueenAttackCalculatorTest {
         assertFalse(calculator.canQueensAttackOneAnother());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testQueensCanAttackOnTheSameRow() {
         QueenAttackCalculator calculator
@@ -70,7 +74,6 @@ public class QueenAttackCalculatorTest {
         assertTrue(calculator.canQueensAttackOneAnother());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testQueensCanAttackOnTheSameColumn() {
         QueenAttackCalculator calculator
@@ -79,7 +82,6 @@ public class QueenAttackCalculatorTest {
         assertTrue(calculator.canQueensAttackOneAnother());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testQueensCanAttackOnFirstDiagonal() {
         QueenAttackCalculator calculator
@@ -88,7 +90,6 @@ public class QueenAttackCalculatorTest {
         assertTrue(calculator.canQueensAttackOneAnother());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testQueensCanAttackOnSecondDiagonal() {
         QueenAttackCalculator calculator
@@ -97,7 +98,6 @@ public class QueenAttackCalculatorTest {
         assertTrue(calculator.canQueensAttackOneAnother());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testQueensCanAttackOnThirdDiagonal() {
         QueenAttackCalculator calculator
@@ -106,31 +106,34 @@ public class QueenAttackCalculatorTest {
         assertTrue(calculator.canQueensAttackOneAnother());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testQueensCanAttackOnFourthDiagonal() {
         QueenAttackCalculator calculator
-                = new QueenAttackCalculator(new Queen(2, 2), new Queen(5, 5));
+                = new QueenAttackCalculator(new Queen(1, 7), new Queen(0, 6));
 
         assertTrue(calculator.canQueensAttackOneAnother());
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testNullPositionsNotAllowed() {
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("You must supply valid positions for both Queens.");
+        IllegalArgumentException expected =
+            assertThrows(
+                IllegalArgumentException.class,
+                () -> new QueenAttackCalculator(null, new Queen(0, 7)));
 
-        new QueenAttackCalculator(null, new Queen(0, 7));
+        assertThat(expected)
+            .hasMessage("You must supply valid positions for both Queens.");
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void testQueensMustNotOccupyTheSameSquare() {
-        expectedException.expect(IllegalArgumentException.class);
-        expectedException.expectMessage("Queens cannot occupy the same position.");
+        IllegalArgumentException expected =
+            assertThrows(
+                IllegalArgumentException.class,
+                () -> new QueenAttackCalculator(new Queen(2, 2), new Queen(2, 2)));
 
-        new QueenAttackCalculator(new Queen(2, 2), new Queen(2, 2));
+        assertThat(expected)
+            .hasMessage("Queens cannot occupy the same position.");
     }
 
 }

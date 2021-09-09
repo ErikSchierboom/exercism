@@ -1,118 +1,164 @@
-import List from "./list-ops";
+import { List } from './list-ops'
 
-describe("append entries to a list and return the new list", () => {
-  it("empty lists", () => {
-    const list1 = new List();
-    const list2 = new List();
-    expect(list1.append(list2)).toEqual(new List());
-  });
+declare global {
+  // eslint-disable-next-line @typescript-eslint/no-namespace
+  namespace jest {
+    interface Matchers<R> {
+      toHaveValues(...expected: unknown[]): CustomMatcherResult
+    }
+  }
+}
 
-  it("empty list to list", () => {
-    const list1 = new List([1, 2, 3, 4]);
-    const list2 = new List<number>();
-    expect(list1.append(list2)).toEqual(list1);
-  });
+expect.extend({
+  toHaveValues(
+    received: ReturnType<typeof List.create>,
+    ...expected: unknown[]
+  ): jest.CustomMatcherResult {
+    if (!('forEach' in received)) {
+      return {
+        pass: false,
+        message: (): string => `Implement .forEach(callback) on your list`,
+      }
+    }
 
-  it("non-empty lists", () => {
-    const list1 = new List([1, 2]);
-    const list2 = new List([2, 3, 4, 5]);
-    expect(list1.append(list2).values).toEqual([1, 2, 2, 3, 4, 5]);
-  });
-});
+    const values: unknown[] = []
+    received.forEach((item) => {
+      values.push(item)
+    })
 
-describe("concat lists and lists of lists into new list", () => {
-  it("empty list", () => {
-    const list1 = new List();
-    const list2 = new List();
-    expect(list1.concat(list2).values).toEqual([]);
-  });
+    const pass = JSON.stringify(values) === JSON.stringify(expected)
+    return {
+      pass,
+      message: (): string =>
+        pass
+          ? ''
+          : `Expected to see the following values: ${JSON.stringify(
+              expected
+            )}, actual: ${JSON.stringify(values)}`,
+    }
+  },
+})
 
-  it("list of lists", () => {
-    const list1 = new List([1, 2]);
-    const list2 = new List([3]);
-    const list3 = new List([]);
-    const list4 = new List([4, 5, 6]);
-    expect(
-      list1
-        .concat(list2)
-        .concat(list3)
-        .concat(list4).values
-    ).toEqual([1, 2, 3, 4, 5, 6]);
-  });
-});
+describe('append entries to a list and return the new list', () => {
+  test('empty lists', () => {
+    const list1 = List.create()
+    const list2 = List.create()
+    expect(list1.append(list2)).toEqual(List.create())
+  })
 
-describe("filter list returning only values that satisfy the filter function", () => {
-  it("empty list", () => {
-    const list1 = new List([]);
-    expect(list1.filter((el: number) => el % 2 === 1).values).toEqual([]);
-  });
+  xtest('empty list to list', () => {
+    const list1 = List.create(1, 2, 3, 4)
+    const list2 = List.create()
+    expect(list1.append(list2)).toEqual(list1)
+  })
 
-  it("non empty list", () => {
-    const list1 = new List([1, 2, 3, 5]);
-    expect(list1.filter((el: number) => el % 2 === 1).values).toEqual([
-      1,
-      3,
-      5
-    ]);
-  });
-});
+  xtest('non-empty lists', () => {
+    const list1 = List.create(1, 2)
+    const list2 = List.create(2, 3, 4, 5)
+    expect(list1.append(list2)).toHaveValues(1, 2, 2, 3, 4, 5)
+  })
+})
 
-describe("returns the length of a list", () => {
-  it("empty list", () => {
-    const list1 = new List();
-    expect(list1.length()).toEqual(0);
-  });
+describe('concat lists and lists of lists into new list', () => {
+  xtest('empty list', () => {
+    const list1 = List.create()
+    const list2 = List.create()
+    expect(list1.concat(list2)).toHaveValues()
+  })
 
-  it("non-empty list", () => {
-    const list1 = new List([1, 2, 3, 4]);
-    expect(list1.length()).toEqual(4);
-  });
-});
+  xtest('list of lists', () => {
+    const list1 = List.create(1, 2)
+    const list2 = List.create(3)
+    const list3 = List.create()
+    const list4 = List.create(4, 5, 6)
+    const listOfLists = List.create(list2, list3, list4)
+    expect(list1.concat(listOfLists)).toHaveValues(1, 2, 3, 4, 5, 6)
+  })
+})
 
-describe("returns a list of elements whose values equal the list value transformed by the mapping function", () => {
-  it("empty list", () => {
-    const list1 = new List();
-    expect(list1.map((el: number) => ++el).values).toEqual([]);
-  });
+describe('filter list returning only values that satisfy the filter function', () => {
+  xtest('empty list', () => {
+    const list1 = List.create()
+    expect(list1.filter<number>((el) => el % 2 === 1)).toHaveValues()
+  })
 
-  it("non-empty list", () => {
-    const list1 = new List([1, 3, 5, 7]);
-    expect(list1.map((el: number) => ++el).values).toEqual([2, 4, 6, 8]);
-  });
-});
+  xtest('non empty list', () => {
+    const list1 = List.create(1, 2, 3, 5)
+    expect(list1.filter<number>((el) => el % 2 === 1)).toHaveValues(1, 3, 5)
+  })
+})
 
-describe("folds (reduces) the given list from the left with a function", () => {
-  it("empty list", () => {
-    const list1 = new List();
-    expect(list1.foldl((acc: number, el: number) => el / acc, 2)).toEqual(2);
-  });
+describe('returns the length of a list', () => {
+  xtest('empty list', () => {
+    const list1 = List.create()
+    expect(list1.length()).toEqual(0)
+  })
 
-  it("division of integers", () => {
-    const list1 = new List([1, 2, 3, 4]);
-    expect(list1.foldl((acc: number, el: number) => el / acc, 24)).toEqual(64);
-  });
-});
+  xtest('non-empty list', () => {
+    const list1 = List.create(1, 2, 3, 4)
+    expect(list1.length()).toEqual(4)
+  })
+})
 
-describe("folds (reduces) the given list from the right with a function", () => {
-  it("empty list", () => {
-    const list1 = new List();
-    expect(list1.foldr((acc: number, el: number) => el / acc, 2)).toEqual(2);
-  });
+describe('returns a list of elements whose values equal the list value transformed by the mapping function', () => {
+  xtest('empty list', () => {
+    const list1 = List.create()
+    expect(list1.map<number>((el) => ++el)).toHaveValues()
+  })
 
-  it("division of integers", () => {
-    const list1 = new List([1, 2, 3, 4]);
-    expect(list1.foldr((acc: number, el: number) => el / acc, 24)).toEqual(9);
-  });
-});
+  xtest('non-empty list', () => {
+    const list1 = List.create(1, 3, 5, 7)
+    expect(list1.map<number>((el) => ++el)).toHaveValues(2, 4, 6, 8)
+  })
+})
 
-describe("reverse the elements of a list", () => {
-  it("empty list", () => {
-    const list1 = new List();
-    expect(list1.reverse().values).toEqual([]);
-  });
+describe('folds (reduces) the given list from the left with a function', () => {
+  xtest('empty list', () => {
+    const list1 = List.create()
+    expect(list1.foldl<number, number>((acc, el) => el * acc, 2)).toEqual(2)
+  })
 
-  it("non-empty list", () => {
-    const list1 = new List([1, 3, 5, 7]);
-    expect(list1.reverse().values).toEqual([7, 5, 3, 1]);
-  });
-});
+  xtest('direction independent function applied to non-empty list', () => {
+    const list1 = List.create(1, 2, 3, 4)
+    expect(list1.foldl<number, number>((acc, el) => acc + el, 5)).toEqual(15)
+  })
+
+  xtest('direction dependent function applied to non-empty list', () => {
+    const list1 = List.create(1, 2, 3, 4)
+    expect(list1.foldl<number, number>((acc, el) => el / acc, 24)).toEqual(64)
+  })
+})
+
+describe('folds (reduces) the given list from the right with a function', () => {
+  xtest('empty list', () => {
+    const list1 = List.create()
+    expect(list1.foldr<number, number>((acc, el) => el * acc, 2)).toEqual(2)
+  })
+
+  xtest('direction independent function applied to non-empty list', () => {
+    const list1 = List.create(1, 2, 3, 4)
+    expect(list1.foldr<number, number>((acc, el) => acc + el, 5)).toEqual(15)
+  })
+
+  xtest('direction dependent function applied to non-empty list', () => {
+    const list1 = List.create(1, 2, 3, 4)
+    expect(list1.foldr<number, number>((acc, el) => el / acc, 24)).toEqual(9)
+  })
+})
+
+describe('reverse the elements of a list', () => {
+  xtest('empty list', () => {
+    const list1 = List.create()
+    expect(list1.reverse()).toHaveValues()
+  })
+
+  xtest('non-empty list', () => {
+    const list1 = List.create(1, 3, 5, 7)
+    expect(list1.reverse()).toHaveValues(7, 5, 3, 1)
+  })
+
+  xtest('list of lists is not flattened', () => {
+    const list1 = List.create([1, 2], [3], [], [4, 5, 6])
+    expect(list1.reverse()).toHaveValues([4, 5, 6], [], [3], [1, 2])
+  })
+})

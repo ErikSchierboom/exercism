@@ -1,26 +1,23 @@
-import Prime from './nth-prime';
+import { prime } from './nth-prime';
 
-describe('Prime', () => {
-  const prime = new Prime();
-
-  test('first', () => {
-    expect(prime.nth(1)).toEqual(2);
+describe('nth-prime', () => {
+  test('first prime', () => {
+    expect(prime(1)).toEqual(2);
   });
 
-  test('second', () => {
-    expect(prime.nth(2)).toEqual(3);
+  xtest('second prime', () => {
+    expect(prime(2)).toEqual(3);
   });
 
-  test('sixth', () => {
-    expect(prime.nth(6)).toEqual(13);
+  xtest('sixth prime', () => {
+    expect(prime(6)).toEqual(13);
   });
 
-  test('big prime', () => {
-    expect(prime.nth(10001)).toEqual(104743);
+  xtest('big prime', () => {
+    expect(prime(10001)).toEqual(104743);
   });
 
-  test('weird case', () => {
-    expect(() => prime.nth(0))
-      .toThrow(new Error('Prime is not possible'));
+  xtest('there is no zeroth prime', () => {
+    expect(() => prime(0)).toThrow(new Error('there is no zeroth prime'));
   });
 });

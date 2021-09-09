@@ -1,18 +1,37 @@
 # Two Fer
 
+Welcome to Two Fer on Exercism's Java Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 `Two-fer` or `2-fer` is short for two for one. One for you and one for me.
 
+Given a name, return a string with the message:
+
 ```text
-"One for X, one for me."
+One for name, one for me.
 ```
 
-When X is a name or "you".
+Where "name" is the given name.
 
-If the given name is "Alice", the result should be "One for Alice, one for me."
-If no name is given, the result should be "One for you, one for me."
+However, if the name is missing, return the string:
 
+```text
+One for you, one for me.
+```
 
-# Java Tips
+Here are some examples:
+
+|Name    |String to return
+|:-------|:------------------
+|Alice   |One for Alice, one for me.
+|Bob     |One for Bob, one for me.
+|        |One for you, one for me.
+|Zaphod  |One for Zaphod, one for me.
+
+Before you start, make sure you understand how to write code that can pass the test cases.
+For more context, check out this [tutorial](https://github.com/exercism/java/blob/master/exercises/hello-world/TUTORIAL.md).
 
 Most Java exercises include multiple test cases. These cases are structured to
 support a useful process known as
@@ -53,21 +72,31 @@ steps:
 4. Remove the topmost `@Ignore` annotation in the test file.
 5. Return to step 1 until no tests are skipped and all tests pass!
 
-
-# Running the tests
-
-You can run all the tests for an exercise by entering
-
-```sh
-$ gradle test
-```
-
-in your terminal.
-
 ## Source
 
-[https://en.wikipedia.org/wiki/Two-fer](https://en.wikipedia.org/wiki/Two-fer)
+### Created by
 
-## Submitting Incomplete Solutions
+- @Smarticles101
 
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+### Contributed to by
+
+- @FridaTveit
+- @ikhadykin
+- @jmrunkle
+- @jssander
+- @kytrinyx
+- @lemoncurry
+- @msomji
+- @muzimuzhi
+- @rdavid1099
+- @sjwarner-bp
+- @SleeplessByte
+- @sshine
+- @stkent
+- @uzilan
+- @Valkryst
+- @ymoskovits
+
+### Based on
+
+https://github.com/exercism/problem-specifications/issues/757

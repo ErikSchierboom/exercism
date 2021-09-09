@@ -2,8 +2,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.Ignore;
 
-import java.lang.Integer;
-import java.lang.String;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,7 +30,6 @@ public class WordCountTest {
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void countOneOfEachWord() {
         expectedWordCount.put("one", 1);
@@ -45,7 +42,6 @@ public class WordCountTest {
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void multipleOccurrencesOfAWord() {
         expectedWordCount.put("one", 1);
@@ -59,8 +55,7 @@ public class WordCountTest {
             expectedWordCount, actualWordCount
         );
     }
-    
-    @Ignore("Remove to run test")
+
     @Test
     public void handlesCrampedLists() {
         expectedWordCount.put("one", 1);
@@ -72,8 +67,7 @@ public class WordCountTest {
             expectedWordCount, actualWordCount
         );
     }
-    
-    @Ignore("Remove to run test")
+
     @Test
     public void handlesExpandedLists() {
         expectedWordCount.put("one", 1);
@@ -86,7 +80,6 @@ public class WordCountTest {
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void ignorePunctuation() {
         expectedWordCount.put("car", 1);
@@ -102,7 +95,6 @@ public class WordCountTest {
 
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void includeNumbers() {
         expectedWordCount.put("testing", 2);
@@ -115,7 +107,6 @@ public class WordCountTest {
         );
     }
 
-    @Ignore("Remove to run test")
     @Test
     public void normalizeCase() {
         expectedWordCount.put("go", 3);
@@ -126,8 +117,7 @@ public class WordCountTest {
             expectedWordCount, actualWordCount
         );
     }
-    
-    @Ignore("Remove to run test")
+
     @Test
     public void withApostrophes() {
         expectedWordCount.put("first", 1);
@@ -141,8 +131,24 @@ public class WordCountTest {
             expectedWordCount, actualWordCount
         );
     }
-    
-    @Ignore("Remove to run test")
+
+    @Test
+    public void substringsFromTheBeginning() {
+        expectedWordCount.put("joe", 1);
+        expectedWordCount.put("can't", 1);
+        expectedWordCount.put("tell", 1);
+        expectedWordCount.put("between", 1);
+        expectedWordCount.put("app", 1);
+        expectedWordCount.put("apple", 1);
+        expectedWordCount.put("and", 1);
+        expectedWordCount.put("a", 1);
+
+        actualWordCount = wordCount.phrase("Joe can't tell between app, apple and a.");
+        assertEquals(
+            expectedWordCount, actualWordCount
+        );
+    }
+
     @Test
     public void withQuotations() {
         expectedWordCount.put("joe", 1);
@@ -157,8 +163,7 @@ public class WordCountTest {
             expectedWordCount, actualWordCount
         );
     }
-    
-    @Ignore("Remove to run test")
+
     @Test
     public void multipleSpacesNotDetectedAsAWord() {
         expectedWordCount.put("multiple", 1);
@@ -167,6 +172,18 @@ public class WordCountTest {
         actualWordCount = wordCount.phrase(" multiple   whitespaces");
         assertEquals(
             expectedWordCount, actualWordCount
+        );
+    }
+
+    @Test
+    public void alternatingWordSeperatorsNotDetectedAsAWord() {
+        expectedWordCount.put("one", 1);
+        expectedWordCount.put("two", 1);
+        expectedWordCount.put("three", 1);
+
+        actualWordCount = wordCount.phrase(",\n,one,\n ,two \n 'three'");
+        assertEquals(
+                expectedWordCount, actualWordCount
         );
     }
 

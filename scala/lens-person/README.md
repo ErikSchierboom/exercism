@@ -1,5 +1,10 @@
 # Lens Person
 
+Welcome to Lens Person on Exercism's Scala Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Use lenses to update nested records (specific to languages with immutable data).
 
 Updating fields of nested records is kind of annoying in Haskell. One solution
@@ -8,15 +13,15 @@ accessing functions using lenses, you may use any library you want. The test
 suite also allows you to avoid lenses altogether so you can experiment with
 different approaches.
 
-The Scala exercises assume an SBT project scheme. The exercise solution source
-should be placed within the exercise directory/src/main/scala. The exercise
-unit tests can be found within the exercise directory/src/test/scala.
+## Source
 
-To run the tests simply run the command `sbt test` in the exercise directory.
+### Created by
 
-For more detailed info about the Scala track see the [help
-page](http://exercism.io/languages/scala).
+- @abo64
 
+### Contributed to by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @ErikSchierboom
+- @ppartarr
+- @rajeshpg
+- @ricemery

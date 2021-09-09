@@ -1,0 +1,23 @@
+{
+  "blurb": "Given a year, report if it is a leap year.",
+  "authors": ["sdavids13"],
+  "contributors": [
+    "dector",
+    "eparovyshnaya",
+    "jtigger",
+    "lihofm",
+    "mdowds",
+    "nithia",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "stkent",
+    "uzilan"
+  ],
+  "files": {
+    "solution": ["src/main/kotlin/Leap.kt"],
+    "test": ["src/test/kotlin/LeapTest.kt"],
+    "example": [".meta/src/reference/kotlin/Leap.kt"]
+  },
+  "source": "JavaRanch Cattle Drive, exercise 3",
+  "source_url": "http://www.javaranch.com/leap.jsp"
+}

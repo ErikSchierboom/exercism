@@ -1,5 +1,10 @@
 # Tree Building
 
+Welcome to Tree Building on Exercism's C# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Refactor a tree building algorithm.
 
 Some web-forums have a tree layout, so posts are presented as a tree. However
@@ -26,6 +31,14 @@ root (ID: 0, parent ID: 0)
 +-- child3 (ID: 5, parent ID: 0)
 ```
 
+## Source
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+### Created by
+
+- @ErikSchierboom
+
+### Contributed to by
+
+- @j2jensen
+- @robkeim
+- @wolf99

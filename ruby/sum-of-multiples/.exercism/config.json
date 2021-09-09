@@ -1,0 +1,33 @@
+{
+  "blurb": "Given a number, find the sum of all the multiples of particular numbers up to but not including that number.",
+  "authors": [
+    "kytrinyx"
+  ],
+  "contributors": [
+    "ajwann",
+    "budmc29",
+    "cadwallion",
+    "dkinzer",
+    "etmoore",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "jpotts244",
+    "julianandrews",
+    "kotp",
+    "tryantwit"
+  ],
+  "files": {
+    "solution": [
+      "sum_of_multiples.rb"
+    ],
+    "test": [
+      "sum_of_multiples_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/sum_of_multiples.rb"
+    ]
+  },
+  "source": "A variation on Problem 1 at Project Euler",
+  "source_url": "http://projecteuler.net/problem=1"
+}

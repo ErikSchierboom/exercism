@@ -1,0 +1,27 @@
+{
+  "blurb": "Detect palindrome products in a given range.",
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "contributors": [
+    "davidelettieri",
+    "jrr",
+    "lestephane",
+    "robkeim",
+    "valentin-p",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "PalindromeProducts.fs"
+    ],
+    "test": [
+      "PalindromeProductsTests.fs"
+    ],
+    "example": [
+      ".meta/Example.fs"
+    ]
+  },
+  "source": "Problem 4 at Project Euler",
+  "source_url": "http://projecteuler.net/problem=4"
+}

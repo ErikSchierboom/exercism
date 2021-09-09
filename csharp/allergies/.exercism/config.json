@@ -1,0 +1,27 @@
+{
+  "blurb": "Given a person's allergy score, determine whether or not they're allergic to a given item, and their full list of allergies.",
+  "authors": [
+    "bressain"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "j2jensen",
+    "jwood803",
+    "NextNebula",
+    "robkeim",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "Allergies.cs"
+    ],
+    "test": [
+      "AllergiesTests.cs"
+    ],
+    "example": [
+      ".meta/Example.cs"
+    ]
+  },
+  "source": "Jumpstart Lab Warm-up",
+  "source_url": "http://jumpstartlab.com"
+}

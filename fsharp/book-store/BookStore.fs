@@ -1,6 +1,5 @@
 ﻿module BookStore
 
-open System
 
 let bookPrice = 8.
 

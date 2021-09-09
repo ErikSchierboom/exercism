@@ -1,0 +1,33 @@
+{
+  "blurb": "Determine if a word or phrase is an isogram.",
+  "authors": [
+    "alliesauce"
+  ],
+  "contributors": [
+    "bmkiefer",
+    "budmc29",
+    "cadwallion",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "jpotts244",
+    "kotp",
+    "PatrickMcSweeny",
+    "pgaspar",
+    "securitylater",
+    "tryantwit"
+  ],
+  "files": {
+    "solution": [
+      "isogram.rb"
+    ],
+    "test": [
+      "isogram_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/isogram.rb"
+    ]
+  },
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Isogram"
+}

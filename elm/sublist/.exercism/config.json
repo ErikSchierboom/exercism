@@ -1,0 +1,23 @@
+{
+  "blurb": "Write a function to determine if a list is a sublist of another list.",
+  "authors": [
+    "tgecho"
+  ],
+  "contributors": [
+    "nathanielknight",
+    "parkerl",
+    "tuxagon",
+    "ulve"
+  ],
+  "files": {
+    "solution": [
+      "src/Sublist.elm"
+    ],
+    "test": [
+      "tests/Tests.elm"
+    ],
+    "example": [
+      ".meta/src/Sublist.example.elm"
+    ]
+  }
+}

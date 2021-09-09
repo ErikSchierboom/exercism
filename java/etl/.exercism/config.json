@@ -1,0 +1,43 @@
+{
+  "blurb": "We are going to do the `Transform` step of an Extract-Transform-Load.",
+  "authors": [
+    "sit"
+  ],
+  "contributors": [
+    "alebaffa",
+    "di72nn",
+    "FridaTveit",
+    "javaeeeee",
+    "jmrunkle",
+    "jtigger",
+    "kytrinyx",
+    "lemoncurry",
+    "made-by-traxam",
+    "matthewmorgan",
+    "morrme",
+    "msomji",
+    "muzimuzhi",
+    "redshirt4",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine",
+    "stkent",
+    "superklamer",
+    "vdemeester",
+    "Zaldrick"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/Etl.java"
+    ],
+    "test": [
+      "src/test/java/EtlTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/Etl.java"
+    ]
+  },
+  "source": "The Jumpstart Lab team",
+  "source_url": "http://jumpstartlab.com"
+}

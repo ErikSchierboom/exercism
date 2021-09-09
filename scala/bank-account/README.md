@@ -1,5 +1,10 @@
 # Bank Account
 
+Welcome to Bank Account on Exercism's Scala Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Simulate a bank account supporting opening/closing, withdrawals, and deposits
 of money. Watch out for concurrent transactions!
 
@@ -26,28 +31,27 @@ it.
 
 Have fun!
 
-## Hints
-
 This exercise is testing mutable state that can be accessed saftely from multiple threads. Scala provides a variety of ways to protect 
 mutable state. For developers familiar with Java concurrency, Scala can utilize the Java concurrency support such as the Java synchronized block.
 
-### Common Pitfalls
+## Common Pitfalls
 
 In Scala there are two ways to achieve mutable state: Use a "var" or a mutable object.
 Two common mistakes here are:
 - Do not use a "var" that is also a mutable object. One is enough, but not both together.
 - Don't expose the "var" or mutable object to the outside world. So make them "private" and change the mutable object into immutable before you return it as a value.
 
+## Source
 
-The Scala exercises assume an SBT project scheme. The exercise solution source
-should be placed within the exercise directory/src/main/scala. The exercise
-unit tests can be found within the exercise directory/src/test/scala.
+### Created by
 
-To run the tests simply run the command `sbt test` in the exercise directory.
+- @ricemery
 
-For more detailed info about the Scala track see the [help
-page](http://exercism.io/languages/scala).
+### Contributed to by
 
-
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @ErikSchierboom
+- @Freshwood
+- @kytrinyx
+- @nlochschmidt
+- @ppartarr
+- @rajeshpg

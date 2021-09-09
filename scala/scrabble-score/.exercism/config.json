@@ -1,0 +1,25 @@
+{
+  "blurb": "Given a word, compute the Scrabble score for that word.",
+  "authors": [
+    "ricemery"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "kytrinyx",
+    "ppartarr",
+    "rajeshpg"
+  ],
+  "files": {
+    "solution": [
+      "src/main/scala/ScrabbleScore.scala"
+    ],
+    "test": [
+      "src/test/scala/ScrabbleScoreTest.scala"
+    ],
+    "example": [
+      ".meta/Example.scala"
+    ]
+  },
+  "source": "Inspired by the Extreme Startup game",
+  "source_url": "https://github.com/rchatley/extreme_startup"
+}

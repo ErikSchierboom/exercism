@@ -1,5 +1,10 @@
 # Linked List
 
+Welcome to Linked List on Exercism's F# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Implement a doubly linked list.
 
 Like an array, a linked list is a simple linear data structure. Several
@@ -27,13 +32,11 @@ empty list.
 
 If you want to know more about linked lists, check [Wikipedia](https://en.wikipedia.org/wiki/Linked_list).
 
-## Hints
-
 A [doubly linked list](https://en.wikipedia.org/wiki/Doubly_linked_list) is a mutable data structure. As F# is a functional-first language, immutability is generally preferred, but there are language features that allow the use of mutation where it is required.
 
-* The `mutable` keyword can be placed before `let` bindings and [record](https://docs.microsoft.com/en-us/dotnet/articles/fsharp/language-reference/records) fields, allowing you to assign new values to them.
+- The `mutable` keyword can be placed before `let` bindings and [record](https://docs.microsoft.com/en-us/dotnet/articles/fsharp/language-reference/records) fields, allowing you to assign new values to them.
 
-* [Class](https://fsharpforfunandprofit.com/posts/classes) properties can be made mutable by specifying a property setter with the `set` keyword.
+- [Class](https://fsharpforfunandprofit.com/posts/classes) properties can be made mutable by specifying a property setter with the `set` keyword.
 
 Mutable bindings must be re-assigned with `<-`
 
@@ -42,23 +45,22 @@ let mutable x = "initial value"
 x <- "new value"
 ```
 
-
-## Running the tests
-
-To run the tests, run the command `dotnet test` from within the exercise directory.
-
-## Autoformatting the code
-
-F# source code can be formatted with the [Fantomas](https://github.com/fsprojects/fantomas) tool.
-
-After installing it with `dotnet tool restore`, run `dotnet fantomas .` to format code within the current directory.
-
-## Further information
-
-For more detailed information about the F# track, including how to get help if
-you're having trouble, please visit the exercism.io [F# language page](http://exercism.io/languages/fsharp/resources).
-
 ## Source
 
-Classic computer science topic
+### Created by
 
+- @ErikSchierboom
+
+### Contributed to by
+
+- @balazsbotond
+- @jrr
+- @lestephane
+- @robkeim
+- @theprash
+- @valentin-p
+- @wolf99
+
+### Based on
+
+Classic computer science topic

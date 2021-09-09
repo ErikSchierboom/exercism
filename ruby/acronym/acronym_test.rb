@@ -1,9 +1,10 @@
 require 'minitest/autorun'
 require_relative 'acronym'
 
-# Common test data version: 1.5.0 787d24e
+# Common test data version: 1.7.0 cacf1f1
 class AcronymTest < Minitest::Test
   def test_basic
+    # skip
     assert_equal "PNG", Acronym.abbreviate('Portable Network Graphics')
   end
 
@@ -24,7 +25,8 @@ class AcronymTest < Minitest::Test
   end
 
   def test_very_long_abbreviation
-    assert_equal "ROTFLSHTMDCOALM", Acronym.abbreviate('Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me')
+    assert_equal "ROTFLSHTMDCOALM",
+      Acronym.abbreviate('Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me')
   end
 
   def test_consecutive_delimiters

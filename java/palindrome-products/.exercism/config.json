@@ -1,0 +1,36 @@
+{
+  "blurb": "Detect palindrome products in a given range.",
+  "authors": [
+    "javaeeeee"
+  ],
+  "contributors": [
+    "FridaTveit",
+    "jmrunkle",
+    "jssander",
+    "kytrinyx",
+    "lemoncurry",
+    "mirkoperillo",
+    "morrme",
+    "msomji",
+    "muzimuzhi",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine",
+    "stkent",
+    "Zaldrick"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/PalindromeCalculator.java"
+    ],
+    "test": [
+      "src/test/java/PalindromeCalculatorTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/PalindromeCalculator.java"
+    ]
+  },
+  "source": "Problem 4 at Project Euler",
+  "source_url": "http://projecteuler.net/problem=4"
+}

@@ -1,0 +1,29 @@
+{
+  "blurb": "Given a decimal number, convert it to the appropriate sequence of events for a secret handshake.",
+  "authors": [
+    "kytrinyx"
+  ],
+  "contributors": [
+    "budmc29",
+    "dkinzer",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "kotp",
+    "sjwarner-bp",
+    "tryantwit"
+  ],
+  "files": {
+    "solution": [
+      "secret_handshake.rb"
+    ],
+    "test": [
+      "secret_handshake_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/secret_handshake.rb"
+    ]
+  },
+  "source": "Bert, in Mary Poppins",
+  "source_url": "http://www.imdb.com/title/tt0058331/quotes/qt0437047"
+}

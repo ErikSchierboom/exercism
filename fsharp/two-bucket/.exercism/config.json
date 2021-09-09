@@ -1,0 +1,26 @@
+{
+  "blurb": "Given two buckets of different size, demonstrate how to measure an exact number of liters.",
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "contributors": [
+    "jrr",
+    "lestephane",
+    "robkeim",
+    "valentin-p",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "TwoBucket.fs"
+    ],
+    "test": [
+      "TwoBucketTests.fs"
+    ],
+    "example": [
+      ".meta/Example.fs"
+    ]
+  },
+  "source": "Water Pouring Problem",
+  "source_url": "http://demonstrations.wolfram.com/WaterPouringProblem/"
+}

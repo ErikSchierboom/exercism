@@ -1,8 +1,12 @@
-bin/*
-dist/*
-docs/*
+!.meta
+
+# Protected or generated
+.git
+.vscode
+
+# When using npm
 node_modules/*
-production_node_modules/*
-test/fixtures/*
-tmp/*
+
+# Configuration files
+babel.config.js
 jest.config.js

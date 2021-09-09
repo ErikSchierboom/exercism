@@ -1,0 +1,41 @@
+{
+  "blurb": "Given a number, find the sum of all the multiples of particular numbers up to but not including that number.",
+  "authors": [
+    "ProgrammingFuad"
+  ],
+  "contributors": [
+    "abo64",
+    "FridaTveit",
+    "javaeeeee",
+    "jmrunkle",
+    "kytrinyx",
+    "lemoncurry",
+    "matthewmorgan",
+    "michaelspets",
+    "mirkoperillo",
+    "mraediaz",
+    "msomji",
+    "muzimuzhi",
+    "rootulp",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine",
+    "stkent",
+    "vasouv",
+    "Zaldrick"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/SumOfMultiples.java"
+    ],
+    "test": [
+      "src/test/java/SumOfMultiplesTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/SumOfMultiples.java"
+    ]
+  },
+  "source": "A variation on Problem 1 at Project Euler",
+  "source_url": "http://projecteuler.net/problem=1"
+}

@@ -1,6 +1,11 @@
 # Scrabble Score
 
-Given a word, compute the scrabble score for that word.
+Welcome to Scrabble Score on Exercism's Java Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
+Given a word, compute the Scrabble score for that word.
 
 ## Letter Values
 
@@ -39,20 +44,29 @@ And to total:
 - You can play a double or a triple letter.
 - You can play a double or a triple word.
 
-# Running the tests
-
-You can run all the tests for an exercise by entering
-
-```sh
-$ gradle test
-```
-
-in your terminal.
-
 ## Source
 
-Inspired by the Extreme Startup game [https://github.com/rchatley/extreme_startup](https://github.com/rchatley/extreme_startup)
+### Contributed to by
 
-## Submitting Incomplete Solutions
+- @FridaTveit
+- @jmrunkle
+- @jonnynabors
+- @jtigger
+- @kytrinyx
+- @lemoncurry
+- @LuLechuan
+- @matthewmorgan
+- @msomji
+- @muzimuzhi
+- @sjwarner-bp
+- @SleeplessByte
+- @Smarticles101
+- @sshine
+- @stkent
+- @vdemeester
+- @vivshaw
+- @Zaldrick
 
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+### Based on
+
+Inspired by the Extreme Startup game - https://github.com/rchatley/extreme_startup

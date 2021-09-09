@@ -1,0 +1,32 @@
+{
+  "blurb": "Given a string of digits, output all the contiguous substrings of length `n` in that string.",
+  "authors": [
+    "kytrinyx"
+  ],
+  "contributors": [
+    "budmc29",
+    "emcoding",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "jeporcher",
+    "kotp",
+    "mikegehard",
+    "pgaspar",
+    "stevensonmt",
+    "tryantwit"
+  ],
+  "files": {
+    "solution": [
+      "series.rb"
+    ],
+    "test": [
+      "series_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/series.rb"
+    ]
+  },
+  "source": "A subset of the Problem 8 at Project Euler",
+  "source_url": "http://projecteuler.net/problem=8"
+}

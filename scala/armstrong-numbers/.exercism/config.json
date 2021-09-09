@@ -1,0 +1,24 @@
+{
+  "blurb": "Determine if a number is an Armstrong number",
+  "authors": [
+    "ricemery"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "ppartarr",
+    "rajeshpg"
+  ],
+  "files": {
+    "solution": [
+      "src/main/scala/ArmstrongNumbers.scala"
+    ],
+    "test": [
+      "src/test/scala/ArmstrongNumbersTest.scala"
+    ],
+    "example": [
+      ".meta/Example.scala"
+    ]
+  },
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Narcissistic_number"
+}

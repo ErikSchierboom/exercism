@@ -1,5 +1,10 @@
 # Strain
 
+Welcome to Strain on Exercism's TypeScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Implement the `keep` and `discard` operation on collections. Given a collection
 and a predicate on the collection's elements, `keep` returns a new collection
 containing those elements where the predicate is true, while `discard` returns
@@ -30,37 +35,20 @@ language.
 ## Restrictions
 
 Keep your hands off that filter/reject/whatchamacallit functionality
-provided by your standard library!  Solve this one yourself using other
+provided by your standard library! Solve this one yourself using other
 basic tools instead.
-
-## Setup
-
-Go through the setup instructions for TypeScript to
-install the necessary dependencies:
-
-http://exercism.io/languages/typescript
-
-## Requirements
-
-Install assignment dependencies:
-
-```bash
-$ yarn install
-```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ yarn test
-```
-
-
 
 ## Source
 
-Conversation with James Edward Gray II [https://twitter.com/jeg2](https://twitter.com/jeg2)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @jspengeman
+
+### Contributed to by
+
+- @masters3d
+- @SleeplessByte
+
+### Based on
+
+Conversation with James Edward Gray II - https://twitter.com/jeg2

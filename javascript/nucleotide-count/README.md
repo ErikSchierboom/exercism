@@ -1,60 +1,43 @@
 # Nucleotide Count
 
-Given a single stranded DNA string, compute how many times each nucleotide occurs in the string. Also if the
-given input strand contains invalid nucleotides, throw the error "Invalid nucleotide in strand"
+Welcome to Nucleotide Count on Exercism's JavaScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
 
-The genetic language of every living thing on the planet is DNA. DNA is a large molecule that is built from an extremely long sequence of individual elements called nucleotides. 4 types of nucleotides exist in DNA and these differ only slightly and can be represented as the following symbols: 'A' for adenine, 'C' for cytosine, 'G' for guanine, and 'T' for thymine.
+## Instructions
 
-## Example 1
+Each of us inherits from our biological parents a set of chemical instructions known as DNA that influence how our bodies are constructed. All known life depends on DNA!
 
-Given the strand `ACGT`
+> Note: You do not need to understand anything about nucleotides or DNA to complete this exercise.
 
-The count of "A C G T" is `1 1 1 1`, respectively
+DNA is a long chain of other chemicals and the most important are the four nucleotides, adenine, cytosine, guanine and thymine. A single DNA chain can contain billions of these four nucleotides and the order in which they occur is important!
+We call the order of these nucleotides in a bit of DNA a "DNA sequence".
 
-## Example 2
+We represent a DNA sequence as an ordered collection of these four nucleotides and a common way to do that is with a string of characters such as "ATTACG" for a DNA sequence of 6 nucleotides.
+'A' for adenine, 'C' for cytosine, 'G' for guanine, and 'T' for thymine.
 
-Given the strand `GAG`
+Given a string representing a DNA sequence, count how many of each nucleotide is present.
+If the string contains characters that aren't A, C, G, or T then it is invalid and you should signal an error.
 
-The count of "A C G T" is `1 0 2 0`, respectively
+For example:
 
-## Example 3
-
-Given the strand `TX`
-
-As `X` is an invalid nucleotide, it should give the error `Invalid nucleotide in strand`
-
-## Setup
-
-Go through the setup instructions for ECMAScript to
-install the necessary dependencies:
-
-http://exercism.io/languages/ecmascript/installation
-
-## Requirements
-
-Install assignment dependencies:
-
-```bash
-$ npm install
 ```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ npm test
+"GATTACA" -> 'A': 3, 'C': 1, 'G': 1, 'T': 2
+"INVALID" -> error
 ```
-
-In the test suites all tests but the first have been skipped.
-
-Once you get a test passing, you can enable the next one by
-changing `xtest` to `test`.
-
 
 ## Source
 
-The Calculating DNA Nucleotides_problem at Rosalind [http://rosalind.info/problems/dna/](http://rosalind.info/problems/dna/)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @tarunvelli
+
+### Contributed to by
+
+- @ankorGH
+- @hayashi-ay
+- @SleeplessByte
+- @tejasbubane
+
+### Based on
+
+The Calculating DNA Nucleotides_problem at Rosalind - http://rosalind.info/problems/dna/

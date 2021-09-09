@@ -1,5 +1,5 @@
-module HelloWorld exposing (..)
+module HelloWorld exposing (helloWorld)
 
-helloWorld : Maybe String -> String
-helloWorld name =
-    "Hello, " ++ (Maybe.withDefault "World" name) ++ "!"
+
+helloWorld =
+    "Goodbye, Mars!"

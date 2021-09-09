@@ -1,13 +1,6 @@
-module Pangram exposing (..)
-
-import String
+module Pangram exposing (isPangram)
 
 
 isPangram : String -> Bool
-isPangram str =
-    let
-        loweredStr =
-            str |> String.toLower
-    in
-        "abcdefghijklmnopqrstuvwxyz"
-            |> String.all (\c -> String.contains (String.fromChar c) loweredStr)
+isPangram sentence =
+    Debug.todo "Please implement this function"

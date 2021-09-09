@@ -1,0 +1,17 @@
+name: acronym
+
+dependencies:
+  - base
+  - text
+
+library:
+  exposed-modules: Acronym
+  source-dirs: src
+
+tests:
+  test:
+    main: Tests.hs
+    source-dirs: test
+    dependencies:
+      - acronym
+      - hspec

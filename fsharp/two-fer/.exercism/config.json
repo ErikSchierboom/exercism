@@ -1,0 +1,25 @@
+{
+  "blurb": "Create a sentence of the form \"One for X, one for me.\"",
+  "authors": [
+    "robkeim"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "jrr",
+    "lestephane",
+    "valentin-p",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "TwoFer.fs"
+    ],
+    "test": [
+      "TwoFerTests.fs"
+    ],
+    "example": [
+      ".meta/Example.fs"
+    ]
+  },
+  "source_url": "https://github.com/exercism/problem-specifications/issues/757"
+}

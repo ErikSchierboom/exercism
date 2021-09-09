@@ -1,5 +1,10 @@
 # Book Store
 
+Welcome to Book Store on Exercism's C# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 To try and encourage more sales of different books from a popular 5 book
 series, a bookshop has decided to offer discounts on multiple book purchases.
 
@@ -67,10 +72,20 @@ For a total of $51.20
 
 And $51.20 is the price with the biggest discount.
 
-
 ## Source
 
-Inspired by the harry potter kata from Cyber-Dojo. [http://cyber-dojo.org](http://cyber-dojo.org)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @robkeim
+
+### Contributed to by
+
+- @AndrewYHuang
+- @ErikSchierboom
+- @j2jensen
+- @tomschluter
+- @wolf99
+
+### Based on
+
+Inspired by the harry potter kata from Cyber-Dojo. - http://cyber-dojo.org

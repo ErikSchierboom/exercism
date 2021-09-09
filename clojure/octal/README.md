@@ -1,5 +1,10 @@
 # Octal
 
+Welcome to Octal on Exercism's Clojure Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Convert an octal number, represented as a string (e.g. '1735263'), to its
 decimal equivalent using first principles (i.e. no, you may not use built-in or
 external libraries to accomplish the conversion).
@@ -45,9 +50,19 @@ So:
  = 128   + 24    + 3
  = 155
 ```
+
 ## Source
 
-All of Computer Science [http://www.wolframalpha.com/input/?i=base+8](http://www.wolframalpha.com/input/?i=base+8)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @haus
+
+### Contributed to by
+
+- @AndreaCrotti
+- @sjwarner-bp
+- @yurrriq
+
+### Based on
+
+All of Computer Science - http://www.wolframalpha.com/input/?i=base+8

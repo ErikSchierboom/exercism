@@ -1,0 +1,23 @@
+{
+  "blurb": "Create a custom set type.",
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "contributors": [
+    "ChrisPritchard",
+    "j2jensen",
+    "robkeim",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "CustomSet.cs"
+    ],
+    "test": [
+      "CustomSetTests.cs"
+    ],
+    "example": [
+      ".meta/Example.cs"
+    ]
+  }
+}

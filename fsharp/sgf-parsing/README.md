@@ -1,5 +1,10 @@
 # Sgf Parsing
 
+Welcome to Sgf Parsing on Exercism's F# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Parsing a Smart Game Format string.
 
 [SGF](https://en.wikipedia.org/wiki/Smart_Game_Format) is a standard format for
@@ -12,15 +17,16 @@ multiple values.
 
 An SGF file may look like this:
 
-```
+```text
 (;FF[4]C[root]SZ[19];B[aa];W[ab])
 ```
 
 This is a tree with three nodes:
 
-- The top level node has two properties: FF\[4\] (key = "FF", value =
-  "4") and C\[root\](key = "C", value = "root"). (FF indicates the
-  version of SGF and C is a comment.)
+- The top level node has three properties: FF\[4\] (key = "FF", value
+  = "4"), C\[root\](key = "C", value = "root") and SZ\[19\] (key =
+  "SZ", value = "19"). (FF indicates the version of SGF, C is a
+  comment and SZ is the size of the board.)
   - The top level node has a single child which has a single property:
     B\[aa\].  (Black plays on the point encoded as "aa", which is the
     1-1 point (which is a stupid place to play)).
@@ -34,7 +40,7 @@ SGF can encode variations of play. Go players do a lot of backtracking
 in their reviews (let's try this, doesn't work, let's try that) and SGF
 supports variations of play sequences. For example:
 
-```
+```text
 (;FF[4](;B[aa];W[ab])(;B[dd];W[ee]))
 ```
 
@@ -46,7 +52,7 @@ opening to take the corner).
 
 A key can have multiple values associated with it. For example:
 
-```
+```text
 (;FF[4];AB[aa][ab][ba])
 ```
 
@@ -64,5 +70,17 @@ structure of properties. You do not need to encode knowledge about the
 data types of properties, just use the rules for the
 [text](http://www.red-bean.com/sgf/sgf4.html#text) type everywhere.
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+## Source
+
+### Created by
+
+- @ErikSchierboom
+
+### Contributed to by
+
+- @jrr
+- @lestephane
+- @robkeim
+- @roman-shuhov
+- @valentin-p
+- @wolf99

@@ -1,0 +1,24 @@
+{
+  "blurb": "Add the numbers to a minesweeper board",
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "contributors": [
+    "jrr",
+    "lestephane",
+    "robkeim",
+    "valentin-p",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "Minesweeper.fs"
+    ],
+    "test": [
+      "MinesweeperTests.fs"
+    ],
+    "example": [
+      ".meta/Example.fs"
+    ]
+  }
+}

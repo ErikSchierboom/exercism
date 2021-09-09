@@ -1,4 +1,4 @@
-import NucleotideCount from './nucleotide-count'
+import { nucleotideCounts } from './nucleotide-count'
 
 describe('count all nucleotides in a strand', () => {
   it('empty strand', () => {
@@ -6,43 +6,49 @@ describe('count all nucleotides in a strand', () => {
       A: 0,
       C: 0,
       G: 0,
-      T: 0
+      T: 0,
     }
-    expect(NucleotideCount.nucleotideCounts('')).toEqual(expected)
+    expect(nucleotideCounts('')).toEqual(expected)
   })
 
-  it('can count one nucleotide in single-character input', () => {
+  xit('can count one nucleotide in single-character input', () => {
     const expected = {
       A: 0,
       C: 0,
       G: 1,
-      T: 0
+      T: 0,
     }
-    expect(NucleotideCount.nucleotideCounts('G')).toEqual(expected)
+    expect(nucleotideCounts('G')).toEqual(expected)
   })
 
-  it('strand with repeated nucleotide', () => {
+  xit('strand with repeated nucleotide', () => {
     const expected = {
       A: 0,
       C: 0,
       G: 7,
-      T: 0
+      T: 0,
     }
-    expect(NucleotideCount.nucleotideCounts('GGGGGGG')).toEqual(expected)
+    expect(nucleotideCounts('GGGGGGG')).toEqual(expected)
   })
 
-  it('strand with multiple nucleotides', () => {
+  xit('strand with multiple nucleotides', () => {
     const expected = {
       A: 20,
       C: 12,
       G: 17,
-      T: 21
+      T: 21,
     }
-    expect(NucleotideCount.nucleotideCounts('AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC')).toEqual(expected)
+    expect(
+      nucleotideCounts(
+        'AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC'
+      )
+    ).toEqual(expected)
   })
 
-  it('strand with invalid nucleotides', () => {
+  xit('strand with invalid nucleotides', () => {
     const expected = 'Invalid nucleotide in strand'
-    expect(() => {NucleotideCount.nucleotideCounts('AGXXACT')}).toThrowError(expected)
+    expect(() => {
+      nucleotideCounts('AGXXACT')
+    }).toThrowError(expected)
   })
 })

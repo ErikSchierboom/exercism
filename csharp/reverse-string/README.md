@@ -1,15 +1,28 @@
 # Reverse String
 
+Welcome to Reverse String on Exercism's C# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Reverse a string
 
 For example:
 input: "cool"
 output: "looc"
 
-
 ## Source
 
-Introductory challenge to reverse an input string [https://medium.freecodecamp.org/how-to-reverse-a-string-in-javascript-in-3-different-ways-75e4763c68cb](https://medium.freecodecamp.org/how-to-reverse-a-string-in-javascript-in-3-different-ways-75e4763c68cb)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @robkeim
+
+### Contributed to by
+
+- @ErikSchierboom
+- @j2jensen
+- @wolf99
+
+### Based on
+
+Introductory challenge to reverse an input string - https://medium.freecodecamp.org/how-to-reverse-a-string-in-javascript-in-3-different-ways-75e4763c68cb

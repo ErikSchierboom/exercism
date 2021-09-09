@@ -1,0 +1,32 @@
+{
+  "blurb": "Write a function to convert from normal numbers to Roman Numerals.",
+  "authors": [
+    "kytrinyx"
+  ],
+  "contributors": [
+    "boddhisattva",
+    "budmc29",
+    "cadwallion",
+    "dkinzer",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "jpotts244",
+    "kotp",
+    "mike-hewitson",
+    "tryantwit"
+  ],
+  "files": {
+    "solution": [
+      "roman_numerals.rb"
+    ],
+    "test": [
+      "roman_numerals_test.rb"
+    ],
+    "example": [
+      ".meta/solutions/roman_numerals.rb"
+    ]
+  },
+  "source": "The Roman Numeral Kata",
+  "source_url": "http://codingdojo.org/cgi-bin/index.pl?KataRomanNumerals"
+}

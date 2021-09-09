@@ -1,0 +1,36 @@
+{
+  "blurb": "Pick the best hand(s) from a list of poker hands.",
+  "authors": [
+    "Zaldrick"
+  ],
+  "contributors": [
+    "aadityakulkarni",
+    "FridaTveit",
+    "hgvanpariya",
+    "jmrunkle",
+    "katmpatz",
+    "kytrinyx",
+    "lemoncurry",
+    "mirkoperillo",
+    "msomji",
+    "muzimuzhi",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine",
+    "stkent"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/Poker.java"
+    ],
+    "test": [
+      "src/test/java/PokerTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/Poker.java"
+    ]
+  },
+  "source": "Inspired by the training course from Udacity.",
+  "source_url": "https://www.udacity.com/course/viewer#!/c-cs212/"
+}

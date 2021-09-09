@@ -1,0 +1,40 @@
+{
+  "blurb": "Calculate the date of meetups.",
+  "authors": [
+    "sit"
+  ],
+  "contributors": [
+    "c-thornton",
+    "FridaTveit",
+    "jackattack24",
+    "javaeeeee",
+    "jmrunkle",
+    "jtigger",
+    "kytrinyx",
+    "lemoncurry",
+    "matthewmorgan",
+    "morrme",
+    "msomji",
+    "muzimuzhi",
+    "odzeno",
+    "SleeplessByte",
+    "Smarticles101",
+    "sshine",
+    "stkent",
+    "vdemeester",
+    "Zaldrick"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/Meetup.java"
+    ],
+    "test": [
+      "src/test/java/MeetupTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/Meetup.java"
+    ]
+  },
+  "source": "Jeremy Hinegardner mentioned a Boulder meetup that happens on the Wednesteenth of every month",
+  "source_url": "https://twitter.com/copiousfreetime"
+}

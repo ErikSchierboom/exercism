@@ -4,100 +4,58 @@ import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
 class IsbnVerifierTest {
-    private var isbnVerifier: IsbnVerifier = IsbnVerifier()
+    @Test
+    fun `valid | reguar isbn`() = assertValid("3-598-21508-8")
 
     @Test
-    fun validIsbnNumber() {
-        assertTrue(isbnVerifier.isValid("3-598-21508-8"))
-    }
+    fun `invalid | check digit`() = assertInvalid("3-598-21508-9")
 
-    
     @Test
-    fun invalidIsbnCheckDigit() {
-        assertFalse(isbnVerifier.isValid("3-598-21508-9"))
-    }
+    fun `valid | check digit is 10`() = assertValid("3-598-21507-X")
 
-    
     @Test
-    fun validIsbnNumberWithCheckDigitOfTen() {
-        assertTrue(isbnVerifier.isValid("3-598-21507-X"))
-    }
+    fun `invalid | check digit is character other than X`() = assertInvalid("3-598-21507-A")
 
-    
     @Test
-    fun checkDigitIsACharacterOtherThanX() {
-        assertFalse(isbnVerifier.isValid("3-598-21507-A"))
-    }
+    fun `invalid | forbidden character`() = assertInvalid("3-598-P1581-X")
 
-    
     @Test
-    fun invalidCharacterInIsbn() {
-        assertFalse(isbnVerifier.isValid("3-598-P1581-X"))
-    }
+    fun `invalid | X is only valid as check digit`() = assertInvalid("3-598-2X507-9")
 
-    
     @Test
-    fun xIsOnlyValidAsACheckDigit() {
-        assertFalse(isbnVerifier.isValid("3-598-2X507-9"))
-    }
+    fun `valid | without separating dashes`() = assertValid("3598215088")
 
-    
     @Test
-    fun validIsbnWithoutSeparatingDashes() {
-        assertTrue(isbnVerifier.isValid("3598215088"))
-    }
+    fun `valid | without separating dashes and X as check digit`() = assertValid("359821507X")
 
-    
     @Test
-    fun isbnWithoutSeparatingDashesAndXAsCheckDigit() {
-        assertTrue(isbnVerifier.isValid("359821507X"))
-    }
+    fun `invalid | without check digit and dashes`() = assertInvalid("359821507")
 
-    
     @Test
-    fun isbnWithoutCheckDigitAndDashes() {
-        assertFalse(isbnVerifier.isValid("359821507"))
-    }
+    fun `invalid | too long and no dashes`() = assertInvalid("3598215078X")
 
-    
     @Test
-    fun tooLongIsbnAndNoDashes() {
-        assertFalse(isbnVerifier.isValid("3598215078X"))
-    }
+    fun `invalid | too short`() = assertInvalid("00")
 
-    
     @Test
-    fun isbnWithoutCheckDigit() {
-        assertFalse(isbnVerifier.isValid("3-598-21507"))
-    }
+    fun `invalid | without check digit`() = assertInvalid("3-598-21507")
 
-    
     @Test
-    fun tooLongIsbn() {
-        assertFalse(isbnVerifier.isValid("3-598-21507-XX"))
-    }
+    fun `invalid | check digit of X is not used for 0`() = assertInvalid("3-598-21515-X")
 
-    
     @Test
-    fun checkDigitOfXShouldNotBeUsedForZero() {
-        assertFalse(isbnVerifier.isValid("3-598-21515-X"))
-    }
+    fun `invalid | empty`() = assertInvalid("")
 
-    
     @Test
-    fun emptyIsbn() {
-        assertFalse(isbnVerifier.isValid(""))
-    }
+    fun `invalid | input is 9 characters`() = assertInvalid("134456729")
 
-    
     @Test
-    fun inputIsNineCharacters() {
-        assertFalse(isbnVerifier.isValid("134456729"))
-    }
+    fun `invalid | prohibited characters are not ignored`() = assertInvalid("3132P34035")
 
-    
     @Test
-    fun invalidCharactersAreNotIgnored() {
-        assertFalse(isbnVerifier.isValid("3132P34035"))
-    }
+    fun `invalid | too long but contains valid isbn`() = assertInvalid("98245726788")
 }
+
+private fun assertValid(isbn: String) = assertTrue(IsbnVerifier().isValid(isbn))
+
+private fun assertInvalid(isbn: String) = assertFalse(IsbnVerifier().isValid(isbn))

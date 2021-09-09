@@ -1,5 +1,10 @@
 # Roman Numerals
 
+Welcome to Roman Numerals on Exercism's Scala Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Write a function to convert from normal numbers to Roman Numerals.
 
 The Romans were a clever bunch. They conquered most of Europe and ruled
@@ -42,7 +47,6 @@ In Roman numerals 1990 is MCMXC:
 
 See also: http://www.novaroma.org/via_romana/numbers.html
 
-## Hints
 For something a little different you might also try a solution with an `unfold` function.
 You are probably already familiar with `foldLeft/Right`: "map" a whole collection into something else (usually a non-collection).
 `unfoldLeft/Right` are the "inverse" operations: "map" something (usually a non-collection) into a collection.
@@ -53,20 +57,23 @@ This exercise can be seen as a case for `unfold`ing: "map" an `Int` into a `Stri
 Unfortunately `unfoldLeft/Right` is not included in Scala's collection library.
 But you can take the implementation from [here](http://daily-scala.blogspot.de/2009/09/unfoldleft-and-right.html).
 
-
-The Scala exercises assume an SBT project scheme. The exercise solution source
-should be placed within the exercise directory/src/main/scala. The exercise
-unit tests can be found within the exercise directory/src/test/scala.
-
-To run the tests simply run the command `sbt test` in the exercise directory.
-
-For more detailed info about the Scala track see the [help
-page](http://exercism.io/languages/scala).
-
-
 ## Source
 
-The Roman Numeral Kata [http://codingdojo.org/cgi-bin/index.pl?KataRomanNumerals](http://codingdojo.org/cgi-bin/index.pl?KataRomanNumerals)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @ErikSchierboom
+
+### Contributed to by
+
+- @abo64
+- @kytrinyx
+- @oujesky
+- @ppartarr
+- @rajeshpg
+- @ricemery
+- @sathish316
+- @yanick
+
+### Based on
+
+The Roman Numeral Kata - http://codingdojo.org/cgi-bin/index.pl?KataRomanNumerals

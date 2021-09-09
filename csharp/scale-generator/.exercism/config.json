@@ -1,0 +1,22 @@
+{
+  "blurb": "Generate musical scales, given a starting note and a set of intervals. ",
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "contributors": [
+    "j2jensen",
+    "robkeim",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "ScaleGenerator.cs"
+    ],
+    "test": [
+      "ScaleGeneratorTests.cs"
+    ],
+    "example": [
+      ".meta/Example.cs"
+    ]
+  }
+}

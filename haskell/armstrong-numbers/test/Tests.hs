@@ -23,7 +23,11 @@ data Case = Case { description :: String
                  }
 
 cases :: [Case]
-cases = [ Case { description = "Single digit numbers are Armstrong numbers"
+cases = [ Case { description = "Zero is an Armstrong numbers"
+               , input       = 0
+               , expected    = True
+               } 
+        , Case { description = "Single digit numbers are Armstrong numbers"
                , input       = 5
                , expected    = True
                }
@@ -56,3 +60,5 @@ cases = [ Case { description = "Single digit numbers are Armstrong numbers"
                , expected    = False
                }
         ]
+
+-- 234df17e8e4a0b126bb3c5cdd81f8e6965d8182e

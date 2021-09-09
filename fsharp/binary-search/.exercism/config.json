@@ -1,0 +1,28 @@
+{
+  "blurb": "Implement a binary search algorithm.",
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "contributors": [
+    "jrr",
+    "lestephane",
+    "robkeim",
+    "roman-shuhov",
+    "valentin-p",
+    "vrnithinkumar",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "BinarySearch.fs"
+    ],
+    "test": [
+      "BinarySearchTests.fs"
+    ],
+    "example": [
+      ".meta/Example.fs"
+    ]
+  },
+  "source": "Wikipedia",
+  "source_url": "http://en.wikipedia.org/wiki/Binary_search_algorithm"
+}

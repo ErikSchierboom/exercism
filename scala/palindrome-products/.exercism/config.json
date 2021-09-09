@@ -1,0 +1,24 @@
+{
+  "blurb": "Detect palindrome products in a given range.",
+  "authors": [
+    "ricemery"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "ppartarr",
+    "rajeshpg"
+  ],
+  "files": {
+    "solution": [
+      "src/main/scala/PalindromeProducts.scala"
+    ],
+    "test": [
+      "src/test/scala/PalindromeProductsTest.scala"
+    ],
+    "example": [
+      ".meta/Example.scala"
+    ]
+  },
+  "source": "Problem 4 at Project Euler",
+  "source_url": "http://projecteuler.net/problem=4"
+}

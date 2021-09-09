@@ -1,5 +1,10 @@
 # Error Handling
 
+Welcome to Error Handling on Exercism's Java Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Implement various kinds of error handling and resource management.
 
 An important point of programming is how to handle errors and close
@@ -8,8 +13,6 @@ resources even if errors occur.
 This exercise requires you to handle various errors. Because error handling
 is rather programming language specific you'll have to refer to the tests
 for your track to see what's exactly required.
-
-# Java Tips
 
 This exercise requires you to handle exceptions. An [exception](https://docs.oracle.com/javase/tutorial/essential/exceptions/definition.html) is an event, which occurs during the execution of a program, that disrupts the normal flow of the program's instructions.
 
@@ -47,16 +50,21 @@ You don't have to declare them in the [method signature](https://docs.oracle.com
 
 Unchecked exceptions are mean to be used for any error than can't be handled at runtime, e.g. running out of memory.
 
-# Running the tests
+## Source
 
-You can run all the tests for an exercise by entering
+### Created by
 
-```sh
-$ gradle test
-```
+- @CRivasGomez
 
-in your terminal.
+### Contributed to by
 
-## Submitting Incomplete Solutions
-
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @aadityakulkarni
+- @FridaTveit
+- @jackattack24
+- @jmrunkle
+- @lemoncurry
+- @msomji
+- @muzimuzhi
+- @sjwarner-bp
+- @SleeplessByte
+- @sshine

@@ -1,17 +1,39 @@
 # Word Count
 
-Given a phrase, count the occurrences of each word in that phrase.
+Welcome to Word Count on Exercism's Java Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
 
-For example for the input `"olly olly in come free"`
+## Instructions
+
+Given a phrase, count the occurrences of each _word_ in that phrase.
+
+For the purposes of this exercise you can expect that a _word_ will always be one of:
+
+1. A _number_ composed of one or more ASCII digits (ie "0" or "1234") OR
+2. A _simple word_ composed of one or more ASCII letters (ie "a" or "they") OR
+3. A _contraction_ of two _simple words_ joined by a single apostrophe (ie "it's" or "they're")
+
+When counting words you can assume the following rules:
+
+1. The count is _case insensitive_ (ie "You", "you", and "YOU" are 3 uses of the same word)
+2. The count is _unordered_; the tests will ignore how words and counts are ordered
+3. Other than the apostrophe in a _contraction_ all forms of _punctuation_ are ignored
+4. The words can be separated by _any_ form of whitespace (ie "\t", "\n", " ")
+
+For example, for the phrase `"That's the password: 'PASSWORD 123'!", cried the Special Agent.\nSo I fled.` the count would be:
 
 ```text
-olly: 2
-in: 1
-come: 1
-free: 1
+that's: 1
+the: 2
+password: 2
+123: 1
+cried: 1
+special: 1
+agent: 1
+so: 1
+i: 1
+fled: 1
 ```
-
-# Java Tips
 
 Since this exercise has difficulty 5 it doesn't come with any starter implementation.
 This is so that you get to practice creating classes and methods which is an important part of programming in Java.
@@ -72,21 +94,41 @@ The new error should tell you which type it's expecting.
 
 After having resolved these errors you should be ready to start making the tests pass!
 
-
-# Running the tests
-
-You can run all the tests for an exercise by entering
-
-```sh
-$ gradle test
-```
-
-in your terminal.
-
 ## Source
 
+### Created by
+
+- @sagarsane
+
+### Contributed to by
+
+- @aadityakulkarni
+- @c-thornton
+- @FridaTveit
+- @jackattack24
+- @jmrunkle
+- @jtigger
+- @kytrinyx
+- @lemoncurry
+- @matthewmorgan
+- @matthewstyler
+- @mirkoperillo
+- @monil
+- @morrme
+- @msomji
+- @muzimuzhi
+- @redshirt4
+- @sit
+- @sjwarner-bp
+- @SleeplessByte
+- @Smarticles101
+- @sshine
+- @stkent
+- @TimoleonLatinopoulos
+- @vdemeester
+- @Zaldrick
+- @zwaltman
+
+### Based on
+
 This is a classic toy problem, but we were reminded of it by seeing it in the Go Tour.
-
-## Submitting Incomplete Solutions
-
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
