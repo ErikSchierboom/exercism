@@ -1,9 +1,9 @@
-nucleotide_complement('G', X) :- X = 'C'.
-nucleotide_complement('C', X) :- X = 'G'.
-nucleotide_complement('T', X) :- X = 'A'.
-nucleotide_complement('A', X) :- X = 'U'.
+complement('G', 'C').
+complement('C', 'G').
+complement('T', 'A').
+complement('A', 'U').
 
 rna_transcription(Rna, Dna) :-
     string_chars(Rna, Nucleotides),
-    maplist(nucleotide_complement, Nucleotides, Complement),
+    maplist(complement, Nucleotides, Complement),
     string_chars(Dna, Complement).
