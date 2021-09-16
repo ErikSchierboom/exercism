@@ -1,5 +1,4 @@
 multiple([H|T], N) :- N mod H =:= 0; multiple(T, N).
-multiple([], _) :- false.
 
 sum_of_multiples(Factors, Limit, Sum) :-
     Max is Limit - 1,
