@@ -1,0 +1,51 @@
+{
+  "version": 3,
+  "status": "pass",
+  "tests": [
+    {
+      "name": "Clean single letter",
+      "status": "pass",
+      "test_code": "Assert.Equal(\u0022A\u0022, Identifier.Clean(\u0022A\u0022));"
+    },
+    {
+      "name": "Clean clean string",
+      "status": "pass",
+      "test_code": "Assert.Equal(\u0022\u00E0\u1E03\u00E7\u0022, Identifier.Clean(\u0022\u00E0\u1E03\u00E7\u0022));"
+    },
+    {
+      "name": "Clean string with spaces",
+      "status": "pass",
+      "test_code": "Assert.Equal(\u0022my___Id\u0022, Identifier.Clean(\u0022my   Id\u0022));"
+    },
+    {
+      "name": "Clean string with control char",
+      "status": "pass",
+      "test_code": "Assert.Equal(\u0022myCTRLId\u0022, Identifier.Clean(\u0022my\\0Id\u0022));"
+    },
+    {
+      "name": "Clean string with no letters",
+      "status": "pass",
+      "test_code": "Assert.Equal(string.Empty, Identifier.Clean(\u0022\uD83D\uDE00\uD83D\uDE00\uD83D\uDE00\u0022));"
+    },
+    {
+      "name": "Clean empty string",
+      "status": "pass",
+      "test_code": "Assert.Equal(string.Empty, Identifier.Clean(string.Empty));"
+    },
+    {
+      "name": "Convert kebab to camel case",
+      "status": "pass",
+      "test_code": "Assert.Equal(\u0022\u00E0\u1E02\u00E7\u0022, Identifier.Clean(\u0022\u00E0-\u1E03\u00E7\u0022));"
+    },
+    {
+      "name": "Omit lower case greek letters",
+      "status": "pass",
+      "test_code": "Assert.Equal(\u0022My\u039FFinder\u0022, Identifier.Clean(\u0022My\u039F\u03B2\u03B9\u03B5\u03B3\u03C4Finder\u0022));"
+    },
+    {
+      "name": "Combine conversions",
+      "status": "pass",
+      "test_code": "Assert.Equal(\u0022_Abc\u0110CTRL\u0022, Identifier.Clean(\u00229 -abc\u0110\uD83D\uDE00\u03C9\\0\u0022));"
+    }
+  ]
+}
