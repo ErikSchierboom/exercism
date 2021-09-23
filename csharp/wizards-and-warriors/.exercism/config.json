@@ -1,0 +1,20 @@
+{
+  "blurb": "Learn about inheritance by creating an RPG.",
+  "contributors": [
+    "yzAlvin"
+  ],
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "files": {
+    "solution": [
+      "WizardsAndWarriors.cs"
+    ],
+    "test": [
+      "WizardsAndWarriorsTests.cs"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.cs"
+    ]
+  }
+}
