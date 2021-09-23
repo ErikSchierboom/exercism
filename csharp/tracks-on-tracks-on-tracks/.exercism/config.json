@@ -1,0 +1,24 @@
+{
+  "blurb": "Learn about lists by keeping track of programming languages you want to learn.",
+  "contributors": [
+    "ErikSchierboom",
+    "yzAlvin"
+  ],
+  "authors": [
+    "mikedamay"
+  ],
+  "forked_from": [
+    "fsharp/tracks-on-tracks-on-tracks"
+  ],
+  "files": {
+    "solution": [
+      "TracksOnTracksOnTracks.cs"
+    ],
+    "test": [
+      "TracksOnTracksOnTracksTests.cs"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.cs"
+    ]
+  }
+}
