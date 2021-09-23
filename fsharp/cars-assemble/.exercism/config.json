@@ -1,0 +1,20 @@
+{
+  "blurb": "Learn about numbers and if statements by analyze the production of an assembly line in a car factory",
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "forked_from": [
+    "csharp/cars-assemble"
+  ],
+  "files": {
+    "solution": [
+      "CarsAssemble.fs"
+    ],
+    "test": [
+      "CarsAssembleTests.fs"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.fs"
+    ]
+  }
+}
