@@ -1,0 +1,21 @@
+{
+  "blurb": "Learn about error handling by working on a simple calculator.",
+  "contributors": [
+    "valentin-p",
+    "yzAlvin"
+  ],
+  "authors": [
+    "archrisV"
+  ],
+  "files": {
+    "solution": [
+      "CalculatorConundrum.cs"
+    ],
+    "test": [
+      "CalculatorConundrumTests.cs"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.cs"
+    ]
+  }
+}
