@@ -1,0 +1,22 @@
+{
+  "blurb": "Implement complex numbers.",
+  "authors": [
+    "Average-user"
+  ],
+  "contributors": [
+    "mbramson"
+  ],
+  "files": {
+    "solution": [
+      "complex_numbers.pl"
+    ],
+    "test": [
+      "complex_numbers_tests.plt"
+    ],
+    "example": [
+      ".meta/complex_numbers.example"
+    ]
+  },
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Complex_number"
+}
