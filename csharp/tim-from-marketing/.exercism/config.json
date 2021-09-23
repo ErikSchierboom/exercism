@@ -1,0 +1,20 @@
+{
+  "blurb": "Learn about nullables by printing name badges.",
+  "contributors": [
+    "yzAlvin"
+  ],
+  "authors": [
+    "maurelio1234"
+  ],
+  "files": {
+    "solution": [
+      "TimFromMarketing.cs"
+    ],
+    "test": [
+      "TimFromMarketingTests.cs"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.cs"
+    ]
+  }
+}
