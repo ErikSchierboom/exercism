@@ -1,0 +1,20 @@
+{
+  "blurb": "Learn about classes by creating cars.",
+  "contributors": [
+    "yzAlvin"
+  ],
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "files": {
+    "solution": [
+      "NeedForSpeed.cs"
+    ],
+    "test": [
+      "NeedForSpeedTests.cs"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.cs"
+    ]
+  }
+}
