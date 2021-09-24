@@ -1,0 +1,21 @@
+{
+  "blurb": "Learn about properties by modelling a weighing machine.",
+  "contributors": [
+    "ErikSchierboom",
+    "yzAlvin"
+  ],
+  "authors": [
+    "mikedamay"
+  ],
+  "files": {
+    "solution": [
+      "WeighingMachine.cs"
+    ],
+    "test": [
+      "WeighingMachineTests.cs"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.cs"
+    ]
+  }
+}
