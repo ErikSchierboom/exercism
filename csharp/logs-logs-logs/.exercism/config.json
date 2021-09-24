@@ -1,0 +1,21 @@
+{
+  "blurb": "Learn about enums by parsing logs.",
+  "contributors": [
+    "valentin-p",
+    "yzAlvin"
+  ],
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "files": {
+    "solution": [
+      "LogsLogsLogs.cs"
+    ],
+    "test": [
+      "LogsLogsLogsTests.cs"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.cs"
+    ]
+  }
+}
