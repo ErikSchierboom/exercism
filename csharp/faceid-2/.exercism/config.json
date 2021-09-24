@@ -1,0 +1,21 @@
+{
+  "blurb": "Learn about equality by adding face recognition to a login process.",
+  "contributors": [
+    "ErikSchierboom",
+    "yzAlvin"
+  ],
+  "authors": [
+    "mikedamay"
+  ],
+  "files": {
+    "solution": [
+      "Faceid2.cs"
+    ],
+    "test": [
+      "Faceid2Tests.cs"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.cs"
+    ]
+  }
+}
