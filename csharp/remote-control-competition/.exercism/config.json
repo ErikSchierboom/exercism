@@ -1,0 +1,22 @@
+{
+  "blurb": "Learn about interfaces by working on cars.",
+  "contributors": [
+    "ErikSchierboom",
+    "yzAlvin"
+  ],
+  "authors": [
+    "senal",
+    "mikedamay"
+  ],
+  "files": {
+    "solution": [
+      "RemoteControlCompetition.cs"
+    ],
+    "test": [
+      "RemoteControlCompetitionTests.cs"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.cs"
+    ]
+  }
+}
