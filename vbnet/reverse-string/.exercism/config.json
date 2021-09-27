@@ -1,0 +1,12 @@
+{
+  "blurb": "Reverse a string",
+  "authors": ["ch020"],
+  "contributors": ["axtens"],
+  "files": {
+    "solution": ["ReverseString.vb"],
+    "test": ["ReverseStringTests.vb"],
+    "example": [".meta/Example.vb"]
+  },
+  "source": "Introductory challenge to reverse an input string",
+  "source_url": "https://medium.freecodecamp.org/how-to-reverse-a-string-in-javascript-in-3-different-ways-75e4763c68cb"
+}
