@@ -1,0 +1,19 @@
+{
+    "blurb": "Convert a resistor band's color to its numeric representation",
+    "authors": [
+      "axtens"
+    ],
+    "contributors": [],
+    "files": {
+      "solution": [
+        "ResistorColor.vb"
+      ],
+      "test": [
+        "ResistorColorTests.vb"
+      ],
+      "example": [
+        ".meta/Example.vb"
+      ]
+    }
+  }
+  
