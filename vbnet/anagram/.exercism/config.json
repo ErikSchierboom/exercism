@@ -1,0 +1,12 @@
+{
+  "blurb": "Given a word and a list of possible anagrams, select the correct sublist.",
+  "authors": ["brent113"],
+  "contributors": ["axtens"],
+  "files": {
+    "solution": ["Anagram.vb"],
+    "test": ["AnagramTests.vb"],
+    "example": [".meta/Example.vb"]
+  },
+  "source": "Inspired by the Extreme Startup game",
+  "source_url": "https://github.com/rchatley/extreme_startup"
+}
