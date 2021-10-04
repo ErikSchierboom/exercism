@@ -1,0 +1,12 @@
+{
+  "blurb": "Create an implementation of the atbash cipher, an ancient encryption system created in the Middle East.",
+  "authors": ["brent113"],
+  "contributors": ["axtens"],
+  "files": {
+    "solution": ["AtbashCipher.vb"],
+    "test": ["AtbashCipherTests.vb"],
+    "example": [".meta/Example.vb"]
+  },
+  "source": "Wikipedia",
+  "source_url": "http://en.wikipedia.org/wiki/Atbash"
+}
