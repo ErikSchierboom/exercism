@@ -1,0 +1,21 @@
+{
+  "blurb": "Clean up user-entered phone numbers so that they can be sent SMS messages.",
+  "authors": [
+    "axtens"
+  ],
+  "contributors": [
+  ],
+  "files": {
+    "solution": [
+      "PhoneNumber.vb"
+    ],
+    "test": [
+      "PhoneNumberTests.vb"
+    ],
+    "example": [
+      ".meta/Example.vb"
+    ]
+  },
+  "source": "Event Manager by JumpstartLab",
+  "source_url": "http://tutorials.jumpstartlab.com/projects/eventmanager.html"
+}

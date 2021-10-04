@@ -1,0 +1,19 @@
+{
+    "blurb": "Manage a player's High Score list",
+    "authors": [
+      "axtens"
+    ],
+    "contributors": [],
+    "files": {
+      "solution": [
+        "HighScores.vb"
+      ],
+      "test": [
+        "HighScoresTests.vb"
+      ],
+      "example": [
+        ".meta/Example.vb"
+      ]
+    },
+    "source": "Tribute to the eighties' arcade game Frogger"
+  }
