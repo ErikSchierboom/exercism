@@ -1,0 +1,20 @@
+{
+  "blurb": "Learn about vectors by counting the birds in your garden",
+  "authors": [
+    "porkostomus"
+  ],
+  "forked_from": [
+    "csharp/bird-watcher"
+  ],
+  "files": {
+    "solution": [
+      "src/bird_watcher.clj"
+    ],
+    "test": [
+      "test/bird_watcher_test.clj"
+    ],
+    "exemplar": [
+      ".meta/exemplar.clj"
+    ]
+  }
+}
