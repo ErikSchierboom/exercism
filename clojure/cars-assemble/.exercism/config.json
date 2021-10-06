@@ -1,0 +1,20 @@
+{
+  "blurb": "Learn about numbers and conditionals by analyzing the production of an assembly line in a car factory",
+  "authors": [
+    "porkostomus"
+  ],
+  "forked_from": [
+    "fsharp/cars-assemble"
+  ],
+  "files": {
+    "solution": [
+      "src/cars_assemble.clj"
+    ],
+    "test": [
+      "test/cars_assemble_test.clj"
+    ],
+    "exemplar": [
+      ".meta/exemplar.clj"
+    ]
+  }
+}
