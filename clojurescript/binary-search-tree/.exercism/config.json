@@ -1,0 +1,17 @@
+{
+  "blurb": "Insert and search for numbers in a binary tree.",
+  "authors": [],
+  "files": {
+    "solution": [
+      "src/binary_search_tree.cljs"
+    ],
+    "test": [
+      "test/binary_search_tree_test.cljs"
+    ],
+    "example": [
+      "src/example.cljs"
+    ]
+  },
+  "source": "Josh Cheek",
+  "source_url": "https://twitter.com/josh_cheek"
+}
