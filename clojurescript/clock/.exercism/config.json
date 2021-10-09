@@ -1,0 +1,22 @@
+{
+  "blurb": "Implement a clock that handles times without dates.",
+  "authors": [
+    "LeaveNhA"
+  ],
+  "contributors": [
+    "iiska"
+  ],
+  "files": {
+    "solution": [
+      "src/clock.cljs"
+    ],
+    "test": [
+      "test/clock_test.cljs"
+    ],
+    "example": [
+      ".meta/src/example.cljs"
+    ]
+  },
+  "source": "Pairing session with Erin Drummond",
+  "source_url": "https://twitter.com/ebdrummond"
+}
