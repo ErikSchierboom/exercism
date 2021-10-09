@@ -6,8 +6,8 @@
         lower-candidate (str/lower-case candidate)]
     (and
       (not= lower-word lower-candidate)
-      (= (sort lower-word) (sort lower-candidate)))))
+      (= (sort lower-word) (sort lower-candidate))))) 
 
 (defn anagrams-for [word prospect-list]
   (filter (partial anagram-of? word) prospect-list))
-
+ 

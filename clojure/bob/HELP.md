@@ -2,7 +2,17 @@
 
 ## Running the tests
 
-Leiningen can be used to run the exercise's test by running the following command from the exercise's directory:
+## Clojure CLI
+
+The Clojure exercises on Exercism ship with a `deps.edn` file with a `:test` alias to invoke the [cognitect-labs test-runner](https://github.com/cognitect-labs/test-runner):
+
+``` bash
+$ clj -X:test
+```
+
+## Leiningen
+
+Leiningen can also be used to run the exercise's test by running the following command from the exercise's directory:
 
 ```bash
 lein test
@@ -11,6 +21,12 @@ lein test
 ## REPL
 
 To use the REPL to run the exercise's test, run the following command from the exercise's directory:
+
+```bash
+$ clj
+```
+
+-or-
 
 ```bash
 $ lein repl
@@ -52,6 +68,8 @@ Should those resources not suffice, you could submit your (incomplete) solution 
 
 To get help if you're having trouble, you can use one of the following resources:
 
+- [Ask Clojure](https://ask.clojure.org/) Official forum for Clojure Q & A.
 - [ClojureDocs](https://clojuredocs.org) A repository of language references and examples by function or keyword.
-- [/r/clojure](https://www.reddit.com/r/clojure) is the C# subreddit.
+- [/r/clojure](https://www.reddit.com/r/clojure) is the Clojure subreddit.
 - [StackOverflow](http://stackoverflow.com/questions/tagged/clojure) can be used to search for your problem and see if it has been answered already. You can also ask and answer questions.
+- [Clojureverse](https://clojureverse.org/) Friendly and inclusive Clojure(Script) Community
