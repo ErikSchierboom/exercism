@@ -1,0 +1,22 @@
+{
+  "blurb": "Implement run-length encoding and decoding.",
+  "authors": [
+    "LeaveNhA"
+  ],
+  "contributors": [
+    "iiska"
+  ],
+  "files": {
+    "solution": [
+      "src/run_length_encoding.cljs"
+    ],
+    "test": [
+      "test/run_length_encoding_test.cljs"
+    ],
+    "example": [
+      ".meta/src/example.cljs"
+    ]
+  },
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Run-length_encoding"
+}
