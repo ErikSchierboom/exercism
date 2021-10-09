@@ -1,0 +1,22 @@
+{
+  "blurb": "Given a word and a list of possible anagrams, select the correct sublist.",
+  "authors": [
+    "LeaveNhA"
+  ],
+  "contributors": [
+    "iiska"
+  ],
+  "files": {
+    "solution": [
+      "src/anagram.cljs"
+    ],
+    "test": [
+      "test/anagram_test.cljs"
+    ],
+    "example": [
+      ".meta/src/example.cljs"
+    ]
+  },
+  "source": "Inspired by the Extreme Startup game",
+  "source_url": "https://github.com/rchatley/extreme_startup"
+}
