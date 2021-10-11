@@ -1,0 +1,20 @@
+{
+  "blurb": "Learn about arrays by counting the birds in your garden",
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "forked_from": [
+    "csharp/bird-watcher"
+  ],
+  "files": {
+    "solution": [
+      "BirdWatcher.fs"
+    ],
+    "test": [
+      "BirdWatcherTests.fs"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.fs"
+    ]
+  }
+}
