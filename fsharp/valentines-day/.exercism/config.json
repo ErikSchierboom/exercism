@@ -1,0 +1,17 @@
+{
+  "blurb": "Learn about discriminated union types by deciding what activity to surprise your partner with on Valentines Day",
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "files": {
+    "solution": [
+      "ValentinesDay.fs"
+    ],
+    "test": [
+      "ValentinesDayTests.fs"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.fs"
+    ]
+  }
+}
