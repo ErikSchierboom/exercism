@@ -1,0 +1,20 @@
+{
+  "blurb": "Learn about records by keeping a history of basketball statistics",
+  "contributors": [
+    "valentin-p"
+  ],
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "files": {
+    "solution": [
+      "Bandwagoner.fs"
+    ],
+    "test": [
+      "BandwagonerTests.fs"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.fs"
+    ]
+  }
+}
