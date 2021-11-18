@@ -1,0 +1,21 @@
+{
+  "blurb": "Learn about expressions by improving legacy code.",
+  "contributors": [
+    "ErikSchierboom",
+    "yzAlvin"
+  ],
+  "authors": [
+    "mikedamay"
+  ],
+  "files": {
+    "solution": [
+      "TheWeatherInDeather.cs"
+    ],
+    "test": [
+      "TheWeatherInDeatherTests.cs"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.cs"
+    ]
+  }
+}
