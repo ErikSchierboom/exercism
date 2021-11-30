@@ -3,3 +3,6 @@ bin/
 .vs/
 .vscode/
 .idea/
+TestResults/
+*.trx
+msbuild.log
