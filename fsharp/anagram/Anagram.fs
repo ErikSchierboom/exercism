@@ -8,4 +8,4 @@ let isAnagram word candidate =
     sortedLowerCase candidate = sortedLowerCase word &&
     candidate.ToLower() <> word.ToLower()
        
-let anagrams candidates word = List.filter (isAnagram word) candidates
+let findAnagrams candidates word = List.filter (isAnagram word) candidates
