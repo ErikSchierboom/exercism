@@ -1,169 +1,106 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 
 public class LedgerEntry
 {
-   public LedgerEntry(DateTime date, string desc, decimal chg)
-   {
-       Date = date;
-       Desc = desc;
-       Chg = chg;
-   }
+    public LedgerEntry(DateTime date, string description, float change)
+    {
+        Date = date;
+        Description = description;
+        Change = change;
+    }
 
-   public DateTime Date { get; }
-   public string Desc { get; }
-   public decimal Chg { get; }
+    public DateTime Date { get; }
+    public string Description { get; }
+    public float Change { get; }
 }
 
 public static class Ledger
 {
-   public static LedgerEntry CreateEntry(string date, string desc, int chng)
-   {
-       return new LedgerEntry(DateTime.Parse(date, CultureInfo.InvariantCulture), desc, chng / 100.0m);
-   }
+    private const int TruncateLength = 25;
+    private const string TruncateSuffix = "...";
 
-   private static CultureInfo CreateCulture(string cur, string loc)
-   {
-       string curSymb = null;
-       int curNeg = 0;
-       string datPat = null;
+    public static LedgerEntry CreateEntry(string date, string description, int change) =>
+        new LedgerEntry(ParseDate(date), description, ParseChange(change));
 
-       if (cur != "USD" && cur != "EUR")
-       {
-           throw new ArgumentException("Invalid currency");
-       }
-       else
-       {
-           if (loc != "nl-NL" && loc != "en-US")
-           {
-               throw new ArgumentException("Invalid currency");
-           }
+    private static DateTime ParseDate(string date) => DateTime.Parse(date, System.Globalization.CultureInfo.InvariantCulture);
 
-           if (cur == "USD")
-           {
-               if (loc == "en-US")
-               {
-                   curSymb = "$";
-                   datPat = "MM/dd/yyyy";
-               }
-               else if (loc == "nl-NL")
-               {
-                   curSymb = "$";
-                   curNeg = 12;
-                   datPat = "dd/MM/yyyy";
-               }
-           }
+    private static float ParseChange(int change) => change / 100.0f;
 
-           if (cur == "EUR")
-           {
-               if (loc == "en-US")
-               {
-                   curSymb = "€";
-                   datPat = "MM/dd/yyyy";
-               }
-               else if (loc == "nl-NL")
-               {
-                   curSymb = "€";
-                   curNeg = 12;
-                   datPat = "dd/MM/yyyy";
-               }
-           }
-       }
+    private static string CurrencySymbol(string currency)
+    {
+        switch (currency)
+        {
+            case "USD": return "$";
+            case "EUR": return "€";
+            default: throw new ArgumentException("Invalid currency");
+        }
+    }
 
-       var culture = new CultureInfo(loc);
-       culture.NumberFormat.CurrencySymbol = curSymb;
-       culture.NumberFormat.CurrencyNegativePattern = curNeg;
-       culture.DateTimeFormat.ShortDatePattern = datPat;
-       return culture;
-   }
+    private static CultureInfo CultureInfo(string locale)
+    {
+        switch (locale)
+        {
+            case "en-US": return new CultureInfo(locale);
+            case "nl-NL": return new CultureInfo(locale);
+            default: throw new ArgumentException("Invalid locale");
+        }
+    }
 
-   private static string PrintHead(string loc)
-   {
-       if (loc == "en-US")
-       {
-           return "Date       | Description               | Change       ";
-       }
+    private static string ShortDateFormat(string locale)
+    {
+        switch (locale)
+        {
+            case "en-US": return "MM/dd/yyyy";
+            case "nl-NL": return "dd/MM/yyyy";
+            default: throw new ArgumentException("Invalid locale");
+        }
+    }
 
-       else
-       {
-           if (loc == "nl-NL")
-           {
-               return "Datum      | Omschrijving              | Verandering  ";
-           }
-           else
-           {
-               throw new ArgumentException("Invalid locale");
-           }
-       }
-   }
+    private static CultureInfo getCulture(string currency, string locale)
+    {
+        var culture = CultureInfo(locale);
+        culture.NumberFormat.CurrencySymbol = CurrencySymbol(currency);
+        culture.DateTimeFormat.ShortDatePattern = ShortDateFormat(locale);
+        return culture;
+    }
 
-   private static string Date(IFormatProvider culture, DateTime date) => date.ToString("d", culture);
+    private static string FormatHeader(CultureInfo culture)
+    {
+        switch (culture.Name)
+        {
+            case "en-US": return "Date       | Description               | Change       ";
+            case "nl-NL": return "Datum      | Omschrijving              | Verandering  ";
+            default: throw new ArgumentException("Invalid locale");
+        }
+    }
 
-   private static string Description(string desc)
-   {
-       if (desc.Length > 25)
-       {
-           var trunc = desc.Substring(0, 22);
-           trunc += "...";
-           return trunc;
-       }
+    private static string FormatDate(IFormatProvider culture, DateTime date) => date.ToString("d", culture);
 
-       return desc;
-   }
+    private static string FoormatDescription(string description) =>
+        description.Length <= TruncateLength ? description : description.Substring(0, TruncateLength - TruncateSuffix.Length) + TruncateSuffix;
 
-   private static string Change(IFormatProvider culture, decimal cgh)
-   {
-       return cgh < 0.0m ? cgh.ToString("C", culture) : cgh.ToString("C", culture) + " ";
-   }
+    private static string FormatChange(IFormatProvider culture, float change) =>
+        change < 0.0 ? change.ToString("C", culture) : change.ToString("C", culture) + " ";
 
-   private static string PrintEntry(IFormatProvider culture, LedgerEntry entry)
-   {
-       var formatted = "";
-       var date = Date(culture, entry.Date);
-       var description = Description(entry.Desc);
-       var change = Change(culture, entry.Chg);
+    private static string FormatEntry(IFormatProvider culture, LedgerEntry entry) =>
+        string.Format("{0} | {1,-25} | {2,13}", FormatDate(culture, entry.Date), FoormatDescription(entry.Description), FormatChange(culture, entry.Change));
 
-       formatted += date;
-       formatted += " | ";
-       formatted += string.Format("{0,-25}", description);
-       formatted += " | ";
-       formatted += string.Format("{0,13}", change);
+    private static IEnumerable<LedgerEntry> OrderEntries(LedgerEntry[] entries) =>
+        entries
+            .OrderBy(x => x.Date)
+            .ThenBy(x => x.Description)
+            .ThenBy(x => x.Change);
 
-       return formatted;
-   }
+    public static string Format(string currency, string locale, LedgerEntry[] entries)
+    {
+        var culture = getCulture(currency, locale);
+        var header = FormatHeader(culture);
+        var printedEntries = OrderEntries(entries).Select(entry => FormatEntry(culture, entry));
+        var lines = new[] { header }.Concat(printedEntries);
 
-
-   private static IEnumerable<LedgerEntry> sort(LedgerEntry[] entries)
-   {
-       var neg = entries.Where(e => e.Chg < 0).OrderBy(x => x.Date + "@" + x.Desc + "@" + x.Chg);
-       var post = entries.Where(e => e.Chg >= 0).OrderBy(x => x.Date + "@" + x.Desc + "@" + x.Chg);
-
-       var result = new List<LedgerEntry>();
-       result.AddRange(neg);
-       result.AddRange(post);
-
-       return result;
-   }
-
-   public static string Format(string currency, string locale, LedgerEntry[] entries)
-   {
-       var formatted = "";
-       formatted += PrintHead(locale);
-
-       var culture = CreateCulture(currency, locale);
-
-       if (entries.Length > 0)
-       {
-           var entriesForOutput = sort(entries);
-
-           for (var i = 0; i < entriesForOutput.Count(); i++)
-           {
-               formatted += "\n" + PrintEntry(culture, entriesForOutput.Skip(i).First());
-           }
-       }
-
-       return formatted;
-   }
+        return string.Join("\n", lines);
+    }
 }
