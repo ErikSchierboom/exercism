@@ -1,15 +1,35 @@
-﻿module DotDsl
+module DotDsl
 
-let graph children = failwith "You need to implement this function."
+type Attribute = string * string
 
-let attr key value = failwith "You need to implement this function."
+type Element =
+    | Attr of Attribute
+    | Node of string * Attribute list
+    | Edge of string * string * Attribute list
 
-let node key attrs = failwith "You need to implement this function."
+type Graph = Element list
 
-let edge left right attrs = failwith "You need to implement this function."
+let graph children = children |> List.sort
 
-let attrs graph = failwith "You need to implement this function."
+let attr key value = Attr (key, value)
+let node key attrs = Node (key, attrs)
+let edge left right attrs = Edge (left, right, attrs)
 
-let nodes graph = failwith "You need to implement this function."
+let isAttr element =
+    match element with
+    | Attr _ -> Some element
+    | _      -> None
 
-let edges graph = failwith "You need to implement this function."
+let isNode element =
+    match element with
+    | Node _ -> Some element
+    | _      -> None
+
+let isEdge element =
+    match element with
+    | Edge _ -> Some element
+    | _      -> None
+
+let attrs graph = List.choose isAttr graph
+let nodes graph = List.choose isNode graph
+let edges graph = List.choose isEdge graph
