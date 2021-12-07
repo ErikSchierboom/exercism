@@ -1,7 +1,12 @@
-﻿module DiffieHellman
+module DiffieHellman
 
-let privateKey primeP = failwith "You need to implement this function."
+open System
+open System.Numerics
 
-let publicKey primeP primeG privateKey = failwith "You need to implement this function."
+let random = new Random()
 
-let secret primeP publicKey privateKey = failwith "You need to implement this function."
+let privateKey (primeP: bigint) = random.Next(1, (int primeP) - 1) |> bigint
+
+let publicKey (primeP: bigint) (primeG: bigint) (privateKey: bigint) = BigInteger.ModPow(primeG, privateKey, primeP)
+
+let secret (primeP: bigint) (publicKey: bigint) (privateKey: bigint) = BigInteger.ModPow(publicKey, privateKey, primeP)
