@@ -1,67 +1,73 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
 public class TreeBuildingRecord
 {
+    private const int RootRecordId = 0;
+
     public int ParentId { get; set; }
     public int RecordId { get; set; }
+
+    public bool IsRoot => RecordId == RootRecordId;
 }
 
 public class Tree
 {
-    public int Id { get; set; }
-    public int ParentId { get; set; }
+    public Tree(int id)
+    {
+        Id = id;
+        Children = new List<Tree>();
+    }
 
-    public List<Tree> Children { get; set; }
+    public int Id { get; }
+
+    public List<Tree> Children { get; }
 
     public bool IsLeaf => Children.Count == 0;
 }
 
 public static class TreeBuilder
 {
+    private const int RootRecordId = 0;
+
     public static Tree BuildTree(IEnumerable<TreeBuildingRecord> records)
     {
-        var ordered = new SortedList<int, TreeBuildingRecord>();
+        var orderedRecords = GetOrderedRecords(records);
 
-        foreach (var record in records)
-        {
-            ordered.Add(record.RecordId, record);
-        }
+        if (orderedRecords.Count == 0)
+            throw new ArgumentException();
 
-        records = ordered.Values;
-
-        var trees = new List<Tree>();
+        var nodes = new Dictionary<int, Tree>();
         var previousRecordId = -1;
 
-        foreach (var record in records)
-        {   
-            var t = new Tree { Children = new List<Tree>(), Id = record.RecordId, ParentId = record.ParentId };
-            trees.Add(t);
-
-            if ((t.Id == 0 && t.ParentId != 0) ||
-                (t.Id != 0 && t.ParentId >= t.Id) ||
-                (t.Id != 0 && t.Id != previousRecordId + 1))
-            {
-                throw new ArgumentException();
-            }
-
-            ++previousRecordId;
-        }
-        
-        if (trees.Count == 0)
+        foreach (var record in orderedRecords)
         {
+            ValidateRecord(record, previousRecordId);
+
+            nodes[record.RecordId] = new Tree(record.RecordId);
+
+            if (!record.IsRoot)
+                nodes[record.ParentId].Children.Add(nodes[record.RecordId]);
+
+            previousRecordId++;
+        }
+
+        return nodes[RootRecordId];
+    }
+
+    private static void ValidateRecord(TreeBuildingRecord record, int previousRecordId)
+    {
+        if (record.IsRoot && record.ParentId != RootRecordId)
             throw new ArgumentException();
-        }
+        else if (!record.IsRoot && record.ParentId >= record.RecordId)
+            throw new ArgumentException();
+        else if (!record.IsRoot && record.RecordId != previousRecordId + 1)
+            throw new ArgumentException();
+    }
 
-        for (int i = 1; i < trees.Count; i++)
-        {
-            var t = trees.First(x => x.Id == i);
-            var parent = trees.First(x => x.Id == t.ParentId);
-            parent.Children.Add(t);
-        }
-
-        var r = trees.First(t => t.Id == 0);
-        return r;
+    private static List<TreeBuildingRecord> GetOrderedRecords(IEnumerable<TreeBuildingRecord> records)
+    {
+        return records.OrderBy(record => record.RecordId).ToList();
     }
 }
