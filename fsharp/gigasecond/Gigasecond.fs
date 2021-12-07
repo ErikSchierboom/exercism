@@ -1,3 +1,5 @@
-﻿module Gigasecond
+module Gigasecond
 
-let add beginDate = failwith "You need to implement this function."
+open System
+
+let gigasecond (beginDate: DateTime) = beginDate.AddSeconds(1000000000.0).Date
