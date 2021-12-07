@@ -1,19 +1,36 @@
 module SimpleLinkedList
 
-//TODO: define LinkedList type
+type LinkedList<'a> = 
+    | Nil 
+    | Element of datum:'a * next:LinkedList<'a>
 
-let nil = failwith "You need to implement this function."
+let nil = Nil
 
-let create x n = failwith "You need to implement this function."
+let create x n = Element (x, n)
 
-let isNil x = failwith "You need to implement this function."
+let isNil x = 
+    match x with
+    | Nil -> true
+    | _   -> false
 
-let next x = failwith "You need to implement this function."
+let next x = 
+    match x with
+    | Nil -> Nil
+    | Element (_, n) -> n
 
-let datum x = failwith "You need to implement this function."
+let datum x = 
+    match x with
+    | Nil -> failwith "The nil list has no datum."
+    | Element (y, _) -> y
 
-let toList x = failwith "You need to implement this function."
+let toList x = 
+    let rec loop acc item = 
+        match item with
+        | Nil -> acc |> List.rev
+        | Element (b, n) -> loop (b :: acc) n
 
-let fromList xs = failwith "You need to implement this function."
+    loop [] x
 
-let reverse x = failwith "You need to implement this function."
+let fromList xs = List.foldBack create xs Nil
+
+let reverse x = x |> toList |> List.rev |> fromList
