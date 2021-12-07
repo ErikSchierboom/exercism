@@ -1,3 +1,3 @@
-﻿module HelloWorld
+module HelloWorld
 
-let hello = "Hello, World!"
+let hello name = sprintf "Hello, %s!" (defaultArg name "World")
