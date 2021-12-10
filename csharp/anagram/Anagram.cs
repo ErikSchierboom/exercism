@@ -8,7 +8,7 @@ public class Anagram
 
     public Anagram(string word) => _word = word;
 
-    public IEnumerable<string> Anagrams(IEnumerable<string> candidates) =>
+    public IEnumerable<string> FindAnagrams(IEnumerable<string> candidates) =>
         candidates.Where(IsAnagram).ToArray();
 
     private bool IsAnagram(string candidate) =>
@@ -18,5 +18,5 @@ public class Anagram
         !string.Equals(candidate, _word, StringComparison.OrdinalIgnoreCase);
 
     private static string SortedLowerCase(string word) =>
-        new(word.ToLower().OrderBy(c => c).ToArray());
+        new(word.ToLower().OrderBy(c => c).ToArray()); 
 }
