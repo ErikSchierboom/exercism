@@ -1,0 +1,22 @@
+{
+  "blurb": "Learn about dictionaries by keeping track of international dialling codes.",
+  "contributors": [
+    "ErikSchierboom",
+    "valentin-p",
+    "yzAlvin"
+  ],
+  "authors": [
+    "mikedamay"
+  ],
+  "files": {
+    "solution": [
+      "InternationalCallingConnoisseur.cs"
+    ],
+    "test": [
+      "InternationalCallingConnoisseurTests.cs"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.cs"
+    ]
+  }
+}
