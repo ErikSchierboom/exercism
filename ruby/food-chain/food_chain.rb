@@ -1,6 +1,6 @@
 module FoodChain
   def self.song
-    NUMBER_OF_VERSES.times.map { |n| Verse.new(n + 1) }.join("#{$/}#{$/}") + $/
+    NUMBER_OF_VERSES.times.map { |n| Verse.new(n + 1) }.join("#{$/}")
   end
 
   class Verse
@@ -9,25 +9,30 @@ module FoodChain
     end
 
     def to_s
-      verse_begin + $/ + verse_end
+      "#{fact}#{$/}#{embellishment}#{conclusion}#{$/}"
     end
 
     private
     attr_reader :number
 
-    def verse_begin
+    def fact
       case number
       when 1
-        'I know an old lady who swallowed a fly.'
+        "I know an old lady who swallowed a fly."
       when 8
-        'I know an old lady who swallowed a horse.'
+        "I know an old lady who swallowed a horse."
       else
         (subject, followup) = SUBJECTS[number - 2]
-        "I know an old lady who swallowed a #{subject}.#{$/}#{followup}"
+        "I know an old lady who swallowed a #{subject}."
       end
     end
 
-    def verse_end
+    def embellishment
+      (subject, followup) = SUBJECTS[number - 2]
+      "#{followup}#{$/}" if number > 1 && number < 8
+    end
+
+    def conclusion
       if number == 8
         "She's dead, of course!"
       else
