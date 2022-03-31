@@ -18,14 +18,16 @@ module FoodChain
     attr_reader :number
 
     def fact = "I know an old lady who swallowed a #{subject}.#{$/}#{comment}".strip
+
     def subject = SUBJECTS[number - 1][0]
+
     def comment = SUBJECTS[number - 1][1]
 
     def conclusion
       if number == 8
         "She's dead, of course!"
       else
-        HISTORY.drop(HISTORY.size - number).take(number).join($/)
+        HISTORY[-number..].join($/)
       end
     end
 
