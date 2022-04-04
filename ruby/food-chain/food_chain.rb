@@ -1,23 +1,23 @@
 require "ostruct"
 
 module FoodChain
-  def self.song = 1.upto(NUMBER_OF_VERSES.size).map(&Verse.method(:new)).join($/)
+  def self.song = NUMBER_OF_VERSES.times.map(&Verse.method(:new)).join($/)
 
   class Verse
     def initialize(number) = @number = number
 
-    def to_s = [fact, SUBJECTS[number - 1].embellishment, swallows, SUBJECTS[number - 1].conclusion].compact.join($/) + $/
+    def to_s = [fact, SUBJECTS[number].embellishment, swallows, SUBJECTS[number].conclusion].compact.join($/) + $/
 
     private
 
     attr_reader :number
 
-    def fact = "I know an old lady who swallowed a #{SUBJECTS[number - 1].subject}."
+    def fact = "I know an old lady who swallowed a #{SUBJECTS[number].subject}."
 
     def swallows
-      return if SUBJECTS[number - 1].embellishment.nil?
+      return if SUBJECTS[number].embellishment.nil?
 
-      (number - 1).downto(1).map {|n| "She swallowed the #{SUBJECTS[n].subject} to catch the #{SUBJECTS[n - 1].subject}#{SUBJECTS[n - 1].addition}."}.join($/)
+      (number + 1).downto(2).map {|n| "She swallowed the #{SUBJECTS[n - 1].subject} to catch the #{SUBJECTS[n - 2].subject}#{SUBJECTS[n - 2].addition}."}.join($/)
     end
 
     SUBJECTS = [
