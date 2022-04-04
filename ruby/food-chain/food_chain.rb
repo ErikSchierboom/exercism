@@ -1,7 +1,7 @@
 require "ostruct"
 
 module FoodChain
-  def self.song = 1.upto(NUMBER_OF_VERSES).map(&Verse.method(:new)).join($/)
+  def self.song = 1.upto(NUMBER_OF_VERSES.size).map(&Verse.method(:new)).join($/)
 
   class Verse
     def initialize(number) = @number = number
@@ -13,8 +13,9 @@ module FoodChain
     attr_reader :number
 
     def fact = "I know an old lady who swallowed a #{SUBJECTS[number - 1].subject}."
+
     def swallows
-      return if number == 8 || number == 1
+      return if SUBJECTS[number - 1].embellishment.nil?
 
       (number - 1).downto(1).map {|n| "She swallowed the #{SUBJECTS[n].subject} to catch the #{SUBJECTS[n - 1].subject}#{SUBJECTS[n - 1].addition}."}.join($/)
     end
