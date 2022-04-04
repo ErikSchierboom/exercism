@@ -1,23 +1,22 @@
+require "ostruct"
+
 module FoodChain
   def self.song = 1.upto(NUMBER_OF_VERSES).map(&Verse.method(:new)).join($/)
 
   class Verse
     def initialize(number) = @number = number
 
-    def to_s = [fact, embellishment, swallows, conclusion].compact.join($/) + $/
+    def to_s = [fact, SUBJECTS[number - 1].embellishment, swallows, SUBJECTS[number - 1].conclusion].compact.join($/) + $/
 
     private
 
     attr_reader :number
 
-    def fact = "I know an old lady who swallowed a #{subject}."
-    def subject = SUBJECTS[number - 1][0]
-    def embellishment = SUBJECTS[number - 1][1]
-    def conclusion = SUBJECTS[number - 1][2] || "I don't know why she swallowed the fly. Perhaps she'll die."
+    def fact = "I know an old lady who swallowed a #{SUBJECTS[number - 1].subject}."
     def swallows
       return if number == 8 || number == 1
 
-      (number - 1).downto(1).map {|n| "She swallowed the #{SUBJECTS[n][0]} to catch the #{SUBJECTS[n - 1][0]}#{SUBJECTS[n - 1][3]}."}.join($/)
+      (number - 1).downto(1).map {|n| "She swallowed the #{SUBJECTS[n].subject} to catch the #{SUBJECTS[n - 1].subject}#{SUBJECTS[n - 1].addition}."}.join($/)
     end
 
     SUBJECTS = [
@@ -29,7 +28,9 @@ module FoodChain
       ['goat', 'Just opened her throat and swallowed a goat!', nil, nil],
       ['cow', 'I don\'t know how she swallowed a cow!', nil, nil],
       ['horse', nil, 'She\'s dead, of course!', nil]
-    ].freeze
+    ].map do |subject, embellishment, conclusion, addition|
+      OpenStruct.new(subject:, embellishment:, conclusion: conclusion || "I don't know why she swallowed the fly. Perhaps she'll die.", addition:)
+    end.freeze
 
     private_constant :SUBJECTS
   end
