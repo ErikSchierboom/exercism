@@ -1,5 +1,3 @@
-require "ostruct"
-
 module FoodChain
   def self.song = 1.upto(NUMBER_OF_VERSES).map(&Verse.method(:lyrics)).join($/)
 
