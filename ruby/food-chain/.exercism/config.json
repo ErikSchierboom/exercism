@@ -1,0 +1,35 @@
+{
+  "blurb": "Generate the lyrics of the song 'I Know an Old Lady Who Swallowed a Fly'",
+  "authors": [
+    "kytrinyx"
+  ],
+  "contributors": [
+    "alexbrinkman",
+    "alxndr",
+    "budmc29",
+    "cadwallion",
+    "dkinzer",
+    "fluxusfrequency",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "kickinbahk",
+    "kotp",
+    "McEileen",
+    "Rojo",
+    "tryantwit"
+  ],
+  "files": {
+    "solution": [
+      "food_chain.rb"
+    ],
+    "test": [
+      "food_chain_test.rb"
+    ],
+    "example": [
+      ".meta/example.rb"
+    ]
+  },
+  "source": "Wikipedia",
+  "source_url": "http://en.wikipedia.org/wiki/There_Was_an_Old_Lady_Who_Swallowed_a_Fly"
+}

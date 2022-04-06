@@ -2,5 +2,6 @@
 .vs/
 .idea/
 .ionide/
+.metals/
 users/
 *.DotSettings.user
