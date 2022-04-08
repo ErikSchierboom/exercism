@@ -1,8 +1,5 @@
 module FoodChain
-  def self.song = 1.upto(NUMBER_OF_VERSES).map(&Verse.method(:lyrics)).join($/)
-
-  NUMBER_OF_VERSES = 8
-  private_constant :NUMBER_OF_VERSES
+  def self.song = 1.upto(Animal::ANIMALS.size).map(&Verse.method(:lyrics)).join($/)
 end
 
 class Verse
@@ -12,7 +9,7 @@ class Verse
     case number
     when 1
       FirstVerse
-    when 8
+    when Animal::ANIMALS.size
       LastVerse
     else
       self
@@ -24,15 +21,19 @@ class Verse
   def initialize(number) = @number = number
 
   def lyrics = [fact, embellishment, history, conclusion].compact.join($/) + $/
-  def fact = "I know an old lady who swallowed a #{animal.name}."
+  def fact = "I know an old lady who swallowed a #{animal}."
   def conclusion = "I don't know why she swallowed the fly. Perhaps she'll die."
   def embellishment = animal.embellishment
+
+  def swallowed(animal, caught)
+    "She swallowed the #{animal} to catch the #{caught.name_with_description}."
+  end
 
   def history =
     number
       .downto(1)
       .each_cons(2)
-      .map {|swallowed_idx, caught_idx| "She swallowed the #{Animal.for(swallowed_idx).name} to catch the #{Animal.for(caught_idx).name_with_description}."}
+      .map {|swallowed_idx, caught_idx| swallowed(Animal.for(swallowed_idx), Animal.for(caught_idx))}
       .join($/)
 
   def animal = Animal.for(number)
@@ -50,7 +51,7 @@ class LastVerse < Verse
 end
 
 class Animal
-  def self.for(number) = new(*ANIMALS[number - 1])
+  def self.for(number) = ANIMALS[number - 1]
 
   attr_reader :name, :embellishment, :description
 
@@ -60,17 +61,18 @@ class Animal
     @description = description
   end
 
+  def to_s = name
+
   def name_with_description = [name, description].compact.join(' ')
 
   ANIMALS = [
-    ['fly', nil, nil],
-    ['spider', 'It wriggled and jiggled and tickled inside her.', 'that wriggled and jiggled and tickled inside her'],
-    ['bird', 'How absurd to swallow a bird!', nil],
-    ['cat', 'Imagine that, to swallow a cat!', nil],
-    ['dog', 'What a hog, to swallow a dog!', nil],
-    ['goat', 'Just opened her throat and swallowed a goat!', nil],
-    ['cow', 'I don\'t know how she swallowed a cow!', nil],
-    ['horse', nil, nil]
+    new('fly', nil, nil).freeze,
+    new('spider', 'It wriggled and jiggled and tickled inside her.', 'that wriggled and jiggled and tickled inside her').freeze,
+    new('bird', 'How absurd to swallow a bird!', nil).freeze,
+    new('cat', 'Imagine that, to swallow a cat!', nil).freeze,
+    new('dog', 'What a hog, to swallow a dog!', nil).freeze,
+    new('goat', 'Just opened her throat and swallowed a goat!', nil).freeze,
+    new('cow', 'I don\'t know how she swallowed a cow!', nil).freeze,
+    new('horse', nil, nil).freeze
   ].freeze
-  private_constant :ANIMALS
 end
