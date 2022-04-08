@@ -1,10 +1,8 @@
 module FoodChain
-  def self.song = 1.upto(Animal::ANIMALS.size).map(&Verse.method(:lyrics)).join($/)
+  def self.song = 1.upto(Animal::ANIMALS.size).map(&Verse.method(:for)).join($/)
 end
 
 class Verse
-  def self.lyrics(number) = self.for(number).lyrics
-
   def self.for(number)
     case number
     when 1
@@ -20,22 +18,13 @@ class Verse
 
   def initialize(number) = @number = number
 
-  def lyrics = [fact, embellishment, history, conclusion].compact.join($/) + $/
+  def to_s = [fact, embellishment, history, conclusion].compact.join($/) + $/
   def fact = "I know an old lady who swallowed a #{animal}."
   def conclusion = "I don't know why she swallowed the fly. Perhaps she'll die."
   def embellishment = animal.embellishment
+  def swallowed(animal, caught_animal) = "She swallowed the #{animal} to catch the #{caught_animal}#{caught_animal.description}."
 
-  def swallowed(animal, caught)
-    "She swallowed the #{animal} to catch the #{caught.name_with_description}."
-  end
-
-  def history =
-    number
-      .downto(1)
-      .each_cons(2)
-      .map {|swallowed_idx, caught_idx| swallowed(Animal.for(swallowed_idx), Animal.for(caught_idx))}
-      .join($/)
-
+  def history = Animal::ANIMALS[0..number - 1].reverse.each_cons(2).map {|swallowed, caught| swallowed(swallowed, caught)}.join($/)
   def animal = Animal.for(number)
 end
 
@@ -63,11 +52,9 @@ class Animal
 
   def to_s = name
 
-  def name_with_description = [name, description].compact.join(' ')
-
   ANIMALS = [
     new('fly', nil, nil).freeze,
-    new('spider', 'It wriggled and jiggled and tickled inside her.', 'that wriggled and jiggled and tickled inside her').freeze,
+    new('spider', 'It wriggled and jiggled and tickled inside her.', ' that wriggled and jiggled and tickled inside her').freeze,
     new('bird', 'How absurd to swallow a bird!', nil).freeze,
     new('cat', 'Imagine that, to swallow a cat!', nil).freeze,
     new('dog', 'What a hog, to swallow a dog!', nil).freeze,
