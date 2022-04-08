@@ -1,31 +1,34 @@
 module FoodChain
-  def self.song = 1.upto(Animal::ANIMALS.size).map(&Verse.method(:for)).join($/)
+  def self.song = Animal::ANIMALS.map(&Verse.method(:for)).join($/)
 end
 
 class Verse
-  def self.for(number)
-    case number
-    when 1
+  def self.for(animal)
+    case animal
+    when Animal::ANIMALS.first
       FirstVerse
-    when Animal::ANIMALS.size
+    when Animal::ANIMALS.last
       LastVerse
     else
       self
-    end.new(number)
+    end.new(animal)
   end
 
-  attr_reader :number
+  attr_reader :animal
 
-  def initialize(number) = @number = number
+  def initialize(animal) = @animal = animal
 
   def to_s = [fact, embellishment, history, conclusion].compact.join($/) + $/
   def fact = "I know an old lady who swallowed a #{animal}."
   def conclusion = "I don't know why she swallowed the fly. Perhaps she'll die."
   def embellishment = animal.embellishment
-  def swallowed(animal, caught_animal) = "She swallowed the #{animal} to catch the #{caught_animal}#{caught_animal.description}."
 
-  def history = Animal::ANIMALS[0..number - 1].reverse.each_cons(2).map {|swallowed, caught| swallowed(swallowed, caught)}.join($/)
-  def animal = Animal.for(number)
+  def history =
+    Animal::ANIMALS[0..Animal::ANIMALS.index(animal)]
+      .reverse
+      .each_cons(2)
+      .map {|swallowed, caught| "She swallowed the #{swallowed} to catch the #{caught}#{caught.description}."}
+      .join($/)
 end
 
 class FirstVerse < Verse
@@ -40,8 +43,6 @@ class LastVerse < Verse
 end
 
 class Animal
-  def self.for(number) = ANIMALS[number - 1]
-
   attr_reader :name, :embellishment, :description
 
   def initialize(name, embellishment, description)
