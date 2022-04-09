@@ -45,22 +45,23 @@ end
 class Animal
   attr_reader :name, :embellishment, :description
 
-  def initialize(name, embellishment, description)
+  def initialize(name, embellishment = nil, description: nil)
     @name = name
     @embellishment = embellishment
     @description = description
+    freeze
   end
 
   def to_s = name
 
   ANIMALS = [
-    new('fly', nil, nil).freeze,
-    new('spider', 'It wriggled and jiggled and tickled inside her.', ' that wriggled and jiggled and tickled inside her').freeze,
-    new('bird', 'How absurd to swallow a bird!', nil).freeze,
-    new('cat', 'Imagine that, to swallow a cat!', nil).freeze,
-    new('dog', 'What a hog, to swallow a dog!', nil).freeze,
-    new('goat', 'Just opened her throat and swallowed a goat!', nil).freeze,
-    new('cow', 'I don\'t know how she swallowed a cow!', nil).freeze,
-    new('horse', nil, nil).freeze
+    new('fly'),
+    new('spider', 'It wriggled and jiggled and tickled inside her.', description: ' that wriggled and jiggled and tickled inside her'),
+    new('bird', 'How absurd to swallow a bird!'),
+    new('cat', 'Imagine that, to swallow a cat!'),
+    new('dog', 'What a hog, to swallow a dog!'),
+    new('goat', 'Just opened her throat and swallowed a goat!'),
+    new('cow', 'I don\'t know how she swallowed a cow!'),
+    new('horse')
   ].freeze
 end
