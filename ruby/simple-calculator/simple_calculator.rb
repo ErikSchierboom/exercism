@@ -10,7 +10,7 @@ class SimpleCalculator
 
     result = first_operand.send(operation, second_operand)
     "#{first_operand} #{operation} #{second_operand} = #{result}"
-  rescue ZeroDivisionError => _
+  rescue ZeroDivisionError
     'Division by zero is not allowed.'
   end
 end
