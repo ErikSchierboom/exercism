@@ -1,0 +1,24 @@
+{
+  "authors": [
+    "angelikatyborska"
+  ],
+  "contributors": [
+    "neenjaw"
+  ],
+  "files": {
+    "solution": [
+      "lib/freelancer_rates.ex"
+    ],
+    "test": [
+      "test/freelancer_rates_test.exs"
+    ],
+    "exemplar": [
+      ".meta/exemplar.ex"
+    ]
+  },
+  "language_versions": ">=1.10",
+  "forked_from": [
+    "javascript/freelancer-rates"
+  ],
+  "blurb": "Learn about integers and floating point numbers by helping a freelancer communicate with a project manager about billing."
+}
