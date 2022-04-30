@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "neenjaw"
+  ],
+  "files": {
+    "solution": [
+      "lib/high_score.ex"
+    ],
+    "test": [
+      "test/high_score_test.exs"
+    ],
+    "exemplar": [
+      ".meta/exemplar.ex"
+    ]
+  },
+  "language_versions": ">=1.10",
+  "icon": "high-scores",
+  "blurb": "Learn about maps by keeping track of the high scores in your local arcade hall."
+}
