@@ -1,0 +1,25 @@
+{
+  "authors": [
+    "angelikatyborska"
+  ],
+  "contributors": [
+    "neenjaw"
+  ],
+  "files": {
+    "solution": [
+      "lib/name_badge.ex"
+    ],
+    "test": [
+      "test/name_badge_test.exs"
+    ],
+    "exemplar": [
+      ".meta/exemplar.ex"
+    ]
+  },
+  "language_versions": ">=1.10",
+  "forked_from": [
+    "csharp/tim-from-marketing"
+  ],
+  "icon": "tim-from-marketing",
+  "blurb": "Learn about nil and the if conditional expression by printing name badges for factory employees."
+}
