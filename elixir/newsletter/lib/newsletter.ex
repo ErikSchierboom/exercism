@@ -3,16 +3,12 @@ defmodule Newsletter do
     File.read!(path) |> String.split()
   end
 
-  @spec open_log(any) :: nil
   def open_log(path) do
-    {:ok, io_device} = File.open(path, [:write])
-    io_device
+    File.open!(path, [:write])
   end
 
-  @spec log_sent_email(any, any) :: nil
   def log_sent_email(pid, email) do
-    IO.write(pid, email)
-    IO.write(pid, "\n")
+    IO.puts(pid, email)
   end
 
   def close_log(pid) do
