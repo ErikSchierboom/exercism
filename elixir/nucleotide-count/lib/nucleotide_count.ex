@@ -6,6 +6,6 @@ defmodule NucleotideCount do
   end
 
   def histogram(strand) do
-    Map.new(Enum.map(@nucleotides, &{&1, count(strand, &1)}))
+    Map.new(@nucleotides, &{&1, count(strand, &1)})
   end
 end
