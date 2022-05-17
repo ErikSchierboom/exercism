@@ -1,8 +1,10 @@
 defmodule ProteinTranslation do
   def of_rna(rna) do
-    Regex.scan(~r(\w{3}), rna)
-    |> Stream.map(&Enum.join/1)
-    |> Stream.map(&of_codon/1)
+    rna
+    |> String.graphemes()
+    |> Enum.chunk_every(3, 3, [])
+    |> Enum.map(&Enum.join/1)
+    |> Enum.map(&of_codon/1)
     |> Enum.reduce_while({:ok, []}, fn
       {:ok, "STOP"}, {:ok, codons} ->
         {:halt, {:ok, codons}}
