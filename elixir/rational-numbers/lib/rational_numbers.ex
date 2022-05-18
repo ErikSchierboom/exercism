@@ -29,7 +29,6 @@ defmodule RationalNumbers do
     end
   end
 
-  @spec pow_real(x :: integer, n :: rational) :: float
   def pow_real(x, {a, b}) do
     x ** a ** (1 / b)
   end
