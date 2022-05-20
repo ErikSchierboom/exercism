@@ -1,4 +1,6 @@
 defmodule SecretHandshake do
+  use Bitwise
+
   @commands %{
     0b00001 => "wink",
     0b00010 => "double blink",
@@ -9,7 +11,7 @@ defmodule SecretHandshake do
 
   def commands(code) do
     @commands
-    |> Enum.filter(fn {action_code, _} -> Bitwise.&&&(code, action_code) == action_code end)
+    |> Enum.filter(fn {action_code, _} -> (code &&& action_code) == action_code end)
     |> Enum.reduce([], fn {_, action}, handshake -> command(action, handshake) end)
   end
 
