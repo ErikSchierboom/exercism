@@ -1,0 +1,35 @@
+{
+  "authors": [],
+  "contributors": [
+    "andrewsardone",
+    "angelikatyborska",
+    "Cohen-Carlisle",
+    "dalexj",
+    "dantswain",
+    "devonestes",
+    "gmile",
+    "jiegillet",
+    "jinyeow",
+    "kytrinyx",
+    "lpil",
+    "martinsvalin",
+    "neenjaw",
+    "parkerl",
+    "rubysolo",
+    "sotojuan",
+    "Teapane",
+    "waiting-for-dev"
+  ],
+  "files": {
+    "solution": [
+      "lib/frequency.ex"
+    ],
+    "test": [
+      "test/frequency_test.exs"
+    ],
+    "example": [
+      ".meta/example.ex"
+    ]
+  },
+  "blurb": "Count the frequency of letters in texts using parallel computation."
+}
