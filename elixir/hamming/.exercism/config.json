@@ -1,0 +1,33 @@
+{
+  "authors": [
+    "Teapane"
+  ],
+  "contributors": [
+    "angelikatyborska",
+    "Cohen-Carlisle",
+    "dalexj",
+    "devonestes",
+    "jedschneider",
+    "lpil",
+    "neenjaw",
+    "parkerl",
+    "percygrunwald",
+    "sotojuan",
+    "veelenga",
+    "waiting-for-dev"
+  ],
+  "files": {
+    "solution": [
+      "lib/hamming.ex"
+    ],
+    "test": [
+      "test/hamming_test.exs"
+    ],
+    "example": [
+      ".meta/example.ex"
+    ]
+  },
+  "blurb": "Calculate the Hamming difference between two DNA strands.",
+  "source": "The Calculating Point Mutations problem at Rosalind",
+  "source_url": "http://rosalind.info/problems/hamm/"
+}
