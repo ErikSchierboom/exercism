@@ -8,7 +8,7 @@ defmodule Frequency do
     |> Enum.reduce(%{}, &Map.merge(&1, &2, fn _, count1, count2 -> count1 + count2 end))
   end
 
-  def frequency(texts) do
+  defp frequency(texts) do
     texts
     |> Enum.join()
     |> String.downcase()
