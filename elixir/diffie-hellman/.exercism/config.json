@@ -1,0 +1,27 @@
+{
+  "authors": [
+    "DoggettCK"
+  ],
+  "contributors": [
+    "angelikatyborska",
+    "Cohen-Carlisle",
+    "devonestes",
+    "MeerKatDev",
+    "neenjaw",
+    "sotojuan"
+  ],
+  "files": {
+    "solution": [
+      "lib/diffie_hellman.ex"
+    ],
+    "test": [
+      "test/diffie_hellman_test.exs"
+    ],
+    "example": [
+      ".meta/example.ex"
+    ]
+  },
+  "blurb": "Diffie-Hellman key exchange.",
+  "source": "Wikipedia, 1024 bit key from www.cryptopp.com/wiki.",
+  "source_url": "http://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange"
+}
