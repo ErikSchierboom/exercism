@@ -13,7 +13,7 @@ defmodule DndCharacter do
   def character do
     constitution = ability()
 
-    %{
+    %DndCharacter{
       strength: ability(),
       dexterity: ability(),
       constitution: constitution,
