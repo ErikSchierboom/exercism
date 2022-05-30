@@ -1,0 +1,26 @@
+{
+  "authors": [
+    "DoggettCK"
+  ],
+  "contributors": [
+    "angelikatyborska",
+    "Cohen-Carlisle",
+    "devonestes",
+    "neenjaw",
+    "sotojuan"
+  ],
+  "files": {
+    "solution": [
+      "lib/simple_cipher.ex"
+    ],
+    "test": [
+      "test/simple_cipher_test.exs"
+    ],
+    "example": [
+      ".meta/example.ex"
+    ]
+  },
+  "blurb": "Implement a simple shift cipher like Caesar and a more secure substitution cipher.",
+  "source": "Substitution Cipher at Wikipedia",
+  "source_url": "http://en.wikipedia.org/wiki/Substitution_cipher"
+}
