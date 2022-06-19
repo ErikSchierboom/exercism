@@ -1,0 +1,21 @@
+{
+  "authors": [
+    "jiegillet"
+  ],
+  "contributors": [
+    "angelikatyborska",
+    "neenjaw"
+  ],
+  "files": {
+    "solution": [
+      "lib/react.ex"
+    ],
+    "test": [
+      "test/react_test.exs"
+    ],
+    "example": [
+      ".meta/example.ex"
+    ]
+  },
+  "blurb": "Implement a basic reactive system."
+}
