@@ -1,0 +1,33 @@
+{
+  "authors": [
+    "Teapane"
+  ],
+  "contributors": [
+    "angelikatyborska",
+    "CoderDennis",
+    "Cohen-Carlisle",
+    "dalexj",
+    "daveyarwood",
+    "devonestes",
+    "lex57ukr",
+    "lpil",
+    "neenjaw",
+    "parkerl",
+    "sotojuan",
+    "waiting-for-dev"
+  ],
+  "files": {
+    "solution": [
+      "lib/run_length_encoder.ex"
+    ],
+    "test": [
+      "test/run_length_encoder_test.exs"
+    ],
+    "example": [
+      ".meta/example.ex"
+    ]
+  },
+  "blurb": "Implement run-length encoding and decoding.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Run-length_encoding"
+}
