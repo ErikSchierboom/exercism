@@ -1,0 +1,20 @@
+{
+  "blurb": "Learn about slices by doing card tricks.",
+  "authors": [
+    "tehsphinx"
+  ],
+  "contributors": [
+    "norbs57"
+  ],
+  "files": {
+    "solution": [
+      "card_tricks.go"
+    ],
+    "test": [
+      "card_tricks_test.go"
+    ],
+    "exemplar": [
+      ".meta/exemplar.go"
+    ]
+  }
+}
