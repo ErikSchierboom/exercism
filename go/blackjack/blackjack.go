@@ -5,13 +5,7 @@ func ParseCard(card string) int {
 	switch card {
 	case "ace":
 		return 11
-	case "king":
-		return 10
-	case "queen":
-		return 10
-	case "jack":
-		return 10
-	case "ten":
+	case "king", "queen", "jack", "ten":
 		return 10
 	case "nine":
 		return 9
