@@ -6,7 +6,7 @@ defmodule Prime do
     other_primes =
       Stream.unfold(6, &({&1, &1 + 6}))
       |> Stream.flat_map(&([&1 - 1, &1 + 1]))
-      |> Stream.filter(&(prime?(&1)))
+      |> Stream.filter(&prime?/1)
 
     Stream.concat([2, 3], other_primes)
   end
