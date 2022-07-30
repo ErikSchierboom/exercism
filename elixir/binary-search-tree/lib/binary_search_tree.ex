@@ -13,6 +13,6 @@ defmodule BinarySearchTree do
   def in_order(nil), do: []
 
   def in_order(tree) do
-    in_order(tree.left) ++ [tree.data] ++ in_order(tree.right)
+    in_order(tree.left) ++ [tree.data | in_order(tree.right)]
   end
 end
