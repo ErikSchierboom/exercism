@@ -45,7 +45,7 @@ defmodule AffineCipher do
 
   defp coprime(a, b), do: Integer.gcd(a, b) == 1
 
-  def modular_inverse(a, b) do
+  defp modular_inverse(a, b) do
     {_, m, _} = Integer.extended_gcd(a, b)
     rem(m + b, b)
   end
