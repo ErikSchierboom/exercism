@@ -1,0 +1,20 @@
+{
+  "authors": [
+    "ErikSchierboom"
+  ],
+  "contributors": [
+    "yzAlvin"
+  ],
+  "files": {
+    "solution": [
+      "WizardsAndWarriors2.cs"
+    ],
+    "test": [
+      "WizardsAndWarriors2Tests.cs"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.cs"
+    ]
+  },
+  "blurb": "Learn about classes by extending an RPG."
+}
