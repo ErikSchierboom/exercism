@@ -1,0 +1,20 @@
+{
+  "authors": [
+     "norbs57" 
+  ],
+  "contributors": [
+    "eklatzer"
+  ],
+  "files": {
+    "solution": [
+      "parsing_log_files.go"
+    ],
+    "test": [
+      "parsing_log_files_test.go"
+    ],
+    "exemplar": [
+      ".meta/exemplar.go"
+    ]
+  },
+  "blurb": "Learn about regular expressions by parsing logs."
+}

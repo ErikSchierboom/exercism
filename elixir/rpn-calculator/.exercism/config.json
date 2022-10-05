@@ -1,0 +1,23 @@
+{
+  "authors": [
+    "neenjaw"
+  ],
+  "contributors": [
+    "angelikatyborska",
+    "cjmaxik"
+  ],
+  "files": {
+    "solution": [
+      "lib/rpn_calculator.ex"
+    ],
+    "test": [
+      "test/rpn_calculator_test.exs"
+    ],
+    "exemplar": [
+      ".meta/exemplar.ex"
+    ]
+  },
+  "language_versions": ">=1.10",
+  "icon": "instruments-of-texas",
+  "blurb": "Learn about errors and rescuing them by working on an experimental Reverse Polish Notation calculator."
+}

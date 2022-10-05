@@ -1,0 +1,28 @@
+{
+  "authors": [
+    "tejasbubane"
+  ],
+  "contributors": [
+    "angelikatyborska",
+    "Cohen-Carlisle",
+    "devonestes",
+    "lpil",
+    "neenjaw",
+    "parkerl",
+    "sotojuan"
+  ],
+  "files": {
+    "solution": [
+      "lib/pangram.ex"
+    ],
+    "test": [
+      "test/pangram_test.exs"
+    ],
+    "example": [
+      ".meta/example.ex"
+    ]
+  },
+  "blurb": "Determine if a sentence is a pangram.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Pangram"
+}

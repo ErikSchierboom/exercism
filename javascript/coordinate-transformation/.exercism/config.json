@@ -1,0 +1,26 @@
+{
+  "authors": [
+    "neenjaw"
+  ],
+  "contributors": [
+    "SleeplessByte"
+  ],
+  "files": {
+    "solution": [
+      "coordinate-transformation.js"
+    ],
+    "test": [
+      "coordinate-transformation.spec.js"
+    ],
+    "exemplar": [
+      ".meta/exemplar.js"
+    ]
+  },
+  "blurb": "Practice your knowledge of closures by implementing various coordinate transformations.",
+  "custom": {
+    "version.tests.compatibility": "jest-27",
+    "flag.tests.task-per-describe": true,
+    "flag.tests.may-run-long": false,
+    "flag.tests.includes-optional": false
+  }
+}

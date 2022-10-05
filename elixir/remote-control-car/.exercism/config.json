@@ -1,0 +1,25 @@
+{
+  "authors": [
+    "neenjaw"
+  ],
+  "contributors": [
+    "angelikatyborska"
+  ],
+  "files": {
+    "solution": [
+      "lib/remote_control_car.ex"
+    ],
+    "test": [
+      "test/remote_control_car_test.exs"
+    ],
+    "exemplar": [
+      ".meta/exemplar.ex"
+    ]
+  },
+  "language_versions": ">=1.10",
+  "forked_from": [
+    "csharp/elons-toys"
+  ],
+  "icon": "elons-toys",
+  "blurb": "Learn about structs by playing around with a remote controlled car."
+}

@@ -1,0 +1,24 @@
+{
+  "authors": [
+    "neenjaw"
+  ],
+  "contributors": [
+    "fireproofsocks"
+  ],
+  "files": {
+    "solution": [
+      "lib/language_list.ex"
+    ],
+    "test": [
+      "test/language_list_test.exs"
+    ],
+    "exemplar": [
+      ".meta/exemplar.ex"
+    ]
+  },
+  "language_versions": ">=1.10",
+  "forked_from": [
+    "clojure/tracks-on-tracks-on-tracks"
+  ],
+  "blurb": "Learn about lists by keeping track of the programing languages you're currently learning on Exercism."
+}

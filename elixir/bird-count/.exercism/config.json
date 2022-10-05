@@ -1,0 +1,25 @@
+{
+  "authors": [
+    "angelikatyborska"
+  ],
+  "contributors": [
+    "neenjaw"
+  ],
+  "files": {
+    "solution": [
+      "lib/bird_count.ex"
+    ],
+    "test": [
+      "test/bird_count_test.exs"
+    ],
+    "exemplar": [
+      ".meta/exemplar.ex"
+    ]
+  },
+  "language_versions": ">=1.10",
+  "forked_from": [
+    "csharp/bird-watcher"
+  ],
+  "icon": "bird-watcher",
+  "blurb": "Learn about recursion by keeping track of how many birds visit your garden each day."
+}
