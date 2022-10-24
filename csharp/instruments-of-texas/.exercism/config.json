@@ -1,0 +1,24 @@
+{
+  "authors": [
+    "mikedamay"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "yzAlvin"
+  ],
+  "files": {
+    "solution": [
+      "InstrumentsOfTexas.cs"
+    ],
+    "test": [
+      "InstrumentsOfTexasTests.cs"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.cs"
+    ]
+  },
+  "forked_from": [
+    "elixir/rpn-calculator"
+  ],
+  "blurb": "Learn about exceptions by handling adding multiplication to a calculator."
+}
