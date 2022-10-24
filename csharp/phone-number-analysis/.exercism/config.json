@@ -1,0 +1,21 @@
+{
+  "authors": [
+    "mikedamay"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "yzAlvin"
+  ],
+  "files": {
+    "solution": [
+      "PhoneNumberAnalysis.cs"
+    ],
+    "test": [
+      "PhoneNumberAnalysisTests.cs"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.cs"
+    ]
+  },
+  "blurb": "Learn about tuples by analysing phone numbers."
+}
