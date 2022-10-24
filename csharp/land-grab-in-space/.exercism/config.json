@@ -1,0 +1,23 @@
+{
+  "authors": [
+    "mikedamay"
+  ],
+  "contributors": [
+    "efx",
+    "jrr",
+    "ErikSchierboom",
+    "yzAlvin"
+  ],
+  "files": {
+    "solution": [
+      "LandGrabInSpace.cs"
+    ],
+    "test": [
+      "LandGrabInSpaceTests.cs"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.cs"
+    ]
+  },
+  "blurb": "Learn about structs by improving the performance of a land claim system."
+}
