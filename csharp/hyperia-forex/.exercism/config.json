@@ -1,0 +1,22 @@
+{
+  "authors": [
+    "mikedamay"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "yzAlvin",
+    "sanderploegsma"
+  ],
+  "files": {
+    "solution": [
+      "HyperiaForex.cs"
+    ],
+    "test": [
+      "HyperiaForexTests.cs"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.cs"
+    ]
+  },
+  "blurb": "Learn about operator overloading by introducing a new currency to a bank."
+}
