@@ -1,0 +1,21 @@
+{
+  "authors": [
+    "mikedamay"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "yzAlvin"
+  ],
+  "files": {
+    "solution": [
+      "AuthenticationSystem.cs"
+    ],
+    "test": [
+      "AuthenticationSystemTests.cs"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.cs"
+    ]
+  },
+  "blurb": "Learn about the const and readonly keywords by refactoring an authentication system."
+}
