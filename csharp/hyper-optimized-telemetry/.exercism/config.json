@@ -1,0 +1,21 @@
+{
+  "authors": [
+    "mikedamay"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "yzAlvin"
+  ],
+  "files": {
+    "solution": [
+      "HyperOptimizedTelemetry.cs"
+    ],
+    "test": [
+      "HyperOptimizedTelemetryTests.cs"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.cs"
+    ]
+  },
+  "blurb": "Learn about bit conversion by implementing a message protocol."
+}
