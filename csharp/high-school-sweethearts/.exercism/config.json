@@ -1,0 +1,24 @@
+{
+  "authors": [
+    "mikedamay"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "yzAlvin"
+  ],
+  "files": {
+    "solution": [
+      "HighSchoolSweethearts.cs"
+    ],
+    "test": [
+      "HighSchoolSweetheartsTests.cs"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.cs"
+    ]
+  },
+  "forked_from": [
+    "elixir/high-school-sweetheart"
+  ],
+  "blurb": "Learn about string formatting by helping high school sweethearts profess their love on social media."
+}
