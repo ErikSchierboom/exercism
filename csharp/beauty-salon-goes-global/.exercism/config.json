@@ -1,0 +1,21 @@
+{
+  "authors": [
+    "mikedamay"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "yzAlvin"
+  ],
+  "files": {
+    "solution": [
+      "BeautySalonGoesGlobal.cs"
+    ],
+    "test": [
+      "BeautySalonGoesGlobalTests.cs"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.cs"
+    ]
+  },
+  "blurb": "Learn about the DateTime class by helping a salon deal with timezones."
+}
