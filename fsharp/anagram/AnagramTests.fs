@@ -2,115 +2,86 @@ module AnagramTests
 
 open FsUnit.Xunit
 open Xunit
+
 open Anagram
 
 [<Fact>]
 let ``No matches`` () =
-    let candidates = [ "hello"; "world"; "zombies"; "pants" ]
+    let candidates = ["hello"; "world"; "zombies"; "pants"]
+    findAnagrams candidates "diaper" |> should be Empty
 
-    findAnagrams candidates "diaper"
-    |> should be Empty
-
-[<Fact>]
+[<Fact(Skip = "Remove this Skip property to run this test")>]
 let ``Detects two anagrams`` () =
-    let candidates = [ "lemons"; "cherry"; "melons" ]
+    let candidates = ["lemons"; "cherry"; "melons"]
+    findAnagrams candidates "solemn" |> should equal ["lemons"; "melons"]
 
-    findAnagrams candidates "solemn"
-    |> should equal [ "lemons"; "melons" ]
-
-[<Fact>]
+[<Fact(Skip = "Remove this Skip property to run this test")>]
 let ``Does not detect anagram subsets`` () =
-    let candidates = [ "dog"; "goody" ]
+    let candidates = ["dog"; "goody"]
     findAnagrams candidates "good" |> should be Empty
 
-[<Fact>]
+[<Fact(Skip = "Remove this Skip property to run this test")>]
 let ``Detects anagram`` () =
-    let candidates =
-        [ "enlists"
-          "google"
-          "inlets"
-          "banana" ]
+    let candidates = ["enlists"; "google"; "inlets"; "banana"]
+    findAnagrams candidates "listen" |> should equal ["inlets"]
 
-    findAnagrams candidates "listen"
-    |> should equal [ "inlets" ]
-
-[<Fact>]
+[<Fact(Skip = "Remove this Skip property to run this test")>]
 let ``Detects three anagrams`` () =
-    let candidates =
-        [ "gallery"
-          "ballerina"
-          "regally"
-          "clergy"
-          "largely"
-          "leading" ]
+    let candidates = ["gallery"; "ballerina"; "regally"; "clergy"; "largely"; "leading"]
+    findAnagrams candidates "allergy" |> should equal ["gallery"; "regally"; "largely"]
 
-    findAnagrams candidates "allergy"
-    |> should equal [ "gallery"; "regally"; "largely" ]
-
-[<Fact>]
+[<Fact(Skip = "Remove this Skip property to run this test")>]
 let ``Detects multiple anagrams with different case`` () =
-    let candidates = [ "Eons"; "ONES" ]
+    let candidates = ["Eons"; "ONES"]
+    findAnagrams candidates "nose" |> should equal ["Eons"; "ONES"]
 
-    findAnagrams candidates "nose"
-    |> should equal [ "Eons"; "ONES" ]
-
-[<Fact>]
+[<Fact(Skip = "Remove this Skip property to run this test")>]
 let ``Does not detect non-anagrams with identical checksum`` () =
-    let candidates = [ "last" ]
+    let candidates = ["last"]
     findAnagrams candidates "mass" |> should be Empty
 
-[<Fact>]
+[<Fact(Skip = "Remove this Skip property to run this test")>]
 let ``Detects anagrams case-insensitively`` () =
-    let candidates =
-        [ "cashregister"
-          "Carthorse"
-          "radishes" ]
+    let candidates = ["cashregister"; "Carthorse"; "radishes"]
+    findAnagrams candidates "Orchestra" |> should equal ["Carthorse"]
 
-    findAnagrams candidates "Orchestra"
-    |> should equal [ "Carthorse" ]
-
-[<Fact>]
+[<Fact(Skip = "Remove this Skip property to run this test")>]
 let ``Detects anagrams using case-insensitive subject`` () =
-    let candidates =
-        [ "cashregister"
-          "carthorse"
-          "radishes" ]
+    let candidates = ["cashregister"; "carthorse"; "radishes"]
+    findAnagrams candidates "Orchestra" |> should equal ["carthorse"]
 
-    findAnagrams candidates "Orchestra"
-    |> should equal [ "carthorse" ]
-
-[<Fact>]
+[<Fact(Skip = "Remove this Skip property to run this test")>]
 let ``Detects anagrams using case-insensitive possible matches`` () =
-    let candidates =
-        [ "cashregister"
-          "Carthorse"
-          "radishes" ]
+    let candidates = ["cashregister"; "Carthorse"; "radishes"]
+    findAnagrams candidates "orchestra" |> should equal ["Carthorse"]
 
-    findAnagrams candidates "orchestra"
-    |> should equal [ "Carthorse" ]
-
-[<Fact>]
+[<Fact(Skip = "Remove this Skip property to run this test")>]
 let ``Does not detect an anagram if the original word is repeated`` () =
-    let candidates = [ "go Go GO" ]
+    let candidates = ["go Go GO"]
     findAnagrams candidates "go" |> should be Empty
 
-[<Fact>]
+[<Fact(Skip = "Remove this Skip property to run this test")>]
 let ``Anagrams must use all letters exactly once`` () =
-    let candidates = [ "patter" ]
+    let candidates = ["patter"]
+    findAnagrams candidates "tapper" |> should be Empty
 
-    findAnagrams candidates "tapper"
-    |> should be Empty
+[<Fact(Skip = "Remove this Skip property to run this test")>]
+let ``Words are not anagrams of themselves`` () =
+    let candidates = ["BANANA"]
+    findAnagrams candidates "BANANA" |> should be Empty
 
-[<Fact>]
-let ``Words are not anagrams of themselves (case-insensitive)`` () =
-    let candidates = [ "BANANA"; "Banana"; "banana" ]
+[<Fact(Skip = "Remove this Skip property to run this test")>]
+let ``Words are not anagrams of themselves even if letter case is partially different`` () =
+    let candidates = ["Banana"]
+    findAnagrams candidates "BANANA" |> should be Empty
 
-    findAnagrams candidates "BANANA"
-    |> should be Empty
+[<Fact(Skip = "Remove this Skip property to run this test")>]
+let ``Words are not anagrams of themselves even if letter case is completely different`` () =
+    let candidates = ["banana"]
+    findAnagrams candidates "BANANA" |> should be Empty
 
-[<Fact>]
+[<Fact(Skip = "Remove this Skip property to run this test")>]
 let ``Words other than themselves can be anagrams`` () =
-    let candidates = [ "Listen"; "Silent"; "LISTEN" ]
+    let candidates = ["LISTEN"; "Silent"]
+    findAnagrams candidates "LISTEN" |> should equal ["Silent"]
 
-    findAnagrams candidates "LISTEN"
-    |> should equal [ "Silent" ]

@@ -1,5 +1,4 @@
 {
-  "blurb": "Score a single throw of dice in the game Yacht",
   "authors": [
     "ErikSchierboom"
   ],
@@ -20,8 +19,12 @@
     ],
     "example": [
       ".meta/Example.fs"
+    ],
+    "invalidator": [
+      "Yacht.fsproj"
     ]
   },
+  "blurb": "Score a single throw of dice in the game Yacht.",
   "source": "James Kilfiger, using wikipedia",
   "source_url": "https://en.wikipedia.org/wiki/Yacht_(dice_game)"
 }

@@ -1,5 +1,4 @@
 {
-  "blurb": "Given a year, report if it is a leap year.",
   "authors": [
     "jwood803"
   ],
@@ -21,8 +20,12 @@
     ],
     "example": [
       ".meta/Example.fs"
+    ],
+    "invalidator": [
+      "Leap.fsproj"
     ]
   },
+  "blurb": "Given a year, report if it is a leap year.",
   "source": "JavaRanch Cattle Drive, exercise 3",
   "source_url": "http://www.javaranch.com/leap.jsp"
 }

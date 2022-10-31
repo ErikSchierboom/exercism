@@ -1,5 +1,4 @@
 {
-  "blurb": "Determine if a word or phrase is an isogram.",
   "authors": [
     "ErikSchierboom"
   ],
@@ -21,8 +20,12 @@
     ],
     "example": [
       ".meta/Example.fs"
+    ],
+    "invalidator": [
+      "Isogram.fsproj"
     ]
   },
+  "blurb": "Determine if a word or phrase is an isogram.",
   "source": "Wikipedia",
   "source_url": "https://en.wikipedia.org/wiki/Isogram"
 }

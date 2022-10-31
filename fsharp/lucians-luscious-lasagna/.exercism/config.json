@@ -1,6 +1,4 @@
 {
-  "blurb": "Learn about the basics of F# by following a lasagna recipe",
-  "icon": "lasagna",
   "authors": [
     "ErikSchierboom"
   ],
@@ -13,6 +11,11 @@
     ],
     "exemplar": [
       ".meta/Exemplar.fs"
+    ],
+    "invalidator": [
+      "LuciansLusciousLasagna.fsproj"
     ]
-  }
+  },
+  "icon": "lasagna",
+  "blurb": "Learn about the basics of F# by following a lasagna recipe"
 }

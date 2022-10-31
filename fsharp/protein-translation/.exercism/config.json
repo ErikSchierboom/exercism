@@ -1,5 +1,4 @@
 {
-  "blurb": "Translate RNA sequences into proteins.",
   "authors": [
     "ErikSchierboom"
   ],
@@ -19,7 +18,11 @@
     ],
     "example": [
       ".meta/Example.fs"
+    ],
+    "invalidator": [
+      "ProteinTranslation.fsproj"
     ]
   },
+  "blurb": "Translate RNA sequences into proteins.",
   "source": "Tyler Long"
 }

@@ -1,6 +1,6 @@
-# Dot Dsl
+# DOT DSL
 
-Welcome to Dot Dsl on Exercism's F# Track.
+Welcome to DOT DSL on Exercism's F# Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Instructions

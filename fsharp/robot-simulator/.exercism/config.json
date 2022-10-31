@@ -1,5 +1,4 @@
 {
-  "blurb": "Write a robot simulator.",
   "authors": [
     "ErikSchierboom"
   ],
@@ -20,8 +19,11 @@
     ],
     "example": [
       ".meta/Example.fs"
+    ],
+    "invalidator": [
+      "RobotSimulator.fsproj"
     ]
   },
-  "source": "Inspired by an interview question at a famous company.",
-  "source_url": ""
+  "blurb": "Write a robot simulator.",
+  "source": "Inspired by an interview question at a famous company."
 }

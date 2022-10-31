@@ -26,8 +26,11 @@ In the end, you should be able to:
   and Jim in grade 5.
   So the answer is: Anna, Barb, Charlie, Alex, Peter, Zoe and Jim"
 
-Note that all our students only have one name.  (It's a small town, what
-do you want?)
+Note that all our students only have one name  (It's a small town, what
+do you want?) and each student cannot be added more than once to a grade or the
+roster.
+In fact, when a test attempts to add the same student more than once, your
+implementation should indicate that this is incorrect.
 
 ## For bonus points
 
@@ -67,4 +70,4 @@ For this exercise the following F# feature comes in handy:
 
 ### Based on
 
-A pairing session with Phil Battos at gSchool - http://gschool.it
+A pairing session with Phil Battos at gSchool

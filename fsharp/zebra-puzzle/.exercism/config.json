@@ -1,5 +1,4 @@
 {
-  "blurb": "Solve the zebra puzzle.",
   "authors": [
     "ErikSchierboom"
   ],
@@ -19,8 +18,12 @@
     ],
     "example": [
       ".meta/Example.fs"
+    ],
+    "invalidator": [
+      "ZebraPuzzle.fsproj"
     ]
   },
+  "blurb": "Solve the zebra puzzle.",
   "source": "Wikipedia",
   "source_url": "https://en.wikipedia.org/wiki/Zebra_Puzzle"
 }

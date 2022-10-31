@@ -22,7 +22,9 @@ You have four tasks, which will all involve appointment dates. The dates and tim
 - `"July 25, 2019 13:45:00"`
 - `"Thursday, July 25, 2019 13:45:00:00"`
 
+~~~~exercism/caution
 The tests will automatically set the culture to `en-US` - you don't have to set or specify the culture yourselves.
+~~~~
 
 ## 1. Parse appointment date
 
@@ -57,7 +59,7 @@ Implement the `description` function that takes an appointment date and returns 
 
 ```fsharp
 description (DateTime(2019, 03, 29, 15, 0, 0))
-// => "You have an appointment on Friday 29 March 2019 at 15:00."
+// => "You have an appointment on 3/29/2019 3:00:00 PM."
 ```
 
 ## 5. Return the anniversary date

@@ -1,10 +1,6 @@
 {
-  "blurb": "Learn about floating-point numbers by calculating interest for savings accounts",
   "authors": [
     "ErikSchierboom"
-  ],
-  "forked_from": [
-    "csharp/interest-is-interesting"
   ],
   "files": {
     "solution": [
@@ -15,6 +11,13 @@
     ],
     "exemplar": [
       ".meta/Exemplar.fs"
+    ],
+    "invalidator": [
+      "InterestIsInteresting.fsproj"
     ]
-  }
+  },
+  "forked_from": [
+    "csharp/interest-is-interesting"
+  ],
+  "blurb": "Learn about floating-point numbers by calculating interest for savings accounts"
 }

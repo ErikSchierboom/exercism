@@ -1,10 +1,6 @@
 {
-  "blurb": "Learn about dates and time by building an appointment scheduler for a beauty salon",
   "authors": [
     "ErikSchierboom"
-  ],
-  "forked_from": [
-    "csharp/booking-up-for-beauty"
   ],
   "files": {
     "solution": [
@@ -15,6 +11,13 @@
     ],
     "exemplar": [
       ".meta/Exemplar.fs"
+    ],
+    "invalidator": [
+      "BookingUpForBeauty.fsproj"
     ]
-  }
+  },
+  "forked_from": [
+    "csharp/booking-up-for-beauty"
+  ],
+  "blurb": "Learn about dates and time by building an appointment scheduler for a beauty salon"
 }

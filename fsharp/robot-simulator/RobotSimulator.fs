@@ -1,4 +1,4 @@
-﻿module RobotSimulator
+module RobotSimulator
 
 type Direction = North | East | South | West
 type Position = int * int
@@ -37,4 +37,4 @@ let applyInstruction robot instruction =
     | 'A' -> advance robot
     | _   -> failwith "Invalid instruction"
 
-let instructions instructions' robot = Seq.fold applyInstruction robot instructions'
+let move instructions' robot = Seq.fold applyInstruction robot instructions'

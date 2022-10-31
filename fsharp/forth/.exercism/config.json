@@ -1,5 +1,4 @@
 {
-  "blurb": "Implement an evaluator for a very simple subset of Forth",
   "authors": [
     "ErikSchierboom"
   ],
@@ -19,6 +18,10 @@
     ],
     "example": [
       ".meta/Example.fs"
+    ],
+    "invalidator": [
+      "Forth.fsproj"
     ]
-  }
+  },
+  "blurb": "Implement an evaluator for a very simple subset of Forth."
 }

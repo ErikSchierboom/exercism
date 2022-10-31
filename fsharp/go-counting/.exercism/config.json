@@ -1,5 +1,4 @@
 {
-  "blurb": "Count the scored points on a Go board.",
   "authors": [
     "ErikSchierboom"
   ],
@@ -19,6 +18,10 @@
     ],
     "example": [
       ".meta/Example.fs"
+    ],
+    "invalidator": [
+      "GoCounting.fsproj"
     ]
-  }
+  },
+  "blurb": "Count the scored points on a Go board."
 }

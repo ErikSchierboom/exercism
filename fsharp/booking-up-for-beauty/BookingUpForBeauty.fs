@@ -10,4 +10,4 @@ let isAfternoonAppointment (appointmentDate: DateTime) = appointmentDate.Hour >=
 
 let description appointmentDate = $"You have an appointment on {appointmentDate}."
 
-let anniversaryDate() = DateTime(DateTime.Now.Year, 9, 15, 0, 0, 0)
+let anniversaryDate() = DateTime(DateTime.Now.Year, 9, 15, 0, 0, 0) 

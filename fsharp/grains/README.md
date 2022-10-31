@@ -17,6 +17,7 @@ of grains doubling on each successive square.
 There are 64 squares on a chessboard (where square 1 has one grain, square 2 has two grains, and so on).
 
 Write code that shows:
+
 - how many grains were on a given square, and
 - the total number of grains on the chessboard
 
@@ -33,8 +34,8 @@ experiment make the code better? Worse? Did you learn anything from it?
 
 For this exercise the following F# features come in handy:
 
-- [BigInt](https://msdn.microsoft.com/en-us/visualfsharpdocs/conceptual/numerics.biginteger-structure-%5Bfsharp%5D)
-- [Seq.sumBy](https://msdn.microsoft.com/en-us/visualfsharpdocs/conceptual/seq.sumby%5B't,%5Eu%5D-function-%5Bfsharp%5D) is a condensed format to apply a function to a sequence and then sum the results
+- [BigInt](https://docs.microsoft.com/en-us/dotnet/api/system.numerics.biginteger?view=net-5.0)
+- [Seq.sumBy](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seqmodule.html#sumBy) is a condensed format to apply a function to a sequence and then sum the results
 
 ## Source
 

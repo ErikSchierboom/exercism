@@ -11,7 +11,7 @@ let ``Empty string`` () =
     let expected: string list = []
     transpose lines |> should equal expected
 
-[<Fact>]
+[<Fact(Skip = "Remove this Skip property to run this test")>]
 let ``Two characters in a row`` () =
     let lines = ["A1"]
     let expected = 
@@ -19,7 +19,7 @@ let ``Two characters in a row`` () =
           "1" ]
     transpose lines |> should equal expected
 
-[<Fact>]
+[<Fact(Skip = "Remove this Skip property to run this test")>]
 let ``Two characters in a column`` () =
     let lines = 
         [ "A";
@@ -27,7 +27,7 @@ let ``Two characters in a column`` () =
     let expected = ["A1"]
     transpose lines |> should equal expected
 
-[<Fact>]
+[<Fact(Skip = "Remove this Skip property to run this test")>]
 let ``Simple`` () =
     let lines = 
         [ "ABC";
@@ -38,7 +38,7 @@ let ``Simple`` () =
           "C3" ]
     transpose lines |> should equal expected
 
-[<Fact>]
+[<Fact(Skip = "Remove this Skip property to run this test")>]
 let ``Single line`` () =
     let lines = ["Single line."]
     let expected = 
@@ -56,7 +56,7 @@ let ``Single line`` () =
           "." ]
     transpose lines |> should equal expected
 
-[<Fact>]
+[<Fact(Skip = "Remove this Skip property to run this test")>]
 let ``First line longer than second line`` () =
     let lines = 
         [ "The fourth line.";
@@ -80,7 +80,7 @@ let ``First line longer than second line`` () =
           "." ]
     transpose lines |> should equal expected
 
-[<Fact>]
+[<Fact(Skip = "Remove this Skip property to run this test")>]
 let ``Second line longer than first line`` () =
     let lines = 
         [ "The first line.";
@@ -104,7 +104,7 @@ let ``Second line longer than first line`` () =
           " ." ]
     transpose lines |> should equal expected
 
-[<Fact>]
+[<Fact(Skip = "Remove this Skip property to run this test")>]
 let ``Mixed line length`` () =
     let lines = 
         [ "The longest line.";
@@ -131,7 +131,7 @@ let ``Mixed line length`` () =
           "." ]
     transpose lines |> should equal expected
 
-[<Fact>]
+[<Fact(Skip = "Remove this Skip property to run this test")>]
 let ``Square`` () =
     let lines = 
         [ "HEART";
@@ -147,7 +147,7 @@ let ``Square`` () =
           "TREND" ]
     transpose lines |> should equal expected
 
-[<Fact>]
+[<Fact(Skip = "Remove this Skip property to run this test")>]
 let ``Rectangle`` () =
     let lines = 
         [ "FRACTURE";
@@ -165,7 +165,7 @@ let ``Rectangle`` () =
           "EDGE" ]
     transpose lines |> should equal expected
 
-[<Fact>]
+[<Fact(Skip = "Remove this Skip property to run this test")>]
 let ``Triangle`` () =
     let lines = 
         [ "T";
@@ -183,7 +183,7 @@ let ``Triangle`` () =
           "     R" ]
     transpose lines |> should equal expected
 
-[<Fact>]
+[<Fact(Skip = "Remove this Skip property to run this test")>]
 let ``Jagged triangle`` () =
     let lines = 
         [ "11";

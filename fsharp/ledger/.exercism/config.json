@@ -1,5 +1,4 @@
 {
-  "blurb": "Refactor a ledger printer.",
   "authors": [
     "ErikSchierboom"
   ],
@@ -18,6 +17,10 @@
     ],
     "example": [
       ".meta/Example.fs"
+    ],
+    "invalidator": [
+      "Ledger.fsproj"
     ]
-  }
+  },
+  "blurb": "Refactor a ledger printer."
 }

@@ -1,5 +1,4 @@
 {
-  "blurb": "Determine if a sentence is a pangram.",
   "authors": [
     "ErikSchierboom"
   ],
@@ -21,8 +20,12 @@
     ],
     "example": [
       ".meta/Example.fs"
+    ],
+    "invalidator": [
+      "Pangram.fsproj"
     ]
   },
+  "blurb": "Determine if a sentence is a pangram.",
   "source": "Wikipedia",
   "source_url": "https://en.wikipedia.org/wiki/Pangram"
 }

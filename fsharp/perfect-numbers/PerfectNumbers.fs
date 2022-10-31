@@ -1,12 +1,33 @@
 module PerfectNumbers
 
-type Classification = Perfect | Abundant | Deficient 
+type Classification =
+    | Perfect
+    | Abundant
+    | Deficient
 
-let classify n =
+let private factors (n: int) =
+
+    let rec inner acc nums =
+        match nums with
+        | [] -> acc
+        | head :: tail ->
+            if n % head = 0
+            then inner ([ (n / head); head ] @ acc) tail
+            else inner acc tail
+
+    let sqrt = System.Math.Sqrt(n) |> int
+
+    inner [ 1 ] [ 1 .. sqrt ]
+    |> List.except (Seq.ofList [ n ])
+
+let classify (n: int) : Classification option =
+
     if n < 1 then
         None
     else
-        let sumOfFactors = [for x in 1..n / 2 do if n % x = 0 then x] |> List.sum
-        if sumOfFactors < n then Some Deficient
-        elif sumOfFactors > n then Some Abundant
-        else Some Perfect
+        match n.CompareTo(factors n |> List.sum) with
+        | -1 -> Some Abundant
+        | 0 -> Some Perfect
+        | 1 -> Some Deficient
+        | _ -> failwith "NoNo"
+

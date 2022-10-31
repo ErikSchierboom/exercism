@@ -1,5 +1,4 @@
 {
-  "blurb": "Refactor a Markdown parser",
   "authors": [
     "ErikSchierboom"
   ],
@@ -21,6 +20,10 @@
     ],
     "example": [
       ".meta/Example.fs"
+    ],
+    "invalidator": [
+      "Markdown.fsproj"
     ]
-  }
+  },
+  "blurb": "Refactor a Markdown parser."
 }

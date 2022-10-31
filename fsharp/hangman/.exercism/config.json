@@ -1,5 +1,4 @@
 {
-  "blurb": "Implement the logic of the hangman game using functional reactive programming.",
   "authors": [
     "ErikSchierboom"
   ],
@@ -19,6 +18,10 @@
     ],
     "example": [
       ".meta/Example.fs"
+    ],
+    "invalidator": [
+      "Hangman.fsproj"
     ]
-  }
+  },
+  "blurb": "Implement the logic of the hangman game using functional reactive programming."
 }

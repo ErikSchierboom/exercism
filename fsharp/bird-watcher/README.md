@@ -45,6 +45,24 @@ describe [| 1; 2; 4 |] // => "1, 2, 4"
 describe [| 5; 7; 9 |] // => "Other"
 ```
 
+You can also _discard_ a value when pattern matching; when you do _not_ care about a value in a specific case (i.e. you aren't going to _use_ a value) you can use an underscore (`'_'`) to signify this:
+
+```fsharp
+let describe array =
+    match array with
+    | [| |] -> "Empty array"
+    | [| x |] -> "Array with one item"
+    | [| _; y |] -> "Array with two items (first item ignored)"
+    | _ -> "Array with many items (all items ignored)"
+
+describe []         // => "Empty array"
+describe [1]        // => "Array with one item"
+describe [5; 7]     // => "Array with two items (first item ignored)"
+describe [5; 7; 9]  // => "Array with many items (all items ignored)"
+```
+
+The single `'_'` should always come _last_ when pattern matching, every value that _doesn't_ match any of the other cases will be handled by this case.
+
 ## Instructions
 
 You're an avid bird watcher that keeps track of how many birds have visited your garden in the last seven days.
@@ -99,10 +117,18 @@ incrementTodaysCount birdCount
 
 ## 6. Check for odd week
 
-Over the last year, you've found that some weeks for the same, odd pattern, where the counts alternate between one and zero birds visiting. Implement the `oddWeek` function that returns `true` if the bird count pattern of this week matches the odd pattern:
+Over the last year, you've found that some weeks have the same, odd patterns:
+- On each even day of the week, there were no birds
+- On each even day of the week, exactly 10 birds were spotted
+- On each odd day of the week, exactly 5 birds were spotted
+
+Implement the `oddWeek` function that returns `true` if the bird count pattern of this week matches one of the odd patterns:
 
 ```fsharp
-oddWeek [| 1; 0; 1; 0; 1; 0; 1 |]
+oddWeek [| 1; 0; 5; 0; 12; 0; 2 |]
+// => true
+
+oddWeek [| 5; 0; 5; 12; 5; 3; 5|]
 // => true
 ```
 

@@ -1,5 +1,4 @@
 {
-  "blurb": "Given a word, compute the Scrabble score for that word.",
   "authors": [
     "ErikSchierboom"
   ],
@@ -19,8 +18,12 @@
     ],
     "example": [
       ".meta/Example.fs"
+    ],
+    "invalidator": [
+      "ScrabbleScore.fsproj"
     ]
   },
+  "blurb": "Given a word, compute the Scrabble score for that word.",
   "source": "Inspired by the Extreme Startup game",
   "source_url": "https://github.com/rchatley/extreme_startup"
 }

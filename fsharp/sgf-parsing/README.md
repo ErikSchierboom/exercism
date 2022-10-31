@@ -1,6 +1,6 @@
-# Sgf Parsing
+# SGF Parsing
 
-Welcome to Sgf Parsing on Exercism's F# Track.
+Welcome to SGF Parsing on Exercism's F# Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Instructions
@@ -29,7 +29,7 @@ This is a tree with three nodes:
   comment and SZ is the size of the board.)
   - The top level node has a single child which has a single property:
     B\[aa\].  (Black plays on the point encoded as "aa", which is the
-    1-1 point (which is a stupid place to play)).
+    1-1 point).
     - The B\[aa\] node has a single child which has a single property:
       W\[ab\].
 

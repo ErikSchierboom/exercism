@@ -1,5 +1,4 @@
 {
-  "blurb": "Pick the best hand(s) from a list of poker hands.",
   "authors": [
     "ErikSchierboom"
   ],
@@ -20,8 +19,12 @@
     ],
     "example": [
       ".meta/Example.fs"
+    ],
+    "invalidator": [
+      "Poker.fsproj"
     ]
   },
+  "blurb": "Pick the best hand(s) from a list of poker hands.",
   "source": "Inspired by the training course from Udacity.",
   "source_url": "https://www.udacity.com/course/viewer#!/c-cs212/"
 }
