@@ -2,15 +2,14 @@
 
 public enum Direction { North, East, South, West }
 
-public record Coordinate(int X, int Y);
-
 public class RobotSimulator
 {
-    public RobotSimulator(Direction direction, Coordinate coordinate) =>
-        (Direction, Coordinate) = (direction, coordinate);
+    public RobotSimulator(Direction direction, int x, int y) =>
+        (Direction, X, Y) = (direction, x, y);
 
     public Direction Direction { get; private set; }
-    public Coordinate Coordinate { get; private set; }
+    public int X { get; private set; }
+    public int Y { get; private set; }
 
     public void TurnRight() =>
         Direction = Direction switch
@@ -33,16 +32,16 @@ public class RobotSimulator
         };
 
     public void Advance() =>
-        Coordinate = Direction switch
+        (X, Y) = Direction switch
         {
-            Direction.North => Coordinate with { Y = Coordinate.Y + 1 },
-            Direction.East  => Coordinate with { X = Coordinate.X + 1 },
-            Direction.South => Coordinate with { Y = Coordinate.Y - 1 },
-            Direction.West  => Coordinate with { X = Coordinate.X - 1 },
+            Direction.North => (X, Y + 1),
+            Direction.East  => (X + 1, Y),
+            Direction.South => (X, Y - 1),
+            Direction.West  => (X - 1, Y),
             _ => throw new ArgumentOutOfRangeException()
         };
 
-    public void Simulate(string instructions)
+    public void Move(string instructions)
     {
         foreach (var instruction in instructions)
             ProcessInstruction(instruction);

@@ -4,7 +4,7 @@ public static class CollatzConjecture
 {
     public static int Steps(int number)
     {
-        if (number <= 0) throw new ArgumentException(nameof(number));
+        if (number <= 0) throw new ArgumentOutOfRangeException(nameof(number));
 
         var remainder = number;
         var stepCount = 0;

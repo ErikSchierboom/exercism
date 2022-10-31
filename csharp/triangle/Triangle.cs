@@ -1,7 +1,7 @@
 ﻿public static class Triangle
 {
     public static bool IsScalene(double x, double y, double z) =>
-        IsValid(x, y, z) && (x != y && y != z);
+        IsValid(x, y, z) && (x != y && y != z && x != z);
 
     public static bool IsIsosceles(double x, double y, double z) =>
         IsValid(x, y, z) && (x == y || y == z || x == z);

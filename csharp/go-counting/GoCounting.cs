@@ -1,101 +1,97 @@
 using System;
-using System.Drawing;
 using System.Collections.Generic;
 using System.Linq;
 
+public enum Owner
+{
+    None,
+    Black,
+    White
+}
+
 public class GoCounting
 {
-    public enum Player
-    {
-        None,
-        Black,
-        White
-    }
-
-    private readonly Player[][] board;
+    private readonly Owner[][] board;
 
     public GoCounting(string input)
     {
         board = ParseBoard(input);
     }
 
-    private static Player CharToPlayer(char c)
+    private static Owner CharToPlayer(char c)
     {
         switch (c)
         {
-            case 'B': return Player.Black;
-            case 'W': return Player.White;
-            default: return Player.None;
+            case 'B': return Owner.Black;
+            case 'W': return Owner.White;
+            default: return Owner.None;
         }
     }
 
-    private static Player[][] ParseBoard(string input)
+    private static Owner[][] ParseBoard(string input)
     {
         var split = input.Split('\n');
-        var rows = split.Length;
-        var cols = split[0].Length;
-
         return split.Select(row => row.Select(CharToPlayer).ToArray()).ToArray();
     }
 
     private int Cols => board[0].Length;
     private int Rows => board.Length;
 
-    private bool IsValidCoordinate(Point coordinate) =>
-        coordinate.Y >= 0 && coordinate.Y < Rows &&
-        coordinate.X >= 0 && coordinate.X < Cols;
+    private bool IsValidCoordinate((int, int) coordinate) =>
+        coordinate.Item2 >= 0 && coordinate.Item2 < Rows &&
+        coordinate.Item1 >= 0 && coordinate.Item1 < Cols;
 
-    private Player GetPlayer(Point coordinate) => board[coordinate.Y][coordinate.X];
+    private Owner GetPlayer((int, int) coordinate) => board[coordinate.Item2][coordinate.Item1];
 
-    private bool isEmpty(Point coordinate) => GetPlayer(coordinate) == Player.None;
-    private bool isTaken(Point coordinate) => !isEmpty(coordinate);
+    private bool IsEmpty((int, int) coordinate) => GetPlayer(coordinate) == Owner.None;
+    private bool IsTaken((int, int) coordinate) => !IsEmpty(coordinate);
 
-    private IEnumerable<Point> EmptyCoordinates()
+    private IEnumerable<(int, int)> EmptyCoordinates()
     {
         return Enumerable.Range(0, Cols).SelectMany(col =>
-               Enumerable.Range(0, Rows).Select(row => new Point(col, row)))
-                .Where(isEmpty);
+               Enumerable.Range(0, Rows).Select(row => (col, row)))
+                .Where(IsEmpty);
     }
 
-    private IEnumerable<Point> NeighborCoordinates(Point coordinate)
+    private IEnumerable<(int, int)> NeighborCoordinates((int, int) coordinate)
     {
-        var row = coordinate.Y;
-        var col = coordinate.X;
+        var row = coordinate.Item2;
+        var col = coordinate.Item1;
 
         var coords = new[]
         {
-            new Point(col, row - 1),
-            new Point(col-1, row),
-            new Point(col+1, row),
-            new Point(col, row+1)
+            (col,     row - 1),
+            (col - 1, row),
+            (col + 1, row),
+            (col,     row + 1)
         };
 
         return coords.Where(IsValidCoordinate);
     }
 
-    private IEnumerable<Point> NonEmptyNeighborCoordinates(Point coordinate) =>
-        NeighborCoordinates(coordinate).Where(neighborCoordinate => !isEmpty(neighborCoordinate));
+    private IEnumerable<(int, int)> TakenNeighborCoordinates((int, int) coordinate) =>
+        NeighborCoordinates(coordinate).Where(IsTaken);
 
-    private IEnumerable<Point> EmptyNeighborCoordinates(Point coordinate) =>
-        NeighborCoordinates(coordinate).Where(isEmpty);
+    private IEnumerable<(int, int)> EmptyNeighborCoordinates((int, int) coordinate) =>
+        NeighborCoordinates(coordinate).Where(IsEmpty);
 
-    private Player TerritoryOwner(HashSet<Point> coords)
+    private Owner TerritoryOwner(IEnumerable<(int, int)> coords)
     {
-        var neighborColors = coords.SelectMany(NonEmptyNeighborCoordinates).Where(isTaken).Select(GetPlayer);
+        var neighborColors = coords.SelectMany(TakenNeighborCoordinates).Select(GetPlayer);
         var uniqueNeighborColors = ToSet(neighborColors);
 
         if (uniqueNeighborColors.Count == 1)
             return uniqueNeighborColors.First();
 
-        return Player.None;
+        return Owner.None;
     }
 
-    private HashSet<Point> TerritoryHelper(HashSet<Point> remainder, HashSet<Point> acc)
+    private HashSet<(int, int)> TerritoryHelper(HashSet<(int, int)> remainder, HashSet<(int, int)> acc)
     {
         if (!remainder.Any())
             return acc;
 
-        var emptyNeighbors = new HashSet<Point>(remainder.SelectMany(EmptyNeighborCoordinates));
+        var emptyNeighbors = new HashSet<(int, int)>(remainder.SelectMany(EmptyNeighborCoordinates));
         emptyNeighbors.ExceptWith(acc);
 
         var newAcc = ToSet(acc);
@@ -103,43 +99,54 @@ public class GoCounting
         return TerritoryHelper(emptyNeighbors, newAcc);
     }
 
-    private HashSet<Point> Territory(Point coordinate) =>
-        IsValidCoordinate(coordinate) && isEmpty(coordinate)
+    private HashSet<(int, int)> TerritoryHelper((int, int) coordinate) =>
+        IsValidCoordinate(coordinate) && IsEmpty(coordinate)
             ? TerritoryHelper(ToSingletonSet(coordinate), ToSingletonSet(coordinate))
-            : new HashSet<Point>();
+            : new HashSet<(int, int)>();
 
-    public Tuple<Player, IEnumerable<Point>> TerritoryFor(Point coord)
+    public ValueTuple<Owner, IEnumerable<(int, int)>> Territory((int, int) coord)
     {
-        var coords = Territory(coord);
+        if (coord.Item1 < 0 || coord.Item1 >= Rows || coord.Item2 < 0 || coord.Item2 >= Cols)
+        {
+            throw new ArgumentException();
+        }
+        
+        var coords = TerritoryHelper(coord);
         if (!coords.Any())
-            return null;
+            return (Owner.None, Enumerable.Empty<(int, int)>());
 
         var owner = TerritoryOwner(coords);
-        return Tuple.Create(owner, coords.AsEnumerable());
+        return (owner, coords.OrderBy(x => x.Item1).ThenBy(x => x.Item2).ToArray());
     }
 
-    private Dictionary<Player, IEnumerable<Point>> TerritoriesHelper(HashSet<Point> remainder, Dictionary<Player, IEnumerable<Point>> acc)
+    private Dictionary<Owner, (int, int)[]> TerritoriesHelper(HashSet<(int, int)> remainder, Dictionary<Owner, (int, int)[]> acc)
     {
         if (!remainder.Any())
             return acc;
 
         var coord = remainder.First();
-        var coords = Territory(coord);
+        var coords = TerritoryHelper(coord);
         var owner = TerritoryOwner(coords);
 
         var newRemainder = ToSet(remainder);
         newRemainder.ExceptWith(coords);
 
-        var newAcc = new Dictionary<Player, IEnumerable<Point>>(acc);
-        newAcc[owner] = coords;
-
-        return TerritoriesHelper(newRemainder, newAcc);
+        acc[owner] = acc[owner].Concat(coords).ToArray();
+        return TerritoriesHelper(newRemainder, acc);
     }
 
-    public Dictionary<Player, IEnumerable<Point>> Territories()
+    public Dictionary<Owner, (int, int)[]> Territories()
     {
         var emptyCoords = EmptyCoordinates();
-        return TerritoriesHelper(ToSet(emptyCoords), new Dictionary<Player, IEnumerable<Point>>());
+
+        var territories = new Dictionary<Owner, (int, int)[]>
+        {
+            [Owner.Black] = Array.Empty<(int, int)>(),
+            [Owner.White] = Array.Empty<(int, int)>(),
+            [Owner.None] = Array.Empty<(int, int)>()
+        };
+        
+        return TerritoriesHelper(ToSet(emptyCoords), territories);
     }
 
     private static HashSet<T> ToSet<T>(IEnumerable<T> value) => new HashSet<T>(value);

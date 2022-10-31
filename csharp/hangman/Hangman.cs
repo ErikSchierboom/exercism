@@ -1,85 +1,60 @@
+using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Linq;
-
-public delegate void HangmanChangedEventHandler(object sender, HangmanState state);
+using System.Reactive;
+using System.Reactive.Subjects;
 
 public class HangmanState
 {
-    public HangmanGame.Status Status { get; set; }
-    public int RemainingGuesses { get; set; }
-    public string MaskedWord { get; set; }
-    public HashSet<char> Guesses { get; set; }
+    public string MaskedWord { get; }
+    public ImmutableHashSet<char> GuessedChars { get; }
+    public int RemainingGuesses { get; }
+
+    public HangmanState(string maskedWord, ImmutableHashSet<char> guessedChars, int remainingGuesses)
+    {
+        MaskedWord = maskedWord;
+        GuessedChars = guessedChars;
+        RemainingGuesses = remainingGuesses;
+    }
 }
 
-public class HangmanGame
+public class TooManyGuessesException : Exception
 {
-    private const int NumberOfAllowedGuesses = 9;
-    private const char UnguessedCharacterPlaceHolder = '_';
+}
 
-    private readonly string word;
-    private readonly HangmanState state;
+public class Hangman
+{
+    public IObservable<HangmanState> StateObservable { get; }
+    public IObserver<char> GuessObserver { get; }
+    private const char HidingChar = '_';
+    private const int MaxGuessCount = 9;
 
-    public enum Status
+    public Hangman(string word)
     {
-        Busy,
-        Win,
-        Lose
-    }
+        HashSet<char> emptySetOfChars = new HashSet<char>();
+        var stateSubject = new BehaviorSubject<HangmanState>(new HangmanState(MaskedWord(word, emptySetOfChars), emptySetOfChars.ToImmutableHashSet(), MaxGuessCount));
 
-    public HangmanGame(string word)
-    {
-        this.word = word;
+        StateObservable = stateSubject;
 
-        state = new HangmanState
+        GuessObserver = Observer.Create<char>(x =>
         {
-            RemainingGuesses = NumberOfAllowedGuesses,
-            Guesses = new HashSet<char>()
-        };
-
-        UpdateMaskedWord();
-        UpdateStatus();
+            HashSet<char> guessedChars = new HashSet<char>(stateSubject.Value.GuessedChars);
+            bool isHit = !guessedChars.Contains(x) && word.Contains(x);
+            guessedChars.Add(x);
+            string maskedWord = MaskedWord(word, guessedChars);
+            if (maskedWord == word)
+                stateSubject.OnCompleted();
+            else if (stateSubject.Value.RemainingGuesses < 1)
+                stateSubject.OnError(new TooManyGuessesException());
+            else
+                stateSubject.OnNext(new HangmanState(maskedWord, guessedChars.ToImmutableHashSet(),
+                    isHit ? stateSubject.Value.RemainingGuesses : stateSubject.Value.RemainingGuesses - 1));
+        });
     }
 
-    public event HangmanChangedEventHandler StateChanged;
-
-    public void Start()
+    private string MaskedWord(string word, HashSet<char> guessedChars)
     {
-        StateChanged?.Invoke(this, state);
-    }
-
-    public void Guess(char c)
-    {
-        UpdateRemainingGuesses(c);
-        UpdateMaskedWord();
-        UpdateStatus();
-
-        StateChanged?.Invoke(this, state);
-    }
-
-    private void UpdateRemainingGuesses(char c)
-    {
-        if (UnknownCharacter(c) || CharacterAlreadyGuessed(c))
-            state.RemainingGuesses--;
-
-        state.Guesses.Add(c);
-    }
-
-    private bool UnknownCharacter(char c) => word.All(x => x != c);
-
-    private bool CharacterAlreadyGuessed(char c) => state.Guesses.Contains(c);    
-
-    private void UpdateMaskedWord()
-    {
-        state.MaskedWord = new string(word.Select(c => state.Guesses.Contains(c) ? c : UnguessedCharacterPlaceHolder).ToArray());
-    }
-
-    private void UpdateStatus()
-    {
-        if (state.MaskedWord == word)
-            state.Status = Status.Win;
-        else if (state.RemainingGuesses < 0)
-            state.Status = Status.Lose;        
-        else
-            state.Status = Status.Busy;
+        return string.Concat(word.Select(y => guessedChars.Contains(y) ? y : HidingChar));
     }
 }

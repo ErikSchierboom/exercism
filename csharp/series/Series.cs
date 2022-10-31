@@ -1,21 +1,14 @@
 using System;
 using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
 
-public class Series
+public static class Series
 {
-    private readonly int[] digits;
-
-    public Series(string input) => digits = Digits(input);
-
-    public IEnumerable<int[]> Slices(int length)
+    public static IEnumerable<string> Slices(string input, int length)
     {
-        if (length > digits.Length) throw new ArgumentException(nameof(length));
+        if (length < 1 || length > input.Length)
+            throw new ArgumentException("Invalid slice length", nameof(length));
 
-        for (var i = 0; i < digits.Length - length + 1; i++)
-            yield return digits[i..(i + length)];
+        for (var i = 0; i < input.Length - length + 1; i++)
+            yield return input[i..(i + length)];
     }
-
-    private static int[] Digits(string str) => str.Select(CharUnicodeInfo.GetDecimalDigitValue).ToArray();
 }

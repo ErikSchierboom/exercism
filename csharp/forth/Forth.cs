@@ -11,20 +11,10 @@ public enum ForthError
     UnknownWord
 }
 
-public class ForthException : Exception
-{
-    public ForthException(ForthError error)
-    {
-        Error = error;
-    }
-
-    public ForthError Error { get; }
-}
-
 public class ForthState
 {
-    public Stack<int> Stack { get; } = new Stack<int>();
-    public Dictionary<string, IEnumerable<ForthDefinition>> Mapping { get; } = new Dictionary<string, IEnumerable<ForthDefinition>>();
+    public Stack<int> Stack { get; } = new();
+    public Dictionary<string, IEnumerable<ForthDefinition>> Mapping { get; } = new();
 
     public override string ToString() => string.Join(" ", Stack.Reverse());
 }
@@ -71,7 +61,7 @@ public abstract class UnaryOperation: TermDefinition
     public override void EvaluateDefaultTerm(ForthState state)
     {        
         if (state.Stack.Count < 1)
-            throw new ForthException(ForthError.StackUnderflow);
+            throw new InvalidOperationException();
 
         var operand = state.Stack.Pop();
 
@@ -91,7 +81,7 @@ public abstract class BinaryOperation : TermDefinition
     public override void EvaluateDefaultTerm(ForthState state)
     {
         if (state.Stack.Count <= 1)
-            throw new ForthException(ForthError.StackUnderflow);
+            throw new InvalidOperationException();
 
         var operand2 = state.Stack.Pop();
         var operand1 = state.Stack.Pop();
@@ -124,7 +114,7 @@ public class Word : TermDefinition
     public override void EvaluateDefaultTerm(ForthState state)
     {
         if (!state.Mapping.ContainsKey(Term))
-            throw new ForthException(ForthError.UnknownWord);
+            throw new InvalidOperationException();
     }
 }
 
@@ -177,7 +167,7 @@ public class Division : BinaryOperation
     public override List<int> operation(int x, int y)
     {
         if (y == 0)
-            throw new ForthException(ForthError.DivisionByZero);
+            throw new DivideByZeroException();
 
         return new List<int> { x / y };
     }
@@ -198,7 +188,7 @@ public class CustomTerm : ForthDefinition
     {
         int result;
         if (int.TryParse(term, out result))
-            throw new ForthException(ForthError.InvalidWord);
+            throw new InvalidOperationException();
 
         state.Mapping[term] = actions;
     }
@@ -206,14 +196,18 @@ public class CustomTerm : ForthDefinition
 
 public static class Forth
 {
-    public static string Eval(string input)
+    public static string Evaluate(string[] inputs)
     {
-        var expression = Expression.Parse(input);
         var state = new ForthState();
-
-        foreach (var definition in expression)
-            definition.Evaluate(state);
-
+        
+        foreach (var input in inputs)
+        {
+            var expression = Expression.Parse(input);
+            
+            foreach (var definition in expression)
+                definition.Evaluate(state);
+        }
+        
         return state.ToString();
     }
     

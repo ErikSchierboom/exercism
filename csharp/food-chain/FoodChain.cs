@@ -36,9 +36,9 @@ public static class FoodChain
          "I don't know why she swallowed the fly. Perhaps she'll die."
     };
 
-    public static string Song() => string.Join("\n\n", Enumerable.Range(1, Verses).Select(Verse));
+    public static string Recite(int from, int to) => string.Join("\n\n", Enumerable.Range(from, to).Select(number => Recite(number)));
 
-    public static string Verse(int number) => $"{VerseBegin(number)}\n{VerseEnd(number)}";
+    public static string Recite(int number) => $"{VerseBegin(number)}\n{VerseEnd(number)}";
 
     private static string VerseBegin(int number)
     {

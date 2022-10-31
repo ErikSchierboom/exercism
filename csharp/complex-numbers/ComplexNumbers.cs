@@ -29,4 +29,6 @@ public record ComplexNumber(double R, double I)
     public ComplexNumber Conjugate() => new(R, -I);
 
     public double Abs() => Math.Sqrt(Math.Pow(R, 2) + Math.Pow(I, 2));
+    
+    public static implicit operator ComplexNumber(double d) => new(d, 0.0);
 }

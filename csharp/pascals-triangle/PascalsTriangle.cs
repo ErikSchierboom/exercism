@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 
-public class PascalsTriangle
+public static class PascalsTriangle
 {
-    public IEnumerable<IEnumerable<int>> Calculate(int rows)
+    public static IEnumerable<IEnumerable<int>> Calculate(int rows)
     {
         for (var i = 1; i <= rows; i++)
         {
@@ -10,7 +10,7 @@ public class PascalsTriangle
         }
     }
         
-    private IEnumerable<int> Row(int row)
+    private static IEnumerable<int> Row(int row)
     {
         yield return 1;
         var column = 1;

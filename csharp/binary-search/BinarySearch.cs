@@ -1,15 +1,11 @@
-﻿public class BinarySearch
+﻿public static class BinarySearch
 {
-    private readonly int[] _input;
-
-    public BinarySearch(int[] input) => _input = input;
-
-    public int Find(int value)
+    public static int Find(int[] array, int value)
     {
-        if (_input.Length == 0)
+        if (array.Length == 0)
             return -1;
 
-        return FindBetweenIndices(0, _input.Length - 1);
+        return FindBetweenIndices(0, array.Length - 1);
 
         int FindBetweenIndices(int minIndex, int maxIndex)
         {
@@ -17,7 +13,7 @@
                 return -1;
             
             var middleIndex = (minIndex + maxIndex) / 2;
-            var valueAtMiddleIndex = _input[middleIndex];
+            var valueAtMiddleIndex = array[middleIndex];
             
             if (valueAtMiddleIndex == value)
                 return middleIndex;

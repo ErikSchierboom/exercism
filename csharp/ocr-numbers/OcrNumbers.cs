@@ -10,6 +10,8 @@ public static class OcrNumbers
     public static string Convert(string input)
     {
         var lines = input.Split('\n');
+        if (lines.Length % 4 != 0 || lines[0].Length % 3 != 0)
+            throw new ArgumentException();
         
         return Positions(lines).Aggregate("", (str, pos) => str + ConvertCharacter(lines, pos.Item1, pos.Item2));
     }

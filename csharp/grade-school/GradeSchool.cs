@@ -1,19 +1,26 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
-public class School
+public class GradeSchool
 {
-    private readonly SortedList<string, int> _students = new();
+    private readonly SortedDictionary<int, List<string>> _roster = new();
+    
+    public bool Add(string student, int grade)
+    {
+        if (_roster.Values.Any(students => students.Contains(student)))
+            return false;
 
-    public void Add(string student, int grade) => _students.Add(student, grade);
+        if (!_roster.TryAdd(grade, new List<string> { student }))
+        {
+            _roster[grade].Add(student);
+            _roster[grade].Sort();
+        }
 
-    public IEnumerable<string> Roster() =>
-        _students.OrderBy(student => student.Value)
-            .Select(student => student.Key)
-            .ToArray();
+        return true;
+    }
 
-    public IEnumerable<string> Grade(int grade) =>
-        _students.Where(student => student.Value == grade)
-            .Select(student => student.Key)
-            .ToArray();
+    public IEnumerable<string> Roster() => _roster.Values.SelectMany(grade => grade).ToList();
+
+    public IEnumerable<string> Grade(int grade) => _roster.TryGetValue(grade, out var students) ? students : new List<string>();
 }
