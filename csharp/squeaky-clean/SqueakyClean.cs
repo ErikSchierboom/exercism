@@ -18,12 +18,12 @@ public static class Identifier
             if (c == ' ')
                 cleaned.Append('_');
             else if (char.IsControl(c))
-                cleaned.Append("CTRL");
+                cleaned.Append("CTRL2");
             else if (i > 0 && identifier[i - 1] == '-')
                 cleaned.Append(char.ToUpper(c));
             else if (char.IsLetter(c))
                 cleaned.Append(c);
-        }
+        } 
 
         return cleaned.ToString();
     }

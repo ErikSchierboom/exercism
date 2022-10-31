@@ -1,5 +1,4 @@
 {
-  "blurb": "Creating a zipper for a binary tree.",
   "authors": [
     "ErikSchierboom"
   ],
@@ -17,6 +16,10 @@
     ],
     "example": [
       ".meta/Example.cs"
+    ],
+    "invalidator": [
+      "Zipper.csproj"
     ]
-  }
+  },
+  "blurb": "Creating a zipper for a binary tree."
 }

@@ -10,6 +10,12 @@ public class ForthTests
     }
 
     [Fact]
+    public void Parsing_and_numbers_pushes_negative_numbers_onto_the_stack()
+    {
+        Assert.Equal("-1 -2 -3 -4 -5", Forth.Evaluate(new[] { "-1 -2 -3 -4 -5" }));
+    }
+
+    [Fact]
     public void Addition_can_add_two_numbers()
     {
         Assert.Equal("3", Forth.Evaluate(new[] { "1 2 +" }));
@@ -78,7 +84,7 @@ public class ForthTests
     [Fact]
     public void Division_errors_if_dividing_by_zero()
     {
-        Assert.Throws<InvalidOperationException>(() => Forth.Evaluate(new[] { "4 0 /" }));
+        Assert.Throws<DivideByZeroException>(() => Forth.Evaluate(new[] { "4 0 /" }));
     }
 
     [Fact]
@@ -238,9 +244,22 @@ public class ForthTests
     }
 
     [Fact]
+    public void User_defined_words_cannot_redefine_negative_numbers()
+    {
+        Assert.Throws<InvalidOperationException>(() => Forth.Evaluate(new[] { ": -1 2 ;" }));
+    }
+
+    [Fact]
     public void User_defined_words_errors_if_executing_a_non_existent_word()
     {
         Assert.Throws<InvalidOperationException>(() => Forth.Evaluate(new[] { "foo" }));
+    }
+
+    [Fact]
+    public void User_defined_words_only_defines_locally()
+    {
+        Assert.Equal("0", Forth.Evaluate(new[] { ": + - ;", "1 1 +" }));
+        Assert.Equal("2", Forth.Evaluate(new[] { "1 1 +" }));
     }
 
     [Fact]

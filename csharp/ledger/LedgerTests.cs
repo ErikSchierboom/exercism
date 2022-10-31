@@ -1,4 +1,4 @@
-﻿using Xunit;
+using Xunit;
 
 public class LedgerTests
 {
@@ -19,7 +19,7 @@ public class LedgerTests
     {
         var currency = "USD";
         var locale = "en-US";
-        var entries = new[] 
+        var entries = new[]
         {
             Ledger.CreateEntry("2015-01-01", "Buy present", -1000)
         };
@@ -35,7 +35,7 @@ public class LedgerTests
     {
         var currency = "USD";
         var locale = "en-US";
-        var entries = new[] 
+        var entries = new[]
         {
             Ledger.CreateEntry("2015-01-02", "Get present", 1000),
             Ledger.CreateEntry("2015-01-01", "Buy present", -1000)
@@ -53,7 +53,7 @@ public class LedgerTests
     {
         var currency = "USD";
         var locale = "en-US";
-        var entries = new[] 
+        var entries = new[]
         {
             Ledger.CreateEntry("2015-01-01", "Buy present", -1000),
             Ledger.CreateEntry("2015-01-01", "Get present", 1000)
@@ -71,7 +71,7 @@ public class LedgerTests
     {
         var currency = "USD";
         var locale = "en-US";
-        var entries = new[] 
+        var entries = new[]
         {
             Ledger.CreateEntry("2015-01-01", "Something", 0),
             Ledger.CreateEntry("2015-01-01", "Something", -1),
@@ -91,7 +91,7 @@ public class LedgerTests
     {
         var currency = "USD";
         var locale = "en-US";
-        var entries = new[] 
+        var entries = new[]
         {
             Ledger.CreateEntry("2015-01-01", "Freude schoner Gotterfunken", -123456)
         };
@@ -107,7 +107,7 @@ public class LedgerTests
     {
         var currency = "EUR";
         var locale = "en-US";
-        var entries = new[] 
+        var entries = new[]
         {
             Ledger.CreateEntry("2015-01-01", "Buy present", -1000)
         };
@@ -123,7 +123,7 @@ public class LedgerTests
     {
         var currency = "USD";
         var locale = "nl-NL";
-        var entries = new[] 
+        var entries = new[]
         {
             Ledger.CreateEntry("2015-03-12", "Buy present", 123456)
         };
@@ -139,7 +139,7 @@ public class LedgerTests
     {
         var currency = "USD";
         var locale = "nl-NL";
-        var entries = new[] 
+        var entries = new[]
         {
             Ledger.CreateEntry("2015-03-12", "Buy present", -12345)
         };
@@ -155,7 +155,7 @@ public class LedgerTests
     {
         var currency = "USD";
         var locale = "en-US";
-        var entries =   new[] 
+        var entries = new[]
         {
             Ledger.CreateEntry("2015-03-12", "Buy present", -12345)
         };

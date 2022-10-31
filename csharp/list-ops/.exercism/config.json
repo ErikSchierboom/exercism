@@ -1,5 +1,4 @@
 {
-  "blurb": "Implement basic list operations",
   "authors": [
     "ErikSchierboom"
   ],
@@ -18,6 +17,10 @@
     ],
     "example": [
       ".meta/Example.cs"
+    ],
+    "invalidator": [
+      "ListOps.csproj"
     ]
-  }
+  },
+  "blurb": "Implement basic list operations."
 }

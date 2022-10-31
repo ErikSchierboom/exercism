@@ -1,5 +1,4 @@
 {
-  "blurb": "Count the rectangles in an ASCII diagram.",
   "authors": [
     "ErikSchierboom"
   ],
@@ -17,6 +16,10 @@
     ],
     "example": [
       ".meta/Example.cs"
+    ],
+    "invalidator": [
+      "Rectangles.csproj"
     ]
-  }
+  },
+  "blurb": "Count the rectangles in an ASCII diagram."
 }

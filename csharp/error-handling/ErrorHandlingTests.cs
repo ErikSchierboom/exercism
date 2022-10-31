@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Xunit;
 
 public class ErrorHandlingTests
@@ -32,7 +32,7 @@ public class ErrorHandlingTests
         var successfulResult = ErrorHandling.HandleErrorWithOutParam("1", out result);
         Assert.True(successfulResult);
         Assert.Equal(1, result);
-        
+
         var failureResult = ErrorHandling.HandleErrorWithOutParam("a", out result);
         Assert.False(failureResult);
         // The value of result is meaningless here (it could be anything) so it shouldn't be used and it's not validated 

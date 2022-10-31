@@ -162,4 +162,20 @@ public class RectanglesTests
         };
         Assert.Equal(60, Rectangles.Count(strings));
     }
+
+    [Fact]
+    public void Rectangles_must_have_four_sides()
+    {
+        var strings = new[]
+        {
+            "+-+ +-+",
+            "| | | |",
+            "+-+-+-+",
+            "  | |  ",
+            "+-+-+-+",
+            "| | | |",
+            "+-+ +-+"
+        };
+        Assert.Equal(5, Rectangles.Count(strings));
+    }
 }

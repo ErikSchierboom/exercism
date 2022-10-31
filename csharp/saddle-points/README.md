@@ -13,11 +13,11 @@ So say you have a matrix like so:
     1  2  3
   |---------
 1 | 9  8  7
-2 | 5  3  2     <--- saddle point at column 1, row 2, with value 5
+2 | 5  3  2     <--- saddle point at row 2, column 1, with value 5
 3 | 6  6  7
 ```
 
-It has a saddle point at column 1, row 2.
+It has a saddle point at row 2, column 1.
 
 It's called a "saddle point" because it is greater than or equal to
 every element in its row and less than or equal to every element in
@@ -34,7 +34,7 @@ Note that you may find other definitions of matrix saddle points online,
 but the tests for this exercise follow the above unambiguous definition.
 
 For this exercise, you will need to create a set of factors using tuples.
-For more information on tuples, see [this link](https://docs.microsoft.com/en-us/dotnet/api/system.tuple?view=net-5.0).
+For more information on tuples, see [this link](https://docs.microsoft.com/en-us/dotnet/api/system.tuple?view=net-6.0).
 
 ## Source
 

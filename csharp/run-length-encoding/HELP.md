@@ -4,7 +4,7 @@
 
 You can run the tests by opening a command prompt in the exercise's directory, and then running the [`dotnet test` command](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-test)
 Alternatively, most IDE's have built-in support for running tests, including [Visual Studio](https://docs.microsoft.com/en-us/visualstudio/test/run-unit-tests-with-test-explorer), [Rider](https://www.jetbrains.com/help/rider/Unit_Testing_in_Solution.html) and [Visual Studio code](https://github.com/OmniSharp/omnisharp-vscode/wiki/How-to-run-and-debug-unit-tests).
-See the [tests page](https://exercism.io/tracks/csharp/tests) for more information.
+See the [tests page](https://exercism.org/docs/tracks/csharp/tests) for more information.
 
 ## Skipped tests
 
@@ -27,7 +27,7 @@ It's possible to submit an incomplete solution which allows you to:
 If you'd like help solving the exercise, check the following pages:
 
 - The [C# track's documentation](https://exercism.org/docs/tracks/csharp)
-- [Exercism's support channel on gitter](https://gitter.im/exercism/support)
+- [Exercism's programming category on the forum](https://forum.exercism.org/c/programming/5)
 - The [Frequently Asked Questions](https://exercism.org/docs/using/faqs)
 
 Should those resources not suffice, you could submit your (incomplete) solution to request mentoring.

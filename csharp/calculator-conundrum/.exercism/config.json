@@ -1,11 +1,11 @@
 {
-  "blurb": "Learn about error handling by working on a simple calculator.",
-  "contributors": [
-    "valentin-p",
-    "yzAlvin"
-  ],
   "authors": [
     "archrisV"
+  ],
+  "contributors": [
+    "valentin-p",
+    "yzAlvin",
+    "sanderploegsma"
   ],
   "files": {
     "solution": [
@@ -16,6 +16,13 @@
     ],
     "exemplar": [
       ".meta/Exemplar.cs"
+    ],
+    "editor": [
+      "SimpleOperation.cs"
+    ],
+    "invalidator": [
+      "CalculatorConundrum.csproj"
     ]
-  }
+  },
+  "blurb": "Learn about error handling by working on a simple calculator."
 }

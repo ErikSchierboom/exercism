@@ -15,15 +15,45 @@ public class PrimeFactorsTests
     }
 
     [Fact]
+    public void Another_prime_number()
+    {
+        Assert.Equal(new[] { 3L }, PrimeFactors.Factors(3L));
+    }
+
+    [Fact]
     public void Square_of_a_prime()
     {
         Assert.Equal(new[] { 3L, 3L }, PrimeFactors.Factors(9L));
     }
 
     [Fact]
+    public void Product_of_first_prime()
+    {
+        Assert.Equal(new[] { 2L, 2L }, PrimeFactors.Factors(4L));
+    }
+
+    [Fact]
     public void Cube_of_a_prime()
     {
         Assert.Equal(new[] { 2L, 2L, 2L }, PrimeFactors.Factors(8L));
+    }
+
+    [Fact]
+    public void Product_of_second_prime()
+    {
+        Assert.Equal(new[] { 3L, 3L, 3L }, PrimeFactors.Factors(27L));
+    }
+
+    [Fact]
+    public void Product_of_third_prime()
+    {
+        Assert.Equal(new[] { 5L, 5L, 5L, 5L }, PrimeFactors.Factors(625L));
+    }
+
+    [Fact]
+    public void Product_of_first_and_second_prime()
+    {
+        Assert.Equal(new[] { 2L, 3L }, PrimeFactors.Factors(6L));
     }
 
     [Fact]

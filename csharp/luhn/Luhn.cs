@@ -16,7 +16,7 @@
         public int CheckDigit
         {
             get
-            {
+            { 
                 return this.Addends.Last();
             }
         }

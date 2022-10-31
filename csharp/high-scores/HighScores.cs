@@ -4,7 +4,7 @@ using System.Linq;
 
 public class HighScores
 {
-    private readonly List<int> _scores;
+    private readonly List<int> _scores; 
 
     public HighScores(List<int> scores) => _scores = scores;
 

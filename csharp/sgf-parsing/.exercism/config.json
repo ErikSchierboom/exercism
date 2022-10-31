@@ -1,5 +1,4 @@
 {
-  "blurb": "Parsing a Smart Game Format string.",
   "authors": [
     "ErikSchierboom"
   ],
@@ -18,6 +17,10 @@
     ],
     "example": [
       ".meta/Example.cs"
+    ],
+    "invalidator": [
+      "SgfParsing.csproj"
     ]
-  }
+  },
+  "blurb": "Parsing a Smart Game Format string."
 }

@@ -1,11 +1,11 @@
 {
-  "blurb": "Learn about randomness by generating numbers in a game.",
-  "contributors": [
-    "ErikSchierboom",
-    "yzAlvin"
-  ],
   "authors": [
     "mikedamay"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "yzAlvin",
+    "aage"
   ],
   "files": {
     "solution": [
@@ -16,6 +16,10 @@
     ],
     "exemplar": [
       ".meta/Exemplar.cs"
+    ],
+    "invalidator": [
+      "RollTheDie.csproj"
     ]
-  }
+  },
+  "blurb": "Learn about randomness by generating numbers in a game."
 }

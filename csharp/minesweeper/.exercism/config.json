@@ -1,5 +1,4 @@
 {
-  "blurb": "Add the numbers to a minesweeper board",
   "authors": [
     "robkeim"
   ],
@@ -18,6 +17,10 @@
     ],
     "example": [
       ".meta/Example.cs"
+    ],
+    "invalidator": [
+      "Minesweeper.csproj"
     ]
-  }
+  },
+  "blurb": "Add the numbers to a minesweeper board."
 }

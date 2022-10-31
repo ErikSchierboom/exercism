@@ -1,12 +1,11 @@
 {
-  "blurb": "Learn about interfaces by working on cars.",
-  "contributors": [
-    "ErikSchierboom",
-    "yzAlvin"
-  ],
   "authors": [
     "senal",
     "mikedamay"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "yzAlvin"
   ],
   "files": {
     "solution": [
@@ -17,6 +16,10 @@
     ],
     "exemplar": [
       ".meta/Exemplar.cs"
+    ],
+    "invalidator": [
+      "RemoteControlCompetition.csproj"
     ]
-  }
+  },
+  "blurb": "Learn about interfaces by working on cars."
 }

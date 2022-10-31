@@ -27,7 +27,7 @@ When implementing this in a language with built-in linked lists,
 implement your own abstract data type.
 
 This exercise requires you to create a linked list data structure which can be iterated. This requires you to implement the IEnumerable\<T> interface.
-For more information, see [this page](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.ienumerable-1?view=net-5.0).
+For more information, see [this page](https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic.ienumerable-1?view=net-6.0).
 
 ## Source
 

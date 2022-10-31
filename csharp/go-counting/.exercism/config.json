@@ -1,5 +1,4 @@
 {
-  "blurb": "Count the scored points on a Go board.",
   "authors": [
     "ErikSchierboom"
   ],
@@ -18,6 +17,10 @@
     ],
     "example": [
       ".meta/Example.cs"
+    ],
+    "invalidator": [
+      "GoCounting.csproj"
     ]
-  }
+  },
+  "blurb": "Count the scored points on a Go board."
 }

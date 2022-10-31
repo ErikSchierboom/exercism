@@ -1,4 +1,4 @@
-﻿public static class Darts
+public static class Darts
 {
     public static int Score(double x, double y) =>
         Distance(x, y) switch

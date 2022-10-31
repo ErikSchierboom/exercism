@@ -6,7 +6,7 @@ static class QuestLogic
         !knightIsAwake;
 
     public static bool CanSpy(bool knightIsAwake, bool archerIsAwake, bool prisonerIsAwake) =>
-        prisonerIsAwake || knightIsAwake || archerIsAwake;
+        prisonerIsAwake || knightIsAwake;
 
     public static bool CanSignalPrisoner(bool archerIsAwake, bool prisonerIsAwake) =>
         prisonerIsAwake && !archerIsAwake;

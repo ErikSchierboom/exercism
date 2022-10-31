@@ -1,5 +1,4 @@
 {
-  "blurb": "Implement rational numbers.",
   "authors": [
     "ShamilS"
   ],
@@ -18,8 +17,12 @@
     ],
     "example": [
       ".meta/Example.cs"
+    ],
+    "invalidator": [
+      "RationalNumbers.csproj"
     ]
   },
+  "blurb": "Implement rational numbers.",
   "source": "Wikipedia",
   "source_url": "https://en.wikipedia.org/wiki/Rational_number"
 }

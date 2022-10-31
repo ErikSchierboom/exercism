@@ -1,6 +1,6 @@
-# Sum Of Multiples
+# Sum of Multiples
 
-Welcome to Sum Of Multiples on Exercism's C# Track.
+Welcome to Sum of Multiples on Exercism's C# Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Instructions

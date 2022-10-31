@@ -1,6 +1,6 @@
-# Dot Dsl
+# DOT DSL
 
-Welcome to Dot Dsl on Exercism's C# Track.
+Welcome to DOT DSL on Exercism's C# Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Instructions
@@ -37,7 +37,7 @@ be an internal DSL for use only in our language.
 More information about the difference between internal and external DSLs can be
 found [here](https://martinfowler.com/bliki/DomainSpecificLanguage.html).
 
-This exercise requires you to implement classes with a custom equality check. For more information, see [this page](https://docs.microsoft.com/en-us/dotnet/api/system.object.equals?view=net-5.0#System_Object_Equals_System_Object_).
+This exercise requires you to implement classes with a custom equality check. For more information, see [this page](https://docs.microsoft.com/en-us/dotnet/api/system.object.equals?view=net-6.0#System_Object_Equals_System_Object_).
 
 ## Source
 

@@ -1,5 +1,4 @@
 {
-  "blurb": "Solve the zebra puzzle.",
   "authors": [
     "ErikSchierboom"
   ],
@@ -17,8 +16,12 @@
     ],
     "example": [
       ".meta/Example.cs"
+    ],
+    "invalidator": [
+      "ZebraPuzzle.csproj"
     ]
   },
+  "blurb": "Solve the zebra puzzle.",
   "source": "Wikipedia",
   "source_url": "https://en.wikipedia.org/wiki/Zebra_Puzzle"
 }

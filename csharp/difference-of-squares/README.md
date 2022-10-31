@@ -1,6 +1,6 @@
-# Difference Of Squares
+# Difference of Squares
 
-Welcome to Difference Of Squares on Exercism's C# Track.
+Welcome to Difference of Squares on Exercism's C# Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Instructions
@@ -22,8 +22,7 @@ first principles; research is allowed, indeed, encouraged. Finding the best
 algorithm for the problem is a key skill in software engineering.
 
 This exercise requires you to process a collection of data. You can simplify your code by using LINQ (Language Integrated Query).
-For more information, see [this page]
-(https://docs.microsoft.com/en-us/dotnet/articles/standard/using-linq).
+For more information, see [this page](https://docs.microsoft.com/en-us/dotnet/articles/standard/using-linq).
 
 ## Source
 

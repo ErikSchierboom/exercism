@@ -79,4 +79,10 @@ public class IsogramTests
     {
         Assert.False(Isogram.IsIsogram("angola"));
     }
+
+    [Fact]
+    public void Word_with_duplicated_character_and_with_two_hyphens()
+    {
+        Assert.False(Isogram.IsIsogram("up-to-date"));
+    }
 }

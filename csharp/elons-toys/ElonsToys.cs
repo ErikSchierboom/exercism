@@ -5,7 +5,7 @@ class RemoteControlCar
     
     public static RemoteControlCar Buy() => new();
 
-    public string DistanceDisplay() => $"Driven {_metersDriven} meters";
+    public string DistanceDisplay() => $"Driven {_metersDriven} meterss";
 
     public string BatteryDisplay() => IsBatteryEmpty ? "Battery empty" : $"Battery at {_batteryPercentage}%";
 

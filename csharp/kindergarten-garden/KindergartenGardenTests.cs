@@ -52,6 +52,62 @@ public class KindergartenGardenTests
     }
 
     [Fact]
+    public void Full_garden_for_charlie()
+    {
+        var sut = new KindergartenGarden("VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV");
+        Assert.Equal(new[] { Plant.Violets, Plant.Violets, Plant.Clover, Plant.Grass }, sut.Plants("Charlie"));
+    }
+
+    [Fact]
+    public void Full_garden_for_david()
+    {
+        var sut = new KindergartenGarden("VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV");
+        Assert.Equal(new[] { Plant.Radishes, Plant.Violets, Plant.Clover, Plant.Radishes }, sut.Plants("David"));
+    }
+
+    [Fact]
+    public void Full_garden_for_eve()
+    {
+        var sut = new KindergartenGarden("VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV");
+        Assert.Equal(new[] { Plant.Clover, Plant.Grass, Plant.Radishes, Plant.Grass }, sut.Plants("Eve"));
+    }
+
+    [Fact]
+    public void Full_garden_for_fred()
+    {
+        var sut = new KindergartenGarden("VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV");
+        Assert.Equal(new[] { Plant.Grass, Plant.Clover, Plant.Violets, Plant.Clover }, sut.Plants("Fred"));
+    }
+
+    [Fact]
+    public void Full_garden_for_ginny()
+    {
+        var sut = new KindergartenGarden("VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV");
+        Assert.Equal(new[] { Plant.Clover, Plant.Grass, Plant.Grass, Plant.Clover }, sut.Plants("Ginny"));
+    }
+
+    [Fact]
+    public void Full_garden_for_harriet()
+    {
+        var sut = new KindergartenGarden("VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV");
+        Assert.Equal(new[] { Plant.Violets, Plant.Radishes, Plant.Radishes, Plant.Violets }, sut.Plants("Harriet"));
+    }
+
+    [Fact]
+    public void Full_garden_for_ileana()
+    {
+        var sut = new KindergartenGarden("VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV");
+        Assert.Equal(new[] { Plant.Grass, Plant.Clover, Plant.Violets, Plant.Clover }, sut.Plants("Ileana"));
+    }
+
+    [Fact]
+    public void Full_garden_for_joseph()
+    {
+        var sut = new KindergartenGarden("VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV");
+        Assert.Equal(new[] { Plant.Violets, Plant.Clover, Plant.Violets, Plant.Grass }, sut.Plants("Joseph"));
+    }
+
+    [Fact]
     public void Full_garden_for_kincaid_second_to_last_students_garden()
     {
         var sut = new KindergartenGarden("VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV");

@@ -2,7 +2,7 @@ using System;
 
 class RemoteControlCar
 {
-    private readonly int _speed;
+    private readonly int _speed; 
     private readonly int _batteryDrain;
     private int _distanceDriven;
     private int _battery = 100;
@@ -14,15 +14,15 @@ class RemoteControlCar
     public int DistanceDriven() => _distanceDriven;
 
     public void Drive()
-    {
+    { 
         if (BatteryDrained())
-            return;
+            return; 
         
         _distanceDriven += _speed;
         _battery -= _batteryDrain;
     }
 
-    public static RemoteControlCar Nitro() => new(50, 4);
+    public static RemoteControlCar Nitro() => new(50, 4); 
 }
 
 class RaceTrack

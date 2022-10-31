@@ -3,6 +3,12 @@ using Xunit;
 public class ProteinTranslationTests
 {
     [Fact]
+    public void Empty_rna_sequence_results_in_no_proteins()
+    {
+        Assert.Empty(ProteinTranslation.Proteins(""));
+    }
+
+    [Fact]
     public void Methionine_rna_sequence()
     {
         Assert.Equal(new[] { "Methionine" }, ProteinTranslation.Proteins("AUG"));
@@ -102,6 +108,18 @@ public class ProteinTranslationTests
     public void Stop_codon_rna_sequence_3()
     {
         Assert.Empty(ProteinTranslation.Proteins("UGA"));
+    }
+
+    [Fact]
+    public void Sequence_of_two_protein_codons_translates_into_proteins()
+    {
+        Assert.Equal(new[] { "Phenylalanine", "Phenylalanine" }, ProteinTranslation.Proteins("UUUUUU"));
+    }
+
+    [Fact]
+    public void Sequence_of_two_different_protein_codons_translates_into_proteins()
+    {
+        Assert.Equal(new[] { "Leucine", "Leucine" }, ProteinTranslation.Proteins("UUAUUG"));
     }
 
     [Fact]

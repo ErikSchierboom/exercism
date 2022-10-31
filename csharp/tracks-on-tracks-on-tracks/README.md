@@ -32,7 +32,7 @@ To keep track of the languages you want to learn, you'll need to create a new li
 
 Implement the static `Languages.NewList()` method that returns a new, empty list.
 
-```fsharp
+```csharp
 Languages.NewList()
 // => empty list
 ```
@@ -43,7 +43,7 @@ Currently, you have a piece of paper listing the languages you want to learn: C#
 
 Please implement the static `Languages.GetExistingLanguages()` method to return the list.
 
-```fsharp
+```csharp
 Languages.GetExistingLanguages();
 // => {"C#", "Clojure", "Elm"}
 ```
@@ -54,7 +54,7 @@ As you explore Exercism and find more interesting languages, you want to add the
 
 Implement the static `Languages.AddLanguage()` function to add a new language to the end of your list.
 
-```fsharp
+```csharp
 Languages.AddLanguage(Languages.GetExistingLanguages(), "VBA");
 // => {"C#", "Clojure", "Elm", "VBA"}
 ```
@@ -65,7 +65,7 @@ Counting the languages one-by-one is inconvenient.
 
 Implement the static `Languages.CountLanguages()` method to count the number of languages on your list.
 
-```fsharp
+```csharp
 Languages.CountLanguages(Languages.GetExistingLanguages())
 // => 3
 ```
@@ -85,7 +85,7 @@ At some point, you realize that your list is actually ordered backwards!
 
 Implement the static `Languages.ReverseList()` method to reverse your list.
 
-```fsharp
+```csharp
 Languages.ReverseList(Languages.GetExistingLanguages())
 // => {"Elm", "Clojure", "C#"}
 ```
@@ -95,18 +95,18 @@ Languages.ReverseList(Languages.GetExistingLanguages())
 While you love all languages, C# has a special place in your heart. As such, you're really excited about a list of languages if:
 
 - The first on the list is C#.
-- The second item on the list is C# and the list contain either two or three languages.
+- The second item on the list is C# and the list contains either two or three languages.
 
-Implement the static `Languages.ContainsStar()` method to check if a list of languages is exciting:
+Implement the static `Languages.IsExciting()` method to check if a list of languages is exciting:
 
-```fsharp
-Languages.ContainsStar(Languages.GetExistingLanguages())
+```csharp
+Languages.IsExciting(Languages.GetExistingLanguages())
 // => true
 ```
 
 ## 8.Remove Language
 
-Please implement the static `Languages.RemoveLangage()` method to remove a specified language from the list.
+Please implement the static `Languages.RemoveLanguage()` method to remove a specified language from the list.
 
 ```csharp
 Languages.RemoveLanguage(Languages.GetExistingLanguages(), "Clojure")
@@ -115,12 +115,12 @@ Languages.RemoveLanguage(Languages.GetExistingLanguages(), "Clojure")
 
 ## 9. Check if all languages in the list are unique
 
-Please implement the static `Languages.EnsureUnique()` method to check if any of the languages is repeated in the list.
+Please implement the static `Languages.IsUnique()` method to check if any of the languages is repeated in the list.
 
 The list of languages (i.e. the parameter) is guaranteed not to be empty when this method is called and it doesn't matter if the list is modified.
 
 ```csharp
-Languages.EnsureUnique(Languages.GetExistingLanguages())
+Languages.IsUnique(Languages.GetExistingLanguages())
 // => true
 ```
 
@@ -134,3 +134,4 @@ Languages.EnsureUnique(Languages.GetExistingLanguages())
 
 - @ErikSchierboom
 - @yzAlvin
+- @sanderploegsma

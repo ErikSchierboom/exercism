@@ -14,7 +14,7 @@ public class TransposeTests
     public void Two_characters_in_a_row()
     {
         var lines = "A1";
-        var expected = 
+        var expected =
             "A\n" +
             "1";
         Assert.Equal(expected, Transpose.String(lines));
@@ -23,7 +23,7 @@ public class TransposeTests
     [Fact]
     public void Two_characters_in_a_column()
     {
-        var lines = 
+        var lines =
             "A\n" +
             "1";
         var expected = "A1";
@@ -33,10 +33,10 @@ public class TransposeTests
     [Fact]
     public void Simple()
     {
-        var lines = 
+        var lines =
             "ABC\n" +
             "123";
-        var expected = 
+        var expected =
             "A1\n" +
             "B2\n" +
             "C3";
@@ -47,7 +47,7 @@ public class TransposeTests
     public void Single_line()
     {
         var lines = "Single line.";
-        var expected = 
+        var expected =
             "S\n" +
             "i\n" +
             "n\n" +
@@ -66,10 +66,10 @@ public class TransposeTests
     [Fact]
     public void First_line_longer_than_second_line()
     {
-        var lines = 
+        var lines =
             "The fourth line.\n" +
             "The fifth line.";
-        var expected = 
+        var expected =
             "TT\n" +
             "hh\n" +
             "ee\n" +
@@ -92,10 +92,10 @@ public class TransposeTests
     [Fact]
     public void Second_line_longer_than_first_line()
     {
-        var lines = 
+        var lines =
             "The first line.\n" +
             "The second line.";
-        var expected = 
+        var expected =
             "TT\n" +
             "hh\n" +
             "ee\n" +
@@ -118,12 +118,12 @@ public class TransposeTests
     [Fact]
     public void Mixed_line_length()
     {
-        var lines = 
+        var lines =
             "The longest line.\n" +
             "A long line.\n" +
             "A longer line.\n" +
             "A line.";
-        var expected = 
+        var expected =
             "TAAA\n" +
             "h   \n" +
             "elll\n" +
@@ -147,13 +147,13 @@ public class TransposeTests
     [Fact]
     public void Square()
     {
-        var lines = 
+        var lines =
             "HEART\n" +
             "EMBER\n" +
             "ABUSE\n" +
             "RESIN\n" +
             "TREND";
-        var expected = 
+        var expected =
             "HEART\n" +
             "EMBER\n" +
             "ABUSE\n" +
@@ -165,12 +165,12 @@ public class TransposeTests
     [Fact]
     public void Rectangle()
     {
-        var lines = 
+        var lines =
             "FRACTURE\n" +
             "OUTLINED\n" +
             "BLOOMING\n" +
             "SEPTETTE";
-        var expected = 
+        var expected =
             "FOBS\n" +
             "RULE\n" +
             "ATOP\n" +
@@ -185,20 +185,40 @@ public class TransposeTests
     [Fact]
     public void Triangle()
     {
-        var lines = 
+        var lines =
             "T\n" +
             "EE\n" +
             "AAA\n" +
             "SSSS\n" +
             "EEEEE\n" +
             "RRRRRR";
-        var expected = 
+        var expected =
             "TEASER\n" +
             " EASER\n" +
             "  ASER\n" +
             "   SER\n" +
             "    ER\n" +
             "     R";
+        Assert.Equal(expected, Transpose.String(lines));
+    }
+
+    [Fact]
+    public void Jagged_triangle()
+    {
+        var lines =
+            "11\n" +
+            "2\n" +
+            "3333\n" +
+            "444\n" +
+            "555555\n" +
+            "66666";
+        var expected =
+            "123456\n" +
+            "1 3456\n" +
+            "  3456\n" +
+            "  3 56\n" +
+            "    56\n" +
+            "    5";
         Assert.Equal(expected, Transpose.String(lines));
     }
 }

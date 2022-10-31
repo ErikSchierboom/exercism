@@ -61,6 +61,16 @@ public class ZipperTests
     }
 
     [Fact]
+    public void Test_ability_to_descend_multiple_levels_and_return()
+    {
+        var tree = new BinTree(1, new BinTree(2, null, new BinTree(3, null, null)), new BinTree(4, null, null));
+        var sut = Zipper.FromTree(tree);
+        var actual = sut.Left().Right().Up().Up().Value();
+        var expected = 1;
+        Assert.Equal(expected, actual);
+    }
+
+    [Fact]
     public void Set_value()
     {
         var tree = new BinTree(1, new BinTree(2, null, new BinTree(3, null, null)), new BinTree(4, null, null));

@@ -1,5 +1,4 @@
 {
-  "blurb": "Make a chain of dominoes.",
   "authors": [
     "ErikSchierboom"
   ],
@@ -19,6 +18,10 @@
     ],
     "example": [
       ".meta/Example.cs"
+    ],
+    "invalidator": [
+      "Dominoes.csproj"
     ]
-  }
+  },
+  "blurb": "Make a chain of dominoes."
 }

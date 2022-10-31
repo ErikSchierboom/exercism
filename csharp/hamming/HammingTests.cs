@@ -46,13 +46,13 @@ public class HammingTests
     }
 
     [Fact]
-    public void Disallow_left_empty_strand()
+    public void Disallow_empty_first_strand()
     {
         Assert.Throws<ArgumentException>(() => Hamming.Distance("", "G"));
     }
 
     [Fact]
-    public void Disallow_right_empty_strand()
+    public void Disallow_empty_second_strand()
     {
         Assert.Throws<ArgumentException>(() => Hamming.Distance("G", ""));
     }

@@ -1,11 +1,10 @@
 {
-  "blurb": "Learn about characters and StringBuilder by cleaning strings.",
+  "authors": [
+    "mikedamay"
+  ],
   "contributors": [
     "ErikSchierboom",
     "yzAlvin"
-  ],
-  "authors": [
-    "mikedamay"
   ],
   "files": {
     "solution": [
@@ -16,6 +15,10 @@
     ],
     "exemplar": [
       ".meta/Exemplar.cs"
+    ],
+    "invalidator": [
+      "SqueakyClean.csproj"
     ]
-  }
+  },
+  "blurb": "Learn about characters and StringBuilder by cleaning strings."
 }

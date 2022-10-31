@@ -30,7 +30,7 @@ public class SgfParsingTests
     {
         var encoded = "(;)";
         var expected = new SgfTree(new Dictionary<string, string[]>());
-        Assert.Equal(expected, SgfParser.ParseTree(encoded));
+        AssertEqual(expected, SgfParser.ParseTree(encoded));
     }
 
     [Fact]
@@ -38,7 +38,7 @@ public class SgfParsingTests
     {
         var encoded = "(;A[B])";
         var expected = new SgfTree(new Dictionary<string, string[]> { ["A"] = new[] { "B" } });
-        Assert.Equal(expected, SgfParser.ParseTree(encoded));
+        AssertEqual(expected, SgfParser.ParseTree(encoded));
     }
 
     [Fact]
@@ -46,7 +46,7 @@ public class SgfParsingTests
     {
         var encoded = "(;A[b]C[d])";
         var expected = new SgfTree(new Dictionary<string, string[]> { ["A"] = new[] { "b" }, ["C"] = new[] { "d" } });
-        Assert.Equal(expected, SgfParser.ParseTree(encoded));
+        AssertEqual(expected, SgfParser.ParseTree(encoded));
     }
 
     [Fact]
@@ -75,7 +75,7 @@ public class SgfParsingTests
     {
         var encoded = "(;A[B];B[C])";
         var expected = new SgfTree(new Dictionary<string, string[]> { ["A"] = new[] { "B" } }, new SgfTree(new Dictionary<string, string[]> { ["B"] = new[] { "C" } }));
-        Assert.Equal(expected, SgfParser.ParseTree(encoded));
+        AssertEqual(expected, SgfParser.ParseTree(encoded));
     }
 
     [Fact]
@@ -83,7 +83,7 @@ public class SgfParsingTests
     {
         var encoded = "(;A[B](;B[C])(;C[D]))";
         var expected = new SgfTree(new Dictionary<string, string[]> { ["A"] = new[] { "B" } }, new SgfTree(new Dictionary<string, string[]> { ["B"] = new[] { "C" } }), new SgfTree(new Dictionary<string, string[]> { ["C"] = new[] { "D" } }));
-        Assert.Equal(expected, SgfParser.ParseTree(encoded));
+        AssertEqual(expected, SgfParser.ParseTree(encoded));
     }
 
     [Fact]
@@ -91,14 +91,32 @@ public class SgfParsingTests
     {
         var encoded = "(;A[b][c][d])";
         var expected = new SgfTree(new Dictionary<string, string[]> { ["A"] = new[] { "b", "c", "d" } });
-        Assert.Equal(expected, SgfParser.ParseTree(encoded));
+        AssertEqual(expected, SgfParser.ParseTree(encoded));
     }
 
     [Fact]
-    public void Escaped_property()
+    public void Semicolon_in_property_value_doesnt_need_to_be_escaped()
     {
-        var encoded = "(;A[\\]b\\nc\\nd\\t\\te \\n\\]])";
-        var expected = new SgfTree(new Dictionary<string, string[]> { ["A"] = new[] { "]b\nc\nd  e \n]" } });
-        Assert.Equal(expected, SgfParser.ParseTree(encoded));
+        var encoded = "(;A[a;b][foo]B[bar];C[baz])";
+        var expected = new SgfTree(new Dictionary<string, string[]> { ["A"] = new[] { "a;b", "foo" }, ["B"] = new[] { "bar" } }, new SgfTree(new Dictionary<string, string[]> { ["C"] = new[] { "baz" } }));
+        AssertEqual(expected, SgfParser.ParseTree(encoded));
+    }
+
+    [Fact]
+    public void Parentheses_in_property_value_dont_need_to_be_escaped()
+    {
+        var encoded = "(;A[x(y)z][foo]B[bar];C[baz])";
+        var expected = new SgfTree(new Dictionary<string, string[]> { ["A"] = new[] { "x(y)z", "foo" }, ["B"] = new[] { "bar" } }, new SgfTree(new Dictionary<string, string[]> { ["C"] = new[] { "baz" } }));
+        AssertEqual(expected, SgfParser.ParseTree(encoded));
+    }
+
+    private void AssertEqual(SgfTree expected, SgfTree actual)
+    {
+        Assert.Equal(expected.Data, actual.Data);
+        Assert.Equal(expected.Children.Length, actual.Children.Length);
+        for (var i = 0; i < expected.Children.Length; i++)
+        {
+            AssertEqual(expected.Children[i], actual.Children[i]);
+        }
     }
 }
