@@ -9,10 +9,8 @@ public static class ArmstrongNumbers
     private static int ArmstrongSum(int n)
     {
         var digits = Digits(n);
-        return digits.Sum(digit => Pow(digit, digits.Length));
+        return (int)digits.Sum(digit => Math.Pow(digit, digits.Length));
     }
 
     private static int[] Digits(int n) => n.ToString().Select(CharUnicodeInfo.GetDecimalDigitValue).ToArray();
-
-    private static int Pow(int n, int m) => (int) Math.Pow(n, m);
 }
