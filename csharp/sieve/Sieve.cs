@@ -1,25 +1,25 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 
-public class Sieve
+public static class Sieve
 {
     public static IEnumerable<int> Primes(int max)
     {
         if (max < 0)
             throw new ArgumentOutOfRangeException(nameof(max));
-        
-        var possiblePrimes = Enumerable.Range(2, max - 1);
 
-        while (possiblePrimes.Any())
+        var primes = new BitArray(max + 1, true);
+
+        for (var i = 2; i <= max; i++)
         {
-            var prime = possiblePrimes.First();
-            yield return prime;
+            if (!primes[i])
+                continue;
 
-            possiblePrimes = ExcludePrimeMultiples(possiblePrimes, prime);
+            for (int j = i * 2; j <= max; j += i)
+                primes[j] = false;
+
+            yield return i;
         }
     }
-
-    private static IEnumerable<int> ExcludePrimeMultiples(IEnumerable<int> possiblePrimes, int prime) =>
-        possiblePrimes.Where(n => n % prime != 0);
 }
