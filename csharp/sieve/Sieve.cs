@@ -16,7 +16,7 @@ public static class Sieve
             if (!primes[i])
                 continue;
 
-            for (int j = i * 2; j <= max; j += i)
+            for (var j = i * 2; j <= max; j += i)
                 primes[j] = false;
 
             yield return i;
