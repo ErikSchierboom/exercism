@@ -1,21 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Newtonsoft.Json;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 public class User
 {
-    [JsonProperty("name")]
+    [JsonPropertyName("name")]
     public string Name { get; set; }
     
-    [JsonProperty("owes")]
-    public IDictionary<string, decimal> Owes { get; } = new SortedDictionary<string, decimal>();
+    [JsonPropertyName("owes")]
+    public Dictionary<string, decimal> Owes { get; set; }
     
-    [JsonProperty("owed_by")]
-    public IDictionary<string, decimal> OwedBy { get; } = new SortedDictionary<string, decimal>();
-    
-    [JsonProperty("balance")]
-    public decimal Balance => OwedBy.Values.Sum() - Owes.Values.Sum();
+    [JsonPropertyName("owed_by")]
+    public Dictionary<string, decimal> OwedBy { get; set;  }
+
+    [JsonPropertyName("balance")]
+    public decimal Balance => OwedBy?.Values.Sum() ?? 0 - Owes?.Values.Sum() ?? 0;
 
     public void LendTo(User borrower, decimal amount)
     {
@@ -68,34 +69,40 @@ public class Database
 
 public class GetUsersPayload
 {
+    [JsonPropertyName("users")]
     public string[] Users { get; set; }
 }
 
 public class PostAddPayload
 {
+    [JsonPropertyName("user")]
     public string User { get; set; }
 }
 
 public class PostIOUPayload
 {
+    [JsonPropertyName("lender")]
     public string Lender { get; set; }
+    
+    [JsonPropertyName("borrower")]
     public string Borrower { get; set; }
+    
+    [JsonPropertyName("amount")]
     public decimal Amount { get; set; }
 }
 
 internal static class SerializationExtensions
 {   
-    internal static T Deserialize<T>(this string json) => JsonConvert.DeserializeObject<T>(json);
+    internal static T Deserialize<T>(this string json) => JsonSerializer.Deserialize<T>(json);
     
-    internal static string Serialize<T>(this T obj) => JsonConvert.SerializeObject(obj);
+    internal static string Serialize<T>(this T obj) => JsonSerializer.Serialize(obj).Replace(".0", "");
 }
 
 public class RestApi
 {
     private readonly Database _db;
     
-    public RestApi(string json) 
-        => _db = new Database(json.Deserialize<User[]>());
+    public RestApi(string json) => _db = new Database(json.Deserialize<User[]>());
 
     public string Get(string url, string json = null)
     {
