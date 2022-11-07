@@ -31,12 +31,3 @@ public class KindergartenGarden
     private static Plant ToPlant(char encodedPlant) =>
         Enum.GetValues<Plant>().First(plant => plant.ToString().StartsWith(encodedPlant));
 }
-
-public static class EnumerableExtensions
-{
-    public static IEnumerable<IEnumerable<T>> Chunk<T>(this IEnumerable<T> enumerable, int size)
-    {
-        for (var i = 0; i < enumerable.Count(); i += size)
-            yield return enumerable.Skip(i).Take(size);
-    }
-}
