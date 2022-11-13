@@ -26,7 +26,6 @@ public static class Change
             coins.Where(coin => coin <= subChange)
                 .Select(coin => current.GetValueOrDefault(subChange - coin)?.Prepend(coin).ToArray())
                 .Where(fewestCoins => fewestCoins != null)
-                .OrderBy(fewestCoins => fewestCoins.Length)
-                .FirstOrDefault();
+                .MinBy(fewestCoins => fewestCoins.Length);
     }
 }
