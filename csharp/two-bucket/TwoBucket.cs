@@ -1,109 +1,71 @@
 using System;
+using System.Collections.Generic;
 
-public enum Bucket
-{
-    One,
-    Two
-}
+public enum Bucket { One, Two }
 
-public class TwoBucketResult
-{
-    public int Moves { get; set; }
-    public Bucket GoalBucket { get; set; }
-    public int OtherBucket { get; set; }
-}
-
-public class BucketContainer
-{
-    public BucketContainer(int contents, int capacity)
-    {
-        Contents = contents;
-        Capacity = capacity;
-    }
-
-    public int Contents { get; set; }
-
-    public int Capacity { get; }
-
-    public bool IsEmpty => Contents == 0;
-
-    public bool IsFull => Contents == Capacity;
-
-    public void Fill()
-    {
-        Contents = Capacity;
-    }
-
-    public void Empty()
-    {
-        Contents = 0;
-    }
-
-    public void PourTo(BucketContainer other)
-    {
-        var amount = Math.Min(other.Capacity - other.Contents, Contents);
-        Contents -= amount;
-        other.Contents += amount;
-    }
-
-    public bool CanPourTo(BucketContainer other) => IsFull && !other.IsFull || !IsFull && other.IsEmpty;
-}
+public record Result(int Moves, Bucket GoalBucket, int OtherBucket);
 
 public class TwoBucket
 {
-    private readonly BucketContainer bucketOne;
-    private readonly BucketContainer bucketTwo;
-    private readonly Action strategy;
+    private readonly int oneCapacity;
+    private readonly int twoCapacity;
+    private readonly Bucket startFrom;
 
-    public TwoBucket(int bucketOneSize, int bucketTwoSize, Bucket startBucket)
+    public TwoBucket(int oneCapacity, int twoCapacity, Bucket startFrom)
     {
-        bucketOne = new BucketContainer(startBucket == Bucket.One ? bucketOneSize : 0, bucketOneSize);
-        bucketTwo = new BucketContainer(startBucket == Bucket.Two ? bucketTwoSize : 0, bucketTwoSize);
-        strategy = startBucket == Bucket.One ? (Action)StartFromFirstBucket : StartFromSecondBucket;
-
+        this.oneCapacity = startFrom == Bucket.One ? oneCapacity : twoCapacity;
+        this.twoCapacity = startFrom == Bucket.One ? twoCapacity : oneCapacity;
+        this.startFrom = startFrom;
     }
 
-    public TwoBucketResult Measure(int goal)
+    public Result Measure(int goal)
     {
-        var moves = 0;
+        if (goal > oneCapacity && goal > twoCapacity)
+            throw new ArgumentException("Goal cannot not be reached", nameof(goal));
 
-        while (true)
+        var initialState = (moves: 0, one: 0, two: 0);
+
+        var unprocessed = new PriorityQueue<(int moves, int one, int two), int>();
+        unprocessed.Enqueue(initialState, initialState.moves);
+
+        var statesMoveCount = new Dictionary<(int one, int two), int> { [(initialState.one, initialState.two)] = initialState.moves };
+
+        while (unprocessed.TryDequeue(out var state, out _))
         {
-            moves++;
+            if (state.one == goal)
+                return new Result(state.moves, startFrom == Bucket.One ? Bucket.One : Bucket.Two, state.two);
 
-            if (bucketOne.Contents == goal)
-                return new TwoBucketResult { Moves = moves, GoalBucket = Bucket.One, OtherBucket = bucketTwo.Contents };
+            if (state.two == goal)
+                return new Result(state.moves, startFrom == Bucket.One ? Bucket.Two : Bucket.One, state.one);
 
-            if (bucketTwo.Contents == goal)
-                return new TwoBucketResult { Moves = moves, GoalBucket = Bucket.Two, OtherBucket = bucketOne.Contents };
+            foreach (var newState in Moves(state))
+            {
+                if (newState.moves >= statesMoveCount.GetValueOrDefault((newState.one, newState.two), int.MaxValue))
+                    continue;
 
-            strategy();
+                statesMoveCount[(newState.one, newState.two)] = newState.moves;
+                unprocessed.Enqueue(newState, newState.moves);
+            }
         }
 
-        throw new NotImplementedException();
+        throw new ArgumentException("Could not find path");
     }
 
-    public void StartFromFirstBucket()
+    private IEnumerable<(int moves, int one, int two)> Moves((int moves, int one, int two) state)
     {
-        if (bucketOne.IsEmpty)
-            bucketOne.Fill();
-        else if (bucketTwo.IsFull)
-            bucketTwo.Empty();
-        else if (bucketOne.CanPourTo(bucketTwo))
-            bucketOne.PourTo(bucketTwo);
-        else
-            throw new InvalidOperationException("Cannot transition from current state.");
-    }
-    
-    public void StartFromSecondBucket()
-    {
-        if (bucketOne.IsFull)
-            bucketOne.Empty();
-        else if (bucketTwo.IsEmpty)
-            bucketTwo.Fill();
-        else if (bucketTwo.CanPourTo(bucketOne))
-            bucketTwo.PourTo(bucketOne);
-        else
-            throw new InvalidOperationException("Cannot transition from current state.");
+        if (state.one == 0)
+            yield return (state.moves + 1, oneCapacity, state.two);
+
+        if (state.one > 0 && state.two == 0)
+            yield return (state.moves + 1, state.one, twoCapacity);
+
+        if (state.two == twoCapacity)
+            yield return (state.moves + 1, state.one, 0);
+
+        if (state.one > 0 && state.two < twoCapacity)
+        {
+            var amount = Math.Min(state.one, twoCapacity - state.two);
+            yield return (state.moves + 1, state.one - amount, state.two + amount);
+        }
     }
 }
