@@ -17,7 +17,7 @@ public static class Poker
 
         public Hand(Card[] cards)
         {
-            Ranks = cards.Select(card => card.Rank).Order().ToArray();
+            Ranks = cards.Select(card => card.Rank).OrderByDescending(rank => cards.Count(card => card.Rank == rank)).ThenByDescending(card => card).ToArray();
             Suits = cards.Select(card => card.Suit).ToArray();
             RankCounts = cards.GroupBy(card => card.Rank).Select(grouping => grouping.Count()).OrderDescending().ToArray();
         }
@@ -62,52 +62,22 @@ public static class Poker
         }
 
         private static int[]? StraightFlushScore(Hand hand) =>
-            hand.IsFlush && hand.IsSmallStraight ? new [] { 9, hand.Ranks[3], 0, 0, 0, 0 } :
-            hand.IsFlush && hand.IsLargeStraight ? new [] { 9, hand.Ranks[4], 0, 0, 0, 0 } :
+            hand.IsFlush && hand.IsSmallStraight ? hand.Ranks.Prepend(9).ToArray() :
+            hand.IsFlush && hand.IsLargeStraight ? hand.Ranks.Prepend(9).ToArray() :
             null;
            
-        private static int[]? FourOfAKindScore(Hand hand) =>
-            hand.IsFourOfAKind
-                ? new [] { 8, hand.Ranks[1], Math.Min(hand.Ranks[0], hand.Ranks[4]), 0, 0, 0 }
-                : null;
-
-        private static int[]? FullHouseScore(Hand hand) =>
-            hand.IsFullHouse
-                ? hand.Ranks[2] == hand.Ranks[4] 
-                ? new [] { 7, hand.Ranks[2], hand.Ranks[0], 0, 0, 0 }
-                : new [] { 7, hand.Ranks[0], hand.Ranks[4], 0, 0, 0 }
-                : null;
+        private static int[]? FourOfAKindScore(Hand hand) => hand.IsFourOfAKind ? hand.Ranks.Prepend(8).ToArray() : null;
+        private static int[]? FullHouseScore(Hand hand) => hand.IsFullHouse ? hand.Ranks.Prepend(7).ToArray() : null;
+        private static int[]? FlushScore(Hand hand) => hand.IsFlush ? hand.Ranks.Prepend(6).ToArray() : null;
         
-        private static int[]? FlushScore(Hand hand) =>
-            hand.IsFlush
-                ? new [] { 6, hand.Ranks[4], hand.Ranks[3], hand.Ranks[2], hand.Ranks[1], hand.Ranks[0] }
-                : null;
-        
-        private static int[]? StraightScore(Hand hand) =>
-            hand.IsSmallStraight ? new [] { 5, hand.Ranks[3], 0, 0, 0, 0 } :
-            hand.IsLargeStraight ? new [] { 5, hand.Ranks[4], 0, 0, 0, 0 } :
+        private static int[]? StraightScore(Hand hand) => 
+            hand.IsSmallStraight ? hand.Ranks.Prepend(5).ToArray() :
+            hand.IsLargeStraight ? hand.Ranks.Prepend(5).ToArray() :
             null;
         
-        private static int[]? ThreeOfAKindScore(Hand hand) => hand.IsThreeOfAKind
-            ? hand.Ranks[4] == hand.Ranks[2] ? new [] { 4, hand.Ranks[4], hand.Ranks[1], hand.Ranks[0], 0, 0 }
-            : hand.Ranks[3] == hand.Ranks[1] ? new [] { 4, hand.Ranks[3], hand.Ranks[4], hand.Ranks[0], 0, 0 }
-            : new [] { 4, hand.Ranks[0], hand.Ranks[4], hand.Ranks[3], 0, 0 }
-            : null;
-
-        private static int[]? TwoPairScore(Hand hand) => hand.IsTwoPair
-            ? hand.Ranks[0] != hand.Ranks[1] ? new [] { 3, hand.Ranks[4], hand.Ranks[2], hand.Ranks[0], 0, 0 } 
-            : hand.Ranks[2] != hand.Ranks[3] ? new [] { 3, hand.Ranks[3], hand.Ranks[0], hand.Ranks[2], 0, 0 }
-            : new [] { 3, hand.Ranks[2], hand.Ranks[0], hand.Ranks[4], 0, 0 }
-            : null;
-
-        private static int[]? OnePairScore(Hand hand) => hand.IsOnePair
-            ? hand.Ranks[0] == hand.Ranks[1] ? new [] { 2, hand.Ranks[0], hand.Ranks[4], hand.Ranks[3], hand.Ranks[2], 0 } 
-            : hand.Ranks[1] == hand.Ranks[2] ? new [] { 2, hand.Ranks[1], hand.Ranks[4], hand.Ranks[3], hand.Ranks[0], 0 }
-            : hand.Ranks[2] == hand.Ranks[3] ? new [] { 2, hand.Ranks[2], hand.Ranks[4], hand.Ranks[1], hand.Ranks[0], 0 }
-            : new [] { 2, hand.Ranks[3], hand.Ranks[2], hand.Ranks[1], hand.Ranks[0], 0 }
-            : null;
-        
-        private static int[] HighCardScore(Hand hand) =>
-            new [] { 1, hand.Ranks[4], hand.Ranks[3], hand.Ranks[2], hand.Ranks[1], hand.Ranks[0] };
+        private static int[]? ThreeOfAKindScore(Hand hand) => hand.IsThreeOfAKind ?  hand.Ranks.Prepend(4).ToArray() : null;
+        private static int[]? TwoPairScore(Hand hand) => hand.IsTwoPair ? hand.Ranks.Prepend(3).ToArray() : null;
+        private static int[]? OnePairScore(Hand hand) => hand.IsOnePair ? hand.Ranks.Prepend(2).ToArray() : null;
+        private static int[] HighCardScore(Hand hand) => hand.Ranks.Prepend(1).ToArray();
     }
 }
