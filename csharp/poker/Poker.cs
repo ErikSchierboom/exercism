@@ -11,14 +11,12 @@ public static class Poker
 
     private class Hand
     {
-        public Card[] Cards { get; }
         public readonly int[] Ranks;
         public readonly int[] Suits;
         public readonly int[] RankCounts;
 
         public Hand(Card[] cards)
         {
-            Cards = cards;
             Ranks = cards.Select(card => card.Rank).OrderByDescending(rank => cards.Count(card => card.Rank == rank)).ThenByDescending(card => card).ToArray();
             Suits = cards.Select(card => card.Suit).ToArray();
             RankCounts = cards.GroupBy(card => card.Rank).Select(grouping => grouping.Count()).OrderDescending().ToArray();
@@ -52,14 +50,14 @@ public static class Poker
         private static int Calculate(Hand hand)
         {
             var scoreRank = 
-                (hand.IsFlush && hand.IsStraight ? 9 : (int?)null) ??
-                (hand.IsFourOfAKind ? 8 : (int?)null) ??
-                (hand.IsFullHouse ? 7 : (int?)null) ??
-                (hand.IsFlush ? 6 : (int?)null) ??
-                (hand.IsStraight ? 5 : (int?)null) ??
-                (hand.IsThreeOfAKind ? 4 : (int?)null) ??
-                (hand.IsTwoPair ? 3 : (int?)null) ??
-                (hand.IsOnePair ? 2 : (int?)null) ??
+                (hand.IsFlush && hand.IsStraight ? 9 : 0) +
+                (hand.IsFourOfAKind ? 8 : 0) +
+                (hand.IsFullHouse ? 7 : 0) +
+                (hand.IsFlush ? 6 : 0) +
+                (hand.IsStraight ? 5 : 0) +
+                (hand.IsThreeOfAKind ? 4 : 0) +
+                (hand.IsTwoPair ? 3 : 0) +
+                (hand.IsOnePair ? 2 : 0) +
                 1;
 
             return hand.Ranks.Prepend(scoreRank).Aggregate((total, value) => total * 14 + value);
