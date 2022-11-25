@@ -61,7 +61,7 @@ public static class Poker
                 return other.IsTwoPair ? (ranks[0], ranks[1], ranks[2], ranks[3], ranks[4]).CompareTo((other.ranks[0], other.ranks[1], other.ranks[2], other.ranks[3], other.ranks[4])) : 1;
             
             if (IsOnePair)
-                return other.IsOnePair ? (ranks[0], ranks[1], ranks[2], ranks[3], ranks[4]).CompareTo((other.ranks[0], other.ranks[1], other.ranks[2], other.ranks[3], other.ranks[4])) : 1;
+                return other.IsOnePair ? (ranks[0], ranks[2], ranks[3], ranks[4]).CompareTo((other.ranks[0], other.ranks[2], other.ranks[3], other.ranks[4])) : 1;
 
             return ranks[0].CompareTo(other.ranks[0]);
         }
