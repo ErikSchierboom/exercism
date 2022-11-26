@@ -23,49 +23,49 @@ public class TwoBucket
         if (goal > oneCapacity && goal > twoCapacity)
             throw new ArgumentException("Goal cannot not be reached", nameof(goal));
 
-        var initialState = (moves: 0, one: 0, two: 0);
+        var initialState = (Moves: 0, Buckets: (One: 0, Two: 0));
 
-        var unprocessed = new PriorityQueue<(int moves, int one, int two), int>();
-        unprocessed.Enqueue(initialState, initialState.moves);
+        var unprocessed = new PriorityQueue<(int Moves, (int One, int Two) Buckets), int>();
+        unprocessed.Enqueue(initialState, initialState.Moves);
 
-        var statesMoveCount = new Dictionary<(int one, int two), int> { [(initialState.one, initialState.two)] = initialState.moves };
+        var statesMinMoveCount = new Dictionary<(int One, int Two), int> { [initialState.Buckets] = initialState.Moves };
 
         while (unprocessed.TryDequeue(out var state, out _))
         {
-            if (state.one == goal)
-                return new Result(state.moves, startFrom == Bucket.One ? Bucket.One : Bucket.Two, state.two);
+            if (state.Buckets.One == goal)
+                return new Result(state.Moves, startFrom == Bucket.One ? Bucket.One : Bucket.Two, state.Buckets.Two);
 
-            if (state.two == goal)
-                return new Result(state.moves, startFrom == Bucket.One ? Bucket.Two : Bucket.One, state.one);
+            if (state.Buckets.Two == goal)
+                return new Result(state.Moves, startFrom == Bucket.One ? Bucket.Two : Bucket.One, state.Buckets.One);
 
             foreach (var newState in Moves(state))
             {
-                if (newState.moves >= statesMoveCount.GetValueOrDefault((newState.one, newState.two), int.MaxValue))
+                if (newState.Moves >= statesMinMoveCount.GetValueOrDefault(newState.Buckets, int.MaxValue))
                     continue;
 
-                statesMoveCount[(newState.one, newState.two)] = newState.moves;
-                unprocessed.Enqueue(newState, newState.moves);
+                statesMinMoveCount[newState.Buckets] = newState.Moves;
+                unprocessed.Enqueue(newState, newState.Moves);
             }
         }
 
         throw new ArgumentException("Could not find path");
     }
 
-    private IEnumerable<(int moves, int one, int two)> Moves((int moves, int one, int two) state)
+    private IEnumerable<(int Moves, (int One, int Two) Buckets)> Moves((int Moves, (int One, int Two) Buckets) state)
     {
-        if (state.one == 0)
-            yield return (state.moves + 1, oneCapacity, state.two);
+        if (state.Buckets.One == 0)
+            yield return (state.Moves + 1, (oneCapacity, state.Buckets.Two));
 
-        if (state.one > 0 && state.two == 0)
-            yield return (state.moves + 1, state.one, twoCapacity);
+        if (state.Buckets.One > 0 && state.Buckets.Two == 0)
+            yield return (state.Moves + 1, (state.Buckets.One, twoCapacity));
 
-        if (state.two == twoCapacity)
-            yield return (state.moves + 1, state.one, 0);
+        if (state.Buckets.Two == twoCapacity)
+            yield return (state.Moves + 1, (state.Buckets.One, 0));
 
-        if (state.one > 0 && state.two < twoCapacity)
+        if (state.Buckets.One > 0 && state.Buckets.Two < twoCapacity)
         {
-            var amount = Math.Min(state.one, twoCapacity - state.two);
-            yield return (state.moves + 1, state.one - amount, state.two + amount);
+            var amount = Math.Min(state.Buckets.One, twoCapacity - state.Buckets.Two);
+            yield return (state.Moves + 1, (state.Buckets.One - amount, state.Buckets.Two + amount));
         }
     }
 }
