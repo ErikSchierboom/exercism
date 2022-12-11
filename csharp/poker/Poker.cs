@@ -21,17 +21,13 @@ public static class Poker
             .Select(grouping => grouping.Count())
             .OrderDescending()
             .ToArray();
-        
-        private readonly int[] suitCounts = Cards
-            .GroupBy(card => card.Suit)
-            .Select(grouping => grouping.Count())
-            .OrderDescending()
-            .ToArray();
+
+        private readonly int suitCount = Cards.DistinctBy(card => card.Suit).Count();
 
         public int Score => CategoryRanks.Prepend(CategoryScore).Aggregate((total, value) => total * 14 + value);
 
         private int[] CategoryRanks => IsLowAceStraight ? ranks.Append(ranks[0]).Skip(1).ToArray() : ranks;
-        
+
         private int CategoryScore =>
             IsStraightFlush ? 9 :
             IsFourOfAKind ? 8 :
@@ -44,7 +40,7 @@ public static class Poker
             1;
 
         private bool IsStraightFlush => IsFlush && IsStraight;
-        private bool IsFlush => suitCounts is [5];
+        private bool IsFlush => suitCount == 1;
         private bool IsStraight => (rankCounts is [1, 1, 1, 1, 1] && ranks[0] - ranks[4] == 4) || IsLowAceStraight;
         private bool IsLowAceStraight => rankCounts is [1, 1, 1, 1, 1] && ranks[0] - ranks[1] is 9;
         private bool IsFourOfAKind => rankCounts is [4, 1];
