@@ -1,0 +1,20 @@
+{
+  "authors": [
+    "coriolinus",
+    "ErikSchierboom"
+  ],
+  "files": {
+    "solution": [
+      "src/lib.rs",
+      "Cargo.toml"
+    ],
+    "test": [
+      "tests/lucians-luscious-lasagna.rs"
+    ],
+    "exemplar": [
+      ".meta/exemplar.rs"
+    ]
+  },
+  "icon": "lasagna",
+  "blurb": "Learn about the basics of Rust by following a lasagna recipe."
+}
