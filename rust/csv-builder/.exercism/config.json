@@ -1,0 +1,20 @@
+{
+  "authors": [
+    "gilescope",
+    "coriolinus",
+    "efx"
+  ],
+  "files": {
+    "solution": [
+      "src/lib.rs",
+      "Cargo.toml"
+    ],
+    "test": [
+      "tests/csv-builder.rs"
+    ],
+    "exemplar": [
+      ".meta/exemplar.rs"
+    ]
+  },
+  "blurb": "Learn about strings and string slices while working on a CSV builder"
+}
