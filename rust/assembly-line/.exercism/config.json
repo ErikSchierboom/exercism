@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "LewisClement",
+    "efx"
+  ],
+  "files": {
+    "solution": [
+      "src/lib.rs",
+      "Cargo.toml"
+    ],
+    "test": [
+      "tests/assembly-line.rs"
+    ],
+    "exemplar": [
+      ".meta/exemplar.rs"
+    ]
+  },
+  "blurb": "Learn about numbers while working on an assembly line for cars."
+}
