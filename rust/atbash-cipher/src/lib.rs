@@ -1,18 +1,21 @@
 pub fn encode(plain: &str) -> String {
-    let encoded_letters: Vec<char> = plain
-        .to_lowercase()
-        .chars()
-        .filter_map(encode_letter)
-        .collect();
-    let chunked_letters = encoded_letters.chunks(5);
-    let chunks: Vec<String> = chunked_letters
+    encode_letters(plain)
+        .chunks(5)
         .map(|chunk| chunk.iter().collect())
-        .collect();
-    chunks.join(" ")
+        .collect::<Vec<String>>()
+        .join(" ")
 }
 
 pub fn decode(cipher: &str) -> String {
     cipher.chars().filter_map(encode_letter).collect()
+}
+
+fn encode_letters(plain: &str) -> Vec<char> {
+    plain
+        .to_lowercase()
+        .chars()
+        .filter_map(encode_letter)
+        .collect()
 }
 
 fn encode_letter(letter: char) -> Option<char> {
