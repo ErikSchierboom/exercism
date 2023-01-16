@@ -1,0 +1,24 @@
+{
+  "authors": [
+    "mhelmetag"
+  ],
+  "contributors": [
+    "amscotti",
+    "issyl0",
+    "kytrinyx"
+  ],
+  "files": {
+    "solution": [
+      "src/atbash_cipher.cr"
+    ],
+    "test": [
+      "spec/atbash_cipher_spec.cr"
+    ],
+    "example": [
+      ".meta/src/example.cr"
+    ]
+  },
+  "blurb": "Create an implementation of the atbash cipher, an ancient encryption system created in the Middle East.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Atbash"
+}
