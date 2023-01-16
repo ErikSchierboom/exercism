@@ -1,27 +1,21 @@
 module AtbashCipher
+  DIGITS       = ('0'..'9').to_a
   LETTERS      = ('a'..'z').to_a
-  ENCODING_MAP = LETTERS.zip(LETTERS.reverse).to_h
-  GROUP_SIZE   = 5
+  ENCODING_MAP = (LETTERS + DIGITS).zip(LETTERS.reverse + DIGITS).to_h
 
   def self.encode(plaintext)
-    plaintext
-      .downcase
-      .chars
-      .select(&.alphanumeric?)
-      .map { |letter| encode_letter(letter) }
-      .each_slice(GROUP_SIZE)
-      .map(&.join)
-      .join(" ")
+    transpose(plaintext).each_slice(5).map(&.join).join(" ")
   end
 
   def self.decode(ciphertext)
-    ciphertext.delete(" ")
-      .chars
-      .map { |letter| encode_letter(letter) }
-      .join
+    transpose(ciphertext).join
   end
 
-  def self.encode_letter(letter)
-    ENCODING_MAP.fetch(letter, letter)
+  def self.transpose(text)
+    text
+      .downcase
+      .chars
+      .select(&.alphanumeric?)
+      .map { |letter| ENCODING_MAP[letter] }
   end
 end
