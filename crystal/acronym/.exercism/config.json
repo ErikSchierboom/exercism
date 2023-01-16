@@ -1,0 +1,25 @@
+{
+  "authors": [
+    "bmulvihill"
+  ],
+  "contributors": [
+    "amscotti",
+    "chastell",
+    "issyl0",
+    "mhelmetag"
+  ],
+  "files": {
+    "solution": [
+      "src/acronym.cr"
+    ],
+    "test": [
+      "spec/acronym_spec.cr"
+    ],
+    "example": [
+      ".meta/src/example.cr"
+    ]
+  },
+  "blurb": "Convert a long phrase to its acronym.",
+  "source": "Julien Vanier",
+  "source_url": "https://github.com/monkbroc"
+}
