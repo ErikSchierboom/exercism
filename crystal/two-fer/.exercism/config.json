@@ -1,0 +1,21 @@
+{
+  "authors": [
+    "amscotti"
+  ],
+  "contributors": [
+    "issyl0"
+  ],
+  "files": {
+    "solution": [
+      "src/two_fer.cr"
+    ],
+    "test": [
+      "spec/two_fer_spec.cr"
+    ],
+    "example": [
+      ".meta/src/example.cr"
+    ]
+  },
+  "blurb": "Create a sentence of the form \"One for X, one for me.\".",
+  "source_url": "https://github.com/exercism/problem-specifications/issues/757"
+}
