@@ -1,5 +1,5 @@
 module Gigasecond
-  def self.from(birthDate)
-    birthDate + 1E9.seconds
+  def self.from(moment)
+    moment + 1E9.seconds
   end
 end
