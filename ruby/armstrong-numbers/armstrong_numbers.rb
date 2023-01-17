@@ -1,6 +1,5 @@
 module ArmstrongNumbers
   def self.include?(number)
-    armstrong_sum = number.digits.sum { |i| i**number.digits.length }
-    armstrong_sum == number
+    number.digits.sum { |digit| digit**number.digits.length } == number
   end
 end
