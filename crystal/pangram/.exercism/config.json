@@ -1,0 +1,24 @@
+{
+  "authors": [
+    "derekgottlieb"
+  ],
+  "contributors": [
+    "amscotti",
+    "issyl0",
+    "mhelmetag"
+  ],
+  "files": {
+    "solution": [
+      "src/pangram.cr"
+    ],
+    "test": [
+      "spec/pangram_spec.cr"
+    ],
+    "example": [
+      ".meta/src/example.cr"
+    ]
+  },
+  "blurb": "Determine if a sentence is a pangram.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Pangram"
+}
