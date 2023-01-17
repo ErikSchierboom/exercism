@@ -7,9 +7,7 @@ class Allergies
     end
   end
 
-  def allergic_to?(allergen)
-    list.include?(allergen)
-  end
+  def allergic_to?(allergen) = list.include?(allergen)
 
   private
   ALLERGENS = %w[eggs peanuts shellfish strawberries tomatoes chocolate pollen cats].freeze
