@@ -1,0 +1,24 @@
+{
+  "authors": [
+    "mhelmetag"
+  ],
+  "contributors": [
+    "amscotti",
+    "derekgottlieb",
+    "issyl0"
+  ],
+  "files": {
+    "solution": [
+      "src/leap.cr"
+    ],
+    "test": [
+      "spec/leap_spec.cr"
+    ],
+    "example": [
+      ".meta/src/example.cr"
+    ]
+  },
+  "blurb": "Given a year, report if it is a leap year.",
+  "source": "CodeRanch Cattle Drive, Assignment 3",
+  "source_url": "https://coderanch.com/t/718816/Leap"
+}
