@@ -1,20 +1,10 @@
 module RunLengthEncoding
-  def self.encode(plaintext)
-    encode_runs(plaintext).map(&method(:encode_run)).join('')
-  end
-
-  def self.decode(ciphertext)
-    decode_runs(ciphertext).map(&method(:decode_run)).join('')
-  end
+  def self.encode(plaintext)  = encode_runs(plaintext).map { |run| encode_run(run) }.join
+  def self.decode(ciphertext) = decode_runs(ciphertext).map { |run| decode_run(run) }.join
 
   private
-  def self.encode_run((letter, count))
-    "#{count if count > 1}#{letter}"
-  end
-
-  def self.decode_run((letter, count))
-    "#{letter}" * count
-  end
+  def self.encode_run((letter, count)) = "#{count if count > 1}#{letter}"
+  def self.decode_run((letter, count)) = "#{letter}" * count
 
   def self.encode_runs(plaintext)
     plaintext.scan(/(.)(\1*)/).map {|letter, repetitions| [letter, repetitions.size + 1]}.to_a
