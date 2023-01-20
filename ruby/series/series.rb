@@ -1,10 +1,8 @@
 class Series
-  def initialize(numerals)
-    @numerals = numerals
-  end
+  def initialize(numerals) = @numerals = numerals
 
   def slices(length)
-    raise ArgumentError unless length <= numerals.length
+    raise ArgumentError if length > numerals.length
 
     numerals.chars.each_cons(length).map(&:join)
   end
