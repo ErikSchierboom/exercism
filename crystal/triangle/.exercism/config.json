@@ -1,0 +1,27 @@
+{
+  "authors": [
+    "bmulvihill"
+  ],
+  "contributors": [
+    "amscotti",
+    "issyl0",
+    "kytrinyx",
+    "mhelmetag",
+    "petertseng",
+    "Steffan153"
+  ],
+  "files": {
+    "solution": [
+      "src/triangle.cr"
+    ],
+    "test": [
+      "spec/triangle_spec.cr"
+    ],
+    "example": [
+      ".meta/src/example.cr"
+    ]
+  },
+  "blurb": "Determine if a triangle is equilateral, isosceles, or scalene.",
+  "source": "The Ruby Koans triangle project, parts 1 & 2",
+  "source_url": "https://web.archive.org/web/20220831105330/http://rubykoans.com"
+}
