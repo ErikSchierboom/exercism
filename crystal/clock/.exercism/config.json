@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "marksiemers"
+  ],
+  "files": {
+    "solution": [
+      "src/clock.cr"
+    ],
+    "test": [
+      "spec/clock_spec.cr"
+    ],
+    "example": [
+      ".meta/src/example.cr"
+    ]
+  },
+  "blurb": "Implement a clock that handles times without dates.",
+  "source": "Pairing session with Erin Drummond",
+  "source_url": "https://twitter.com/ebdrummond"
+}
