@@ -1,0 +1,24 @@
+{
+  "authors": [
+    "elorest"
+  ],
+  "contributors": [
+    "amscotti",
+    "issyl0",
+    "mhelmetag",
+    "wontruefree"
+  ],
+  "files": {
+    "solution": [
+      "src/matching_brackets.cr"
+    ],
+    "test": [
+      "spec/matching_brackets_spec.cr"
+    ],
+    "example": [
+      ".meta/src/example.cr"
+    ]
+  },
+  "blurb": "Make sure the brackets and braces all match.",
+  "source": "Ginna Baker"
+}
