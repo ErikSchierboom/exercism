@@ -1,0 +1,23 @@
+{
+  "authors": [
+    "bmulvihill"
+  ],
+  "contributors": [
+    "amscotti",
+    "issyl0"
+  ],
+  "files": {
+    "solution": [
+      "src/binary_search_tree.cr"
+    ],
+    "test": [
+      "spec/binary_search_tree_spec.cr"
+    ],
+    "example": [
+      ".meta/src/example.cr"
+    ]
+  },
+  "blurb": "Insert and search for numbers in a binary tree.",
+  "source": "Josh Cheek",
+  "source_url": "https://twitter.com/josh_cheek"
+}
