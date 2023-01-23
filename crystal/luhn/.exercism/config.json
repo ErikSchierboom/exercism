@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "amscotti"
+  ],
+  "files": {
+    "solution": [
+      "src/luhn.cr"
+    ],
+    "test": [
+      "spec/luhn_spec.cr"
+    ],
+    "example": [
+      ".meta/src/example.cr"
+    ]
+  },
+  "blurb": "Given a number determine whether or not it is valid per the Luhn formula.",
+  "source": "The Luhn Algorithm on Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Luhn_algorithm"
+}
