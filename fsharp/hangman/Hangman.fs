@@ -27,11 +27,7 @@ let updateProgress word guess (state: State) =
 
 let updateMaskedWord word guess (state: State) = 
     let updatedGuesses = Set.add guess state.guesses
-    let updatedMaskedWord = 
-        word 
-        |> Seq.map (fun x -> if Set.contains x updatedGuesses then x else '_') 
-        |> Seq.toArray 
-        |> System.String 
+    let updatedMaskedWord = String.map (fun x -> if Set.contains x updatedGuesses then x else '_') word 
 
     { state with maskedWord = updatedMaskedWord }    
 
