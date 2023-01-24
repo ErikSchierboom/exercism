@@ -10,19 +10,19 @@ let ``Zero rows`` () =
     let expected: int list list = []
     rows 0 |> should equal expected
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Single row`` () =
     let expected = [[1]]
     rows 1 |> should equal expected
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Two rows`` () =
     let expected = 
         [ [1];
           [1; 1] ]
     rows 2 |> should equal expected
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Three rows`` () =
     let expected = 
         [ [1];
@@ -30,7 +30,7 @@ let ``Three rows`` () =
           [1; 2; 1] ]
     rows 3 |> should equal expected
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Four rows`` () =
     let expected = 
         [ [1];
@@ -39,7 +39,7 @@ let ``Four rows`` () =
           [1; 3; 3; 1] ]
     rows 4 |> should equal expected
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Five rows`` () =
     let expected = 
         [ [1];
@@ -49,7 +49,7 @@ let ``Five rows`` () =
           [1; 4; 6; 4; 1] ]
     rows 5 |> should equal expected
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Six rows`` () =
     let expected = 
         [ [1];
@@ -60,7 +60,7 @@ let ``Six rows`` () =
           [1; 5; 10; 10; 5; 1] ]
     rows 6 |> should equal expected
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Ten rows`` () =
     let expected = 
         [ [1];

@@ -9,43 +9,43 @@ open ScrabbleScore
 let ``Lowercase letter`` () =
     score "a" |> should equal 1
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Uppercase letter`` () =
     score "A" |> should equal 1
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Valuable letter`` () =
     score "f" |> should equal 4
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Short word`` () =
     score "at" |> should equal 2
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Short, valuable word`` () =
     score "zoo" |> should equal 12
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Medium word`` () =
     score "street" |> should equal 6
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Medium, valuable word`` () =
     score "quirky" |> should equal 22
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Long, mixed-case word`` () =
     score "OxyphenButazone" |> should equal 41
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``English-like word`` () =
     score "pinata" |> should equal 8
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Empty input`` () =
     score "" |> should equal 0
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Entire alphabet available`` () =
     score "abcdefghijklmnopqrstuvwxyz" |> should equal 87
 
