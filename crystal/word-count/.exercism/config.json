@@ -1,0 +1,19 @@
+{
+  "authors": ["meatball133"],
+  "contributors": [
+    "ErikSchierboom"
+  ],
+  "files": {
+    "solution": [
+      "src/word_count.cr"
+    ],
+    "test": [
+      "spec/word_count_spec.cr"
+    ],
+    "example": [
+      ".meta/src/example.cr"
+    ]
+  },
+  "blurb": "Given a phrase, count the occurrences of each word in that phrase.",
+  "source": "This is a classic toy problem, but we were reminded of it by seeing it in the Go Tour."
+}
