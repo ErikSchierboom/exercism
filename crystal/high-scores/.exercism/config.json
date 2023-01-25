@@ -1,0 +1,16 @@
+{
+  "authors": ["meatball133"],
+  "files": {
+    "solution": [
+      "src/high_scores.cr"
+    ],
+    "test": [
+      "spec/high_scores_spec.cr"
+    ],
+    "example": [
+      ".meta/src/example.cr"
+    ]
+  },
+  "blurb": "Manage a player's High Score list.",
+  "source": "Tribute to the eighties' arcade game Frogger"
+}
