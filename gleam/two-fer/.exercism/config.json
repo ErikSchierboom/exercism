@@ -1,0 +1,25 @@
+{
+  "authors": [
+    "lpil"
+  ],
+  "contributors": [
+    "itsgreggreg"
+  ],
+  "files": {
+    "solution": [
+      "src/two_fer.gleam"
+    ],
+    "test": [
+      "test/two_fer_test.gleam"
+    ],
+    "example": [
+      ".meta/example.gleam"
+    ],
+    "invalidator": [
+      "gleam.toml",
+      "manifest.toml"
+    ]
+  },
+  "blurb": "Create a sentence of the form \"One for X, one for me.\".",
+  "source_url": "https://github.com/exercism/problem-specifications/issues/757"
+}
