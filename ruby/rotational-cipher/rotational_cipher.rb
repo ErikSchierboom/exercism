@@ -5,7 +5,5 @@ module RotationalCipher
   end
 
   private
-  def self.shift_map(array, by)
-    Hash[array.zip(array.rotate(by))]
-  end
+  def self.shift_map(array, by) = array.zip(array.rotate(by)).to_h
 end
