@@ -14,16 +14,7 @@ module Bob
   end
 
   private
-
-  def self.silence?(sentence)
-    sentence.strip.empty?
-  end
-
-  def self.question?(sentence)
-    sentence.rstrip.end_with?('?')
-  end
-
-  def self.shouting?(sentence)
-    sentence == sentence.upcase && sentence.match(/[a-zA-z]/)
-  end
+  def self.silence?(sentence) = sentence.strip.empty?
+  def self.question?(sentence) = sentence.rstrip.end_with?('?')
+  def self.shouting?(sentence) = sentence == sentence.upcase && sentence.match(/[a-zA-z]/)
 end
