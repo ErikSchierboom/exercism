@@ -4,7 +4,6 @@ require_relative 'binary_search'
 # Common test data version: 1.3.0 bfb218f
 class BinarySearchTest < Minitest::Test
   def test_finds_a_value_in_an_array_with_one_element
-    # skip
     binary = BinarySearch.new([6])
     assert_equal 0, binary.search_for(6)
   end
