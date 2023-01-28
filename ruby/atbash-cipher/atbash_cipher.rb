@@ -1,17 +1,20 @@
 module Atbash
+  DIGITS       = ('0'..'9').to_a
+  LETTERS      = ('a'..'z').to_a
+  ENCODING_MAP = (LETTERS + DIGITS).zip(LETTERS.reverse + DIGITS).to_h
+
   def self.encode(plaintext)
-    plaintext
-      .downcase
-      .scan(/[[:alnum:]]/)
-      .map { |letter| ENCODING_MAP[letter] || letter }
-      .each_slice(GROUP_SIZE)
-      .map { |slice| slice.join('') }
-      .join(' ')
+    transpose(plaintext).each_slice(5).map(&:join).join(" ")
   end
 
-  private
-  LETTERS = ('a' .. 'z').to_a.freeze
-  ENCODING_MAP = LETTERS.zip(LETTERS.reverse).to_h
-  GROUP_SIZE = 5
-  private_constant :LETTERS, :ENCODING_MAP, :GROUP_SIZE
+  def self.decode(ciphertext)
+    transpose(ciphertext).join
+  end
+
+  def self.transpose(text)
+    text
+      .downcase
+      .scan(/[[:alnum:]]/)
+      .map { |letter| ENCODING_MAP[letter] }
+  end
 end
