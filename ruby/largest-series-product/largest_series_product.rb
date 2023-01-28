@@ -1,7 +1,5 @@
 class Series
-  def initialize(input)
-    @input = input
-  end
+  def initialize(input) = @input = input
 
   def largest_product(span)
     raise ArgumentError unless input.match(/^\d*$/)
@@ -15,7 +13,5 @@ class Series
   private
   attr_reader :input
 
-  def digits
-    input.scan(/\d/).map(&:to_i)
-  end
+  def digits = input.scan(/\d/).map(&:to_i)
 end
