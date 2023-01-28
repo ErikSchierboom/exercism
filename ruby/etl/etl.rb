@@ -1,9 +1,5 @@
 module ETL
   def self.transform(old)
-    old.each_with_object({}) do |(score, letters), transformed|
-      letters.each do |letter|
-        transformed[letter.downcase] = score
-      end
-    end
+    old.flat_map { |(score, letters)| letters.map { |letter| [letter.downcase, score.to_i] } }.to_h
   end
 end
