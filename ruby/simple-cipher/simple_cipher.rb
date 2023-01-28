@@ -1,6 +1,6 @@
-ALPHABET = [*'a'..'z']
-
 class Cipher
+  ALPHABET = [*'a'..'z'].freeze
+
   attr_reader :key
 
   def initialize(key = Key.generate)
@@ -9,13 +9,8 @@ class Cipher
     @key = key
   end
 
-  def encode(plaintext)
-    shift(plaintext, :+)
-  end
-
-  def decode(ciphertext)
-    shift(ciphertext, :-)
-  end
+  def encode(plaintext) = shift(plaintext, :+)
+  def decode(ciphertext) = shift(ciphertext, :-)
 
   private
   def shift(str, op)
@@ -25,14 +20,9 @@ class Cipher
       ALPHABET[alphabet_idx.send(op, key_idx) % ALPHABET.size]
     end.join
   end
-end
 
-module Key
-  def self.valid?(key)
-    key.match(/\A[a-z]+\z/)
-  end
-
-  def self.generate
-    ALPHABET.sample(100).join
+  module Key
+    def self.valid?(key) = key.match(/\A[a-z]+\z/)
+    def self.generate = ALPHABET.sample(100).join
   end
 end
