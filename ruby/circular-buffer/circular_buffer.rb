@@ -1,9 +1,6 @@
 class CircularBuffer
-  class BufferEmptyException < StandardError
-  end
-
-  class BufferFullException < StandardError
-  end
+  class BufferEmptyException < StandardError; end
+  class BufferFullException < StandardError; end
 
   def initialize(size)
     @size = size
