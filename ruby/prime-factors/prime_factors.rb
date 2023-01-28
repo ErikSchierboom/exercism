@@ -4,7 +4,7 @@ module PrimeFactors
     factors = []
 
     while number > 1
-      factor += factor == 2 ? 1 : 2 while number % factor != 0
+      factor += factor == 2 ? 1 : 2 while number.remainder(factor).positive?
       number /= factor
       factors << factor
     end
