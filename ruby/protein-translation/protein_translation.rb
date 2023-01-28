@@ -1,5 +1,4 @@
-class InvalidCodonError < StandardError
-end
+class InvalidCodonError < StandardError; end
 
 module Translation
   def self.of_codon(codon)
@@ -9,10 +8,7 @@ module Translation
   end
 
   def self.of_rna(rna)
-    rna
-      .scan(/.{3}/)
-      .map(&method(:of_codon))
-      .take_while { |protein| protein != 'STOP' }
+    rna.scan(/.{3}/).map(&method(:of_codon)).take_while { |protein| protein != 'STOP' }
   end
 
   private
