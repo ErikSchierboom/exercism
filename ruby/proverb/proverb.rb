@@ -7,7 +7,5 @@ class Proverb
                .join("\n")
   end
 
-  def to_s
-    @proverb
-  end
+  def to_s = @proverb
 end
