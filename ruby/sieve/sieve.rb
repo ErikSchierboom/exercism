@@ -1,20 +1,15 @@
 class Sieve
-  def initialize(max)
-    @max = max
-  end
+  def initialize(max) = @max = max
 
   def primes
-    is_prime = Array.new(@max + 1, true)
-    primes = []
+    sieve = Array.new(@max + 1, true)
 
     (2..@max).each do |number|
-      next unless is_prime[number]
+      next unless sieve[number]
 
-      (number * 2..@max).step(number).each do |multiple|
-        is_prime[multiple] = false
-      end
-
-      primes << number
+      (number * 2..@max).step(number).each { |multiple| sieve[multiple] = false }
     end
+
+    sieve.each_with_index.filter_map { |is_prime, i| i if is_prime && i > 1 }
   end
 end
