@@ -1,0 +1,22 @@
+{
+  "authors": [
+    "bmulvihill"
+  ],
+  "contributors": [
+    "amscotti",
+    "issyl0",
+    "mhelmetag"
+  ],
+  "files": {
+    "solution": [
+      "src/forth.cr"
+    ],
+    "test": [
+      "spec/forth_spec.cr"
+    ],
+    "example": [
+      ".meta/src/example.cr"
+    ]
+  },
+  "blurb": "Implement an evaluator for a very simple subset of Forth."
+}
