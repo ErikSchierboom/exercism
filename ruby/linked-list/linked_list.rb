@@ -1,24 +1,8 @@
 class Deque
-  def initialize
-    @elements = []
-  end
+  def initialize = @elements = []
 
-  def push(value)
-    elements.push(value)
-  end
-
-  def pop
-    elements.pop
-  end
-
-  def unshift(value)
-    elements.unshift(value)
-  end
-
-  def shift
-    elements.shift
-  end
-
-  private
-  attr_reader :elements
+  def push(value) = @elements.push(value)
+  def pop = @elements.pop
+  def unshift(value) = @elements.unshift(value)
+  def shift = @elements.shift
 end
