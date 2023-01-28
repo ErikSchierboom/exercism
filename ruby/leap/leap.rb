@@ -1,5 +1,5 @@
 module Year
   def self.leap?(year)
-    year % 4 == 0 && year % 100 != 0 || year % 400 == 0
+    year.remainder(4).zero? && year.remainder(100).positive? || year.remainder(400).zero?
   end
 end
