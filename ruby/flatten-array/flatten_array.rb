@@ -1,5 +1,3 @@
 module FlattenArray
-  def self.flatten(array)
-    array.flatten.compact
-  end
+  def self.flatten(array) = array.flatten.compact
 end
