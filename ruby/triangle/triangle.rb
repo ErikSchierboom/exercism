@@ -1,32 +1,12 @@
 class Triangle
-  def initialize(sides)
-    @sides = sides
-  end
+  def initialize(sides) = @sides = sides
 
-  def equilateral?
-    @sides.uniq.size == 1 unless invalid?
-  end
-
-  def isosceles?
-    @sides.uniq.size < 3 unless invalid?
-  end
-
-  def scalene?
-    @sides.uniq.size == 3 unless invalid?
-  end
+  def equilateral? = @sides.uniq.size == 1 && valid?
+  def isosceles? = @sides.uniq.size < 3 && valid?
+  def scalene? = @sides.uniq.size == 3 && valid?
 
   private
-
-  def invalid?
-    violates_triangle_equality? || sides_all_zero?
-  end
-
-  def violates_triangle_equality?
-    (x, y, z) = @sides.sort
-    x + y < z
-  end
-
-  def sides_all_zero?
-    @sides.all?(&:zero?)
-  end
+  def valid? = !all_zero_sides? && !violates_triangle_equality?  
+  def all_zero_sides? = @sides.all?(&:zero?)
+  def violates_triangle_equality? = @sides.sort.then { |(x, y, z)| x + y < z }
 end
