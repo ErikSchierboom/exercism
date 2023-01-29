@@ -1,0 +1,33 @@
+{
+  "authors": [
+    "kytrinyx"
+  ],
+  "contributors": [
+    "bernardoamc",
+    "budmc29",
+    "cadwallion",
+    "clettenberg",
+    "dkinzer",
+    "hilary",
+    "iHiD",
+    "Insti",
+    "jpotts244",
+    "kotp",
+    "pendletons",
+    "tryantwit"
+  ],
+  "files": {
+    "solution": [
+      "nth_prime.rb"
+    ],
+    "test": [
+      "nth_prime_test.rb"
+    ],
+    "example": [
+      ".meta/example.rb"
+    ]
+  },
+  "blurb": "Given a number n, determine what the nth prime is.",
+  "source": "A variation on Problem 7 at Project Euler",
+  "source_url": "https://projecteuler.net/problem=7"
+}
