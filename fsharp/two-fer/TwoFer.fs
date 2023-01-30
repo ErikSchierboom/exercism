@@ -1,3 +1,5 @@
 module TwoFer
 
-let twoFer input = $"""One for {Option.defaultValue "you" input}, one for me."""
+let twoFer input =
+    let name = Option.defaultValue "you" input
+    $"One for {name}, one for me."
