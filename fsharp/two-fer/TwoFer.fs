@@ -1,9 +1,5 @@
 module TwoFer
 
-let twoFer nameOpt =
-    let name =
-        match nameOpt with
-        | Some name -> name
-        | None -> "you"
-        
+let twoFer input =
+    let name = Option.defaultValue "you" input
     $"One for {name}, one for me."
