@@ -27,7 +27,7 @@ defmodule Satellite do
     end
   end
 
-  defp do_build_tree([], inorder), do: {}
+  defp do_build_tree([], []), do: {}
 
   defp do_build_tree([current | preorder], inorder) do
     {left_inorder, [_ | right_inorder]} = Enum.split_while(inorder, &(&1 != current))
