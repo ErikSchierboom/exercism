@@ -1,5 +1,3 @@
-module TwoFer
-
 let twoFer nameOpt =
     let name =
         match nameOpt with
