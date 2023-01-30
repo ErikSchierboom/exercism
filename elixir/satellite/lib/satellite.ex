@@ -23,18 +23,18 @@ defmodule Satellite do
         {:error, "traversals must contain unique items"}
 
       true ->
-        root = Enum.at(preorder, 0)
-        root_index = Enum.find_index(inorder, &(&1 == root))
-
-        left_inorder = Enum.take(inorder, root_index)
-        right_inorder = Enum.drop(inorder, root_index + 1)
-
-        left_preorder = Enum.drop(preorder, 1) |> Enum.take(root_index)
-        right_preorder = Enum.drop(preorder, root_index + 1)
-
-        {:ok, left} = build_tree(left_preorder, left_inorder)
-        {:ok, right} = build_tree(right_preorder, right_inorder)
-        {:ok, {left, root, right}}
+        {:ok, do_build_tree(preorder, inorder)}
     end
+  end
+
+  defp do_build_tree([], inorder), do: {}
+
+  defp do_build_tree([current | preorder], inorder) do
+    {left_inorder, [_ | right_inorder]} = Enum.split_while(inorder, &(&1 != current))
+    {left_preorder, right_preorder} = Enum.split(preorder, Enum.count(left_inorder))
+
+    left = do_build_tree(left_preorder, left_inorder)
+    right = do_build_tree(right_preorder, right_inorder)
+    {left, current, right}
   end
 end
