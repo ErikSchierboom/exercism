@@ -1,12 +1,12 @@
-import gleam/result
-import gleam/list
-import gleam/string
+import gleam/result.{map}
+import gleam/list.{try_map}
+import gleam/string.{concat, to_graphemes}
 
 pub fn to_rna(dna: String) -> Result(String, Nil) {
   dna
-  |> string.to_graphemes
-  |> list.try_map(complement)
-  |> result.map(string.concat)
+  |> to_graphemes
+  |> try_map(complement)
+  |> map(concat)
 }
 
 fn complement(nucleotide: String) -> Result(String, Nil) {
