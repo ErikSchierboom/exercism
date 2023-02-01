@@ -1,5 +1,4 @@
-import gleam/string.{ends_with, is_empty, trim}
-import gleam/regex.{check, from_string}
+import gleam/string
 
 pub fn hey(remark: String) -> String {
   case is_silent(remark), is_shout(remark), is_question(remark) {
@@ -12,14 +11,13 @@ pub fn hey(remark: String) -> String {
 }
 
 fn is_silent(remark: String) -> Bool {
-  is_empty(trim(remark))
+  string.is_empty(string.trim(remark))
 }
 
 fn is_shout(remark: String) -> Bool {
-  assert Ok(re) = from_string("^[^a-z]*[A-Z][^a-z]*$")
-  check(re, remark)
+  string.uppercase(remark) == remark && string.lowercase(remark) != remark
 }
 
 fn is_question(remark: String) -> Bool {
-  ends_with(trim(remark), "?")
+  string.ends_with(string.trim(remark), "?")
 }
