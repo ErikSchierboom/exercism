@@ -1,16 +1,20 @@
-import gleam/string.{pop_grapheme}
+import gleam/result
+import gleam/list
+import gleam/string
 
 pub fn to_rna(dna: String) -> Result(String, Nil) {
-  do_to_rna(dna, "")
+  dna
+  |> string.to_graphemes
+  |> list.try_map(complement)
+  |> result.map(string.concat)
 }
 
-fn do_to_rna(dna: String, rna: String) -> Result(String, Nil) {
-  case pop_grapheme(dna) {
-    Ok(#("G", tail)) -> do_to_rna(tail, rna <> "C")
-    Ok(#("C", tail)) -> do_to_rna(tail, rna <> "G")
-    Ok(#("T", tail)) -> do_to_rna(tail, rna <> "A")
-    Ok(#("A", tail)) -> do_to_rna(tail, rna <> "U")
-    Ok(_) -> Error(Nil)
-    Error(Nil) -> Ok(rna)
+fn complement(nucleotide: String) -> Result(String, Nil) {
+  case nucleotide {
+    "G" -> Ok("C")
+    "C" -> Ok("G")
+    "T" -> Ok("A")
+    "A" -> Ok("U")
+    _ -> Error(Nil)
   }
 }
