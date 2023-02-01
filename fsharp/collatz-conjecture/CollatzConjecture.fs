@@ -1,11 +1,10 @@
 ﻿module CollatzConjecture
 
 let steps number = 
-    let rec helper count current =
-        match current with
-        | _ when current < 1 ->  None
-        | 1 -> Some count
-        | _ when current % 2 = 0 -> helper (count + 1) (current / 2)
-        | _ -> helper (count + 1) (current * 3  + 1)
+    let rec doSteps count current =
+        if current < 1 then None
+        elif current = 1 then Some count
+        elif current % 2 = 0 then doSteps (count + 1) (current / 2)
+        else doSteps (count + 1) (current * 3  + 1)
 
-    helper 0 number
+    doSteps 0 number
