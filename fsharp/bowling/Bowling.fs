@@ -26,4 +26,4 @@ let score game =
     |> List.fold folder (0, 0)
     |> fst
 
-let newGame = []
+let newGame () = []
