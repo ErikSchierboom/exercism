@@ -1,10 +1,10 @@
 ﻿module Hamming
 
-let distance (strand1: string) (strand2: string) = 
+let distance (strand1: string) (strand2: string): int option = 
     if strand1.Length <> strand2.Length then
         None
-    else    
+    else
         Seq.zip strand1 strand2
-        |> Seq.filter (fun (n1, n2) -> n1 <> n2)
+        |> Seq.filter (fun (letter1, letter2) -> letter1 <> letter2)
         |> Seq.length
         |> Some
