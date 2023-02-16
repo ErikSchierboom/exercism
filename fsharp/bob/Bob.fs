@@ -1,13 +1,19 @@
 ﻿module Bob
 
-let response (phrase: string) = 
-    let isEmpty = System.String.IsNullOrWhiteSpace phrase
-    let isYell = Seq.exists System.Char.IsLetter phrase && phrase = phrase.ToUpperInvariant()
-    let isQuestion = phrase.Trim().EndsWith "?"
+let private (|Empty|_|) (phrase: string) =
+    if System.String.IsNullOrWhiteSpace phrase then Some () else None
 
-    match phrase with 
-    | _ when isEmpty -> "Fine. Be that way!"
-    | _ when isYell && isQuestion -> "Calm down, I know what I'm doing!"
-    | _ when isYell ->  "Whoa, chill out!"
-    | _ when isQuestion -> "Sure."
+let private (|Yell|_|) (phrase: string) =
+    if phrase <> phrase.ToLower() && phrase = phrase.ToUpper() then Some () else None
+    
+let private (|Question|_|) (phrase: string) =
+    if phrase.Trim().EndsWith "?" then Some () else None
+
+let response (phrase: string): string =
+    match phrase with
+    | Empty -> "Fine. Be that way!"
+    | Yell & Question -> "Calm down, I know what I'm doing!"
+    | Yell -> "Whoa, chill out!"
+    | Question -> "Sure."
     | _ -> "Whatever."
+    
