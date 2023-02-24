@@ -7,7 +7,22 @@ trait BankAccount {
   def incrementBalance(increment: Int): Option[Int]
 }
 
-object Bank {
-  def openAccount(): BankAccount = ???
+private class BankAccountImpl extends BankAccount {
+  private var balance: Option[Int] = Some(0)
+
+  def getBalance = balance
+
+  def incrementBalance(amount: Int): Option[Int] = {
+    synchronized {
+      balance = balance.map(_ + amount)
+    }
+
+    balance
+  }
+
+  def closeAccount() = balance = None
 }
 
+object Bank {
+  def openAccount(): BankAccount = new BankAccountImpl
+}
