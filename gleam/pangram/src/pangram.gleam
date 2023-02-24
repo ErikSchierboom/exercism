@@ -5,7 +5,7 @@ const alphabet = "abcdefghijklmnopqrstuvwxyz"
 
 pub fn is_pangram(sentence: String) -> Bool {
   set.intersection(of: graphemes_set(alphabet), and: graphemes_set(sentence))
-  |> set.size == 26
+  |> set.size == string.length(alphabet)
 }
 
 fn graphemes_set(str: String) -> Set(String) {
