@@ -1,35 +1,23 @@
 module House
 
-let subjects = 
-    [("house that Jack built", "lay in");
-     ("malt", "ate");
-     ("rat", "killed");
-     ("cat", "worried");
-     ("dog", "tossed");
-     ("cow with the crumpled horn", "milked");
-     ("maiden all forlorn", "kissed");
-     ("man all tattered and torn", "married");
-     ("priest all shaven and shorn", "woke");
-     ("rooster that crowed in the morn", "kept");
-     ("farmer sowing his corn", "belonged to");
-     ("horse and the hound and the horn", "")]
+let private verse number =
+    match number with
+    | 1 -> "house that Jack built."
+    | 2 -> "malt that lay in"
+    | 3 -> "rat that ate"
+    | 4 -> "cat that killed"
+    | 5 -> "dog that worried"
+    | 6 -> "cow with the crumpled horn that tossed"
+    | 7 -> "maiden all forlorn that milked"
+    | 8 -> "man all tattered and torn that kissed"
+    | 9 -> "priest all shaven and shorn that married"
+    | 10 -> "rooster that crowed in the morn that woke"
+    | 11 -> "farmer sowing his corn that kept"
+    | 12 -> "horse and the hound and the horn that belonged to"
+    | _ -> failwith "Invalid verse"
 
-let numberOfBlocks = List.length subjects
-
-let line number index = 
-    let (subject, verb) = List.item (index - 1) subjects
-    let ending = if index = 1 then "." else ""
-    
-    if index = number then "This is the " + subject + ending
-    else "that " + verb + " the " + subject + ending
-    
-let block number = 
-    let lineForBlock = line number
-    [number .. -1 .. 1]
-    |> List.map lineForBlock
-    |> List.reduce (fun x y -> x + "\n" + y)    
-
-let rhyme = 
-    [1..numberOfBlocks]
-    |> List.map block
-    |> List.reduce (fun x y -> x + "\n\n" + y)
+let recite startVerse endVerse =
+    [1..endVerse]
+    |> List.scan (fun previous number -> verse number :: previous) []
+    |> List.map (fun parts -> "This is" :: parts |> String.concat " the ")
+    |> List.skip startVerse
