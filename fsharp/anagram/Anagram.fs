@@ -1,11 +1,8 @@
 module Anagram
-
-open System
-
-let private sortedLowerCase (str: string) =  str.ToLower() |> Seq.sort |> Seq.toArray |> String
-    
-let isAnagram word candidate =
-    sortedLowerCase candidate = sortedLowerCase word &&
-    candidate.ToLower() <> word.ToLower()
        
-let findAnagrams candidates word = List.filter (isAnagram word) candidates
+let findAnagrams candidates word =
+    let isAnagram (word: string) (candidate: string) =
+        let sortedCharacters (str: string) =  str.ToLower() |> Seq.sort |> Seq.toArray |> System.String        
+        sortedCharacters word = sortedCharacters word && candidate.ToLower() <> word.ToLower()
+    
+    List.filter (isAnagram word) candidates
