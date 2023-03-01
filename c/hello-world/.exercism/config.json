@@ -1,0 +1,33 @@
+{
+  "authors": [
+    "JacobMikkelsen"
+  ],
+  "contributors": [
+    "bcc32",
+    "benkelaar",
+    "gea-migration",
+    "h-3-0",
+    "kytrinyx",
+    "patricksjackson",
+    "QLaille",
+    "RealBarrettBrown",
+    "ryanplusplus",
+    "siebenschlaefer",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "hello_world.c",
+      "hello_world.h"
+    ],
+    "test": [
+      "test_hello_world.c"
+    ],
+    "example": [
+      ".meta/example.c"
+    ]
+  },
+  "blurb": "The classical introductory exercise. Just say \"Hello, World!\".",
+  "source": "This is an exercise to introduce users to using Exercism",
+  "source_url": "http://en.wikipedia.org/wiki/%22Hello,_world!%22_program"
+}
