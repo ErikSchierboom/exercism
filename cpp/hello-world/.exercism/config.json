@@ -1,0 +1,28 @@
+{
+  "blurb": "The classical introductory exercise. Just say \"Hello, World!\"",
+  "authors": [
+    "samsondstl"
+  ],
+  "contributors": [
+    "elyashiv",
+    "jackhughesweb",
+    "KevinWMatthews",
+    "patricksjackson",
+    "sturzl"
+  ],
+  "files": {
+    "solution": [
+      "hello_world.cpp",
+      "hello_world.h"
+    ],
+    "test": [
+      "hello_world_test.cpp"
+    ],
+    "example": [
+      ".meta/example.cpp",
+      ".meta/example.h"
+    ]
+  },
+  "source": "This is an exercise to introduce users to using Exercism",
+  "source_url": "http://en.wikipedia.org/wiki/%22Hello,_world!%22_program"
+}
