@@ -1,0 +1,31 @@
+{
+  "authors": [
+    "RealBarrettBrown"
+  ],
+  "contributors": [
+    "bcc32",
+    "Gamecock",
+    "gea-migration",
+    "h-3-0",
+    "patricksjackson",
+    "QLaille",
+    "ryanplusplus",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "difference_of_squares.c",
+      "difference_of_squares.h"
+    ],
+    "test": [
+      "test_difference_of_squares.c"
+    ],
+    "example": [
+      ".meta/example.c",
+      ".meta/example.h"
+    ]
+  },
+  "blurb": "Find the difference between the square of the sum and the sum of the squares of the first N natural numbers.",
+  "source": "Problem 6 at Project Euler",
+  "source_url": "http://projecteuler.net/problem=6"
+}
