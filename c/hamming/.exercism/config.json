@@ -1,0 +1,38 @@
+{
+  "authors": [
+    "sunzenshen"
+  ],
+  "contributors": [
+    "bcc32",
+    "Gamecock",
+    "gea-migration",
+    "h-3-0",
+    "hintjens",
+    "JacobMikkelsen",
+    "kytrinyx",
+    "lpil",
+    "patricksjackson",
+    "QLaille",
+    "RealBarrettBrown",
+    "ryanplusplus",
+    "siebenschlaefer",
+    "sjwarner",
+    "wolf99"
+  ],
+  "files": {
+    "solution": [
+      "hamming.c",
+      "hamming.h"
+    ],
+    "test": [
+      "test_hamming.c"
+    ],
+    "example": [
+      ".meta/example.c",
+      ".meta/example.h"
+    ]
+  },
+  "blurb": "Calculate the Hamming difference between two DNA strands.",
+  "source": "The Calculating Point Mutations problem at Rosalind",
+  "source_url": "http://rosalind.info/problems/hamm/"
+}
