@@ -7,7 +7,7 @@ unsigned int sum_of_squares(unsigned int number)
 
 unsigned int square_of_sum(unsigned int number)
 {
-    int sum = number * (number + 1) / 2;
+    unsigned int sum = number * (number + 1) / 2;
     return sum * sum;
 }
 
