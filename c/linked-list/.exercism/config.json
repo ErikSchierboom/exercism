@@ -1,0 +1,26 @@
+{
+  "authors": [
+    "wolf99"
+  ],
+  "contributors": [
+    "patricksjackson",
+    "QLaille",
+    "ryanplusplus",
+    "siebenschlaefer"
+  ],
+  "files": {
+    "solution": [
+      "linked_list.c",
+      "linked_list.h"
+    ],
+    "test": [
+      "test_linked_list.c"
+    ],
+    "example": [
+      ".meta/example.c",
+      ".meta/example.h"
+    ]
+  },
+  "blurb": "Implement a doubly linked list.",
+  "source": "Classic computer science topic"
+}
