@@ -1,0 +1,30 @@
+{
+  "blurb": "Given a year, report if it is a leap year.",
+  "authors": [
+    "LegalizeAdulthood"
+  ],
+  "contributors": [
+    "cyborgsphinx",
+    "elyashiv",
+    "HenryRLee",
+    "jackhughesweb",
+    "KevinWMatthews",
+    "kytrinyx",
+    "patricksjackson",
+    "Smarticles101"
+  ],
+  "files": {
+    "solution": [
+      "leap.cpp",
+      "leap.h"
+    ],
+    "test": [
+      "leap_test.cpp"
+    ],
+    "example": [
+      ".meta/example.h"
+    ]
+  },
+  "source": "JavaRanch Cattle Drive, exercise 3",
+  "source_url": "http://www.javaranch.com/leap.jsp"
+}
