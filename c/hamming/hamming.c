@@ -4,19 +4,16 @@
 
 int compute(const char *lhs, const char *rhs)
 {
-    int lhsLength = strlen(lhs);
-    int rhsLength = strlen(rhs);
-
-    if (lhsLength != rhsLength)
-        return -1;
-
     int distance = 0;
 
-    for (int i = 0; i < lhsLength; i++)
+    for (; *lhs && *rhs; lhs++, rhs++)
     {
-        if (lhs[i] != rhs[i])
+        if (*lhs != *rhs)
             distance++;
     }
+
+    if (*lhs || *rhs)
+        return -1;
 
     return distance;
 }
