@@ -4,13 +4,13 @@ const mem = std.mem;
 const RnaError = error{InvalidNucleotide};
 
 pub fn toRna(allocator: mem.Allocator, dna: []const u8) (RnaError || mem.Allocator.Error)![]const u8 {
-    var rna = std.ArrayList(u8).init(allocator);
-    errdefer rna.deinit();
+    var rna = try allocator.alloc(u8, dna.len);
+    errdefer allocator.free(rna);
 
-    for (dna) |nucleotide|
-        try rna.append(try toComplement(nucleotide));
+    for (dna) |nucleotide, i|
+        rna[i] = try toComplement(nucleotide);
 
-    return rna.items;
+    return rna;
 }
 
 fn toComplement(nucleotide: u8) RnaError!u8 {
