@@ -1,6 +1,3 @@
-const std = @import("std");
-const SecondsInEarthOrbit: f64 = 31_557_600;
-
 pub const Planet = enum {
     mercury,
     venus,
@@ -11,8 +8,10 @@ pub const Planet = enum {
     uranus,
     neptune,
 
+    const secondsInEarthOrbit = 31_557_600.0;
+
     pub fn age(self: Planet, seconds: usize) f64 {
-        const seconds_in_earth_years = self.orbital_period_in_earth_year() * SecondsInEarthOrbit;
+        const seconds_in_earth_years = self.orbital_period_in_earth_year() * secondsInEarthOrbit;
         return @intToFloat(f64, seconds) / seconds_in_earth_years;
     }
 
