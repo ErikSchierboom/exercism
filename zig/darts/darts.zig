@@ -8,7 +8,7 @@ pub const Coordinate = struct {
         return Coordinate{ .x = x_coord, .y = y_coord };
     }
 
-    pub fn score(self: Coordinate) isize {
+    pub fn score(self: Coordinate) usize {
         const distance = std.math.hypot(f32, self.x, self.y);
         if (distance <= 1.0) return 10;
         if (distance <= 5.0) return 5;
