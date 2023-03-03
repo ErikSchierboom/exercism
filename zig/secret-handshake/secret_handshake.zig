@@ -5,6 +5,7 @@ pub const Signal = enum { wink, double_blink, close_your_eyes, jump };
 
 pub fn calculateHandshake(allocator: mem.Allocator, number: isize) mem.Allocator.Error![]const Signal {
     var actions = std.ArrayList(Signal).init(allocator);
+    errdefer actions.deinit();
 
     if (number & 0b00001 != 0)
         try actions.append(Signal.wink);
