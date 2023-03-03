@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "massivelivefun"
+  ],
+  "files": {
+    "solution": [
+      "grains.zig"
+    ],
+    "test": [
+      "test_grains.zig"
+    ],
+    "example": [
+      ".meta/example.zig"
+    ]
+  },
+  "blurb": "Calculate the number of grains of wheat on a chessboard given that the number on each square doubles.",
+  "source": "The CodeRanch Cattle Drive, Assignment 6",
+  "source_url": "https://coderanch.com/wiki/718824/Grains"
+}
