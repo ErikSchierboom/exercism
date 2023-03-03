@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "massivelivefun"
+  ],
+  "files": {
+    "solution": [
+      "pangram.zig"
+    ],
+    "test": [
+      "test_pangram.zig"
+    ],
+    "example": [
+      ".meta/example.zig"
+    ]
+  },
+  "blurb": "Determine if a sentence is a pangram.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Pangram"
+}
