@@ -1,14 +1,13 @@
 const std = @import("std");
-
-const AlphabetSet = std.StaticBitSet(26);
+const AlphabetSize = 26;
 
 pub fn isPangram(str: []const u8) bool {
-    var alphabet = AlphabetSet.initEmpty();
+    var letters = std.bit_set.IntegerBitSet(AlphabetSize).initEmpty();
 
     for (str) |char| {
-        if (std.ascii.isUpper(char)) alphabet.set(char - 'A');
-        if (std.ascii.isLower(char)) alphabet.set(char - 'a');
+        if (std.ascii.isUpper(char)) letters.set(char - 'A');
+        if (std.ascii.isLower(char)) letters.set(char - 'a');
     }
 
-    return alphabet.count() == alphabet.capacity();
+    return letters.count() == AlphabetSize;
 }
