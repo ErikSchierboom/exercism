@@ -3,7 +3,7 @@ module reverse_string;
 import std.conv : to;
 import std.range : retro;
 
-string reverseString(string input)
+@safe pure string reverseString(string input)
 {
     return input.retro.to!(string);
 }
