@@ -1,11 +1,11 @@
 module reverse_string;
 
-import std.algorithm : reverse;
+import std.conv : to;
 import std.range : retro;
 
 string reverseString(string input)
 {
-    return input.retro.idup;
+    return input.retro.to!(string);
 }
 
 unittest
