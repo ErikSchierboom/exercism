@@ -1,6 +1,7 @@
 module raindrops;
 
 import std.conv : to;
+import std.range : empty;
 
 @safe pure string convert(uint number)
 {
@@ -13,7 +14,7 @@ import std.conv : to;
     if (number % 7 == 0)
         drops ~= "Plong";
 
-    return drops.length == 0 ? number.to!(string) : drops;
+    return drops.empty ? number.to!(string) : drops;
 }
 
 unittest
