@@ -4,7 +4,7 @@ import std.conv : to;
 
 @safe pure string convert(uint number)
 {
-    char[] drops;
+    string drops;
 
     if (number % 3 == 0)
         drops ~= "Pling";
@@ -13,7 +13,7 @@ import std.conv : to;
     if (number % 7 == 0)
         drops ~= "Plong";
 
-    return drops.length == 0 ? number.to!(string) : drops.to!(string);
+    return drops.length == 0 ? number.to!(string) : drops;
 }
 
 unittest
