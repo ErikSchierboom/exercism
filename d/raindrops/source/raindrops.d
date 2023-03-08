@@ -2,7 +2,7 @@ module raindrops;
 
 import std.conv : to;
 
-string convert(uint number)
+@safe pure string convert(uint number)
 {
     char[] drops;
 
