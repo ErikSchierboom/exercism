@@ -1,0 +1,26 @@
+{
+  "authors": [
+    "tmccombs"
+  ],
+  "contributors": [
+    "amscotti",
+    "kytrinyx",
+    "petertseng",
+    "sjwarner-bp",
+    "son1112"
+  ],
+  "files": {
+    "solution": [
+      "source/hello_world.d"
+    ],
+    "test": [
+      "source/hello_world.d"
+    ],
+    "example": [
+      "example/hello_world.d"
+    ]
+  },
+  "blurb": "The classical introductory exercise. Just say \"Hello, World!\".",
+  "source": "This is an exercise to introduce users to using Exercism",
+  "source_url": "https://en.wikipedia.org/wiki/%22Hello,_world!%22_program"
+}
