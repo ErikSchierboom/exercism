@@ -6,10 +6,9 @@ import std.algorithm : map, sum;
 
 @safe pure bool isArmstrongNumber(uint number)
 {
-    auto digits = number.to!(string)
+    auto digits = number.to!string
         .map!(c => c - '0');
     auto numDigits = digits.walkLength;
-
     return number == digits.map!(d => d ^^ numDigits).sum;
 }
 
