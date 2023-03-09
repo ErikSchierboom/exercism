@@ -1,19 +1,34 @@
 module difference_of_squares;
 
-uint squareOfSum(uint n)
+struct Squares
 {
-    auto sum = (n * (n + 1)) / 2;
-    return sum * sum;
+    private uint n;
+
+    this(uint n)
+    {
+        this.n = n;
+    }
+
+    uint squareOfSum()
+    {
+        auto sum = (n * (n + 1)) / 2;
+        return sum * sum;
+    }
+
+    uint sumOfSquares()
+    {
+        return (n * (n + 1) * (2 * n + 1)) / 6;
+    }
+
+    uint difference()
+    {
+        return squareOfSum - sumOfSquares;
+    }
 }
 
-uint sumOfSquares(uint n)
+Squares squares(uint n)
 {
-    return (n * (n + 1) * (2 * n + 1)) / 6;
-}
-
-uint difference(uint n)
-{
-    return n.squareOfSum - n.sumOfSquares;
+    return Squares(n);
 }
 
 unittest
