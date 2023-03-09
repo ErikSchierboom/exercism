@@ -1,0 +1,26 @@
+{
+  "authors": [
+    "tmccombs"
+  ],
+  "contributors": [
+    "amscotti",
+    "kytrinyx",
+    "petertseng",
+    "sjwarner-bp",
+    "TheSmartnik"
+  ],
+  "files": {
+    "solution": [
+      "source/pangram.d"
+    ],
+    "test": [
+      "source/pangram.d"
+    ],
+    "example": [
+      "example/pangram.d"
+    ]
+  },
+  "blurb": "Determine if a sentence is a pangram.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Pangram"
+}
