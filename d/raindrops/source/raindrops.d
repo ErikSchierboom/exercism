@@ -3,7 +3,7 @@ module raindrops;
 import std.conv : to;
 import std.range : empty;
 
-@safe pure string convert(uint number)
+string convert(uint number)
 {
     string drops;
 

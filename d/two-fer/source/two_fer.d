@@ -2,7 +2,7 @@ module two_fer;
 
 import std.format : format;
 
-@safe pure string twoFer(string name = "you")
+string twoFer(string name = "you")
 {
     return format("One for %s, one for me.", name);
 }

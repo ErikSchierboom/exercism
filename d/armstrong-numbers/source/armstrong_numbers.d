@@ -4,7 +4,7 @@ import std.conv : to;
 import std.range : walkLength;
 import std.algorithm : map, sum;
 
-@safe pure bool isArmstrongNumber(uint number)
+bool isArmstrongNumber(uint number)
 {
     auto digits = number.to!string
         .map!(c => c - '0');

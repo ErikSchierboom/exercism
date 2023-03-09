@@ -2,7 +2,7 @@ module darts;
 
 import std.math : hypot;
 
-@safe pure uint score(double x, double y)
+uint score(double x, double y)
 {
     double distance = hypot(x, y);
 

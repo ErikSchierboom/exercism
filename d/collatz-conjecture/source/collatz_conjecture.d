@@ -2,7 +2,7 @@ module collatz_conjecture;
 
 import std.exception : enforce;
 
-@safe pure uint steps(int number)
+uint steps(int number)
 {
     enforce(number > 0, "Number must be positive");
 

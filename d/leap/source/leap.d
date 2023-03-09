@@ -1,6 +1,6 @@
 module leap;
 
-@safe pure bool isLeap(int year)
+bool isLeap(int year)
 {
     return year % 4 == 0 && (year % 100 != 0 || year % 400 == 0);
 }
