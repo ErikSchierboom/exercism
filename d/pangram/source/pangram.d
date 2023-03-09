@@ -1,6 +1,6 @@
 module pangram;
 
-import std.ascii : isLower, isUpper;
+import std.ascii : isAlpha, toLower;
 import std.bitmanip : BitArray;
 import std.range : repeat;
 import std.array : array;
@@ -11,10 +11,8 @@ bool isPangram(string sentence)
 
     foreach (c; sentence)
     {
-        if (c.isLower)
-            letters[c - 'a'] = true;
-        else if (c.isUpper)
-            letters[c - 'A'] = true;
+        if (c.isAlpha)
+            letters[c.toLower - 'a'] = true;
     }
 
     return letters.count == 26;
