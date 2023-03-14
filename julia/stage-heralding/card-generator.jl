@@ -1,29 +1,30 @@
 function generate_card(entry)
-    m = match(r"^»(?<title>.+?)« – (?<first_name>.+?) (?<surname>.+?)(?: \((?<first_pronoun>.+?)/(?<second_pronoun>.+?)\)?)(?:\, from (?<org>.+?))\. Start: (?<start>\d{2}:\d{2})(?:, Q&A: (?<qa>\d{2}:\d{2}))?, End: (?<stop>\d{2}:\d{2})", entry)
+    m = match(r"^»(?<title>.+?)« – (?<name>.+?)(?: \((?<first_pronoun>.+?)\/(?<second_pronoun>.+?)\))?(?:, from (?<org>.+?))?\. Start: (?<start>\d{2}:\d{2})(?:, Q&A: (?<qa>\d{2}:\d{2}))?, End: (?<stop>\d{2}:\d{2})", entry)
 
-    name = m["first_name"]
-    name *= isnothing(m["surname"]) ? "" : " $(m["surname"])"
-    org = isnothing(m["org"]) ? "" : ", from $(m["org"])"
     title = m["title"]
-    second_addressing = isnothing(m["second_pronoun"]) ? "$(m["first_name"])'s" : titlecase(replace(replace(m["second_pronoun"], "them" => "their"), "him" => "his"))
-    first_addressing = isnothing(m["first_pronoun"]) ? m["first_name"] : titlecase(m["first_pronoun"])
+    name = m["name"]
+    org = isnothing(m["org"]) ? "" : ", from $(m["org"])"
+    second_pronoun = isnothing(m["second_pronoun"]) ? first(split(name)) * "'s" : titlecase(replace(replace(m["second_pronoun"], "them" => "their"), "him" => "his"))
+    first_pronoun = isnothing(m["first_pronoun"]) ? first(split(name)) : titlecase(m["first_pronoun"])
     qa = m["qa"]
     start = m["start"]
     stop = m["stop"]
 
-    lines = []
-    push!(lines, "- Our next speaker is $name$org\n")
-    push!(lines, "- $second_addressing talk is called »$title«\n")
-
     if isnothing(qa)
-        push!(lines, "- There will not be a Q&A session\n")
-        push!(lines, "\n")
-        push!(lines, "$start - NO Q&A - $stop\n")
-    else
-        push!(lines, "- $first_addressing will answer your questions in the Q&A session at the end of the talk, starting at $qa\n")
-        push!(lines, "\n")
-        push!(lines, "$start - $qa - $stop\n")
-    end
+        """
+        - Our next speaker is $name$org
+        - $second_pronoun talk is called »$title«
+        - There will not be a Q&A session
 
-    join(lines)
+        $start - NO Q&A - $stop
+        """
+    else
+        """
+        - Our next speaker is $name$org
+        - $second_pronoun talk is called »$title«
+        - $first_pronoun will answer your questions in the Q&A session at the end of the talk, starting at $qa
+
+        $start - $qa - $stop
+        """
+    end
 end
