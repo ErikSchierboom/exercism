@@ -1,0 +1,25 @@
+{
+  "authors": [
+    "jonboiser"
+  ],
+  "contributors": [
+    "jonmcalder",
+    "katrinleinweber",
+    "ttnagata",
+    "zacchaeusluke"
+  ],
+  "files": {
+    "solution": [
+      "hello-world.R"
+    ],
+    "test": [
+      "test_hello-world.R"
+    ],
+    "example": [
+      ".meta/example.R"
+    ]
+  },
+  "blurb": "The classical introductory exercise. Just say \"Hello, World!\".",
+  "source": "This is an exercise to introduce users to using Exercism",
+  "source_url": "http://en.wikipedia.org/wiki/%22Hello,_world!%22_program"
+}
