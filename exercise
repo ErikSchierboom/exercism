@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+exercise=$(echo $PWD | awk -F/ '{print $(NF)}')
+track=$(echo $PWD | awk -F/ '{print $(NF-1)}')
+
+if [[ $(git ls-files --error-unmatch README.md 2> /dev/null) ]]; then
+  type="iteration"
+else
+  type="solution"
+fi
+
+exercism submit
+git add .
+git commit -m "${track}/${exercise}: add ${type}"
+git push
