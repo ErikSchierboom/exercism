@@ -1,3 +1,4 @@
 difference_of_squares <- function(natural_number) {
-  sum(1:natural_number)^2 - sum((1:natural_number) ^2)
+  numbers <- 1:natural_number
+  sum(numbers)^2 - sum(numbers^2)
 }
