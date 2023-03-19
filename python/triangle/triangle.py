@@ -11,5 +11,5 @@ def scalene(sides):
 
 
 def valid(sides):
-    sides = sorted(sides)
-    return all(side > 0 for side in sides) and sides[0] + sides[1] >= sides[2]
+    a, b, c = sorted(sides)
+    return all(sides) and a + b >= c
