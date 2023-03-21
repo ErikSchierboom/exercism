@@ -3,8 +3,8 @@ import re
 VOWEL_PATTERN = r'(?P<begin>^|\s+)(?P<vowel>[aeiou]|xr|yt)(?P<rest>\w+)'
 CONSONANT_PATTERN = r'(?P<begin>^|\s+)(?P<consonant>([^aeiou]?qu|[^aeiou]+))(?P<rest>[aeiouy]\w*)'
 
-VOWEL_REPLACEMENT = '\g<begin>\g<vowel>\g<rest>ay'
-CONSONANT_REPLACEMENT = '\g<begin>\g<rest>\g<consonant>ay'
+VOWEL_REPLACEMENT = r'\g<begin>\g<vowel>\g<rest>ay'
+CONSONANT_REPLACEMENT = r'\g<begin>\g<rest>\g<consonant>ay'
 
 
 def translate(text):
