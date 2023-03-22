@@ -22,7 +22,7 @@ def value_of_card(card, ace_value = 1):
     if card == 'A':
         return ace_value
 
-    return "  23456789".index(card)
+    return '  23456789'.index(card)
 
 
 def higher_card(card_one, card_two):
