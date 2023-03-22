@@ -2,9 +2,10 @@ from string import ascii_lowercase, ascii_uppercase
 
 
 def rotate(text, key):
-    rotate_map = shift_map(ascii_lowercase, key) | shift_map(ascii_uppercase, key)
-    return ''.join(rotate_map.get(char, char) for char in text)
+    from_text = ascii_lowercase + ascii_uppercase
+    to_text = rotate_by(ascii_lowercase, key) + rotate_by(ascii_uppercase, key)
+    return text.translate(str.maketrans(from_text, to_text))
 
 
-def shift_map(array, key):
-    return dict(zip(array, array[key:] + array[:key]))
+def rotate_by(string, key):
+    return string[key:] + string[:key]
