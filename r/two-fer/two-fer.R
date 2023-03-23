@@ -1,3 +1,3 @@
 two_fer <- function(input = "you") {
-  paste("One for ", input, ", one for me.", sep = "")
+  paste0("One for ", input, ", one for me.")
 }
