@@ -1,0 +1,25 @@
+{
+  "authors": [
+    "cmiller01"
+  ],
+  "contributors": [
+    "jonmcalder",
+    "katrinleinweber",
+    "kytrinyx",
+    "zacchaeusluke"
+  ],
+  "files": {
+    "solution": [
+      "hamming.R"
+    ],
+    "test": [
+      "test_hamming.R"
+    ],
+    "example": [
+      ".meta/example.R"
+    ]
+  },
+  "blurb": "Calculate the Hamming difference between two DNA strands.",
+  "source": "The Calculating Point Mutations problem at Rosalind",
+  "source_url": "http://rosalind.info/problems/hamm/"
+}
