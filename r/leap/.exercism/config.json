@@ -1,0 +1,24 @@
+{
+  "authors": [
+    "jonmcalder"
+  ],
+  "contributors": [
+    "jonboiser",
+    "katrinleinweber",
+    "zacchaeusluke"
+  ],
+  "files": {
+    "solution": [
+      "leap.R"
+    ],
+    "test": [
+      "test_leap.R"
+    ],
+    "example": [
+      ".meta/example.R"
+    ]
+  },
+  "blurb": "Given a year, report if it is a leap year.",
+  "source": "JavaRanch Cattle Drive, exercise 3",
+  "source_url": "http://www.javaranch.com/leap.jsp"
+}
