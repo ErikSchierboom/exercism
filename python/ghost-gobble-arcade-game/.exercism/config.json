@@ -1,0 +1,26 @@
+{
+  "authors": [
+    "neenjaw"
+  ],
+  "contributors": [
+    "cmccandless",
+    "bethanyg"
+  ],
+  "files": {
+    "solution": [
+      "arcade_game.py"
+    ],
+    "test": [
+      "arcade_game_test.py"
+    ],
+    "exemplar": [
+      ".meta/exemplar.py"
+    ]
+  },
+  "language_versions": ">=3.5",
+  "forked_from": [
+    "elixir/pacman-rules"
+  ],
+  "icon": "matching-brackets",
+  "blurb": "Learn about bools by setting up the rules for the Ghost Gobble arcade game."
+}
