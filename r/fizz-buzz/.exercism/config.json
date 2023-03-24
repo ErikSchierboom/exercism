@@ -1,0 +1,22 @@
+{
+  "authors": [
+    "tintinthong"
+  ],
+  "contributors": [
+    "katrinleinweber"
+  ],
+  "files": {
+    "solution": [
+      "fizz-buzz.R"
+    ],
+    "test": [
+      "test_fizz-buzz.R"
+    ],
+    "example": [
+      ".meta/example.R"
+    ]
+  },
+  "blurb": "Print numbers from 1 to n replacing multiples of 3 and 5 with 'Fizz' and 'Buzz'",
+  "source": "'Fizz-Buzz' originated as a children's game that helped children learn to divide. It is now regularly used in coding interviews.",
+  "source_url": "https://imranontech.com/2007/01/24/using-fizzbuzz-to-find-developers-who-grok-coding"
+}
