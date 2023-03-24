@@ -1,0 +1,23 @@
+{
+  "authors": [
+    "jonmcalder"
+  ],
+  "contributors": [
+    "katrinleinweber",
+    "zacchaeusluke"
+  ],
+  "files": {
+    "solution": [
+      "scrabble-score.R"
+    ],
+    "test": [
+      "test_scrabble-score.R"
+    ],
+    "example": [
+      ".meta/example.R"
+    ]
+  },
+  "blurb": "Given a word, compute the Scrabble score for that word.",
+  "source": "Inspired by the Extreme Startup game",
+  "source_url": "https://github.com/rchatley/extreme_startup"
+}
