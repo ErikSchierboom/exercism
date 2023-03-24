@@ -1,15 +1,7 @@
 fizz_buzz <- function(n) {
-  print <- function(n) {
-    if (n %% 15 == 0) {
-      "Fizz Buzz"
-    } else if (n %% 3 == 0) {
-      "Fizz"
-    } else if (n %% 5 == 0) {
-      "Buzz"
-    } else {
-      paste(n)
-    }
-  }
-  
-  sapply(1:n, print)
+  numbers <- 1:n
+  numbers[which(1:n %% 3 == 0)] = "Fizz"
+  numbers[which(1:n %% 5 == 0)] = "Buzz"
+  numbers[which(1:n %% 15 == 0)] = "Fizz Buzz"
+  numbers
 }
