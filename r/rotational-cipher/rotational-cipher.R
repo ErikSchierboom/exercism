@@ -1,9 +1,8 @@
 rotate <- function(text, key) {
-  rotated <- function(text) { c(tail(text, 26 - key), head(text, key)) }
+  rotated <- function(input) { c(tail(input, 26 - key), head(input, key)) }
   unchanged = c(0:9, " ", "'", "!", ",", ".")
-  rotate_map = c(rotated(LETTERS), rotated(letters), unchanged)
-  names(rotate_map) = c(LETTERS, letters, unchanged)
-  
-  chars <- text |> strsplit(split="") |> unlist()
-  rotate_map[chars] |> paste(collapse = "")
+  from = paste(c(LETTERS, letters, unchanged), collapse="")
+  to = paste(c(rotated(LETTERS), rotated(letters), unchanged), collapse="")
+
+  chartr(from, to, text)
 }
