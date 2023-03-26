@@ -1,25 +1,19 @@
+is.silent <- \(input) trimws(input) == ""
+is.question <- \(input) endsWith(trimws(input), "?")
+is.shout <- \(input) toupper(input) == input && tolower(input) != input
+
 bob <- function(input) {
-  if (is_silent(input)) {
+  if (is.silent(input)) {
     "Fine. Be that way!"
-  } else if (is_shout(input) && is_question(input)) {
+  } else if (is.shout(input) && is.question(input)) {
     "Calm down, I know what I'm doing!"
-  } else if (is_shout(input)) {
+  } else if (is.shout(input)) {
     "Whoa, chill out!"
-  } else if (is_question(input)) {
+  } else if (is.question(input)) {
     "Sure."
   } else {
     "Whatever."
   }
 }
 
-is_silent <- function(input) {
-  trimws(input) == ""
-}
 
-is_question <- function(input) {
-  endsWith(trimws(input), "?")
-}
-
-is_shout <- function(input) {
-  toupper(input) == input && tolower(input) != input
-}
