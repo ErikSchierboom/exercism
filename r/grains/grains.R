@@ -4,6 +4,4 @@ square <- function(n) {
   2^(n-1)
 }
 
-total <- function() {
-  2^64 - 1
-}
+total <- \() 2^64 - 1
