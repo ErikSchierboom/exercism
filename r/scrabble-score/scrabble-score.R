@@ -4,6 +4,6 @@ scrabble_score <- function(input){
     K = 5, L = 1, M = 3, N = 1, O = 1, P = 3, Q = 10, R = 1, S = 1, T = 1,
     U= 1, V = 4, W = 4, X = 8, Y = 4, Z = 10)
   
-  letters <- strsplit(toupper(input), split = "")
-  sum(letter_scores[unlist(letters)])
+  letters <- strsplit(toupper(input), split = "")[[1]]
+  sum(letter_scores[letters])
 }
