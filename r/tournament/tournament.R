@@ -1,5 +1,3 @@
-library(tidyverse)
-
 tournament <- function(input) {
   rows <- sapply(input, function(row) { strsplit(row, ";") })
   rows <- rows[lengths(rows) == 3]
