@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "erikschierboom"
+  ],
+  "files": {
+    "solution": [
+      "zebra_puzzle.pl"
+    ],
+    "test": [
+      "zebra_puzzle_tests.plt"
+    ],
+    "example": [
+      ".meta/zebra_puzzle.example.pl"
+    ]
+  },
+  "blurb": "Solve the zebra puzzle.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Zebra_Puzzle"
+}
