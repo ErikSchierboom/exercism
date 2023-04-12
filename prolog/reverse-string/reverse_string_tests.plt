@@ -10,23 +10,23 @@ pending :-
         string_reverse("", Reversed),
         Reversed == "".
 
-    test(a_word, condition(pending)) :-
+    test(a_word, condition(true)) :-
         string_reverse("robot", Reversed),
         Reversed == "tobor".
 
-    test(a_capitalized_word, condition(pending)) :-
+    test(a_capitalized_word, condition(true)) :-
         string_reverse("Ramen", Reversed),
         Reversed == "nemaR".
 
-    test(a_sentence_with_punctuation, condition(pending)) :-
+    test(a_sentence_with_punctuation, condition(true)) :-
         string_reverse("I'm hungry!", Reversed),
         Reversed == "!yrgnuh m'I".
 
-    test(a_palindrome, condition(pending)) :-
+    test(a_palindrome, condition(true)) :-
         string_reverse("racecar", Reversed),
         Reversed == "racecar".
 
-    test(an_even_sized_word, condition(pending)) :-
+    test(an_even_sized_word, condition(true)) :-
         string_reverse("drawer", Reversed),
         Reversed == "reward".
 

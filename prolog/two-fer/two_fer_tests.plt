@@ -10,11 +10,11 @@ test(no_name_given, condition(true)) :-
     two_fer(Dialogue),
     Dialogue == "One for you, one for me.".
 
-test(a_name_given, condition(pending)) :-
+test(a_name_given, condition(true)) :-
     two_fer("Alice", Dialogue),
     Dialogue == "One for Alice, one for me.".
 
-test(another_name_given, condition(pending)) :-
+test(another_name_given, condition(true)) :-
     two_fer("Bob", Dialogue),
     Dialogue == "One for Bob, one for me.".
 

@@ -10,12 +10,12 @@ pending :-
         maximum_value([], 100, Value),
         Value == 0.
 
-    test(one_item_too_heavy, [fail, condition(pending)]) :-
+    test(one_item_too_heavy, [fail, condition(true)]) :-
         Weight = 100,
         Value = 1,
         maximum_value([item(Weight, Value)], 10, _).
 
-    test(five_items_cannot_be_greedy_by_weight_, condition(pending)) :-
+    test(five_items_cannot_be_greedy_by_weight_, condition(true)) :-
         maximum_value(
             [
                 item(2, 5),
@@ -29,7 +29,7 @@ pending :-
         ),
         Value == 21.
 
-    test(five_items_cannot_be_greedy_by_value_, condition(pending)) :-
+    test(five_items_cannot_be_greedy_by_value_, condition(true)) :-
         maximum_value(
             [
                 item(2, 20),
@@ -43,7 +43,7 @@ pending :-
         ),
         Value == 80.
 
-    test(example_knapsack, condition(pending)) :-
+    test(example_knapsack, condition(true)) :-
         maximum_value(
             [
                 item(5, 10),
@@ -56,7 +56,7 @@ pending :-
         ),
         Value == 90.
 
-    test(eight_items, condition(pending)) :-
+    test(eight_items, condition(true)) :-
         maximum_value(
             [
                 item(25, 350),
@@ -73,7 +73,7 @@ pending :-
         ),
         Value == 900.
 
-    test(fifteen_items, condition(pending)) :-
+    test(fifteen_items, condition(true)) :-
         maximum_value(
             [
                 item(70, 135),

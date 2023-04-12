@@ -19,7 +19,7 @@ pending :-
         hello_world('Hello World!').
 
     % Once the first test passes, un-skip the following test by
-    % changing `pending` in `condition(pending)` to `true`.
+    % changing `pending` in `condition(true)` to `true`.
     % Repeat for each test until they are all passing.
 
 :- end_tests(hello_world).
