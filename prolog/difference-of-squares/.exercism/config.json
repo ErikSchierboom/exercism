@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "erikschierboom"
+  ],
+  "files": {
+    "solution": [
+      "difference_of_squares.pl"
+    ],
+    "test": [
+      "difference_of_squares_tests.plt"
+    ],
+    "example": [
+      ".meta/difference_of_squares.example.pl"
+    ]
+  },
+  "blurb": "Find the difference between the square of the sum and the sum of the squares of the first N natural numbers.",
+  "source": "Problem 6 at Project Euler",
+  "source_url": "https://projecteuler.net/problem=6"
+}
