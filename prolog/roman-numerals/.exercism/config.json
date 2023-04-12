@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "erikschierboom"
+  ],
+  "files": {
+    "solution": [
+      "roman_numerals.pl"
+    ],
+    "test": [
+      "roman_numerals_tests.plt"
+    ],
+    "example": [
+      ".meta/roman_numerals.example.pl"
+    ]
+  },
+  "blurb": "Write a function to convert from normal numbers to Roman Numerals.",
+  "source": "The Roman Numeral Kata",
+  "source_url": "https://codingdojo.org/kata/RomanNumerals/"
+}
