@@ -1,0 +1,14 @@
+lasagna.test.ex1 = let
+	Test.expect (expectedMinutesInOven === 40)
+
+lasagna.test.ex2 = let
+	Test.expect (preparationTimeInMinutes 5 === 10)
+
+lasagna.test.ex3 = let
+	Test.expect (elapsedTimeInMinutes 3 20 === 26)
+
+test> lasagna.tests = runAll [
+  lasagna.test.ex1,
+  lasagna.test.ex2,
+  lasagna.test.ex3
+]

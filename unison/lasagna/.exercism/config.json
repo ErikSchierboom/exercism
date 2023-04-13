@@ -1,0 +1,21 @@
+{
+  "authors": [
+    "rlmark"
+  ],
+  "files": {
+    "solution": [
+      "lasagna.u"
+    ],
+    "test": [
+      "lasagna.test.u"
+    ],
+    "exemplar": [
+      ".meta/examples/lasagna.example.u"
+    ]
+  },
+  "forked_from": [
+    "haskell/lucians-luscious-lasagna"
+  ],
+  "icon": "lasagna",
+  "blurb": "Learn the basics of Unison by cooking Lucian's Luscious Lasagna"
+}
