@@ -1,0 +1,6 @@
+use Universal
+
+hello.test =
+  expected = "Hello, World!"
+  Test.expect (hello === expected)
+test> hello.tests = runAll [hello.test]
