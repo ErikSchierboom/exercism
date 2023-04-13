@@ -1,0 +1,50 @@
+pacmanRules.test.ex1 = let
+  Test.label "eatGhost, ghost gets eaten" <| expect (eatGhost true true)
+
+pacmanRules.test.ex2 = let
+  Test.label "eatGhost, ghost does not get eaten because no power pellet active" <| expect (eatGhost false true === false)
+
+pacmanRules.test.ex3 = let
+  Test.label "eatGhost, ghost does not get eaten because not touching ghost" <| expect (eatGhost true false === false)
+
+pacmanRules.test.ex4 = let
+  Test.label "score, score when eating dot" <| expect (score false true)
+
+pacmanRules.test.ex5 = let
+  Test.label "score, score when eating power pellet" <| expect (score true false)
+
+pacmanRules.test.ex6 = let
+  Test.label "score, no score when nothing eaten" <| expect (score false false === false )
+
+pacmanRules.test.ex7 = let
+  Test.label "lose if touching a ghost without a power pellet active" <| expect (lose false true)
+
+pacmanRules.test.ex8 = let
+  Test.label "don't lose if touching a ghost with a power pellet active" <| expect (lose true true === false)
+
+pacmanRules.test.ex9 = let
+  Test.label "don't lose if not touching a ghost" <| expect (lose true false === false)
+
+pacmanRules.test.ex10 = let
+  Test.label "win if all dots eaten" <| expect (win true false false)
+
+pacmanRules.test.ex11 = let
+  Test.label "don't win if all dots eaten, but touching a ghost" <| expect (win true false true === false)
+
+pacmanRules.test.ex12 = let
+  Test.label "win if all dots eaten and touching a ghost with a power pellet active" <| expect (win true true true)
+
+test> pacmanRules.tests = runAll [
+  pacmanRules.test.ex1,
+  pacmanRules.test.ex2,
+  pacmanRules.test.ex3,
+  pacmanRules.test.ex4,
+  pacmanRules.test.ex5,
+  pacmanRules.test.ex6,
+  pacmanRules.test.ex7,
+  pacmanRules.test.ex8,
+  pacmanRules.test.ex9,
+  pacmanRules.test.ex10,
+  pacmanRules.test.ex11,
+  pacmanRules.test.ex12
+]

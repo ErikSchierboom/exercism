@@ -1,0 +1,17 @@
+use base.Boolean
+
+pacmanRules.eatGhost: Boolean -> Boolean -> Boolean
+pacmanRules.eatGhost powerPelletActive touchingGhost =
+  powerPelletActive && touchingGhost
+
+pacmanRules.score: Boolean -> Boolean -> Boolean
+pacmanRules.score powerPelletActive touchingDot =
+  powerPelletActive || touchingDot
+
+pacmanRules.lose : Boolean -> Boolean -> Boolean
+pacmanRules.lose powerPelletActive touchingGhost =
+  touchingGhost && not powerPelletActive
+
+pacmanRules.win : Boolean -> Boolean -> Boolean -> Boolean
+pacmanRules.win eatenAll powerPelletActive touchingGhost =
+  eatenAll && not (lose powerPelletActive touchingGhost)

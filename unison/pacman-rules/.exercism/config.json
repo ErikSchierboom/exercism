@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "rlmark"
+  ],
+  "files": {
+    "solution": [
+      "pacmanRules.u"
+    ],
+    "test": [
+      "pacmanRules.test.u"
+    ],
+    "exemplar": [
+      ".meta/examples/pacmanRules.example.u"
+    ]
+  },
+  "blurb": "Learn about booleans by implementing the rules of the Pac-Man game."
+}

@@ -1,0 +1,11 @@
+load pacmanRules.test.u
+load pacmanRules.test.u
+add
+find.global <| 
+find <| 
+load pacmanRules.test.u
+add
+cd pacmanRules
+add
+use base.Boolean
+cd pacmanRules
