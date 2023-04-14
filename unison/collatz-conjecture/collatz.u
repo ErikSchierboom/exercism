@@ -1,0 +1,10 @@
+doSteps : Nat -> Nat -> Nat
+doSteps steps = cases
+    1 -> steps
+    n | isEven n -> doSteps (steps + 1) (n / 2)
+    n -> doSteps (steps + 1) (n * 3 + 1)
+
+collatzConjecture.steps : Nat -> Optional Nat
+collatzConjecture.steps = cases
+    0 -> None
+    n -> Some (doSteps 0 n)

@@ -1,0 +1,22 @@
+collatzConjecture.test.ex1 = let
+	Test.label "zero steps for one" <| Test.expect (steps 1 === Some 0)
+
+collatzConjecture.test.ex2 = let
+	Test.label "divide if even" <| Test.expect (steps 16 === Some 4)
+
+collatzConjecture.test.ex3 = let
+	Test.label "even and odd steps" <| Test.expect (steps 12 === Some 9)
+
+collatzConjecture.test.ex4 = let
+	Test.label "large number of even and odd steps" <| Test.expect (steps 1000000 === Some 152)
+
+collatzConjecture.test.ex5 = let
+	Test.label "zero is an error" <| Test.expect (steps 0 === None)
+
+test> collatzConjecture.tests = runAll [
+	collatzConjecture.test.ex1,
+	collatzConjecture.test.ex2,
+	collatzConjecture.test.ex3,
+	collatzConjecture.test.ex4,
+	collatzConjecture.test.ex5
+]
