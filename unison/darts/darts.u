@@ -1,5 +1,5 @@
 darts.score : Float -> Float -> Nat
-darts.score x y = match sqrt (pow x 2.0 + pow y 2.0) with
+darts.score x y = match sqrt (x * x + y * y) with
   distance
     | distance <= 1.0 -> 10 
     | distance <= 5.0 -> 5
