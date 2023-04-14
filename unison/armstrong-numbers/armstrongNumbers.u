@@ -1,0 +1,6 @@
+isArmstrongNumber : Nat -> Boolean
+isArmstrongNumber number =
+  digits = Nat.toText number |> toCharList |> List.filterMap (Char.toText >> Nat.fromText)
+  numberOfDigits = List.size digits
+  armstrongSum = List.map (digit -> Nat.pow digit numberOfDigits) digits |> sum
+  armstrongSum == number
