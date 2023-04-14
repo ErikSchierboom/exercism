@@ -1,0 +1,54 @@
+darts.test.ex1 = let
+	Test.label "Missed target" <| Test.expect (score -9.0 9.0 === 0)
+
+darts.test.ex2 = let
+	Test.label "On the outer circle" <| Test.expect (score 0.0 10.0 === 1)
+
+darts.test.ex3 = let
+	Test.label "On the middle circle" <| Test.expect (score -5.0 0.0 === 5)
+
+darts.test.ex4 = let
+	Test.label "On the inner circle" <| Test.expect (score 0.0 -1.0 === 10)
+
+darts.test.ex5 = let
+	Test.label "Exactly on centre" <| Test.expect (score 0.0 0.0 === 10)
+
+darts.test.ex6 = let
+	Test.label "Near the centre" <| Test.expect (score -0.1 -0.1 === 10)
+
+darts.test.ex7 = let
+	Test.label "Just within the inner circle" <| Test.expect (score 0.7 0.7 === 10)
+
+darts.test.ex8 = let
+	Test.label "Just outside the inner circle" <| Test.expect (score 0.8 -0.8 === 5)
+
+darts.test.ex9 = let
+	Test.label "Just within the middle circle" <| Test.expect (score -3.5 3.5 === 5)
+
+darts.test.ex10 = let
+	Test.label "Just outside the middle circle" <| Test.expect (score -3.6 -3.6 === 1)
+
+darts.test.ex11 = let
+	Test.label "Just within the outer circle" <| Test.expect (score -7.0 7.0 === 1)
+
+darts.test.ex12 = let
+	Test.label "Just outside the outer circle" <| Test.expect (score 7.1 -7.1 === 0)
+
+darts.test.ex13 = let
+	Test.label "Asymmetric position between the inner and middle circles" <| Test.expect (score 0.5 -4.0 === 5)
+
+test> darts.tests = runAll [
+	darts.test.ex1,
+	darts.test.ex2,
+	darts.test.ex3,
+	darts.test.ex4,
+	darts.test.ex5,
+	darts.test.ex6,
+	darts.test.ex7,
+	darts.test.ex8,
+	darts.test.ex9,
+	darts.test.ex10,
+	darts.test.ex11,
+	darts.test.ex12,
+	darts.test.ex13
+]
