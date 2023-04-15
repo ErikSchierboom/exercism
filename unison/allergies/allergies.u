@@ -3,9 +3,10 @@ allergens = ["eggs", "peanuts", "shellfish", "strawberries", "tomatoes", "chocol
 
 allergies.allergicTo : Text -> Nat -> Boolean
 allergies.allergicTo allergen score =
-  match List.indexOf [allergen] allergens with
-    Some idx -> isSetBit idx score
-    None -> false
+  allergens
+    |> indexOf allergen
+    |> map (idx -> isSetBit idx score)
+    |> getOrElse false
 
 allergies.list : Nat -> [Text]
-allergies.list score = List.filter (allergen -> allergicTo allergen score) allergens
+allergies.list score = filter (allergen -> allergicTo allergen score) allergens
