@@ -2,6 +2,9 @@ unique type majorityElement.Color = Red | Orange | Yellow | Green | Blue | Purpl
 
 majorityElement.majorityFinder : [a] -> Optional a
 majorityElement.majorityFinder elements =
-  counts = groupMapReduce id (_ -> 1) (+) elements |> Map.toList
-  majorityLimit = (size elements) / 2 + 1
-  find (pair -> at2(pair) >= majorityLimit) counts |> Optional.map at1
+  elements
+    |> Bag.fromList
+    |> Bag.occurrenceList
+    |> findMap (cases (e, count) | count * 2 > size elements -> Some e
+                      _ -> None)
+
