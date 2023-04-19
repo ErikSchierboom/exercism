@@ -1,0 +1,29 @@
+use majorityElement.Color
+
+majorityElement.test.ex1 = let
+  Test.label "should find the simple majority in a list" <| Test.expect (majorityFinder [Red, Blue, Red, Red, Yellow] === (Some Red))
+
+majorityElement.test.ex2 = let
+  Test.label "should not return value if no majority exists" <| Test.expect (majorityFinder [Red, Blue, Green, Yellow] === None)
+
+majorityElement.test.ex3 = let
+  Test.label "should not return value if most common element is exactly n/2" <| Test.expect (majorityFinder [Red, Blue, Red, Green, Red, Yellow] === None)
+
+majorityElement.test.ex4 = let
+  Test.label "should not return value if 50/50 split" <| Test.expect (majorityFinder [Red, Red, Blue, Blue, Red, Blue] === None)
+
+majorityElement.test.ex5 = let
+  Test.label "should handle empty list case" <| Test.expect (majorityFinder [] === None)
+
+majorityElement.test.ex6 _ = let
+  all =  [Red, Orange, Yellow, Green, Blue]
+  selection = !(gen.oneOf all)
+  fillN = !(gen.natIn 0 (List.size all))
+  mostCommonElems = List.fill fillN selection
+  testList = all List.++ mostCommonElems
+  -- fill + 1 because the element exists in the original list one time
+  expected = if ((fillN + 1) > ((List.size testList) / 2) ) then Some selection else None
+
+  Test.label "should handle wide distribution of inputs" <| Test.expect (majorityFinder testList === expected)
+
+test> majorityElement.tests = Test.run ex1 ++ Test.run ex2 ++ Test.run ex3 ++ Test.run ex4 ++  Test.run ex5  ++ (runs 20 ex6)

@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "rlmark"
+  ],
+  "files": {
+    "solution": [
+      "majorityElement.u"
+    ],
+    "test": [
+      "majorityElement.test.u"
+    ],
+    "example": [
+      ".meta/examples/majorityElement.example.u"
+    ]
+  },
+  "blurb": "Find the color of candy in a bag which represents the majority element",
+  "source": "Boyer Moore Majority Vote Algorithm",
+  "source_url": "https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_majority_vote_algorithm"
+}
