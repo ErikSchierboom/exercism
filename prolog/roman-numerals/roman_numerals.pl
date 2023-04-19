@@ -1,5 +1,3 @@
-:- use_module(library(clpfd)).
-
 roman_numeral("M", 1000).
 roman_numeral("CM", 900).
 roman_numeral("D",  500).
@@ -15,7 +13,7 @@ roman_numeral("IV",   4).
 roman_numeral("I",    1).
 
 roman(0) --> "".
-roman(N) --> { roman_numeral(Roman, Value), N #>= Value }, Roman, { N1 #= N - Value }, roman(N1).
+roman(N) --> { roman_numeral(Roman, Value), N >= Value }, Roman, { N1 is N - Value }, roman(N1).
 
 convert(N, Numeral) :-
     phrase(roman(N), Numerals),
