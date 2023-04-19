@@ -1,0 +1,4 @@
+leap.leap : Nat -> Boolean
+leap.leap year =
+  divisibleBy n = mod year n == 0
+  divisibleBy 4 && not (divisibleBy 100) || divisibleBy 400
