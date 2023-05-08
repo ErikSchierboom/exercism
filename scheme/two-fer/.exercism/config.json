@@ -1,0 +1,24 @@
+{
+  "authors": [
+    "herwinw"
+  ],
+  "contributors": [
+    "benreyn",
+    "guygastineau",
+    "jitwit"
+  ],
+  "files": {
+    "solution": [
+      "two-fer.scm"
+    ],
+    "test": [
+      "test.scm",
+      "test-util.ss"
+    ],
+    "example": [
+      ".meta/example.scm"
+    ]
+  },
+  "blurb": "Create a sentence of the form \"One for X, one for me.\"",
+  "source_url": "https://github.com/exercism/problem-specifications/issues/757"
+}
