@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "erikschierboom"
+  ],
+  "files": {
+    "solution": [
+      "floored.pl"
+    ],
+    "test": [
+      "floored_tests.plt"
+    ],
+    "example": [
+      ".meta/floored.example.pl"
+    ]
+  },
+  "blurb": "Find out who lives on what floor"
+}
