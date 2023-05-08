@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "erikschierboom"
+  ],
+  "files": {
+    "solution": [
+      "acronym.pl"
+    ],
+    "test": [
+      "acronym_tests.plt"
+    ],
+    "example": [
+      ".meta/acronym.example.pl"
+    ]
+  },
+  "blurb": "Convert a long phrase to its acronym.",
+  "source": "Julien Vanier",
+  "source_url": "https://github.com/monkbroc"
+}
