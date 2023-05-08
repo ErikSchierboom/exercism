@@ -1,0 +1,102 @@
+bob.test.ex1 = let
+  Test.label "Stating something" <| Test.expect (response "Tom-ay-to, tom-aaaah-to." === "Whatever.")
+
+bob.test.ex2 = let
+  Test.label "Shouting" <| Test.expect (response "WATCH OUT!" === "Whoa, chill out!")
+
+bob.test.ex3 = let
+  Test.label "Shouting gibberish" <| Test.expect (response "FCECDFCAAB" === "Whoa, chill out!")
+
+bob.test.ex4 = let
+  Test.label "Asking a question" <| Test.expect (response "Does this cryogenic chamber make me look fat?" === "Sure.")
+
+bob.test.ex5 = let
+  Test.label "Asking a numeric question" <| Test.expect (response "You are, what, like 15?" === "Sure.")
+
+bob.test.ex6 = let
+  Test.label "Asking gibberish" <| Test.expect (response "fffbbcbeab?" === "Sure.")
+
+bob.test.ex7 = let
+  Test.label "Talking forcefully" <| Test.expect (response "Hi there!" === "Whatever.")
+
+bob.test.ex8 = let
+  Test.label "Using acronyms in regular speech" <| Test.expect (response "It's OK if you don't want to go work for NASA." === "Whatever.")
+
+bob.test.ex9 = let
+  Test.label "Forceful question" <| Test.expect (response "WHAT'S GOING ON?" === "Calm down, I know what I'm doing!")
+
+bob.test.ex10 = let
+  Test.label "Shouting numbers" <| Test.expect (response "1, 2, 3 GO!" === "Whoa, chill out!")
+
+bob.test.ex11 = let
+  Test.label "No letters" <| Test.expect (response "1, 2, 3" === "Whatever.")
+
+bob.test.ex12 = let
+  Test.label "Question with no letters" <| Test.expect (response "4?" === "Sure.")
+
+bob.test.ex13 = let
+  Test.label "Shouting with special characters" <| Test.expect (response "ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!" === "Whoa, chill out!")
+
+bob.test.ex14 = let
+  Test.label "Shouting with no exclamation mark" <| Test.expect (response "I HATE THE DENTIST" === "Whoa, chill out!")
+
+bob.test.ex15 = let
+  Test.label "Statement containing question mark" <| Test.expect (response "Ending with ? means a question." === "Whatever.")
+
+bob.test.ex16 = let
+  Test.label "Non-letters with question" <| Test.expect (response ":) ?" === "Sure.")
+
+bob.test.ex17 = let
+  Test.label "Prattling on" <| Test.expect (response "Wait! Hang on. Are you going to be OK?" === "Sure.")
+
+bob.test.ex18 = let
+  Test.label "Silence" <| Test.expect (response "" === "Fine. Be that way!")
+
+bob.test.ex19 = let
+  Test.label "Prolonged silence" <| Test.expect (response "          " === "Fine. Be that way!")
+
+bob.test.ex20 = let
+  Test.label "Alternate silence" <| Test.expect (response "\t\t\t\t\t\t\t\t\t\t" === "Fine. Be that way!")
+
+bob.test.ex21 = let
+  Test.label "Multiple line question" <| Test.expect (response "\nDoes this cryogenic chamber make me look fat?\nNo." === "Whatever.")
+
+bob.test.ex22 = let
+  Test.label "Starting with whitespace" <| Test.expect (response "         hmmmmmmm..." === "Whatever.")
+
+bob.test.ex23 = let
+  Test.label "Ending with whitespace" <| Test.expect (response "Okay if like my  spacebar  quite a bit?   " === "Sure.")
+
+bob.test.ex24 = let
+  Test.label "Other whitespace" <| Test.expect (response "\n\r \t" === "Fine. Be that way!")
+
+bob.test.ex25 = let
+  Test.label "Non-question ending with whitespace" <| Test.expect (response "This is a statement ending with whitespace      " === "Whatever.")
+
+test> bob.tests = runAll [
+  bob.test.ex1,
+  bob.test.ex2,
+  bob.test.ex3,
+  bob.test.ex4,
+  bob.test.ex5,
+  bob.test.ex6,
+  bob.test.ex7,
+  bob.test.ex8,
+  bob.test.ex9,
+  bob.test.ex10,
+  bob.test.ex11,
+  bob.test.ex12,
+  bob.test.ex13,
+  bob.test.ex14,
+  bob.test.ex15,
+  bob.test.ex16,
+  bob.test.ex17,
+  bob.test.ex18,
+  bob.test.ex19,
+  bob.test.ex20,
+  bob.test.ex21,
+  bob.test.ex22,
+  bob.test.ex23,
+  bob.test.ex24,
+  bob.test.ex25
+]

@@ -1,0 +1,17 @@
+bob.question : Text -> Boolean
+bob.question sentence = sentence |> trim |> endsWith "?"
+
+bob.shout : Text -> Boolean
+bob.shout sentence = sentence == toUppercase sentence && (sentence != toLowercase sentence)
+
+bob.silence : Text -> Boolean
+bob.silence sentence = sentence |> trim |> isEmpty
+
+bob.response : Text -> Text
+bob.response = cases
+  sentence
+    | silence sentence -> "Fine. Be that way!"
+    | shout sentence && question sentence -> "Calm down, I know what I'm doing!"
+    | shout sentence -> "Whoa, chill out!"
+    | question sentence -> "Sure."
+    | otherwise -> "Whatever."
