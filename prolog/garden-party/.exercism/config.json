@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "erikschierboom"
+  ],
+  "files": {
+    "solution": [
+      "garden_party.pl"
+    ],
+    "test": [
+      "garden_party_tests.plt"
+    ],
+    "example": [
+      ".meta/garden_party.example.pl"
+    ]
+  },
+  "blurb": "Figure out who brought what dish and what beverage to a garden party"
+}
