@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "erikschierboom"
+  ],
+  "files": {
+    "solution": [
+      "cheryls_birthday.pl"
+    ],
+    "test": [
+      "cheryls_birthday_tests.plt"
+    ],
+    "example": [
+      ".meta/cheryls_birthday.example.pl"
+    ]
+  },
+  "blurb": "Figure out Cheryl's Birthday",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Cheryl%27s_Birthday"
+}
