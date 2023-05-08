@@ -1,0 +1,21 @@
+romanNumerals.toRoman : Nat -> Text
+romanNumerals.toRoman decimal = 
+  inner : Nat -> Text -> Text
+  inner remainder numeral = match remainder with 
+    n  
+      | n >= 1000 -> inner (remainder - 1000) (numeral ++ "M") 
+      | n >=  900 -> inner (remainder -  900) (numeral ++ "CM") 
+      | n >=  500 -> inner (remainder -  500) (numeral ++ "D") 
+      | n >=  400 -> inner (remainder -  400) (numeral ++ "CD") 
+      | n >=  100 -> inner (remainder -  100) (numeral ++ "C")
+      | n >=   90 -> inner (remainder -   90) (numeral ++ "XC")
+      | n >=   50 -> inner (remainder -   50) (numeral ++ "L")
+      | n >=   40 -> inner (remainder -   40) (numeral ++ "XL")
+      | n >=   10 -> inner (remainder -   10) (numeral ++ "X")
+      | n >=    9 -> inner (remainder -    9) (numeral ++ "IX")
+      | n >=    5 -> inner (remainder -    5) (numeral ++ "V")
+      | n >=    4 -> inner (remainder -    4) (numeral ++ "IV")
+      | n >=    1 -> inner (remainder -    1) (numeral ++ "I")
+      | otherwise -> numeral
+
+  inner decimal  ""

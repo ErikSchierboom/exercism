@@ -1,0 +1,106 @@
+romanNumerals.test.ex1 = let
+  Test.label "1 is I" <| Test.expect (toRoman 1 === "I")
+
+romanNumerals.test.ex2 = let
+  Test.label "2 is II" <| Test.expect (toRoman 2 === "II")
+
+romanNumerals.test.ex3 = let
+  Test.label "3 is III" <| Test.expect (toRoman 3 === "III")
+
+romanNumerals.test.ex4 = let
+  Test.label "4 is IV" <| Test.expect (toRoman 4 === "IV")
+
+romanNumerals.test.ex5 = let
+  Test.label "5 is V" <| Test.expect (toRoman 5 === "V")
+
+romanNumerals.test.ex6 = let
+  Test.label "6 is VI" <| Test.expect (toRoman 6 === "VI")
+
+romanNumerals.test.ex7 = let
+  Test.label "9 is IX" <| Test.expect (toRoman 9 === "IX")
+
+romanNumerals.test.ex8 = let
+  Test.label "27 is XXVII" <| Test.expect (toRoman 27 === "XXVII")
+
+romanNumerals.test.ex9 = let
+  Test.label "48 is XLVIII" <| Test.expect (toRoman 48 === "XLVIII")
+
+romanNumerals.test.ex10 = let
+  Test.label "49 is XLIX" <| Test.expect (toRoman 49 === "XLIX")
+
+romanNumerals.test.ex11 = let
+  Test.label "59 is LIX" <| Test.expect (toRoman 59 === "LIX")
+
+romanNumerals.test.ex12 = let
+  Test.label "93 is XCIII" <| Test.expect (toRoman 93 === "XCIII")
+
+romanNumerals.test.ex13 = let
+  Test.label "141 is CXLI" <| Test.expect (toRoman 141 === "CXLI")
+
+romanNumerals.test.ex14 = let
+  Test.label "163 is CLXIII" <| Test.expect (toRoman 163 === "CLXIII")
+
+romanNumerals.test.ex15 = let
+  Test.label "402 is CDII" <| Test.expect (toRoman 402 === "CDII")
+
+romanNumerals.test.ex16 = let
+  Test.label "575 is DLXXV" <| Test.expect (toRoman 575 === "DLXXV")
+
+romanNumerals.test.ex17 = let
+  Test.label "911 is CMXI" <| Test.expect (toRoman 911 === "CMXI")
+
+romanNumerals.test.ex18 = let
+  Test.label "1024 is MXXIV" <| Test.expect (toRoman 1024 === "MXXIV")
+
+romanNumerals.test.ex19 = let
+  Test.label "3000 is MMM" <| Test.expect (toRoman 3000 === "MMM")
+
+romanNumerals.test.ex20 = let
+  Test.label "16 is XVI" <| Test.expect (toRoman 16 === "XVI")
+
+romanNumerals.test.ex21 = let
+  Test.label "66 is LXVI" <| Test.expect (toRoman 66 === "LXVI")
+
+romanNumerals.test.ex22 = let
+  Test.label "166 is CLXVI" <| Test.expect (toRoman 166 === "CLXVI")
+
+romanNumerals.test.ex23 = let
+  Test.label "666 is DCLXVI" <| Test.expect (toRoman 666 === "DCLXVI")
+
+romanNumerals.test.ex24 = let
+  Test.label "1666 is MDCLXVI" <| Test.expect (toRoman 1666 === "MDCLXVI")
+
+romanNumerals.test.ex25 = let
+  Test.label "3001 is MMMI" <| Test.expect (toRoman 3001 === "MMMI")
+
+romanNumerals.test.ex26 = let
+  Test.label "3999 is MMMCMXCIX" <| Test.expect (toRoman 3999 === "MMMCMXCIX")
+
+test> romanNumerals.tests = runAll [
+  romanNumerals.test.ex1,
+  romanNumerals.test.ex2,
+  romanNumerals.test.ex3,
+  romanNumerals.test.ex4,
+  romanNumerals.test.ex5,
+  romanNumerals.test.ex6,
+  romanNumerals.test.ex7,
+  romanNumerals.test.ex8,
+  romanNumerals.test.ex9,
+  romanNumerals.test.ex10,
+  romanNumerals.test.ex11,
+  romanNumerals.test.ex12,
+  romanNumerals.test.ex13,
+  romanNumerals.test.ex14,
+  romanNumerals.test.ex15,
+  romanNumerals.test.ex16,
+  romanNumerals.test.ex17,
+  romanNumerals.test.ex18,
+  romanNumerals.test.ex19,
+  romanNumerals.test.ex20,
+  romanNumerals.test.ex21,
+  romanNumerals.test.ex22,
+  romanNumerals.test.ex23,
+  romanNumerals.test.ex24,
+  romanNumerals.test.ex26,
+  romanNumerals.test.ex25
+]
