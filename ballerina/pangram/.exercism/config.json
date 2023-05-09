@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "erikschierboom"
+  ],
+  "files": {
+    "solution": [
+      "pangram.bal"
+    ],
+    "test": [
+      "tests/pangram_test.bal"
+    ],
+    "example": [
+      ".meta/reference/pangram.bal"
+    ]
+  },
+  "blurb": "Determine if a sentence is a pangram.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Pangram"
+}
