@@ -1,0 +1,25 @@
+{
+  "authors": [],
+  "contributors": [
+    "vordimous",
+    "kasun04",
+    "ldclakmal",
+    "Manuri",
+    "son1112",
+    "vinok88"
+  ],
+  "files": {
+    "solution": [
+      "hello_world.bal"
+    ],
+    "test": [
+      "tests/hello_world_test.bal"
+    ],
+    "example": [
+      ".meta/reference/hello_world.bal"
+    ]
+  },
+  "blurb": "The classical introductory exercise. Just say \"Hello, World!\".",
+  "source": "This is an exercise to introduce user to the Ballerina",
+  "source_url": "https://ballerina.io/learn/by-example/hello-world/"
+}
