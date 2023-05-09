@@ -1,0 +1,38 @@
+differenceOfSquares.test.ex1 = let
+  Test.label "Square of sum 1" <| Test.expect (squareOfSum 1 === 1)
+
+differenceOfSquares.test.ex2 = let
+  Test.label "Square of sum 5" <| Test.expect (squareOfSum 5 === 225)
+
+differenceOfSquares.test.ex3 = let
+  Test.label "Square of sum 100" <| Test.expect (squareOfSum 100 === 25502500)
+
+differenceOfSquares.test.ex4 = let
+  Test.label "Sum of squares 1" <| Test.expect (sumOfSquares 1 === 1)
+
+differenceOfSquares.test.ex5 = let
+  Test.label "Sum of squares 5" <| Test.expect (sumOfSquares 5 === 55)
+
+differenceOfSquares.test.ex6 = let
+  Test.label "Sum of squares 100" <| Test.expect (sumOfSquares 100 === 338350)
+
+differenceOfSquares.test.ex7 = let
+  Test.label "Difference of squares 1" <| Test.expect (difference 1 === 0)
+
+differenceOfSquares.test.ex8 = let
+  Test.label "Difference of squares 5" <| Test.expect (difference 5 === 170)
+
+differenceOfSquares.test.ex9 = let
+  Test.label "Difference of squares 100" <| Test.expect (difference 100 === 25164150)
+
+test> differenceOfSquares.tests = runAll [
+  differenceOfSquares.test.ex1,
+  differenceOfSquares.test.ex2,
+  differenceOfSquares.test.ex3,
+  differenceOfSquares.test.ex4,
+  differenceOfSquares.test.ex5,
+  differenceOfSquares.test.ex6,
+  differenceOfSquares.test.ex7,
+  differenceOfSquares.test.ex8,
+  differenceOfSquares.test.ex9
+]

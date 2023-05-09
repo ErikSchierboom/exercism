@@ -1,0 +1,14 @@
+differenceOfSquares.square : Nat -> Nat
+differenceOfSquares.square n = n * n
+
+differenceOfSquares.squareOfSum : Nat -> Nat
+differenceOfSquares.squareOfSum number =
+  List.rangeClosed 1 number |> sum |> square
+
+differenceOfSquares.sumOfSquares : Nat -> Nat
+differenceOfSquares.sumOfSquares number =
+  List.rangeClosed 1 number |> List.map square |> sum
+
+differenceOfSquares.difference : Nat -> Nat
+differenceOfSquares.difference number =
+  squareOfSum number - sumOfSquares number
