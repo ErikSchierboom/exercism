@@ -1,0 +1,23 @@
+{
+  "blurb": "The classical introductory exercise. Just say \"Hello, World!\"",
+  "authors": [
+    "sentientmonkey"
+  ],
+  "contributors": [
+    "kotp",
+    "pclausen"
+  ],
+  "files": {
+    "solution": [
+      "hello_world.f90"
+    ],
+    "test": [
+      "hello_world_test.f90"
+    ],
+    "example": [
+      ".meta/example.f90"
+    ]
+  },
+  "source": "This is an exercise to introduce users to using Exercism",
+  "source_url": "http://en.wikipedia.org/wiki/%22Hello,_world!%22_program"
+}
