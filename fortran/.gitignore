@@ -1,0 +1,5 @@
+*/*
+!*.f90
+!.exercism/
+!*.md
+!CMakeLists.txt
