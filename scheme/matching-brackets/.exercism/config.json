@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "jitwit"
+  ],
+  "files": {
+    "solution": [
+      "matching-brackets.scm"
+    ],
+    "test": [
+      "test.scm",
+      "test-util.ss"
+    ],
+    "example": [
+      ".meta/example.scm"
+    ]
+  },
+  "blurb": "Make sure the brackets and braces all match.",
+  "source": "Ginna Baker"
+}
