@@ -1,0 +1,20 @@
+{
+    "blurb": "Given a year, report if it is a leap year.",
+    "source": "JavaRanch Cattle Drive, exercise 3",
+    "source_url": "http://www.javaranch.com/leap.jsp",
+    "authors": [
+        "hiljusti"
+    ],
+    "files": {
+        "solution": [
+            "leap.f90"
+        ],
+        "test": [
+            "leap_test.f90"
+        ],
+        "example": [
+            ".meta/example.f90"
+        ]
+    }
+}
+
