@@ -1,0 +1,23 @@
+{
+  "authors": [
+    "axtens"
+  ],
+  "files": {
+    "solution": [
+      "src/leap.cob"
+    ],
+    "test": [
+      "tst/leap/leap.cut"
+    ],
+    "example": [
+      ".meta/proof.ci.cob"
+    ],
+    "invalidator": [
+      "test.sh",
+      "test.ps1"
+    ]
+  },
+  "blurb": "Given a year, report if it is a leap year.",
+  "source": "CodeRanch Cattle Drive, Assignment 3",
+  "source_url": "https://coderanch.com/t/718816/Leap"
+}

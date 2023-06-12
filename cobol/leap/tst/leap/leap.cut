@@ -1,0 +1,44 @@
+TestCase "year not divisible by 4 in common year"
+	MOVE 2015 TO WS-YEAR
+	PERFORM LEAP
+	EXPECT WS-RESULT = 0
+
+TestCase "year divisible by 2, not divisible by 4 in common year"
+	MOVE 1970 TO WS-YEAR
+	PERFORM LEAP
+	EXPECT WS-RESULT = 0
+
+TestCase "year divisible by 4, not divisible by 100 in leap year"
+	MOVE 1996 TO WS-YEAR
+	PERFORM LEAP
+	EXPECT WS-RESULT = 1
+
+TestCase "year divisible by 4 and 5 is still a leap year"
+	MOVE 1960 TO WS-YEAR
+	PERFORM LEAP
+	EXPECT WS-RESULT = 1
+
+TestCase "year divisible by 100, not divisible by 400 in common year"
+	MOVE 2100 TO WS-YEAR
+	PERFORM LEAP
+	EXPECT WS-RESULT = 0
+
+TestCase "year divisible by 100 but not by 3 is still not a leap year"
+	MOVE 1900 TO WS-YEAR
+	PERFORM LEAP
+	EXPECT WS-RESULT = 0
+
+TestCase "year divisible by 400 is leap year"
+	MOVE 2000 TO WS-YEAR
+	PERFORM LEAP
+	EXPECT WS-RESULT = 1
+
+TestCase "year divisible by 400 but not by 125 is still a leap year"
+	MOVE 2400 TO WS-YEAR
+	PERFORM LEAP
+	EXPECT WS-RESULT = 1
+
+TestCase "year divisible by 200, not divisible by 400 in common year"
+	MOVE 1800 TO WS-YEAR
+	PERFORM LEAP
+	EXPECT WS-RESULT = 0
