@@ -1,0 +1,63 @@
+#!/usr/bin/env bash
+
+# This file is inspired by https://github.com/exercism/configlet/blob/main/scripts/fetch-configlet.
+# It is only used in the cobol track, and a copy of it is placed in every exercise folder.
+# If you change something, make sure to upgrade all scripts in all exercises!
+
+set -eo pipefail
+
+readonly LATEST='https://api.github.com/repos/0xE282B0/cobol-check/releases/latest'
+
+case "$(uname)" in
+  Darwin*)   os='mac'     ;;
+  Linux*)    os='linux'   ;;
+  Windows*)  os='windows' ;;
+  MINGW*)    os='windows' ;;
+  MSYS_NT-*) os='windows' ;;
+  *)         os='linux'   ;;
+esac
+
+case "${os}" in
+  windows*) ext='.exe' ;;
+  *)        ext='' ;;
+esac
+
+arch="$(uname -m)"
+
+curlopts=(
+  --silent
+  --show-error
+  --fail
+  --location
+  --retry 3
+)
+
+if [[ -n "${GITHUB_TOKEN}" ]]; then
+  curlopts+=(--header "authorization: Bearer ${GITHUB_TOKEN}")
+fi
+
+suffix="${os}-${arch}${ext}"
+
+get_download_url() {
+  curl "${curlopts[@]}" --header 'Accept: application/vnd.github.v3+json' "${LATEST}" |
+    grep "\"browser_download_url\": \".*/download/.*/cobol-check.*${suffix}\"$" |
+    cut -d'"' -f4
+}
+
+main() {
+  if [[ -d ./bin ]]; then
+    output_dir="./bin"
+  elif [[ $PWD == */bin ]]; then
+    output_dir="$PWD"
+  else
+    echo "Error: no ./bin directory found. This script should be ran from a repo root." >&2
+    return 1
+  fi
+
+  output_path="${output_dir}/cobolcheck${ext}"
+  download_url="$(get_download_url)"
+  curl "${curlopts[@]}" --output "${output_path}" "${download_url}"
+  chmod +x "${output_path}"
+}
+
+main
