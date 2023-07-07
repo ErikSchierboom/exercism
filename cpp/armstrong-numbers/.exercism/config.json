@@ -1,0 +1,26 @@
+{
+  "authors": [
+    "marvelou-s"
+  ],
+  "contributors": [
+    "elyashiv",
+    "KevinWMatthews",
+    "patricksjackson"
+  ],
+  "files": {
+    "solution": [
+      "armstrong_numbers.cpp",
+      "armstrong_numbers.h"
+    ],
+    "test": [
+      "armstrong_numbers_test.cpp"
+    ],
+    "example": [
+      ".meta/example.cpp",
+      ".meta/example.h"
+    ]
+  },
+  "blurb": "Determine if a number is an Armstrong number",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Narcissistic_number"
+}
