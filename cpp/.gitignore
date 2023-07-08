@@ -4,5 +4,6 @@
 !*.md
 !*.cpp
 !*.hpp
+!*.h
 !Makefile
 !CMakeLists.txt
