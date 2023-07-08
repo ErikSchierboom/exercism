@@ -1,5 +1,6 @@
 // Trick to let the code compile, even if the function has not been implemented:
-namespace estate_executor {
+namespace estate_executor
+{
     int assemble_account_number(int) __attribute__((weak));
     int assemble_code() __attribute__((weak));
 }
@@ -13,7 +14,8 @@ namespace estate_executor {
 
 using namespace std;
 
-TEST_CASE("Family secrets have not been altered") {
+TEST_CASE("Family secrets have not been altered")
+{
     REQUIRE(zhang::bank_number_part(1) == 8541);
     REQUIRE(zhang::bank_number_part(3) == 8541 * 3 % 10'000);
     REQUIRE(khan::bank_number_part(1) == 4142);
@@ -30,13 +32,13 @@ TEST_CASE("Family secrets have not been altered") {
     REQUIRE(garcia::blue::code_fragment() == 923);
 }
 
-TEST_CASE("Account number assembly function exists in correct namespace") {
+TEST_CASE("Account number assembly function exists in correct namespace")
+{
     REQUIRE_NOTHROW(estate_executor::assemble_account_number(0));
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
-
-TEST_CASE("Account number assembly works correctly") {
+TEST_CASE("Account number assembly works correctly")
+{
     int account_with_secret_1{16706};
     int account_with_secret_23{14238};
 
@@ -44,14 +46,14 @@ TEST_CASE("Account number assembly works correctly") {
     REQUIRE(estate_executor::assemble_account_number(23) == account_with_secret_23);
 }
 
-TEST_CASE("Code fragment number assembly function exists in correct namespace") {
+TEST_CASE("Code fragment number assembly function exists in correct namespace")
+{
     REQUIRE_NOTHROW(estate_executor::assemble_code());
 }
 
-TEST_CASE("Code fragments fit correctly") {
+TEST_CASE("Code fragments fit correctly")
+{
     int final_code{1925550};
 
     REQUIRE(estate_executor::assemble_code() == final_code);
 }
-
-#endif
