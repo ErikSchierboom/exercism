@@ -1,0 +1,21 @@
+{
+  "authors": [
+    "silvanocerza",
+    "vaeng"
+  ],
+  "files": {
+    "solution": [
+      "log_levels.cpp"
+    ],
+    "test": [
+      "log_levels_test.cpp"
+    ],
+    "exemplar": [
+      ".meta/exemplar.cpp"
+    ]
+  },
+  "forked_from": [
+    "csharp/log-levels"
+  ],
+  "blurb": "Learn about strings by parsing logs."
+}
