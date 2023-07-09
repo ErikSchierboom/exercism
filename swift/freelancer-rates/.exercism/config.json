@@ -1,0 +1,21 @@
+{
+  "authors": [
+    "wneumann"
+  ],
+  "files": {
+    "solution": [
+      "Sources/FreelancerRates/FreelancerRates.swift"
+    ],
+    "test": [
+      "Tests/FreelancerRatesTests/FreelancerRatesTests.swift"
+    ],
+    "exemplar": [
+      ".meta/Sources/FreelancerRates/FreelancerRatesExemplar.swift"
+    ]
+  },
+  "language_versions": ">=5.0",
+  "forked_from": [
+    "javascript/freelancer-rates"
+  ],
+  "blurb": "Learn about numbers whilst helping a freelancer communicate with a project manager about day- and month rates."
+}
