@@ -3,7 +3,7 @@ func rotate(_ plaintext: String, ROT rotateBy: Int) -> String {
     let upperMap = rotateMap(of: "ABCDEFGHIJKLMNOPQRSTUVWXYZ", by: rotateBy)
     let charMap = lowerMap.merging(upperMap) { (first, _) in first }
     
-    return String(plaintext.map { charMap[$0] ?? $0 })
+    return String(plaintext.map { char in charMap[char, default: char] })
 }
 
 func rotateMap(of input: String, by rotateBy: Int) -> [Character: Character] {
