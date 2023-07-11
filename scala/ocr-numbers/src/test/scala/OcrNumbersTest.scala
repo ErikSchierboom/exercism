@@ -11,7 +11,6 @@ class OcrNumbersTest extends FunSuite with Matchers {
   }
 
   test("Recognizes 1") {
-    pending
     OcrNumbers.convert(List("   ",
                             "  |",
                             "  |",
@@ -19,7 +18,6 @@ class OcrNumbersTest extends FunSuite with Matchers {
   }
 
   test("Unreadable but correctly sized inputs return ?") {
-    pending
     OcrNumbers.convert(List("   ",
                             "  _",
                             "  |",
@@ -28,7 +26,6 @@ class OcrNumbersTest extends FunSuite with Matchers {
 
   test(
     "Input with a number of lines that is not a multiple of four raises an error") {
-    pending
     OcrNumbers.convert(List(" _ ",
                             "| |",
                             "   ")) should be("?")
@@ -36,7 +33,6 @@ class OcrNumbersTest extends FunSuite with Matchers {
 
   test(
     "Input with a number of columns that is not a multiple of three raises an error") {
-    pending
     OcrNumbers.convert(List("    ",
                             "   |",
                             "   |",
@@ -44,7 +40,6 @@ class OcrNumbersTest extends FunSuite with Matchers {
   }
 
   test("Recognizes 110101100") {
-    pending
     OcrNumbers.convert(
       List("       _     _        _  _ ",
            "  |  || |  || |  |  || || |",
@@ -53,7 +48,6 @@ class OcrNumbersTest extends FunSuite with Matchers {
   }
 
   test("Garbled numbers in a string are replaced with ?") {
-    pending
     OcrNumbers.convert(
       List("       _     _           _ ",
            "  |  || |  || |     || || |",
@@ -62,7 +56,6 @@ class OcrNumbersTest extends FunSuite with Matchers {
   }
 
   test("Recognizes 2") {
-    pending
     OcrNumbers.convert(List(" _ ",
                             " _|",
                             "|_ ",
@@ -70,7 +63,6 @@ class OcrNumbersTest extends FunSuite with Matchers {
   }
 
   test("Recognizes 3") {
-    pending
     OcrNumbers.convert(List(" _ ",
                             " _|",
                             " _|",
@@ -78,7 +70,6 @@ class OcrNumbersTest extends FunSuite with Matchers {
   }
 
   test("Recognizes 4") {
-    pending
     OcrNumbers.convert(List("   ",
                             "|_|",
                             "  |",
@@ -86,7 +77,6 @@ class OcrNumbersTest extends FunSuite with Matchers {
   }
 
   test("Recognizes 5") {
-    pending
     OcrNumbers.convert(List(" _ ",
                             "|_ ",
                             " _|",
@@ -94,7 +84,6 @@ class OcrNumbersTest extends FunSuite with Matchers {
   }
 
   test("Recognizes 6") {
-    pending
     OcrNumbers.convert(List(" _ ",
                             "|_ ",
                             "|_|",
@@ -102,7 +91,6 @@ class OcrNumbersTest extends FunSuite with Matchers {
   }
 
   test("Recognizes 7") {
-    pending
     OcrNumbers.convert(List(" _ ",
                             "  |",
                             "  |",
@@ -110,7 +98,6 @@ class OcrNumbersTest extends FunSuite with Matchers {
   }
 
   test("Recognizes 8") {
-    pending
     OcrNumbers.convert(List(" _ ",
                             "|_|",
                             "|_|",
@@ -118,7 +105,6 @@ class OcrNumbersTest extends FunSuite with Matchers {
   }
 
   test("Recognizes 9") {
-    pending
     OcrNumbers.convert(List(" _ ",
                             "|_|",
                             " _|",
@@ -126,7 +112,6 @@ class OcrNumbersTest extends FunSuite with Matchers {
   }
 
   test("Recognizes string of decimal numbers") {
-    pending
     OcrNumbers.convert(
       List("    _  _     _  _  _  _  _  _ ",
            "  | _| _||_||_ |_   ||_||_|| |",
@@ -136,7 +121,6 @@ class OcrNumbersTest extends FunSuite with Matchers {
 
   test(
     "Numbers separated by empty lines are recognized. Lines are joined by commas.") {
-    pending
     OcrNumbers.convert(
       List("    _  _ ",
            "  | _| _|",

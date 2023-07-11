@@ -18,23 +18,19 @@ class ConnectTest extends FunSuite with Matchers {
   }
 
   test("X can win on a 1x1 board") {
-    pending
     Connect(mkBoard(List("X"))).winner should be(Some(Color.Black))
   }
 
   test("O can win on a 1x1 board") {
-    pending
     Connect(mkBoard(List("O"))).winner should be(Some(Color.White))
   }
 
   test("only edges does not make a winner") {
-    pending
     Connect(mkBoard(List("O O O X", " X . . X", "  X . . X", "   X O O O"))).winner should be(
       None)
   }
 
   test("illegal diagonal does not make a winner") {
-    pending
     Connect(
       mkBoard(List("X O . .",
                    " O X X X",
@@ -44,7 +40,6 @@ class ConnectTest extends FunSuite with Matchers {
   }
 
   test("nobody wins crossing adjacent angles") {
-    pending
     Connect(
       mkBoard(List("X . . .",
                    " . X O .",
@@ -54,7 +49,6 @@ class ConnectTest extends FunSuite with Matchers {
   }
 
   test("X wins crossing from left to right") {
-    pending
     Connect(
       mkBoard(List(". O . .",
                    " O X X X",
@@ -64,7 +58,6 @@ class ConnectTest extends FunSuite with Matchers {
   }
 
   test("O wins crossing from top to bottom") {
-    pending
     Connect(
       mkBoard(List(". O . .",
                    " O X X X",
@@ -74,7 +67,6 @@ class ConnectTest extends FunSuite with Matchers {
   }
 
   test("X wins using a convoluted path") {
-    pending
     Connect(
       mkBoard(
         List(". X X . .",
@@ -85,7 +77,6 @@ class ConnectTest extends FunSuite with Matchers {
   }
 
   test("X wins using a spiral path") {
-    pending
     Connect(
       mkBoard(List(
         "O X X X X X X X X",

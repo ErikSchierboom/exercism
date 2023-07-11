@@ -10,7 +10,6 @@ class BankAccountTest extends AnyFunSuite with Matchers with Conductors with Int
   }
 
   test("incrementing and checking balance") {
-    pending
     val acct = Bank.openAccount()
     acct.getBalance should be (Some(0))
     acct.incrementBalance(10) should be (Some(10))
@@ -20,7 +19,6 @@ class BankAccountTest extends AnyFunSuite with Matchers with Conductors with Int
   }
 
   test("closed account should hold no balance") {
-    pending
     val acct = Bank.openAccount()
     acct.closeAccount()
     acct.incrementBalance(10)
@@ -29,7 +27,6 @@ class BankAccountTest extends AnyFunSuite with Matchers with Conductors with Int
   }
 
   test("incrementing balance from multiple threads") {
-    pending
     val conductor = new Conductor
     import conductor._
 
@@ -53,7 +50,6 @@ class BankAccountTest extends AnyFunSuite with Matchers with Conductors with Int
   }
 
   test("incrementing balance from multiple threads - concurrent updates") {
-    pending
     val conductor = new Conductor
     import conductor._
 

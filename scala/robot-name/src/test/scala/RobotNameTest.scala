@@ -11,19 +11,16 @@ class RobotNameSpecs extends FunSpec with Matchers {
   }
 
   it ("does not change its name") {
-    pending
     val robot = new Robot
     val name = robot.name
     robot.name should be (name)
   }
 
   it ("does not have the same name as other robots") {
-    pending
     new Robot().name should not be new Robot().name
   }
 
   it ("can have its name reset") {
-    pending
     val robot = new Robot
     val name = robot.name
     robot.reset()
