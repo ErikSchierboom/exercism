@@ -3,5 +3,6 @@
 .idea/
 .ionide/
 .metals/
+.elixir_ls/
 users/
 *.DotSettings.user
