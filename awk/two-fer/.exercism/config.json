@@ -1,0 +1,18 @@
+{
+  "authors": [
+    "glennj"
+  ],
+  "files": {
+    "solution": [
+      "two-fer.awk"
+    ],
+    "test": [
+      "test-two-fer.bats"
+    ],
+    "example": [
+      ".meta/example.awk"
+    ]
+  },
+  "blurb": "Create a sentence of the form \"One for X, one for me.\".",
+  "source_url": "https://github.com/exercism/problem-specifications/issues/757"
+}
