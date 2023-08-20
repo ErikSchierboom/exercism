@@ -1,4 +1,2 @@
-{
-    for (i = length($0); i > 0; i--)
-        printf substr($0, i, 1)
-}
+BEGIN { FS = "" }
+{ for (i = NF; i > 0; i--) printf $i }
