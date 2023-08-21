@@ -7,11 +7,11 @@ BEGIN {
 }
 {
     for (i = 1; i <= NF; i++) {
-        if (! translation[$i]) {
+        if (! ($i in translation)) {
             print "Invalid nucleotide detected."
             exit 1            
-        }
-
+        } 
+         
         output = output translation[$i]
     }
 
