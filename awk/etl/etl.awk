@@ -6,7 +6,8 @@ BEGIN {
     gsub("\"", "");
 
     for (i = 2; i <= NF; i++)
-        rows[tolower($i)] = $1
+        if (tolower($i))
+            rows[tolower($i)] = $1
 }
 
 END {
