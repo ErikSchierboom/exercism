@@ -11,7 +11,7 @@ function isShout(text) {
 }
 
 BEGIN {
-    RS = "\034"
+    RS = "^$"
 }
 
 isSilent($0) { 
