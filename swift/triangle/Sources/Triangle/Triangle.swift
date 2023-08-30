@@ -5,10 +5,6 @@ class Triangle {
     self.sides = sides
   }
 
-  convenience init(_ sides: [Int]) {
-    self.init(sides.map { Float($0) })
-  }
-
   var isEquilateral: Bool {
     return valid && uniqueSides == 1
   }
