@@ -7,9 +7,7 @@ let letterScores = [
     "JX": 8,
     "QZ": 10
   ].reduce(into: [Character: Int]()) { result, entry in
-    for letter in entry.key {
-        result[letter] = entry.value
-    }
+    entry.key.forEach { letter in result[letter] = entry.value }
 }
 
 func score(_ phrase: String) -> Int {
