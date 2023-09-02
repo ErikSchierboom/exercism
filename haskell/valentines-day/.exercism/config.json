@@ -1,0 +1,24 @@
+{
+  "authors": [
+    "pwadsworth"
+  ],
+  "files": {
+    "solution": [
+      "src/ValentinesDay.hs",
+      "package.yaml"
+    ],
+    "test": [
+      "test/Tests.hs"
+    ],
+    "exemplar": [
+      ".meta/exemplar/src/ValentinesDay.hs"
+    ],
+    "invalidator": [
+      "stack.yaml"
+    ]
+  },
+  "forked_from": [
+    "fsharp/valentines-day"
+  ],
+  "blurb": "Learn about algebraic data types by deciding what activity to surprise your partner with on Valentines Day."
+}
