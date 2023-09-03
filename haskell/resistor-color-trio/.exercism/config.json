@@ -1,0 +1,27 @@
+{
+  "authors": [
+    "sshine"
+  ],
+  "contributors": [
+    "iHiD",
+    "tejasbubane"
+  ],
+  "files": {
+    "solution": [
+      "src/ResistorColors.hs",
+      "package.yaml"
+    ],
+    "test": [
+      "test/Tests.hs"
+    ],
+    "example": [
+      ".meta/examples/success-standard/src/ResistorColors.hs"
+    ],
+    "invalidator": [
+      "stack.yaml"
+    ]
+  },
+  "blurb": "Convert color codes, as used on resistors, to a human-readable label.",
+  "source": "Maud de Vries, Erik Schierboom",
+  "source_url": "https://github.com/exercism/problem-specifications/issues/1549"
+}
