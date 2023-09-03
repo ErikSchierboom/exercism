@@ -17,14 +17,12 @@ newtype Resistor = Resistor { bands :: (Color, Color, Color) }
   deriving Show
 
 label :: Resistor -> String
-label resistor = show ohms'' ++ " " ++ unit'
-  where
-    ohms' = ohms resistor
-    (ohms'', unit') = 
-      if ohms' >= 1000000000 then (ohms' `div` 1000000000, "gigaohms")
-      else if ohms' >= 1000000 then (ohms' `div` 1000000, "megaohms")
-      else if ohms' >= 1000 then (ohms' `div` 1000, "kiloohms")
-      else (ohms', "ohms")
+label resistor = 
+  case ohms resistor of
+      ohms' | ohms' >= 1000000000 -> show (ohms' `div` 1000000000) ++ " gigaohms"
+      ohms' | ohms' >= 1000000 -> show (ohms' `div` 1000000) ++ " megaohms"
+      ohms' | ohms' >= 1000 -> show (ohms' `div` 1000) ++ " kiloohms"
+      ohms' -> show ohms' ++ " ohms"
   
 ohms :: Resistor -> Int
 ohms (Resistor (first, second, third)) = 
