@@ -1,0 +1,34 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.35.1.
+--
+-- see: https://github.com/sol/hpack
+
+name:           yacht
+version:        1.2.0.0
+build-type:     Simple
+
+library
+  exposed-modules:
+      Yacht
+  other-modules:
+      Paths_yacht
+  hs-source-dirs:
+      src
+  ghc-options: -Wall
+  build-depends:
+      base
+  default-language: Haskell2010
+
+test-suite test
+  type: exitcode-stdio-1.0
+  main-is: Tests.hs
+  other-modules:
+      Paths_yacht
+  hs-source-dirs:
+      test
+  build-depends:
+      base
+    , hspec
+    , yacht
+  default-language: Haskell2010

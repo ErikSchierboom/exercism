@@ -1,0 +1,31 @@
+{
+  "authors": [
+    "masters3d"
+  ],
+  "contributors": [
+    "bhargavg",
+    "hankturowski",
+    "harquail",
+    "kytrinyx",
+    "lyuha",
+    "nickkjordan",
+    "robtimp",
+    "samkrishna",
+    "ThomasHaz",
+    "Zialus"
+  ],
+  "files": {
+    "solution": [
+      "Sources/RnaTranscription/RnaTranscription.swift"
+    ],
+    "test": [
+      "Tests/RnaTranscriptionTests/RnaTranscriptionTests.swift"
+    ],
+    "example": [
+      ".meta/Sources/RnaTranscription/RnaTranscriptionExample.swift"
+    ]
+  },
+  "blurb": "Given a DNA strand, return its RNA Complement Transcription.",
+  "source": "Hyperphysics",
+  "source_url": "https://web.archive.org/web/20220408112140/http://hyperphysics.phy-astr.gsu.edu/hbase/Organic/transcription.html"
+}

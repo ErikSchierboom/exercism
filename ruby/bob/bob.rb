@@ -1,15 +1,15 @@
 module Bob
   def self.hey(sentence)
     if silence?(sentence)
-      'Fine. Be that way!'
+      "Fine. Be that way!"
     elsif question?(sentence) && shouting?(sentence)
-      'Calm down, I know what I\'m doing!'
+      "Calm down, I know what I'm doing!"
     elsif question?(sentence)
-      'Sure.'
+      "Sure."
     elsif shouting?(sentence)
-      'Whoa, chill out!'
+      "Whoa, chill out!"
     else
-      'Whatever.'
+      "Whatever."
     end
   end
 

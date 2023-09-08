@@ -1,0 +1,20 @@
+{
+  "blurb": "TODO: add blurb for basics exercise",
+  "authors": [
+    "stillleben"
+  ],
+  "forked_from": [
+    "csharp/lucians-luscious-lasagna"
+  ],
+  "files": {
+    "solution": [
+      "src/main/scala/Lasagna.scala"
+    ],
+    "test": [
+      "src/test/scala/LasagnaTest.scala"
+    ],
+    "exemplar": [
+      ".meta/Exemplar.scala"
+    ]
+  }
+}

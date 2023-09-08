@@ -1,0 +1,23 @@
+{
+  "authors": [
+    "glennj"
+  ],
+  "contributors": [
+    "IsaacG"
+  ],
+  "files": {
+    "solution": [
+      "simple-report.awk"
+    ],
+    "test": [
+      "test-simple-report.bats"
+    ],
+    "exemplar": [
+      ".meta/exemplar.awk"
+    ],
+    "editor": [
+      "input.csv"
+    ]
+  },
+  "blurb": "Generate a simple report from an input CSV file."
+}

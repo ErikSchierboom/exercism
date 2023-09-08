@@ -1,0 +1,20 @@
+{
+  "authors": [
+    "dector"
+  ],
+  "files": {
+    "solution": [
+      "src/main/kotlin/LuciansLusciousLasagna.kt"
+    ],
+    "test": [
+      "src/test/kotlin/LuciansLusciousLasagnaTests.kt"
+    ],
+    "exemplar": [
+      ".meta/src/reference/kotlin/LuciansLusciousLasagna.kt"
+    ]
+  },
+  "forked_from": [
+    "fsharp/lucians-luscious-lasagna"
+  ],
+  "blurb": "Learn about the basics of Kotlin by following a lasagna recipe."
+}
