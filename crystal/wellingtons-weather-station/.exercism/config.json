@@ -1,0 +1,11 @@
+{
+  "authors": ["meatball133"],
+  "contributors": ["ryanplusplus", "glennj"],
+  "files": {
+    "solution": ["src/wellingtons_weather_station.cr"],
+    "test": ["spec/wellingtons_weather_station_spec.cr"],
+    "exemplar": [".meta/src/exemplar.cr"]
+  },
+  "icon": "the-weather-in-deather",
+  "blurb": "Learn about numbers by update Wellington's weather station temperature system"
+}
