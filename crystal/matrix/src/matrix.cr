@@ -3,7 +3,7 @@ class Matrix
   @columns : Array(Array(Int32))
 
   def initialize(input)
-    @rows = input.each_line.map { |line| line.split.map { |x| x.to_i } }.to_a
+    @rows = input.each_line.map { |line| line.split.map(&.to_i) }.to_a
     @columns = @rows.transpose
   end
 
