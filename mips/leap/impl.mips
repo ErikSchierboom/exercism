@@ -1,7 +1,5 @@
 .globl is_leap_year
 
-.text
-
 is_leap_year:
         rem  $t0, $a0, 4
         bnez $t0, __is_not_leap_year
