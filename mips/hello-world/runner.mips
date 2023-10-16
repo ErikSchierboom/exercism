@@ -1,0 +1,79 @@
+#
+# Test hello with some examples
+#
+# s1 - address of expected output word
+#
+# hello must:
+# - be named hello and declared as global
+# - follow the convention of using the t0-9 registers for temporary storage
+# - (if it wants to use s0-7 then it is responsible for pushing existing values to the stack then popping them back off before returning)
+# - write address of string result to v0
+
+.data
+
+# expected output value (null terminated)
+outs: .asciiz "Hello, World!"
+
+failmsg: .asciiz "test failed: "
+expectedmsg: .asciiz "expected "
+tobemsg: .asciiz " to be "
+okmsg: .asciiz "all tests passed"
+
+.text
+
+runner:
+        la      $s1, outs
+
+run_test:
+        jal     hello                   # call subroutine under test
+        move    $v1, $v0                # move return value in v0 to v1 because we need v0 for syscall
+        move    $t1, $v1                # save v1
+        move    $t2, $s1                # save s1
+
+loop:
+        lb      $t3, 0($t1)             # load char from return value
+        lb      $t4, 0($t2)             # load char from outs
+        beq     $t3, $zero, break       # break if zero
+        addi    $t1, $t1, 1             # increment address
+        addi    $t2, $t2, 1             # increment address
+        beq     $t3, $t4, loop          # loop while same
+
+break:
+        bne     $t3, $zero, exit_fail   # verify that first string has reached the end
+        bne     $t4, $zero, exit_fail   # verify that the second string has reached the end
+
+exit_ok:
+        la      $a0, okmsg              # put address of okmsg into a0
+        li      $v0, 4                  # 4 is print string
+        syscall
+
+        li      $v0, 10                 # 10 is exit with zero status (clean exit)
+        syscall
+
+exit_fail:
+        la      $a0, failmsg            # put address of failmsg into a0
+        li      $v0, 4                  # 4 is print string
+        syscall
+
+        la      $a0, expectedmsg
+        li      $v0, 4
+        syscall
+
+        move    $a0, $v1                # print actual that failed on
+        li      $v0, 4                  # 1 is print string
+        syscall
+
+        la      $a0, tobemsg
+        li      $v0, 4
+        syscall
+
+        move    $a0, $s1                # print expected value that failed on
+        li      $v0, 4                  # 1 is print string
+        syscall
+
+        li      $a0, 1                  # set error code to 1
+        li      $v0, 17                 # 17 is exit with error
+        syscall
+
+# # Include your implementation here if you wish to run this from the MARS GUI.
+# .include "impl.mips"
