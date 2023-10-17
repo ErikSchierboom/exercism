@@ -1,0 +1,22 @@
+.globl square
+
+square:
+    move  $t0, $a0
+    li    $v0, 0
+    li    $v1, 0
+# Bounds check
+    li    $t1, 1
+    blt   $t0, $t1, __end
+    li    $t1, 64
+    bgt   $t0, $t1, __end   
+    beq   $t0, $t1, __handle_64
+    li    $v0, 1
+    sub   $t0, $t0, 1
+    sllv  $v0, $v0, $t0
+    j     __end
+__handle_64:
+    li   $v0, 0
+    li   $v1, 1
+    sll  $v1, $v1, 31
+__end:
+    jr $ra
