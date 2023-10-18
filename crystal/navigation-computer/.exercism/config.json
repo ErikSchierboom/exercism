@@ -1,0 +1,11 @@
+{
+  "authors": ["meatball133"],
+  "contributors": ["ihid", "glennj"],
+  "files": {
+    "solution": ["src/navigation_computer.cr"],
+    "test": ["spec/navigation_computer_spec.cr"],
+    "exemplar": [".meta/src/exemplar.cr"]
+  },
+  "icon": "land-grab-in-space",
+  "blurb": "Learn about number types while building a navigation system for ESA (Exercism Space Agency)."
+}
