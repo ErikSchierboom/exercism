@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "bushidocodes"
+  ],
+  "files": {
+    "solution": [
+      "leap.wat"
+    ],
+    "test": [
+      "leap.spec.js"
+    ],
+    "example": [
+      ".meta/proof.ci.wat"
+    ]
+  },
+  "blurb": "Given a year, report if it is a leap year.",
+  "source": "JavaRanch Cattle Drive, exercise 3",
+  "source_url": "http://www.javaranch.com/leap.jsp"
+}
