@@ -1,0 +1,25 @@
+{
+  "authors": [
+    "bushidocodes"
+  ],
+  "files": {
+    "solution": [
+      "difference-of-squares.wat"
+    ],
+    "test": [
+      "difference-of-squares.spec.js"
+    ],
+    "example": [
+      ".meta/proof.ci.wat"
+    ]
+  },
+  "blurb": "Find the difference between the square of the sum and the sum of the squares of the first N natural numbers.",
+  "source": "Problem 6 at Project Euler",
+  "source_url": "http://projecteuler.net/problem=6",
+  "custom": {
+    "version.tests.compatibility": "jest-27",
+    "flag.tests.task-per-describe": false,
+    "flag.tests.may-run-long": false,
+    "flag.tests.includes-optional": false
+  }
+}
