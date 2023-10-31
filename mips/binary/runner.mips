@@ -23,6 +23,8 @@ ins:  .asciiz "0", "1", "10", "11", "100", "1001", "11010", "10001101000", "0000
 outs: .word     0,   1,   2,     3,    4,       9,      26,          1128,          31
 
 failmsg: .asciiz "failed for test input: "
+expectedmsg: .asciiz ". expected "
+tobemsg: .asciiz " to be "
 okmsg: .asciiz "all tests passed"
 
 
@@ -69,6 +71,22 @@ exit_fail:
 
         move    $a0, $s1                # print input that failed on
         li      $v0, 4
+        syscall
+
+        la      $a0, expectedmsg
+        li      $v0, 4
+        syscall
+
+        move    $a0, $v1                # print actual that failed on
+        li      $v0, 1
+        syscall
+
+        la      $a0, tobemsg
+        li      $v0, 4
+        syscall
+
+        move    $a0, $s4                # print expected value that failed on
+        li      $v0, 1
         syscall
 
         li      $a0, 1                  # set error code to 1
