@@ -34,23 +34,23 @@ describe("steps()", () => {
     expect(currentInstance.exports.steps(1)).toEqual(0);
   });
 
-  test("divide if even", () => {
+  xtest("divide if even", () => {
     expect(currentInstance.exports.steps(16)).toEqual(4);
   });
 
-  test("even and odd currentInstance.exports.steps", () => {
+  xtest("even and odd currentInstance.exports.steps", () => {
     expect(currentInstance.exports.steps(12)).toEqual(9);
   });
 
-  test("large number of even and odd steps", () => {
+  xtest("large number of even and odd steps", () => {
     expect(currentInstance.exports.steps(1000000)).toEqual(152);
   });
 
-  test("zero is an error", () => {
+  xtest("zero is an error", () => {
     expect(currentInstance.exports.steps(0)).toEqual(-1);
   });
 
-  test("negative value is an error", () => {
+  xtest("negative value is an error", () => {
     expect(currentInstance.exports.steps(-15)).toEqual(-1);
   });
 });
