@@ -34,15 +34,15 @@ describe("eggCount()", () => {
     expect(currentInstance.exports.eggCount(0)).toEqual(0);
   });
 
-  test("1 egg", () => {
+  xtest("1 egg", () => {
     expect(currentInstance.exports.eggCount(16)).toEqual(1);
   });
 
-  test("4 eggs", () => {
+  xtest("4 eggs", () => {
     expect(currentInstance.exports.eggCount(89)).toEqual(4);
   });
 
-  test("13 eggs", () => {
+  xtest("13 eggs", () => {
     expect(currentInstance.exports.eggCount(2000000000)).toEqual(13);
   });
 });
