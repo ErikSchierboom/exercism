@@ -42,7 +42,7 @@ runner:
 
 run_test:
         move    $a0, $s1                # move address of input arg 1 to a0
-        move    $a1, $s2                # move address of input arg 2 to a0
+        move    $a1, $s2                # move address of input arg 2 to a1
         jal     hamming_distance        # call subroutine under test
         move    $v1, $v0                # move return value in v0 to v1 because we need v0 for syscall
 
