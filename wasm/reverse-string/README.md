@@ -13,7 +13,7 @@ output: "looc"
 
 ## Reserved Memory
 
-Bytes 64-319 of the linear memory are reserved for the input string.
+The buffer for the input string uses bytes 64-319 of linear memory.
 
 The input string can be modified in place if desired.
 
