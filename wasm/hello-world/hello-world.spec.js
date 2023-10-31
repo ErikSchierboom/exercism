@@ -10,6 +10,7 @@ beforeAll(async () => {
     wasmModule = await WebAssembly.compile(buffer);
   } catch (err) {
     console.log(`Error compiling *.wat: ${err}`);
+    process.exit(1);
   }
 });
 
