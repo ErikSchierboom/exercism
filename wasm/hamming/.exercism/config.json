@@ -1,0 +1,25 @@
+{
+  "authors": [
+    "bushidocodes"
+  ],
+  "files": {
+    "solution": [
+      "hamming.wat"
+    ],
+    "test": [
+      "hamming.spec.js"
+    ],
+    "example": [
+      ".meta/proof.ci.wat"
+    ]
+  },
+  "blurb": "Calculate the Hamming difference between two DNA strands.",
+  "source": "The Calculating Point Mutations problem at Rosalind",
+  "source_url": "http://rosalind.info/problems/hamm/",
+  "custom": {
+    "version.tests.compatibility": "jest-27",
+    "flag.tests.task-per-describe": false,
+    "flag.tests.may-run-long": false,
+    "flag.tests.includes-optional": false
+  }
+}
