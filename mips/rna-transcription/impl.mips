@@ -1,0 +1,38 @@
+.globl transcribe_rna
+
+transcribe_rna:
+    move $t0, $a0
+    move $t1, $a1
+__loop:
+    lb   $t2, ($t0)
+    beqz $t2, __done
+__transcribe_g:
+    li   $t3, 71
+    bne  $t2, $t3, __transcribe_c
+    li   $t3, 67 
+    sb   $t3, ($t1)
+    j    __continue
+__transcribe_c:
+    li   $t3, 67
+    bne  $t2, $t3, __transcribe_t
+    li   $t3, 71 
+    sb   $t3, ($t1)
+    j    __continue
+__transcribe_t:
+    li   $t3, 84
+    bne  $t2, $t3, __transcribe_a
+    li   $t3, 65 
+    sb   $t3, ($t1)
+    j    __continue
+__transcribe_a:
+    li   $t3, 65
+    bne  $t2, $t3, __continue
+    li   $t3, 85 
+    sb   $t3, ($t1)
+    j    __continue
+__continue:
+    addi $t0, $t0, 1
+    addi $t1, $t1, 1
+    j    __loop
+__done:
+    jr   $ra
