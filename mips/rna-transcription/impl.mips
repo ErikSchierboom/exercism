@@ -7,30 +7,25 @@ __loop:
     lb   $t2, ($t0)
     beqz $t2, __done
 __transcribe_g:
-    li   $t3, 71
+    li   $t3, 'G'
     bne  $t2, $t3, __transcribe_c
-    li   $t3, 67 
-    sb   $t3, ($t1)
-    j    __continue
+    li   $t3, 'C'    
+    j    __transcribe
 __transcribe_c:
-    li   $t3, 67
+    li   $t3, 'C'
     bne  $t2, $t3, __transcribe_t
-    li   $t3, 71 
-    sb   $t3, ($t1)
-    j    __continue
+    li   $t3, 'G'
+    j    __transcribe
 __transcribe_t:
-    li   $t3, 84
+    li   $t3, 'T'
     bne  $t2, $t3, __transcribe_a
-    li   $t3, 65 
-    sb   $t3, ($t1)
-    j    __continue
+    li   $t3, 'A'
+    j    __transcribe
 __transcribe_a:
-    li   $t3, 65
-    bne  $t2, $t3, __continue
-    li   $t3, 85 
+    li   $t3, 'U'
+    j    __transcribe
+__transcribe:
     sb   $t3, ($t1)
-    j    __continue
-__continue:
     addi $t0, $t0, 1
     addi $t1, $t1, 1
     j    __loop
