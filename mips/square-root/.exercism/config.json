@@ -1,0 +1,20 @@
+{
+  "authors": [
+    "keiravillekode"
+  ],
+  "contributors": [],
+  "files": {
+    "solution": [
+      "impl.mips"
+    ],
+    "test": [
+      "runner.mips"
+    ],
+    "example": [
+      ".meta/example.mips"
+    ]
+  },
+  "blurb": "Given a natural radicand, return its square root.",
+  "source": "wolf99",
+  "source_url": "https://github.com/exercism/problem-specifications/pull/1582"
+}
