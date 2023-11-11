@@ -1,0 +1,35 @@
+.globl scrabble_score
+
+.data
+
+masks:  .word 1992977, 72, 36870, 23068832, 1024, 8389120, 33619968
+scores: .byte        1, 2,     3,        4,    5,       8,       10
+
+.text
+
+scrabble_score:
+        move $t0, $a0
+        li   $v0, 0
+__loop:
+        lb   $t1, ($t0)
+        beqz $t1, __finish
+        addi $t0, $t0, 1
+        bge  $t1, 97, __score
+        addi $t1, $t1, -32
+__score:
+        addi $t1, $t1, -65
+        li   $t2, 1
+        sllv $t2, $t2, $t1
+        la   $t8, masks
+        la   $t9, scores
+__next:
+        lw   $t3, ($t8)
+        lb   $t4, ($t9)
+        addi $t8, $t8, 4
+        addi $t9, $t9, 1
+        and  $t3, $t2, $t3
+        beqz $t3, __next
+        add  $v0, $v0, $t4
+        j    __loop
+__finish:
+        jr   $ra
