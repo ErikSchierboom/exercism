@@ -1,0 +1,29 @@
+.globl is_isogram
+
+is_isogram:
+        move $t0, $a0
+        move $t1, $zero
+        li   $v0, 1
+__loop:
+        lb   $t2, ($t0)
+        beqz $t2, __done
+        addi $t0, $t0, 1
+        li   $t4, 65
+        blt  $t2, $t4, __lower
+        li   $t4, 90
+        bgt  $t2, $t4, __lower
+        addi $t2, $t2, 32
+__lower:
+        li   $t4, 97
+        blt  $t2, $t4, __loop
+        addi $t3, $t2, -97
+        li   $t4, 1
+        sllv $t4, $t4, $t3
+        and  $t5, $t1, $t4
+        bnez $t5, __invalid
+        or   $t1, $t1, $t4
+        j    __loop
+__invalid:
+        li   $v0, 0
+__done:
+        jr   $ra
