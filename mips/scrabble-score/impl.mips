@@ -14,10 +14,8 @@ __loop:
         lb   $t1, ($t0)
         beqz $t1, __finish
         addi $t0, $t0, 1
-        bge  $t1, 97, __score
-        addi $t1, $t1, -32
-__score:
-        addi $t1, $t1, -65
+        ori  $t1, $t1, 32
+        sub  $t1, $t1, 'a'
         li   $t2, 1
         sllv $t2, $t2, $t1
         la   $t8, masks
