@@ -1,0 +1,62 @@
+.globl value
+.globl color_code
+
+value:
+        move $t9, $ra
+        jal  color_code
+        move $t1, $v0
+        mul  $t1, $t1, 10
+        move $a0, $a1
+        jal  color_code
+        add  $v0, $v0, $t1
+        jr   $t9
+
+color_code:
+        lb  $t0, ($a0)
+        bne $t0, 'b', __not_b
+        lb  $t0, 1($a0)
+        beq $t0, 'r', __brown
+        lb  $t0, 2($a0)
+        beq $t0, 'a', __black
+        j   __blue
+__not_b:
+        beq $t0, 'r', __red
+        beq $t0, 'o', __orange
+        beq $t0, 'y', __yellow
+        beq $t0, 'v', __violet
+        beq $t0, 'w', __white
+        lb  $t0, 3($a0)
+        beq $t0, 'e', __green        
+        j   __grey
+__black:
+        li $v0, 0
+        j  __done
+__brown:
+        li $v0, 1
+        j  __done
+__red:
+        li $v0, 2
+        j  __done
+__orange:
+        li $v0, 3
+        j  __done
+__yellow:
+        li $v0, 4
+        j  __done
+__green:
+        li $v0, 5
+        j  __done
+__blue:
+        li $v0, 6
+        j  __done
+__violet:
+        li $v0, 7
+        j  __done
+__grey:
+        li $v0, 8
+        j  __done
+__white:
+        li $v0, 9
+        j  __done
+__done:
+        jr $ra

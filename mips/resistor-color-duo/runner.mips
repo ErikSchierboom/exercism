@@ -1,0 +1,120 @@
+#
+# Test value with some examples
+#
+# s0 - num of tests left to run
+# s1 - address of first input string
+# s2 - address of second input string
+# s3 - address of third input string
+# s4 - address of expected output word
+# s5 - actual output word
+# s6 - expected output word
+
+.data
+
+# number of test cases
+n: .word 7
+# input values (null terminated) & expected output values (word sized ints)
+firsts: .asciiz  "brown", "blue", "yellow", "white", "orange", "green",  "black"
+seconds: .asciiz "black", "grey", "violet", "red",   "orange", "brown",  "brown"
+thirds: .asciiz  "",      "",     "",       "",      "",       "orange", ""
+outs: .word      10,      68,     47,       92,      33,       51,       1
+
+failmsg: .asciiz "failed for test input: "
+sepmsg: .asciiz " "
+expectedmsg: .asciiz ". expected "
+tobemsg: .asciiz " to be "
+okmsg: .asciiz "all tests passed"
+
+
+.text
+
+runner:
+        lw      $s0, n
+        la      $s1, firsts
+        la      $s2, seconds
+        la      $s3, thirds
+        la      $s4, outs
+
+run_test:
+        move    $a0, $s1                # move address of first input str to a0
+        move    $a1, $s2                # move address of second input str to a1
+        move    $a2, $s3                # move address of third input str to a2
+        jal     value                   # call subroutine under test
+        move    $s5, $v0                # move return value in v0 to s5 because we need v0 for syscall
+        lw      $s6, 0($s4)             # read expected output from memory
+        bne     $s5, $s6, exit_fail     # if expected doesn't match actual, jump to fail
+
+first_scan:
+        lb      $s5, 0($s1)             # load byte
+        addi    $s1, $s1, 1             # move first input address on byte forward
+        bne     $s5, $zero, first_scan  # if char not null, continue loop
+
+second_scan:
+        lb      $s5, 0($s2)             # load byte
+        addi    $s2, $s2, 1             # move second input address on byte forward
+        bne     $s5, $zero, second_scan # if char not null, continue loop
+
+third_scan:
+        lb      $s5, 0($s3)             # load byte
+        addi    $s3, $s3, 1             # move third input address on byte forward
+        bne     $s5, $zero, third_scan  # if char not null, continue loop
+
+        addi    $s4, $s4, 4             # move to next word in output
+        sub     $s0, $s0, 1             # decrement num of tests left to run
+        bgt     $s0, $zero, run_test    # if more than zero tests to run, jump to run_test
+
+exit_ok:
+        la      $a0, okmsg              # put address of okmsg into a0
+        li      $v0, 4                  # 4 is print string
+        syscall
+
+        li      $v0, 10                 # 10 is exit with zero status (clean exit)
+        syscall
+
+exit_fail:
+        la      $a0, failmsg            # put address of failmsg into a0
+        li      $v0, 4                  # 4 is print string
+        syscall
+
+        move    $a0, $s1                # print first input that failed on
+        li      $v0, 4
+        syscall
+
+        la      $a0, sepmsg             # put address of sepmsg into a0
+        li      $v0, 4                  # 4 is print string
+        syscall
+
+        move    $a0, $s2                # print second input that failed on
+        li      $v0, 4
+        syscall
+
+        la      $a0, sepmsg             # put address of sepmsg into a0
+        li      $v0, 4                  # 4 is print string
+        syscall
+
+        move    $a0, $s3                # print third input that failed on
+        li      $v0, 4
+        syscall
+
+        la      $a0, expectedmsg
+        li      $v0, 4
+        syscall
+
+        move    $a0, $s5                # print actual that failed on
+        li      $v0, 1                  # 1 is print integer
+        syscall
+
+        la      $a0, tobemsg
+        li      $v0, 4
+        syscall
+
+        move    $a0, $s6                # print expected value that failed on
+        li      $v0, 1                  # 1 is print integer
+        syscall
+
+        li      $a0, 1                  # set error code to 1
+        li      $v0, 17                 # 17 is exit with error
+        syscall
+
+# # Include your implementation here if you wish to run this from the MARS GUI.
+# .include "impl.mips"
