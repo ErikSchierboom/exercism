@@ -13,9 +13,10 @@ __not_b:
         beq $t0, 'o', __orange
         beq $t0, 'y', __yellow
         beq $t0, 'v', __violet
-        beq $t0, 'g', __grey
         beq $t0, 'w', __white
-        j   __done
+        lb  $t0, 3($a0)
+        beq $t0, 'e', __green        
+        j   __grey
 __black:
         li $v0, 0
         j  __done
