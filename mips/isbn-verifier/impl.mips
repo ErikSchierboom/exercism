@@ -1,0 +1,36 @@
+.globl is_valid
+
+is_valid:
+        move $t0, $a0
+        li   $t9, 10
+        li   $t8, 0
+__loop:
+        lb   $t1, ($t0)
+        addi $t0, $t0, 1
+        beqz $t1, __check_valid        
+        bne  $t1, 'X', __digit
+        li   $t2, 1
+        bne  $t9, $t2, __invalid
+        li   $t1, '0'
+        addi $t1, $t1, 10
+        j    __update_sum
+__digit:
+        beq  $t1, '-', __loop        
+        blt  $t1, '0', __invalid
+        bgt  $t1, '9', __invalid
+__update_sum:
+        sub  $t1, $t1, '0'
+        mul  $t1, $t1, $t9
+        add  $t8, $t8, $t1
+        sub  $t9, $t9, 1
+        j    __loop
+__check_valid:        
+        bnez $t9, __invalid
+        rem  $t8, $t8, 11
+        bnez $t8, __invalid
+        li $v0, 1
+        j __return
+__invalid:
+        li $v0, 0
+__return:
+        jr $ra
