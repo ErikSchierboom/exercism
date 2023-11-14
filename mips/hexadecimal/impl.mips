@@ -3,28 +3,19 @@
 hex_convert:
     move $t0, $a0
     li   $v0, 0
-    li   $t2, 48 # ASCII value of '0'
-    li   $t3, 65 # ASCII value of 'A'
-    li   $t4, 97 # ASCII value of 'a'
-    li   $t5, 16
 __loop:
     lb   $t1, ($t0)
     beqz $t1, __done
-    bge  $t1, $t4, __lower_letter
-    bge  $t1, $t3, __upper_letter
+    ble  $t1, '9', __digit
+    or   $t1, $t1, 0x20
+    sub  $t1, $t1, 'a'
+    addi $t1, $t1, 10
+    j    __continue
 __digit:
-    sub  $t1, $t1, $t2
-    j    __next
-__lower_letter:
-    sub  $t1, $t1, $t4
-    addi $t1, $t1, 10
-    j    __next
-__upper_letter:
-    sub  $t1, $t1, $t3
-    addi $t1, $t1, 10
-    j    __next
-__next:
-    mul  $v0, $v0, $t5
+    sub  $t1, $t1, '0'
+    j    __continue
+__continue:
+    mul  $v0, $v0, 16
     add  $v0, $v0, $t1
     addi $t0, $t0, 1
     j    __loop
