@@ -1,13 +1,14 @@
 .globl is_leap_year
 
 is_leap_year:
-        li   $v0, 1
         rem  $t0, $a0, 4
         bnez $t0, __false
         rem  $t0, $a0, 400
-        beqz $t0, __return
+        beqz $t0, __true
         rem  $t0, $a0, 100
         beqz $t0, __false
+__true:
+        li   $v0, 1
         j    __return
 __false: 
         li   $v0, 0
