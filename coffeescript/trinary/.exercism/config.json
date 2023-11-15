@@ -1,0 +1,23 @@
+{
+  "authors": [],
+  "contributors": [
+    "aimorris",
+    "kytrinyx",
+    "rootulp",
+    "shidel-dev"
+  ],
+  "files": {
+    "solution": [
+      "trinary.coffee"
+    ],
+    "test": [
+      "trinary.spec.coffee"
+    ],
+    "example": [
+      ".meta/example.coffee"
+    ]
+  },
+  "blurb": "Convert a trinary number, represented as a string (e.g. '102012'), to its decimal equivalent using first principles.",
+  "source": "All of Computer Science",
+  "source_url": "https://www.wolframalpha.com/examples/mathematics/numbers/base-conversions"
+}
