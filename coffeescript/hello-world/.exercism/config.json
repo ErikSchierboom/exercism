@@ -1,0 +1,26 @@
+{
+  "authors": [
+    "ramonh"
+  ],
+  "contributors": [
+    "aimorris",
+    "kytrinyx",
+    "rootulp",
+    "skeskali",
+    "son1112"
+  ],
+  "files": {
+    "solution": [
+      "hello-world.coffee"
+    ],
+    "test": [
+      "hello-world.spec.coffee"
+    ],
+    "example": [
+      ".meta/example.coffee"
+    ]
+  },
+  "blurb": "The classical introductory exercise. Just say \"Hello, World!\".",
+  "source": "This is an exercise to introduce users to using Exercism",
+  "source_url": "https://en.wikipedia.org/wiki/%22Hello,_world!%22_program"
+}
