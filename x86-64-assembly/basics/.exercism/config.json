@@ -1,0 +1,10 @@
+{
+  "blurb": "Learn about the basics of x86-64 assembly by following a lasagna recipe.",
+  "authors": ["bergjohan"],
+  "forked_from": ["csharp/lucians-luscious-lasagna"],
+  "files": {
+    "solution": ["basics.asm"],
+    "test": ["basics_test.c"],
+    "exemplar": [".meta/exemplar.asm"]
+  }
+}
