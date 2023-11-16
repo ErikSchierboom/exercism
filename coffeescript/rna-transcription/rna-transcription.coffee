@@ -1,8 +1,8 @@
-COMPLEMENTS = C: 'G', G: 'C', T: 'A', A: 'U'
+COMPLEMENT = C: 'G', G: 'C', T: 'A', A: 'U'
 
 class RnaTrascription
   constructor: (@dna) ->
 
-  toRna: -> @dna.replace(/[CGTA]/g, (nucleotide) -> COMPLEMENTS[nucleotide])
+  toRna: -> (COMPLEMENT[nucleotide] for nucleotide in @dna).join ''
 
 module.exports = RnaTrascription
