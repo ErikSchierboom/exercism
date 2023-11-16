@@ -1,0 +1,27 @@
+{
+  "authors": [
+    "wvmitchell",
+    "meatball133"
+  ],
+  "contributors": [
+    "aimorris",
+    "alxndr",
+    "kytrinyx",
+    "rootulp",
+    "zvkemp"
+  ],
+  "files": {
+    "solution": [
+      "triangle.coffee"
+    ],
+    "test": [
+      "triangle.spec.coffee"
+    ],
+    "example": [
+      ".meta/example.coffee"
+    ]
+  },
+  "blurb": "Determine if a triangle is equilateral, isosceles, or scalene.",
+  "source": "The Ruby Koans triangle project, parts 1 & 2",
+  "source_url": "https://web.archive.org/web/20220831105330/http://rubykoans.com"
+}
