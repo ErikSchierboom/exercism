@@ -6,23 +6,23 @@ describe '[].accumulate()', ->
     accumulator = (e) -> e * e
     expect([].accumulate(accumulator)).toEqual []
 
-  xit 'accumulate squares', ->
+  it 'accumulate squares', ->
     accumulator = (number) -> number * number
     expect([1, 2, 3].accumulate accumulator).toEqual [1, 4, 9]
 
-  xit 'accumulate upcases', ->
+  it 'accumulate upcases', ->
     accumulator = (word) -> word.toUpperCase()
     result      = 'hello world'.split(/\s/).accumulate accumulator
 
     expect(result).toEqual ['HELLO', 'WORLD']
 
-  xit 'accumulate reversed strings', ->
+  it 'accumulate reversed strings', ->
     accumulator = (word) -> word.split('').reverse().join('')
     result      = 'the quick brown fox etc'.split(/\s/).accumulate accumulator
 
     expect(result).toEqual ['eht', 'kciuq', 'nworb', 'xof', 'cte']
 
-  xit 'accumulate recursively', ->
+  it 'accumulate recursively', ->
     result = 'a b c'.split(/\s+/).accumulate (char)  ->
       '1 2 3'.split(/\s+/).accumulate (digit) -> "#{char}#{digit}"
 
