@@ -1,0 +1,25 @@
+{
+  "authors": [
+    "songawee"
+  ],
+  "contributors": [
+    "aimorris",
+    "kytrinyx",
+    "rootulp",
+    "sjakobi"
+  ],
+  "files": {
+    "solution": [
+      "nucleotide-count.coffee"
+    ],
+    "test": [
+      "nucleotide-count.spec.coffee"
+    ],
+    "example": [
+      ".meta/example.coffee"
+    ]
+  },
+  "blurb": "Given a DNA string, compute how many times each nucleotide occurs in the string.",
+  "source": "The Calculating DNA Nucleotides_problem at Rosalind",
+  "source_url": "https://rosalind.info/problems/dna/"
+}
