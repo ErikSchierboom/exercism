@@ -1,19 +1,18 @@
 class ScrabbleScore
-  @score: (word) -> 
-    word.toUpperCase()
-        .split('')
-        .map (letter) -> ScrabbleScore.letterScore letter
-        .reduce ((score, letterScore) -> score + letterScore), 0
-    
   @letterScore: (letter) ->
-    return 1 if "AEIOULNRST".includes(letter)
-    return 2 if "DG".includes(letter)
-    return 3 if "BCMP".includes(letter)
-    return 4 if "FHVWY".includes(letter)
-    return 5 if "K".includes(letter)
-    return 8 if "JX".includes(letter)
-    return 10 if "QZ".includes(letter)
+    switch
+      when letter in "AEIOULNRST" then 1
+      when letter in "DG"         then 2 
+      when letter in "BCMP"       then 3 
+      when letter in "FHVWY"      then 4 
+      when letter in "K"          then 5 
+      when letter in "JX"         then 8 
+      when letter in "QZ"         then 10
+      else 0
 
-    0
+  @score: (word) ->
+    word.toUpperCase()
+        .split("")
+        .reduce(((score, letter) => score + @letterScore letter), 0)
 
 module.exports = ScrabbleScore
