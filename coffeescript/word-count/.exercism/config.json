@@ -1,0 +1,24 @@
+{
+  "authors": [
+    "Gaelan"
+  ],
+  "contributors": [
+    "aimorris",
+    "kytrinyx",
+    "rootulp",
+    "meatball133"
+  ],
+  "files": {
+    "solution": [
+      "word-count.coffee"
+    ],
+    "test": [
+      "word-count.spec.coffee"
+    ],
+    "example": [
+      ".meta/example.coffee"
+    ]
+  },
+  "blurb": "Given a phrase, count the occurrences of each word in that phrase.",
+  "source": "This is a classic toy problem, but we were reminded of it by seeing it in the Go Tour."
+}
