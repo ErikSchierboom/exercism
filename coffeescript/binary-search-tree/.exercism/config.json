@@ -1,0 +1,25 @@
+{
+  "authors": [],
+  "contributors": [
+    "aimorris",
+    "Gaelan",
+    "kytrinyx",
+    "marocchino",
+    "rootulp",
+    "shidel-dev"
+  ],
+  "files": {
+    "solution": [
+      "binary-search-tree.coffee"
+    ],
+    "test": [
+      "binary-search-tree.spec.coffee"
+    ],
+    "example": [
+      ".meta/example.coffee"
+    ]
+  },
+  "blurb": "Insert and search for numbers in a binary tree.",
+  "source": "Josh Cheek",
+  "source_url": "https://twitter.com/josh_cheek"
+}
