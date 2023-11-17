@@ -1,18 +1,18 @@
 class ScrabbleScore
   @letterScore: (letter) ->
-    switch
-      when letter in "AEIOULNRST" then 1
-      when letter in "DG"         then 2 
-      when letter in "BCMP"       then 3 
-      when letter in "FHVWY"      then 4 
-      when letter in "K"          then 5 
-      when letter in "JX"         then 8 
-      when letter in "QZ"         then 10
+    switch letter
+      when 'A','E','I','O','U','L','N','R','S','T' then 1
+      when 'D','G' then 2 
+      when 'B','C','M','P' then 3 
+      when 'F','H','V','W','Y' then 4 
+      when 'K' then 5 
+      when 'J','X' then 8 
+      when 'Q','Z' then 10
       else 0
 
   @score: (word) ->
     word.toUpperCase()
-        .split("")
-        .reduce(((score, letter) => score + @letterScore letter), 0)
+        .split ""
+        .reduce ((score, letter) => score + @letterScore letter), 0
 
 module.exports = ScrabbleScore
