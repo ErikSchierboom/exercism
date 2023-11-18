@@ -1,0 +1,26 @@
+{
+  "authors": [
+    "kytrinyx"
+  ],
+  "contributors": [
+    "aimorris",
+    "alxndr",
+    "marocchino",
+    "rootulp",
+    "zvkemp"
+  ],
+  "files": {
+    "solution": [
+      "nth-prime.coffee"
+    ],
+    "test": [
+      "nth-prime.spec.coffee"
+    ],
+    "example": [
+      ".meta/example.coffee"
+    ]
+  },
+  "blurb": "Given a number n, determine what the nth prime is.",
+  "source": "A variation on Problem 7 at Project Euler",
+  "source_url": "https://projecteuler.net/problem=7"
+}
