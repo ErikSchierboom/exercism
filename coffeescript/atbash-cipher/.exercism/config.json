@@ -1,0 +1,25 @@
+{
+  "authors": [
+    "wvmitchell",
+    "meatball133"
+  ],
+  "contributors": [
+    "aimorris",
+    "kytrinyx",
+    "rootulp"
+  ],
+  "files": {
+    "solution": [
+      "atbash-cipher.coffee"
+    ],
+    "test": [
+      "atbash-cipher.spec.coffee"
+    ],
+    "example": [
+      ".meta/example.coffee"
+    ]
+  },
+  "blurb": "Create an implementation of the atbash cipher, an ancient encryption system created in the Middle East.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Atbash"
+}
