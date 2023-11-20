@@ -54,8 +54,7 @@
           )
         ))
 
-      (local.set $i (i32.add (local.get $i) (i32.const 1)))
-      (br_if $loop (i32.lt_u (local.get $i) (local.get $length))))
+      (br_if $loop (i32.lt_u (local.tee $i (i32.add (local.get $i) (i32.const 1))) (local.get $length))))
 
     (return (i32.const 0) (local.get $destLength))
   )
