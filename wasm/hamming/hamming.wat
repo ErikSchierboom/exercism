@@ -15,8 +15,7 @@
           (i32.load8_u (i32.add (local.get $i) (local.get $firstOffset)))
           (i32.load8_u (i32.add (local.get $i) (local.get $secondOffset))))))
 
-      (local.set $i (i32.add (local.get $i) (i32.const 1)))
-      (br_if $loop (i32.lt_u (local.get $i) (local.get $firstLength))))
+      (br_if $loop (i32.lt_u (local.tee $i (i32.add (local.get $i) (i32.const 1))) (local.get $firstLength))))
 
     (return (local.get $distance))
   )
