@@ -14,8 +14,7 @@
 
     (loop $loop
       (local.set $sum (i64.add (local.get $sum) (call $square (i32.add (local.get $i) (i32.const 1)))))
-      (local.set $i (i32.add (local.get $i) (i32.const 1)))
-      (br_if $loop (i32.lt_u (local.get $i) (i32.const 64))))
+      (br_if $loop (i32.lt_u (local.tee $i (i32.add (local.get $i) (i32.const 1))) (i32.const 64))))
 
     (return (local.get $sum))
   )
