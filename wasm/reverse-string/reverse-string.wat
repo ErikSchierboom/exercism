@@ -9,13 +9,13 @@
     (local.set $j (i32.sub (i32.add (local.get $offset) (local.get $length)) (i32.const 1)))
     
     (loop $loop
-      (local.set $tmp (i32.load8_u (local.get $i)))      
+      (local.set $tmp (i32.load8_u (local.get $i)))
       (i32.store8 (local.get $i) (i32.load8_u (local.get $j)))
-      (i32.store8 (local.get $j) (local.get $tmp))        
-      (local.set $i (i32.add (local.get $i) (i32.const 1))) 
-      (local.set $j (i32.sub (local.get $j) (i32.const 1))) 
-      (br_if $loop (i32.lt_u (local.get $i) (local.get $j))))
+      (i32.store8 (local.get $j) (local.get $tmp))
 
-    (return (local.get $offset) (local.get $length))
-  )
-)
+      (br_if $loop
+        (i32.lt_u 
+          (local.tee $i (i32.add (local.get $i) (i32.const 1)))
+          (local.tee $j (i32.sub (local.get $j) (i32.const 1))))))
+
+    (return (local.get $offset) (local.get $length))))
