@@ -61,9 +61,8 @@
       (local.set $multiplier (i32.mul (local.get $multiplier) (local.get $outputBase)))
       (local.set $value (i32.rem_u (local.get $remainder) (local.get $multiplier)))
       (i32.store (i32.mul (local.get $length) (i32.const 4)) (i32.div_u (local.get $value) (i32.div_u (local.get $multiplier) (local.get $outputBase))))
-      (local.set $remainder (i32.sub (local.get $remainder) (local.get $value)))
       (local.set $length (i32.add (local.get $length) (i32.const 1)))
-      (br_if $loop (i32.gt_u (local.get $remainder) (i32.const 0))))
+      (br_if $loop (i32.gt_u (local.tee $remainder (i32.sub (local.get $remainder) (local.get $value)))(i32.const 0))))
 
     (return (call $reverse (i32.const 0) (local.get $length)))  
   )
