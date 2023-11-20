@@ -18,8 +18,7 @@
       (if (i32.ne (local.get $src) (local.get $dest)) 
         (then (return (i32.const 0))))
 
-      (local.set $i (i32.add (local.get $i) (i32.const 1)))
-      (br_if $loop (i32.lt_u (local.get $i) (local.get $len))))
+      (br_if $loop (i32.lt_u (local.tee $i (i32.add (local.get $i) (i32.const 1))) (local.get $len))))
       
     (return (i32.const 1)))
 
@@ -36,8 +35,7 @@
         (if (call $compare (local.get $offset) (i32.const 136) (local.get $len))
           (then (return (i32.const 6))))
         (if (call $compare (local.get $offset) (i32.const 148) (local.get $len))
-          (then (return (i32.const 8)))))
-    )
+          (then (return (i32.const 8))))))
 
     (if (i32.eq (local.get $len) (i32.const 5))
       (then
@@ -48,8 +46,7 @@
         (if (call $compare (local.get $offset) (i32.const 130) (local.get $len))
           (then (return (i32.const 5))))
         (if (call $compare (local.get $offset) (i32.const 153) (local.get $len))
-          (then (return (i32.const 9)))))
-    )
+          (then (return (i32.const 9))))))
 
     (if (i32.eq (local.get $len) (i32.const 6))
       (then
@@ -58,9 +55,6 @@
         (if (call $compare (local.get $offset) (i32.const 123) (local.get $len))
           (then (return (i32.const 4))))
         (if (call $compare (local.get $offset) (i32.const 141) (local.get $len))
-          (then (return (i32.const 7)))))
-    )
+          (then (return (i32.const 7))))))
 
-    (return (i32.const -1))
-  )
-)
+    (return (i32.const -1))))
