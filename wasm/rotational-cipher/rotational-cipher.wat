@@ -18,11 +18,8 @@
             (i32.store8
               (i32.add (local.get $textOffset) (local.get $i))
               (i32.add (i32.const 97) (i32.rem_u (i32.add (i32.sub (local.get $c) (i32.const 97)) (local.get $shiftKey)) (i32.const 26))))))))
-    
-      (local.set $i (i32.add (local.get $i) (i32.const 1)))
-      (br_if $loop (i32.lt_u (local.get $i) (local.get $textLength)))
+
+      (br_if $loop (i32.lt_u (local.tee $i (i32.add (local.get $i) (i32.const 1))) (local.get $textLength)))
     )
 
-    (return (local.get $textOffset) (local.get $textLength))
-  )
-)
+    (return (local.get $textOffset) (local.get $textLength))))
