@@ -2,10 +2,9 @@
   (func $digitCount (param $num i32) (result i32)
     (local $count i32)
 
-    (loop $loop
-      (local.set $num (i32.div_u (local.get $num) (i32.const 10)))
+    (loop $loop      
       (local.set $count (i32.add (local.get $count) (i32.const 1)))
-      (br_if $loop (i32.gt_u (local.get $num) (i32.const 0))))
+      (br_if $loop (i32.gt_u (local.tee $num (i32.div_u (local.get $num) (i32.const 10))) (i32.const 0))))
 
     (return (local.get $count)))
 
@@ -19,8 +18,7 @@
 
     (loop $loop
       (local.set $result (i32.mul (local.get $result) (local.get $num)))
-      (local.set $power (i32.sub (local.get $power) (i32.const 1)))
-      (br_if $loop (i32.gt_u (local.get $power) (i32.const 1))))
+      (br_if $loop (i32.gt_u (local.tee $power (i32.sub (local.get $power) (i32.const 1))) (i32.const 1))))
 
     (return (local.get $result)))
 
@@ -40,8 +38,7 @@
         (i32.add
           (local.get $armstrongSum)
           (call $pow (i32.rem_u (local.get $remainder) (i32.const 10)) (local.get $numDigits))))
-      (local.set $remainder (i32.div_u (local.get $remainder) (i32.const 10)))
-      (br_if $loop (i32.gt_u (local.get $remainder) (i32.const 0))))
+      (br_if $loop (i32.gt_u (local.tee $remainder (i32.div_u (local.get $remainder) (i32.const 10))) (i32.const 0))))
 
     (return (i32.eq (local.get $candidate) (local.get $armstrongSum)))
   )
