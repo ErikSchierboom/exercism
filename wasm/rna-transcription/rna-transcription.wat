@@ -17,9 +17,6 @@
             (else (if (i32.eq (local.get $c) (i32.const 84))
               (then (i32.store8 (i32.add (local.get $offset) (local.get $i)) (i32.const 65))))))))))
 
-      (local.set $i (i32.add (local.get $i) (i32.const 1)))
-      (br_if $loop (i32.lt_u (local.get $i) (local.get $length))))
+      (br_if $loop (i32.lt_u (local.tee $i (i32.add (local.get $i) (i32.const 1))) (local.get $length))))
 
-    (return (local.get $offset) (local.get $length))
-  )
-)
+    (return (local.get $offset) (local.get $length))))
