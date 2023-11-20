@@ -7,38 +7,29 @@ class WordProblem
     question = question
       .replace /^What is\s?/, ''
       .replace /\?$/, ''
-    @tokens = if question.length == 0 then [] else question.split ' '
+    @tokens = if question.length == 0 then [] else question.split(' ').reverse()
 
   answer: ->
-    throw this.ERROR.syntaxError if @tokens.length == 0
-
-    result = parseInt @tokens[0]
-    i = 1
-
-    while i < @tokens.length
-      switch @tokens[i]
+    result = parseInt @tokens.pop() ? throw this.ERROR.syntaxError
+    
+    while token = @tokens.pop()
+      switch token
         when 'plus'
-          throw this.ERROR.syntaxError if i == @tokens.length - 1
-          throw this.ERROR.syntaxError if Number.isNaN(parseInt(@tokens[i + 1]))
-          result += parseInt @tokens[i + 1]
-          i += 2
+          throw this.ERROR.syntaxError if Number.isNaN(operand = parseInt @tokens.pop())
+          result += operand
         when 'minus'
-          throw this.ERROR.syntaxError if i == @tokens.length - 1
-          throw this.ERROR.syntaxError if Number.isNaN(parseInt(@tokens[i + 1]))
-          result -= parseInt @tokens[i + 1]
-          i += 2
+          throw this.ERROR.syntaxError if Number.isNaN(operand = parseInt @tokens.pop())
+          result -= operand
         when 'multiplied'
-          throw this.ERROR.syntaxError if i == @tokens.length - 2
-          throw this.ERROR.syntaxError if Number.isNaN(parseInt(@tokens[i + 2]))
-          result *= parseInt @tokens[i + 2]
-          i += 3
+          throw this.ERROR.syntaxError if @tokens.pop() != 'by'
+          throw this.ERROR.syntaxError if Number.isNaN(operand = parseInt @tokens.pop())
+          result *= operand
         when 'divided'
-          throw this.ERROR.syntaxError if i == @tokens.length - 2
-          throw this.ERROR.syntaxError if Number.isNaN(parseInt(@tokens[i + 2]))
-          result /= parseInt @tokens[i + 2]
-          i += 3
+          throw this.ERROR.syntaxError if @tokens.pop() != 'by'
+          throw this.ERROR.syntaxError if Number.isNaN(operand = parseInt @tokens.pop())
+          result /= operand
         else
-          throw this.ERROR.syntaxError if !Number.isNaN(parseInt(@tokens[i]))
+          throw this.ERROR.syntaxError if !Number.isNaN(parseInt token)
           throw this.ERROR.unknownOperation
 
     result
