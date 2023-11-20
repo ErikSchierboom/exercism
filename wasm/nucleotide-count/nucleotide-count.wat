@@ -26,17 +26,6 @@
                 (else (return (i32.const -1) (i32.const -1) (i32.const -1) (i32.const -1))))))))))
 
         (local.set $i (i32.add (local.get $i) (i32.const 1)))
-        (br $loop)
-      )
-    )
+        (br $loop)))
 
-  (return 
-      (local.get $a)
-      (local.get $c)
-      (local.get $g)
-      (local.get $t)
-    )
-
-    
-  )
-)
+  (return (local.get $a) (local.get $c) (local.get $g) (local.get $t))))
