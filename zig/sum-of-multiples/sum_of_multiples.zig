@@ -1,8 +1,7 @@
 const std = @import("std");
 const mem = std.mem;
 
-pub fn sum(allocator: mem.Allocator, factors: []const u32, limit: u32) !u64 {
-    _ = allocator;
+pub fn sum(_: mem.Allocator, factors: []const u32, limit: u32) !u64 {
     var result: u64 = 0;
 
     for (1..limit) |n| {
