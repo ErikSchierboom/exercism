@@ -5,21 +5,15 @@ pub const Classification = enum {
 };
 
 pub fn classify(n: u64) Classification {
-    const aliquot_sum = aliquotSum(n);
+    var aliquot_sum: u64 = 0;
 
-    if (aliquot_sum < n) return Classification.deficient;
-    if (aliquot_sum > n) return Classification.abundant;
-
-    return Classification.perfect;
-}
-
-fn aliquotSum(n: u64) u64 {
-    var sum: u64 = 0;
-    var i: u64 = 1;
-
-    while (i <= n / 2) : (i += 1) {
-        if (n % i == 0) sum += i;
+    for (1..n) |i| {
+        if (i > n / 2) break;
+        if (n % i == 0) aliquot_sum += i;
     }
 
-    return sum;
+    if (aliquot_sum < n) return .deficient;
+    if (aliquot_sum > n) return .abundant;
+
+    return .perfect;
 }
