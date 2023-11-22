@@ -1,21 +1,19 @@
 const std = @import("std");
 
 pub fn primes(buffer: []u32, comptime limit: u32) []u32 {
-    var sieve = std.bit_set.ArrayBitSet(u32, 1000).initFull();
+    var sieve = std.StaticBitSet(limit + 1).initFull();
     sieve.unset(0);
     sieve.unset(1);
 
-    for (2..1000) |x| {
-        if (!sieve.isSet(x)) continue;
-        var multiple = x + x;
-        while (multiple < 1000) : (multiple += x) sieve.unset(multiple);
-    }
-
+    var n: u32 = 0;
     var i: u32 = 0;
-    var iterator = sieve.iterator(.{});
-    while (iterator.next()) |prime| {
-        if (prime > limit) break;
-        buffer[i] = @intCast(prime);
+    while (n <= limit) : (n += 1) {
+        if (!sieve.isSet(n)) continue;
+
+        var multiple = n + n;
+        while (multiple <= limit) : (multiple += n) sieve.unset(multiple);
+
+        buffer[i] = n;
         i += 1;
     }
 
