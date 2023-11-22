@@ -18,6 +18,6 @@ pub fn isAllergicTo(score: u8, allergen: Allergen) bool {
 
 pub fn initAllergenSet(score: usize) EnumSet(Allergen) {
     var allergenSet = EnumSet(Allergen).initEmpty();
-    allergenSet.bits.mask = @intCast(score & 0b11111111);
+    allergenSet.bits.mask = @truncate(score);
     return allergenSet;
 }
