@@ -11,7 +11,7 @@ pub fn modifier(score: i8) i8 {
 }
 
 pub fn ability() i8 {
-    var sum: i32 = 0;
+    var sum: i8 = 0;
     var min: i8 = 7;
 
     for (0..4) |_| {
@@ -20,9 +20,7 @@ pub fn ability() i8 {
         min = @min(min, score);
     }
 
-    sum -= min;
-
-    return @intCast(@divTrunc(sum, 3));
+    return sum - min;
 }
 
 pub const Character = struct {
