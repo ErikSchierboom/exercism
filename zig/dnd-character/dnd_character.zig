@@ -1,19 +1,23 @@
 const std = @import("std");
 
+fn roll() i8 {
+    var prng = std.rand.DefaultPrng.init(@intCast(std.time.timestamp()));
+    var rnd = prng.random();
+    return rnd.intRangeAtMost(i8, 1, 6);
+}
+
 pub fn modifier(score: i8) i8 {
     return @divFloor(score - 10, 2);
 }
 
 pub fn ability() i8 {
-    var prng = std.rand.DefaultPrng.init(@intCast(std.time.timestamp()));
-    var rnd = prng.random();
     var sum: i32 = 0;
     var min: i8 = 7;
 
     for (0..4) |_| {
-        const roll = rnd.intRangeAtMost(i8, 1, 6);
-        sum += roll;
-        min = @min(min, roll);
+        const score = roll();
+        sum += score;
+        min = @min(min, score);
     }
 
     sum -= min;
@@ -31,7 +35,7 @@ pub const Character = struct {
     hitpoints: i8,
 
     pub fn init() Character {
-        const constitutionAbility = ability();
-        return Character{ .strength = ability(), .dexterity = ability(), .constitution = ability(), .intelligence = ability(), .wisdom = ability(), .charisma = ability(), .hitpoints = 10 + modifier(constitutionAbility) };
+        const constitution = ability();
+        return Character{ .strength = ability(), .dexterity = ability(), .constitution = constitution, .intelligence = ability(), .wisdom = ability(), .charisma = ability(), .hitpoints = 10 + modifier(constitution) };
     }
 };
