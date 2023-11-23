@@ -2,16 +2,29 @@
 
 public enum Direction { North, East, South, West }
 
-public class RobotSimulator
+public record RobotSimulator(Direction Direction, int X, int Y)
 {
-    public RobotSimulator(Direction direction, int x, int y) =>
-        (Direction, X, Y) = (direction, x, y);
+    public Direction Direction { get; private set; } = Direction;
+    public int X { get; private set; } = X;
+    public int Y { get; private set; } = Y;
 
-    public Direction Direction { get; private set; }
-    public int X { get; private set; }
-    public int Y { get; private set; }
+    public void Move(string instructions)
+    {
+        foreach (var instruction in instructions)
+            ProcessInstruction(instruction);
+    }
 
-    public void TurnRight() =>
+    private void ProcessInstruction(char code)
+    {
+        if (code == 'L')
+            TurnLeft();
+        else if (code == 'R')
+            TurnRight();
+        else if (code == 'A')
+            Advance();
+    }
+
+    private void TurnRight() =>
         Direction = Direction switch
         {
             Direction.North => Direction.East,
@@ -21,7 +34,7 @@ public class RobotSimulator
             _ => throw new ArgumentOutOfRangeException()
         };
 
-    public void TurnLeft() =>
+    private void TurnLeft() =>
         Direction = Direction switch
         {
             Direction.North => Direction.West,
@@ -31,7 +44,7 @@ public class RobotSimulator
             _ => throw new ArgumentOutOfRangeException()
         };
 
-    public void Advance() =>
+    private void Advance() =>
         (X, Y) = Direction switch
         {
             Direction.North => (X, Y + 1),
@@ -40,28 +53,4 @@ public class RobotSimulator
             Direction.West  => (X - 1, Y),
             _ => throw new ArgumentOutOfRangeException()
         };
-
-    public void Move(string instructions)
-    {
-        foreach (var instruction in instructions)
-            ProcessInstruction(instruction);
-    }
-
-    private void ProcessInstruction(char code)
-    {   
-        switch (code)
-        {
-            case 'L':
-                TurnLeft();
-                break;
-            case 'R':
-                TurnRight();
-                break;
-            case 'A':
-                Advance();
-                break;
-            default:
-                throw new ArgumentOutOfRangeException(nameof(code), "Invalid instruction");
-        }
-    }
 }
