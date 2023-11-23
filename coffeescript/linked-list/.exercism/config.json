@@ -1,0 +1,21 @@
+{
+  "authors": [],
+  "contributors": [
+    "aimorris",
+    "kytrinyx",
+    "rootulp"
+  ],
+  "files": {
+    "solution": [
+      "linked-list.coffee"
+    ],
+    "test": [
+      "linked-list.spec.coffee"
+    ],
+    "example": [
+      ".meta/example.coffee"
+    ]
+  },
+  "blurb": "Implement a doubly linked list.",
+  "source": "Classic computer science topic"
+}

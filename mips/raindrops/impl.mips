@@ -1,0 +1,68 @@
+.globl raindrops
+
+.data
+
+pling: .asciiz "Pling"
+plang: .asciiz "Plang"
+plong: .asciiz "Plong"
+
+.text
+
+drop: 
+        rem  $t2, $a0, $t0
+        bnez $t2, __drop_return
+__drop_loop:        
+        lb   $t3, ($t1)
+        beqz $t3, __drop_return
+        sb   $t3, ($a1)
+        addi $a1, $a1, 1
+        addi $t1, $t1, 1
+        j    __drop_loop
+__drop_return:
+        jr $ra
+
+__num_to_string:
+        move $t0, $a0
+        move $t8, $a1   
+__num_to_string_loop:
+        beqz $t0, __reverse_loop
+        li   $t2, 10
+        divu $t0, $t0, $t2 
+        mflo $t0
+        mfhi $t1
+        addi $t1, $t1, '0'
+        sb   $t1, ($a1)
+        addi $a1, $a1, 1      
+        j    __num_to_string_loop
+__reverse_loop:
+        bge  $t8, $a1, __reverse_return
+        lb   $t2, ($t8)
+        sub  $a1, $a1, 1
+        lb   $t3, ($a1)
+        sb   $t3, ($t8)        
+        sb   $t2, ($a1)
+        addi $t8, $t8, 1        
+        j __reverse_loop
+__reverse_return:
+        jr   $ra
+
+raindrops:
+        move $t9, $ra
+        move $t8, $a1
+        
+        li   $t0, 3
+        la   $t1, pling
+        jal  drop
+
+        li   $t0, 5
+        la   $t1, plang
+        jal  drop
+
+        li   $t0, 7
+        la   $t1, plong
+        jal  drop
+
+        bne  $t8, $a1, __continue
+        jal  __num_to_string
+__continue:
+        jr $t9

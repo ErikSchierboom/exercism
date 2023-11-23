@@ -2,14 +2,15 @@
 
 is_leap_year:
         rem  $t0, $a0, 4
-        bnez $t0, __is_not_leap_year
+        bnez $t0, __false
         rem  $t0, $a0, 400
-        beqz $t0, __is_leap_year
+        beqz $t0, __true
         rem  $t0, $a0, 100
-        beqz $t0, __is_not_leap_year
-__is_leap_year: 
+        beqz $t0, __false
+__true:
         li   $v0, 1
-        jr   $ra
-__is_not_leap_year: 
+        j    __return
+__false: 
         li   $v0, 0
+__return:
         jr   $ra

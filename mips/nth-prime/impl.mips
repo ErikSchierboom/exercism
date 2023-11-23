@@ -1,0 +1,53 @@
+.globl  nth_prime
+
+is_prime:
+        move $t1, $t0
+        srl  $t2, $t1, 1
+        addi $t2, $t2, 1
+        li   $t3, 5
+        li   $v0, 1
+is_prime_loop:
+        bge  $t3, $t2, __is_prime_finish
+        rem  $t4, $t0, $t3
+        beqz $t4, __invalid
+        addi $t3, $t3, 1
+        j    is_prime_loop
+__invalid:
+        li $v0, 0
+__is_prime_finish:
+        jr $ra
+
+nth_prime:
+        move $t9, $ra
+        move $t7, $a0
+        li  $t0, 1
+        bne $t0, $t7, __two
+        li  $t0, 2
+        j   __finish
+__two:
+        li  $t0, 2
+        bne $t0, $t7, __other
+        li  $t0, 3
+        j   __finish
+__other:        
+        li   $t8, 0
+        sub  $t7, $t7, 2
+__other_loop:        
+        beqz $t7, __finish
+        addi $t8, $t8, 6
+        sub  $t0, $t8, 1
+        jal is_prime
+        beqz $v0, __next_prime
+        sub  $t7, $t7, 1
+        beqz $t7, __finish
+__next_prime:
+        addi  $t0, $t8, 1
+        jal is_prime
+        beqz $v0, __other_loop
+        sub  $t7, $t7, 1
+        beqz $t7, __finish
+        j    __other_loop
+__finish:
+        move $v0, $t0
+        jr $t9
+

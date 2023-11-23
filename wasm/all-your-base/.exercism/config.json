@@ -1,0 +1,23 @@
+{
+  "authors": [
+    "bushidocodes"
+  ],
+  "files": {
+    "solution": [
+      "all-your-base.wat"
+    ],
+    "test": [
+      "all-your-base.spec.js"
+    ],
+    "example": [
+      ".meta/proof.ci.wat"
+    ]
+  },
+  "blurb": "Convert a number, represented as a sequence of digits in one base, to any other base.",
+  "custom": {
+    "version.tests.compatibility": "jest-27",
+    "flag.tests.task-per-describe": false,
+    "flag.tests.may-run-long": false,
+    "flag.tests.includes-optional": false
+  }
+}

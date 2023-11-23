@@ -1,0 +1,32 @@
+.globl rotate
+
+rotate:
+        move $t0, $a0
+__loop:
+        lb   $t1, ($t0) 
+        addi $t0, $t0, 1
+        beqz $t1, __finish
+        bgt  $t1, 'Z', __lower
+__upper:
+        blt  $t1, 'A', __write
+        sub  $t2, $t1, 'A'
+        add  $t2, $t2, $a1
+        li   $t3, 26
+        rem  $t2, $t2, $t3
+        addi $t1, $t2, 'A' 
+        j    __write
+__lower:
+        blt  $t1, 'a', __write
+        bgt  $t1, 'z', __write
+        sub  $t2, $t1, 'a'
+        add  $t2, $t2, $a1
+        li   $t3, 26
+        rem  $t2, $t2, $t3
+        addi $t1, $t2, 'a'
+        j    __write        
+__write:
+        sb   $t1, ($a2)
+        addi $a2, $a2, 1
+        j    __loop
+__finish:
+        jr $ra

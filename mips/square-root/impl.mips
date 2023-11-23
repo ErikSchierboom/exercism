@@ -1,0 +1,19 @@
+# | Register | Usage     | Type    | Description                |
+# | -------- | --------- | ------- | -------------------------- |
+# | `$a0`    | input     | integer | radicand                   |
+# | `$v0`    | output    | integer | square root                |
+# | `$t0-9`  | temporary | any     | used for temporary storage |
+
+.globl  square_root
+
+square_root:
+        li   $t0, 1
+        li   $t1, 1
+__loop:
+        bgt  $t1, $a0, __done
+        addi $t0, $t0, 1
+        mul  $t1, $t0, $t0
+        j    __loop
+__done:
+        addi $v0, $t0, -1
+        jr   $ra

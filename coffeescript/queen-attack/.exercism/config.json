@@ -1,0 +1,27 @@
+{
+  "authors": [
+    "kytrinyx",
+    "meatball133"
+  ],
+  "contributors": [
+    "aimorris",
+    "alxndr",
+    "marocchino",
+    "rootulp",
+    "zvkemp"
+  ],
+  "files": {
+    "solution": [
+      "queen-attack.coffee"
+    ],
+    "test": [
+      "queen-attack.spec.coffee"
+    ],
+    "example": [
+      ".meta/example.coffee"
+    ]
+  },
+  "blurb": "Given the position of two queens on a chess board, indicate whether or not they are positioned so that they can attack each other.",
+  "source": "J Dalbey's Programming Practice problems",
+  "source_url": "https://users.csc.calpoly.edu/~jdalbey/103/Projects/ProgrammingPractice.html"
+}

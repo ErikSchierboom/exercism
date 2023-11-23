@@ -1,0 +1,18 @@
+{
+  "root": true,
+  "extends": "@exercism/eslint-config-javascript",
+  "env": {
+    "jest": true
+  },
+  "overrides": [
+    {
+      "files": [
+        "*.spec.js"
+      ],
+      "excludedFiles": [
+        "custom.spec.js"
+      ],
+      "extends": "@exercism/eslint-config-javascript/maintainers"
+    }
+  ]
+}

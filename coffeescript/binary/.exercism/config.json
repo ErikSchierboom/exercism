@@ -1,0 +1,26 @@
+{
+  "authors": [],
+  "contributors": [
+    "aimorris",
+    "hpurmann",
+    "kytrinyx",
+    "markijbema",
+    "marocchino",
+    "rootulp",
+    "shidel-dev"
+  ],
+  "files": {
+    "solution": [
+      "binary.coffee"
+    ],
+    "test": [
+      "binary.spec.coffee"
+    ],
+    "example": [
+      ".meta/example.coffee"
+    ]
+  },
+  "blurb": "Convert a binary number, represented as a string (e.g. '101010'), to its decimal equivalent using first principles.",
+  "source": "All of Computer Science",
+  "source_url": "https://www.wolframalpha.com/examples/mathematics/numbers/base-conversions"
+}

@@ -1,0 +1,15 @@
+.globl binary_convert
+
+binary_convert:
+    move $t0, $a0
+    li   $v0, 0
+__loop:
+    lb   $t1, ($t0)
+    beqz $t1, __done
+    sub  $t1, $t1, '0'
+    sll  $v0, $v0, 1
+    add  $v0, $v0, $t1
+    addi $t0, $t0, 1
+    j    __loop
+__done:
+    jr   $ra

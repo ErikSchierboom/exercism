@@ -1,0 +1,28 @@
+.globl atbash_cipher
+
+atbash_cipher:
+        move $t0, $a0
+        li   $t9, 0
+        li   $t7, ' '
+        li   $t6, 'z'
+__loop:
+        lb   $t1, ($t0)
+        beqz $t1, __finish
+        addi $t0, $t0, 1
+        or   $t1, $t1, 0x20
+        blt  $t1, 'a', __loop
+        bgt  $t1, 'z', __loop
+        sub  $t2, $t1, 'a'
+        sub  $t3, $t6, $t2
+        beqz $t9, __write
+        rem  $t8, $t9, 5
+        bnez $t8, __write        
+        sb   $t7, ($a1)
+        addi $a1, $a1, 1
+__write:
+        sb   $t3, ($a1)
+        addi $a1, $a1, 1
+        addi $t9, $t9, 1
+        j    __loop
+__finish:
+        jr $ra

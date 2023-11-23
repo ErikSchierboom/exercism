@@ -1,0 +1,27 @@
+{
+  "authors": [
+    "kytrinyx"
+  ],
+  "contributors": [
+    "aimorris",
+    "alxndr",
+    "marocchino",
+    "meientau",
+    "rootulp",
+    "meatball133"
+  ],
+  "files": {
+    "solution": [
+      "luhn.coffee"
+    ],
+    "test": [
+      "luhn.spec.coffee"
+    ],
+    "example": [
+      ".meta/example.coffee"
+    ]
+  },
+  "blurb": "Given a number determine whether or not it is valid per the Luhn formula.",
+  "source": "The Luhn Algorithm on Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Luhn_algorithm"
+}

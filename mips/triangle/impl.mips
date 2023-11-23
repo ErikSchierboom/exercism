@@ -1,0 +1,36 @@
+.globl triangle
+
+triangle:
+__check_zeros:
+        bnez $a0, __check_inequality
+        bnez $a1, __check_inequality
+        bnez $a2, __check_inequality
+        j __invalid
+__check_inequality:
+        add $t0, $a0, $a1
+        blt $t0, $a2, __invalid
+        add $t0, $a0, $a2
+        blt $t0, $a1, __invalid
+        add $t0, $a1, $a2
+        blt $t0, $a0, __invalid
+        bne $a0, $a1, __check_isoceles
+        bne $a1, $a2, __check_isoceles        
+        j __equilateral
+__check_isoceles:
+        beq $a0, $a1, __isoceles
+        beq $a0, $a2, __isoceles
+        beq $a1, $a2, __isoceles        
+        j __scalene
+__equilateral:
+        li $v0, 2
+        j __finish
+__isoceles:
+        li $v0, 1
+        j __finish
+__scalene:
+        li $v0, 0
+        j __finish
+__invalid:
+        li $v0, 3
+__finish:
+        jr $ra
