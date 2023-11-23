@@ -1,15 +1,19 @@
-using System.Collections.Generic;
+using System;
 using System.Linq;
 
 public static class RnaTranscription
 {
-    public static string ToRna(string nucleotide) => new(nucleotide.Select(n => DnaComplements[n]).ToArray());
+    public static string ToRna(string dna) =>
+        new(dna.Select(ToComplement).ToArray());
 
-    private static readonly Dictionary<char, char> DnaComplements = new Dictionary<char, char>
-    {
-        { 'G', 'C' },
-        { 'C', 'G' },
-        { 'T', 'A' },
-        { 'A', 'U' }
-    };
+    private static char ToComplement(char nucleotide) =>
+        nucleotide switch
+        {
+            'G' => 'C',
+            'C' => 'G',
+            'T' => 'A',
+            'A' => 'U',
+            _ => throw new ArgumentOutOfRangeException(nameof(nucleotide))
+        };
 }
+    
