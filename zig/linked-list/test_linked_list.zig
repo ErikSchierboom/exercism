@@ -131,19 +131,19 @@ test "deletes the only element" {
     try testing.expectEqual(@as(usize, 0), list.len);
 }
 
-// test "deletes the element with the specified value from the list" {
-//     var list = List{};
-//     var a = List.Node{ .data = 71 };
-//     var b = List.Node{ .data = 83 };
-//     var c = List.Node{ .data = 79 };
-//     list.push(&a);
-//     list.push(&b);
-//     list.push(&c);
-//     list.delete(&b);
-//     try testing.expectEqual(@as(usize, 2), list.len);
-//     try testing.expectEqual(@as(usize, 79), list.pop().?.data);
-//     try testing.expectEqual(@as(usize, 71), list.shift().?.data);
-// }
+test "deletes the element with the specified value from the list" {
+    var list = List{};
+    var a = List.Node{ .data = 71 };
+    var b = List.Node{ .data = 83 };
+    var c = List.Node{ .data = 79 };
+    list.push(&a);
+    list.push(&b);
+    list.push(&c);
+    list.delete(&b);
+    try testing.expectEqual(@as(usize, 2), list.len);
+    try testing.expectEqual(@as(usize, 79), list.pop().?.data);
+    try testing.expectEqual(@as(usize, 71), list.shift().?.data);
+}
 
 test "deletes the element with the specified value from the list, re-assigns tail" {
     var list = List{};
@@ -159,64 +159,64 @@ test "deletes the element with the specified value from the list, re-assigns tai
     try testing.expectEqual(@as(usize, 71), list.pop().?.data);
 }
 
-// test "deletes the element with the specified value from the list, re-assigns head" {
-//     var list = List{};
-//     var a = List.Node{ .data = 71 };
-//     var b = List.Node{ .data = 83 };
-//     var c = List.Node{ .data = 79 };
-//     list.push(&a);
-//     list.push(&b);
-//     list.push(&c);
-//     list.delete(&b);
-//     try testing.expectEqual(@as(usize, 2), list.len);
-//     try testing.expectEqual(@as(usize, 71), list.shift().?.data);
-//     try testing.expectEqual(@as(usize, 79), list.shift().?.data);
-// }
+test "deletes the element with the specified value from the list, re-assigns head" {
+    var list = List{};
+    var a = List.Node{ .data = 71 };
+    var b = List.Node{ .data = 83 };
+    var c = List.Node{ .data = 79 };
+    list.push(&a);
+    list.push(&b);
+    list.push(&c);
+    list.delete(&b);
+    try testing.expectEqual(@as(usize, 2), list.len);
+    try testing.expectEqual(@as(usize, 71), list.shift().?.data);
+    try testing.expectEqual(@as(usize, 79), list.shift().?.data);
+}
 
-// test "deletes the first of two elements" {
-//     var list = List{};
-//     var a = List.Node{ .data = 97 };
-//     var b = List.Node{ .data = 101 };
-//     list.push(&a);
-//     list.push(&b);
-//     list.delete(&a);
-//     try testing.expectEqual(@as(usize, 1), list.len);
-//     try testing.expectEqual(@as(usize, 101), list.pop().?.data);
-// }
+test "deletes the first of two elements" {
+    var list = List{};
+    var a = List.Node{ .data = 97 };
+    var b = List.Node{ .data = 101 };
+    list.push(&a);
+    list.push(&b);
+    list.delete(&a);
+    try testing.expectEqual(@as(usize, 1), list.len);
+    try testing.expectEqual(@as(usize, 101), list.pop().?.data);
+}
 
-// test "deletes the second of two elements" {
-//     var list = List{};
-//     var a = List.Node{ .data = 97 };
-//     var b = List.Node{ .data = 101 };
-//     list.push(&a);
-//     list.push(&b);
-//     list.delete(&b);
-//     try testing.expectEqual(@as(usize, 1), list.len);
-//     try testing.expectEqual(@as(usize, 97), list.pop().?.data);
-// }
+test "deletes the second of two elements" {
+    var list = List{};
+    var a = List.Node{ .data = 97 };
+    var b = List.Node{ .data = 101 };
+    list.push(&a);
+    list.push(&b);
+    list.delete(&b);
+    try testing.expectEqual(@as(usize, 1), list.len);
+    try testing.expectEqual(@as(usize, 97), list.pop().?.data);
+}
 
-// test "delete does not modify the list if the element is not found" {
-//     var list = List{};
-//     var a = List.Node{ .data = 89 };
-//     var b = List.Node{ .data = 103 };
-//     list.push(&a);
-//     list.delete(&b);
-//     try testing.expectEqual(@as(usize, 1), list.len);
-// }
+test "delete does not modify the list if the element is not found" {
+    var list = List{};
+    var a = List.Node{ .data = 89 };
+    var b = List.Node{ .data = 103 };
+    list.push(&a);
+    list.delete(&b);
+    try testing.expectEqual(@as(usize, 1), list.len);
+}
 
-// test "deletes only the first occurrence" {
-//     var list = List{};
-//     var a = List.Node{ .data = 73 };
-//     var b = List.Node{ .data = 9 };
-//     var c = List.Node{ .data = 9 };
-//     var d = List.Node{ .data = 107 };
-//     list.push(&a);
-//     list.push(&b);
-//     list.push(&c);
-//     list.push(&d);
-//     list.delete(&b);
-//     try testing.expectEqual(@as(usize, 3), list.len);
-//     try testing.expectEqual(@as(usize, 107), list.pop().?.data);
-//     try testing.expectEqual(@as(usize, 9), list.pop().?.data);
-//     try testing.expectEqual(@as(usize, 73), list.pop().?.data);
-// }
+test "deletes only the first occurrence" {
+    var list = List{};
+    var a = List.Node{ .data = 73 };
+    var b = List.Node{ .data = 9 };
+    var c = List.Node{ .data = 9 };
+    var d = List.Node{ .data = 107 };
+    list.push(&a);
+    list.push(&b);
+    list.push(&c);
+    list.push(&d);
+    list.delete(&b);
+    try testing.expectEqual(@as(usize, 3), list.len);
+    try testing.expectEqual(@as(usize, 107), list.pop().?.data);
+    try testing.expectEqual(@as(usize, 9), list.pop().?.data);
+    try testing.expectEqual(@as(usize, 73), list.pop().?.data);
+}

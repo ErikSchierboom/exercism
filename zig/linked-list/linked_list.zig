@@ -62,15 +62,20 @@ pub fn LinkedList(comptime T: type) type {
 
         pub fn delete(self: *Self, node: *Node) void {
             var current = self.first;
-
             while (current) |c| : (current = c.next) {
                 if (c != node) continue;
 
-                if (node.prev) |n| n.next = c.next;
-                if (node.next) |n| n.prev = c.prev;
+                if (node.prev) |prev| {
+                    prev.next = node.next;
+                } else {
+                    self.first = node.next;
+                }
 
-                if (node == self.first) self.first = c;
-                if (node == self.last) self.last = c;
+                if (node.next) |next| {
+                    next.prev = node.prev;
+                } else {
+                    self.last = node.prev;
+                }
 
                 self.len -= 1;
                 return;
