@@ -34,8 +34,6 @@ pub fn convert(
 
     if (output_digits.items.len == 0) try output_digits.append(0);
 
-    var slice = try output_digits.toOwnedSlice();
-    std.mem.reverse(u32, slice);
-
-    return slice;
+    std.mem.reverse(u32, output_digits.items);
+    return try output_digits.toOwnedSlice();
 }
