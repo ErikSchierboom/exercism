@@ -6,10 +6,8 @@ pub fn steps(number: isize) anyerror!usize {
     var current = number;
     var num_steps: usize = 0;
 
-    while (current != 1) {
-        current = if (@rem(current, 2) == 0) @divExact(current, 2) else current * 3 + 1;
-        num_steps += 1;
-    }
+    while (current != 1) : (num_steps += 1)
+        current = if (current % 2 == 0) current / 2 else current * 3 + 1;
 
     return num_steps;
 }
