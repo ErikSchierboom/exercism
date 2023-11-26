@@ -25,11 +25,11 @@ pub fn convert(
     }
 
     var output_digits = std.ArrayList(u32).init(allocator);
+    defer output_digits.deinit();
 
-    while (decimal > 0) {
+    while (decimal > 0) : (decimal /= output_base) {
         var digit: u32 = decimal % output_base;
         try output_digits.append(digit);
-        decimal /= output_base;
     }
 
     if (output_digits.items.len == 0) try output_digits.append(0);
