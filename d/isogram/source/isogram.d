@@ -1,5 +1,6 @@
 module isogram;
 
+import std.algorithm.iteration : filter, map;
 import std.ascii : isAlpha, toLower;
 import std.bitmanip : BitArray;
 import std.range : repeat;
@@ -9,13 +10,12 @@ bool isIsogram(string sentence)
 {
     BitArray letters = false.repeat(26).array;
 
-    foreach (c; sentence)
+    foreach (c; sentence.filter!isAlpha.map!toLower)
     {
-        if (!c.isAlpha) continue;
-
-        int bit = c.toLower - 'a';
-        if (letters[bit]) return false;
-
+        int bit = c - 'a';
+        if (letters[bit])
+            return false;
+        
         letters[bit] = true;
     }
 
