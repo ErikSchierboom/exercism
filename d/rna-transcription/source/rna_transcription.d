@@ -4,7 +4,7 @@ import std.string : translate;
 
 string toRna(string dna)
 {
-    return dna.translate(['G' : 'C', 'C' : 'G', 'T': 'A', 'A': 'U']);
+    return dna.tr("GCTA", "CGAU");
 }
 
 unittest
