@@ -1,0 +1,25 @@
+{
+  "authors": [
+    "tmccombs"
+  ],
+  "contributors": [
+    "amscotti",
+    "kytrinyx",
+    "petertseng",
+    "sjwarner-bp"
+  ],
+  "files": {
+    "solution": [
+      "source/rna_transcription.d"
+    ],
+    "test": [
+      "source/rna_transcription.d"
+    ],
+    "example": [
+      "example/rna_transcription.d"
+    ]
+  },
+  "blurb": "Given a DNA strand, return its RNA Complement Transcription.",
+  "source": "Hyperphysics",
+  "source_url": "https://web.archive.org/web/20220408112140/http://hyperphysics.phy-astr.gsu.edu/hbase/Organic/transcription.html"
+}
