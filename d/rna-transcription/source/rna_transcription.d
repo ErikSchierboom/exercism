@@ -1,6 +1,6 @@
 module rna_transcription;
 
-import std.string : translate;
+import std.string : tr;
 
 string toRna(string dna)
 {
