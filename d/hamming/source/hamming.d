@@ -8,7 +8,7 @@ ulong distance(string left, string right)
 {
     enforce(left.count == right.count, "Strands must have equal lengths");
 
-    return count!"a[0] != a[1]"(zip(left, right));
+    return zip(left, right).count!"a[0] != a[1]";
 }
 
 unittest
