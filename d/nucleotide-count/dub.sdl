@@ -1,0 +1,2 @@
+name "nucleotide-count"
+buildRequirements "disallowDeprecations"
