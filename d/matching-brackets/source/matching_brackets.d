@@ -8,16 +8,17 @@ bool isPaired(string input)
     int[] opened;
 
     foreach (char c; input) {
-        if (c == '{' || c == '[' || c == '(') {
-            opened ~= c;
-            continue;
-        }
+        switch (c) {
+            case '{', '[', '(':
+                opened ~= c;
+                break;
+            case '}', ']', ')':
+                if (opened.length == 0) return false;
+                if (close_to_open[c] != opened[$ - 1]) return false;
 
-        if (c == '}' || c == ']' || c == ')') {
-            if (opened.length == 0) return false;
-            if (close_to_open[c] != opened[opened.length - 1]) return false;
-
-            opened = opened.remove(opened.length - 1);
+                --opened.length;
+                break;
+            default: break;
         }
     }
 
