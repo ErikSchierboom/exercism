@@ -1,0 +1,26 @@
+{
+  "authors": [],
+  "contributors": [
+    "amscotti",
+    "celavek",
+    "kytrinyx",
+    "petertseng",
+    "sjwarner-bp",
+    "TheSmartnik",
+    "tmccombs"
+  ],
+  "files": {
+    "solution": [
+      "source/etl.d"
+    ],
+    "test": [
+      "source/etl.d"
+    ],
+    "example": [
+      "example/etl.d"
+    ]
+  },
+  "blurb": "We are going to do the `Transform` step of an Extract-Transform-Load.",
+  "source": "Exercise by the JumpstartLab team for students at The Turing School of Software and Design.",
+  "source_url": "https://turing.edu"
+}
