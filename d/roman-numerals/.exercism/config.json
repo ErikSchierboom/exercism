@@ -1,0 +1,24 @@
+{
+  "authors": [],
+  "contributors": [
+    "amscotti",
+    "kytrinyx",
+    "petertseng",
+    "sjwarner-bp",
+    "tmccombs"
+  ],
+  "files": {
+    "solution": [
+      "source/roman_numerals.d"
+    ],
+    "test": [
+      "source/roman_numerals.d"
+    ],
+    "example": [
+      "example/roman_numerals.d"
+    ]
+  },
+  "blurb": "Write a function to convert from normal numbers to Roman Numerals.",
+  "source": "The Roman Numeral Kata",
+  "source_url": "https://codingdojo.org/kata/RomanNumerals/"
+}
