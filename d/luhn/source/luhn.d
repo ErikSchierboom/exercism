@@ -1,7 +1,8 @@
 module luhn;
 
-import std.ascii;
+import std.ascii : isWhite, isDigit;
 import std.conv : to;
+import std.algorithm : reverse;
 
 bool valid(string input)
 {
@@ -21,9 +22,8 @@ bool valid(string input)
         return false;
 
     int checksum = 0;
-    for (int i = 0; i < digits.length; i++)
+    foreach (i, digit; digits.reverse)
     {
-        int digit = digits[$ - 1 - i];
         if (i % 2 == 1)
             digit *= 2;
         if (digit > 9)
