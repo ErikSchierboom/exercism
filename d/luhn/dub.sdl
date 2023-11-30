@@ -1,0 +1,2 @@
+name "luhn"
+buildRequirements "disallowDeprecations"
