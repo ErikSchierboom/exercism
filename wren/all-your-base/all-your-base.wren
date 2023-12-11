@@ -10,15 +10,14 @@ class AllYourBase {
         decimal = decimal * inputBase + digit
     }
 
+    if (decimal == 0) return [0]
+
     var outputDigits = []
 
     while (decimal > 0) {
-        var digit = decimal % outputBase
-        outputDigits.insert(0, digit)
+        outputDigits.insert(0, decimal % outputBase)
         decimal = (decimal / outputBase).truncate
     }
-
-    if (outputDigits.count == 0) outputDigits.add(0)
 
     return outputDigits
   }
