@@ -1,29 +1,10 @@
-export default class Anagram {
-    constructor(input) {
-        this.input = input.toLowerCase();
-        this.sortedInput = this.sortedCharArrayForString(input);
-    }
+export function findAnagrams(input, candidates) {
+  const notSameAsInput = (word) => input.toLowerCase() !== word.toLowerCase();
+  const hasSameLettersAsInput = (word) =>
+    sortedString(word) === sortedString(input);
+  const sortedString = (word) => [...word.toLowerCase()].sort().join("");
+  const isAnagram = (word) =>
+    notSameAsInput(word) && hasSameLettersAsInput(word);
 
-    matches(...candidates) {
-        candidates = Array.isArray(candidates[0]) ? candidates[0] : candidates;
-
-        return candidates.filter(word => this.isAnagram(word));
-    }
-    
-    isAnagram(word) {
-        return this.notSameAsInput(word) && 
-               this.hasSameLettersAsInput(word);
-    }
-
-    notSameAsInput(word) {
-        return this.input !== word.toLowerCase();
-    }
-
-    hasSameLettersAsInput(word) {
-        return this.sortedCharArrayForString(word) === this.sortedInput;
-    }
-
-    sortedCharArrayForString(word) {
-        return [...word.toLowerCase()].sort().join('');
-    }
+  return candidates.filter(isAnagram);
 }
