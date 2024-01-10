@@ -1,28 +1,28 @@
-import { rows } from './pascals-triangle';
+import { rows } from "./pascals-triangle";
 
-describe('Pascals Triangle', () => {
+describe("Pascals Triangle", () => {
   describe("Given a count, return a collection of that many rows of pascal's triangle", () => {
-    test('zero rows', () => {
+    test("zero rows", () => {
       expect(rows(0)).toEqual([]);
     });
 
-    xtest('single row', () => {
+    test("single row", () => {
       expect(rows(1)).toEqual([[1]]);
     });
 
-    xtest('two rows', () => {
+    test("two rows", () => {
       expect(rows(2)).toEqual([[1], [1, 1]]);
     });
 
-    xtest('three rows', () => {
+    test("three rows", () => {
       expect(rows(3)).toEqual([[1], [1, 1], [1, 2, 1]]);
     });
 
-    xtest('four rows', () => {
+    test("four rows", () => {
       expect(rows(4)).toEqual([[1], [1, 1], [1, 2, 1], [1, 3, 3, 1]]);
     });
 
-    xtest('five rows', () => {
+    test("five rows", () => {
       expect(rows(5)).toEqual([
         [1],
         [1, 1],
@@ -32,7 +32,7 @@ describe('Pascals Triangle', () => {
       ]);
     });
 
-    xtest('six rows', () => {
+    test("six rows", () => {
       expect(rows(6)).toEqual([
         [1],
         [1, 1],
@@ -43,7 +43,7 @@ describe('Pascals Triangle', () => {
       ]);
     });
 
-    xtest('ten rows', () => {
+    test("ten rows", () => {
       expect(rows(10)).toEqual([
         [1],
         [1, 1],

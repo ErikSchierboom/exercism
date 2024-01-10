@@ -1,15 +1,15 @@
-import { transform } from './etl';
+import { transform } from "./etl";
 
-describe('Transform legacy to new', () => {
-  test('single letter', () => {
-    const old = { 1: ['A'] };
+describe("Transform legacy to new", () => {
+  test("single letter", () => {
+    const old = { 1: ["A"] };
     const expected = { a: 1 };
 
     expect(transform(old)).toEqual(expected);
   });
 
-  xtest('single score with multiple letters', () => {
-    const old = { 1: ['A', 'E', 'I', 'O', 'U'] };
+  test("single score with multiple letters", () => {
+    const old = { 1: ["A", "E", "I", "O", "U"] };
     const expected = {
       a: 1,
       e: 1,
@@ -21,8 +21,8 @@ describe('Transform legacy to new', () => {
     expect(transform(old)).toEqual(expected);
   });
 
-  xtest('multiple scores with multiple letters', () => {
-    const old = { 1: ['A', 'E'], 2: ['D', 'G'] };
+  test("multiple scores with multiple letters", () => {
+    const old = { 1: ["A", "E"], 2: ["D", "G"] };
     const expected = {
       a: 1,
       e: 1,
@@ -33,15 +33,15 @@ describe('Transform legacy to new', () => {
     expect(transform(old)).toEqual(expected);
   });
 
-  xtest('multiple scores with differing numbers of letters', () => {
+  test("multiple scores with differing numbers of letters", () => {
     const old = {
-      1: ['A', 'E', 'I', 'O', 'U', 'L', 'N', 'R', 'S', 'T'],
-      2: ['D', 'G'],
-      3: ['B', 'C', 'M', 'P'],
-      4: ['F', 'H', 'V', 'W', 'Y'],
-      5: ['K'],
-      8: ['J', 'X'],
-      10: ['Q', 'Z'],
+      1: ["A", "E", "I", "O", "U", "L", "N", "R", "S", "T"],
+      2: ["D", "G"],
+      3: ["B", "C", "M", "P"],
+      4: ["F", "H", "V", "W", "Y"],
+      5: ["K"],
+      8: ["J", "X"],
+      10: ["Q", "Z"],
     };
     const expected = {
       a: 1,
