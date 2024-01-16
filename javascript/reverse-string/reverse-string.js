@@ -1,3 +1,3 @@
-export default function reverseString(input) {
-    return [...input].reverse().join('')
+export function reverseString(input) {
+  return [...input].reverse().join("");
 }
