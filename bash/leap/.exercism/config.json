@@ -1,0 +1,32 @@
+{
+  "authors": [
+    "kenden"
+  ],
+  "contributors": [
+    "bkhl",
+    "budmc29",
+    "glennj",
+    "guygastineau",
+    "IsaacG",
+    "kotp",
+    "kytrinyx",
+    "platinumthinker",
+    "sjwarner-bp",
+    "Smarticles101",
+    "ZapAnton"
+  ],
+  "files": {
+    "solution": [
+      "leap.sh"
+    ],
+    "test": [
+      "leap.bats"
+    ],
+    "example": [
+      ".meta/example.sh"
+    ]
+  },
+  "blurb": "Determine whether a given year is a leap year.",
+  "source": "CodeRanch Cattle Drive, Assignment 3",
+  "source_url": "https://coderanch.com/t/718816/Leap"
+}
