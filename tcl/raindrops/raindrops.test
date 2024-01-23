@@ -1,0 +1,81 @@
+#!/usr/bin/env tclsh
+package require tcltest
+namespace import ::tcltest::*
+source testHelpers.tcl
+
+############################################################
+source "raindrops.tcl"
+
+test raindrops-1 "sound for 1 is 1" -body {
+    raindrops 1
+} -returnCodes ok -result 1
+
+test raindrops-2 "sound for 3 is Pling" -body {
+    raindrops 3
+} -returnCodes ok -result Pling
+
+test raindrops-3 "sound for 5 is Plang" -body {
+    raindrops 5
+} -returnCodes ok -result Plang
+
+test raindrops-4 "sound for 7 is Plong" -body {
+    raindrops 7
+} -returnCodes ok -result Plong
+
+test raindrops-5 "sound for 6 is Pling" -body {
+    raindrops 6
+} -returnCodes ok -result Pling
+
+test raindrops-6 "sound for 8 is 8" -body {
+    raindrops 8
+} -returnCodes ok -result 8
+
+test raindrops-7 "sound for 9 is Pling" -body {
+    raindrops 9
+} -returnCodes ok -result Pling
+
+test raindrops-8 "sound for 10 is Plang" -body {
+    raindrops 10
+} -returnCodes ok -result Plang
+
+test raindrops-9 "sound for 14 is Plong" -body {
+    raindrops 14
+} -returnCodes ok -result Plong
+
+test raindrops-10 "sound for 15 is PlingPlang" -body {
+    raindrops 15
+} -returnCodes ok -result PlingPlang
+
+test raindrops-11 "sound for 21 is PlingPlong" -body {
+    raindrops 21
+} -returnCodes ok -result PlingPlong
+
+test raindrops-12 "sound for 25 is Plang" -body {
+    raindrops 25
+} -returnCodes ok -result Plang
+
+test raindrops-13 "sound for 27 is Pling" -body {
+    raindrops 27
+} -returnCodes ok -result Pling
+
+test raindrops-14 "sound for 35 is PlangPlong" -body {
+    raindrops 35
+} -returnCodes ok -result PlangPlong
+
+test raindrops-15 "sound for 49 is Plong" -body {
+    raindrops 49
+} -returnCodes ok -result Plong
+
+test raindrops-16 "sound for 52 is 52" -body {
+    raindrops 52
+} -returnCodes ok -result 52
+
+test raindrops-17 "sound for 105 is PlingPlangPlong" -body {
+    raindrops 105
+} -returnCodes ok -result PlingPlangPlong
+
+test raindrops-18 "sound for 3125 is Plang" -body {
+    raindrops 3125
+} -returnCodes ok -result Plang
+
+cleanupTests
