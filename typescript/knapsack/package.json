@@ -12,21 +12,12 @@
     "node": "^18.16.0 || >=20.0.0"
   },
   "devDependencies": {
-    "@exercism/babel-preset-typescript": "^0.4.0",
-    "@exercism/eslint-config-typescript": "^0.5.0",
-    "@types/jest": "^29.5.2",
-    "@types/node": "~18.16.16",
-    "babel-jest": "^29.5.0",
-    "core-js": "~3.30.2",
-    "eslint": "^8.42.0",
-    "jest": "^29.5.0",
-    "typescript": "~5.0.4"
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
   },
   "scripts": {
-    "test": "yarn lint:types && jest --no-cache",
-    "lint": "yarn lint:types && yarn lint:ci",
-    "lint:types": "yarn tsc --noEmit -p .",
-    "lint:ci": "eslint . --ext .tsx,.ts"
-  },
-  "packageManager": "yarn@3.6.0"
+    "test": "bun test"
+  }
 }

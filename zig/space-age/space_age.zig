@@ -12,7 +12,7 @@ pub const Planet = enum {
 
     pub fn age(self: Planet, seconds: usize) f64 {
         const seconds_in_earth_years = self.orbital_period_in_earth_year() * secondsInEarthOrbit;
-        return @intToFloat(f64, seconds) / seconds_in_earth_years;
+        return @as(f64, @floatFromInt(seconds)) / seconds_in_earth_years;
     }
 
     fn orbital_period_in_earth_year(self: Planet) f64 {

@@ -1,23 +1,23 @@
-import { primes } from './sieve';
+import { primes } from "./sieve";
 
-describe('Sieve', () => {
-  test('no primes under two', () => {
+describe("Sieve", () => {
+  test("no primes under two", () => {
     expect(primes(1)).toEqual([]);
   });
 
-  xtest('finds first prime', () => {
+  test("finds first prime", () => {
     expect(primes(2)).toEqual([2]);
   });
 
-  xtest('finds primes up to 10', () => {
+  test("finds primes up to 10", () => {
     expect(primes(10)).toEqual([2, 3, 5, 7]);
   });
 
-  xtest('limit is prime', () => {
+  test("limit is prime", () => {
     expect(primes(13)).toEqual([2, 3, 5, 7, 11, 13]);
   });
 
-  xtest('finds primes up to 1000', () => {
+  test("finds primes up to 1000", () => {
     expect(primes(1000)).toEqual([
       2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67,
       71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149,

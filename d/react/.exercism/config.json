@@ -1,0 +1,23 @@
+{
+  "authors": [
+    "petertseng"
+  ],
+  "contributors": [
+    "amscotti",
+    "kytrinyx",
+    "maxhaton",
+    "sjwarner-bp"
+  ],
+  "files": {
+    "solution": [
+      "source/react.d"
+    ],
+    "test": [
+      "source/react.d"
+    ],
+    "example": [
+      "example/react.d"
+    ]
+  },
+  "blurb": "Implement a basic reactive system."
+}

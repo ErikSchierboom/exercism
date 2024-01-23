@@ -1,7 +1,7 @@
-import { saddlePoints } from './saddle-points';
+import { saddlePoints } from "./saddle-points";
 
-describe('Saddle Points', () => {
-  test('Can identify single saddle point', () => {
+describe("Saddle Points", () => {
+  test("Can identify single saddle point", () => {
     const expected = [{ row: 2, column: 1 }];
     expect(
       saddlePoints([
@@ -12,11 +12,11 @@ describe('Saddle Points', () => {
     ).toEqual(expected);
   });
 
-  xtest('Can identify that empty matrix has no saddle points', () => {
+  test("Can identify that empty matrix has no saddle points", () => {
     expect(saddlePoints([[]])).toEqual([]);
   });
 
-  xtest('Can identify lack of saddle points when there are none', () => {
+  test("Can identify lack of saddle points when there are none", () => {
     expect(
       saddlePoints([
         [1, 2, 3],
@@ -26,7 +26,7 @@ describe('Saddle Points', () => {
     ).toEqual([]);
   });
 
-  xtest('Can identify multiple saddle points in a column', () => {
+  test("Can identify multiple saddle points in a column", () => {
     const expected = [
       { row: 1, column: 2 },
       { row: 2, column: 2 },
@@ -41,7 +41,7 @@ describe('Saddle Points', () => {
     ).toEqual(expected);
   });
 
-  xtest('Can identify multiple saddle points in a row', () => {
+  test("Can identify multiple saddle points in a row", () => {
     const expected = [
       { row: 2, column: 1 },
       { row: 2, column: 2 },
@@ -56,7 +56,7 @@ describe('Saddle Points', () => {
     ).toEqual(expected);
   });
 
-  xtest('Can identify saddle point in bottom right corner', () => {
+  test("Can identify saddle point in bottom right corner", () => {
     const expected = [{ row: 3, column: 3 }];
     expect(
       saddlePoints([
@@ -67,7 +67,7 @@ describe('Saddle Points', () => {
     ).toEqual(expected);
   });
 
-  xtest('Can identify saddle points in a non square matrix', () => {
+  test("Can identify saddle points in a non square matrix", () => {
     const expected = [
       { row: 1, column: 1 },
       { row: 1, column: 3 },
@@ -80,7 +80,7 @@ describe('Saddle Points', () => {
     ).toEqual(expected);
   });
 
-  xtest('Can identify that saddle points in a single column matrix are those with the minimum value', () => {
+  test("Can identify that saddle points in a single column matrix are those with the minimum value", () => {
     const expected = [
       { row: 2, column: 1 },
       { row: 4, column: 1 },
@@ -88,7 +88,7 @@ describe('Saddle Points', () => {
     expect(saddlePoints([[2], [1], [4], [1]])).toEqual(expected);
   });
 
-  xtest('Can identify that saddle points in a single row matrix are those with the maximum value', () => {
+  test("Can identify that saddle points in a single row matrix are those with the maximum value", () => {
     const expected = [
       { row: 1, column: 2 },
       { row: 1, column: 4 },

@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "keiravillekode"
+  ],
+  "files": {
+    "solution": [
+      "all-your-base.wren"
+    ],
+    "test": [
+      "all-your-base.spec.wren"
+    ],
+    "example": [
+      ".meta/proof.ci.wren"
+    ]
+  },
+  "blurb": "Convert a number, represented as a sequence of digits in one base, to any other base."
+}

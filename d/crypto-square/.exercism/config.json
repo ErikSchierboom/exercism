@@ -1,0 +1,25 @@
+{
+  "authors": [],
+  "contributors": [
+    "amscotti",
+    "AntonMeep",
+    "kytrinyx",
+    "petertseng",
+    "sjwarner-bp",
+    "tmccombs"
+  ],
+  "files": {
+    "solution": [
+      "source/crypto_square.d"
+    ],
+    "test": [
+      "source/crypto_square.d"
+    ],
+    "example": [
+      "example/crypto_square.d"
+    ]
+  },
+  "blurb": "Implement the classic method for composing secret messages called a square code.",
+  "source": "J Dalbey's Programming Practice problems",
+  "source_url": "https://users.csc.calpoly.edu/~jdalbey/103/Projects/ProgrammingPractice.html"
+}

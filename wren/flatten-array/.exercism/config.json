@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "joshgoebel"
+  ],
+  "files": {
+    "solution": [
+      "flatten-array.wren"
+    ],
+    "test": [
+      "flatten-array.spec.wren"
+    ],
+    "example": [
+      ".meta/proof.ci.wren"
+    ]
+  },
+  "blurb": "Take a nested list and return a single list with all values except nil/null.",
+  "source": "Interview Question",
+  "source_url": "https://reference.wolfram.com/language/ref/Flatten.html"
+}

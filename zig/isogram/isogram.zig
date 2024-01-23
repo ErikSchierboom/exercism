@@ -7,8 +7,7 @@ pub fn isIsogram(str: []const u8) bool {
         if (!std.ascii.isAlphabetic(char)) continue;
 
         const letter_index = std.ascii.toLower(char) - 'a';
-        if (letters.isSet(letter_index))
-            return false;
+        if (letters.isSet(letter_index)) return false;
 
         letters.set(letter_index);
     }

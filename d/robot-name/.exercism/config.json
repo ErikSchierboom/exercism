@@ -1,0 +1,23 @@
+{
+  "authors": [],
+  "contributors": [
+    "amscotti",
+    "kytrinyx",
+    "petertseng",
+    "sjwarner-bp",
+    "tmccombs"
+  ],
+  "files": {
+    "solution": [
+      "source/robot_name.d"
+    ],
+    "test": [
+      "source/robot_name.d"
+    ],
+    "example": [
+      "example/robot_name.d"
+    ]
+  },
+  "blurb": "Manage robot factory settings.",
+  "source": "A debugging session with Paul Blackwell at gSchool."
+}
