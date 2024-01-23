@@ -1,8 +1,8 @@
 module Raindrops
 
-let drops = [(3, "Pling"); (5, "Plang"); (7, "Plong")]
-
 let convert number =
-    match [for factor, sound in drops do if number % factor = 0 then yield sound] with
-    | [] -> string number
-    | sounds -> String.concat "" sounds
+    [(3, "Pling"); (5, "Plang"); (7, "Plong")]
+    |> List.choose (fun (factor, sound) -> if number % factor = 0 then Some sound else None)
+    |> function
+       | [] -> string number
+       | sounds -> String.concat "" sounds
