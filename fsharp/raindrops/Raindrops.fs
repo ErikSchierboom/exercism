@@ -1,10 +1,8 @@
 module Raindrops
 
-open System.Globalization
+let drops = [(3, "Pling"); (5, "Plang"); (7, "Plong")]
 
-let convert (number:int) =
-    let factors = [(3, "Pling"); (5, "Plang"); (7, "Plong")]
-    let factorStrings = [for (factor, str) in factors do if number % factor = 0 then yield str]
-    match factorStrings with
-    | [] -> number.ToString(CultureInfo.InvariantCulture)
-    | xs -> String.concat "" xs
+let convert number =
+    match [for factor, sound in drops do if number % factor = 0 then yield sound] with
+    | [] -> string number
+    | sounds -> String.concat "" sounds
