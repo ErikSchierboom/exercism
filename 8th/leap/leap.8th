@@ -1,6 +1,6 @@
 : leap-year? \ n -- T
-    dup 400 mod 0 =
-    swap dup 4 mod 0 =
-    swap 100 mod 0 = not
+    dup 400 mod not swap
+    dup 100 mod swap
+    4 mod not
     and or
 ;
