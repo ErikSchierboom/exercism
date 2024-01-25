@@ -1,0 +1,3 @@
+: reverse \ s -- s
+  s:rev
+;

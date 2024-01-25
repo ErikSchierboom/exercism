@@ -1,0 +1,36 @@
+"reverse-string.8th" f:include
+needs exercism/test
+
+6 tests
+
+"an empty string"
+    ( "" reverse )
+    ""
+    equal?
+
+"a word"
+    ( "robot" reverse )
+    "tobor"
+    equal?
+
+"a capitalized word"
+    ( "Ramen" reverse )
+    "nemaR"
+    equal?
+
+"a sentence with punctuation"
+    ( "I'm hungry!" reverse )
+    "!yrgnuh m'I"
+    equal?
+
+"a palindrome"
+    ( "racecar" reverse )
+    "racecar"
+    equal?
+
+"an even-sized word"
+    ( "drawer" reverse )
+    "reward"
+    equal?
+
+end-of-tests
