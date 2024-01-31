@@ -1,24 +1,6 @@
-const romanNumeralValues = new Map();
-romanNumeralValues.set(1000, 'M');
-romanNumeralValues.set(900,  'CM');
-romanNumeralValues.set(500,  'D' );
-romanNumeralValues.set(400,  'CD');
-romanNumeralValues.set(100,  'C' );
-romanNumeralValues.set(90,   'XC');
-romanNumeralValues.set(50,   'L' );
-romanNumeralValues.set(40,   'XL');
-romanNumeralValues.set(10,   'X' );
-romanNumeralValues.set(9,    'IX');
-romanNumeralValues.set(5,    'V' );
-romanNumeralValues.set(4,    'IV');
-romanNumeralValues.set(1,    'I' );
-
-export default function toRoman(number) {
-    for (const [threshold, numeral] of romanNumeralValues.entries()) {
-        if (number >= threshold) {
-            return numeral + toRoman(number - threshold);
-        }
-    }
-
-    return '';
+function r(n, b, a, o, r) {
+  for (r = b = "", a = 5; n; b++, a ^= 7)
+    for (o = n % a, n = (n / a) ^ 0; o--; )
+      r = "IVXLCDM".charAt(o > 2 ? b + n - (n &= ~1) + (o = 1) : b) + r;
+  return r;
 }
