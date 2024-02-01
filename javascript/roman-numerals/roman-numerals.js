@@ -1,9 +1,36 @@
-export function toRoman(n, b, a, o, r) {
-  for (r = b = "", a = 5; n; b++, a ^= 7)
-    for (o = n % a, n = (n / a) ^ 0; o--; )
-      r = "IVXLCDM".charAt(o > 2 ? b + n - (n &= ~1) + (o = 1) : b) + r;
-  return r;
-}
+// Roman numerals can be written in mixed radius (alternating between 5 and 2)
+// 753 = 1₍₂₎2₍₅₎1₍₂₎0₍₅₎0₍₂₎3₍₅₎
+//     = 1D + 2C + 1L + 0X + 0V + 3I
+//     = DCCLIII
 
-// Full out code golfing:
-// export function toRoman(n,b,a,o,r){for(r=b='',a=5;n;b++,a^=7)for(o=n%a,n=n/a^0;o--;)r='IVXLCDM'.charAt(o>2?b+n-(n&=~1)+(o=1):b)+r;return r}
+const letters = "MDCLXVI";
+
+export function toRoman(num) {
+  let index = 0,
+    result = "",
+    value = 1000,
+    radix = 2,
+    subtractValue = 0;
+
+  while (num > 0) {
+    while (num >= value) {
+      result += letters[index];
+      num -= value;
+    }
+
+    if (radix == 2) {
+      subtractValue = value / 10;
+    }
+
+    if (num + subtractValue >= value) {
+      result += letters[index + 1 + (radix == 2)];
+      num += subtractValue;
+    } else {
+      index++;
+      value /= radix;
+      radix ^= 7;
+    }
+  }
+
+  return result;
+}
