@@ -3,22 +3,13 @@
 let private codonToProtein = 
     function
     | "AUG" -> "Methionine"
-    | "UUC" -> "Phenylalanine"
-    | "UUU" -> "Phenylalanine"
-    | "UUA" -> "Leucine"
-    | "UUG" -> "Leucine"
-    | "UCU" -> "Serine"
-    | "UCC" -> "Serine"
-    | "UCA" -> "Serine"
-    | "UCG" -> "Serine"
-    | "UAU" -> "Tyrosine"
-    | "UAC" -> "Tyrosine"
-    | "UGU" -> "Cysteine"
-    | "UGC" -> "Cysteine"
     | "UGG" -> "Tryptophan"
-    | "UAA" -> "STOP"
-    | "UAG" -> "STOP"
-    | "UGA" -> "STOP"
+    | "UUC" | "UUU" -> "Phenylalanine"
+    | "UUA" | "UUG" -> "Leucine"    
+    | "UAU" | "UAC" -> "Tyrosine"
+    | "UGU" | "UGC" -> "Cysteine"    
+    | "UCU" | "UCC" | "UCA" | "UCG" -> "Serine"
+    | "UAA" | "UAG" | "UGA" -> "STOP"    
     | _ -> failwith "Invalid codon"
 
 let proteins (input: string) =
