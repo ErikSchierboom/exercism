@@ -1,6 +1,6 @@
-MAPPING = Dict('G' => 'C', 'C' => 'G', 'T' => 'A', 'A' => 'U')
+COMPLEMENTS = Dict('G' => 'C', 'C' => 'G', 'T' => 'A', 'A' => 'U')
 
 function to_rna(dna)
-    join(haskey(MAPPING, n) ? MAPPING[n] : error("Invalid") for n in dna)
+    join(haskey(COMPLEMENTS, n) ? COMPLEMENTS[n] : error("Invalid") for n in dna)
 end
 
