@@ -1,12 +1,14 @@
 import Base: +, -, show
+import Dates: value
 import Printf: @printf
 
 struct Clock
-    hours::Int
     minutes::Int
-    Clock(hours, minutes) = new(div(mod(hours * 60 + minutes, 1440), 60), mod(minutes, 60))
+    Clock(minutes) = new(mod(minutes, 1440))
 end
 
-+(clock::Clock, minutes::Minute) = Clock(clock.hours, clock.minutes + minutes.value)
--(clock::Clock, minutes::Minute) = Clock(clock.hours, clock.minutes - minutes.value)
-show(io::IO, clock::Clock) = @printf(io, "\"%.2i:%.2i\"", clock.hours, clock.minutes)
+Clock(hours, minutes) = Clock(hours * 60 + minutes)
+
++(clock::Clock, minutes::Minute) = Clock(clock.minutes + value(minutes))
+-(clock::Clock, minutes::Minute) = Clock(clock.minutes - value(minutes))
+show(io::IO, clock::Clock) = @printf(io, "\"%.2i:%.2i\"", clock.minutes ÷ 60, mod(clock.minutes, 60))
