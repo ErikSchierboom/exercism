@@ -4,5 +4,7 @@
 .ionide/
 .metals/
 .elixir_ls/
+.lsp/
+.clj-kondo/
 users/
 *.DotSettings.user
