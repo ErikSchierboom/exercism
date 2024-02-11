@@ -4,7 +4,7 @@ NUMERALS = [
 ]
 
 function to_roman(number)
-    number ∈ 1:3999 || throw(ErrorException("Number out of range"))
+    number ∈ 1:3999 || error("Number cannot be converted to roman numeral")
 
     roman = ""
 
