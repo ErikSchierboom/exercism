@@ -13,4 +13,4 @@ function isdeficient(n)
     aliquotsum(n) < n
 end
 
-aliquotsum(n) = sum(factor for factor in 1:n-1 if mod(n, factor) == 0)
+aliquotsum(n) = sum(factor for factor in 1:n÷2 if iszero(mod(n, factor)))
