@@ -10,8 +10,8 @@ function rotate(n, c::AbstractChar)
     end
 end
 
-for i in 0:25
-    eval(:(macro $(Symbol("R", i, "_str"))(str::String)
-        :(rotate($$i, $str))
-    end))
+for i in 0:26
+    @eval macro $(Symbol("R", i, "_str"))(str::String)
+        rotate($i, str)
+    end
 end
