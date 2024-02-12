@@ -1,4 +1,3 @@
-
 encode(s) = join(map(encode, eachmatch(r"(.)\1*", s)))
 encode(m::RegexMatch) = isone(length(m.match)) ? m[1] : string(length(m.match)) * m[1]
 
