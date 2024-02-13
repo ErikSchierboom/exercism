@@ -1,15 +1,12 @@
 const partition = Iterators.partition
 
 encode(input) = join(partition(decode(input), 5), " ")
-decode(input) = join(skipmissing(map(decode, input)))
+decode(input) = join(skipmissing(translate(c) for c in input))
 
-function decode(c::AbstractChar)
-    if isletter(c)
-        'z' - (lowercase(c) - 'a')
-    elseif isdigit(c)
-        c
-    else
-        missing
-    end
+function translate(c::AbstractChar)
+    isletter(c) && return 'z' - lowercase(c) + 'a'
+    isdigit(c) && return c
+
+    missing
 end
 
