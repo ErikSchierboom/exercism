@@ -5,14 +5,14 @@ let rec foldl folder state list =
     | [] -> state
     | x::xs -> foldl folder (folder state x) xs
 
+let reverse list = foldl (fun acc item -> item :: acc) [] list
+
 let rec foldr folder state list =
     list
-    |> List.rev
+    |> reverse
     |> foldl (fun acc item -> folder item acc) state
 
 let length list = foldl (fun acc _ -> acc + 1) 0 list
-
-let reverse list = foldl (fun acc item -> item :: acc) [] list
 
 let map f list = foldr (fun item acc -> f item :: acc) [] list
 
