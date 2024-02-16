@@ -1,0 +1,3 @@
+: acronym \ s -- s
+  /[^a-zA-Z']+/ s:/ ( 1 s:lsub s:uc ) a:map "" a:join
+;

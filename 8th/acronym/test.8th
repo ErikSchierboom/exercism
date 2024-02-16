@@ -1,0 +1,51 @@
+"acronym.8th" f:include
+needs exercism/test
+
+9 tests
+
+"ignoring punctuation and casing"
+    "CMOS"
+    ( "Complementary metal-oxide semiconductor" acronym )
+    equal?
+
+"ignores punctuation"
+    "FIFO"
+    ( "First In, First Out" acronym )
+    equal?
+
+"from phrases with acronyms"
+    "GIMP"
+    ( "GNU Image Manipulation Program" acronym )
+    equal?
+
+"from phrases with apostrophes"
+    "HC"
+    ( "Halley's Comet" acronym )
+    equal?
+
+"from title case"
+    "PNG"
+    ( "Portable Network Graphics" acronym )
+    equal?
+
+"from lower case"
+    "ROR"
+    ( "Ruby on Rails" acronym )
+    equal?
+
+"from a very long abbreviation"
+    "ROTFLSHTMDCOALM"
+    ( "Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me" acronym )
+    equal?
+
+"from phrases with consecutive delimiters"
+    "SIMUFTA"
+    ( "Something - I made up from thin air" acronym )
+    equal?
+
+"from phrases with underscore emphasis"
+    "TRNT"
+    ( "The Road _Not_ Taken" acronym )
+    equal?
+
+end-of-tests
