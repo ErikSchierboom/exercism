@@ -6,14 +6,14 @@ Class {
 
 { #category : #accessing }
 CollatzConjecture >> stepsFrom: anInteger [
-	| current steps |	
 	anInteger < 1 ifTrue: [ Error signal: 'Only positive numbers are allowed' ].	
-	current := anInteger.
-	steps := 0.
-	[ current ~= 1 ] whileTrue: [ 
-		current := current even
-			           ifTrue: [ current // 2 ]
-			           ifFalse: [ current * 3 + 1 ].
-		steps := steps + 1 ].
-	^ steps
+	^ self stepsFrom: anInteger steps: 0
+]
+
+{ #category : #'as yet unclassified' }
+CollatzConjecture >> stepsFrom: anInteger steps: count [ 
+	anInteger = 1 ifTrue: [ ^ count ].
+	^ anInteger odd
+		ifTrue: [ self stepsFrom: anInteger * 3 + 1 steps: count + 1 ]
+		ifFalse: [ self stepsFrom: anInteger / 2 steps: count + 1 ].
 ]
