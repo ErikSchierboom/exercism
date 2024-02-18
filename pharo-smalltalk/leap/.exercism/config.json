@@ -1,0 +1,22 @@
+{
+  "authors": [
+    "macta"
+  ],
+  "contributors": [
+    "bencoman"
+  ],
+  "files": {
+    "solution": [
+      "Leap.class.st"
+    ],
+    "test": [
+      "LeapTest.class.st"
+    ],
+    "example": [
+      ".meta/solution/Leap.class.st"
+    ]
+  },
+  "blurb": "Determine whether a given year is a leap year.",
+  "source": "CodeRanch Cattle Drive, Assignment 3",
+  "source_url": "https://coderanch.com/t/718816/Leap"
+}
