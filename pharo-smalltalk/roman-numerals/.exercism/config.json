@@ -1,0 +1,22 @@
+{
+  "authors": [
+    "macta"
+  ],
+  "contributors": [
+    "bencoman"
+  ],
+  "files": {
+    "solution": [
+      "RomanNumerals.class.st"
+    ],
+    "test": [
+      "RomanNumeralsTest.class.st"
+    ],
+    "example": [
+      ".meta/solution/RomanNumerals.class.st"
+    ]
+  },
+  "blurb": "Convert modern Arabic numbers into Roman numerals.",
+  "source": "The Roman Numeral Kata",
+  "source_url": "https://codingdojo.org/kata/RomanNumerals/"
+}
