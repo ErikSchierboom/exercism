@@ -1,0 +1,22 @@
+{
+  "authors": [
+    "macta"
+  ],
+  "contributors": [
+    "bencoman"
+  ],
+  "files": {
+    "solution": [
+      "Isogram.class.st"
+    ],
+    "test": [
+      "IsogramTest.class.st"
+    ],
+    "example": [
+      ".meta/solution/Isogram.class.st"
+    ]
+  },
+  "blurb": "Determine if a word or phrase is an isogram.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Isogram"
+}
