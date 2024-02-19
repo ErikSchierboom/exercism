@@ -6,7 +6,7 @@ Class {
 
 { #category : #accessing }
 CollatzConjecture >> stepsFrom: anInteger [
-	anInteger < 1 ifTrue: [ Error signal: 'Only positive numbers are allowed' ].	
+	anInteger strictlyPositive ifTrue: [ Error signal: 'Only positive numbers are allowed' ].	
 	^ self stepsFrom: anInteger steps: 0
 ]
 
