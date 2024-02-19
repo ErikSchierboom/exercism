@@ -1,0 +1,23 @@
+{
+  "authors": [
+    "carlotxra"
+  ],
+  "contributors": [
+    "bencoman",
+    "macta"
+  ],
+  "files": {
+    "solution": [
+      "ArmstrongNumbers.class.st"
+    ],
+    "test": [
+      "ArmstrongNumbersTest.class.st"
+    ],
+    "example": [
+      ".meta/solution/ArmstrongNumbers.class.st"
+    ]
+  },
+  "blurb": "Determine if a number is an Armstrong number.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Narcissistic_number"
+}
