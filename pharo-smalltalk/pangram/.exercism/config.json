@@ -1,0 +1,22 @@
+{
+  "authors": [
+    "macta"
+  ],
+  "contributors": [
+    "bencoman"
+  ],
+  "files": {
+    "solution": [
+      "Pangram.class.st"
+    ],
+    "test": [
+      "PangramTest.class.st"
+    ],
+    "example": [
+      ".meta/solution/Pangram.class.st"
+    ]
+  },
+  "blurb": "Determine if a sentence is a pangram.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Pangram"
+}
