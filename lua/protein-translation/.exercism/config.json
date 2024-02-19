@@ -1,0 +1,21 @@
+{
+  "authors": [
+    "ryanplusplus"
+  ],
+  "contributors": [
+    "aarti"
+  ],
+  "files": {
+    "solution": [
+      "protein-translation.lua"
+    ],
+    "test": [
+      "protein-translation_spec.lua"
+    ],
+    "example": [
+      ".meta/example.lua"
+    ]
+  },
+  "blurb": "Translate RNA sequences into proteins.",
+  "source": "Tyler Long"
+}
