@@ -6,5 +6,5 @@ Class {
 
 { #category : #testing }
 Pangram >> isPangramSentence: aString [ 
-	^ (Character alphabet intersection: aString asLowercase) = Character alphabet
+	^ (Character alphabet difference: aString asLowercase) isEmpty
 ]
