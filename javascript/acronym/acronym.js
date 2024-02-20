@@ -1,8 +1,6 @@
-export default class Acronyms {
-    static parse(input) {
-        return input
-            .match(/[A-Z]+[a-z]*|[a-z]+/g)
-            .map(str => str.toUpperCase()[0])
-            .join('');
-    }
-}
+export const parse = (sentence) =>
+  sentence
+    .toUpperCase()
+    .match(/[A-Z']+/g)
+    .map((x) => x[0])
+    .join("");
