@@ -1,5 +1,5 @@
 {
-  "blurb": "Convert a long phrase to its acronym",
+  "blurb": "Convert a long phrase to its acronym.",
   "authors": [
     "ricemery"
   ],
@@ -18,6 +18,9 @@
     ],
     "example": [
       ".meta/Example.scala"
+    ],
+    "invalidator": [
+      "build.sbt"
     ]
   },
   "source": "Julien Vanier",

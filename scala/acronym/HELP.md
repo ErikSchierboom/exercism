@@ -3,7 +3,7 @@
 ## Running the tests
 
 To run the tests, run the command `sbt test` in the exercise's directory.
-See the [tests page](https://exercism.io/tracks/scala/tests) for more information.
+See the [tests page](https://exercism.org/docs/tracks/scala/tests) for more information.
 
 ## Skipped tests
 
@@ -26,9 +26,10 @@ It's possible to submit an incomplete solution which allows you to:
 If you'd like help solving the exercise, check the following pages:
 
 - The [Scala track's documentation](https://exercism.org/docs/tracks/scala)
-- [Exercism's support channel on gitter](https://gitter.im/exercism/support)
+- The [Scala track's programming category on the forum](https://forum.exercism.org/c/programming/scala)
+- [Exercism's programming category on the forum](https://forum.exercism.org/c/programming/5)
 - The [Frequently Asked Questions](https://exercism.org/docs/using/faqs)
 
 Should those resources not suffice, you could submit your (incomplete) solution to request mentoring.
 
-Please see the [learning](https://exercism.io/tracks/scala/learning) and [installation](https://exercism.io/tracks/scala/installation) pages if you need any help.
+Please see the [learning](https://exercism.org/docs/tracks/scala/learning) and [installation](https://exercism.org/docs/tracks/scala/installation) pages if you need any help.
