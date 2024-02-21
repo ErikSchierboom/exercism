@@ -1,7 +1,11 @@
 import strutils
 import sets
 
-const alphabet = toHashSet("abcdefghijklmnopqrstuvwxyz")
-
 proc isPangram*(sentence: string): bool =
-    alphabet <= toHashSet(sentence.toLower)
+    var seenLetters = initHashSet[char](26)
+
+    for c in sentence.toLower:
+        if c in LowercaseLetters:
+            seenLetters.incl c
+            if seenLetters.len == LowercaseLetters.len:
+                return true
