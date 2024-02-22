@@ -3,12 +3,7 @@ module ParallelLetterFrequency
 open System
 
 module Map =
-    let merge x y = 
-        let folder acc key value =
-            match Map.tryFind key acc with
-            | Some z -> Map.add key (z + value) acc
-            | None -> Map.add key value acc
-        Map.fold folder x y
+    let merge = Map.fold (fun acc key value -> Map.add key ((Map.tryFind key acc |> Option.defaultValue 0) + value) acc)
 
 let private asyncCalculateFrequency text = async {
     return
