@@ -1,6 +1,5 @@
 export const parse = (sentence) =>
   sentence
-    .toUpperCase()
-    .match(/[A-Z']+/g)
-    .map((x) => x[0])
+    .match(/[A-Za-z']+/g)
+    .map((x) => x[0].toUpperCase())
     .join("");
