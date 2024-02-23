@@ -1,19 +1,21 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 
-public enum Allergen { Eggs, Peanuts, Shellfish, Strawberries, Tomatoes, Chocolate, Pollen, Cats }
-
-public class Allergies
+[Flags]
+public enum Allergen
 {
-    private readonly List<Allergen> _allergies;
+    Eggs         = 1 << 0,
+    Peanuts      = 1 << 1,
+    Shellfish    = 1 << 2,
+    Strawberries = 1 << 3,
+    Tomatoes     = 1 << 4,
+    Chocolate    = 1 << 5,
+    Pollen       = 1 << 6,
+    Cats         = 1 << 7
+}
 
-    public Allergies(int codedAllergies) =>
-        _allergies = Enum.GetValues<Allergen>()
-            .Where((_, shiftLeft) => (codedAllergies & 1 << shiftLeft) != 0)
-            .ToList();
-
-    public bool IsAllergicTo(Allergen allergen) => _allergies.Contains(allergen);
-
-    public List<Allergen> List() => _allergies; 
+public class Allergies(int code)
+{
+    public bool IsAllergicTo(Allergen allergen) => ((Allergen)code).HasFlag(allergen);
+    public Allergen[] List() => Enum.GetValues<Allergen>().Where(IsAllergicTo).ToArray();
 }
