@@ -1,7 +1,4 @@
-class Allergies(mask: Int) {
-    private val allergies = Allergen.values().filter { mask and it.score != 0 }
-
-    fun isAllergicTo(allergen: Allergen) = allergen in allergies
-
-    fun getList() = allergies
+class Allergies(private val score: Int) {
+    fun isAllergicTo(allergen: Allergen) = score and allergen.score != 0
+    fun getList() = Allergen.values().filter(::isAllergicTo)
 }
