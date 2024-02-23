@@ -4,14 +4,14 @@ using System.Linq;
 [Flags]
 public enum Allergen
 {
-    Eggs         = 1 << 0,
-    Peanuts      = 1 << 1,
-    Shellfish    = 1 << 2,
-    Strawberries = 1 << 3,
-    Tomatoes     = 1 << 4,
-    Chocolate    = 1 << 5,
-    Pollen       = 1 << 6,
-    Cats         = 1 << 7
+    Eggs         = 0b00000001,
+    Peanuts      = 0b00000010,
+    Shellfish    = 0b00000100,
+    Strawberries = 0b00001000,
+    Tomatoes     = 0b00010000,
+    Chocolate    = 0b00100000,
+    Pollen       = 0b01000000,
+    Cats         = 0b10000000
 }
 
 public class Allergies(int code)
