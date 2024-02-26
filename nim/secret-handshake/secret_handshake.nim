@@ -1,18 +1,22 @@
 import algorithm, bitops
 
-const lookup = block:
-  func toCommands(handshake: int): seq[string] =
-    if testBit(handshake, 0): result.add("wink")
-    if testBit(handshake, 1): result.add("double blink")
-    if testBit(handshake, 2): result.add("close your eyes")
-    if testBit(handshake, 3): result.add("jump")
-    if testBit(handshake, 4): result.reverse
+type
+  Action* = enum
+    Wink, DoubleBlink, CloseEyes, Jump
 
-  func genLookup(): array[32, seq[string]] =
+const lookup = block:
+  func toCommands(handshake: int): seq[Action] =
+    if handshake.testBit(0): result.add(Wink)
+    if handshake.testBit(1): result.add(DoubleBlink)
+    if handshake.testBit(2): result.add(CloseEyes)
+    if handshake.testBit(3): result.add(Jump)
+    if handshake.testBit(4): result.reverse
+
+  func genLookup(): array[32, seq[Action]] =
     for i in result.low..result.high:
       result[i] = i.toCommands()
 
   genLookup()
 
-func commands*(handshake: int): seq[string] =
+func commands*(handshake: int): seq[Action] =
   lookup[handshake mod lookup.len]
