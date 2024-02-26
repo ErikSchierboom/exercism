@@ -1,14 +1,18 @@
-import algorithm, bitops, sugar, tables
+import algorithm, bitops
 
-const EncodedAction = {
-  0: (commands: var seq[string]) => commands.add("wink"),
-  1: (commands: var seq[string]) => commands.add("double blink"),
-  2: (commands: var seq[string]) => commands.add("close your eyes"),
-  3: (commands: var seq[string]) => commands.add("jump"),
-  4: (commands: var seq[string]) => commands.reverse
-}.toTable
+const lookup = block:
+  func toCommands(handshake: int): seq[string] =
+    if testBit(handshake, 0): result.add("wink")
+    if testBit(handshake, 1): result.add("double blink")
+    if testBit(handshake, 2): result.add("close your eyes")
+    if testBit(handshake, 3): result.add("jump")
+    if testBit(handshake, 4): result.reverse
 
-proc commands*(handshake: int): seq[string] =
-  for bit, action in EncodedAction:
-    if testBit(handshake, bit):
-      action(result)
+  func genLookup(): array[32, seq[string]] =
+    for i in result.low..result.high:
+      result[i] = i.toCommands()
+
+  genLookup()
+
+func commands*(handshake: int): seq[string] =
+  lookup[handshake mod lookup.len]
