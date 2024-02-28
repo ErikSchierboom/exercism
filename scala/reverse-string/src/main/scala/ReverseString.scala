@@ -1,3 +1,3 @@
 object ReverseString {
-  def reverse(str: String): String = str.reverse
+  def reverse(str: String) = str.reverse
 }
