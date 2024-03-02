@@ -10,14 +10,15 @@ public class GradeSchool
         if (_roster.Values.Any(students => students.Contains(student)))
             return false;
 
-        if (!_roster.TryAdd(grade, new SortedSet<string> { student }))
+        if (!_roster.TryAdd(grade, [student]))
             _roster[grade].Add(student);
 
         return true;
     }
 
-    public IEnumerable<string> Roster() => _roster.Values.SelectMany(students => students);
+    public IEnumerable<string> Roster() =>
+        _roster.Values.SelectMany(students => students);
 
     public IEnumerable<string> Grade(int grade) =>
-        _roster.TryGetValue(grade, out var students) ? students : Enumerable.Empty<string>();
+        _roster.GetValueOrDefault(grade, []).AsEnumerable();
 }
