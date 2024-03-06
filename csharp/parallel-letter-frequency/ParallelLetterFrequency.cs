@@ -8,13 +8,9 @@ public static class ParallelLetterFrequency
 
     private static Dictionary<char, int> AddCount(Dictionary<char, int> target, string text)
     {
-        foreach (var kv in text.ToLower().Where(char.IsLetter).GroupBy(c => c))
-        {
-            if (target.ContainsKey(kv.Key))
-                target[kv.Key] += kv.Count();
-            else
-                target[kv.Key] = kv.Count();
-        }
+        foreach (var letter in text.ToLower().Where(char.IsLetter))
+            if (!target.TryAdd(letter, 1))
+                target[letter] += 1;
 
         return target;
     }
