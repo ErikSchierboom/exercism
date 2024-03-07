@@ -20,5 +20,7 @@ public record Allergies(int code)
         ((Allergen)code).HasFlag(allergen);
     
     public Allergen[] List() =>
-        Enum.GetValues<Allergen>().Where(IsAllergicTo).ToArray();
+        Enum.GetValues<Allergen>()
+            .Where(IsAllergicTo)
+            .ToArray();
 }
