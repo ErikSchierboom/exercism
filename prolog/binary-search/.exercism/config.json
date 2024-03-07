@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "erikschierboom"
+  ],
+  "files": {
+    "solution": [
+      "binary_search.pl"
+    ],
+    "test": [
+      "binary_search_tests.plt"
+    ],
+    "example": [
+      ".meta/binary_search.example.pl"
+    ]
+  },
+  "blurb": "Implement a binary search algorithm.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Binary_search_algorithm"
+}
