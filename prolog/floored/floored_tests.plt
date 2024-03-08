@@ -10,19 +10,19 @@ pending :-
         floor(amara, Floor),
         Floor == 3.
 
-    test(floor_bjorn, condition(pending)) :-
+    test(floor_bjorn, condition(true)) :-
         floor(bjorn, Floor),
         Floor == 2.
 
-    test(floor_cora, condition(pending)) :-
+    test(floor_cora, condition(true)) :-
         floor(cora, Floor),
         Floor == 4.
 
-    test(floor_dale, condition(pending)) :-
+    test(floor_dale, condition(true)) :-
         floor(dale, Floor),
         Floor == 5.
 
-    test(floor_emiko, condition(pending)) :-
+    test(floor_emiko, condition(true)) :-
         floor(emiko, Floor),
         Floor == 1.
 

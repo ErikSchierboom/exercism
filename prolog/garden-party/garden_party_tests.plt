@@ -10,19 +10,19 @@ pending :-
         beverage(aisha, Beverage),
         Beverage == kombucha.
 
-    test(emma_dish, condition(pending)) :-
+    test(emma_dish, condition(true)) :-
         dish(emma, Dish),
         Dish == biryani.
 
-    test(mei_dish, condition(pending)) :-
+    test(mei_dish, condition(true)) :-
         dish(mei, Dish),
         Dish == pad_thai.
 
-    test(winona_dish, condition(pending)) :-
+    test(winona_dish, condition(true)) :-
         dish(winona, Dish),
         Dish == frybread.
 
-    test(winona_beverage, condition(pending)) :-
+    test(winona_beverage, condition(true)) :-
         beverage(winona, Beverage),
         Beverage == tonic.
 
