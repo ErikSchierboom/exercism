@@ -1,0 +1,18 @@
+{
+  "authors": [
+    "erikschierboom"
+  ],
+  "files": {
+    "solution": [
+      "matching_brackets.pl"
+    ],
+    "test": [
+      "matching_brackets_tests.plt"
+    ],
+    "example": [
+      ".meta/matching_brackets.example.pl"
+    ]
+  },
+  "blurb": "Make sure the brackets and braces all match.",
+  "source": "Ginna Baker"
+}
