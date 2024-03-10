@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "erikschierboom"
+  ],
+  "files": {
+    "solution": [
+      "rotational_cipher.pl"
+    ],
+    "test": [
+      "rotational_cipher_tests.plt"
+    ],
+    "example": [
+      ".meta/rotational_cipher.example.pl"
+    ]
+  },
+  "blurb": "Create an implementation of the rotational cipher, also sometimes called the Caesar cipher.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Caesar_cipher"
+}
