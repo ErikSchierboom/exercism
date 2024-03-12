@@ -1,0 +1,21 @@
+{
+  "authors": [
+    "macta"
+  ],
+  "contributors": [
+    "bencoman"
+  ],
+  "files": {
+    "solution": [
+      "MatchingBrackets.class.st"
+    ],
+    "test": [
+      "MatchingBracketsTest.class.st"
+    ],
+    "example": [
+      ".meta/solution/MatchingBrackets.class.st"
+    ]
+  },
+  "blurb": "Make sure the brackets and braces all match.",
+  "source": "Ginna Baker"
+}
