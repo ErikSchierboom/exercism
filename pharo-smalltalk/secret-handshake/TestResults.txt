@@ -1,0 +1,5 @@
+Tested on: 2024-02-23 07:43
+11 run, 11 passes, 0 skipped, 0 failures, 0 errors.
+Used OS/Platform: Win32 Win64 x86_64
+Image version: Pharo11.0.0 build: 725 (64 Bit)
+VM version: v10.1.0 - Commit: a290a408 - Date: 2024-02-14 09:15:58 +0100
