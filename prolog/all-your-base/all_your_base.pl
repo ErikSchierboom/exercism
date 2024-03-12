@@ -8,9 +8,10 @@ decimal_base(Base, [Digit|Digits], Acc, Decimal) :-
     decimal_base(Base, Digits, NewAcc, Decimal).
 
 decimal_base(_, [0], 0) :- !.
-decimal_base(Base, Digits, Decimal) :- decimal_base(Base, Digits, 0, Decimal).
+decimal_base(Base, Digits, Decimal) :-
+    decimal_base(Base, Digits, 0, Decimal).
 
 rebase(InputBase, InputDigits, OutputBase, OutputDigits) :-
-    InputBase #>= 2, OutputBase #>= 2,
+    [InputBase, OutputBase] ins 2..sup,
     decimal_base(InputBase, InputDigits, Decimal),
     decimal_base(OutputBase, OutputDigits, Decimal).
