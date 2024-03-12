@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "macta"
+  ],
+  "files": {
+    "solution": [
+      "Minesweeper.class.st"
+    ],
+    "test": [
+      "MinesweeperTest.class.st"
+    ],
+    "example": [
+      ".meta/solution/Minesweeper.class.st"
+    ]
+  },
+  "blurb": "Add the numbers to a minesweeper board."
+}
