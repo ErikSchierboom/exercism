@@ -1,0 +1,20 @@
+{
+  "authors": [
+    "macta"
+  ],
+  "contributors": [
+    "bencoman"
+  ],
+  "files": {
+    "solution": [
+      "Forth.class.st"
+    ],
+    "test": [
+      "ForthTest.class.st"
+    ],
+    "example": [
+      ".meta/solution/Forth.class.st"
+    ]
+  },
+  "blurb": "Implement an evaluator for a very simple subset of Forth."
+}
