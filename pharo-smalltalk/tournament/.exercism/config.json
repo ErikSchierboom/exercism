@@ -1,0 +1,20 @@
+{
+  "authors": [
+    "macta"
+  ],
+  "contributors": [
+    "bencoman"
+  ],
+  "files": {
+    "solution": [
+      "Tournament.class.st"
+    ],
+    "test": [
+      "TournamentTest.class.st"
+    ],
+    "example": [
+      ".meta/solution/Tournament.class.st"
+    ]
+  },
+  "blurb": "Tally the results of a small football competition."
+}

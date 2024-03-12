@@ -1,0 +1,5 @@
+Tested on: 2024-03-03 15:05
+11 run, 11 passes, 0 skipped, 0 failures, 0 errors.
+Used OS/Platform: Mac OS 1000 arm64
+Image version: Pharo10.0.0 build: 538 (64 Bit)
+VM version: v9.0.22 - Commit: 421845e1 - Date: 2023-03-30 09:49:26 +0200
