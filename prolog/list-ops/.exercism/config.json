@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "erikschierboom"
+  ],
+  "files": {
+    "solution": [
+      "list_ops.pl"
+    ],
+    "test": [
+      "list_ops_tests.plt"
+    ],
+    "example": [
+      ".meta/list_ops.example.pl"
+    ]
+  },
+  "blurb": "Implement basic list operations."
+}
