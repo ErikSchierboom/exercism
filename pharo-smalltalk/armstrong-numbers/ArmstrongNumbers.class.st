@@ -5,9 +5,8 @@ Class {
 }
 
 { #category : #testing }
-ArmstrongNumbers >> isArmstrongNumber: anInteger [
-	^ (anInteger asString 
-		  inject: 0
-		  into: [ :sum :digit | sum + (digit digitValue raisedTo: anInteger numberOfDigits)])
-		= anInteger
+ArmstrongNumbers >> isArmstrongNumber: num [
+   |armstrongSum|
+   armstrongSum := (1 to: num numberOfDigits) sum: [ :i | (num decimalDigitAt: i) raisedTo: num numberOfDigits ].
+   ^ armstrongSum = num
 ]
