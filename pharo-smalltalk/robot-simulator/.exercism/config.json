@@ -1,0 +1,21 @@
+{
+  "authors": [
+    "macta"
+  ],
+  "contributors": [
+    "bencoman"
+  ],
+  "files": {
+    "solution": [
+      "RobotSimulator.class.st"
+    ],
+    "test": [
+      "RobotSimulatorTest.class.st"
+    ],
+    "example": [
+      ".meta/solution/RobotSimulator.class.st"
+    ]
+  },
+  "blurb": "Write a robot simulator.",
+  "source": "Inspired by an interview question at a famous company."
+}
