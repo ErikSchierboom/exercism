@@ -1,0 +1,21 @@
+{
+  "authors": [
+    "macta"
+  ],
+  "contributors": [
+    "bencoman",
+    "samWson"
+  ],
+  "files": {
+    "solution": [
+      "Die.class.st"
+    ],
+    "test": [
+      "DieTest.class.st"
+    ],
+    "example": [
+      ".meta/solution/Die.class.st"
+    ]
+  },
+  "blurb": "A small DSL for dice rolling"
+}
