@@ -1,0 +1,21 @@
+{
+  "authors": [
+    "macta"
+  ],
+  "contributors": [
+    "bencoman"
+  ],
+  "files": {
+    "solution": [
+      "Clock.class.st"
+    ],
+    "test": [
+      "ClockTest.class.st"
+    ],
+    "example": [
+      ".meta/solution/Clock.class.st"
+    ]
+  },
+  "blurb": "Implement a clock that handles times without dates.",
+  "source": "Pairing session with Erin Drummond"
+}
