@@ -1,0 +1,22 @@
+{
+  "authors": [
+    "macta"
+  ],
+  "contributors": [
+    "bencoman"
+  ],
+  "files": {
+    "solution": [
+      "AtbashCipher.class.st"
+    ],
+    "test": [
+      "AtbashCipherTest.class.st"
+    ],
+    "example": [
+      ".meta/solution/AtbashCipher.class.st"
+    ]
+  },
+  "blurb": "Create an implementation of the atbash cipher, an ancient encryption system created in the Middle East.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Atbash"
+}
