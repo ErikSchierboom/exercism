@@ -1,0 +1,21 @@
+{
+  "authors": [
+    "macta"
+  ],
+  "contributors": [
+    "bencoman"
+  ],
+  "files": {
+    "solution": [
+      "WordCount.class.st"
+    ],
+    "test": [
+      "WordCountTest.class.st"
+    ],
+    "example": [
+      ".meta/solution/WordCount.class.st"
+    ]
+  },
+  "blurb": "Given a phrase, count the occurrences of each word in that phrase.",
+  "source": "This is a classic toy problem, but we were reminded of it by seeing it in the Go Tour."
+}
