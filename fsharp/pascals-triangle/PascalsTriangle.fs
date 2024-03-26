@@ -1,5 +1,14 @@
 ﻿module PascalsTriangle
+
+let rows numberOfRows = 
+    let scanner previous row =
+        match row with
+        | 1 -> [1]
+        | _ ->
+            0 :: previous @ [0]
+            |> List.pairwise
+            |> List.map (fun (l,r) -> l+r) 
     
-let rows size =
-    let row i = List.scan (fun acc j -> acc * (i - j) / j) 1 [1 .. i - 1]
-    if size < 0 then None else Some (List.map row [1..size])
+    [1 .. numberOfRows]
+    |> List.scan scanner List.empty
+    |> List.tail
