@@ -1,0 +1,18 @@
+{
+  "authors": [
+    "erikschierboom"
+  ],
+  "files": {
+    "solution": [
+      "clock.pl"
+    ],
+    "test": [
+      "clock_tests.plt"
+    ],
+    "example": [
+      ".meta/clock.example.pl"
+    ]
+  },
+  "blurb": "Implement a clock that handles times without dates.",
+  "source": "Pairing session with Erin Drummond"
+}
