@@ -1,8 +1,11 @@
 ﻿module Sieve
 
-let rec private sieve remainder primes =     
-    match remainder with
-    | [] -> primes |> List.rev
-    | p::xs -> sieve (xs |> List.filter (fun x -> x % p > 0)) (p :: primes)
+let primes limit =
+    let rec sieve candidates acc =     
+        match candidates with
+        | [] -> List.rev acc
+        | prime::rest ->
+            let multiples = [prime*prime..prime..limit]
+            sieve (rest |> List.except multiples) (prime::acc)
     
-let primes limit = sieve [2 .. limit] []
+    sieve [2 .. limit] []
