@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "erikschierboom"
+  ],
+  "files": {
+    "solution": [
+      "alphametics.pl"
+    ],
+    "test": [
+      "alphametics_tests.plt"
+    ],
+    "example": [
+      ".meta/alphametics.example.pl"
+    ]
+  },
+  "blurb": "Write a function to solve alphametics puzzles."
+}
