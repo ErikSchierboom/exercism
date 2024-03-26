@@ -1,21 +1,12 @@
-string_lower_chars(Word, Chars) :-
-    string_lower(Word, LowerWord),
-    string_chars(LowerWord, Chars).
+string_lower_codes(String, Codes) :-
+    string_lower(String, Lower),
+    string_codes(Lower, Codes).
 
-normalize(Word, Normalized) :-
-    string_lower_chars(Word, Chars),
-    msort(Chars, Normalized).
+is_anagram(Word, Candidate) :-
+    string_lower_codes(Word, WordCodes),
+    string_lower_codes(Candidate, CandidateCodes),
+    permutation(WordCodes, CandidateCodes),
+    WordCodes \== CandidateCodes.
 
-different_words(Word, Option) :-
-    string_lower_chars(Word, WordChars),
-    string_lower_chars(Option, OptionChars),
-    WordChars \== OptionChars.
-
-is_anagram(Word, Option) :-
-    different_words(Word, Option),
-    normalize(Word, NormalizedWord),
-    normalize(Option, NormalizedOption),
-    NormalizedWord == NormalizedOption.
-
-anagram(Word, Options, Matching) :-
-    include(is_anagram(Word), Options, Matching).
+anagram(Word, Candidates, Anagrams) :-
+    include(is_anagram(Word), Candidates, Anagrams).
