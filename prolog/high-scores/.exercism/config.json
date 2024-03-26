@@ -1,0 +1,18 @@
+{
+  "authors": [
+    "erikschierboom"
+  ],
+  "files": {
+    "solution": [
+      "high_scores.pl"
+    ],
+    "test": [
+      "high_scores_tests.plt"
+    ],
+    "example": [
+      ".meta/high_scores.example.pl"
+    ]
+  },
+  "blurb": "Manage a player's High Score list.",
+  "source": "Tribute to the eighties' arcade game Frogger"
+}
