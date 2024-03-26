@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "erikschierboom"
+  ],
+  "files": {
+    "solution": [
+      "bank_account.pl"
+    ],
+    "test": [
+      "bank_account_tests.plt"
+    ],
+    "example": [
+      ".meta/bank_account.example.pl"
+    ]
+  },
+  "blurb": "Simulate a bank account supporting opening/closing, withdraws, and deposits of money. Watch out for concurrent transactions!"
+}
