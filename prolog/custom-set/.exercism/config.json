@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "erikschierboom"
+  ],
+  "files": {
+    "solution": [
+      "custom_set.pl"
+    ],
+    "test": [
+      "custom_set_tests.plt"
+    ],
+    "example": [
+      ".meta/custom_set.example.pl"
+    ]
+  },
+  "blurb": "Create a custom set type."
+}
