@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "erikschierboom"
+  ],
+  "files": {
+    "solution": [
+      "sgf_parsing.pl"
+    ],
+    "test": [
+      "sgf_parsing_tests.plt"
+    ],
+    "example": [
+      ".meta/sgf_parsing.example.pl"
+    ]
+  },
+  "blurb": "Parsing a Smart Game Format string."
+}
