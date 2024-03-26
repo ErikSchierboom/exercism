@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "erikschierboom"
+  ],
+  "files": {
+    "solution": [
+      "nth_prime.pl"
+    ],
+    "test": [
+      "nth_prime_tests.plt"
+    ],
+    "example": [
+      ".meta/nth_prime.example.pl"
+    ]
+  },
+  "blurb": "Given a number n, determine what the nth prime is.",
+  "source": "A variation on Problem 7 at Project Euler",
+  "source_url": "https://projecteuler.net/problem=7"
+}
