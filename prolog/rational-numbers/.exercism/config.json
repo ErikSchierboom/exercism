@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "erikschierboom"
+  ],
+  "files": {
+    "solution": [
+      "rational_numbers.pl"
+    ],
+    "test": [
+      "rational_numbers_tests.plt"
+    ],
+    "example": [
+      ".meta/rational_numbers.example.pl"
+    ]
+  },
+  "blurb": "Implement rational numbers.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Rational_number"
+}
