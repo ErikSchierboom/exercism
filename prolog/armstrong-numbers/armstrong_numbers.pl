@@ -1,17 +1,10 @@
-digit(Code, Digit) :- Digit is Code - 48.
-
 digits(N, Digits) :-
-    number_string(N, Str),
-    string_codes(Str, Codes),
-    maplist(digit, Codes, Digits).
+    number_codes(N, Codes),
+    maplist([Code,Digit]>>number_codes(Digit, [Code]), Codes, Digits).
 
-armstrong_sum(_, [], 0).
-armstrong_sum(NumberOfDigits, [Digit|Tail], Sum) :-
-    armstrong_sum(NumberOfDigits, Tail, TailSum),
-    pow(Digit, NumberOfDigits, Pow),
-    Sum is TailSum + Pow, !.
-
-armstrong_number(N) :-
+armstrong_sum(N, Sum) :-
     digits(N, Digits),
-    length(Digits, NumberOfDigits),
-    armstrong_sum(NumberOfDigits, Digits, N).
+    length(Digits, NumDigits),
+    aggregate(sum(Pow), Digit^Pow^(member(Digit, Digits), Pow is Digit ^ NumDigits), Sum).
+
+armstrong_number(N) :- armstrong_sum(N, N).
