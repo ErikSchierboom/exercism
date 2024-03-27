@@ -1,7 +1,3 @@
-:- use_module(library(clpfd)).
-
-allergens([eggs, peanuts, shellfish, strawberries, tomatoes, chocolate, pollen, cats]).
-
 allergic_to(Score, eggs)         :- getbit(Score, 0) =:= 1.
 allergic_to(Score, peanuts)      :- getbit(Score, 1) =:= 1.
 allergic_to(Score, shellfish)    :- getbit(Score, 2) =:= 1.
