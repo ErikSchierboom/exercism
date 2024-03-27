@@ -1,17 +1,14 @@
 number_type <- function(n) {
   stopifnot(n > 0)
 
-  if (n == 1) return("deficient")
-  
-  possible_factors <- 1:(n/2)
-  factors <- possible_factors[n %% possible_factors == 0]
-  aliquot_sum <- sum(factors)
+  candidates <- 1:(n/2)
+  factors <- candidates[n %% candidates == 0]  
+  aliquot_sum <- sum(factors[factors != n])
 
-  if (aliquot_sum < n) {
-    "deficient"
-  } else if (aliquot_sum > n) {
+  if (aliquot_sum > n)
     "abundant"
-  } else {
+  else if (aliquot_sum < n)
+    "deficient"
+  else
     "perfect"
-  }
 }
