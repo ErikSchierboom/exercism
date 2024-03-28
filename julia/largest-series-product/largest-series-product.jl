@@ -1,16 +1,23 @@
 function largest_product(str, span)
-    0 <= span <= length(str) || throw(ArgumentError("Span must be ≥ 0 and ≤ length(str)"))
-    (iszero(span) || isempty(str)) && return 1
+    iszero(span) && return 1
+    span ∉ 0:length(str) && throw(ArgumentError("span must be in the range 0:length(str)"))
+    all(isdigit, str) || throw(ArgumentError("Non-digit character in str"))
 
-    digits = zeros(Int8, span)
-    largest = 0
+    digits = [parse(Int8, c) for c in str]
 
-    for c in str
-        isdigit(c) || throw(ArgumentError("String must only contain digits"))
-        popfirst!(digits)
-        push!(digits, c - '0')
-        largest = max(largest, prod(digits))
+    best = window = prod(view(digits, 1:span))
+    for right in span+1:length(digits)
+        left = right - span + 1
+
+        leaving = digits[left-1]
+        if leaving ≠ 0
+            window = (window ÷ leaving) * digits[right]
+        else
+            window = prod(view(digits, left:right))
+        end
+
+        best = max(best, window)
     end
 
-    largest
+    best
 end
