@@ -1,24 +1,13 @@
 valid(A, B, C, _) :-
-    A>0,
-    B>0,
-    C>0,
-    A+B>=C,
-    A+C>=B,
-    B+C>=A.
+    A>0, B>0, C>0,
+    A+B>=C, A+C>=B, B+C>=A.
 
-equilateral(A, A, A, "equilateral").
-
-isosceles(A, A, _, "isosceles").
-isosceles(A, _, A, "isosceles").
-isosceles(_, A, A, "isosceles").
-
-scalene(_, _, _, "scalene").
+category(A, A, A, "equilateral") :- !.
+category(A, A, _, "isosceles") :- !.
+category(A, _, A, "isosceles") :- !.
+category(_, A, A, "isosceles") :- !.
+category(A, B, C, "scalene") :- A \== B, B \== C.
 
 triangle(A, B, C, Type) :-
     valid(A, B, C, Type),
-    (   equilateral(A, B, C, Type),
-        !
-    ;   isosceles(A, B, C, Type),
-        !
-    ;   scalene(A, B, C, Type)
-    ).
+    category(A, B, C, Type).
