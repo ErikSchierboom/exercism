@@ -1,8 +1,6 @@
-multiple([H|T], N) :- N mod H =:= 0; multiple(T, N).
+multiple(Factors, N) :- member(Factor, Factors), N mod Factor =:= 0, !.
 
 sum_of_multiples(Factors, Limit, Sum) :-
     Max is Limit - 1,
-    M is max(Max, 1),
-    numlist(1, M, List),
-    include(multiple(Factors), List, Multiples),
-    sum_list(Multiples, Sum).
+    aggregate(sum(N), N^(between(1, Max, N), multiple(Factors, N)), Sum), !.
+sum_of_multiples(_, _, 0).
