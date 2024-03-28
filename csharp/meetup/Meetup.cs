@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 public enum Schedule
 {
@@ -12,19 +14,24 @@ public enum Schedule
 
 public record Meetup(int month, int year)
 {
-    public DateTime Day(DayOfWeek dayOfWeek, Schedule schedule)
-    {
-        var firstDayOfSchedule = schedule switch
+    public DateTime Day(DayOfWeek dayOfWeek, Schedule schedule) =>
+        schedule switch
         {
-            Schedule.First => 1,
-            Schedule.Second => 8,
-            Schedule.Third => 15,
-            Schedule.Fourth => 22,
-            Schedule.Teenth => 13,
-            Schedule.Last => DateTime.DaysInMonth(year, month) - 6
+            Schedule.First => WeekDays(dayOfWeek).First(),
+            Schedule.Second => WeekDays(dayOfWeek).ElementAt(1),
+            Schedule.Third => WeekDays(dayOfWeek).ElementAt(2),
+            Schedule.Fourth => WeekDays(dayOfWeek).ElementAt(3),
+            Schedule.Last => WeekDays(dayOfWeek).Last(),
+            Schedule.Teenth => WeekDays(dayOfWeek).First(date => date.Day >= 13),
         };
-        var firstDateOfSchedule = new DateTime(year, month, firstDayOfSchedule);
-        var weekdayOffset = (dayOfWeek - firstDateOfSchedule.DayOfWeek + 7) % 7;
-        return firstDateOfSchedule.AddDays(weekdayOffset);
+
+    private IEnumerable<DateTime> WeekDays(DayOfWeek dayOfWeek)
+    {
+        for (var day = 1; day <= DateTime.DaysInMonth(year, month); day++)
+        {
+            var date = new DateTime(year, month, day);
+            if (date.DayOfWeek == dayOfWeek)
+                yield return date;
+        }
     }
 }
