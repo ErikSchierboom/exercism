@@ -25,13 +25,8 @@ public record Meetup(int month, int year)
             Schedule.Teenth => WeekDays(dayOfWeek).First(date => date.Day >= 13),
         };
 
-    private IEnumerable<DateTime> WeekDays(DayOfWeek dayOfWeek)
-    {
-        for (var day = 1; day <= DateTime.DaysInMonth(year, month); day++)
-        {
-            var date = new DateTime(year, month, day);
-            if (date.DayOfWeek == dayOfWeek)
-                yield return date;
-        }
-    }
+    private IEnumerable<DateTime> WeekDays(DayOfWeek dayOfWeek) =>
+        Enumerable.Range(1, DateTime.DaysInMonth(year, month))
+            .Select(day => new DateTime(year, month, day))
+            .Where(date => date.DayOfWeek == dayOfWeek);
 }
