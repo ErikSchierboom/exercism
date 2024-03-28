@@ -1,8 +1,4 @@
-:- use_module(library(clpfd)).
-
-bit_set(Number, Index) :- Number /\ 1 << Index #\= 0.
-
-encoded_command(Encoded, Index, Goal, Acc, Result) :- bit_set(Encoded, Index), call(Goal, Acc, Result), !.
+encoded_command(Encoded, Index, Goal, Acc, Result) :- getbit(Encoded, Index) =:= 1, call(Goal, Acc, Result), !.
 encoded_command(_, _, _, Acc, Acc).
 
 append_command(Command, Acc, Result) :- append(Acc, [Command], Result).
