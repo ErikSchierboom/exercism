@@ -1,12 +1,12 @@
-string_lower_codes(String, Codes) :-
+lower_chars(String, Chars) :-
     string_lower(String, Lower),
-    string_codes(Lower, Codes).
+    string_chars(Lower, Chars).
 
 is_anagram(Word, Candidate) :-
-    string_lower_codes(Word, WordCodes),
-    string_lower_codes(Candidate, CandidateCodes),
-    permutation(WordCodes, CandidateCodes),
-    WordCodes \== CandidateCodes.
+    lower_chars(Word, WordChars),
+    lower_chars(Candidate, CandidateChars),
+    permutation(WordChars, CandidateChars),
+    WordChars \== CandidateChars.
 
 anagram(Word, Candidates, Anagrams) :-
     include(is_anagram(Word), Candidates, Anagrams).
