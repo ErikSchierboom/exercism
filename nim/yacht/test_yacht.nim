@@ -29,6 +29,9 @@ suite "Yacht":
   test "Yacht of 3s counted as Fives":
     check score([3, 3, 3, 3, 3], Fives) == 0
 
+  test "Fives":
+    check score([1, 5, 3, 5, 3], Fives) == 10
+
   test "Sixes":
     check score([2, 3, 4, 5, 6], Sixes) == 6
 
@@ -37,6 +40,9 @@ suite "Yacht":
 
   test "Full House: three small, two big":
     check score([5, 3, 3, 5, 3], FullHouse) == 19
+
+  test "Full House: three small, two big":
+    check score([1, 2, 3, 3, 3], FullHouse) == 0
 
   test "two pair is not a Full House":
     check score([2, 2, 4, 4, 5], FullHouse) == 0

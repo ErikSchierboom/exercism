@@ -4,11 +4,11 @@
 
 To compile and run the tests, just run the following in your exercise directory:
 
-```bash
-$ nim c -r test_<snake-case-exercise>.nim
+```shell
+nim r test_exercise_name.nim
 ```
 
-Replace `<snake-case-exercise>` with the actual exercise name in snake case (e.g. `all_your_base`).
+Replace `exercise_name` with the name of the exercise (e.g. `all_your_base`).
 
 ## Submitting your solution
 
@@ -25,14 +25,15 @@ It's possible to submit an incomplete solution which allows you to:
 If you'd like help solving the exercise, check the following pages:
 
 - The [Nim track's documentation](https://exercism.org/docs/tracks/nim)
-- [Exercism's support channel on gitter](https://gitter.im/exercism/support)
+- The [Nim track's programming category on the forum](https://forum.exercism.org/c/programming/nim)
+- [Exercism's programming category on the forum](https://forum.exercism.org/c/programming/5)
 - The [Frequently Asked Questions](https://exercism.org/docs/using/faqs)
 
 Should those resources not suffice, you could submit your (incomplete) solution to request mentoring.
 
 Need help? These guides should help you:
 
-- [Installing Nim](https://exercism.io/tracks/nim/installation)
-- [Running the Tests](https://exercism.io/tracks/nim/tests)
-- [Learning Nim](https://exercism.io/tracks/nim/learning)
-- [Useful Nim Resources](https://exercism.io/tracks/nim/resources)
+- [Installing Nim](https://exercism.org/tracks/nim/installation)
+- [Running the Tests](https://exercism.org/tracks/nim/tests)
+- [Learning Nim](https://exercism.org/tracks/nim/learning)
+- [Useful Nim Resources](https://exercism.org/tracks/nim/resources)
