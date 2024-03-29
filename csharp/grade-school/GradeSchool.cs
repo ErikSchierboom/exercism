@@ -16,9 +16,6 @@ public class GradeSchool
         return true;
     }
 
-    public IEnumerable<string> Roster() =>
-        _roster.Values.SelectMany(students => students);
-
-    public IEnumerable<string> Grade(int grade) =>
-        _roster.GetValueOrDefault(grade, []).AsEnumerable();
+    public IEnumerable<string> Roster() => _roster.Values.SelectMany(student => student);
+    public IEnumerable<string> Grade(int grade) => _roster.GetValueOrDefault(grade, []);
 }
