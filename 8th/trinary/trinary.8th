@@ -1,0 +1,3 @@
+: trinary> \ s -- n
+  ( dup '0 '2 between if swap 3 * '0 - + else 2drop 0 break then ) 0 s:reduce
+;

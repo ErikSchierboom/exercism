@@ -1,0 +1,57 @@
+"trinary.8th" f:include
+needs exercism/test
+with: test
+10 tests
+
+"1 is decimal 1"
+    ( "1" trinary> )
+    1
+    equal?
+
+"2 is decimal 2"
+    ( "2" trinary> )
+    2
+    equal?
+
+"10 is decimal 3"
+    ( "10" trinary> )
+    3
+    equal?
+
+"11 is decimal 4"
+    ( "11" trinary> )
+    4
+    equal?
+
+"100 is decimal 9"
+    ( "100" trinary> )
+    9
+    equal?
+
+"112 is decimal 14"
+    ( "112" trinary> )
+    14
+    equal?
+
+"222 is decimal 26"
+    ( "222" trinary> )
+    26
+    equal?
+
+"1122000120 is decimal 32091"
+    ( "1122000120" trinary> )
+    32091
+    equal?
+
+"invalid trinary is decimal 0"
+    ( "carrot" trinary> )
+    0
+    equal?
+
+"digits from 3 to 9 are invalid"
+    ( "123" trinary> )
+    0
+    equal?
+
+end-of-tests
+;with
