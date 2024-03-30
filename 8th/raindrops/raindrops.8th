@@ -1,0 +1,7 @@
+: raindrops \ n -- s
+  "" swap
+  dup 3 mod 0 = if swap "Pling" s:+ swap then
+  dup 5 mod 0 = if swap "Plang" s:+ swap then
+  dup 7 mod 0 = if swap "Plong" s:+ swap then
+  swap s:len 0 = if drop >s else nip then
+;
