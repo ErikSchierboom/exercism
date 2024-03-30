@@ -1,0 +1,27 @@
+"pop-count.8th" f:include
+needs exercism/test
+with: test
+4 tests
+
+"0 eggs"
+    0
+    ( 0 eggCount )
+    equal?
+
+"1 egg"
+    1
+    ( 16 eggCount )
+    equal?
+
+"4 eggs"
+    4
+    ( 89 eggCount )
+    equal?
+
+"13 eggs"
+    13
+    ( 2000000000 eggCount )
+    equal?
+
+end-of-tests
+;with
