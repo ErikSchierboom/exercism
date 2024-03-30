@@ -1,0 +1,3 @@
+: +gigasecond \ s -- s
+  1000000000000 d:+msec
+;
