@@ -1,0 +1,9 @@
+: collatz \ n -- n
+  dup 1 < if drop null ;then
+  0 >r
+  repeat
+    dup 1 = if drop r> ;then
+    dup n:odd? if 3 * 1 + else 2 / then
+    1 r+
+  again
+;

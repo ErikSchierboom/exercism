@@ -1,0 +1,35 @@
+"collatz-conjecture.8th" f:include
+needs exercism/test
+with: test
+6 tests
+
+"zero steps for one"
+    ( 1 collatz )
+    0
+    equal?
+
+"large number of even and odd steps"
+    ( 1000000 collatz )
+    152
+    equal?
+ 
+"even and odd steps"
+    ( 12 collatz )
+    9
+    equal?
+
+"divide if even"
+    ( 16 collatz )
+    4
+    equal?
+
+"zero is an error"
+    ( 0 collatz )
+    null?
+
+"negative value is an error"
+    ( -15 collatz )
+    null?
+
+end-of-tests
+;with
