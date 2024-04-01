@@ -1,4 +1,5 @@
 #include "circular_buffer.h"
+
 #include <errno.h>
 
  struct circular_buffer_t {
