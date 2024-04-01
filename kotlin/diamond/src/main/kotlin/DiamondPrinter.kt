@@ -4,7 +4,7 @@ class DiamondPrinter {
 
         val outerSpaces = "".padEnd(letterCount - row - 1);
         val innerSpaces = "".padEnd(if (row == 0) 0 else row * 2 - 1);
-
+¡
         return when (letter) {
             'A' -> "$outerSpaces$letter$outerSpaces"
             else -> "$outerSpaces$letter$innerSpaces$letter$outerSpaces"
