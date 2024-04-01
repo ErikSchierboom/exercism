@@ -1,0 +1,11 @@
+: compare \ s1 s2 n -- s1 s2
+  tuck s:@ 2over s:@ nip n:= rot drop not >n n:r+
+;
+
+: distance \ s1 s2 -- n
+  0 >r
+  s:len rot s:len rot over n:= !if null ;then
+  dup 0 = if null ;then
+  n:1- 0 swap ' compare -rot loop
+  2drop r>
+;

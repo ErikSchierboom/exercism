@@ -1,0 +1,47 @@
+"hamming.8th" f:include
+needs exercism/test
+with: test
+9 tests
+
+"empty strands"
+    ( "" "" distance )
+    null?
+
+"single letter identical strands"
+    ( "A" "A" distance )
+    0
+    equal?
+
+"long indentical strands"
+    ( "GGACTGAAATCTG" "GGACTGAAATCTG" distance )
+    0
+    equal?
+
+"single letter different strands"
+    ( "G" "T" distance )
+    1
+    equal?
+
+"long different strands"
+    ( "GGACGGATTCTG" "AGGACGGATTCT" distance )
+    9
+    equal?
+
+"disallow empty first strand" 
+    ( "" "G" distance )
+    null?
+
+"disallow first strand longer" 
+    ( "AATG" "AAA" distance )
+    null?
+
+"disallow second strand longer" 
+    ( "ATA" "AGTG" distance )
+    null?
+
+"disallow empty second strand" 
+    ( "G" "" distance )
+    null?
+
+end-of-tests
+;with
