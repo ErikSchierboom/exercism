@@ -1,0 +1,35 @@
+{
+  "authors": [
+    "matthewmorgan"
+  ],
+  "contributors": [
+    "FridaTveit",
+    "jmrunkle",
+    "kytrinyx",
+    "lemoncurry",
+    "manumafe98",
+    "mirkoperillo",
+    "msomji",
+    "muzimuzhi",
+    "sanderploegsma",
+    "sjwarner-bp",
+    "SleeplessByte",
+    "sshine",
+    "stkent"
+  ],
+  "files": {
+    "solution": [
+      "src/main/java/ParallelLetterFrequency.java"
+    ],
+    "test": [
+      "src/test/java/ParallelLetterFrequencyTest.java"
+    ],
+    "example": [
+      ".meta/src/reference/java/ParallelLetterFrequency.java"
+    ],
+    "invalidator": [
+      "build.gradle"
+    ]
+  },
+  "blurb": "Count the frequency of letters in texts using parallel computation."
+}
