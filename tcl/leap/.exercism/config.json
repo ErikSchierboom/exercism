@@ -1,0 +1,22 @@
+{
+  "authors": [
+    "sshine"
+  ],
+  "contributors": [
+    "glennj"
+  ],
+  "files": {
+    "solution": [
+      "leap.tcl"
+    ],
+    "test": [
+      "leap.test"
+    ],
+    "example": [
+      ".meta/example.tcl"
+    ]
+  },
+  "blurb": "Determine whether a given year is a leap year.",
+  "source": "CodeRanch Cattle Drive, Assignment 3",
+  "source_url": "https://coderanch.com/t/718816/Leap"
+}
