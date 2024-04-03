@@ -1,0 +1,26 @@
+{
+  "authors": [
+    "bistik"
+  ],
+  "contributors": [
+    "alexkalderimis",
+    "kytrinyx",
+    "m-dango",
+    "pgraemer",
+    "rfilipo"
+  ],
+  "files": {
+    "solution": [
+      "lib/Luhn.pm"
+    ],
+    "test": [
+      "t/luhn.t"
+    ],
+    "example": [
+      ".meta/solutions/lib/Luhn.pm"
+    ]
+  },
+  "blurb": "Given a number determine whether or not it is valid per the Luhn formula.",
+  "source": "The Luhn Algorithm on Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Luhn_algorithm"
+}
