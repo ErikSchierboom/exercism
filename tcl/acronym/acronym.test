@@ -1,0 +1,53 @@
+#!/usr/bin/env tclsh
+package require tcltest
+namespace import ::tcltest::*
+source testHelpers.tcl
+
+############################################################
+source "acronym.tcl"
+
+test acronym-1 "basic" -body {
+    abbreviate "Portable Network Graphics"
+} -returnCodes ok -result PNG
+
+skip acronym-2
+test acronym-2 "lowercase words" -body {
+    abbreviate "Ruby on Rails"
+} -returnCodes ok -result ROR
+
+skip acronym-3
+test acronym-3 "punctuation" -body {
+    abbreviate "First In, First Out"
+} -returnCodes ok -result FIFO
+
+skip acronym-4
+test acronym-4 "all caps word" -body {
+    abbreviate "GNU Image Manipulation Program"
+} -returnCodes ok -result GIMP
+
+skip acronym-5
+test acronym-5 "punctuation without whitespace" -body {
+    abbreviate "Complementary metal-oxide semiconductor"
+} -returnCodes ok -result CMOS
+
+skip acronym-6
+test acronym-6 "very long abbreviation" -body {
+    abbreviate "Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me"
+} -returnCodes ok -result ROTFLSHTMDCOALM
+
+skip acronym-7
+test acronym-7 "consecutive delimiters" -body {
+    abbreviate "Something - I made up from thin air"
+} -returnCodes ok -result SIMUFTA
+
+skip acronym-8
+test acronym-8 "apostrophes" -body {
+    abbreviate "Halley's Comet"
+} -returnCodes ok -result HC
+
+skip acronym-9
+test acronym-9 "underscore emphasis" -body {
+    abbreviate "The Road _Not_ Taken"
+} -returnCodes ok -result TRNT
+
+cleanupTests
