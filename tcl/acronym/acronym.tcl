@@ -1,4 +1,5 @@
 proc abbreviate {phrase} {
     set words [regexp -all -inline {[A-Z][A-Z']*} [string toupper $phrase]]
-    return [join $words ""]
+    set initials [lmap word $words {string range $word 0 0}]
+    return [join $initials ""]
 }
