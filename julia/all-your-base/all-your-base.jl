@@ -4,7 +4,7 @@ function all_your_base(digits, base_in, base_out)
 
     decimal = 0
     for digit in digits
-        0 <= digit < base_in || throw(DomainError("Invalid digit"))
+        digit ∈ 0:base_in-1 || throw(DomainError("Invalid digit"))
         decimal *= base_in
         decimal += digit
     end
