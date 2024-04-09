@@ -1,5 +1,12 @@
-zebra_owner(Owner) :- solve(Houses), member(h(Owner,zebra,_,_,_), Houses), !.
-water_drinker(Drinker) :- solve(Houses), member(h(Drinker,_,_,water,_), Houses), !.
+zebra_owner(Owner) :- 
+	solve(Houses),
+	member(h(Owner,zebra,_,_,_), Houses),
+	!.
+
+water_drinker(Drinker) :-
+	solve(Houses),
+	member(h(Drinker,_,_,water,_), Houses),
+	!.
 
 solve(Houses) :-
 	length(Houses, 5),                                     %  1
