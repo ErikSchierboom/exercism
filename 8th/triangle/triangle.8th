@@ -1,0 +1,21 @@
+: valid? \ n n n -- n n n T
+  3dup n:+ n:+ 0 n:> !if false ;then
+  3dup n:+ n:<       !if false ;then
+  3dup rot n:+ n:<   !if false ;then
+  3dup -rot n:+ n:<
+;
+
+: equilateral? \ n n n -- T
+  valid? !if false ;then
+  over n:= -rot n:= and
+;
+
+: scalene? \ n n n -- T
+  valid? !if false ;then
+  over n:= not -rot n:= not and
+;
+
+: isosceles? \ n n n -- T
+  valid? !if false ;then
+  over n:= -rot n:= or
+;
