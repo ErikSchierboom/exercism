@@ -17,5 +17,6 @@
 
 : isosceles? \ n n n -- T
   valid? !if false ;then
-  over n:= -rot n:= or
+  2dup n:= if true ;then
+  third n:= -rot n:= or
 ;
