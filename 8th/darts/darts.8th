@@ -1,7 +1,7 @@
 : darts-score \ n n -- n
-  n:sqr swap n:sqr n:+ n:sqrt
-  dup 10 > if drop 0  ;then 
-  dup 5  > if drop 1  ;then 
-  dup 1  > if drop 5  ;then
-              drop 10
+  n:sqr swap n:sqr n:+ n:sqrt >r
+  r@ 10 > if 0 ;then 
+  r@ 5  > if 1 ;then 
+  r@ 1  > if 5 ;then
+            10
 ;
