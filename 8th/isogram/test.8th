@@ -1,0 +1,22 @@
+"isogram.8th" f:include
+needs exercism/test
+with: test
+14 tests
+
+"empty string" ( "" isogram? ) true?
+"isogram with only lower case characters" ( "isogram" isogram? ) true?
+"word with one duplicated character" ( "eleven" isogram? ) false?
+"word with one duplicated character from the end of the alphabet" ( "zzyzx" isogram? ) false?
+"longest reported english isogram" ( "subdermatoglyphic" isogram? ) true?
+"word with duplicated character in mixed case" ( "Alphabet" isogram? ) false?
+"word with duplicated character in mixed case, lowercase first" ( "alphAbet" isogram? ) false?
+"hypothetical isogrammic word with hyphen" ( "thumbscrew-japingly" isogram? ) true?
+"hypothetical word with duplicated character following hyphen" ( "thumbscrew-jappingly" isogram? ) false?
+"isogram with duplicated hyphen" ( "six-year-old" isogram? ) true?
+"made-up name that is an isogram" ( "Emily Jung Schwartzkopf" isogram? ) true?
+"duplicated character in the middle" ( "accentor" isogram? ) false?
+"same first and last characters" ( "angola" isogram? ) false?
+"word with duplicated character and with two hyphens" ( "up-to-date" isogram? ) false?
+
+end-of-tests
+;with

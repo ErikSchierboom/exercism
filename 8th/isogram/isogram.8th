@@ -1,0 +1,3 @@
+: isogram? \ s -- T
+  s:lc /[a-z]/ r:/ ' s:cmp a:sort a:len swap ' s:= a:uniq a:len nip n:=
+;
