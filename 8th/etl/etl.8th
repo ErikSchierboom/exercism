@@ -1,0 +1,3 @@
+: transform \ m -- m
+  m:>arr ( a:open swap >n >r ( s:lc r@ 2 a:close ) a:map ) a:map a:squash m:arr>
+;
