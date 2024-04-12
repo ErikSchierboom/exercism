@@ -1,0 +1,3 @@
+: pangram? \ s -- T
+  s:lc /[a-z]/ r:/ ' s:cmp a:sort ' s:= a:uniq a:len 26 n:= nip
+;
