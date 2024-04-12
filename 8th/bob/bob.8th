@@ -1,0 +1,24 @@
+: silence? \ s -- T
+  s:len 0 n:= nip
+;
+
+: question? \ s -- T
+  1 s:rsub "?" s:=
+;
+
+: yell? \ s -- T
+  dup s:lc over s:= not swap dup s:uc s:= and
+;
+
+: yelled_question? \ s -- T
+  question? swap dup yell? rot and
+;
+
+: bob \ s -- s
+  s:trim
+  dup silence? if drop "Fine. Be that way!" ;then
+  dup yelled_question? if drop "Calm down, I know what I'm doing!" ;then
+  dup yell? if drop "Whoa, chill out!" ;then
+  question? if "Sure." ;then  
+  "Whatever."
+;

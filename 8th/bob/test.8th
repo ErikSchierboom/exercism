@@ -1,0 +1,92 @@
+"bob.8th" f:include
+needs exercism/test
+with: test
+17 tests
+
+"prolonged silence"
+    ( "    " bob )
+    "Fine. Be that way!"
+    equal?
+
+"silence"
+    ( "" bob )
+    "Fine. Be that way!"
+    equal?
+
+"shouting numbers"
+    ( "1, 2, 3 GO!" bob )
+    "Whoa, chill out!"
+    equal?
+
+"no letters"
+    ( "1, 2, 3" bob )
+    "Whatever."
+    equal?
+
+"question with no letters"
+    ( "4?" bob )
+    "Sure."
+    equal?
+
+"multiple line question"
+    ( "Does this cryogenic chamber make me look fat?\nno" bob )
+    "Whatever."
+    equal?
+
+"asking a question"
+    ( "Does this cryogenic chamber make me look fat?" bob )
+    "Sure."
+    equal?
+
+"statement containing question mark"
+    ( "Ending with ? means a question." bob )
+    "Whatever."
+    equal?
+
+"shouting with no exclamation mark"
+    ( "I HATE YOU" bob )
+    "Whoa, chill out!"
+    equal?
+
+"using acronyms in regular speech"
+    ( "It's OK if you don't want to go to the DMV." bob )
+    "Whatever."
+    equal?
+
+"speaking forcefully"
+    ( "Let's go make out behind the gym!" bob )
+    "Whatever."
+    equal?
+
+"stating something"
+    ( "Tom-ay-to, tom-aaaah-to." bob )
+    "Whatever."
+    equal?
+
+"shouting"
+    ( "WATCH OUT!" bob )
+    "Whoa, chill out!"
+    equal?
+
+"forceful question"
+    ( "WHAT THE HELL WERE YOU THINKING?" bob )
+    "Calm down, I know what I'm doing!"
+    equal?
+
+"prattling on"
+    ( "Wait! Hang on. Are you going to be OK?" bob )
+    "Sure."
+    equal?
+
+"asking a numeric question"
+    ( "You are, what, like 15?" bob )
+    "Sure."
+    equal?
+
+"shouting with special characters"
+    ( "ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!" bob )
+    "Whoa, chill out!"
+    equal?
+
+end-of-tests
+;with
