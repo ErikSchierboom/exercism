@@ -1,7 +1,7 @@
 : raindrops \ n -- s
-  "" swap
-  dup 3 mod !if swap "Pling" s:+ swap then
-  dup 5 mod !if swap "Plang" s:+ swap then
-  dup 7 mod !if swap "Plong" s:+ swap then
-  swap s:len !if drop >s else nip then
+  >r ""
+  r@ 3 mod !if "Pling" s:+ then
+  r@ 5 mod !if "Plang" s:+ then
+  r@ 7 mod !if "Plong" s:+ then
+  s:len !if drop r> >s then
 ;
