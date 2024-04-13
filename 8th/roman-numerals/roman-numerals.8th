@@ -1,0 +1,17 @@
+: n:>roman  \ n -- s
+  >r ""
+  1000 r@ n:> !if  "M" s:+ r> 1000 n:- recurse s:+ ;then
+   900 r@ n:> !if "CM" s:+ r>  900 n:- recurse s:+ ;then
+   500 r@ n:> !if  "D" s:+ r>  500 n:- recurse s:+ ;then
+   400 r@ n:> !if "CD" s:+ r>  400 n:- recurse s:+ ;then
+   100 r@ n:> !if  "C" s:+ r>  100 n:- recurse s:+ ;then
+    90 r@ n:> !if "XC" s:+ r>   90 n:- recurse s:+ ;then
+    50 r@ n:> !if  "L" s:+ r>   50 n:- recurse s:+ ;then
+    40 r@ n:> !if "XL" s:+ r>   40 n:- recurse s:+ ;then
+    10 r@ n:> !if  "X" s:+ r>   10 n:- recurse s:+ ;then
+     9 r@ n:> !if "IX" s:+ r>    9 n:- recurse s:+ ;then
+     5 r@ n:> !if  "V" s:+ r>    5 n:- recurse s:+ ;then
+     4 r@ n:> !if "IV" s:+ r>    4 n:- recurse s:+ ;then
+     1 r@ n:> !if  "I" s:+ r>    1 n:- recurse s:+ ;then
+;
+

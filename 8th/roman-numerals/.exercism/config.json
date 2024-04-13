@@ -1,0 +1,22 @@
+{
+  "authors": [
+    "jalih"
+  ],
+  "contributors": [
+    "axtens"
+  ],
+  "files": {
+    "solution": [
+      "roman-numerals.8th"
+    ],
+    "test": [
+      "test.8th"
+    ],
+    "example": [
+      ".meta/example.8th"
+    ]
+  },
+  "blurb": "Convert modern Arabic numbers into Roman numerals.",
+  "source": "The Roman Numeral Kata",
+  "source_url": "https://codingdojo.org/kata/RomanNumerals/"
+}

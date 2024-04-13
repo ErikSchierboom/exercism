@@ -1,0 +1,142 @@
+"roman-numerals.8th" f:include
+needs exercism/test
+with: test
+27 tests
+
+"1 is I"
+    ( 1 n:>roman )
+    "I"
+    equal?
+
+"2 is II"
+    ( 2 n:>roman )
+    "II"
+    equal?
+
+"3 is III"
+    ( 3 n:>roman )
+    "III"
+    equal?
+
+"4 is IV"
+    ( 4 n:>roman )
+    "IV"
+    equal?
+
+"5 is V"
+    ( 5 n:>roman )
+    "V"
+    equal?
+
+"6 is VI"
+    ( 6 n:>roman )
+    "VI"
+    equal?
+
+"9 is IX"
+    ( 9 n:>roman )
+    "IX"
+    equal?
+
+"27 is XXVII"
+    ( 27 n:>roman )
+    "XXVII"
+    equal?
+
+"48 is XLVIII"
+    ( 48 n:>roman )
+    "XLVIII"
+    equal?
+
+"49 is XLIX"
+    ( 49 n:>roman )
+    "XLIX"
+    equal?
+
+"59 is LIX"
+    ( 59 n:>roman )
+    "LIX"
+    equal?
+
+"93 is XCIII"
+    ( 93 n:>roman )
+    "XCIII"
+    equal?
+
+"141 is CXLI"
+    ( 141 n:>roman )
+    "CXLI"
+    equal?
+
+"163 is CLXIII"
+    ( 163 n:>roman )
+    "CLXIII"
+    equal?
+
+"402 is CDII"
+    ( 402 n:>roman )
+    "CDII"
+    equal?
+
+"575 is DLXXV"
+    ( 575 n:>roman )
+    "DLXXV"
+    equal?
+
+"911 is CMXI"
+    ( 911 n:>roman )
+    "CMXI"
+    equal?
+
+"1024 is MXXIV"
+    ( 1024 n:>roman )
+    "MXXIV"
+    equal?
+
+"3000 is MMM"
+    ( 3000 n:>roman )
+    "MMM"
+    equal?
+
+"16 is XVI"
+    ( 16 n:>roman )
+    "XVI"
+    equal?
+
+"66 is LXVI"
+    ( 66 n:>roman )
+    "LXVI"
+    equal?
+
+"166 is CLXVI"
+    ( 166 n:>roman )
+    "CLXVI"
+    equal?
+
+"666 is DCLXVI"
+    ( 666 n:>roman )
+    "DCLXVI"
+    equal?
+
+"1666 is MDCLXVI"
+    ( 1666 n:>roman )
+    "MDCLXVI"
+    equal?
+
+"3001 is MMMI"
+    ( 3001 n:>roman )
+    "MMMI"
+    equal?
+
+"3888 is MMMDCCCLXXXVIII"
+    ( 3888 n:>roman )
+    "MMMDCCCLXXXVIII"
+    equal?
+
+"3999 is MMMCMXCIX"
+    ( 3999 n:>roman )
+    "MMMCMXCIX"
+    equal?
+
+end-of-tests
+;with
