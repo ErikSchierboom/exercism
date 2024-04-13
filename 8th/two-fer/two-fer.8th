@@ -1,5 +1,4 @@
 : two-fer \ s -- s
-  null? if drop "you" then
-  s:len 0 n:= if drop "you" then
+  "" ?: s:len 0 n:= if drop "you" then
   "One for %s, one for me." s:strfmt
 ;
