@@ -1,0 +1,77 @@
+"word-count.8th" f:include
+needs exercism/test
+with: test
+14 tests
+
+"count one word"
+    ( "word" word-count )
+    { "word":1 }
+    equal?
+
+"count one of each word"
+    ( "one of each" word-count )
+    { "one":1,"of":1,"each":1 }
+    equal?
+
+"multiple occurrences of a word"
+    ( "one fish two fish red fish blue fish" word-count )
+    { "one":1,"fish":4,"two":1,"red":1,"blue":1 }
+    equal?
+
+"handles cramped lists"
+    ( "one,two,three" word-count )
+    { "one":1,"two":1,"three":1 }
+    equal?
+
+"handles expanded lists"
+    ( "one,\ntwo,\nthree" word-count )
+    { "one":1,"two":1,"three":1 }
+    equal?
+
+"ignore punctuation"
+    ( "car: carpet as java: javascript!!&@$%^&" word-count )
+    { "car":1,"carpet":1,"as":1,"java":1,"javascript":1 }
+    equal?
+
+"include numbers"
+    ( "testing, 1, 2 testing" word-count )
+    { "testing":2,"1":1,"2":1 }
+    equal?
+
+"normalize case"
+    ( "go Go GO Stop stop" word-count )
+    { "go":3,"stop":2 }
+    equal?
+
+"with apostrophes"
+    ( "First: don't laugh. Then: don't cry. You're getting it." word-count )
+    { "first":1,"don't":2,"laugh":1,"then":1,"cry":1,"you're":1,"getting":1,"it":1 }
+    equal?
+
+"with quotations"
+    ( "Joe can't tell between 'large' and large." word-count )
+    { "joe":1,"can't":1,"tell":1,"between":1,"large":2,"and":1 }
+    equal?
+
+"substrings from the beginning"
+    ( "Joe can't tell between app, apple and a." word-count )
+    { "joe":1,"can't":1,"tell":1,"between":1,"app":1,"apple":1,"and":1,"a":1 }
+    equal?
+
+"multiple spaces not detected as a word"
+    ( " multiple whitespaces" word-count )
+    { "multiple":1,"whitespaces":1 }
+    equal?
+
+"alternating word separators not detected as a word"
+    ( ",\n,one,\n ,two \n 'three'" word-count )
+    { "one":1,"two":1,"three":1 }
+    equal?
+
+"quotation for word with apostrophe"
+    ( "can, can't, 'can't'" word-count )
+    { "can":1,"can't":2 }
+    equal?
+
+end-of-tests
+;with

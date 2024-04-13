@@ -1,0 +1,3 @@
+: word-count \ s -- m
+  s:lc /\w+\'\w+|\w+/ r:+/ ' noop a:group ( a:len 2nip ) m:map
+;
