@@ -1,3 +1,7 @@
+: frequencies \ a -- a
+  ' noop a:group ( a:len 2nip ) m:map m:vals ' n:cmp a:sort
+;
+
 : singles \ a n -- n
   swap ( over n:= ) a:filter a:len nip n:*
 ;
@@ -11,23 +15,23 @@
 ;
 
 : little_straight \ a -- n
-  ' n:cmp a:sort [1,2,3,4,5] ' n:= a:= 2nip if 30 else 0 then
+  [1,2,3,4,5] ' n:= a:= 2nip if 30 else 0 then
 ;
 
 : big_straight \ a -- n
-  ' n:cmp a:sort [2,3,4,5,6] ' n:= a:= 2nip if 30 else 0 then
+  [2,3,4,5,6] ' n:= a:= 2nip if 30 else 0 then
 ;
 
 : full_house \ a -- n
-  dup ' noop a:group ( a:len 2nip ) m:map m:vals ' n:cmp a:sort [2,3] ' n:= a:= if 3drop ' n:+ 0 a:reduce else 2drop 2drop 0 then
+  dup frequencies [2,3] ' n:= a:= if 3drop ' n:+ 0 a:reduce else 2drop 2drop 0 then
 ;
 
 : four_of_a_kind \ a -- n
-  ' noop a:group ( a:len 2nip ) m:map m:vals a:shift nip dup 4 n:< not if drop m:keys a:shift >n 2nip 4 n:* else 2drop 0 then
+  frequencies a:pop nip dup 4 n:< not if drop m:keys a:shift >n 2nip 4 n:* else 2drop 0 then
 ;
 
 : play_yacht \ a s -- n
-  >r  
+  >r ' n:cmp a:sort 
   r@ "ones"            s:= if 1 singles ;then
   r@ "twos"            s:= if 2 singles ;then
   r@ "threes"          s:= if 3 singles ;then
