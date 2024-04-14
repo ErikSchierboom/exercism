@@ -1,0 +1,43 @@
+: singles \ a n -- n
+  swap ( over n:= ) a:filter a:len nip n:*
+;
+
+: yacht \ a -- n
+  ' n:= a:uniq a:len 1 n:= nip if 50 else 0 then
+;
+
+: choice \ a -- n
+  ' n:+ 0 a:reduce
+;
+
+: little_straight \ a -- n
+  ' n:cmp a:sort [1,2,3,4,5] ' n:= a:= 2nip if 30 else 0 then
+;
+
+: big_straight \ a -- n
+  ' n:cmp a:sort [2,3,4,5,6] ' n:= a:= 2nip if 30 else 0 then
+;
+
+: full_house \ a -- n
+  dup ' noop a:group ( a:len 2nip ) m:map m:vals ' n:cmp a:sort [2,3] ' n:= a:= if 3drop ' n:+ 0 a:reduce else 2drop 2drop 0 then
+;
+
+: four_of_a_kind \ a -- n
+  ' noop a:group ( a:len 2nip ) m:map m:vals a:shift nip dup 4 n:< not if drop m:keys a:shift >n 2nip 4 n:* else 2drop 0 then
+;
+
+: play_yacht \ a s -- n
+  >r  
+  r@ "ones"            s:= if 1 singles ;then
+  r@ "twos"            s:= if 2 singles ;then
+  r@ "threes"          s:= if 3 singles ;then
+  r@ "fours"           s:= if 4 singles ;then
+  r@ "fives"           s:= if 5 singles ;then
+  r@ "sixes"           s:= if 6 singles ;then
+  r@ "yacht"           s:= if yacht ;then
+  r@ "choice"          s:= if choice ;then
+  r@ "little straight" s:= if little_straight ;then
+  r@ "big straight"    s:= if big_straight ;then
+  r@ "full house"      s:= if full_house ;then
+  r@ "four of a kind"  s:= if four_of_a_kind ;then
+;
