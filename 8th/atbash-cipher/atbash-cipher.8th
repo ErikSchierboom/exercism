@@ -1,7 +1,7 @@
 needs string/repinsert
 needs string/translate
 
-: letters \ s -- s
+: alnum \ s -- s
   s:lc /[a-z0-9]/ r:/ "" a:join
 ;
 
@@ -17,7 +17,7 @@ needs string/translate
 
 \ encode TO a cipher
 : >atbash \ s -- s
-  letters transpose chunk
+  alnum transpose chunk
 ;
 
 \ decode FROM a cipher
