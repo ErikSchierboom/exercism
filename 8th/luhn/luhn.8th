@@ -1,0 +1,29 @@
+: >digits \ s -- a
+  "" s:/ ' >n a:map
+;
+
+: double \ a ix -- n
+  dup 2 n:mod 1 n:= if a:@ 2 n:* dup 9 n:> if 9 n:- then else a:@ then
+;
+
+: doubled \ a -- a
+  a:rev ( double I swap a:! ) 0 third a:len n:1- nip loop
+;
+
+: remove-spaces \ s -- s
+   " " "" s:replace!
+;
+
+: checksum \ s -- n
+  >digits doubled ' n:+ 0 a:reduce
+;
+
+: valid? \ s -- T
+  /^[0-9]{2,}$/ r:match nip n:>bool
+;
+
+: luhn \ s -- T
+  remove-spaces
+  dup valid? !if drop false ;then
+  checksum 10 n:mod 0 n:=
+;
