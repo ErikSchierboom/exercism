@@ -1,0 +1,66 @@
+"atbash-cipher.8th" f:include
+needs exercism/test
+with: test
+14 tests
+
+"encode yes"
+  ( "yes" >atbash )
+  "bvh"
+  equal?
+
+"encode no"
+  ( "no" >atbash )
+  "ml"
+  equal?
+"encode OMG"
+  ( "OMG" >atbash )
+  "lnt"
+  equal?
+"encode spaces"
+  ( "O M G" >atbash )
+  "lnt"
+  equal?
+"encode mindblowingly"
+  ( "mindblowingly" >atbash )
+  "nrmwy oldrm tob"
+  equal?
+"encode numbers"
+  ( "Testing,1 2 3, testing." >atbash )
+  "gvhgr mt123 gvhgr mt"
+  equal?
+"encode deep thought"
+  ( "Truth is fiction." >atbash )
+  "gifgs rhurx grlm"
+  equal?
+"encode all the letters"
+  ( "The quick brown fox jumps over the lazy dog." >atbash )
+  "gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt"
+  equal?
+
+"decode exercism"
+  ( "vcvix rhn" atbash> )
+  "exercism"
+  equal?
+"decode a sentence"
+  ( "zmlyh gzxov rhlug vmzhg vkkrm thglm v" atbash> )
+  "anobstacleisoftenasteppingstone"
+  equal?
+"decode numbers"
+  ( "gvhgr mt123 gvhgr mt" atbash> )
+  "testing123testing"
+  equal?
+"decode all the letters"
+  ( "gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt" atbash> )
+  "thequickbrownfoxjumpsoverthelazydog"
+  equal?
+"decode with too many spaces"
+  ( "vc vix    r hn" atbash> )
+  "exercism"
+  equal?
+"decode with no spaces"
+  ( "zmlyhgzxovrhlugvmzhgvkkrmthglmv" atbash> )
+  "anobstacleisoftenasteppingstone"
+  equal?
+
+end-of-tests
+;with

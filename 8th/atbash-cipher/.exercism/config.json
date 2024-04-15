@@ -1,0 +1,24 @@
+{
+  "authors": [
+    "glennj"
+  ],
+  "contributors": [
+    "jalih",
+    "ronaaron",
+    "axtens"
+  ],
+  "files": {
+    "solution": [
+      "atbash-cipher.8th"
+    ],
+    "test": [
+      "test.8th"
+    ],
+    "example": [
+      ".meta/example.8th"
+    ]
+  },
+  "blurb": "Create an implementation of the atbash cipher, an ancient encryption system created in the Middle East.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Atbash"
+}
