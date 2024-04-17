@@ -53,7 +53,6 @@ with: test
     "exercism"
     equal?
 
-SKIP-REST-OF-TESTS
 "decode a sentence"
     ( "qdwju nqcro muwhn odqun oppmd aunwd o" 19 16 code> )
     "anobstacleisoftenasteppingstone"

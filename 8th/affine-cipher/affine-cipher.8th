@@ -20,10 +20,20 @@ needs string/repinsert
   letter> rot n:* n:+ 26 n:mod >letter
 ;
 
-: enc \ n n s s -- n n s
-  dup /[[:digit:]]/ r:match if drop s:+ ;then drop
-  dup /[[:alpha:]]/ r:match if drop 2over rot enc-letter s:+ ;then drop
-  drop
+: dec-letter \ n n s -- s
+  letter> swap n:- swap 26 n:invmod n:* 26 n:/mod drop >letter
+;
+
+: enc \ n n s -- n n s
+  dup /[[:digit:]]/ r:match if drop ;then drop
+  dup /[[:alpha:]]/ r:match if drop third third rot enc-letter ;then drop
+  drop ""
+;
+
+: dec \ n n s -- n n s
+  dup /[[:digit:]]/ r:match if drop ;then drop
+  dup /[[:alpha:]]/ r:match if drop third third rot dec-letter ;then drop
+  drop ""
 ;
 
 : coprime? \ n - T
@@ -34,22 +44,22 @@ needs string/repinsert
   5 " " s:repinsert
 ;
 
+: transform-letter \ n n s w -- n n s
+  dup /[[:digit:]]/ r:match if drop ;then drop
+  dup /[[:alpha:]]/ r:match if drop third third rot dec-letter ;then drop
+  drop ""
+;
+
+: transform \ s n n w -- s
+  >r rot s:lc chars r@ a:map "" a:join 2nip
+;
+
 : >code \ s n n -- s
   over coprime? !if 3drop null ;then
-  rot s:lc chars ' enc "" a:reduce chunk 2nip
-;
-
-: dec-letter \ n n s -- s
-  letter> swap n:- swap 26 n:invmod n:* 26 n:mod >letter
-;
-
-: dec \ n n s s -- n n s
-  dup /[[:digit:]]/ r:match if drop s:+ ;then drop
-  dup /[[:alpha:]]/ r:match if drop 2over rot dec-letter s:+ ;then drop
-  drop
+  ' enc transform chunk
 ;
 
 : code> \ s n n -- s
   over coprime? !if 3drop null ;then
-  rot chars ' dec "" a:reduce
+  ' dec transform
 ;
