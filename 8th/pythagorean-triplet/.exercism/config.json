@@ -1,0 +1,23 @@
+{
+  "authors": [
+    "softmoth"
+  ],
+  "contributors": [],
+  "files": {
+    "solution": [
+      "pythagorean-triplet.8th"
+    ],
+    "test": [
+      "test.8th"
+    ],
+    "example": [
+      ".meta/example.8th"
+    ],
+    "invalidator": [
+      "libs/exercism/test"
+    ]
+  },
+  "blurb": "There exists exactly one Pythagorean triplet for which a + b + c = 1000. Find the triplet.",
+  "source": "Problem 9 at Project Euler",
+  "source_url": "https://projecteuler.net/problem=9"
+}
