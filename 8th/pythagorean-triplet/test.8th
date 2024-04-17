@@ -36,7 +36,6 @@ with: test
     [[27, 36, 45]]
     108 test-triplets-with-sum
 
-SKIP-REST-OF-TESTS
 "triplets whose sum is 1000"
     [[200, 375, 425]]
     1000 test-triplets-with-sum

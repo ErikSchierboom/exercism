@@ -2,32 +2,16 @@
   n:sqr -rot n:sqr swap n:sqr n:+ n:=
 ;
 
-: upper-bounds \ n - n n
-  dup 2 n:/ n:1- n:floor swap 3 n:/ n:1- n:floor
-;
-
-: b-loop \ n n n --
-  const cr
-  2dup 108 rot
-  n:- swap n:-
-  3dup triplet?
-  if  
-    3dup 3 a:close r> swap a:push >r  .s
-    \ 
-  then
-  drop
-  drop
-;
-
-: a-loop \ n n --
-  const cr
-  ' b-loop over n:1+ fourth 2 n:/ n:1- loop
-  drop
-;
-
 : triplets-with-sum SED: n -- a
   a:new >r
-  ' a-loop 2 third 3 n:/ n:1- loop 
-  drop
-  r>
+  ( 
+    const 
+    ( 
+      const 3dup -rot n:- swap n:- 
+      3dup triplet? if 3dup 3 a:close r> swap a:push >r then 2drop
+    )  
+    over dup n:1+ swap 4 pick swap n:- 2 n:/ n:floor loop drop
+  )
+  2 third 3 n:/ n:1- loop 
+  drop r>
 ;
