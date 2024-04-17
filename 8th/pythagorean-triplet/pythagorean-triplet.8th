@@ -6,27 +6,28 @@
   dup 2 n:/ n:1- n:floor swap 3 n:/ n:1- n:floor
 ;
 
-: triplets-with-sum SED: n -- a
-  a:new >r
-  dup upper-bounds
-  ( 
-    const dup n:1+ third
-    ( 
-      const 3dup n:+ n:- .s cr 3dup triplet? 
-      if 3dup 3 a:close r@ swap a:push >r then 2drop
-    ) 
-    -rot  .s cr drop 3drop
-    \ .s cr 2drop
-    \ .s drop
-
-    \ loop
-  )
-  1 rot loop 2drop
-  r@
+: b-loop \ n n n --
+  const cr
+  2dup 108 rot
+  n:- swap n:-
+  3dup triplet?
+  if  
+    3dup 3 a:close r> swap a:push >r  .s
+    \ 
+  then
+  drop
+  drop
 ;
 
+: a-loop \ n n --
+  const cr
+  ' b-loop over n:1+ fourth 2 n:/ n:1- loop
+  drop
+;
 
-\ for a in 1:n÷3-1
-\      for b in a+1:n÷2-1
-\      for c = n - b - a
-\      if a^2 + b^2 == c^2]
+: triplets-with-sum SED: n -- a
+  a:new >r
+  ' a-loop 2 third 3 n:/ n:1- loop 
+  drop
+  r>
+;
