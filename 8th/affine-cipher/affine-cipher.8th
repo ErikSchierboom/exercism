@@ -24,15 +24,10 @@ needs string/repinsert
   letter> swap n:- swap 26 n:invmod n:* 26 n:/mod drop >letter
 ;
 
-: enc \ n n s -- n n s
+: transform-letter \ n n s w -- n n s
+  >r
   dup /[[:digit:]]/ r:match if drop ;then drop
-  dup /[[:alpha:]]/ r:match if drop third third rot enc-letter ;then drop
-  drop ""
-;
-
-: dec \ n n s -- n n s
-  dup /[[:digit:]]/ r:match if drop ;then drop
-  dup /[[:alpha:]]/ r:match if drop third third rot dec-letter ;then drop
+  dup /[[:alpha:]]/ r:match if drop third third rot r@ w:exec ;then drop
   drop ""
 ;
 
@@ -44,22 +39,16 @@ needs string/repinsert
   5 " " s:repinsert
 ;
 
-: transform-letter \ n n s w -- n n s
-  dup /[[:digit:]]/ r:match if drop ;then drop
-  dup /[[:alpha:]]/ r:match if drop third third rot dec-letter ;then drop
-  drop ""
-;
-
 : transform \ s n n w -- s
   >r rot s:lc chars r@ a:map "" a:join 2nip
 ;
 
 : >code \ s n n -- s
   over coprime? !if 3drop null ;then
-  ' enc transform chunk
+  ( ' enc-letter transform-letter ) transform chunk
 ;
 
 : code> \ s n n -- s
   over coprime? !if 3drop null ;then
-  ' dec transform
+  ( ' dec-letter transform-letter ) transform
 ;
