@@ -14,6 +14,9 @@
     ],
     "example": [
       ".meta/example.8th"
+    ],
+    "invalidator": [
+      "libs/exercism/test"
     ]
   },
   "blurb": "Create an implementation of the Affine cipher, an ancient encryption algorithm from the Middle East.",

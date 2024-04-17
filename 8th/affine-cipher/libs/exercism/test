@@ -11,6 +11,15 @@ var tests-skipped
 true var, run-test
 
 \ Some utility words
+
+: array-insens-dot \ x --  \\ removes leading space on stringified arrays
+  dup >kind ns:a n:= 
+  if 
+    >s s:trim 
+  then 
+  .
+;
+
 : test-passed \ s x x --   \\ test name, expected value, actual value
     2drop
     1 tests-passed n:+!
@@ -26,8 +35,8 @@ true var, run-test
     1 tests-failed n:+!
     rot
     con:red con:onBlack . space " ... FAIL" . con:white con:onBlack cr
-    "    Actual:    «" . . "»" . cr
-    "    Expected:  «" . . "»" . cr cr
+    "    Actual:    «" . array-insens-dot "»" . cr
+    "    Expected:  «" . array-insens-dot "»" . cr cr
 ;
 
 : isword?  \ x -- x f
@@ -66,6 +75,19 @@ true var, run-test
    l: =
 ;
 
+: check-depth \ ... n -- ...
+  dup>r
+  n:1+ depth n:=
+  !if
+    con:red con:onBlack 
+    "PANIC: expected stack depth to be " . r> . cr
+    "Stack is:" . cr
+    .s cr
+    255 die
+  then
+  rdrop
+;
+
 \ -----------------------------------------------------------------
 
 \ status report at end of run
@@ -89,6 +111,7 @@ true var, run-test
    run-test? !if 2drop test-skipped ;; then
    isword? !if swap then
    w:exec
+   3 check-depth
    2dup             \ so test-failed can show actual and expected
    eq? if test-passed else test-failed then
 ;
@@ -96,6 +119,7 @@ true var, run-test
 : true? \ s w --
    run-test? !if drop test-skipped ;; then
    w:exec
+   2 check-depth
    true swap dup    \ so test-failed can show actual and expected
    if test-passed else test-failed then 
 ;
@@ -103,6 +127,7 @@ true var, run-test
 : false? \ s w --
    run-test? !if drop test-skipped ;; then
    w:exec
+   2 check-depth
    false swap dup    \ so test-failed can show actual and expected
    !if test-passed else test-failed then 
 ;
@@ -110,6 +135,7 @@ true var, run-test
 : null? \ s w --
    run-test? !if drop test-skipped ;; then
    w:exec
+   2 check-depth
    null swap dup     \ so test-failed can show actual and expected
    G:null? nip if test-passed else test-failed then 
 ;
