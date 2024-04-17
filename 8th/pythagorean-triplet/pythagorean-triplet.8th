@@ -1,0 +1,32 @@
+: triplet? \ n n n - T
+  n:sqr -rot n:sqr swap n:sqr n:+ n:=
+;
+
+: upper-bounds \ n - n n
+  dup 2 n:/ n:1- n:floor swap 3 n:/ n:1- n:floor
+;
+
+: triplets-with-sum SED: n -- a
+  a:new >r
+  dup upper-bounds
+  ( 
+    const dup n:1+ third
+    ( 
+      const 3dup n:+ n:- .s cr 3dup triplet? 
+      if 3dup 3 a:close r@ swap a:push >r then 2drop
+    ) 
+    -rot  .s cr drop 3drop
+    \ .s cr 2drop
+    \ .s drop
+
+    \ loop
+  )
+  1 rot loop 2drop
+  r@
+;
+
+
+\ for a in 1:n÷3-1
+\      for b in a+1:n÷2-1
+\      for c = n - b - a
+\      if a^2 + b^2 == c^2]
