@@ -1,0 +1,54 @@
+needs string/repinsert
+
+: chars \ s -- a
+  "" s:/
+;
+
+: letters \ a
+  "abcdefghijklmnopqrstuvwxyz" "" s:/
+;
+
+: letter> \ s -- n
+  letters swap ' s:= a:indexof nip
+;
+
+: >letter \ n -- s
+  letters swap a:@ nip
+;
+
+: enc-letter \ n n s -- s
+  letter> rot n:* n:+ 26 n:mod >letter
+;
+
+: dec-letter \ n n s -- s
+  letter> swap n:- swap 26 n:invmod n:* 26 n:/mod drop >letter
+;
+
+: transform-letter \ n n s w -- n n s
+  >r
+  dup /[[:digit:]]/ r:match if drop ;then drop
+  dup /[[:alpha:]]/ r:match if drop third third rot r@ w:exec ;then drop
+  drop ""
+;
+
+: coprime? \ n - T
+  26 n:gcd 1 n:=
+;
+
+: chunk \ s -- s
+  5 " " s:repinsert
+;
+
+: transform \ s n n w -- s
+  >r rot s:lc chars r@ a:map "" a:join 2nip
+;
+
+: >code \ s n n -- s
+  over coprime? !if 3drop null ;then
+  ( ' enc-letter transform-letter ) transform chunk
+;
+
+: code> \ s n n -- s
+  over coprime? !if 3drop null ;then
+  ( ' dec-letter transform-letter ) transform
+;

@@ -1,0 +1,86 @@
+"affine-cipher.8th" f:include
+needs exercism/test
+with: test
+
+16 tests
+
+"encode yes"
+    ( "yes" 5 7 >code )
+    "xbt"
+    equal?
+
+"encode no"
+    ( "no" 15 18 >code )
+    "fu"
+    equal?
+
+"encode OMG"
+    ( "OMG" 21 3 >code )
+    "lvz"
+    equal?
+
+"encode O M G"
+    ( "O M G" 25 47 >code )
+    "hjp"
+    equal?
+
+"encode mindblowingly"
+    ( "mindblowingly" 11 15 >code )
+    "rzcwa gnxzc dgt"
+    equal?
+
+"encode numbers"
+    ( "Testing,1 2 3, testing." 3 4 >code )
+    "jqgjc rw123 jqgjc rw"
+    equal?
+
+"encode deep thought"
+    ( "Truth is fiction." 5 17 >code )
+    "iynia fdqfb ifje"
+    equal?
+
+"encode all the letters"
+    ( "The quick brown fox jumps over the lazy dog." 17 33 >code )
+    "swxtj npvyk lruol iejdc blaxk swxmh qzglf"
+    equal?
+
+"encode with a not coprime to m"
+    ( "This is a test." 6 17 >code )
+    null?
+
+"decode exercism"
+    ( "tytgn fjr" 3 7 code> )
+    "exercism"
+    equal?
+
+"decode a sentence"
+    ( "qdwju nqcro muwhn odqun oppmd aunwd o" 19 16 code> )
+    "anobstacleisoftenasteppingstone"
+    equal?
+
+"decode numbers"
+    ( "odpoz ub123 odpoz ub" 25 7 code> )
+    "testing123testing"
+    equal?
+
+"decode all the letters"
+    ( "swxtj npvyk lruol iejdc blaxk swxmh qzglf" 17 33 code> )
+    "thequickbrownfoxjumpsoverthelazydog"
+    equal?
+
+"decode with no spaces in input"
+    ( "swxtjnpvyklruoliejdcblaxkswxmhqzglf" 17 33 code> )
+    "thequickbrownfoxjumpsoverthelazydog"
+    equal?
+
+"decode with too many spaces"
+    ( "vszzm    cly   yd cg    qdp" 15 16 code> )
+    "jollygreengiant"
+    equal?
+
+"decode with a not coprime to m"
+    ( "Test" 13 5 code> )
+    null?
+
+end-of-tests
+;with
