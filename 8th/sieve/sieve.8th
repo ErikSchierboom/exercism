@@ -1,0 +1,20 @@
+: cross-off-multiples \ n n a -- n n a
+  third third n:sqr swap ( const false a:! over step ) -rot loop
+;
+
+: check-prime \ n n -- n
+  const dup r@ swap a:@
+  if cross-off-multiples then >r drop
+;
+
+: sieve \ n -- a
+  dup dup ( 1 n:> ) 0 rot a:generate >r ' check-prime 2 rot loop r>
+;
+
+: gather-primes \ a -- a
+  \ a:new >r ( if r@ swap a:push >r ) a:each r>
+;
+
+: primes \ n -- a  
+  sieve gather-primes
+;
