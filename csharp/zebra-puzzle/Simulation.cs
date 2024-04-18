@@ -1,8 +1,8 @@
 ﻿using System;
 
-internal record struct House(Nationality Nationality, Color Color, Drink Drink, Smoke Smoke, Pet Pet);
-internal record struct Individual(House[] Houses, double Fitness);
-internal record struct Population(Individual[] Individuals, Individual MostFit);
+public record struct House(Nationality Nationality, Color Color, Drink Drink, Smoke Smoke, Pet Pet);
+public record struct Individual(House[] Houses, double Fitness);
+public record struct Population(Individual[] Individuals, Individual MostFit);
 
 internal static class Simulation
 {
@@ -24,4 +24,3 @@ internal static class Simulation
         throw new InvalidOperationException("Could not find solution");
     }
 }
-

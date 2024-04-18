@@ -7,8 +7,6 @@ public enum Drink { Tea, Milk, Coffee, OrangeJuice, Water };
 public enum Smoke { LuckyStrike, OldGold, Kools, Chesterfield, Parliaments };
 public enum Pet { Zebra, Fox, Horse, Snails, Dog };
 
-
-
 public static class ZebraPuzzle
 {
     public static Nationality DrinksWater() =>
