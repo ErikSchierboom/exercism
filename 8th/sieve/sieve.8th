@@ -3,18 +3,17 @@
 ;
 
 : check-prime \ n n -- n
-  const dup r@ swap a:@
-  if cross-off-multiples then >r drop
+  const dup r@ swap a:@ if cross-off-multiples then >r drop
 ;
 
 : sieve \ n -- a
-  dup dup ( 1 n:> ) 0 rot a:generate >r ' check-prime 2 rot loop r>
+  dup dup ( 1 n:> ) 0 rot a:generate >r ' check-prime 2 rot loop drop r>
 ;
 
 : gather-primes \ a -- a
-  \ a:new >r ( if r@ swap a:push >r ) a:each r>
+  a:new >r ( if r> swap a:push >r else drop then ) a:each drop r>
 ;
 
-: primes \ n -- a  
+: primes \ n -- a
   sieve gather-primes
 ;

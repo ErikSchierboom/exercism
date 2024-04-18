@@ -8,8 +8,6 @@ with: test
     ( 1 primes )
     equal?
 
-SKIP-REST-OF-TESTS
-
 "find first prime"
     [2]
     ( 2 primes )
