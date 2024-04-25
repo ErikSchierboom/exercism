@@ -1,0 +1,87 @@
+"matching-brackets.8th" f:include
+needs exercism/test
+with: test
+20 tests
+
+"paired square brackets"
+    ( "[]" paired? )
+    true?
+
+"empty string"
+    ( "" paired? )
+    true?
+
+"unpaired brackets"
+    ( "[[" paired? )
+    false?
+
+"wrong ordered brackets"
+    ( "}{" paired? )
+    false?
+
+"wrong closing bracket"
+    ( "{]" paired? )
+    false?
+
+"paired with whitespace"
+    ( "{ }" paired? )
+    true?
+
+"partially paired brackets"
+    ( "{[])" paired? )
+    false?
+
+"simple nested brackets"
+    ( "{[]}" paired? )
+    true?
+
+"several paired brackets"
+    ( "{}[]" paired? )
+    true?
+
+"paired and nested brackets"
+    ( "([{}({}[])])" paired? )
+    true?
+
+"unopened closing brackets"
+    ( "{[)][]}" paired? )
+    false?
+
+"unpaired and nested brackets"
+    ( "([{])" paired? )
+    false?
+
+"paired and wrong nested brackets"
+    ( "[({]})" paired? )
+    false?
+
+"paired and wrong nested brackets but innermost are correct"
+    ( "[({}])" paired? )
+    false?
+
+"paired and incomplete brackets"
+    ( "{}[" paired? )
+    false?
+
+"too many closing brackets"
+    ( "[]]" paired? )
+    false?
+
+"early unexpected brackets"
+    ( ")()" paired? )
+    false?
+
+"early mismatched brackets"
+    ( "{)()" paired? )
+    false?
+
+"math expression"
+    ( "(((185 + 223.85) * 15) - 543)/2" paired? )
+    true?
+
+"complex latex expression"
+    ( "\left(\begin{array}{cc} \frac{1}{3} & x\\ \mathrm{e}^{x} &... x^2 \end{array}\right)" paired? )
+    true?
+
+end-of-tests
+;with

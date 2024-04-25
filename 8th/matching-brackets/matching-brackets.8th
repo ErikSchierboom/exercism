@@ -1,0 +1,14 @@
+: paired? \ s -- T
+  a:new >r 
+  (
+    dup '[ n:= if r> '] a:push >r drop ;then
+    dup '( n:= if r> ') a:push >r drop ;then
+    dup '{ n:= if r> '} a:push >r drop ;then
+    dup '] n:= if r> a:len 0 n:= if a:push >r break ;then a:pop swap >r n:= !if r> '] a:push >r break ;then ;then
+    dup ') n:= if r> a:len 0 n:= if a:push >r break ;then a:pop swap >r n:= !if r> ') a:push >r break ;then ;then
+    dup '} n:= if r> a:len 0 n:= if a:push >r break ;then a:pop swap >r n:= !if r> '} a:push >r break ;then ;then
+    drop
+  )
+  s:each!
+  r> a:len 0 n:= nip
+;
