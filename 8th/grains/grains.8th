@@ -1,0 +1,9 @@
+: square \ n -- n
+  dup 1 64 n:between !if drop null ;then
+
+  n:1- 2 swap n:^ 
+;
+
+: total \ -- n
+  2 64 n:^ n:1-
+;
