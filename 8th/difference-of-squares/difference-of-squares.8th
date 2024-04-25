@@ -1,0 +1,11 @@
+: square-of-sum \ n -- n
+  >r 0 ( n:+ ) 1 r> loop n:sqr
+;
+
+: sum-of-squares \ n -- n
+  >r 0 ( n:sqr n:+ ) 1 r> loop
+;
+
+: difference-of-squares \ n -- n
+  dup square-of-sum swap sum-of-squares n:-
+;

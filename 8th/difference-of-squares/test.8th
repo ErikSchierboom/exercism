@@ -1,0 +1,52 @@
+"difference-of-squares.8th" f:include
+needs exercism/test
+with: test
+9 tests
+
+"square of sum 1"
+    ( 1 square-of-sum )
+    1
+    equal?
+
+"square of sum 5"
+    ( 5 square-of-sum )
+    225
+    equal?
+
+"square of sum 100"
+    ( 100 square-of-sum )
+    25502500
+    equal?
+
+"sum of squares 1"
+    ( 1 sum-of-squares )
+    1
+    equal?
+
+"sum of squares 5"
+    ( 5 sum-of-squares )
+    55
+    equal?
+
+"sum of squares 100"
+    ( 100 sum-of-squares )
+    338350
+    equal?
+
+"difference of squares 1"
+    ( 1 difference-of-squares )
+    0
+    equal?
+
+"difference of squares 5"
+    ( 5 difference-of-squares )
+    170
+    equal?
+
+"difference of squares 100"
+    ( 100 difference-of-squares )
+    25164150
+    equal?
+
+end-of-tests
+;with
