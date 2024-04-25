@@ -1,0 +1,62 @@
+"scrabble-score.8th" f:include
+needs exercism/test
+with: test
+11 tests
+
+"lowercase letter"
+    ( "a" score )
+    1
+    equal?
+
+"uppercase letter"
+    ( "A" score )
+    1
+    equal?
+
+"valuable letter"
+    ( "f" score )
+    4
+    equal?
+
+"short word"
+    ( "at" score )
+    2
+    equal?
+
+"short, valuable word"
+    ( "zoo" score )
+    12
+    equal?
+
+"medium word"
+    ( "street" score )
+    6
+    equal?
+
+"medium, valuable word"
+    ( "quirky" score )
+    22
+    equal?
+
+"long, mixed-case word"
+    ( "OxyphenButazone" score )
+    41
+    equal?
+
+"english-like word"
+    ( "pinata" score )
+    8
+    equal?
+
+"empty input"
+    ( "" score )
+    0
+    equal?
+
+"entire alphabet available"
+    ( "abcdefghijklmnopqrstuvwxyz" score )
+    87
+    equal?
+
+end-of-tests
+;with

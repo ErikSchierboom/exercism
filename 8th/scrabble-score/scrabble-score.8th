@@ -1,0 +1,9 @@
+[1,3,3,2,1,4,2,4,1,8,5,1,3,1,1,3,10,1,1,1,1,4,4,8,4,10] constant letter-scores
+
+: score-letter \ n n -- n
+   letter-scores swap 'A n:- caseof n:+
+;
+
+: score \ s -- n
+  s:uc ' score-letter 0 s:reduce
+;
