@@ -1,0 +1,5 @@
+needs string/translate
+
+: >rna \ s -- s
+  "GCTA" "CGAU" s:translate
+;
