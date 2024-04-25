@@ -1,5 +1,5 @@
 : silence? \ s -- T
-  s:len 0 n:= nip
+  s:len' 0 n:=
 ;
 
 : question? \ s -- T
