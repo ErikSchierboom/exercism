@@ -1,0 +1,23 @@
+{
+  "authors": [
+    "jitwit"
+  ],
+  "contributors": [
+    "iHiD",
+    "eNascimento178"
+  ],
+  "files": {
+    "solution": [
+      "hello-world.ijs"
+    ],
+    "test": [
+      "test.ijs"
+    ],
+    "example": [
+      ".meta/example.ijs"
+    ]
+  },
+  "blurb": "Exercism's classic introductory exercise. Just say \"Hello, World!\".",
+  "source": "This is an exercise to introduce users to using Exercism",
+  "source_url": "https://en.wikipedia.org/wiki/%22Hello,_world!%22_program"
+}
