@@ -1,9 +1,9 @@
 : square-of-sum \ n -- n
-  >r 0 ( n:+ ) 1 r> loop n:sqr
+  0 ( I n:+ ) rot times n:sqr
 ;
 
 : sum-of-squares \ n -- n
-  >r 0 ( n:sqr n:+ ) 1 r> loop
+  0 ( I n:sqr n:+ ) rot times
 ;
 
 : difference-of-squares \ n -- n
