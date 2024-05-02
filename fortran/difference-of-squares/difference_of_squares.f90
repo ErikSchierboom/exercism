@@ -17,7 +17,7 @@ contains
    integer function difference(n)
       integer :: n
 
-      difference = square_of_sum(n) - sum_of_squares(n)
+      difference = (-2 * n + (-3 * n**2) + (2 * n**4) + (3 * n**5)) / 12
    end function difference
 
 end module difference_of_squares
