@@ -1,0 +1,5 @@
+[brick]
+name="hello-world"
+version="0.1.0"
+chplVersion="2.0.0"
+type="application"
