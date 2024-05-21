@@ -1,0 +1,11 @@
+: sum-of-factors \ n -- n
+  dup >r 0 swap ( dup r@ swap n:mod !if n:+ else drop then ) 1 rot 2 n:/ loop
+;
+
+: classify \ n -- s
+  dup 1 n:< if drop null ;then
+  dup sum-of-factors n:cmp
+  dup 0 n:< if drop "abundant" ;then
+  dup 0 n:> if drop "deficient" ;then
+  drop "perfect"
+;
