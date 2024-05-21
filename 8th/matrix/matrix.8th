@@ -1,0 +1,11 @@
+: >digits \ s -- a
+  "\n" s:/ ( " " s:/ ' >n a:map ) a:map
+;
+
+: row \ s n -- a
+  n:1- >r >digits r> a:_@
+;
+
+: column \ s n -- a
+  n:1- >r >digits ( r@ a:_@ ) a:map rdrop
+;
