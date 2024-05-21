@@ -1,0 +1,8 @@
+: rotate-char \ n -- n
+  dup 'a 'z n:between if 'a n:- r@ n:+ 26 n:mod 'a n:+ ;then
+  dup 'A 'Z n:between if 'A n:- r@ n:+ 26 n:mod 'A n:+ ;then  
+;
+
+: rotate \ s n -- s
+  >r ' rotate-char s:map
+;

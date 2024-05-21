@@ -1,0 +1,22 @@
+{
+  "authors": [
+    "\u001B[Aerikschierboom"
+  ],
+  "files": {
+    "solution": [
+      "rotational-cipher.8th"
+    ],
+    "test": [
+      "test.8th"
+    ],
+    "example": [
+      ".meta/example.8th"
+    ],
+    "invalidator": [
+      "libs/exercism/test"
+    ]
+  },
+  "blurb": "Create an implementation of the rotational cipher, also sometimes called the Caesar cipher.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Caesar_cipher"
+}
