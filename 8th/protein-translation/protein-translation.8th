@@ -1,0 +1,24 @@
+{
+  "AUG": "Methionine",
+  "UUU": "Phenylalanine", "UUC": "Phenylalanine",
+  "UUA": "Leucine", "UUG": "Leucine",
+  "UCU": "Serine", "UCC": "Serine", "UCA": "Serine", "UCG": "Serine",
+  "UAU": "Tyrosine", "UAC": "Tyrosine",
+  "UGU": "Cysteine", "UGC": "Cysteine",
+  "UGG": "Tryptophan",
+  "UAA": "STOP", "UAG": "STOP", "UGA": "STOP"
+} constant codon-protein-map
+
+: >protein \ s -- s
+  codon-protein-map swap caseof
+;
+
+: >codons \ s -- a
+  /[[:alpha:]]{1,3}/ r:+/
+;
+
+: >proteins \ s -- a
+  >codons a:new swap
+  ( >protein null? if nip break ;then
+    dup "STOP" s:= if drop break else a:push then ) a:each! drop
+;
