@@ -1,0 +1,22 @@
+{
+  "authors": [
+    "erikschierboom"
+  ],
+  "files": {
+    "solution": [
+      "pascals-triangle.8th"
+    ],
+    "test": [
+      "test.8th"
+    ],
+    "example": [
+      ".meta/example.8th"
+    ],
+    "invalidator": [
+      "libs/exercism/test"
+    ]
+  },
+  "blurb": "Compute Pascal's triangle up to a given number of rows.",
+  "source": "Pascal's Triangle at Wolfram Math World",
+  "source_url": "https://www.wolframalpha.com/input/?i=Pascal%27s+triangle"
+}

@@ -1,0 +1,9 @@
+: row \ n -- a
+  >r 1
+  ( r@ over n:- third n:* swap n:/ ) 1 r@ n:1- loop
+  r@ a:close
+;
+
+: rows \ n -- a
+  ' row 1 rot a:generate a:new ?:
+;
