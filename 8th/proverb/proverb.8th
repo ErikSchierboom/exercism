@@ -1,0 +1,12 @@
+: losses \ a -- a
+  ( a:open swap "For want of a %s the %s was lost." s:strfmt ) 2 1 a:map+
+;
+
+: reason \ a -- s
+  0 a:_@ null? if ;then  
+  "And all for the want of a %s." s:strfmt
+;
+
+: recite \ a -- a
+  dup losses swap reason null; a:push
+;
