@@ -1,0 +1,15 @@
+: scores \ a -- a
+  noop
+;
+
+: latest \ a -- n
+  -1 a:_@
+;
+
+: personal-top-three \ a -- a
+  ' n:cmp a:sort a:rev 0 3 a:slice
+;
+
+: personal-best \ a -- n
+  ' n:cmp a:sort -1 a:_@
+;
