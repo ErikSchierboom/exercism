@@ -1,0 +1,21 @@
+: digit? \ n -- T
+  '0 '9 between
+;
+
+: digits \ s -- a
+  ( dup digit? if '0 n:- a:push else 2drop null break ;then ) a:new s:reduce
+;
+
+: slices \ a n -- a
+  ( ' n:* 1 a:reduce ) rot 1 a:map+
+;
+
+: largest \ a -- n
+  ' n:cmp a:sort -1 a:_@
+;
+
+: largest-product \ s n -- n
+  swap digits null? if nip ;then
+  slices null? if drop 1 ;then
+  largest
+;
