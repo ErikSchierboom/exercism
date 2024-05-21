@@ -1,0 +1,17 @@
+: extend \ a n -- a
+  2 n:* swap ( swap n:1- dup -rot a:slide ) a:map nip
+;
+
+: rotate \ a n -- a
+  2 n:* n:1- swap ( ( over n:+ ) a:map ) a:map nip
+;
+
+: reverse \ a -- a
+  ' a:rev a:map a:rev
+;
+
+: spiral-matrix \ n -- a
+  dup 0 n:= if drop [] ;then
+  dup 2dup n:1- recurse
+  swap rotate swap extend reverse swap ' noop 1 rot a:generate a:slide  
+;
