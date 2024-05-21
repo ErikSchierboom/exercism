@@ -1,0 +1,19 @@
+["Alice", "Bob", "Charlie", "David",  "Eve", "Fred", "Ginny", "Harriet", "Ileana", "Joseph", "Kincaid", "Larry"] constant children
+
+{ "G": "grass", "C": "clover", "R": "radishes", "V": "violets" } constant plants
+
+: sill-idx \ s -- n
+  children swap ' s:= a:indexof 2 n:* nip
+;
+
+: sills \ n s -- a
+  "\n" s:/ ( null s:/ over 2 a:slice ) a:map a:squash nip
+;
+
+: plant \ s -- s
+  plants swap caseof
+;
+
+: plants \ s s - a
+  sill-idx swap sills ' plant a:map
+;
