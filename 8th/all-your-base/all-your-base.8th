@@ -1,0 +1,26 @@
+: valid_base? \ n -- T
+  1 n:>
+;
+
+: valid_digit? \ n n -- T
+  n:1- 0 swap n:between
+;
+
+: >decimal \ n a -- n
+  swap >r ( dup r@ valid_digit? if swap r@ n:* n:+ else 2drop null break ;then ) 0 a:reduce rdrop
+;
+
+: decimal> \ n n -- a
+  a:new >r
+  dup 0 n:= if 2drop [0] rdrop ;then
+  repeat
+    over n:/mod swap r> a:push >r
+  while 2drop
+  r> a:rev
+;
+
+: rebase \ n a n -- a
+  dup valid_base? !if 2drop drop null ;then
+  third valid_base? !if 2drop drop null ;then
+  -rot >decimal null? if nip ;then decimal>
+;
