@@ -1,0 +1,21 @@
+needs array/parallel
+
+: increment-frequency \ m n -- m
+  0 m:!? swap ' n:1+ m:op!
+;
+
+: letters \ s -- a
+  /\p{L}/ r:/
+;
+
+: letter-frequencies \ s -- m
+  s:lc letters ( dup -rot increment-frequency ) m:new const a:reduce
+;
+
+: merge-frequencies \ a -- m
+  ( ( >r dup -rot 0 m:@? r> n:+ rot swap m:! ) m:each drop ) m:new const a:reduce
+;
+
+: >frequencies \ a -- m
+  a:len ' letter-frequencies swap a:map-par merge-frequencies
+;
