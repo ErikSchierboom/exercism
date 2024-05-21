@@ -1,0 +1,56 @@
+["fly", "spider", "bird", "cat", "dog", "goat", "cow", "horse"] constant animals
+
+{ 
+  "fly": "I don't know why she swallowed the fly. Perhaps she'll die.",
+  "spider": "It wriggled and jiggled and tickled inside her.",
+  "bird": "How absurd to swallow a bird!",
+  "cat": "Imagine that, to swallow a cat!",
+  "dog": "What a hog, to swallow a dog!",
+  "goat": "Just opened her throat and swallowed a goat!",
+  "cow": "I don't know how she swallowed a cow!",
+  "horse": "She's dead, of course!"
+} constant animal-remarks
+
+: animal \ n -- s
+  n:1- animals swap a:_@
+;
+
+: remark \ s -- s
+  animal-remarks swap m:_@
+;
+
+: verse-start \ n -- a
+  dup a:new swap
+  animal "I know an old lady who swallowed a %s." s:strfmt a:push
+  swap dup 1 n:= if drop ;then
+  animal remark a:push
+;
+
+: verse-catch \ s s -- s
+  over "spider" s:= if swap " that wriggled and jiggled and tickled inside her" s:+ swap then
+  "She swallowed the %s to catch the %s." s:strfmt
+;
+
+: verse-middle \ n -- a
+  n:1- >r animals ( a:open verse-catch ) 2 1 a:map+ 0 r> a:slice a:rev
+;
+
+: verse-end \ -- s
+  "fly" remark
+;
+
+: verse \ n -- a
+  dup a:new 
+  swap verse-start a:+ 
+  over 8 n:= if nip ;then
+  swap verse-middle a:+
+  verse-end a:push
+;
+
+: join-verses \ a -- a
+  ( swap a:len 0 n:= !if "" a:push then swap a:+ ) a:new a:reduce
+;
+
+: recite \ n n -- a
+  ' verse -rot a:generate join-verses
+;
