@@ -1,0 +1,9 @@
+["eggs", "peanuts", "shellfish", "strawberries", "tomatoes", "chocolate", "pollen", "cats"] constant allergens
+
+: allergic-to? \ n s -- T
+  allergens swap ' s:= a:indexof nip 1 swap n:shl n:band >bool
+;
+
+: list \ n -- a 
+  >r allergens ( r@ swap allergic-to? ) a:filter rdrop
+;
