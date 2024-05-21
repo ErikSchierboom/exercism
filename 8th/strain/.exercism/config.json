@@ -1,0 +1,22 @@
+{
+  "authors": [
+    "erikschierboom"
+  ],
+  "files": {
+    "solution": [
+      "strain.8th"
+    ],
+    "test": [
+      "test.8th"
+    ],
+    "example": [
+      ".meta/example.8th"
+    ],
+    "invalidator": [
+      "libs/exercism/test"
+    ]
+  },
+  "blurb": "Implement the `keep` and `discard` operation on collections.",
+  "source": "Conversation with James Edward Gray II",
+  "source_url": "http://graysoftinc.com/"
+}

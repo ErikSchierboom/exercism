@@ -1,0 +1,7 @@
+: keep \ a w -- a
+  >r ( dup r@ w:exec if a:push else drop then ) a:new a:reduce
+;
+
+: discard \ a w -- a
+  >r ( dup r@ w:exec if drop else a:push then ) a:new a:reduce
+;
