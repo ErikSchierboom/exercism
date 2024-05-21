@@ -1,0 +1,17 @@
+: remove-punctuation \ s -- s
+  /[+()\-\s.]/ "" s:replace!
+;
+
+: digits \ s -- a
+  null s:/ ( >n null? if nip break ;then a:push ) a:new a:reduce
+;
+
+: clean \ s -- s
+  remove-punctuation
+  digits null? if ;then
+  a:len 11 n:= if a:shift 1 n:= !if drop null ;then then
+  a:len 10 n:= !if drop null ;then
+  0 a:@ 2 n:< if drop null ;then
+  3 a:@ 2 n:< if drop null ;then
+  ' >s a:map "" a:join
+;
