@@ -1,0 +1,4 @@
+: flatten \ a -- a
+  array? if ( flatten a:+ ) a:new a:reduce ;then
+  null? if drop [] else a:new swap a:push then  
+;

@@ -1,0 +1,22 @@
+{
+  "authors": [
+    "erikschierboom"
+  ],
+  "files": {
+    "solution": [
+      "flatten-array.8th"
+    ],
+    "test": [
+      "test.8th"
+    ],
+    "example": [
+      ".meta/example.8th"
+    ],
+    "invalidator": [
+      "libs/exercism/test"
+    ]
+  },
+  "blurb": "Take a nested list and return a single list with all values except nil/null.",
+  "source": "Interview Question",
+  "source_url": "https://reference.wolfram.com/language/ref/Flatten.html"
+}
