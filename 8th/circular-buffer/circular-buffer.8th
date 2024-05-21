@@ -1,0 +1,68 @@
+ns: cb
+
+: count \ o -- n
+  "count" o:@ nip
+;
+
+: capacity \ o -- n
+  "capacity" o:@ nip
+;
+
+: items \ o -- a
+  "items" o:@ nip
+;
+
+: head \ o -- n
+  "head" o:@ nip
+;
+
+: tail \ o -- n
+  "tail" o:@ nip
+;
+
+: read \ o -- o x
+  >r
+  r@ count 0 n:= if r> "circular buffer empty" throw ;then
+  r@ items r@ tail a:_@
+  r@ tail n:1+ r@ capacity n:/mod drop r@ "tail" rot o:! drop
+  r@ count n:1- r@ "count" rot o:!
+  swap
+;
+
+: overwrite \ o x -- o
+  swap >r
+  r@ items r@ head rot a:! r@ "items" rot o:!
+  r@ head n:1+ r@ capacity n:/mod drop "head" swap o:!
+  r@ count r@ capacity n:=
+  if
+    r@ head "tail" swap o:!
+  else
+    r@ count n:1+ "count" swap o:!
+  then
+;
+
+: write \ o x -- o
+  swap >r
+  r@ capacity r@ count n:= if drop r> "circular buffer full" throw ;then
+  r> swap cb:overwrite
+;
+
+: clear \ o  
+  "head"  0 o:!
+  "tail"  0 o:!
+  "count" 0 o:!
+;
+
+: new \ n -- o
+  {
+    class: "circular-buffer",
+    methods: { 
+      read: ' read,
+      write: ' write,
+      overwrite: ' overwrite
+    }
+  } o:new swap 
+  2dup "capacity" swap o:! drop
+  n:1- ' noop 0 rot a:generate "items" swap o:!
+  cb:clear
+;

@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "erikschierboom"
+  ],
+  "files": {
+    "solution": [
+      "circular-buffer.8th"
+    ],
+    "test": [
+      "test.8th"
+    ],
+    "example": [
+      ".meta/example.8th"
+    ]
+  },
+  "blurb": "A data structure that uses a single, fixed-size buffer as if it were connected end-to-end.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Circular_buffer"
+}
