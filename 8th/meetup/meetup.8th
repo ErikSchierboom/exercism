@@ -1,0 +1,56 @@
+needs date/utils
+
+: >dow \ s -- n
+  { 
+    "Monday":    ' d:Mon,
+    "Tuesday":   ' d:Tue, 
+    "Wednesday": ' d:Wed, 
+    "Thursday":  ' d:Thu, 
+    "Friday":    ' d:Fri, 
+    "Saturday":  ' d:Sat, 
+    "Sunday":    ' d:Sun
+  } swap caseof
+;
+
+: >day \ d -- n
+  d:/ 2 a:_@
+;
+
+: first-day-of-month \ n n -- d
+  1 0 0 0 6 a:close d:join
+;
+
+: first-of-month \ n n s -- n
+  -rot first-day-of-month swap >dow d:first-dow
+;
+
+: second-of-month \ n n s -- n
+  first-of-month 7 d:+
+;
+
+: third-of-month \ n n s -- n
+  first-of-month 14 d:+
+;
+
+: fourth-of-month \ n n s -- n
+  first-of-month 21 d:+
+;
+
+: last-of-month \ n n s -- n
+  -rot first-day-of-month swap >dow d:last-dow
+;
+
+: teenth-of-month \ n n s -- n
+  first-of-month dup >day 5 n:> if 7 d:+ else 14 d:+ then
+;
+
+: meetup \ n n s s -- d
+  {
+    "first":  ' first-of-month,
+    "second": ' second-of-month, 
+    "third":  ' third-of-month, 
+    "fourth": ' fourth-of-month, 
+    "last":   ' last-of-month, 
+    "teenth": ' teenth-of-month
+  } swap caseof
+;
