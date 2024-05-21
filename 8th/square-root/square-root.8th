@@ -1,0 +1,11 @@
+: square-root \ n -- n
+  >r 1 1
+
+  repeat
+    r@ n:> if break then
+    n:1+
+    dup n:sqr
+  again drop
+
+  2 n:-
+;
