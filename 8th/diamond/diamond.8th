@@ -1,0 +1,20 @@
+: vp \ s -- a
+  0 s:@ nip ' noop 'A rot a:generate clone a:pop drop a:rev a:+
+;
+
+: hp \ s -- a
+  0 s:@ nip ' noop 'A rot a:generate clone a:rev swap a:shift drop a:+
+;
+
+: cell \ n n -- n
+  2dup n:= if nip ;then
+  2drop 32
+;
+
+: row \ a n -- s
+  ( over cell ) rot swap a:map nip s:n>
+;
+
+: rows \ s -- a
+  dup hp >r vp ( r@ swap row ) a:map rdrop
+;
