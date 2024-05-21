@@ -1,0 +1,17 @@
+: zeros \ n -- a
+  n:1+ a:new 0 a:push swap a:smear
+;
+
+: update-maximum-for-item-and-weight \ n a m n -- n a m
+  >r "weight" m:@ swap "value" m:@ rot r@ swap n:- fourth swap a:@ rot n:+ 
+  r@ rot swap a:_@ n:max 2 roll r> rot a:! swap
+;
+
+: update-maximum-for-item \ n a m -- n a
+  "weight" m:@ fourth ' update-maximum-for-item-and-weight -rot loop- drop
+;
+
+: maximum-value \ n a -- n
+  over zeros swap
+  ' update-maximum-for-item a:each! drop swap a:_@
+;
