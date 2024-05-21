@@ -1,0 +1,12 @@
+: normalize \ s -- a
+  s:lc null s:/ ' s:cmp a:sort 
+;
+
+: anagram? \ s s -- T
+  2dup s:=ic if 2drop false ;then
+  normalize swap normalize ' s:= a:= 2nip
+;
+
+: anagrams \ s a -- a
+  ( over anagram? ) a:filter nip
+;
