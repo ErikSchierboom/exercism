@@ -1,0 +1,16 @@
+: middle \ n n - n
+  n:+ 2 n:/mod nip
+;
+
+: find-recur \ a n n n -- n
+  >r 
+  2dup n:> if 3drop null ;then
+  3dup middle a:_@
+  dup r@ n:= if drop middle nip ;then
+  dup r@ n:> if drop 2dup middle n:1- nip r> recurse ;then
+  drop 2dup middle n:1+ -rot nip r> recurse
+;
+
+: find \ a n -- n
+  >r a:len n:1- 0 swap r> find-recur
+;
