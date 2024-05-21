@@ -1,0 +1,31 @@
+: append \ a a -- a
+  ' a:push a:each! drop
+;
+
+: concat \ a -- a
+  a:new swap ' append a:each! drop
+;
+
+: filter \ a w -- a
+  >r a:new swap ( dup r@  w:exec if a:push else drop then ) a:each! drop rdrop
+;
+
+: length \ a -- n
+  0 swap ( drop n:1+ ) a:each! drop
+;
+
+: map \ a w -- a
+  >r a:new swap ( r@ w:exec a:push ) a:each! drop rdrop
+;
+
+: reverse \ a -- a
+  a:new swap ' a:slide a:each! drop
+;
+
+: foldl \ a x w -- x'
+  >r swap ( r@ w:exec ) a:each! drop rdrop
+;
+
+: foldr \ a x w -- x'
+  >r swap reverse ( r@ w:exec ) a:each! drop rdrop
+;
