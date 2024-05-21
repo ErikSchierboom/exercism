@@ -1,0 +1,33 @@
+needs rand/range
+
+: modifier \ n -- n
+  10 n:- 2 n:/mod nip
+;
+
+: roll \ n
+  1 6 rand-range 
+;
+
+: highest-rolls \ a -- a
+  ' n:cmp a:sort a:shift
+;
+
+: sum \ a -- n
+  ' n:+ 0 a:reduce
+;
+
+: ability \ -- n
+  ' roll 4 times 4 a:close
+  highest-rolls drop sum
+;
+
+: character \ -- m
+  m:new
+  "strength" ability m:!
+  "dexterity" ability m:!
+  "intelligence" ability m:!
+  "wisdom" ability m:!
+  "charisma" ability m:!
+  ability dup modifier 10 n:+ -rot "constitution" swap m:!
+   "hitpoints" rot m:!
+;
