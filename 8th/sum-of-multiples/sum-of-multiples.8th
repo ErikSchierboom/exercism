@@ -1,0 +1,7 @@
+: multiples \ n n -- n
+  dup 0 n:> if 2dup ( const r> swap a:push >r dup step ) -rot swap loop then
+;
+
+: sum \ a n -- n
+  a:new >r n:1- swap ' multiples a:map 2drop r> ' n:cmp a:sort ' n:= a:uniq ' n:+ 0 a:reduce
+;
