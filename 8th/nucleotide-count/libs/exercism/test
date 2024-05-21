@@ -1,0 +1,173 @@
+needs console/loaded
+
+\ -----------------------------------------------------------------
+
+ns: test
+
+-1 var, test-count
+var tests-passed
+var tests-failed
+var tests-skipped
+true var, run-test
+
+\ Some utility words
+
+
+: test-passed \ s x x --   \\ test name, expected value, actual value
+    2drop
+    1 tests-passed n:+!
+    con:green con:onBlack . space " ... OK" . con:white con:onBlack cr
+;
+
+: test-skipped \ s --
+    1 tests-skipped n:+!
+    con:cyan con:onBlack . space " ... SKIPPED" . con:white con:onBlack cr
+;
+
+: test-failed \ s x x --   \\ test name, expected value, actual value
+    1 tests-failed n:+!
+    rot
+    con:red con:onBlack . space " ... FAIL" . con:white con:onBlack cr
+    "    Actual:    «" . . "»" . cr
+    "    Expected:  «" . . "»" . cr cr
+;
+
+: isword?  \ x -- x f
+   dup  >kind  ns:w   n:= 
+;
+
+: run-test? \ -- T
+   run-test @ if true else "RUN_ALL_TESTS" getenv n:>bool then
+;
+
+\ Num passed + num skipped + num failed should == num tests
+: all-tests-run? \ -- T
+    tests-passed @ tests-skipped @ tests-failed @ n:+ n:+
+    test-count @ n:=
+;
+
+\ returns true if x is a date, false otherwise
+: date? \ x -- x T
+    dup >kind ns:d n:=
+;
+
+\ adapted from 8th forum -- https://8th-dev.com/forum/index.php/topic,2745.0.html
+: eq? \ x x -- T
+   \ are the items the same kind?
+   2dup >kind swap >kind n:=
+   !if 2drop false ;then
+
+   \ same kind: try different comparators
+   number? if n:= ;then
+   string? if s:= ;then
+   array?  if ' eq? a:= 2nip ;then
+   map?    if ' eq? m:= 2nip ;then
+   date?   if d:= ;then
+
+   \ otherwise fall back to 'lazy evaluation'
+   l: =
+;
+
+: eps_eq? \ n x x -- T
+   \ are the items the same kind?
+   2dup >kind swap >kind n:=
+   !if 2drop false ;then
+   number? !if 2drop false ;then  
+   rot n:~=
+;
+
+: check-depth \ ... n -- ...
+  dup>r
+  n:1+ depth n:=
+  !if
+    con:red con:onBlack 
+    "PANIC: expected stack depth to be " . r> . cr
+    "Stack is:" . cr
+    .s cr
+    255 die
+  then
+  rdrop
+;
+
+\ -----------------------------------------------------------------
+
+\ status report at end of run
+( all-tests-run?  
+  !if con:red con:onBlack "... FAIL - not all tests completed" . con:white con:onBlack cr then
+) onexit
+
+\ Print a summary of the tests run
+( con:white con:onBlack
+  test-count   @ . space "tests planned - " .
+  tests-passed @ . space "passed - " .
+  tests-skipped @ . space "skipped - " .
+  tests-failed @ . space "failed" . cr
+) onexit
+
+\ -----------------------------------------------------------------
+\ The public-facing words
+\ -----------------------------------------------------------------
+    
+: equal? \ s x w -- | s w x --
+   run-test? !if 2drop test-skipped ;; then
+   isword? !if swap then
+   w:exec
+   3 check-depth
+   2dup             \ so test-failed can show actual and expected
+   eq? if test-passed else test-failed then
+;
+
+: approx_equal? \ s x w n -- | s w x n --
+   run-test? !if 3drop test-skipped ;; then
+   -rot isword? !if swap then
+   w:exec
+   4 check-depth
+   3dup            \ so test-failed can show actual and expected
+   eps_eq?
+   if rot drop test-passed else rot drop test-failed then
+;
+
+: true? \ s w --
+   run-test? !if drop test-skipped ;; then
+   w:exec
+   2 check-depth
+   true swap dup    \ so test-failed can show actual and expected
+   if test-passed else test-failed then 
+;
+
+: false? \ s w --
+   run-test? !if drop test-skipped ;; then
+   w:exec
+   2 check-depth
+   false swap dup    \ so test-failed can show actual and expected
+   !if test-passed else test-failed then 
+;
+
+: null? \ s w --
+   run-test? !if drop test-skipped ;; then
+   w:exec
+   2 check-depth
+   null swap dup     \ so test-failed can show actual and expected
+   G:null? nip if test-passed else test-failed then 
+;
+
+: SKIP-REST-OF-TESTS false run-test ! ;
+
+: tests \ n -- 
+    test-count ! 
+;
+
+\ Set the exit status:
+\   0 = all OK
+\   1 = not all tests were run (some error occurred)
+\   2 = some tests failed
+: end-of-tests \ --
+    all-tests-run?
+    if
+      tests-failed @ 0 n:= if 0 else 2 then
+    else
+      1
+    then
+    die
+;
+

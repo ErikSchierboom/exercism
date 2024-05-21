@@ -1,0 +1,7 @@
+{"A": 0, "C": 0, "G": 0, "T": 0} constant initial-counts
+
+: nucleotide-counts \ s -- m
+  initial-counts const swap null s:/
+  a:len !if drop ;then  
+  ( dup -rot m:exists? if swap ' n:1+ m:op! else 2drop null break then ) rot a:reduce
+;
