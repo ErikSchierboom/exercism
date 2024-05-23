@@ -4,10 +4,11 @@
 parentheses --> "(", balanced, ")".
 brackets    --> "[", balanced, "]".
 braces      --> "{", balanced, "}".
-non_bracket --> [C], { \+ member(C, "()[]{}") }.
 
 balanced --> (parentheses | brackets | braces | non_bracket), balanced.
 balanced --> [].
+
+non_bracket --> [C], { \+ member(C, "()[]{}") }.
 
 paired(String) :-
     string_chars(String, Chars),
