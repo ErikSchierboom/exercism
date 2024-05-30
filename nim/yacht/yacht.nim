@@ -24,5 +24,5 @@ proc score*(dice: array[5, int], category: Category): int =
   of BigStraight:
     if counts.len == 5 and 1 notin dice: 30 else: 0
   of Yacht:
-    if counts.largest.val == 5: 50 else: 0
+    if counts.len == 1: 50 else: 0
   of Choice: dice.sum  
