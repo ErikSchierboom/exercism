@@ -5,7 +5,7 @@ type
     Ones, Twos, Threes, Fours, Fives, Sixes, FullHouse,
     FourOfAKind, LittleStraight, BigStraight, Choice, Yacht
 
-proc score*(dice: array[5, int], category: Category): int =
+func score*(dice: array[5, int], category: Category): int =
   let counts = dice.toCountTable
 
   case category
@@ -25,4 +25,4 @@ proc score*(dice: array[5, int], category: Category): int =
     if counts.len == 5 and 1 notin dice: 30 else: 0
   of Yacht:
     if counts.len == 1: 50 else: 0
-  of Choice: dice.sum  
+  of Choice: dice.sum
