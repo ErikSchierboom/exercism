@@ -1,12 +1,9 @@
-proc row(n: int): seq[int] =
-  result.add(1)
+import std/math
 
-  var column = 1
+func row*(i: int): seq[int] =
+  for j in 1..i:
+    result.add(fac(i-1) div (fac(j-1) * fac(i-j)))
 
-  for j in 1 ..< n:
-    column = column * (n - j) div j
-    result.add(column)
-
-proc pascal*(n: int): seq[seq[int]] =
+func pascal*(n: int): seq[seq[int]] =
   for i in 1..n:
     result.add(row(i))
