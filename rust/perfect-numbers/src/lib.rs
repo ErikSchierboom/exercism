@@ -1,3 +1,5 @@
+use std::cmp::Ordering;
+
 #[derive(Debug, PartialEq, Eq)]
 pub enum Classification {
     Abundant,
@@ -10,10 +12,10 @@ pub fn classify(num: u64) -> Option<Classification> {
         return None;
     }
 
-    match aliquot_sum(num) {
-        sum if num > sum => Some(Classification::Deficient),
-        sum if num < sum => Some(Classification::Abundant),
-        _ => Some(Classification::Perfect),
+    match num.cmp(&aliquot_sum(num)) {
+        Ordering::Less => Some(Classification::Abundant),
+        Ordering::Equal => Some(Classification::Perfect),
+        Ordering::Greater => Some(Classification::Deficient),
     }
 }
 
