@@ -1,43 +1,40 @@
-use std::fmt::{Display, Formatter, Result};
+use std::fmt::{Display, Formatter, Result, Write};
 
 pub struct Roman {
-    numerals: String,
+    decimal: u32,
 }
+
+const ROMAN_NUMERALS: [(u32, &str); 13] = [
+    (1000, "M"),
+    (900, "CM"),
+    (500, "D"),
+    (400, "CD"),
+    (100, "C"),
+    (90, "XC"),
+    (50, "L"),
+    (40, "XL"),
+    (10, "X"),
+    (9, "IX"),
+    (5, "V"),
+    (4, "IV"),
+    (1, "I"),
+];
 
 impl Display for Roman {
     fn fmt(&self, f: &mut Formatter<'_>) -> Result {
-        f.write_str(self.numerals.as_str())
+        let mut remainder = self.decimal;
+
+        Ok(for (threshold, numeral) in ROMAN_NUMERALS {
+            while remainder / threshold > 0 {
+                remainder -= threshold;
+                f.write_str(numeral)?
+            }
+        })
     }
 }
 
 impl From<u32> for Roman {
     fn from(num: u32) -> Self {
-        let roman_numerals = vec!(
-            (1000, "M"),
-            (900, "CM"),
-            (500, "D"),
-            (400, "CD"),
-            (100, "C"),
-            (90, "XC"),
-            (50, "L"),
-            (40, "XL"),
-            (10, "X"),
-            (9, "IX"),
-            (5, "V"),
-            (4, "IV"),
-            (1, "I"),
-        );
-
-        let mut numerals = String::new();
-        let mut remainder = num;
-
-        for (threshold, numeral)  in roman_numerals {
-            while remainder / threshold > 0 {
-                remainder -= threshold;
-                numerals += numeral;
-            }
-        }
-
-        Self { numerals }
+        Self { decimal: num }
     }
 }
