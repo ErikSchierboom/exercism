@@ -1,0 +1,38 @@
+{
+  "authors": [
+    "IanWhitney"
+  ],
+  "contributors": [
+    "ashleygwilliams",
+    "coriolinus",
+    "cwhakes",
+    "EduardoBautista",
+    "efx",
+    "ErikSchierboom",
+    "IanWhitney",
+    "lutostag",
+    "mkantor",
+    "navossoc",
+    "nfiles",
+    "petertseng",
+    "rofrol",
+    "stringparser",
+    "xakon",
+    "ZapAnton"
+  ],
+  "files": {
+    "solution": [
+      "src/lib.rs",
+      "Cargo.toml"
+    ],
+    "test": [
+      "tests/roman-numerals.rs"
+    ],
+    "example": [
+      ".meta/example.rs"
+    ]
+  },
+  "blurb": "Convert modern Arabic numbers into Roman numerals.",
+  "source": "The Roman Numeral Kata",
+  "source_url": "https://codingdojo.org/kata/RomanNumerals/"
+}
