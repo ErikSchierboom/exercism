@@ -1,0 +1,37 @@
+{
+  "authors": [
+    "petertseng"
+  ],
+  "contributors": [
+    "coriolinus",
+    "cwhakes",
+    "efx",
+    "ErikSchierboom",
+    "go717franciswang",
+    "IanWhitney",
+    "lutostag",
+    "mkantor",
+    "navossoc",
+    "nertpinx",
+    "nfiles",
+    "piepero",
+    "rofrol",
+    "stringparser",
+    "xakon",
+    "ZapAnton"
+  ],
+  "files": {
+    "solution": [
+      "src/lib.rs",
+      "Cargo.toml"
+    ],
+    "test": [
+      "tests/protein-translation.rs"
+    ],
+    "example": [
+      ".meta/example.rs"
+    ]
+  },
+  "blurb": "Translate RNA sequences into proteins.",
+  "source": "Tyler Long"
+}
