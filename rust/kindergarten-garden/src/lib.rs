@@ -6,9 +6,9 @@ pub fn plants(diagram: &str, student: &str) -> Vec<&'static str> {
     let idx = student_idx(student);
 
     diagram
-        .split_whitespace()
+        .lines()
         .flat_map(|line|
-            line[idx * 2..idx * 2 +2]
+            line[idx..=idx+1]
                 .chars()
                 .map(|encoding| plant(encoding)))
         .collect()
@@ -28,5 +28,5 @@ fn student_idx(student: &str) -> usize {
     STUDENTS
         .iter()
         .position(|&name| name == student)
-        .unwrap()
+        .unwrap() * 2
 }
