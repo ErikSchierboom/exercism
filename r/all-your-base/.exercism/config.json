@@ -1,0 +1,15 @@
+{
+  "authors": ["colinleach"],
+  "files": {
+    "solution": [
+      "all-your-base.R"
+    ],
+    "test": [
+      "test_all-your-base.R"
+    ],
+    "example": [
+      ".meta/example.R"
+    ]
+  },
+  "blurb": "Convert a number, represented as a sequence of digits in one base, to any other base."
+}
