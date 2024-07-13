@@ -1,0 +1,20 @@
+{
+  "authors": [
+    "colinleach"
+  ],
+  "files": {
+    "solution": [
+      "elyses-enchantments.R"
+    ],
+    "test": [
+      "test_elyses-enchantments.R"
+    ],
+    "exemplar": [
+      ".meta/exemplar.R"
+    ]
+  },
+  "forked_from": [
+    "javascript/elyses-enchantments"
+  ],
+  "blurb": "Help Elyse with her Enchantments and learn about vectors in the process."
+}
