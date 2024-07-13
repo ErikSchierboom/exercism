@@ -1,0 +1,20 @@
+{
+  "authors": [
+    "colinleach"
+  ],
+  "files": {
+    "solution": [
+      "cars-assemble.R"
+    ],
+    "test": [
+      "test_cars-assemble.R"
+    ],
+    "exemplar": [
+      ".meta/exemplar.R"
+    ]
+  },
+  "forked_from": [
+    "Csharp/cars-assemble"
+  ],
+  "blurb": "Learn about conditionals by analyzing the production of an assembly line."
+}
