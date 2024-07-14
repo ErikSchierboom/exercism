@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "jonmcalder"
+  ],
+  "files": {
+    "solution": [
+      "etl.R"
+    ],
+    "test": [
+      "test_etl.R"
+    ],
+    "example": [
+      ".meta/example.R"
+    ]
+  },
+  "blurb": "Change the data format for scoring a game to more easily add other languages.",
+  "source": "Based on an exercise by the JumpstartLab team for students at The Turing School of Software and Design.",
+  "source_url": "https://turing.edu"
+}
