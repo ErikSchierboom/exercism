@@ -19,8 +19,8 @@ pub fn decode(source: &str) -> String {
     let mut number = 0;
 
     for c in source.chars() {
-        if c.is_numeric() {
-            number = number * 10 + c.to_digit(10).unwrap();
+        if let Some(n) = c.to_digit(10) {
+            number = number * 10 + n
         } else {
             if number == 0 {
                 write!(&mut decoded, "{}", c).unwrap()
