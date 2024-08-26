@@ -7,7 +7,7 @@ let slices (str:string) length =
         None
     else
         str.ToCharArray()
-        |> Array.windowed length
-        |> Array.map String
-        |> Array.toList
+        |> Seq.windowed length
+        |> Seq.map String
+        |> Seq.toList
         |> Some
