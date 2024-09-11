@@ -1,7 +1,9 @@
 module DifferenceOfSquares
 
-let square x = x * x
+let square n = n * n
 
-let squareOfSums number = [1..number] |> List.sum |> square
-let sumOfSquares number = [1..number] |> List.sumBy square
-let difference number = squareOfSums number - sumOfSquares number
+let squareOfSum n = List.sum [1..n] |> square 
+
+let sumOfSquares n = List.sumBy square [1..n]
+
+let differenceOfSquares n = squareOfSum n - sumOfSquares n 

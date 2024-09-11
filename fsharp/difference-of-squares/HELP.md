@@ -27,6 +27,7 @@ It's possible to submit an incomplete solution which allows you to:
 If you'd like help solving the exercise, check the following pages:
 
 - The [F# track's documentation](https://exercism.org/docs/tracks/fsharp)
+- The [F# track's programming category on the forum](https://forum.exercism.org/c/programming/fsharp)
 - [Exercism's programming category on the forum](https://forum.exercism.org/c/programming/5)
 - The [Frequently Asked Questions](https://exercism.org/docs/using/faqs)
 
@@ -36,3 +37,8 @@ To get help if you're having trouble, you can use one of the following resources
 
 - [/r/fsharp](https://www.reddit.com/r/fsharp) is the F# subreddit.
 - [StackOverflow](http://stackoverflow.com/questions/tagged/f%23) can be used to search for your problem and see if it has been answered already. You can also ask and answer questions.
+
+## Packages
+
+The F# track supports a limited number of packages.
+Check the [list of supported packages](https://exercism.org/docs/tracks/fsharp/packages) to find out which.
