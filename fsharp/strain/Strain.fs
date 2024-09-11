@@ -1,5 +1,10 @@
 module Seq
 
-let keep pred xs = seq { for x in xs do if pred x then yield x }
+let keep pred elements =
+    seq {
+        for element in elements do
+            if pred element then
+                yield element
+    }
 
 let discard pred = keep (not << pred)
