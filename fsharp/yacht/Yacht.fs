@@ -21,7 +21,7 @@ type Die =
     | Four
     | Five
     | Six
-
+    
 let private dieScore (die: Die): int =
     match die with
     | One   -> 1
@@ -31,48 +31,44 @@ let private dieScore (die: Die): int =
     | Five  -> 5
     | Six   -> 6
 
-let private (|SingleThrow|) (target: Die) (dice: Die list): int =
+let private scoreSingleNumber dice goalDie =
     dice
-    |> List.filter (fun die -> die = target)
-    |> List.length
+    |> List.filter (fun die -> die = goalDie)
+    |> List.sumBy dieScore
 
-let private (|FullHouseThrow|_|) (dice: Die list): unit option =
-    match List.countBy id dice |> List.sortBy snd with
-    | [(_, 2); (_, 3)] -> Some ()
-    | _ -> None
+let private scoreFullHouse dice =
+    match List.countBy id dice with
+    | [(_, 2); (_, 3)] -> List.sumBy dieScore dice
+    | _ -> 0
 
-let private (|FourOfAKindThrow|_|) (dice: Die list): Die option =
-    match List.countBy id dice |> List.sortBy snd with
-    | [(number, 5)] | [_; (number, 4)] -> Some number
-    | _ -> None
+let private scoreFourOfAKind dice =
+    match List.countBy id dice with
+    | [(die, 5)] | [_; (die, 4)] | [(die, 4); _] -> dieScore die * 4
+    | _ -> 0
 
-let private (|LittleStraightThrow|_|) (dice: Die list): unit option =
-    match List.sort dice with
-    | [Die.One; Die.Two; Die.Three; Die.Four; Die.Five] -> Some ()
-    | _ -> None
+let private scoreLittleStraight dice =
+    if List.sort dice = [Die.One; Die.Two; Die.Three; Die.Four; Die.Five] then 30 else 0
+    
+let private scoreBigStraight dice =
+    if List.sort dice = [Die.Two; Die.Three; Die.Four; Die.Five; Die.Six] then 30 else 0
+    
+let private scoreChoice dice = List.sumBy dieScore dice
 
-let private (|BigStraightThrow|_|) (dice: Die list): unit option =
-    match List.sort dice with
-    | [Die.Two; Die.Three; Die.Four; Die.Five; Die.Six] -> Some ()
-    | _ -> None
+let private scoreYacht dice =
+    if List.distinct dice |> List.length = 1 then 50 else 0
 
-let private (|YachtThrow|_|) (dice: Die list): unit option =
-    match List.distinct dice with
-    | [_] -> Some ()
-    | _ -> None
-
-let score (category: Category) (dice: Die list): int =
-    match category, dice with
-    | Ones,           SingleThrow Die.One count   -> count * 1
-    | Twos,           SingleThrow Die.Two count   -> count * 2
-    | Threes,         SingleThrow Die.Three count -> count * 3
-    | Fours,          SingleThrow Die.Four count  -> count * 4
-    | Fives,          SingleThrow Die.Five count  -> count * 5
-    | Sixes,          SingleThrow Die.Six count   -> count * 6
-    | FullHouse,      FullHouseThrow              -> List.sumBy dieScore dice
-    | FourOfAKind,    FourOfAKindThrow die        -> dieScore die * 4
-    | LittleStraight, LittleStraightThrow         -> 30
-    | BigStraight,    BigStraightThrow            -> 30
-    | Yacht,          YachtThrow                  -> 50
-    | Choice,         _                           -> List.sumBy dieScore dice
-    | _,              _                           -> 0
+let score category dice =
+    match category with
+    | Ones           -> scoreSingleNumber dice Die.One
+    | Twos           -> scoreSingleNumber dice Die.Two
+    | Threes         -> scoreSingleNumber dice Die.Three
+    | Fours          -> scoreSingleNumber dice Die.Four
+    | Fives          -> scoreSingleNumber dice Die.Five
+    | Sixes          -> scoreSingleNumber dice Die.Six
+    | FullHouse      -> scoreFullHouse dice
+    | FourOfAKind    -> scoreFourOfAKind dice
+    | LittleStraight -> scoreLittleStraight dice
+    | BigStraight    -> scoreBigStraight dice
+    | Choice         -> scoreChoice dice
+    | Yacht          -> scoreYacht dice
+ 
