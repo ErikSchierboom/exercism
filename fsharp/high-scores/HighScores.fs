@@ -1,17 +1,9 @@
 ﻿module HighScores
 
-let scores (values: int list): int list = values
+let scores = id
 
-let latest (values: int list): int = List.last values
+let latest = List.last
 
-let highest (values: int list): int = List.max values
+let personalBest = List.max
 
-let top  (values: int list): int list = values |> List.sortDescending |> List.truncate 3
-
-let report (values: int list): string =
-    let latest' = latest values
-    let highest' = highest values
-    let difference = highest' - latest'
-    let comparedDifference = if difference = 0 then "" else sprintf "%d short of " difference
-
-    sprintf "Your latest score was %d. That's %syour personal best!" latest' comparedDifference
+let personalTopThree scores = List.sortDescending scores |> List.truncate 3
