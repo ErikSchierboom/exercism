@@ -1,8 +1,4 @@
-to_digits <- function(num) {
-  as.numeric(strsplit(as.character(num), "")[[1]])
-}
-
 is_armstrong_number <- function(n) {
-  digits <- to_digits(n)
+  digits <- n |> as.character() |> strsplit("") |> unlist() |> as.numeric()
   sum(digits ^ length(digits)) == n
 }
