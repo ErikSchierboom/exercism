@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "colinleach",
+    "jonmcalder"
+  ],
+  "files": {
+    "solution": [
+      "protein-translation.R"
+    ],
+    "test": [
+      "test_protein-translation.R"
+    ],
+    "example": [
+      ".meta/example.R"
+    ]
+  },
+  "blurb": "Translate RNA sequences into proteins.",
+  "source": "Tyler Long"
+}
