@@ -1,0 +1,18 @@
+{
+  "authors": [
+    "Nerwosolek"
+  ],
+  "files": {
+    "solution": [
+      "robot-simulator.R"
+    ],
+    "test": [
+      "test_robot-simulator.R"
+    ],
+    "example": [
+      ".meta/example.R"
+    ]
+  },
+  "blurb": "Write a robot simulator.",
+  "source": "Inspired by an interview question at a famous company."
+}
