@@ -1,0 +1,24 @@
+{
+  "authors": [
+    "llenk"
+  ],
+  "contributors": [
+    "jonmcalder",
+    "katrinleinweber",
+    "zacchaeusluke"
+  ],
+  "files": {
+    "solution": [
+      "prime-factors.R"
+    ],
+    "test": [
+      "test_prime-factors.R"
+    ],
+    "example": [
+      ".meta/example.R"
+    ]
+  },
+  "blurb": "Compute the prime factors of a given natural number.",
+  "source": "The Prime Factors Kata by Uncle Bob",
+  "source_url": "https://web.archive.org/web/20221026171801/http://butunclebob.com/ArticleS.UncleBob.ThePrimeFactorsKata"
+}
