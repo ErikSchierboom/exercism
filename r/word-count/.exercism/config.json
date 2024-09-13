@@ -1,0 +1,27 @@
+{
+  "authors": [
+    "jonboiser"
+  ],
+  "contributors": [
+    "cmiller01",
+    "jonmcalder",
+    "katrinleinweber",
+    "kytrinyx",
+    "Robsteranium",
+    "ttnagata",
+    "zacchaeusluke"
+  ],
+  "files": {
+    "solution": [
+      "word-count.R"
+    ],
+    "test": [
+      "test_word-count.R"
+    ],
+    "example": [
+      ".meta/example.R"
+    ]
+  },
+  "blurb": "Given a phrase, count the occurrences of each word in that phrase.",
+  "source": "This is a classic toy problem, but we were reminded of it by seeing it in the Go Tour."
+}
