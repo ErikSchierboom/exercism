@@ -1,13 +1,9 @@
-valid(A, B, C) :-
-    A>0, B>0, C>0,
-    A+B>=C, A+C>=B, B+C>=A.
+valid(X, Y, Z) :- 
+    X + Y > Z, X + Z > Y, Y + Z > X,
+    X > 0, Y > 0, Z > 0. 
 
-category(A, A, A, "equilateral") :- !.
-category(A, A, _, "isosceles") :- !.
-category(A, _, A, "isosceles") :- !.
-category(_, A, A, "isosceles") :- !.
-category(A, B, C, "scalene") :- A \== B, B \== C.
-
-triangle(A, B, C, Type) :-
-    valid(A, B, C),
-    category(A, B, C, Type).
+triangle(X, X, X, "equilateral") :- valid(X, X, X), !.
+triangle(X, X, Y, "isosceles") :- valid(X, X, Y), !.
+triangle(X, Y, X, "isosceles") :- valid(X, Y, X), !.
+triangle(Y, X, X, "isosceles") :- valid(Y, X, X), !.
+triangle(X, Y, Z, "scalene") :- valid(X, Y, Z), X =\= Y, Y =\= Z.
