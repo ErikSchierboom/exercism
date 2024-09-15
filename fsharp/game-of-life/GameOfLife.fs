@@ -18,6 +18,6 @@ let tick (input: int[,]) =
     
     Array2D.mapi (fun x y cell ->
         match cell, numberOfLiveNeighbors x y with
-        | 1, 2 | 1, 3 | 0, 3 -> 1
+        | 1, 2 | _, 3 -> 1
         | _ -> 0
     ) input
