@@ -4,6 +4,6 @@ complement('T', 'A').
 complement('A', 'U').
 
 rna_transcription(Rna, Dna) :-
-    string_chars(Rna, Nucleotides),
-    maplist(complement, Nucleotides, Complement),
-    string_chars(Dna, Complement).
+    string_chars(Rna, RnaChars),
+    maplist(complement, RnaChars, DnaChars),
+    string_chars(Dna, DnaChars).
