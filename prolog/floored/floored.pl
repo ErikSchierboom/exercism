@@ -1,20 +1,19 @@
+:- use_module(library(clpfd)).
+
 floor(Name, Floor) :-
-    Tenants = [amara, bjorn, cora, dale, emiko],
-    permutation(Floors, [1, 2, 3, 4, 5]),
-    nth1(1, Floors, AmaraFloor),
-    nth1(2, Floors, BjornFloor),
-    nth1(3, Floors, CoraFloor),
-    nth1(4, Floors, DaleFloor),
-    nth1(5, Floors, EmikoFloor),
+    Names = [amara, bjorn, cora, dale, emiko],
+    Floors = [Amara, Bjorn, Cora, Dale, Emiko],
+    
+    Floors ins 1..5,
+    all_different(Floors),
+    Amara #< 5,
+    Bjorn #> 1,
+    Cora in 2..4,
+    Dale #> Bjorn,
+    abs(Emiko - Cora) #> 1,
+    abs(Cora - Bjorn) #> 1,
 
-    AmaraFloor \= 5,
-    BjornFloor \= 1,
-    CoraFloor \= 1,
-    CoraFloor \= 5,
-    DaleFloor > BjornFloor,
-    abs(EmikoFloor - CoraFloor) > 1,
-    abs(CoraFloor - BjornFloor) > 1,
-
-    nth1(NameIndex, Tenants, Name),
-    nth1(NameIndex, Floors, Floor),
+    label(Floors),
+    pairs_keys_values(TenantFloors, Names, Floors),
+    member(Name-Floor, TenantFloors),
     !.
