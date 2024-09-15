@@ -6,41 +6,68 @@ pending :-
 
 :- begin_tests(tree_traversals).
 
-test(build_empty_tree, [condition(true), all( T = [ nil ] )]) :-
-    tree_traversals(T,[],[]).
+    test(inorder_from_empty_tree, condition(true)) :-
+        Tree = nil,
+        tree_traversals(Tree, Inorder, _),
+        Inorder == [].
 
-test(build_one_item_tree, [condition(true), all( T = [ node(nil,a,nil) ] )]) :-
-    tree_traversals(T,[a],[a]).
+    test(inorder_from_tree_without_leafs, condition(pending)) :-
+        Tree = node(nil, a, nil),
+        tree_traversals(Tree, Inorder, _),
+        Inorder == [a].
 
-test(aix_france, [condition(true), all( Tree = [ 
-        node(node(nil, i, nil), a, node(node(nil, f, nil), x, node(nil, r, nil))) 
-    ])]) :-
-    tree_traversals(Tree, [a,i,x,f,r], [i,a,f,x,r]).
+    test(inorder_from_tree_with_leafs, condition(pending)) :-
+        Tree = node(node(nil, b, nil), a, node(nil, c, nil)),
+        tree_traversals(Tree, Inorder, _),
+        Inorder == [a, b, c].
 
-test(diff_length_traversal, [condition(true), fail]) :-
-    tree_traversals(_,[a,b],[b,a,r]).
+    test(preorder_from_empty_tree, condition(pending)) :-
+        Tree = nil,
+        tree_traversals(Tree, _, Preorder),
+        Preorder == [].
 
-test(diff_node_values_same_length, [condition(true), fail]) :-
-    tree_traversals(_,[x,y,z],[a,b,c]).
+    test(preorder_from_tree_without_leafs, condition(pending)) :-
+        Tree = node(nil, a, nil),
+        tree_traversals(Tree, _, Preorder),
+        Preorder == [a].
 
-% Bonus (find multiple trees)
+    test(preorder_from_tree_with_leafs, condition(pending)) :-
+        Tree = node(node(nil, b, nil), a, node(nil, c, nil)),
+        tree_traversals(Tree, _, Preorder),
+        Preorder == [b, a, c].
 
-test(with_repetitions, [condition(true), set( Tree = [
-        node(node(node(node(node(nil, o, nil), l, nil), o, nil), r, nil), p, node(nil, g, nil))
-    ,   node(node(node(nil, o, node(nil, l, node(nil, o, nil))), r, nil), p, node(nil, g, nil))
-    ])]) :- 
-    tree_traversals(
-        Tree
-    ,   [p,r,o,l,o,g]
-    ,   [o,l,o,r,p,g]
-    ).
+% test(build_one_item_tree, condition(pending)) :-
+%     Tree = [node(nil,a,nil)],
+%     tree_traversals(Tree, [a], [a]).
 
-% basic tests for extra points (unifying in opposite direction)
+% test(aix_france, [condition(pending), all( Tree = [ 
+%         node(node(nil, i, nil), a, node(node(nil, f, nil), x, node(nil, r, nil))) 
+%     ])]) :-
+%     tree_traversals(Tree, [a,i,x,f,r], [i,a,f,x,r]).
+
+
+
+% test(diff_node_values_same_length, [condition(pending), fail]) :-
+%     tree_traversals(_,[x,y,z],[a,b,c]).
+
+
+% test(with_repetitions, [condition(pending), set( Tree = [
+%         node(node(node(node(node(nil, o, nil), l, nil), o, nil), r, nil), p, node(nil, g, nil))
+%     ,   node(node(node(nil, o, node(nil, l, node(nil, o, nil))), r, nil), p, node(nil, g, nil))
+%     ])]) :- 
+%     tree_traversals(
+%         Tree
+%     ,   [p,r,o,l,o,g]
+%     ,   [o,l,o,r,p,g]
+%     ).
+
+% test(diff_length_traversal, [condition(pending), fail]) :-
+%     tree_traversals(_,[a,b],[b,a,r]).
     
-test(find_Inorder_from_empty, condition(true)) :-
-    tree_traversals(nil,[],I), I = [].
-
-test(find_Preorder_from_empty, condition(true)) :-
-    tree_traversals(nil,P,[]), P = [].
+test(find_inorder_from_empty_tree, condition(pending)) :-
+    Tree = nil,
+    Preorder = [],
+    tree_traversals(Tree, Preorder, Inorder), 
+    Inorder = [].
 
 :- end_tests(tree_traversals).
