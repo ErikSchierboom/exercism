@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "erikschierboom"
+  ],
+  "files": {
+    "solution": [
+      "global_positioning_system.pl"
+    ],
+    "test": [
+      "global_positioning_system_tests.plt"
+    ],
+    "example": [
+      ".meta/global_positioning_system.example.pl"
+    ]
+  },
+  "blurb": "Parse GPS coordinates into their individual components"
+}
