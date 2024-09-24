@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "erikschierboom"
+  ],
+  "files": {
+    "solution": [
+      "binary_puzzle.pl"
+    ],
+    "test": [
+      "binary_puzzle_tests.plt"
+    ],
+    "example": [
+      ".meta/binary_puzzle.example.pl"
+    ]
+  },
+  "blurb": "Solve a binary puzzle"
+}
