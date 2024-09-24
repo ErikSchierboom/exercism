@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "erikschierboom"
+  ],
+  "files": {
+    "solution": [
+      "magic_square.pl"
+    ],
+    "test": [
+      "magic_square_tests.plt"
+    ],
+    "example": [
+      ".meta/magic_square.example.pl"
+    ]
+  },
+  "blurb": "Check if a square is a magic square"
+}
