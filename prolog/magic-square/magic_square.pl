@@ -13,11 +13,10 @@ diagonal_element(Rows, X-Y, Value) :- nth1(Y, Rows, Row), nth1(X, Row, Value).
 
 magic_square(Rows) :-
     maplist(sumlist, Rows, RowSums),
+    maplist(=(Sum), RowSums),
     transpose(Rows, Cols),
     maplist(sumlist, Cols, ColSums),
+    maplist(=(Sum), ColSums),
     diagonals(Rows, LeftRightDiagonal, RightLeftDiagonal),
-    sumlist(LeftRightDiagonal, LeftRightDiagonalSum),
-    sumlist(RightLeftDiagonal, RightLeftDiagonalSum),
-    append([RowSums, ColSums, [LeftRightDiagonalSum, RightLeftDiagonalSum]], Sums),
-    sort(Sums, SortedSums),
-    length(SortedSums, 1).
+    sumlist(LeftRightDiagonal, Sum),
+    sumlist(RightLeftDiagonal, Sum).
