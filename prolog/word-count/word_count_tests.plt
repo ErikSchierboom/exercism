@@ -66,7 +66,7 @@ pending :-
           "don't"-2,
           "first"-1,
           "getting"-1,
-          "it"-1
+          "it"-1,
           "laugh"-1,
           "then"-1,
           "you're"-1
