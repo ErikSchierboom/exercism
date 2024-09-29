@@ -1,6 +1,6 @@
 space_age(Planet, Secs, Age) :-
     orbital_period(Planet, OrbitalPeriod),
-    Age is (Secs / OrbitalPeriod) / 31557600.0.
+    Age is Secs / 31557600 / OrbitalPeriod.
 
 orbital_period("Mercury", 0.2408467).
 orbital_period("Venus",   0.61519726).
