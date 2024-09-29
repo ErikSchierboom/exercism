@@ -12,14 +12,14 @@ pending :-
         balance(Account, Balance),
         Balance == 0.
 
-    test(single_deposit, condition(pending)) :-
+    test(single_deposit, condition(true)) :-
         create_bank_account(Account),
         open_account(Account),
         deposit(Account, 100),
         balance(Account, Balance),
         Balance == 100.
 
-    test(multiple_deposits, condition(pending)) :-
+    test(multiple_deposits, condition(true)) :-
         create_bank_account(Account),
         open_account(Account),
         deposit(Account, 100),
@@ -27,7 +27,7 @@ pending :-
         balance(Account, Balance),
         Balance == 150.
 
-    test(withdraw_once, condition(pending)) :-
+    test(withdraw_once, condition(true)) :-
         create_bank_account(Account),
         open_account(Account),
         deposit(Account, 100),
@@ -35,7 +35,7 @@ pending :-
         balance(Account, Balance),
         Balance == 25.
 
-    test(withdraw_twice, condition(pending)) :-
+    test(withdraw_twice, condition(true)) :-
         create_bank_account(Account),
         open_account(Account),
         deposit(Account, 100),
@@ -44,7 +44,7 @@ pending :-
         balance(Account, Balance),
         Balance == 0.
 
-    test(can_do_multiple_operations_sequentially, condition(pending)) :-
+    test(can_do_multiple_operations_sequentially, condition(true)) :-
         create_bank_account(Account),
         open_account(Account),
         deposit(Account, 100),
@@ -55,38 +55,38 @@ pending :-
         balance(Account, Balance),
         Balance == 20.
 
-    test(cannot_check_balance_of_closed_account, [fail, condition(pending)]) :-
+    test(cannot_check_balance_of_closed_account, [fail, condition(true)]) :-
         create_bank_account(Account),
         open_account(Account),
         close_account(Account),
         balance(Account, _).
                 
-    test(cannot_deposit_into_closed_account, [fail, condition(pending)]) :-
+    test(cannot_deposit_into_closed_account, [fail, condition(true)]) :-
         create_bank_account(Account),
         open_account(Account),
         close_account(Account),
         deposit(Account, 50).
                 
-    test(cannot_deposit_into_unopened_account, [fail, condition(pending)]) :-
+    test(cannot_deposit_into_unopened_account, [fail, condition(true)]) :-
         create_bank_account(Account),
         deposit(Account, 50).
                 
-    test(cannot_withdraw_from_closed_account, [fail, condition(pending)]) :-
+    test(cannot_withdraw_from_closed_account, [fail, condition(true)]) :-
         create_bank_account(Account),
         open_account(Account),
         close_account(Account),
         withdraw(Account, 50).
                 
-    test(cannot_close_an_account_that_was_not_opened, [fail, condition(pending)]) :-
+    test(cannot_close_an_account_that_was_not_opened, [fail, condition(true)]) :-
         create_bank_account(Account),
         close_account(Account).
                 
-    test(cannot_open_an_already_opened_account, [fail, condition(pending)]) :-
+    test(cannot_open_an_already_opened_account, [fail, condition(true)]) :-
         create_bank_account(Account),
         open_account(Account),
         open_account(Account).
 
-    test(reopened_account_does_not_retain_balance, condition(pending)) :-
+    test(reopened_account_does_not_retain_balance, condition(true)) :-
         create_bank_account(Account),
         open_account(Account),
         deposit(Account, 50),
@@ -95,19 +95,19 @@ pending :-
         balance(Account, Balance),
         Balance == 0.
 
-    test(cannot_withdraw_more_than_deposited, [fail, condition(pending)]) :-
+    test(cannot_withdraw_more_than_deposited, [fail, condition(true)]) :-
         create_bank_account(Account),
         open_account(Account),
         deposit(Account, 25),
         withdraw(Account, 50).
 
-    test(cannot_withdraw_negative, [fail, condition(pending)]) :-
+    test(cannot_withdraw_negative, [fail, condition(true)]) :-
         create_bank_account(Account),
         open_account(Account),
         deposit(Account, 100),
         withdraw(Account, -50).
 
-    test(cannot_deposit_negative, [fail, condition(pending)]) :-
+    test(cannot_deposit_negative, [fail, condition(true)]) :-
         create_bank_account(Account),
         open_account(Account),
         deposit(Account, -50).

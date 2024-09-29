@@ -10,23 +10,23 @@ pending :-
         triplets(12, Triplets),
         Triplets == [(3, 4, 5)].
 
-    test(triplets_whose_sum_is_108, condition(pending)) :-
+    test(triplets_whose_sum_is_108, condition(true)) :-
         triplets(108, Triplets),
         Triplets == [(27, 36, 45)].
 
-    test(triplets_whose_sum_is_1000, condition(pending)) :-
+    test(triplets_whose_sum_is_1000, condition(true)) :-
         triplets(1000, Triplets),
         Triplets == [(200, 375, 425)].
 
-    test(no_matching_triplets_for_1001, condition(pending)) :-
+    test(no_matching_triplets_for_1001, condition(true)) :-
         triplets(1001, Triplets),
         Triplets == [].
 
-    test(returns_all_matching_triplets, condition(pending)) :-
+    test(returns_all_matching_triplets, condition(true)) :-
         triplets(90, Triplets),
         Triplets == [(9, 40, 41), (15, 36, 39)].
 
-    test(several_matching_triplets, condition(pending)) :-    
+    test(several_matching_triplets, condition(true)) :-    
         triplets(840, Triplets),
         Triplets == [
             (40, 399, 401),
@@ -47,7 +47,7 @@ bonus :-
 
 :- begin_tests(pythagorean_triplet_bonus, [condition(bonus)]).
 
-    test(triplets_for_large_number, condition(pending)) :-
+    test(triplets_for_large_number, condition(true)) :-
         triplets(30000, Triplets),
         Triplets == [
             (1200, 14375, 14425),

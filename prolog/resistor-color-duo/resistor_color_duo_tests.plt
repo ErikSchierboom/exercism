@@ -10,27 +10,27 @@ pending :-
         value(["brown", "black"], Value),
         Value == 10.
 
-    test(blue_and_grey, condition(pending)) :-
+    test(blue_and_grey, condition(true)) :-
         value(["blue", "grey"], Value),
         Value == 68.
 
-    test(yellow_and_violet, condition(pending)) :-
+    test(yellow_and_violet, condition(true)) :-
         value(["yellow", "violet"], Value),
         Value == 47.
 
-    test(white_and_red, condition(pending)) :-
+    test(white_and_red, condition(true)) :-
         value(["white", "red"], Value),
         Value == 92.
 
-    test(orange_and_orange, condition(pending)) :-
+    test(orange_and_orange, condition(true)) :-
         value(["orange", "orange"], Value),
         Value == 33.
 
-    test(ignore_additional_colors, condition(pending)) :-
+    test(ignore_additional_colors, condition(true)) :-
         value(["green", "brown", "orange"], Value),
         Value == 51.
 
-    test(black_and_brown_one_digit, condition(pending)) :-
+    test(black_and_brown_one_digit, condition(true)) :-
         value(["black", "brown"], Value),
         Value == 1.
 

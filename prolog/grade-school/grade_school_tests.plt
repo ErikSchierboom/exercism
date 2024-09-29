@@ -11,13 +11,13 @@ pending :-
         roster(School, Roster),
         Roster == [].
 
-    test(student_is_added_to_the_roster, condition(pending)) :-
+    test(student_is_added_to_the_roster, condition(true)) :-
         create_school(School),
         add_student(School, "Aimee", 2, School1),
         roster(School1, Roster),
         Roster == ["Aimee"].
 
-    test(multiple_students_in_the_same_grade_are_added_to_the_roster, condition(pending)) :-
+    test(multiple_students_in_the_same_grade_are_added_to_the_roster, condition(true)) :-
         create_school(School),
         add_student(School, "Blair", 2, School1),
         add_student(School1, "James", 2, School2),
@@ -25,26 +25,26 @@ pending :-
         roster(School3, Roster), 
         Roster == ["Blair", "James", "Paul"].
 
-    test(cannot_add_student_to_same_grade_in_the_roster_more_than_once, [fail, condition(pending)]) :-
+    test(cannot_add_student_to_same_grade_in_the_roster_more_than_once, [fail, condition(true)]) :-
         create_school(School),
         add_student(School, "Blair", 2, School1),
         add_student(School1, "James", 2, School2),
         add_student(School2, "James", 2, _).
 
-    test(students_in_multiple_grades_are_added_to_the_roster, condition(pending)) :-
+    test(students_in_multiple_grades_are_added_to_the_roster, condition(true)) :-
         create_school(School),
         add_student(School, "Chelsea", 3, School1),
         add_student(School1, "Logan", 7, School2),
         roster(School2, Roster),
         Roster == ["Chelsea", "Logan"].
 
-    test(cannot_add_same_student_to_multiple_grades_in_the_roster, [fail, condition(pending)]) :-
+    test(cannot_add_same_student_to_multiple_grades_in_the_roster, [fail, condition(true)]) :-
         create_school(School),
         add_student(School, "Blair", 2, School1),
         add_student(School1, "James", 2, School2),
         add_student(School2, "James", 3, _).
 
-    test(students_are_sorted_by_grades_in_the_roster, condition(pending)) :-
+    test(students_are_sorted_by_grades_in_the_roster, condition(true)) :-
         create_school(School),
         add_student(School, "Jim", 3, School1),
         add_student(School1, "Peter", 2, School2),
@@ -52,7 +52,7 @@ pending :-
         roster(School3, Roster),
         Roster == ["Anna", "Peter", "Jim"].
 
-    test(students_are_sorted_by_name_in_the_roster, condition(pending)) :-
+    test(students_are_sorted_by_name_in_the_roster, condition(true)) :-
         create_school(School),
         add_student(School, "Peter", 2, School1),
         add_student(School1, "Zoe", 2, School2),
@@ -60,7 +60,7 @@ pending :-
         roster(School3, Roster),
         Roster == ["Alex", "Peter", "Zoe"].
 
-    test(students_are_sorted_by_grades_and_then_by_name_in_the_roster, condition(pending)) :-
+    test(students_are_sorted_by_grades_and_then_by_name_in_the_roster, condition(true)) :-
         create_school(School),
         add_student(School, "Peter", 2, School1),
         add_student(School1, "Anna", 1, School2),
@@ -72,12 +72,12 @@ pending :-
         roster(School7, Roster),
         Roster == ["Anna", "Barb", "Charlie", "Alex", "Peter", "Zoe", "Jim"].
 
-    test(grade_is_empty_if_no_students_in_the_roster, condition(pending)) :-
+    test(grade_is_empty_if_no_students_in_the_roster, condition(true)) :-
         create_school(School),
         grade(School, 1, Grade),
         Grade == [].
 
-    test(grade_is_empty_if_no_students_in_that_grade, condition(pending)) :-
+    test(grade_is_empty_if_no_students_in_that_grade, condition(true)) :-
         create_school(School),
         add_student(School, "Peter", 2, School1),
         add_student(School1, "Zoe", 2, School2),
@@ -86,7 +86,7 @@ pending :-
         grade(School4, 1, Grade),
         Grade == [].
 
-    test(students_are_sorted_by_name_in_a_grade, condition(pending)) :-
+    test(students_are_sorted_by_name_in_a_grade, condition(true)) :-
         create_school(School),
         add_student(School, "Franklin", 5, School1),
         add_student(School1, "Bradley", 5, School2),

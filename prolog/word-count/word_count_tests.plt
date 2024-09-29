@@ -11,12 +11,12 @@ pending :-
         keysort(Counts, SortedCounts),
         SortedCounts == ["word"-1].
 
-    test(count_one_of_each_word, condition(pending)) :-
+    test(count_one_of_each_word, condition(true)) :-
         word_count("one of each", Counts),
         keysort(Counts, SortedCounts),
         SortedCounts == ["each"-1, "of"-1, "one"-1].
 
-    test(multiple_occurrences_of_a_word, condition(pending)) :-
+    test(multiple_occurrences_of_a_word, condition(true)) :-
         word_count("one fish two fish red fish blue fish", Counts),
         keysort(Counts, SortedCounts),
         SortedCounts == [
@@ -27,17 +27,17 @@ pending :-
           "two"-1
         ].
 
-    test(handles_cramped_lists, condition(pending)) :-
+    test(handles_cramped_lists, condition(true)) :-
         word_count("one,two,three", Counts),
         keysort(Counts, SortedCounts),
         SortedCounts == ["one"-1, "three"-1, "two"-1].
 
-    test(handles_expanded_lists, condition(pending)) :-
+    test(handles_expanded_lists, condition(true)) :-
         word_count("one,\ntwo,\nthree", Counts),
         keysort(Counts, SortedCounts),
         SortedCounts == ["one"-1, "three"-1, "two"-1].
 
-    test(ignore_punctuation, condition(pending)) :-
+    test(ignore_punctuation, condition(true)) :-
         word_count("car: carpet as java: javascript!!&@$%^&", Counts),
         keysort(Counts, SortedCounts),
         SortedCounts == [
@@ -48,17 +48,17 @@ pending :-
           "javascript"-1
         ].
 
-    test(include_numbers, condition(pending)) :-
+    test(include_numbers, condition(true)) :-
         word_count("testing, 1, 2 testing", Counts),
         keysort(Counts, SortedCounts),
         SortedCounts == ["1"-1, "2"-1, "testing"-2].
 
-    test(normalize_case, condition(pending)) :-
+    test(normalize_case, condition(true)) :-
         word_count("go Go GO Stop stop", Counts),
         keysort(Counts, SortedCounts),
         SortedCounts == ["go"-3, "stop"-2].
 
-    test(with_apostrophes, condition(pending)) :-
+    test(with_apostrophes, condition(true)) :-
         word_count("'First: don't laugh. Then: don't cry. You're getting it.'", Counts),
         keysort(Counts, SortedCounts),
         SortedCounts == [
@@ -72,7 +72,7 @@ pending :-
           "you're"-1
         ].
 
-    test(with_quotations, condition(pending)) :-
+    test(with_quotations, condition(true)) :-
         word_count("Joe can't tell between 'large' and large.", Counts),
         keysort(Counts, SortedCounts),
         SortedCounts == [
@@ -84,7 +84,7 @@ pending :-
           "tell"-1
         ].
 
-    test(substrings_from_the_beginning, condition(pending)) :-
+    test(substrings_from_the_beginning, condition(true)) :-
         word_count("Joe can't tell between app, apple and a.", Counts),
         keysort(Counts, SortedCounts),
         SortedCounts == [
@@ -98,17 +98,17 @@ pending :-
           "tell"-1
         ].
 
-    test(multiple_spaces_not_detected_as_a_word, condition(pending)) :-
+    test(multiple_spaces_not_detected_as_a_word, condition(true)) :-
         word_count(" multiple   whitespaces", Counts),
         keysort(Counts, SortedCounts),
         SortedCounts == ["multiple"-1, "whitespaces"-1].
 
-    test(alternating_word_separators_not_detected_as_a_word, condition(pending)) :-
+    test(alternating_word_separators_not_detected_as_a_word, condition(true)) :-
         word_count(",\n,one,\n ,two \n 'three'", Counts),
         keysort(Counts, SortedCounts),
         SortedCounts == ["one"-1, "three"-1, "two"-1].
 
-    test(quotation_for_word_with_apostrophe, condition(pending)) :-
+    test(quotation_for_word_with_apostrophe, condition(true)) :-
         word_count("can, can't, 'can't'", Counts),
         keysort(Counts, SortedCounts),
         SortedCounts == ["can"-1, "can't"-2].

@@ -18,20 +18,20 @@ pending :-
         maplist([C]>>char_type(C, digit), DigitsChars),
         !.
 
-    test(name_sticks, condition(pending)) :-
+    test(name_sticks, condition(true)) :-
         create_robot(Robot),
         robot_name(Robot, Name1),
         robot_name(Robot, Name2),
         Name1 == Name2.
 
-    test(different_robots_have_different_names, condition(pending)) :-
+    test(different_robots_have_different_names, condition(true)) :-
         create_robot(Robot1),
         create_robot(Robot2),
         robot_name(Robot1, Name1),
         robot_name(Robot2, Name2),
         Name1 \== Name2.
 
-    test(reset_name, condition(pending)) :-
+    test(reset_name, condition(true)) :-
         create_robot(Robot),
         robot_name(Robot, Name1),
         reset_name(Robot),

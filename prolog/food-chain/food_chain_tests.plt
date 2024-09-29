@@ -13,7 +13,7 @@ pending :-
             "I don't know why she swallowed the fly. Perhaps she'll die."
         ].
 
-    test(spider, condition(pending)) :-
+    test(spider, condition(true)) :-
         recite(2, 2, Lyrics),
         Lyrics == [
             "I know an old lady who swallowed a spider.",
@@ -22,7 +22,7 @@ pending :-
             "I don't know why she swallowed the fly. Perhaps she'll die."
         ].
 
-    test(bird, condition(pending)) :-
+    test(bird, condition(true)) :-
         recite(3, 3, Lyrics),
         Lyrics == [
             "I know an old lady who swallowed a bird.",
@@ -32,7 +32,7 @@ pending :-
             "I don't know why she swallowed the fly. Perhaps she'll die."
         ].
 
-    test(cat, condition(pending)) :-
+    test(cat, condition(true)) :-
         recite(4, 4, Lyrics),
         Lyrics == [
             "I know an old lady who swallowed a cat.",
@@ -43,7 +43,7 @@ pending :-
             "I don't know why she swallowed the fly. Perhaps she'll die."
         ].
 
-    test(dog, condition(pending)) :-
+    test(dog, condition(true)) :-
         recite(5, 5, Lyrics),
         Lyrics == [
             "I know an old lady who swallowed a dog.",
@@ -55,7 +55,7 @@ pending :-
             "I don't know why she swallowed the fly. Perhaps she'll die."
         ].
 
-    test(goat, condition(pending)) :-
+    test(goat, condition(true)) :-
         recite(6, 6, Lyrics),
         Lyrics == [
             "I know an old lady who swallowed a goat.",
@@ -68,7 +68,7 @@ pending :-
             "I don't know why she swallowed the fly. Perhaps she'll die."
         ].
 
-    test(cow, condition(pending)) :-
+    test(cow, condition(true)) :-
         recite(7, 7, Lyrics),
         Lyrics == [
             "I know an old lady who swallowed a cow.",
@@ -82,14 +82,14 @@ pending :-
             "I don't know why she swallowed the fly. Perhaps she'll die."
         ].
 
-    test(horse, condition(pending)) :-
+    test(horse, condition(true)) :-
         recite(8, 8, Lyrics),
         Lyrics == [
             "I know an old lady who swallowed a horse.",
             "She's dead, of course!"
         ].
 
-    test(multiple_verses, condition(pending)) :-
+    test(multiple_verses, condition(true)) :-
         recite(1, 3, Lyrics),
         Lyrics == [
             "I know an old lady who swallowed a fly.",
@@ -107,7 +107,7 @@ pending :-
             "I don't know why she swallowed the fly. Perhaps she'll die."
         ].
 
-    test(full_song, condition(pending)) :-
+    test(full_song, condition(true)) :-
         recite(1, 8, Lyrics),
         Lyrics == [
             "I know an old lady who swallowed a fly.",

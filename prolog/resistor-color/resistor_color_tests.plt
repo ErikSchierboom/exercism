@@ -10,15 +10,15 @@ pending :-
         color_code("black", Code), 
         Code == 0.
 
-    test(white, condition(pending)) :-
+    test(white, condition(true)) :-
         color_code("white", Code), 
         Code == 9.
 
-    test(orange, condition(pending)) :-
+    test(orange, condition(true)) :-
         color_code("orange", Code), 
         Code == 3.
 
-    test(colors, condition(pending)) :-
+    test(colors, condition(true)) :-
         colors(Colors),
         Colors == [
             "black",

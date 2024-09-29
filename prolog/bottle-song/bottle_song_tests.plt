@@ -15,7 +15,7 @@ pending :-
             "There'll be nine green bottles hanging on the wall."
         ].
 
-    test(last_generic_verse, condition(pending)) :-
+    test(last_generic_verse, condition(true)) :-
         recite(3, Lyrics),
         Lyrics == [
             "Three green bottles hanging on the wall,",
@@ -24,7 +24,7 @@ pending :-
             "There'll be two green bottles hanging on the wall."
         ].
 
-    test(verse_with_2_bottles, condition(pending)) :-
+    test(verse_with_2_bottles, condition(true)) :-
         recite(2, Lyrics),
         Lyrics == [
             "Two green bottles hanging on the wall,",
@@ -33,7 +33,7 @@ pending :-
             "There'll be one green bottle hanging on the wall."
         ].
 
-    test(verse_with_1_bottle, condition(pending)) :-
+    test(verse_with_1_bottle, condition(true)) :-
         recite(1, Lyrics),
         Lyrics == [
             "One green bottle hanging on the wall,",
@@ -42,7 +42,7 @@ pending :-
             "There'll be no green bottles hanging on the wall."
         ].
 
-    test(first_two_verses, condition(pending)) :-
+    test(first_two_verses, condition(true)) :-
         recite(10, 2, Lyrics),
         Lyrics == [
             "Ten green bottles hanging on the wall,",
@@ -56,7 +56,7 @@ pending :-
             "There'll be eight green bottles hanging on the wall."
         ].
 
-    test(last_three_verses, condition(pending)) :-
+    test(last_three_verses, condition(true)) :-
         recite(3, 3, Lyrics),
         Lyrics == [
             "Three green bottles hanging on the wall,",
@@ -75,7 +75,7 @@ pending :-
             "There'll be no green bottles hanging on the wall."
         ].
 
-    test(all_verses, condition(pending)) :-
+    test(all_verses, condition(true)) :-
         recite(10, 10, Lyrics),
         Lyrics == [
             "Ten green bottles hanging on the wall,",

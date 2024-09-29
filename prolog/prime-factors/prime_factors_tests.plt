@@ -10,47 +10,47 @@ pending :-
         factors(1, Factors),
         Factors == [].
 
-    test(prime_number, condition(pending)) :-
+    test(prime_number, condition(true)) :-
         factors(2, Factors),
         Factors == [2].
 
-    test(another_prime_number, condition(pending)) :-
+    test(another_prime_number, condition(true)) :-
         factors(3, Factors),
         Factors == [3].
 
-    test(square_of_a_prime, condition(pending)) :-
+    test(square_of_a_prime, condition(true)) :-
         factors(9, Factors),
         Factors == [3, 3].
 
-    test(product_of_first_prime, condition(pending)) :-
+    test(product_of_first_prime, condition(true)) :-
         factors(4, Factors),
         Factors == [2, 2].
 
-    test(cube_of_a_prime, condition(pending)) :-
+    test(cube_of_a_prime, condition(true)) :-
         factors(8, Factors),
         Factors == [2, 2, 2].
 
-    test(product_of_second_prime, condition(pending)) :-
+    test(product_of_second_prime, condition(true)) :-
         factors(27, Factors),
         Factors == [3, 3, 3].
 
-    test(product_of_third_prime, condition(pending)) :-
+    test(product_of_third_prime, condition(true)) :-
         factors(625, Factors),
         Factors == [5, 5, 5, 5].
 
-    test(product_of_first_and_second_prime, condition(pending)) :-
+    test(product_of_first_and_second_prime, condition(true)) :-
         factors(6, Factors),
         Factors == [2, 3].
 
-    test(product_of_primes_and_non_primes, condition(pending)) :-
+    test(product_of_primes_and_non_primes, condition(true)) :-
         factors(12, Factors),
         Factors == [2, 2, 3].
 
-    test(product_of_primes, condition(pending)) :-
+    test(product_of_primes, condition(true)) :-
         factors(901255, Factors),
         Factors == [5, 17, 23, 461].
 
-    test(factors_include_a_large_prime, condition(pending)) :-
+    test(factors_include_a_large_prime, condition(true)) :-
         factors(93819012551, Factors),
         Factors == [11, 9539, 894119].
 

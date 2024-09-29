@@ -10,11 +10,11 @@ pending :-
         annotate([], Annotated),
         Annotated == [].
 
-    test(no_columns, condition(pending)) :-
+    test(no_columns, condition(true)) :-
         annotate([""], Annotated),
         Annotated == [""].
 
-    test(no_mines, condition(pending)) :-
+    test(no_mines, condition(true)) :-
         Board = [
             "   ", 
             "   ",
@@ -27,7 +27,7 @@ pending :-
             "   "
         ].
 
-    test(minefield_with_only_mines, condition(pending)) :-
+    test(minefield_with_only_mines, condition(true)) :-
         Board = [
             "***",
             "***",
@@ -40,7 +40,7 @@ pending :-
             "***"
         ].
 
-    test(mine_surrounded_by_spaces, condition(pending)) :-
+    test(mine_surrounded_by_spaces, condition(true)) :-
         Board = [
             "   ",
             " * ",
@@ -53,7 +53,7 @@ pending :-
             "111"
         ].
 
-    test(space_surrounded_by_mines, condition(pending)) :-
+    test(space_surrounded_by_mines, condition(true)) :-
         Board = [
             "***",
             "* *",
@@ -66,17 +66,17 @@ pending :-
             "***"
         ].
 
-    test(horizontal_line, condition(pending)) :-
+    test(horizontal_line, condition(true)) :-
         Board = [" * * "],
         annotate(Board, Annotated),
         Annotated == ["1*2*1"].
 
-    test(horizontal_line_mines_at_edges, condition(pending)) :-
+    test(horizontal_line_mines_at_edges, condition(true)) :-
         Board = ["*   *"],
         annotate(Board, Annotated),
         Annotated == ["*1 1*"].
 
-    test(vertical_line, condition(pending)) :-
+    test(vertical_line, condition(true)) :-
         Board = [
             " ",
             "*",
@@ -93,7 +93,7 @@ pending :-
             "1"
         ].
 
-    test(vertical_line_mines_at_edges, condition(pending)) :-
+    test(vertical_line_mines_at_edges, condition(true)) :-
         Board = [
             "*",
             " ",
@@ -110,7 +110,7 @@ pending :-
             "*"
         ].
 
-    test(cross, condition(pending)) :-
+    test(cross, condition(true)) :-
         Board = [
             "  *  ",
             "  *  ", 
@@ -127,7 +127,7 @@ pending :-
             " 2*2 "
         ].
 
-    test(large_minefield, condition(pending)) :-
+    test(large_minefield, condition(true)) :-
         Board = [
             " *  * ",
             "  *   ",

@@ -22,36 +22,36 @@ starSpangledBanner(Text) :-
         frequencies([], Frequencies),
         Frequencies == [].
 
-    test(one_letter, condition(pending)) :-
+    test(one_letter, condition(true)) :-
         frequencies(["a"], Frequencies),
         Frequencies == ['a'-1].
 
-    test(case_insensitivity, condition(pending)) :-
+    test(case_insensitivity, condition(true)) :-
         frequencies(["aA"], Frequencies),
         Frequencies == ['a'-2].
 
-    test(many_empty_texts_still_mean_no_letters, condition(pending)) :-
+    test(many_empty_texts_still_mean_no_letters, condition(true)) :-
         length(Texts, 1000),
         maplist(=("   "), Texts),
         frequencies(Texts, Frequencies),
         Frequencies == [].
 
-    test(many_times_the_same_text_gives_a_predictable_result, condition(pending)) :-
+    test(many_times_the_same_text_gives_a_predictable_result, condition(true)) :-
         length(Texts, 1000),
         maplist(=("abbccc"), Texts),
         frequencies(Texts, Frequencies),
         keysort(Frequencies, SortedFrequencies),
         SortedFrequencies == ['a'-1000,'b'-2000,'c'-3000].
 
-    test(punctuation_doesnt_count, condition(pending)) :-
+    test(punctuation_doesnt_count, condition(true)) :-
         frequencies(["Testing, 1, 2, 3"], Frequencies),
         \+ member(','-_, Frequencies).
 
-    test(numbers_dont_count, condition(pending)) :-
+    test(numbers_dont_count, condition(true)) :-
         frequencies(["Testing, 1, 2, 3"], Frequencies),
         \+ member('1'-_, Frequencies).
 
-    test(all_three_anthems_together, condition(pending)) :-
+    test(all_three_anthems_together, condition(true)) :-
         odeAnDieFreude(OdeAnDieFreude),
         wilhelmus(Wilhelmus),
         starSpangledBanner(StarSpangledBanner),

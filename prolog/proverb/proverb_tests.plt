@@ -10,18 +10,18 @@ pending :-
         proverb([], Lines),
         Lines == [].
 
-    test(one_piece, condition(pending)) :-
+    test(one_piece, condition(true)) :-
         proverb(["nail"], Lines),
         Lines == ["And all for the want of a nail."].
 
-    test(two_pieces, condition(pending)) :-
+    test(two_pieces, condition(true)) :-
         proverb(["nail", "shoe"], Lines),
         Lines == [
             "For want of a nail the shoe was lost.",
             "And all for the want of a nail."
         ].
 
-    test(three_pieces, condition(pending)) :-
+    test(three_pieces, condition(true)) :-
         proverb(["nail", "shoe", "horse"], Lines),
         Lines == [
             "For want of a nail the shoe was lost.",
@@ -29,7 +29,7 @@ pending :-
             "And all for the want of a nail."
         ].
 
-    test(full_proverb, condition(pending)) :-
+    test(full_proverb, condition(true)) :-
         proverb(["nail", "shoe", "horse", "rider", "message", "battle", "kingdom"], Lines),
         Lines == [
             "For want of a nail the shoe was lost.",
@@ -41,7 +41,7 @@ pending :-
             "And all for the want of a nail."
         ].
 
-    test(four_pieces_modernized, condition(pending)) :-
+    test(four_pieces_modernized, condition(true)) :-
         proverb(["pin", "gun", "soldier", "battle"], Lines),
         Lines == [
             "For want of a pin the gun was lost.",
