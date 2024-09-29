@@ -6,8 +6,8 @@ nucleotide_count(Dna, Counts) :-
     findall(
         (Nucleotide, Count),
         (   nucleotide(Nucleotide),
-            (   aggregate(count, member(Nucleotide, Letters), TempCount)
-            ->  Count = TempCount
+            (   aggregate(count, member(Nucleotide, Letters), NucleotideCount)
+            ->  Count = NucleotideCount
             ;   Count = 0
             )
         ),
