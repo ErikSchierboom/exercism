@@ -1,6 +1,10 @@
 distance(X, Y, Distance) :- Distance is sqrt(X * X + Y * Y).
 
-score(X, Y, 10) :- distance(X, Y, Distance), Distance =< 1,  !.
-score(X, Y, 5)  :- distance(X, Y, Distance), Distance =< 5,  !.
-score(X, Y, 1)  :- distance(X, Y, Distance), Distance =< 10, !.
-score(_, _, 0).
+distance_score(Distance, 10) :- Distance =< 1,  !.
+distance_score(Distance,  5) :- Distance =< 5,  !.
+distance_score(Distance,  1) :- Distance =< 10, !.
+distance_score(Distance,  0).
+
+score(X, Y, Score) :-
+    distance(X, Y, Distance),
+    distance_score(Distance, Score).
