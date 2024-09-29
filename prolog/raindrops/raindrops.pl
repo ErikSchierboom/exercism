@@ -1,10 +1,9 @@
-sound(Factor, N, Sound, Sounds) :-
-    (N mod Factor =:= 0 -> Sounds = Sound ; Sounds = "").
+convert(N, Raindrops) :-
+    findall(Sound, (sound(M, Sound), N mod M =:= 0), Sounds),
+    (Sounds == [] 
+        -> number_string(N, Raindrops)
+         ; atomic_list_concat(Sounds, "", Atom), atom_string(Atom, Raindrops)).
 
-convert(N, Sounds) :-
-    sound(3, N, "Pling", S1),
-    sound(5, N, "Plang", S2),
-    sound(7, N, "Plong", S3),
-    string_concat(S1, S2, R1),
-    string_concat(R1, S3, R2),
-    (R2 = "" -> number_string(N, Sounds) ; Sounds = R2).
+sound(3, "Pling").
+sound(5, "Plang").
+sound(7, "Plong").
