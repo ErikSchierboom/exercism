@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "erikschierboom"
+  ],
+  "files": {
+    "solution": [
+      "gigasecond.R"
+    ],
+    "test": [
+      "test_gigasecond.R"
+    ],
+    "example": [
+      ".meta/example.R"
+    ]
+  },
+  "blurb": "Given a moment, determine the moment that would be after a gigasecond has passed.",
+  "source": "Chapter 9 in Chris Pine's online Learn to Program tutorial.",
+  "source_url": "https://pine.fm/LearnToProgram/?Chapter=09"
+}
