@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "erikschierboom"
+  ],
+  "files": {
+    "solution": [
+      "game_of_life.pl"
+    ],
+    "test": [
+      "game_of_life_tests.plt"
+    ],
+    "example": [
+      ".meta/game_of_life.example.pl"
+    ]
+  },
+  "blurb": "Implement Conway's Game of Life.",
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life"
+}
