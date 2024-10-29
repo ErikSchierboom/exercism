@@ -49,11 +49,11 @@ impl Robot {
 
     #[must_use]
     pub fn instructions(self, instructions: &str) -> Self {
-        instructions.as_bytes().iter().fold(self, |robot, &instruction| {
+        instructions.chars().fold(self, |robot, instruction| {
             match instruction {
-                b'L' => robot.turn_left(),
-                b'R' => robot.turn_right(),
-                b'A' => robot.advance(),
+                'L' => robot.turn_left(),
+                'R' => robot.turn_right(),
+                'A' => robot.advance(),
                 _ => robot,
             }
         })
