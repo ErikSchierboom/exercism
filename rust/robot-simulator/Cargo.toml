@@ -1,0 +1,4 @@
+[package]
+edition = "2021"
+name = "robot-simulator"
+version = "2.2.0"
