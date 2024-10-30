@@ -23,4 +23,4 @@ solution(Houses) :-
 	member(house(japanese, _, kent, _, _), Houses),
 	next_to(house(norwegian, _, _, _, _), house(_, _, _, _, blue), Houses).
 
-next_to(X, Y, List) :- append(_, [X, Y|_], List); append(_, [X, Y|_], List).
+next_to(X, Y, List) :- append(_, [X, Y|_], List); append(_, [Y, X|_], List).
