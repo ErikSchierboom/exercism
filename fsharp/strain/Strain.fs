@@ -7,4 +7,4 @@ let keep pred elements =
                 yield element
     }
 
-let discard pred = keep (not << pred)
+let discard pred = keep (pred >> not)
