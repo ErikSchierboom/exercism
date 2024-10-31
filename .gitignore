@@ -8,3 +8,4 @@
 .clj-kondo/
 users/
 *.DotSettings.user
+.fake
