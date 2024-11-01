@@ -6,10 +6,9 @@ pub struct Queen(ChessPosition);
 
 impl ChessPosition {
     pub fn new(rank: i32, file: i32) -> Option<Self> {
-        if (0..=7).contains(&rank) && (0..=7).contains(&file) {
-            Some(Self(rank, file))
-        } else {
-            None
+        match (rank, file) {
+            (0..=7, 0..=7) => Some(Self(rank, file)),
+            _ => None,
         }
     }
 }
