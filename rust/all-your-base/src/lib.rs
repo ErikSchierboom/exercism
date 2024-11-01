@@ -23,7 +23,7 @@ fn from_decimal(decimal: u32, output_base: u32) -> Vec<u32> {
 
     while remainder > 0 {
         digits.push(remainder % output_base);
-        remainder = remainder / output_base
+        remainder /= output_base
     }
 
     if digits.is_empty() { return vec!(0) }
