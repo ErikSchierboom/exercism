@@ -1,30 +1,22 @@
 pub fn is_valid(code: &str) -> bool {
     parse_digits(code)
-        .and_then(check_length)
-        .map(valid_checksum)
+        .filter(|digits| digits.len() > 1)
+        .map(|digits| checksum(digits) % 10 == 0)
         .unwrap_or(false)
 }
 
-fn parse_digits(input: &str) -> Option<Vec<u32>> {
-    input.chars()
+fn parse_digits(slice: &str) -> Option<Vec<u32>> {
+    slice.chars()
         .filter(|c| !c.is_whitespace())
         .map(|c| c.to_digit(10))
         .collect()
 }
 
-fn check_length(digits: Vec<u32>) -> Option<Vec<u32>> {
-    if digits.len() > 1 { Some(digits) } else { None}
-}
-
-fn valid_checksum(digits: Vec<u32>) -> bool {
-    fn correct_digit(idx: usize, digit: u32) -> u32 {
-        let doubled =  if idx % 2 == 1 { digit * 2 } else { digit };
-        if doubled > 9 { doubled - 9 } else { doubled }
-    }
-
+fn checksum(digits: Vec<u32>) -> u32 {
     digits.iter()
         .rev()
         .enumerate()
-        .map(|(i, d)| { correct_digit(i, *d)})
-        .sum::<u32>() % 10 == 0
+        .map(|(i, &digit)| if i % 2 == 0 { digit } else { digit * 2 })
+        .map(|digit| if digit > 9 { digit - 9 } else { digit })
+        .sum::<u32>()
 }
