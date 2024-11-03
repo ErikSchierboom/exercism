@@ -1,0 +1,39 @@
+{
+  "authors": [
+    "IanWhitney"
+  ],
+  "contributors": [
+    "AndrewKvalheim",
+    "coriolinus",
+    "cwhakes",
+    "efx",
+    "ErikSchierboom",
+    "IanWhitney",
+    "Insti",
+    "lutostag",
+    "mkantor",
+    "nfiles",
+    "petertseng",
+    "rofrol",
+    "stringparser",
+    "xakon",
+    "ZapAnton"
+  ],
+  "files": {
+    "solution": [
+      "src/lib.rs",
+      "Cargo.toml"
+    ],
+    "test": [
+      "tests/luhn-trait.rs"
+    ],
+    "example": [
+      ".meta/example.rs"
+    ]
+  },
+  "blurb": "Luhn: Using a Custom Trait",
+  "source": "The Rust track maintainers, based on the original Luhn exercise",
+  "custom": {
+    "allowed-to-not-compile": "Stub doesn't compile because the custom trait is not implemented for every type in the test suite. This exercise is an introduction to implementing custom traits for the primitives and fully implementing the trait for the test suite reduces learning."
+  }
+}
