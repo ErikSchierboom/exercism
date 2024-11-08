@@ -23,12 +23,12 @@ impl<T> SimpleLinkedList<T> {
     }
 
     pub fn len(&self) -> usize {
-        let mut node = &self.head;
+        let mut current = &self.head;
         let mut length = 0;
 
-        while let Some(next) = node {
+        while let Some(node) = current {
             length += 1;
-            node = &next.next;
+            current = &node.next;
         }
 
         length
@@ -55,11 +55,13 @@ impl<T> SimpleLinkedList<T> {
     }
 
     #[must_use]
-    pub fn rev(mut self) -> SimpleLinkedList<T> {
+    pub fn rev(self) -> SimpleLinkedList<T> {
         let mut reversed = Self::new();
+        let mut current = self.head;
 
-        while let Some(node) = self.pop() {
-            reversed.push(node);
+        while let Some(node) = current {
+            reversed.push(node.element);
+            current = node.next;
         }
 
         reversed
@@ -79,13 +81,16 @@ impl<T> FromIterator<T> for SimpleLinkedList<T> {
 }
 
 impl<T> From<SimpleLinkedList<T>> for Vec<T> {
-    fn from(mut linked_list: SimpleLinkedList<T>) -> Vec<T> {
+    fn from(linked_list: SimpleLinkedList<T>) -> Vec<T> {
         let mut reversed = Vec::new();
+        let mut current = linked_list.head;
 
-        while let Some(node) = linked_list.pop() {
-            reversed.insert(0, node);
+        while let Some(node) = current {
+            reversed.push(node.element);
+            current = node.next;
         }
 
+        reversed.reverse();
         reversed
     }
 }
