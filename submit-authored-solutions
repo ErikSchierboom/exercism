@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+# Synopsis:
+# Submit a track's authored exercises that haven't been submitted yet.
+
+# Example:
+# bin/add-practice-exercise prolog
+
+scriptname=$0
+
+help_and_exit() {
+    echo >&2 "Submit a track's authored exercises that haven't been submitted yet"
+    echo >&2 "Usage: ${scriptname} <track-slug>"
+    exit 1
+}
+
+die() { echo >&2 "$*"; exit 1; }
+
+required_tool() {
+    command -v "${1}" >/dev/null 2>&1 ||
+        die "${1} is required but not installed. Please install it and make sure it's in your PATH."
+}
+
+required_tool jq
+
+(( $# >= 1 )) || help_and_exit
+
+track_slug="${1}"
+track_dir=$(realpath ~/exercism/tracks/"${track_slug}")
+
+for exercise_dir in "${track_dir}"/exercises/practice/*; do
+  if jq -e '.authors | map(ascii_downcase) | index("erikschierboom")' "${exercise_dir}"/.meta/config.json > /dev/null; then
+    exercise_slug=$(basename "${exercise_dir}")
+    solution_dir=$(realpath --quiet ~/solutions/"${track_slug}"/"${exercise_slug}")
+    (( $? == 1 )) || continue
+
+    exercism download --exercise="${exercise_slug}" --track="${track_slug}"
+    pushd "${exercise_dir}" > /dev/null
+    echo "${exercise_dir}: ${exercise_slug} ${solution_dir}"
+    popd > /dev/null
+    exit
+  fi
+done
