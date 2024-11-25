@@ -26,26 +26,30 @@ required_tool jq
 (( $# >= 1 )) || help_and_exit
 
 track_slug="${1}"
-track_dir=$(realpath ~/exercism/tracks/"${track_slug}")
+track_dir="${HOME}/exercism/tracks/${track_slug}"
 
 for exercise_dir in "${track_dir}"/exercises/practice/*; do
   meta_config_file="${exercise_dir}"/.meta/config.json
   if jq -e '.authors | map(ascii_downcase) | index("erikschierboom")' "${meta_config_file}" > /dev/null; then
     exercise_slug=$(basename "${exercise_dir}")
-    solution_dir=$(realpath -q ~/solutions/"${track_slug}"/"${exercise_slug}")
-    (( $? == 1 )) || continue
-
+    solution_dir="${HOME}/solutions/${track_slug}/${exercise_slug}"
+    if [[ -d "${solution_dir}" ]]; then
+      echo "Skipping ${solution_dir} as it already exists"
+      continue
+    fi
+    
     exercism download --exercise="${exercise_slug}" --track="${track_slug}"
     pushd "${solution_dir}" > /dev/null
 
     jq -c '[.files.solution, .files.example] | transpose | map({src: .[1], dst: .[0]}) | .[]' "${meta_config_file}" \
     | while read -r src_and_dst; do
-        cp "${exercise_dir}/$(jq -r '.src' <<< "${src_and_dst}")" "${solution_dir}/$(jq -r '.dst' <<< "${src_and_dst}")"
+        src=$(jq -r '.src' <<< "${src_and_dst}")
+        dst=$(jq -r '.dst' <<< "${src_and_dst}")
+        cp "${exercise_dir}/${src}" "${solution_dir}/${dst}"
     done
 
     exercise
-    # sleep 12
+    sleep 12
     popd > /dev/null
-    exit
   fi
 done
