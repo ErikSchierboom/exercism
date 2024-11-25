@@ -37,7 +37,7 @@ for exercise_dir in "${track_dir}"/exercises/practice/*; do
     exercism download --exercise="${exercise_slug}" --track="${track_slug}"
     pushd "${solution_dir}" > /dev/null
 
-    jq -c '[.files.solution, .files.example] | transpose | map({src: .[1], dst: .[0]}) | .[]' "${exercise_dir}".meta/config.json \
+    jq -c '[.files.solution, .files.example] | transpose | map({src: .[1], dst: .[0]}) | .[]' "${exercise_dir}"/.meta/config.json \
     | while read -r src_and_dst; do
         cp "$(jq -r '.src' <<< "${src_and_dst}")" "$(jq -r '.dst' <<< "${src_and_dst}")"
     done
