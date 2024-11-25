@@ -40,7 +40,7 @@ for exercise_dir in "${track_dir}"/exercises/practice/*; do
 
     jq -c '[.files.solution, .files.example] | transpose | map({src: .[1], dst: .[0]}) | .[]' "${meta_config_file}" \
     | while read -r src_and_dst; do
-        echo cp "${exercise_dir}/$(jq -r '.src' <<< "${src_and_dst}")" "$(jq -r '.dst' <<< "${src_and_dst}")"
+        cp "${exercise_dir}/$(jq -r '.src' <<< "${src_and_dst}")" "${solution_dir}/$(jq -r '.dst' <<< "${src_and_dst}")"
     done
 
     exercise
