@@ -28,6 +28,10 @@ required_tool jq
 track_slug="${1}"
 track_dir="${HOME}/exercism/tracks/${track_slug}"
 
+pushd "${track_dir}" > /dev/null
+git sync
+popd > /dev/null
+
 for exercise_dir in "${track_dir}"/exercises/practice/*; do
   meta_config_file="${exercise_dir}"/.meta/config.json
   if jq -e '.authors | map(ascii_downcase) | index("erikschierboom")' "${meta_config_file}" > /dev/null; then
