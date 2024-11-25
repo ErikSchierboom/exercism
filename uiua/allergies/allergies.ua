@@ -1,7 +1,3 @@
-# List the allergens
-# Boolean ? Score Allergen
-IsAllergicTo ← |2 ⊙(⍤ "Please implement IsAllergicTo")
-
-# List the allergens
-# Allergens ? Score
-List ← |1 ⊙(⍤ "Please implement List" 0)
+Allergens    ← {"eggs" "peanuts" "shellfish" "strawberries" "tomatoes" "chocolate" "pollen" "cats"}
+List         ← |1 ⬚0▽ : Allergens ⋯
+IsAllergicTo ← |2 ∈ List ⊙□
