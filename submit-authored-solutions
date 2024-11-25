@@ -31,11 +31,11 @@ track_dir=$(realpath ~/exercism/tracks/"${track_slug}")
 for exercise_dir in "${track_dir}"/exercises/practice/*; do
   if jq -e '.authors | map(ascii_downcase) | index("erikschierboom")' "${exercise_dir}"/.meta/config.json > /dev/null; then
     exercise_slug=$(basename "${exercise_dir}")
-    solution_dir=$(realpath --quiet ~/solutions/"${track_slug}"/"${exercise_slug}")
+    solution_dir=$(realpath -q ~/solutions/"${track_slug}"/"${exercise_slug}")
     (( $? == 1 )) || continue
 
     exercism download --exercise="${exercise_slug}" --track="${track_slug}"
-    pushd "${exercise_dir}" > /dev/null
+    pushd "${solution_dir}" > /dev/null
 
     jq -c '[.files.solution, .files.example] | transpose | map({src: .[1], dst: .[0]}) | .[]' .meta/config.json \
     | while read -r src_and_dst; do
@@ -43,6 +43,7 @@ for exercise_dir in "${track_dir}"/exercises/practice/*; do
     done
 
     exercise
+    sleep 12
     popd > /dev/null
     exit
   fi
