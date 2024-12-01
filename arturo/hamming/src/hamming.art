@@ -1,0 +1,6 @@
+distance: function [strand1 strand2][
+    if (size strand1) <> (size strand2) -> return null
+    if empty? strand1 -> return 0
+
+    enumerate (couple (to [:char] strand1) (to [:char] strand2)) 'pair -> (first pair) <> (last pair)
+]
