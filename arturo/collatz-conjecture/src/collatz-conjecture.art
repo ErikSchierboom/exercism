@@ -1,0 +1,7 @@
+collatz: function [n][
+    switch n<1
+        -> null
+        -> switch n=1 -> 0
+        -> switch even? n -> 1 + collatz n/2
+                          -> 1 + collatz 1+n*3
+]
