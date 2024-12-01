@@ -1,3 +1,4 @@
+# Experimental!
 IsEqual      ← ≍∩⌵
 IsReordered  ← ≍∩(⍆⌵)
 IsAnagram    ← ×⊃(¬IsEqual|IsReordered)∩(°□)
