@@ -1,0 +1,44 @@
+import {unitt}!
+import {src/high-scores}!
+
+suite "High Scores" [
+    test "List of scores" [
+        result: list [30, 50, 20, 70]
+        assert -> [30, 50, 20, 70] = result
+    ]
+
+    test.skip "Latest score" [
+        result: latest [100, 0, 90, 30]
+        assert -> 30 = result
+    ]
+
+    test.skip "Personal best" [
+        result: personalBest [40, 100, 70]
+        assert -> 100 = result
+    ]
+
+    test.skip "Personal top three from a list of scores" [
+        result: personalTopThree [10, 30, 90, 30, 100, 20, 10, 0, 30, 40, 40, 70, 70]
+        assert -> [100, 90, 70] = result
+    ]
+
+    test.skip "Personal top highest to lowest" [
+        result: personalTopThree [20, 10, 30]
+        assert -> [30, 20, 10] = result
+    ]
+
+    test.skip "Personal top when there is a tie" [
+        result: personalTopThree [40, 20, 40, 30]
+        assert -> [40, 40, 30] = result
+    ]
+
+    test.skip "Personal top when there are less than 3" [
+        result: personalTopThree [30, 70]
+        assert -> [70, 30] = result
+    ]
+
+    test.skip "Personal top when there is only one" [
+        result: personalTopThree [40]
+        assert -> [40] = result
+    ]
+]
