@@ -1,0 +1,5 @@
+reverseString: function [str][
+    result: ""
+    loop str 'c -> prepend 'result c
+    result
+]
