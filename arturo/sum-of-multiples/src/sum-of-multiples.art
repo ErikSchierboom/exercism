@@ -1,0 +1,9 @@
+sumOfMultiples: function [factors limit][
+    multiples: []
+    factors: select filter factors => zero? => [& < limit]
+
+    loop factors 'factor ->
+        loop factor..limit-1 .step:factor 'i -> 'multiples ++ i
+
+    sum unique multiples
+]

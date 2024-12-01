@@ -1,0 +1,84 @@
+import {unitt}!
+import {src/sum-of-multiples}!
+
+suite "Sum of Multiples" [
+    test "no multiples within limit" [
+        result: sumOfMultiples [3,5] 1
+        assert -> 0 = result
+    ]
+
+    test.skip "one factor has multiples within limit" [
+        result: sumOfMultiples [3,5] 4
+        assert -> 3 = result
+    ]
+
+    test.skip "more than one multiple within limit" [
+        result: sumOfMultiples [3] 7
+        assert -> 9 = result
+    ]
+
+    test.skip "more than one factor with multiples within limit" [
+        result: sumOfMultiples [3,5] 10
+        assert -> 23 = result
+    ]
+
+    test.skip "each multiple is only counted once" [
+        result: sumOfMultiples [3,5] 100
+        assert -> 2318 = result
+    ]
+
+    test.skip "a much larger limit" [
+        result: sumOfMultiples [3,5] 1000
+        assert -> 233168 = result
+    ]
+
+    test.skip "three factors" [
+        result: sumOfMultiples [7,13,17] 20
+        assert -> 51 = result
+    ]
+
+    test.skip "factors not relatively prime" [
+        result: sumOfMultiples [4,6] 15
+        assert -> 30 = result
+    ]
+
+    test.skip "some pairs of factors relatively prime and some not" [
+        result: sumOfMultiples [5,6,8] 150
+        assert -> 4419 = result
+    ]
+
+    test.skip "one factor is a multiple of another" [
+        result: sumOfMultiples [5,25] 51
+        assert -> 275 = result
+    ]
+
+    test.skip "much larger factors" [
+        result: sumOfMultiples [43,47] 10000
+        assert -> 2203160 = result
+    ]
+
+    test.skip "all numbers are multiples of 1" [
+        result: sumOfMultiples [1] 100
+        assert -> 4950 = result
+    ]
+
+    test.skip "no factors means an empty sum" [
+        result: sumOfMultiples [] 10000
+        assert -> 0 = result
+    ]
+
+    test.skip "the only multiple of 0 is 0" [
+        result: sumOfMultiples [0] 1
+        assert -> 0 = result
+    ]
+
+    test.skip "the factor 0 does not affect the sum of multiples of other factors" [
+        result: sumOfMultiples [3,0] 4
+        assert -> 3 = result
+    ]
+
+    test.skip "solutions using include-exclude must extend to cardinality greater than 3" [
+        result: sumOfMultiples [2,3,5,7,11] 10000
+        assert -> 39614537 = result
+    ]
+]
