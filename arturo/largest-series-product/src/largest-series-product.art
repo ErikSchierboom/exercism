@@ -1,0 +1,14 @@
+slices: function [arr span][
+    if span > size arr -> return @[arr]
+    numSlices: (size arr) - span
+    map 0..numSlices 'i -> slice arr i (i + span - 1)
+]
+
+largestProduct: function [str span][
+    if span > size str -> return null
+    if negative? span -> return null
+    unless match? str {/^\d*$/} -> return null
+    if or? empty? str zero? span -> return 1
+
+    max map (slices (digits (to :integer str)) span) => product
+]

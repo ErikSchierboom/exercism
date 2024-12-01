@@ -1,0 +1,22 @@
+{
+  "authors": [
+    "erikschierboom"
+  ],
+  "files": {
+    "solution": [
+      "src/largest-series-product.art"
+    ],
+    "test": [
+      "tests/test-largest-series-product.art"
+    ],
+    "example": [
+      ".meta/src/example.art"
+    ],
+    "invalidator": [
+      "tester.art"
+    ]
+  },
+  "blurb": "Given a string of digits, calculate the largest product for a contiguous substring of digits of length n.",
+  "source": "A variation on Problem 8 at Project Euler",
+  "source_url": "https://projecteuler.net/problem=8"
+}
