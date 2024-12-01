@@ -1,0 +1,144 @@
+import {unitt}!
+import {src/roman-numerals}!
+
+suite "Roman Numerals" [
+    test "1 is I" [
+        result: stringify.roman 1
+        assert -> "I" = result
+    ]
+
+    test.skip "2 is II" [
+        result: stringify.roman 2
+        assert -> "II" = result
+    ]
+
+    test.skip "3 is III" [
+        result: stringify.roman 3
+        assert -> "III" = result
+    ]
+
+    test.skip "4 is IV" [
+        result: stringify.roman 4
+        assert -> "IV" = result
+    ]
+
+    test.skip "5 is V" [
+        result: stringify.roman 5
+        assert -> "V" = result
+    ]
+
+    test.skip "6 is VI" [
+        result: stringify.roman 6
+        assert -> "VI" = result
+    ]
+
+    test.skip "9 is IX" [
+        result: stringify.roman 9
+        assert -> "IX" = result
+    ]
+
+    test.skip "27 is XXVII" [
+        result: stringify.roman 27
+        assert -> "XXVII" = result
+    ]
+
+    test.skip "48 is XLVIII" [
+        result: stringify.roman 48
+        assert -> "XLVIII" = result
+    ]
+
+    test.skip "49 is XLIX" [
+        result: stringify.roman 49
+        assert -> "XLIX" = result
+    ]
+
+    test.skip "59 is LIX" [
+        result: stringify.roman 59
+        assert -> "LIX" = result
+    ]
+
+    test.skip "93 is XCIII" [
+        result: stringify.roman 93
+        assert -> "XCIII" = result
+    ]
+
+    test.skip "141 is CXLI" [
+        result: stringify.roman 141
+        assert -> "CXLI" = result
+    ]
+
+    test.skip "163 is CLXIII" [
+        result: stringify.roman 163
+        assert -> "CLXIII" = result
+    ]
+
+    test.skip "402 is CDII" [
+        result: stringify.roman 402
+        assert -> "CDII" = result
+    ]
+
+    test.skip "575 is DLXXV" [
+        result: stringify.roman 575
+        assert -> "DLXXV" = result
+    ]
+
+    test.skip "911 is CMXI" [
+        result: stringify.roman 911
+        assert -> "CMXI" = result
+    ]
+
+    test.skip "1024 is MXXIV" [
+        result: stringify.roman 1024
+        assert -> "MXXIV" = result
+    ]
+
+    test.skip "3000 is MMM" [
+        result: stringify.roman 3000
+        assert -> "MMM" = result
+    ]
+
+    test.skip "16 is XVI" [
+        result: stringify.roman 16
+        assert -> "XVI" = result
+    ]
+
+    test.skip "66 is LXVI" [
+        result: stringify.roman 66
+        assert -> "LXVI" = result
+    ]
+
+    test.skip "166 is CLXVI" [
+        result: stringify.roman 166
+        assert -> "CLXVI" = result
+    ]
+
+    test.skip "666 is DCLXVI" [
+        result: stringify.roman 666
+        assert -> "DCLXVI" = result
+    ]
+
+    test.skip "1666 is MDCLXVI" [
+        result: stringify.roman 1666
+        assert -> "MDCLXVI" = result
+    ]
+
+    test.skip "3001 is MMMI" [
+        result: stringify.roman 3001
+        assert -> "MMMI" = result
+    ]
+
+    test.skip "3888 is MMMDCCCLXXXVIII" [
+        result: stringify.roman 3888
+        assert -> "MMMDCCCLXXXVIII" = result
+    ]
+
+    test.skip "3999 is MMMCMXCIX" [
+        result: stringify.roman 3999
+        assert -> "MMMCMXCIX" = result
+    ]
+
+    test.skip "return unchanged number if no roman attribute set" [
+        result: stringify 3999
+        assert -> "3999" = result
+    ]
+]
