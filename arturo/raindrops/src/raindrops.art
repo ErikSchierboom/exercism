@@ -1,0 +1,9 @@
+raindrops: $[n][
+    sound: ""
+    switch zero? n%3 -> 'sound ++ "Pling" -> []
+    switch zero? n%5 -> 'sound ++ "Plang" -> []
+    switch zero? n%7 -> 'sound ++ "Plong" -> []
+    switch empty? sound
+        -> to :string n
+        -> sound
+]
