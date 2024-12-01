@@ -1,0 +1,69 @@
+import {unitt}!
+import {src/perfect-numbers}!
+
+suite "Perfect Numbers" [
+    test "Smallest perfect number is classified correctly" [
+        result: classify 6
+        assert -> 'perfect = result
+    ]
+
+    test.skip "Medium perfect number is classified correctly" [
+        result: classify 28
+        assert -> 'perfect = result
+    ]
+
+    test.skip "Large perfect number is classified correctly" [
+        result: classify 33550336
+        assert -> 'perfect = result
+    ]
+
+    test.skip "Smallest abundant number is classified correctly" [
+        result: classify 12
+        assert -> 'abundant = result
+    ]
+
+    test.skip "Medium abundant number is classified correctly" [
+        result: classify 30
+        assert -> 'abundant = result
+    ]
+
+    test.skip "Large abundant number is classified correctly" [
+        result: classify 33550335
+        assert -> 'abundant = result
+    ]
+
+    test.skip "Smallest prime deficient number is classified correctly" [
+        result: classify 2
+        assert -> 'deficient = result
+    ]
+
+    test.skip "Smallest non-prime deficient number is classified correctly" [
+        result: classify 4
+        assert -> 'deficient = result
+    ]
+
+    test.skip "Medium deficient number is classified correctly" [
+        result: classify 32
+        assert -> 'deficient = result
+    ]
+
+    test.skip "Large deficient number is classified correctly" [
+        result: classify 33550337
+        assert -> 'deficient = result
+    ]
+
+    test.skip "Edge case (no factors other than itself) is classified correctly" [
+        result: classify 1
+        assert -> 'deficient = result
+    ]
+
+    test.skip "Zero is rejected (as it is not a positive integer)" [
+        result: classify 0
+        assert -> null = result
+    ]
+
+    test.skip "Negative integer is rejected (as it is not a positive integer)" [
+        result: classify neg 1
+        assert -> null = result
+    ]
+]

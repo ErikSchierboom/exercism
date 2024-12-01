@@ -1,0 +1,7 @@
+classify: function[n][
+    unless? positive? n -> return null
+    aliquotSum: sum chop factors n
+    switch aliquotSum < n -> 'deficient ->
+    switch aliquotSum > n -> 'abundant
+                          -> 'perfect
+]
