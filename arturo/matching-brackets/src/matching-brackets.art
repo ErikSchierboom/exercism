@@ -1,0 +1,16 @@
+paired?: function [str][
+    expected: []
+
+    loop str [c][
+        switch c = '[' -> append 'expected ']' ->
+        switch c = '(' -> append 'expected ')' ->
+        switch c = '{' -> append 'expected '}' -> 
+        switch in? c [']' ')' '}'] [
+            if c <> last expected -> return false
+            chop 'expected
+         ]
+        -> []
+    ]
+
+    empty? expected
+]

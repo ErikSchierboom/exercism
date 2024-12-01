@@ -1,0 +1,105 @@
+import {unitt}!
+import {src/matching-brackets}!
+
+suite "Matching Brackets"[
+    test "paired square brackets" [
+        result: paired? "[]"
+        assert -> true = result
+    ]
+
+    test.skip "empty string" [
+        result: paired? ""
+        assert -> true = result
+    ]
+
+    test.skip "unpaired brackets" [
+        result: paired? "[["
+        assert -> false = result
+    ]
+
+    test.skip "wrong ordered brackets" [
+        result: paired? "}{"
+        assert -> false = result
+    ]
+
+    test.skip "wrong closing bracket" [
+        result: paired? "{]"
+        assert -> false = result
+    ]
+
+    test.skip "paired with whitespace" [
+        result: paired? "{ }"
+        assert -> true = result
+    ]
+
+    test.skip "partially paired brackets" [
+        result: paired? "{[])"
+        assert -> false = result
+    ]
+
+    test.skip "simple nested brackets" [
+        result: paired? "{[]}"
+        assert -> true = result
+    ]
+
+    test.skip "several paired brackets" [
+        result: paired? "{}[]"
+        assert -> true = result
+    ]
+
+    test.skip "paired and nested brackets" [
+        result: paired? "([{}({}[])])"
+        assert -> true = result
+    ]
+
+    test.skip "unopened closing brackets" [
+        result: paired? "{[)][]}"
+        assert -> false = result
+    ]
+
+    test.skip "unpaired and nested brackets" [
+        result: paired? "([{])"
+        assert -> false = result
+    ]
+
+    test.skip "paired and wrong nested brackets" [
+        result: paired? "[({]})"
+        assert -> false = result
+    ]
+
+    test.skip "paired and wrong nested brackets but innermost are correct" [
+        result: paired? "[({}])"
+        assert -> false = result
+    ]
+
+    test.skip "paired and incomplete brackets" [
+        result: paired? "{}["
+        assert -> false = result
+    ]
+
+    test.skip "too many closing brackets" [
+        result: paired? "[]]"
+        assert -> false = result
+    ]
+
+    test.skip "early unexpected brackets" [
+        result: paired? ")()"
+        assert -> false = result
+    ]
+
+    test.skip "early mismatched brackets" [
+        result: paired? "{)()"
+        assert -> false = result
+    ]
+
+    test.skip "math expression" [
+        result: paired? "(((185 + 223.85) * 15) - 543)/2"
+        assert -> true = result
+    ]
+
+    test.skip "complex latex expression" [
+        result: paired? "\left(\begin{array}{cc} \frac{1}{3} & x\\ \mathrm{e}^{x} &... x^2 \end{array}\right)"
+        assert -> true = result
+    ]
+
+]
