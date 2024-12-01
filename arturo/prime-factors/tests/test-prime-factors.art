@@ -1,0 +1,64 @@
+import {unitt}!
+import {src/prime-factors}!
+
+suite "Prime Factors" [
+    test "no factors" [
+        result: primeFactors 1
+        assert -> [] = result
+    ]
+
+    test.skip "prime number" [
+        result: primeFactors 2
+        assert -> [2] = result
+    ]
+    
+    test.skip "another prime number" [
+        result: primeFactors 3
+        assert -> [3] = result
+    ]
+    
+    test.skip "square of a prime" [
+        result: primeFactors 9
+        assert -> [3, 3] = result
+    ]
+    
+    test.skip "product of first prime" [
+        result: primeFactors 4
+        assert -> [2, 2] = result
+    ]
+    
+    test.skip "cube of a prime" [
+        result: primeFactors 8
+        assert -> [2, 2, 2] = result
+    ]
+    
+    test.skip "product of second prime" [
+        result: primeFactors 27
+        assert -> [3, 3, 3] = result
+    ]
+    
+    test.skip "product of third prime" [
+        result: primeFactors 625
+        assert -> [5, 5, 5, 5] = result
+    ]
+    
+    test.skip "product of first and second prime" [
+        result: primeFactors 6
+        assert -> [2, 3] = result
+    ]
+    
+    test.skip "product of primes and non-primes" [
+        result: primeFactors 12
+        assert -> [2, 2, 3] = result
+    ]
+    
+    test.skip "product of primes" [
+        result: primeFactors 901255
+        assert -> [5, 17, 23, 461] = result
+    ]
+    
+    test.skip "factors include a large prime" [
+        result: primeFactors 93819012551
+        assert -> [11, 9539, 894119] = result
+    ]
+]
