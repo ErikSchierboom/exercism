@@ -1,0 +1,16 @@
+valid?: $[x y z][
+    and? x > 0 and? y > 0 and? z > 0
+    and? (z =< x + y) and? (y =< x + z) (x =< y + z)
+]
+
+equilateral?: $[x y z][
+    and? valid? x y z and? x = y y = z
+]
+
+isosceles?: $[x y z][
+    and? valid? x y z (or? x = y or? y = z x = z)
+]
+
+scalene?: $[x y z][
+    and? valid? x y z and? x <> y y <> z
+]

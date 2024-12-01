@@ -1,0 +1,109 @@
+import {unitt}!
+import {src/triangle}!
+
+suite "Triangle" [
+    test "invalid: 0 0 0" [
+        result: equilateral? 0 0 0
+        assert -> false = result
+    ]
+
+    test.skip "equilateral with floating point" [
+        result: equilateral? 0.5 0.5 0.5
+        assert -> true = result
+    ]
+
+    test.skip "equilateral 2 2 2" [
+        result: equilateral? 2 2 2
+        assert -> true = result
+    ]
+
+    test.skip "isosceles is not equilateral" [
+        result: equilateral? 2 3 2
+        assert -> false = result
+    ]
+
+    test.skip "scalene is not equilateral" [
+        result: equilateral? 5 4 6
+        assert -> false = result
+    ]
+
+    test.skip "isosceles with floating point" [
+        result: isosceles? 0.5 0.4 0.5
+        assert -> true = result
+    ]
+
+    test.skip "(invalid) isosceles 1 1 3, 3 in last position" [
+        result: isosceles? 1 1 3
+        assert -> false = result
+    ]
+
+    test.skip "(invalid) isosceles 1 3 1, 3 in middle position" [
+        result: isosceles? 1 3 1
+        assert -> false = result
+    ]
+
+    test.skip "(invalid) isosceles 3 1 1, 3 in first position" [
+        result: isosceles? 3 1 1
+        assert -> false = result
+    ]
+
+    test.skip "isosceles 2 2 3, 3 in last position" [
+        result: isosceles? 2 2 3
+        assert -> true = result
+    ]
+
+    test.skip "isosceles 2 3 2, 3 in middle position" [
+        result: isosceles? 2 3 2
+        assert -> true = result
+    ]
+
+    test.skip "isosceles 3 2 2, 3 in first position" [
+        result: isosceles? 3 2 2
+        assert -> true = result
+    ]
+
+    test.skip "is scalene and isosceles?" [
+        result: isosceles? 2 3 4
+        assert -> false = result
+    ]
+
+    test.skip "equilateral is also isosceles" [
+        result: isosceles? 4 4 4
+        assert -> true = result
+    ]
+
+    test.skip "scalene with floating point" [
+        result: scalene? 0.5 0.4 0.6
+        assert -> true = result
+    ]
+
+    test.skip "isosceles is not scalene" [
+        result: scalene? 4 4 3
+        assert -> false = result
+    ]
+
+    test.skip "equilateral is not scalene" [
+        result: scalene? 4 4 4
+        assert -> false = result
+    ]
+
+    test.skip "scalene 5 4 6" [
+        result: scalene? 5 4 6
+        assert -> true = result
+    ]
+
+    test.skip "triangle inequality rule violation" [
+        result: scalene? 7 3 2
+        assert -> false = result
+    ]
+
+    test.skip "broken triangle #1" [
+        result: scalene? 0 3 3
+        assert -> false = result
+    ]
+
+    test.skip "broken triangle #2" [
+        result: scalene? 0 3 0
+        assert -> false = result
+    ]
+]
