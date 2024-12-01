@@ -1,0 +1,14 @@
+lowerA: to :integer 'a'
+upperA: to :integer 'A'
+
+shift: $[c shiftKey base][
+    to :char base + (shiftKey + (to :integer c) - base) % 26
+]
+
+rotateText: $[text shiftKey][
+    join map text [c][
+        switch lower? c -> shift c shiftKey lowerA ->
+        switch upper? c -> shift c shiftKey upperA
+                        -> c
+    ]
+]
