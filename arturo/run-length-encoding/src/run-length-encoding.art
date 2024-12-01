@@ -1,0 +1,19 @@
+encodeChunk: function[chunk][
+    switch 1 = size chunk
+        -> first chunk
+        -> (to :string size chunk) ++ first chunk
+]
+
+encode: function [plaintext][
+    join map match plaintext {/(.)\1*/} => encodeChunk
+]
+
+decodeChunk: function[chunk][
+    switch 1 = size chunk
+        -> last chunk
+        -> join repeat (last chunk) (to :integer (chop chunk)) 
+]
+
+decode: function [ciphertext][
+    join map match ciphertext {/(\d*)(.)/} => decodeChunk
+]
