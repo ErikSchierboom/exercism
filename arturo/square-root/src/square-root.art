@@ -1,0 +1,11 @@
+squareRoot: function[n][
+    i: 1
+    result: 1
+
+    while [result =< n][
+        inc 'i
+        result: i * i
+    ]
+
+    i - 1
+]
