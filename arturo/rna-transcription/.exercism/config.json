@@ -1,0 +1,22 @@
+{
+  "authors": [
+    "erikschierboom"
+  ],
+  "files": {
+    "solution": [
+      "src/rna-transcription.art"
+    ],
+    "test": [
+      "tests/test-rna-transcription.art"
+    ],
+    "example": [
+      ".meta/src/example.art"
+    ],
+    "invalidator": [
+      "tester.art"
+    ]
+  },
+  "blurb": "Given a DNA strand, return its RNA Complement Transcription.",
+  "source": "Hyperphysics",
+  "source_url": "https://web.archive.org/web/20220408112140/http://hyperphysics.phy-astr.gsu.edu/hbase/Organic/transcription.html"
+}
