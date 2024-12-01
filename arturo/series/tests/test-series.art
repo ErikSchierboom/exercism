@@ -1,0 +1,59 @@
+import {unitt}!
+import {src/series}!
+
+suite "Series" [
+    test "slices of one from one" [
+        result: slices "1" 1
+        assert -> ["1"] = result
+    ]
+
+    test.skip "slices of one from two" [
+        result: slices "12" 1
+        assert -> ["1", "2"] = result
+    ]
+
+    test.skip "slices of two" [
+        result: slices "35" 2
+        assert -> ["35"] = result
+    ]
+
+    test.skip "slices of two overlap" [
+        result: slices "9142" 2
+        assert -> ["91", "14", "42"] = result
+    ]
+
+    test.skip "slices can include duplicates" [
+        result: slices "777777" 3
+        assert -> ["777", "777", "777", "777"] = result
+    ]
+
+    test.skip "slices of a long series" [
+        result: slices "918493904243" 5
+        assert -> ["91849", "18493", "84939", "49390", "93904", "39042", "90424", "04243"] = result
+    ]
+
+    test.skip "slice length is too large" [
+        result: slices "12345" 6
+        assert -> null = result
+    ]
+
+    test.skip "slice length is way too large" [
+        result: slices "12345" 42
+        assert -> null = result
+    ]
+
+    test.skip "slice length cannot be zero" [
+        result: slices "12345" 0
+        assert -> null = result
+    ]
+
+    test.skip "slice length cannot be negative" [
+        result: slices "123" neg 1
+        assert -> null = result
+    ]
+
+    test.skip "empty series is invalid" [
+        result: slices "" 1
+        assert -> null = result
+    ]
+]

@@ -1,0 +1,8 @@
+slices: function [series sliceLength][
+    if sliceLength < 1 -> return null
+    if sliceLength > size series -> return null
+    if empty? series -> return null
+
+    numberOfSlices: (size series) - sliceLength
+    map 0..numberOfSlices 'i -> slice series i (i + sliceLength - 1)
+]
