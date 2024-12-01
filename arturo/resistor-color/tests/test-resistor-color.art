@@ -1,0 +1,23 @@
+import {unitt}!
+import {src/resistor-color}!
+
+suite "Resistor Color" [
+    test "black" [
+        code: colorCode "black"
+        assert -> 0 = code
+    ]
+
+    test.skip "white" [
+        code: colorCode "white"
+        assert -> 9 = code
+    ]
+
+    test.skip "orange" [
+        code: colorCode "orange"
+        assert -> 3 = code
+    ]
+
+    test.skip "colors" [
+        assert -> ["black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white"] = colors
+    ]
+]
