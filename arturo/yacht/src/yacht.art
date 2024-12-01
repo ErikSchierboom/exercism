@@ -1,0 +1,27 @@
+singles_score: $ [dice die][sum select dice 'x -> x = die]
+full_house_score: $ [dice][switch [2 3] = values sort.values tally dice -> sum dice -> 0]
+four_of_a_kind_score: $ [dice][
+    counts: sort.values tally dice
+    switch (in? 4 values counts) -> 4 * to :integer last keys counts ->
+    switch (in? 5 values counts) -> 4 * to :integer last keys counts
+                                 -> 0
+]
+little_straight_score: $ [dice][switch [1,2,3,4,5] = sort dice -> 30 -> 0]
+big_straight_score: $ [dice][switch [2,3,4,5,6] = sort dice -> 30 -> 0]
+yacht_score: $ [dice][switch 1 = size tally dice -> 50 -> 0]
+choice_score: $ => sum
+
+yacht: $ [dice category][    
+    if category = "ones"            -> return singles_score dice 1
+    if category = "twos"            -> return singles_score dice 2
+    if category = "threes"          -> return singles_score dice 3
+    if category = "fours"           -> return singles_score dice 4
+    if category = "fives"           -> return singles_score dice 5
+    if category = "sixes"           -> return singles_score dice 6
+    if category = "full house"      -> return full_house_score dice
+    if category = "four of a kind"  -> return four_of_a_kind_score dice
+    if category = "little straight" -> return little_straight_score dice
+    if category = "big straight"    -> return big_straight_score dice
+    if category = "yacht"           -> return yacht_score dice
+    if category = "choice"          -> return choice_score dice
+]
