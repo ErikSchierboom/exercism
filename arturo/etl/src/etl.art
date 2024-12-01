@@ -1,0 +1,6 @@
+transform: function[old][
+    fold old .seed:#[] [acc,score,letters][
+        loop letters 'letter -> acc\[lower letter]: to :integer score
+        acc
+    ]
+]
