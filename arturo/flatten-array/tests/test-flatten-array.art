@@ -1,0 +1,59 @@
+import {unitt}!
+import {src/flatten-array}!
+
+suite "Flatten Array" [
+    test "empty" [
+        result: flattenCollection []
+        assert -> [] = result
+    ]
+
+    test.skip "no nesting" [
+        result: flattenCollection [0 1 2]
+        assert -> [0 1 2] = result
+    ]
+
+    test.skip "flattens a nested array" [
+        result: flattenCollection [[[]]]
+        assert -> [] = result
+    ]
+
+    test.skip "flattens array with just integers present" [
+        result: flattenCollection [1 [2 3 4 5 6 7] 8]
+        assert -> [1 2 3 4 5 6 7 8] = result
+    ]
+
+    test.skip "5 level nesting" [
+        result: flattenCollection [0 2 [[2 3] 8 100 4 [[[50]]]] neg 2]
+        assert -> [0 2 2 3 8 100 4 50 neg 2] = result
+    ]
+
+    test.skip "6 level nesting" [
+        result: flattenCollection [1 [2 [[3]] [4 [[5]]] 6 7] 8]
+        assert -> [1 2 3 4 5 6 7 8] = result
+    ]
+
+    test.skip "null values are omitted from the final result" [
+        result: flattenCollection @[1 2 null]
+        assert -> [1 2] = result
+    ]
+
+    test.skip "consecutive null values at the front of the list are omitted from the final result" [
+        result: flattenCollection @[null null 3]
+        assert -> [3] = result
+    ]
+
+    test.skip "consecutive null values in the middle of the list are omitted from the final result" [
+        result: flattenCollection @[1 null null 4]
+        assert -> [1 4] = result
+    ]
+
+    test.skip "6 level nest list with null values" [
+        result: flattenCollection @[0 2 @[[2 3] 8 @[@[100]] null @[@[null]]] 2]
+        assert -> [0 2 2 3 8 100 2] = result
+    ]
+
+    test.skip "all values in nested list are null" [
+        result: flattenCollection @[null @[@[@[null]]] null null @[@[null null] null] null]
+        assert -> [] = result
+    ]
+]

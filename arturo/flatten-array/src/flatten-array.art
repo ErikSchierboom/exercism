@@ -1,0 +1,11 @@
+flattenCollection: function[collection][
+    flattened: []
+
+    loop collection [element][
+        switch null? element  -> continue ->
+        switch block? element -> append 'flattened flattenCollection element
+                              -> append 'flattened element
+    ]
+
+    flattened
+]
