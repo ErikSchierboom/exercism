@@ -1,0 +1,8 @@
+binomial: $[n k][(factorial n) / ((factorial k) * (factorial (n - k)))]
+
+rows: $[n][
+    if zero? n -> return []
+    map 0..(dec n) 'i ->
+        map 0..i 'j -> 
+            binomial i j
+]
