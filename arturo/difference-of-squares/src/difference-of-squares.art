@@ -1,0 +1,4 @@
+square: $ => [& ^ 2]
+squareOfSum: $ => [square sum 1..&]
+sumOfSquares: $ => [sum map 1..& => square]
+differenceOfSquares: $ [n][(squareOfSum n) - (sumOfSquares n)]

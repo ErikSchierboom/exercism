@@ -1,0 +1,49 @@
+import {unitt}!
+import {src/difference-of-squares}!
+
+suite "Difference of Squares"[
+    test "square of sum 1" [
+        result: squareOfSum 1
+        assert -> 1 = result
+    ]
+
+    test.skip "square of sum 5" [
+        result: squareOfSum 5
+        assert -> 225 = result
+    ]
+
+    test.skip "square of sum 100" [
+        result: squareOfSum 100
+        assert -> 25502500 = result
+    ]
+
+    test.skip "sum of squares 1" [
+        result: sumOfSquares 1
+        assert -> 1 = result
+    ]
+
+    test.skip "sum of squares 5" [
+        result: sumOfSquares 5
+        assert -> 55 = result
+    ]
+
+    test.skip "sum of squares 100" [
+        result: sumOfSquares 100
+        assert -> 338350 = result
+    ]
+
+    test.skip "difference of squares 1" [
+        result: differenceOfSquares 1
+        assert -> 0 = result
+    ]
+
+    test.skip "difference of squares 5" [
+        result: differenceOfSquares 5
+        assert -> 170 = result
+    ]
+
+    test.skip "difference of squares 100" [
+        result: differenceOfSquares 100
+        assert -> 25164150 = result
+    ]
+]
