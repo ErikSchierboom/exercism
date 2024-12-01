@@ -1,0 +1,14 @@
+silent?: $ => empty?
+question?: $ => [suffix? & "?"]
+shout?: $ [heyBob] [and? heyBob = upper heyBob heyBob <> lower heyBob]
+shoutedQuestion?: $ [heyBob] [and? question? heyBob shout? heyBob]
+
+response: $ [heyBob][
+    heyBob: strip heyBob
+
+       switch silent? heyBob          -> "Fine. Be that way!"
+    -> switch shoutedQuestion? heyBob -> "Calm down, I know what I'm doing!"
+    -> switch question? heyBob        -> "Sure."
+    -> switch shout? heyBob           -> "Whoa, chill out!"
+                                      -> "Whatever."
+]

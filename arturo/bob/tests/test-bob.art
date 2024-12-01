@@ -1,0 +1,89 @@
+import {unitt}!
+import {src/bob}!
+
+suite "Bob" [
+    test "stating something" [
+        reply: response "Tom-ay-to, tom-aaaah-to."
+        assert -> "Whatever." = reply
+    ]
+
+    test.skip "shouting" [
+        reply: response "WATCH OUT!"
+        assert -> "Whoa, chill out!" = reply
+    ]
+
+    test.skip "asking a question" [
+        reply: response "Does this cryogenic chamber make me look fat?"
+        assert -> "Sure." = reply
+    ]
+
+    test.skip "asking a numeric question" [
+        reply: response "You are, what, like 15?"
+        assert -> "Sure." = reply
+    ]
+
+    test.skip "talking forcefully" [
+        reply: response "Let's go make out behind the gym!"
+        assert -> "Whatever." = reply
+    ]
+
+    test.skip "using acronyms in regular speech" [
+        reply: response "It's OK if you don't want to go to the DMV."
+        assert -> "Whatever." = reply
+    ]
+
+    test.skip "forceful question" [
+        reply: response "WHAT THE HELL WERE YOU THINKING?"
+        assert -> "Calm down, I know what I'm doing!" = reply
+    ]
+
+    test.skip "shouting numbers" [
+        reply: response "1, 2, 3 GO!"
+        assert -> "Whoa, chill out!" = reply
+    ]
+
+    test.skip "no letters" [
+        reply: response "1, 2, 3"
+        assert -> "Whatever." = reply
+    ]
+
+    test.skip "question with no letters" [
+        reply: response "4?"
+        assert -> "Sure." = reply
+    ]
+
+    test.skip "shouting with special characters" [
+        reply: response "ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!"
+        assert -> "Whoa, chill out!" = reply
+    ]
+
+    test.skip "shouting with no exclamation mark" [
+        reply: response "I HATE YOU"
+        assert -> "Whoa, chill out!" = reply
+    ]
+
+    test.skip "statement containing question mark" [
+        reply: response "Ending with ? means a question."
+        assert -> "Whatever." = reply
+    ]
+
+    test.skip "prattling on" [
+        reply: response "Wait! Hang on. Are you going to be OK?"
+        assert -> "Sure." = reply
+    ]
+
+    test.skip "silence" [
+        reply: response ""
+        assert -> "Fine. Be that way!" = reply
+    ]
+
+    test.skip "prolonged silence" [
+        reply: response "    "
+        assert -> "Fine. Be that way!" = reply
+    ]
+
+    test.skip "multiple line question" [
+        reply: response "Does this cryogenic chamber make me look fat?\nno"
+        assert -> "Whatever." = reply
+    ]
+]
