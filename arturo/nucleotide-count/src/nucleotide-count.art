@@ -1,0 +1,10 @@
+nucleotideCounts: function [strand][
+    counts: #[A: 0 C: 0 G: 0 T: 0]
+    loop strand 'nucleotide [
+        switch not? contains? keys counts to :string nucleotide
+            -> return null
+            -> counts\[nucleotide]: inc counts\[nucleotide]
+    ]
+
+    counts
+]

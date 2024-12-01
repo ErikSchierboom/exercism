@@ -1,0 +1,33 @@
+import {unitt}!
+import {src/nucleotide-count}!
+
+suite "Nucleotide Count" [
+    test "an empty strand does not increment the counts" [
+        result: nucleotideCounts ""
+        expected: #[A: 0 C: 0 G: 0 T: 0]
+        assert -> expected = result
+    ]
+
+    test.skip "a strand with one nucleotide increments that nucleotide's count" [
+        result: nucleotideCounts "G"
+        expected: #[A: 0 C: 0 G: 1 T: 0]
+        assert -> expected = result
+    ]
+
+    test.skip "a strand with a repeated nucleotide increments that nucleotide's count" [
+        result: nucleotideCounts "GGGGGGG"
+        expected: #[A: 0 C: 0 G: 7 T: 0]
+        assert -> expected = result
+    ]
+
+    test.skip "a strand with multiple nucleotides increments the respective nucleotide counts" [
+        result: nucleotideCounts "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC"
+        expected: #[A: 20 C: 12 G: 17 T: 21]
+        assert -> expected = result
+    ]
+
+    test.skip "a strand with invalid nucleotides returns null instead" [
+        result: nucleotideCounts "AGXXACT"
+        assert -> null = result
+    ]
+]
