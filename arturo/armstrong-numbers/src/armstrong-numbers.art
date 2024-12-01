@@ -1,0 +1,7 @@
+armstrong_sum: $ [n][
+    digits_: digits n
+    numDigits_: size digits_
+    sum map digits_ => [& ^ numDigits_]
+]
+
+armstrong?: $ [n][n = armstrong_sum n]
