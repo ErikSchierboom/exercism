@@ -1,0 +1,3 @@
+gigasecond: function[date][
+    after.seconds:1000000000 date
+]
