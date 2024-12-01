@@ -1,0 +1,22 @@
+{
+  "authors": [
+    "erikschierboom"
+  ],
+  "files": {
+    "solution": [
+      "src/eliuds-eggs.art"
+    ],
+    "test": [
+      "tests/test-eliuds-eggs.art"
+    ],
+    "example": [
+      ".meta/src/example.art"
+    ],
+    "invalidator": [
+      "tester.art"
+    ]
+  },
+  "blurb": "Help Eliud count the number of eggs in her chicken coop by counting the number of 1 bits in a binary representation.",
+  "source": "Christian Willner, Eric Willigers",
+  "source_url": "https://forum.exercism.org/t/new-exercise-suggestion-pop-count/7632/5"
+}

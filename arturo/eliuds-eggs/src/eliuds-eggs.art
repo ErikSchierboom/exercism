@@ -1,0 +1,10 @@
+eggCount: function [encodedNumber][
+    count: 0
+
+    while [encodedNumber > 0][
+        add 'count and encodedNumber 1
+        encodedNumber: shr encodedNumber 1
+    ]
+
+    count
+]

@@ -1,0 +1,24 @@
+import {unitt}!
+import {src/eliuds-eggs}!
+
+suite "Eliud's Eggs" [
+    test "0 eggs" [
+        result: eggCount 0
+        assert -> 0 = result
+    ]
+
+    test.skip "1 egg" [
+        result: eggCount 16
+        assert -> 1 = result
+    ]
+
+    test.skip "4 eggs" [
+        result: eggCount 89
+        assert -> 4 = result
+    ]
+
+    test.skip "13 eggs" [
+        result: eggCount 2000000000
+        assert -> 13 = result
+    ]
+]
