@@ -28,7 +28,7 @@
 ⍤⤙≍ "square must be between 1 and 64" ⍣(Square 0)
 
 # negative square is invali
-⍤⤙≍ "square must be between 1 and 64" ⍣(Square `1)
+⍤⤙≍ "square must be between 1 and 64" ⍣(Square ¯1)
 
 # returns the total number of grains on the board
 ⍤⤙≍ 18446744073709551615 Total
