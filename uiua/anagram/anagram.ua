@@ -1,5 +1,4 @@
-# Experimental!
-IsEqual      ← ≍∩⌵
-IsReordered  ← ≍∩(⍆⌵)
-IsAnagram    ← ×⊃(¬IsEqual|IsReordered)∩(°□)
-FindAnagrams ← ▽:⟜≡IsAnagram:□
+Unequal      ← ≍∩⌵
+Reordered    ← ≍∩(⍆⌵)
+Anagram      ← ×⊃(¬Unequal|Reordered)∩°□
+FindAnagrams ← ▽:⟜≡Anagram:□
