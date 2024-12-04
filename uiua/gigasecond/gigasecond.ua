@@ -1,1 +1,1 @@
-Gigasecond ← |1 ⍜(°datetime|+1e9)
+Gigasecond ← ⍜(°datetime|+1e9)
