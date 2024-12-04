@@ -1,1 +1,1 @@
-EggCount ← |1 /+ ⋯
+EggCount ← /+⋯
