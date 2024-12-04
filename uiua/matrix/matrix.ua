@@ -1,3 +1,3 @@
-Matrix ← |1 ⊜(⊜⋕≠@ .) ≠@\n .
-Row    ← |2 ⊡ -1: Matrix
-Column ← |2 ⊡ -1: ⍉Matrix
+Matrix ← ⊜(⊜⋕≠@ .) ≠@\n .
+Row    ← ⊡ -1: Matrix
+Column ← ⊡ -1: ⍉Matrix
