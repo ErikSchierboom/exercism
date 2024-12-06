@@ -1,14 +1,13 @@
-Create ← ⊂⊙□⊂
-
 Directions ← {"north" "east" "south" "west"}
 Deltas     ← [0_1 1_0 0_¯1 ¯1_0]
 Moves      ← "RLA"
 
+Create  ← ⊂⊙□⊂
 Update! ← ⍜(°□⊡)(^0)
-Rotate  ← |2 Update!(°□⊢▽ ↻⊙(⊸⌕□⟜Directions) :) 2 :
-Left    ← |1 Rotate 1
-Right   ← |1 Rotate ¯1
+Rotate  ← Update!(°□⊢▽ ↻⊙(⊸⌕□⟜Directions) :) 2 :
+Left    ← Rotate 1
+Right   ← Rotate ¯1
 D       ← ⊡⟜Deltas ⊗□⟜Directions
 Walk!   ← Update!(+⊙(^0D))⊙⟜(°□⊡2)
-Advance ← |1 Walk!(⊢)0 Walk!(⊣)1
+Advance ← Walk!(⊢)0 Walk!(⊣)1
 Move    ← ∧(⨬(Right|Left|Advance) ⊗⟜Moves) :
