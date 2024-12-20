@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "erikschierboom"
+  ],
+  "files": {
+    "solution": [
+      "palindrome-products.ua"
+    ],
+    "test": [
+      "tests.ua"
+    ],
+    "example": [
+      ".meta/example.ua"
+    ]
+  },
+  "blurb": "Detect palindrome products in a given range.",
+  "source": "Problem 4 at Project Euler",
+  "source_url": "https://projecteuler.net/problem=4"
+}
