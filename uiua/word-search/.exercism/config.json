@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "erikschierboom"
+  ],
+  "files": {
+    "solution": [
+      "word-search.ua"
+    ],
+    "test": [
+      "tests.ua"
+    ],
+    "example": [
+      ".meta/example.ua"
+    ]
+  },
+  "blurb": "Create a program to solve a word search puzzle."
+}
