@@ -1,1 +1,1 @@
-IsPangram ← =26⧻◴⍆▽±.⌵
+IsPangram ← =26⧻◴▽±.⌵
