@@ -1,2 +1,1 @@
-Mapping ← map "GCTA" "CGAU"
-ToRna   ← ∵(get : Mapping)
+ToRna ← ⊏⊙"CGAU"⊗⊙"GCTA"
