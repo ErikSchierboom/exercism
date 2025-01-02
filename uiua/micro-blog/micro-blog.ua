@@ -1,0 +1,1 @@
+Truncate ← ⍜graphemes(↙↧5⧻.)
