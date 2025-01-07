@@ -1,11 +1,12 @@
 (ns armstrong-numbers)
 
-(defn- digits [number]
-  (map #(Character/digit ^char % 10) (str number)))
+(defn- pow [n m] (int (Math/pow n m)))
 
-(defn- armstrong [number]
-  (let [digits' (digits number)]
-    (reduce + (map #(Math/pow % (count digits')) digits'))))
+(defn- digit [c] (Character/digit c 10))
 
-(defn armstrong? [number]
-  (== (armstrong number) number))
+(defn- armstrong-sum [n]
+  (let [digits (map digit (str n))
+        power (count digits)]
+    (reduce + (map #(pow % power) digits))))
+
+(defn armstrong? [n] (= (armstrong-sum n) n))
