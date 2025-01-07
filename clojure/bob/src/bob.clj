@@ -1,13 +1,15 @@
-(ns bob (:require [clojure.string :as str]))
+(ns bob
+  (:require [clojure.string :as str]))
 
 (defn- silence? [s] (str/blank? s))
 (defn- question? [s] (str/ends-with? (str/trim s) "?"))
-(defn- shout? [s] (and (= s (str/upper-case s)) (some #(Character/isLetter^char %) s)))
+(defn- shout? [s] (and (= s (str/upper-case s)) (not= s (str/lower-case s))))
+(defn- shouted-question? [s] (and (question? s) (shout? s)))
 
 (defn response-for [s]
-  (cond
-    (silence? s) "Fine. Be that way!"
-    (and (question? s) (shout? s)) "Calm down, I know what I'm doing!"
-    (question? s) "Sure."
-    (shout? s) "Whoa, chill out!"
-    :else "Whatever."))
+  (condp apply [s]
+    silence? "Fine. Be that way!"
+    shouted-question? "Calm down, I know what I'm doing!"
+    question? "Sure."
+    shout? "Whoa, chill out!"
+    "Whatever."))
