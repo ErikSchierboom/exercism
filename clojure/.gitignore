@@ -12,3 +12,4 @@ checkouts/
 .lein-failures
 .nrepl-port
 .cpcache/
+*.iml
