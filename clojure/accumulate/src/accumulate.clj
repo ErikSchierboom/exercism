@@ -1,7 +1,8 @@
 (ns accumulate)
 
-(defn accumulate
-  ([callback elements]
-    (accumulate callback elements []))
-  ([callback [item1 & remaining] acc]
-    (if (nil? item1) acc (recur callback remaining (conj acc (callback item1))))))
+(defn accumulate [f coll]
+  (loop [coll coll
+         acc []]
+    (if-let [[x & xs] (seq coll)]
+      (recur xs (conj acc (f x)))
+      acc)))
