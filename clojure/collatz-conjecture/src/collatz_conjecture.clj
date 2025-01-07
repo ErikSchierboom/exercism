@@ -1,9 +1,9 @@
 (ns collatz-conjecture)
 
-(defn collatz
-  ([num acc]
-    (cond
-      (< num 1) (throw (IllegalArgumentException. "Number must be greater than or equal to 1"))
-      (= num 1) acc
-      :else (recur (if (even? num) (/ num 2) (inc (* num 3))) (inc acc))))
-  ([num] (collatz num 0)))
+(defn- step [n] (if (even? n) (quot n 2) (inc (* n 3))))
+(defn- collatz-sequence [n] (take-while #(not= 1 %) (iterate step n)))
+
+(defn collatz [n]
+  (if (< n 1)
+    (throw (IllegalArgumentException. "Number must be greater than or equal to 1"))
+    (count (collatz-sequence n))))
