@@ -22,8 +22,8 @@ If you get stuck on the exercise, check out `HINTS.md`, but try and solve it wit
 Using an atom allows for some state to be preserved:
 
 ```clojure
-
-;; This function closure increments the counter's state in the outer lexical context.
+;; This function closure increments the counter's state
+;; in the outer lexical context.
 ;; This way the counter can be shared between many calling contexts.
 
 (def increment
@@ -31,7 +31,7 @@ Using an atom allows for some state to be preserved:
     (fn [] (swap! counter inc))))
 ```
 
-Each successive call to `increment' increments its counter:
+Each successive call to `increment` increments its counter:
 
 ``` clojure
 (increment)
@@ -54,13 +54,6 @@ so you decide to use a function closure to create reusable transformations for `
 Implement the `translate2d` function that returns a function making use of a closure to perform a repeatable 2d translation of a coordinate pair.
 
 ```clojure
-
-(defn translate2d
-  "Returns a function making use of a closure to
-   perform a repeatable 2d translation of a coordinate pair."
-  [dx dy]
-  (fn [x y] [(+ dx x) (+ dy y)]))
-
 (def move-coordinates-right-2px (translate2d 2 0))
 (def result (move-coordinates-right-2px 4 8))
 ;; result => [6 8]
@@ -100,20 +93,17 @@ Implement the `memoize-transform` function. It takes a function to _memoize_, th
 
 ```clojure
 (def triple-scale (scale2d 3 3))
-(def memoized-scale (memoize-transform triplescale))
-
-(memoized-scale 4 3) ;; => [12, 9], this is computed since it hasn't been computed before for the arguments
-(memoized-scale 4 3) ;; => [12, 9], this is remembered, since it was computed already
-
-(def triple-scale (scale2d 3 3))
 (def memoized-scale (memoize-transform triple-scale))
 
-memoizedScale(4, 3) ;; // => [12, 9], this is computed since it hasn't been computed before for the arguments
-memoizedScale(4, 3) ;; // => [12, 9], this is remembered, since it was computed already
+(memoized-scale 4 3)
+;; => [12, 9], this is computed since it hasn't been computed before for the arguments
+
+(memoized-scale 4 3)
+;; => [12, 9], this is remembered, since it was computed already
 ```
 
 ## Source
 
 ### Created by
 
-- @porkostomus
+- @bobbicodes

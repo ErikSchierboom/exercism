@@ -5,31 +5,35 @@ If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Instructions
 
-The classical introductory exercise. Just say "Hello, World!".
+The classical introductory exercise.
+Just say "Hello, World!".
 
-["Hello, World!"](http://en.wikipedia.org/wiki/%22Hello,_world!%22_program) is
-the traditional first program for beginning programming in a new language
-or environment.
+["Hello, World!"][hello-world] is the traditional first program for beginning programming in a new language or environment.
 
 The objectives are simple:
 
-- Write a function that returns the string "Hello, World!".
+- Modify the provided code so that it produces the string "Hello, World!".
 - Run the test suite and make sure that it succeeds.
 - Submit your solution and check it at the website.
 
 If everything goes well, you will be ready to fetch your first real exercise.
 
+[hello-world]: https://en.wikipedia.org/wiki/%22Hello,_world!%22_program
+
 ## Project Structure
 
-Clojure exercises in exercism use [leiningen](http://leiningen.org/) to configure and run your code
-and use [leiningen standard directory structure](https://github.com/technomancy/leiningen/blob/master/doc/TUTORIAL.md#directory-layout).
+Clojure exercises in Exercism support the two most common tools for dependency management and testing, [leiningen][leiningen] and the [Clojure CLI][clojure-cli].
 
-You will find a test file named `hello_world_test.clj` inside `test` directory.
+You will find a test file named `hello_world_test.clj` inside the `test` directory.
 Write your code in `src/hello_world.clj`. It should use the namespace `hello-world` so that tests can pick it up.
 
-## Running tests
+### Running tests using the Clojure CLI
 
-Run the tests using `lein test` command and make them pass:
+```
+$ clj -X:test
+```
+
+### Running tests using Leiningen
 
 ```
 $ lein test
@@ -46,7 +50,11 @@ Then submit the exercise using:
 $ exercism submit src/hello_world.clj
 ```
 
-For more detailed instructions and learning resources refer [exercism's clojure language page](http://exercism.io/languages/clojure).
+For more detailed instructions and learning resources refer to [Exercism's Clojure language page][exercism-clojure].
+
+[leiningen]: https://leiningen.org
+[clojure-cli]: https://clojure.org/guides/deps_and_cli
+[exercism-clojure]: https://exercism.org/tracks/clojure
 
 ## Source
 
@@ -62,4 +70,4 @@ For more detailed instructions and learning resources refer [exercism's clojure 
 
 ### Based on
 
-This is an exercise to introduce users to using Exercism - http://en.wikipedia.org/wiki/%22Hello,_world!%22_program
+This is an exercise to introduce users to using Exercism - https://en.wikipedia.org/wiki/%22Hello,_world!%22_program

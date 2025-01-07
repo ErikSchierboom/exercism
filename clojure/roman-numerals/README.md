@@ -3,49 +3,78 @@
 Welcome to Roman Numerals on Exercism's Clojure Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 
-## Instructions
+## Introduction
 
-Write a function to convert from normal numbers to Roman Numerals.
+Today, most people in the world use Arabic numerals (0–9).
+But if you travelled back two thousand years, you'd find that most Europeans were using Roman numerals instead.
 
-The Romans were a clever bunch. They conquered most of Europe and ruled
-it for hundreds of years. They invented concrete and straight roads and
-even bikinis. One thing they never discovered though was the number
-zero. This made writing and dating extensive histories of their exploits
-slightly more challenging, but the system of numbers they came up with
-is still in use today. For example the BBC uses Roman numerals to date
-their programmes.
+To write a Roman numeral we use the following Latin letters, each of which has a value:
 
-The Romans wrote numbers using letters - I, V, X, L, C, D, M. (notice
-these letters have lots of straight lines and are hence easy to hack
-into stone tablets).
+| M    | D   | C   | L   | X   | V   | I   |
+| ---- | --- | --- | --- | --- | --- | --- |
+| 1000 | 500 | 100 | 50  | 10  | 5   | 1   |
+
+A Roman numeral is a sequence of these letters, and its value is the sum of the letters' values.
+For example, `XVIII` has the value 18 (`10 + 5 + 1 + 1 + 1 = 18`).
+
+There's one rule that makes things trickier though, and that's that **the same letter cannot be used more than three times in succession**.
+That means that we can't express numbers such as 4 with the seemingly natural `IIII`.
+Instead, for those numbers, we use a subtraction method between two letters.
+So we think of `4` not as `1 + 1 + 1 + 1` but instead as `5 - 1`.
+And slightly confusingly to our modern thinking, we write the smaller number first.
+This applies only in the following cases: 4 (`IV`), 9 (`IX`), 40 (`XL`), 90 (`XC`), 400 (`CD`) and 900 (`CM`).
+
+Order matters in Roman numerals!
+Letters (and the special compounds above) must be ordered by decreasing value from left to right.
+
+Here are some examples:
 
 ```text
- 1  => I
-10  => X
- 7  => VII
+ 105 => CV
+---- => --
+ 100 => C
++  5 =>  V
 ```
 
-There is no need to be able to convert numbers larger than about 3000.
-(The Romans themselves didn't tend to go any higher)
+```text
+ 106 => CVI
+---- => --
+ 100 => C
++  5 =>  V
++  1 =>   I
+```
 
-Wikipedia says: Modern Roman numerals ... are written by expressing each
-digit separately starting with the left most digit and skipping any
-digit with a value of zero.
+```text
+ 104 => CIV
+---- => ---
+ 100 => C
++  4 =>  IV
+```
 
-To see this in practice, consider the example of 1990.
+And a final more complex example:
 
-In Roman numerals 1990 is MCMXC:
+```text
+ 1996 => MCMXCVI
+----- => -------
+ 1000 => M
++ 900 =>  CM
++  90 =>    XC
++   5 =>      V
++   1 =>       I
+```
 
-1000=M
-900=CM
-90=XC
+## Instructions
 
-2008 is written as MMVIII:
+Your task is to convert a number from Arabic numerals to Roman numerals.
 
-2000=MM
-8=VIII
+For this exercise, we are only concerned about traditional Roman numerals, in which the largest number is MMMCMXCIX (or 3,999).
 
-See also: http://www.novaroma.org/via_romana/numbers.html
+~~~~exercism/note
+There are lots of different ways to convert between Arabic and Roman numerals.
+We recommend taking a naive approach first to familiarise yourself with the concept of Roman numerals and then search for more efficient methods.
+
+Make sure to check out our Deep Dive video at the end to explore the different approaches you can take!
+~~~~
 
 ## Source
 
@@ -67,4 +96,4 @@ See also: http://www.novaroma.org/via_romana/numbers.html
 
 ### Based on
 
-The Roman Numeral Kata - http://codingdojo.org/cgi-bin/index.pl?KataRomanNumerals
+The Roman Numeral Kata - https://codingdojo.org/kata/RomanNumerals/

@@ -17,4 +17,4 @@
       (nil? head) plain-text
       (Character/isDigit^char head) (recur tail plain-text (+ (* 10 length) (Character/digit^char head 10)))
       :else (recur tail (str plain-text (decode-run (max 1 length) head)) 0))))
-
+ 

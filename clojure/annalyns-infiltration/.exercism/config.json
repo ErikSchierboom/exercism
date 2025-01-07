@@ -1,10 +1,9 @@
 {
-  "blurb": "Learn about booleans while helping Annalyn rescue her friend",
   "authors": [
     "porkostomus"
   ],
-  "forked_from": [
-    "fsharp/annalyns-infiltration"
+  "contributors": [
+    "tasxatzial"
   ],
   "files": {
     "solution": [
@@ -16,5 +15,9 @@
     "exemplar": [
       ".meta/exemplar.clj"
     ]
-  }
+  },
+  "forked_from": [
+    "fsharp/annalyns-infiltration"
+  ],
+  "blurb": "Learn about booleans while helping Annalyn rescue her friend"
 }

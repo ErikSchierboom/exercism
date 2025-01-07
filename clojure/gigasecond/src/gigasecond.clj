@@ -2,4 +2,4 @@
 
 (defn from [year month day]
   (let [gigasecond-date (t/plus (t/date-time year month day) (t/seconds 1e9))]
-    [(t/year gigasecond-date) (t/month gigasecond-date) (t/day gigasecond-date)]))
+    [(t/year gigasecond-date) (t/month gigasecond-date) (t/day gigasecond-date)])) 

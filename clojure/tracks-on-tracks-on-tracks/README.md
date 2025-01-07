@@ -14,8 +14,8 @@ Lists are special because Clojure will treat them as _calls_. It expects the cal
 
 Clojure's special treatment of lists is why we cannot create a list literal directly. Quoting a list using `quote` or its shorthand `'` indicates that the list should not be evaluated.
 
-Unlike some modern languages, Clojure lists are _heterogenous_, meaning they can contain multiple types of item internally. E.g. `'(2 "a" "b" 3)`
-Unlike other other Lisps, an empty list in Clojure in truthy and is not equivalent to `nil` or `false`.
+Unlike some modern languages, Clojure lists are _heterogeneous_, meaning they can contain multiple types of items internally e.g., `'(2 "a" "b" 3)`.
+Unlike other Lisps, an empty list in Clojure is truthy and is not equivalent to `nil` or `false`.
 
 [type-list]: https://github.com/exercism/v3/blob/main/reference/types/list.md
 [type-collection]: https://github.com/exercism/v3/blob/main/reference/types/collection.md
@@ -28,7 +28,7 @@ You have six tasks.
 
 ## 1. Create a new list
 
-Before you can add languages, you'll need to start by creating an new list. Define a function that returns an empty list.
+Before you can add languages, you'll need to start by creating a new list. Define a function that returns an empty list.
 
 ```clojure
 (new-list)
@@ -37,10 +37,10 @@ Before you can add languages, you'll need to start by creating an new list. Defi
 
 ## 2. Add a new language to the list
 
-As you explore Exercism and find languages you want to learn, you'll need to be able to add them to your list. Define a function to add a new language the the beginning of your list.
+As you explore Exercism and find languages you want to learn, you'll need to be able to add them to your list. Define a function to add a new language the beginning of your list.
 
 ```clojure
-(add-language "JavaScript" '("Clojurescript"))
+(add-language '("Clojurescript") "JavaScript")
 ;; => '("JavaScript" "Clojurescript")
 ```
 

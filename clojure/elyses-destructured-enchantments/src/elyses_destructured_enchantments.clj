@@ -1,16 +1,13 @@
 (ns elyses-destructured-enchantments)
 
 (defn first-card [deck]
-  (let [[first-card & _] deck]
-    first-card))
+  (first deck))
 
 (defn second-card [deck]
-  (let [[_ second-card & _] deck]
-    second-card))
+  (second deck))
 
-(defn swap-top-two-cards [deck]  
-  (let [[first-card second-card] deck]
-    [second-card first-card]))
+(defn swap-top-two-cards [deck] 
+  (assoc deck 0 (second-card deck) 1 (first-card deck)))
 
 (defn discard-top-card [deck]
   (let [[first-card & rest] deck]
@@ -19,5 +16,6 @@
 (def face-cards ["jack" "queen" "king"])
 
 (defn insert-face-cards [deck]
-  (let [[first-card & rest] deck]
-    (into [] (concat [first-card] face-cards rest))))
+  (if (empty? deck)
+    (into [] (concat face-cards (rest deck)))
+    (into [] (concat [(first-card deck)] face-cards (rest deck)))))

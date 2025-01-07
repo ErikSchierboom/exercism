@@ -28,14 +28,14 @@ Clojure ships with a powerful string processing library, [clojure.string][clojur
 In this exercise you will implement a partial set of utility routines 
 to help a developer clean up identifier names.
 
-In the 5 tasks you will gradually build up the routine `clean`. 
+In the 5 tasks you will gradually build up the function `clean`.
 A valid identifier comprises zero or more letters and underscores.
 
 In all cases the input string is guaranteed to be non-nil. 
-If an empty string is passed to the `clean` function, 
+If an empty string is passed to the function,
 an empty string should be returned.
 
-Note that the caller should avoid calling the routine `clean` 
+Note that the caller should avoid calling the function
 with an empty identifier since such identifiers are ineffectual.
 
 ## 1. Replace any spaces encountered with underscores
@@ -80,7 +80,7 @@ Note: The underscores must be preserved from the previous step.
 ;; => ""
 ```
 
-## 5. Omit Greek lower case letters
+## 5. Omit Greek lowercase letters
 
 Modify the `clean` function to omit any Greek letters in the range 'α' to 'ω'.
 
@@ -94,3 +94,7 @@ Modify the `clean` function to omit any Greek letters in the range 'α' to 'ω'.
 ### Created by
 
 - @porkostomus
+
+### Contributed to by
+
+- @tasxatzial

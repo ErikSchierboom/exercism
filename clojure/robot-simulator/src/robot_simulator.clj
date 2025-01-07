@@ -9,7 +9,7 @@
   { :north :east
     :east :south
     :south :west
-    :west :north })
+    :west :north }) 
 
 (def turn-left
   { :north :west
