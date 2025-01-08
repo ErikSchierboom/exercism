@@ -1,3 +1,4 @@
-Sanitize ← ▽∈"[](){}".
-Unpair   ← ⍥(▽⊸(¬/↥±⊂⊟⊃(⦷"[]"|⦷"()"|⦷"{}"))) ∞
-IsPaired ← =0⧻ Unpair Sanitize
+Brackets ← "(){}[]"
+Pairs    ← ↯∞_2Brackets
+Sanitize ← ▽⊸∊Brackets
+IsPaired ← ≍""⍥(∧(▽¬⊸⦷)Pairs)∞Sanitize
