@@ -12,7 +12,7 @@ public enum Schedule
     Last
 }
 
-public record Meetup(int month, int year)
+public class Meetup(int month, int year)
 {
     public DateTime Day(DayOfWeek dayOfWeek, Schedule schedule) =>
         schedule switch
