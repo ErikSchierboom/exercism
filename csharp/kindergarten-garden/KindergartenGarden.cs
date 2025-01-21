@@ -5,20 +5,18 @@ using System.Linq;
 
 public enum Plant { Violets, Radishes, Clover, Grass }
 
-public class KindergartenGarden
+public class KindergartenGarden(string diagram)
 {
     private static readonly string[] Students =
-    {
+    [
         "Alice", "Bob", "Charlie", "David", "Eve", "Fred", "Ginny", "Harriet", "Ileana", "Joseph", "Kincaid", "Larry"
-    };
+    ];
 
-    private readonly IDictionary<string, IEnumerable<Plant>> _studentPlants;
-
-    public KindergartenGarden(string diagram) => _studentPlants = StudentPlants(diagram);
+    private readonly Dictionary<string, IEnumerable<Plant>> _studentPlants = StudentPlants(diagram);
 
     public IEnumerable<Plant> Plants(string student) => _studentPlants[student];
 
-    private static IDictionary<string, IEnumerable<Plant>> StudentPlants(string diagram)
+    private static Dictionary<string, IEnumerable<Plant>> StudentPlants(string diagram)
     {
         var rows = diagram.Split('\n');
 
