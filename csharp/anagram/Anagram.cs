@@ -18,5 +18,5 @@ public class Anagram
         !string.Equals(candidate, _word, StringComparison.OrdinalIgnoreCase);
 
     private static string SortedLowerCase(string word) =>
-        new(word.ToLower().OrderBy(c => c).ToArray()); 
+        new(word.ToLower().Order().ToArray()); 
 }
