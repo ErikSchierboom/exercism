@@ -1,13 +1,11 @@
-using System;
-
-static class AssemblyLine
+public static class AssemblyLine
 {
     private const int CarsPerHour = 221;
 
     public static double ProductionRatePerHour(int speed) =>
         SuccessRate(speed) * CarsPerHour * speed;
-    
-    private static double SuccessRate(int speed) =>
+
+    public static double SuccessRate(int speed) =>
         speed switch
         {
             >= 1 and <= 4 => 1.0,
