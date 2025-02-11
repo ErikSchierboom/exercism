@@ -1,0 +1,11 @@
+: colors \ -- a
+  ["black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white"]
+;
+
+: color-code \ s -- n
+  colors swap ' s:= a:indexof nip
+;
+
+: value \ a -- n
+  [10, 1] swap ( color-code n:* ) a:2map ' n:+ 0 a:reduce 
+;

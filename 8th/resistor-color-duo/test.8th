@@ -1,0 +1,44 @@
+"resistor-color-duo.8th" f:include
+needs exercism/test
+with: test
+7 tests
+
+"Brown and black"
+    ( ["brown", "black"] value )
+    10
+    equal?
+
+SKIP-REST-OF-TESTS
+
+"Blue and grey"
+    ( ["blue", "grey"] value )
+    68
+    equal?
+
+"Yellow and violet"
+    ( ["yellow", "violet"] value )
+    47
+    equal?
+
+"White and red"
+    ( ["white", "red"] value )
+    92
+    equal?
+
+"Orange and orange"
+    ( ["orange", "orange"] value )
+    33
+    equal?
+
+"Ignore additional colors"
+    ( ["green", "brown", "orange"] value )
+    51
+    equal?
+
+"Black and brown, one-digit"
+    ( ["black", "brown"] value )
+    1
+    equal?
+
+end-of-tests
+;with
