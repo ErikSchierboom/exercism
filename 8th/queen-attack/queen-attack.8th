@@ -1,0 +1,37 @@
+: valid_position? \ n - T
+  0 7 n:between
+;
+
+: create \ n n -- x
+  dup valid_position? !if 2drop null ;then
+  swap dup valid_position? !if 2drop null ;then
+  swap 2 a:close
+;
+
+: row \ x -- n
+  a:open drop
+;
+
+: column \ x -- n
+  a:open nip
+;
+
+: can-attack-horizontally? \ x x -- T
+  row swap row n:=
+;
+
+: can-attack-vertically? \ x x -- T
+  column swap column n:=
+;
+
+: can-attack-diagonally? \ x x -- T
+  2dup row swap row n:- n:abs 
+  -rot column swap column n:- n:abs 
+  n:=
+;
+
+: can-attack? \ x x -- T
+  2dup can-attack-horizontally? if 2drop true ;then
+  2dup can-attack-vertically? if 2drop true ;then
+  can-attack-diagonally?
+;

@@ -1,0 +1,61 @@
+"queen-attack.8th" f:include
+needs exercism/test
+with: test
+13 tests
+
+"Queen with a valid position"
+    ( 2 2 create )
+    not-null?
+
+SKIP-REST-OF-TESTS
+
+"Queen must have positive row"
+    ( -2 2 create )
+    null?
+
+"Queen must have row on board"
+    ( 8 4 create )
+    null?
+
+"Queen must have positive column"
+    ( 2 -2 create )
+    null?
+
+"Queen must have column on board"
+    ( 4 8 create )
+    null?
+
+"Cannot attack"
+    ( 2 4 create 6 6 create can-attack? )
+    false?
+
+"Can attack on same row"
+    ( 2 4 create 2 6 create can-attack? )
+    true?
+
+"Can attack on same column"
+    ( 4 5 create 2 5 create can-attack? )
+    true?
+
+"Can attack on first diagonal"
+    ( 2 2 create 0 4 create can-attack? )
+    true?
+
+"Can attack on second diagonal"
+    ( 2 2 create 3 1 create can-attack? )
+    true?
+
+"Can attack on third diagonal"
+    ( 2 2 create 1 1 create can-attack? )
+    true?
+
+"Can attack on fourth diagonal"
+    ( 1 7 create 0 6 create can-attack? )
+    true?
+
+"Cannot attack if falling diagonals are only the same when reflected across the longest falling diagonal"
+    ( 4 1 create 2 5 create can-attack? )
+    false?
+
+end-of-tests
+;with
