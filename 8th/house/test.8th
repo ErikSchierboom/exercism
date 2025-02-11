@@ -1,0 +1,94 @@
+"house.8th" f:include
+needs exercism/test
+with: test
+14 tests
+
+"Verse one - the house that jack built"
+  ( 1 1 recite )
+  ["This is the house that Jack built."]
+  equal?
+
+SKIP-REST-OF-TESTS
+
+"Verse two - the malt that lay"
+  ( 2 2 recite )
+  ["This is the malt that lay in the house that Jack built."]
+  equal?
+
+"Verse three - the rat that ate"  
+  ( 3 3 recite )
+  ["This is the rat that ate the malt that lay in the house that Jack built."]
+  equal?
+
+"Verse four - the cat that killed"  
+  ( 4 4 recite )
+  ["This is the cat that killed the rat that ate the malt that lay in the house that Jack built."]
+  equal?
+
+"Verse five - the dog that worried"  
+  ( 5 5 recite )
+  ["This is the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built."]
+  equal?
+
+"Verse six - the cow with the crumpled horn"
+  ( 6 6 recite )
+  ["This is the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built."]
+  equal?
+
+"Verse seven - the maiden all forlorn"
+  ( 7 7 recite )
+  ["This is the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built."]
+  equal?
+
+"Verse eight - the man all tattered and torn"
+  ( 8 8 recite )
+  ["This is the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built."]
+  equal?
+
+"Verse nine - the priest all shaven and shorn"
+  ( 9 9 recite )
+  ["This is the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built."]
+  equal?
+
+"Verse 10 - the rooster that crowed in the morn"
+  ( 10 10 recite )
+  ["This is the rooster that crowed in the morn that woke the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built."]
+  equal?
+
+"Verse 11 - the farmer sowing his corn"
+  ( 11 11 recite )
+  ["This is the farmer sowing his corn that kept the rooster that crowed in the morn that woke the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built."]
+  equal?
+
+"Verse 12 - the horse and the hound and the horn"  
+  ( 12 12 recite )
+  ["This is the horse and the hound and the horn that belonged to the farmer sowing his corn that kept the rooster that crowed in the morn that woke the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built."]
+  equal?
+
+"Multiple verses"  
+  ( 4 8 recite )
+  [ "This is the cat that killed the rat that ate the malt that lay in the house that Jack built.",
+    "This is the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.",
+    "This is the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.",
+    "This is the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.",
+    "This is the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built." ]
+  equal?
+
+"Full rhyme"
+  ( 1 12 recite )
+  [ "This is the house that Jack built.",
+    "This is the malt that lay in the house that Jack built.",
+    "This is the rat that ate the malt that lay in the house that Jack built.",
+    "This is the cat that killed the rat that ate the malt that lay in the house that Jack built.",
+    "This is the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.",
+    "This is the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.",
+    "This is the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.",
+    "This is the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.",
+    "This is the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.",
+    "This is the rooster that crowed in the morn that woke the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.",
+    "This is the farmer sowing his corn that kept the rooster that crowed in the morn that woke the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built.",
+    "This is the horse and the hound and the horn that belonged to the farmer sowing his corn that kept the rooster that crowed in the morn that woke the priest all shaven and shorn that married the man all tattered and torn that kissed the maiden all forlorn that milked the cow with the crumpled horn that tossed the dog that worried the cat that killed the rat that ate the malt that lay in the house that Jack built." ]
+  equal?
+
+end-of-tests
+;with
