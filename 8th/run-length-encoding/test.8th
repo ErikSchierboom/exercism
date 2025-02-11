@@ -1,0 +1,74 @@
+"run-length-encoding.8th" f:include
+needs exercism/test
+with: test
+13 tests
+
+"Encode empty string"
+    ( "" encode )
+    ""
+    equal?
+
+SKIP-REST-OF-TESTS
+
+"Encode single characters only are encoded without count"
+    ( "XYZ" encode )
+    "XYZ"
+    equal?
+
+"Encode string with no single characters"
+    ( "AABBBCCCC" encode )
+    "2A3B4C"
+    equal?
+
+"Encode single characters mixed with repeated characters"
+    ( "WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB" encode )
+    "12WB12W3B24WB"
+    equal?
+
+"Encode multiple whitespace mixed in string"
+    ( "  hsqq qww  " encode )
+    "2 hs2q q2w2 "
+    equal?
+
+"Encode lowercase characters"
+    ( "aabbbcccc" encode )
+    "2a3b4c"
+    equal?
+
+"Decode empty string"
+    ( "" decode )
+    ""
+    equal?
+
+"Decode single characters only"
+    ( "XYZ" decode )
+    "XYZ"
+    equal?
+
+"Decode string with no single characters"
+    ( "2A3B4C" decode )
+    "AABBBCCCC"
+    equal?
+
+"Decode single characters with repeated characters"
+    ( "12WB12W3B24WB" decode )
+    "WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB"
+    equal?
+
+"Decode multiple whitespace mixed in string"
+    ( "2 hs2q q2w2 " decode )
+    "  hsqq qww  "
+    equal?
+
+"Decode lowercase string"
+    ( "2a3b4c" decode )
+    "aabbbcccc"
+    equal?
+
+"Encode followed by decode gives original string"
+    ( "zzz ZZ  zZ" encode decode )
+    "zzz ZZ  zZ"
+    equal?
+
+end-of-tests
+;with

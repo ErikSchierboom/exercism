@@ -1,0 +1,27 @@
+needs regex/match
+
+: encode-run \ a -- s
+  a:open drop s:len 1 n:= !if s:len >s swap 0 1 s:slice s:+ ;then
+;
+
+: encode-runs \ s -- a  
+  /(.)\1*/ r:matchall[] ( encode-run 2 step ) 2 1 a:map+
+;
+
+: encode \ s -- s  
+  s:len 0 n:= if ;then
+  encode-runs "" a:join
+;
+
+: decode-run \ a -- s
+  a:open swap >n null? if drop 1 then s:* nip
+;
+
+: decode-runs \ s -- a
+  /(\d*)(.)/ r:matchall[] ( decode-run 3 step ) 3 1 a:map+
+;
+
+: decode \ s -- s
+  s:len 0 n:= if ;then
+  decode-runs "" a:join
+;
