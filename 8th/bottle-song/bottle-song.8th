@@ -1,0 +1,22 @@
+["no", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"] constant counts
+
+: capitalize \ s -- s
+    0 s:@ s:uc 0 swap s:!
+;
+
+: bottles \ n -- s
+    dup 1 n:= if "" else "s" then swap counts swap a:_@ "%s green bottle%s" s:strfmt
+;
+
+: verse \ n -- s
+    dup
+    n:1- bottles swap
+    bottles capitalize
+    1 bottles swap dup
+    "%s hanging on the wall,\n%s hanging on the wall,\nAnd if %s should accidentally fall,\nThere'll be %s hanging on the wall."
+    s:strfmt
+;
+
+: recite \ n n -- s
+    2dup n:1- n:- -rot >r ' verse -rot loop- r> a:close "\n\n" a:join
+;

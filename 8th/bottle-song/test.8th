@@ -1,0 +1,125 @@
+"bottle-song.8th" f:include
+needs exercism/test
+with: test
+7 tests
+
+"First generic verse"
+    ( 10 1 recite )
+    "Ten green bottles hanging on the wall,\n"
+    "Ten green bottles hanging on the wall,\n" s:+
+    "And if one green bottle should accidentally fall,\n" s:+
+    "There'll be nine green bottles hanging on the wall." s:+
+    equal?
+
+SKIP-REST-OF-TESTS
+
+"Last generic verse"
+    ( 3 1 recite )
+    "Three green bottles hanging on the wall,\n"
+    "Three green bottles hanging on the wall,\n" s:+
+    "And if one green bottle should accidentally fall,\n" s:+
+    "There'll be two green bottles hanging on the wall." s:+
+    equal?
+
+"Verse with 2 bottles"
+    ( 2 1 recite )
+    "Two green bottles hanging on the wall,\n"
+    "Two green bottles hanging on the wall,\n" s:+
+    "And if one green bottle should accidentally fall,\n" s:+
+    "There'll be one green bottle hanging on the wall." s:+
+    equal?
+
+"Verse with 1 bottle"
+    ( 1 1 recite )
+    "One green bottle hanging on the wall,\n"
+    "One green bottle hanging on the wall,\n" s:+
+    "And if one green bottle should accidentally fall,\n" s:+
+    "There'll be no green bottles hanging on the wall." s:+
+    equal?
+
+"First two verses"
+    ( 10 2 recite )
+    "Ten green bottles hanging on the wall,\n"
+    "Ten green bottles hanging on the wall,\n" s:+
+    "And if one green bottle should accidentally fall,\n" s:+
+    "There'll be nine green bottles hanging on the wall.\n" s:+
+    "\n" s:+
+    "Nine green bottles hanging on the wall,\n" s:+
+    "Nine green bottles hanging on the wall,\n" s:+
+    "And if one green bottle should accidentally fall,\n" s:+
+    "There'll be eight green bottles hanging on the wall." s:+
+    equal?
+
+"Last three verses"
+    ( 3 3 recite )
+    "Three green bottles hanging on the wall,\n"
+    "Three green bottles hanging on the wall,\n" s:+
+    "And if one green bottle should accidentally fall,\n" s:+
+    "There'll be two green bottles hanging on the wall.\n" s:+
+    "\n" s:+
+    "Two green bottles hanging on the wall,\n" s:+
+    "Two green bottles hanging on the wall,\n" s:+
+    "And if one green bottle should accidentally fall,\n" s:+
+    "There'll be one green bottle hanging on the wall.\n" s:+
+    "\n" s:+
+    "One green bottle hanging on the wall,\n" s:+
+    "One green bottle hanging on the wall,\n" s:+
+    "And if one green bottle should accidentally fall,\n" s:+
+    "There'll be no green bottles hanging on the wall." s:+
+    equal?
+
+"All verses"
+    ( 10 10 recite )
+    "Ten green bottles hanging on the wall,\n"
+    "Ten green bottles hanging on the wall,\n" s:+
+    "And if one green bottle should accidentally fall,\n" s:+
+    "There'll be nine green bottles hanging on the wall.\n" s:+
+    "\n" s:+
+    "Nine green bottles hanging on the wall,\n" s:+
+    "Nine green bottles hanging on the wall,\n" s:+
+    "And if one green bottle should accidentally fall,\n" s:+
+    "There'll be eight green bottles hanging on the wall.\n" s:+
+    "\n" s:+
+    "Eight green bottles hanging on the wall,\n" s:+
+    "Eight green bottles hanging on the wall,\n" s:+
+    "And if one green bottle should accidentally fall,\n" s:+
+    "There'll be seven green bottles hanging on the wall.\n" s:+
+    "\n" s:+
+    "Seven green bottles hanging on the wall,\n" s:+
+    "Seven green bottles hanging on the wall,\n" s:+
+    "And if one green bottle should accidentally fall,\n" s:+
+    "There'll be six green bottles hanging on the wall.\n" s:+
+    "\n" s:+
+    "Six green bottles hanging on the wall,\n" s:+
+    "Six green bottles hanging on the wall,\n" s:+
+    "And if one green bottle should accidentally fall,\n" s:+
+    "There'll be five green bottles hanging on the wall.\n" s:+
+    "\n" s:+
+    "Five green bottles hanging on the wall,\n" s:+
+    "Five green bottles hanging on the wall,\n" s:+
+    "And if one green bottle should accidentally fall,\n" s:+
+    "There'll be four green bottles hanging on the wall.\n" s:+
+    "\n" s:+
+    "Four green bottles hanging on the wall,\n" s:+
+    "Four green bottles hanging on the wall,\n" s:+
+    "And if one green bottle should accidentally fall,\n" s:+
+    "There'll be three green bottles hanging on the wall.\n" s:+
+    "\n" s:+
+    "Three green bottles hanging on the wall,\n" s:+
+    "Three green bottles hanging on the wall,\n" s:+
+    "And if one green bottle should accidentally fall,\n" s:+
+    "There'll be two green bottles hanging on the wall.\n" s:+
+    "\n" s:+
+    "Two green bottles hanging on the wall,\n" s:+
+    "Two green bottles hanging on the wall,\n" s:+
+    "And if one green bottle should accidentally fall,\n" s:+
+    "There'll be one green bottle hanging on the wall.\n" s:+
+    "\n" s:+
+    "One green bottle hanging on the wall,\n" s:+
+    "One green bottle hanging on the wall,\n" s:+
+    "And if one green bottle should accidentally fall,\n" s:+
+    "There'll be no green bottles hanging on the wall." s:+
+    equal?
+
+end-of-tests
+;with
