@@ -1,0 +1,23 @@
+: increment-factor \ n n -- n n
+    repeat
+    2dup n:mod !if ;then
+    dup 2 n:= !if n:1+ then n:1+
+    again
+;
+
+: factors \ n -- a
+    a:new >r 2 
+    
+    repeat
+      over 1 n:>
+      !if      
+        2drop break
+      else
+        increment-factor
+        swap over n:/ swap
+        dup r> a:push >r
+      then  
+    again
+
+    r>
+;

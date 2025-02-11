@@ -1,0 +1,69 @@
+"prime-factors.8th" f:include
+needs exercism/test
+with: test
+12 tests
+
+"No factors"
+    ( 1 factors )
+    []
+    equal?
+
+SKIP-REST-OF-TESTS
+
+"Prime number"
+    ( 2 factors )
+    [2]
+    equal?
+
+"Another prime number"
+    ( 3 factors )
+    [3]
+    equal?
+
+"Square of a prime"
+    ( 9 factors )
+    [3, 3]
+    equal?
+
+"Product of first prime"
+    ( 4 factors )
+    [2, 2]
+    equal?
+
+"Cube of a prime"
+    ( 8 factors )
+    [2, 2, 2]
+    equal?
+
+"Product of second prime"
+    ( 27 factors )
+    [3, 3, 3]
+    equal?
+
+"Product of third prime"
+    ( 625 factors )
+    [5, 5, 5, 5]
+    equal?
+
+"Product of first and second prime"
+    ( 6 factors )
+    [2, 3]
+    equal?
+
+"Product of primes and non-primes"
+    ( 12 factors )
+    [2, 2, 3]
+    equal?
+
+"Product of primes"
+    ( 901255 factors )
+    [5, 17, 23, 461]
+    equal?
+
+"Factors include a large prime"
+    ( 93819012551 factors )
+    [11, 9539, 894119]
+    equal?
+
+end-of-tests
+;with
