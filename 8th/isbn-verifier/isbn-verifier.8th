@@ -1,0 +1,27 @@
+: sanitize \ s -- s
+  "-" "" s:replace!
+;
+
+: valid? \ s -- T
+  "^\\d{9}[\\dX]$" r:new r:match nip
+;
+
+: digit \ ix n -- n
+  '0 n:- dup 9 n:> if 2drop 10 ;then swap n:1+ n:*
+;
+
+: checksum \ s -- n
+  0 >r s:rev ( digit r> n:+ >r ) s:each r>
+;
+
+: valid-checksum? \ n -- T
+  11 n:mod 0 n:=
+;
+
+: isbn? \ s -- T
+  sanitize
+  dup valid?
+  !if drop false ;then
+  checksum
+  valid-checksum?
+;

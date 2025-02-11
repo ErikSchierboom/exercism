@@ -1,0 +1,85 @@
+"isbn-verifier.8th" f:include
+needs exercism/test
+with: test
+19 tests
+
+"Valid isbn"
+    ( "3-598-21508-8" isbn? )
+    true?
+
+SKIP-REST-OF-TESTS
+
+"Invalid isbn check digit"
+    ( "3-598-21508-9" isbn? )
+    false?
+
+"Valid isbn with a check digit of 10"
+    ( "3-598-21507-X" isbn? )
+    true?
+
+"Check digit is a character other than X"
+    ( "3-598-21507-A" isbn? )
+    false?
+
+"Invalid check digit in isbn is not treated as zero"
+    ( "4-598-21507-B" isbn? )
+    false?
+
+"Invalid character in isbn is not treated as zero"
+    ( "3-598-P1581-X" isbn? )
+    false?
+
+"X is only valid as a check digit"
+    ( "3-598-2X507-9" isbn? )
+    false?
+
+"Valid isbn without separating dashes"
+    ( "3598215088" isbn? )
+    true?
+
+"Isbn without separating dashes and X as check digit"
+    ( "359821507X" isbn? )
+    true?
+
+"Isbn without check digit and dashes"
+    ( "359821507" isbn? )
+    false?
+
+"Too long isbn and no dashes"
+    ( "3598215078X" isbn? )
+    false?
+
+"Too short isbn"
+    ( "00" isbn? )
+    false?
+
+"Isbn without check digit"
+    ( "3-598-21507" isbn? )
+    false?
+
+"Check digit of X should not be used for 0"
+    ( "3-598-21515-X" isbn? )
+    false?
+
+"Empty isbn"
+    ( "" isbn? )
+    false?    
+
+"Input is 9 characters"
+    ( "134456729" isbn? )
+    false?
+
+"Invalid characters are not ignored after checking length"
+    ( "3132P34035" isbn? )
+    false?
+
+"Invalid characters are not ignored before checking length"
+    ( "3598P215088" isbn? )
+    false?
+
+"Input is too long but contains a valid isbn"
+    ( "98245726788" isbn? )
+    false?
+    
+end-of-tests
+;with
