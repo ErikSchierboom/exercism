@@ -1,3 +1,3 @@
-Neighbors ← /+≡⬚0↻♭₂-1⇡3_3¤
+Neighbors ← /+⬚0↻⊂A₂C₂
 Cell      ← ⨬(⨬(@ |+@0)±.|@*◌)
 Annotate  ← ≡≡Cell ⟜Neighbors =@*
