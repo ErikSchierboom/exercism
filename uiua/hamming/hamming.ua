@@ -1,2 +1,2 @@
-Validate ← ⍤"strands must be of equal length"=◡∩⧻
-Distance ← /+≠ Validate
+Validate ← ⍤"strands must be of equal length"=∩⧻
+Distance ← /+≠ ◡Validate
