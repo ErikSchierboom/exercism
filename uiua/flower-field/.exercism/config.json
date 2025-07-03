@@ -1,0 +1,20 @@
+{
+  "authors": [
+    "erikschierboom"
+  ],
+  "contributors": [
+    "BNAndras"
+  ],
+  "files": {
+    "solution": [
+      "flower-field.ua"
+    ],
+    "test": [
+      "tests.ua"
+    ],
+    "example": [
+      ".meta/example.ua"
+    ]
+  },
+  "blurb": "Mark all the flowers in a garden."
+}
