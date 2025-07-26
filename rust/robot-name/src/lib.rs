@@ -14,6 +14,7 @@ static NAMES: LazyLock<Mutex<Vec<String>>> = LazyLock::new(|| {
                 names.push(format!("{a}{b}{i:03}"))
             }
         }
+
     }
 
     names.shuffle(&mut rng());
