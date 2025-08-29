@@ -26,7 +26,7 @@ required_tool jq
 (( $# >= 1 )) || help_and_exit
 
 track_slug="${1}"
-track_dir="${HOME}/exercism/tracks/${track_slug}"
+track_dir="${HOME}/exercism/${track_slug}"
 track_solutions_dir="${HOME}/solutions/${track_slug}"
 
 pushd "${track_dir}" > /dev/null
@@ -55,7 +55,7 @@ for exercise_dir in "${track_dir}"/exercises/practice/*; do
         cp "${exercise_dir}/${src}" "${solution_dir}/${dst}"
     done
 
-    exercise
+    exercism submit
     sleep 12
     popd > /dev/null
   fi
