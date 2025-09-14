@@ -1,5 +1,5 @@
-const NUMBERS: [&'static str; 11] = ["no", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"];
-const CAPITALIZED_NUMBERS: [&'static str; 11] = ["No", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten"];
+const NUMBERS: [&str; 11] = ["no", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"];
+const CAPITALIZED_NUMBERS: [&str; 11] = ["No", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten"];
 
 pub fn verse(start_bottles: u32) -> String {
     format!("{0} green bottle{1} hanging on the wall,\n\
