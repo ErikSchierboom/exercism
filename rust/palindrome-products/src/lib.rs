@@ -58,15 +58,13 @@ pub fn palindrome_products(min: u64, max: u64) -> Option<(Palindrome, Palindrome
 }
 
 fn is_palindrome(num: u64) -> bool {
-    let n = num;
-    let mut num = num;
+    let mut n = num;
     let mut rev = 0;
 
-    while num > 0 {
-        let dig = num % 10;
-        rev = rev * 10 + dig;
-        num = num / 10;
+    while n > 0 {
+        rev = rev * 10 + (n % 10);
+        n /= 10;
     }
 
-    n == rev
+    num == rev
 }
