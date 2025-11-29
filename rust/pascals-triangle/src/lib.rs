@@ -11,7 +11,7 @@ impl PascalsTriangle {
                 (0..row)
                     .scan(1u32, move |state, j| {
                         let val = *state;
-                        *state = (*state) * (((row - 1) - j) as u32) / ((j + 1) as u32);
+                        *state = (*state) * ((row - 1) - j) / (j + 1);
                         Some(val)
                     })
                     .collect()
