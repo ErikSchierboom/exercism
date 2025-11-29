@@ -13,7 +13,7 @@ impl<'a> Xorcism<'a> {
 
     pub fn munge_in_place(&mut self, data: &mut [u8]) {
         for element in data {
-            *element = *element ^ self.key[self.offset];
+            *element ^= self.key[self.offset];
             self.offset = (self.offset + 1) % self.key.len()
         }
     }
