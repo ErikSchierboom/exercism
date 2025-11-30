@@ -25,7 +25,7 @@ pub struct Cursor<'a, T> {
 }
 
 pub struct Iter<'a, T> {
-    current: &'a Link<T>
+    current: Option<&'a Node<T>>
 }
 
 impl<T> LinkedList<T> {
@@ -52,41 +52,60 @@ impl<T> LinkedList<T> {
     }
 
     pub fn iter(&self) -> Iter<'_, T> {
-        let current= &self.front;
+        let current= self.front.as_ref().map(|node| {
+            unsafe { node.as_ref() }
+        });
         Iter { current }
     }
 }
 
 impl<T> Cursor<'_, T> {
     pub fn peek_mut(&mut self) -> Option<&mut T> {
-        unsafe {
-            self.current.map(|mut node| &mut node.as_mut().value)
-        }
+        self.current.map(|mut node| {
+            unsafe { &mut node.as_mut().value }
+        })
     }
 
     pub fn next(&mut self) -> Option<&mut T> {
-        self.current.map(|mut node| {
-            unsafe {
-                self.current = node.as_ref().next;
-                &mut node.as_mut().value
-            }
-        })
+        self.current.map(|node| {
+            unsafe { self.current = node.as_ref().next }
+        });
+        self.peek_mut()
     }
 
     pub fn prev(&mut self) -> Option<&mut T> {
-        self.current.map(|mut node| {
-            unsafe {
-                self.current = node.as_ref().prev;
-                &mut node.as_mut().value
-            }
-        })
+        self.current.map(|node| {
+            unsafe { self.current = node.as_ref().prev }
+        });
+        self.peek_mut()
     }
 
     /// Remove and return the element at the current position and move the cursor
     /// to the neighboring element that's closest to the back. This can be
     /// either the next or previous position.
     pub fn take(&mut self) -> Option<T> {
-        todo!("")
+        self.current.map(|node| {
+            unsafe {
+                let to_remove = node.as_ref();
+                self.current = to_remove.next.or(to_remove.prev);
+
+                if to_remove.next.is_none() {
+                    self.list.back = self.current
+                } else {
+                    to_remove.next.map(|mut next| next.as_mut().prev = to_remove.prev);
+                }
+
+                if to_remove.prev.is_none() {
+                    self.list.front = self.current
+                } else {
+                    to_remove.prev.map(|mut prev| prev.as_mut().next = to_remove.next);
+                }
+
+                self.list.count -= 1;
+
+                node.read().value
+            }
+        })
     }
 
     pub fn insert_after(&mut self, element: T) {
@@ -120,9 +139,9 @@ impl<T> Cursor<'_, T> {
             if next.is_none() {
                 self.list.back = link
             }
-
-            self.list.count += 1
         }
+
+        self.list.count += 1
     }
 }
 
@@ -131,9 +150,17 @@ impl<'a, T> Iterator for Iter<'a, T> {
 
     fn next(&mut self) -> Option<&'a T> {
         unsafe {
-            let node = self.current.as_ref()?;
-            self.current = &node.as_ref().next;
-            Some(&node.as_ref().value)
+            self.current.map(|node| {
+                self.current = node.next.map(|next| next.as_ref());
+                &node.value
+            })
         }
+    }
+}
+
+impl<T> Drop for LinkedList<T> {
+    fn drop(&mut self) {
+        let mut cursor = self.cursor_front();
+        while let Some(_) = cursor.take() {}
     }
 }
