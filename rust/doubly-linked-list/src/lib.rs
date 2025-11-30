@@ -86,24 +86,28 @@ impl<T> Cursor<'_, T> {
     pub fn take(&mut self) -> Option<T> {
         self.current.map(|node| {
             unsafe {
-                let to_remove = node.as_ref();
-                self.current = to_remove.next.or(to_remove.prev);
+                let node_ptr = node.as_ptr();
+                let next = (*node_ptr).next;
+                let prev = (*node_ptr).prev;
 
-                if to_remove.next.is_none() {
-                    self.list.back = self.current
+                if let Some(mut n) = next {
+                    n.as_mut().prev = prev;
                 } else {
-                    to_remove.next.map(|mut next| next.as_mut().prev = to_remove.prev);
+                    self.list.back = prev;
                 }
 
-                if to_remove.prev.is_none() {
-                    self.list.front = self.current
+                if let Some(mut p) = prev {
+                    p.as_mut().next = next;
                 } else {
-                    to_remove.prev.map(|mut prev| prev.as_mut().next = to_remove.next);
+                    self.list.front = next;
                 }
+
+                self.current = next.or(prev);
 
                 self.list.count -= 1;
 
-                node.read().value
+                let boxed = Box::from_raw(node_ptr);
+                boxed.value
             }
         })
     }
