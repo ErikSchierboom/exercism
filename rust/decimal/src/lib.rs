@@ -27,8 +27,8 @@ impl Decimal {
 
     fn matching_precisions(&self, other: &Self) -> (Self, Self) {
         match self.precision.cmp(&other.precision) {
-            Ordering::Less => (self.extend_precision(&other), other.clone()),
-            Ordering::Greater => (self.clone(), other.extend_precision(&self)),
+            Ordering::Less => (self.extend_precision(other), other.clone()),
+            Ordering::Greater => (self.clone(), other.extend_precision(self)),
             Ordering::Equal => (self.clone(), other.clone())
         }
     }
