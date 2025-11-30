@@ -15,17 +15,17 @@ pub struct Node<T> {
 pub struct LinkedList<T> {
     front: Link<T>,
     back: Link<T>,
-    count: usize
+    count: usize,
 }
 
 #[derive(Debug)]
 pub struct Cursor<'a, T> {
     list: &'a mut LinkedList<T>,
-    current: Link<T>
+    current: Link<T>,
 }
 
 pub struct Iter<'a, T> {
-    current: Option<&'a Node<T>>
+    current: Option<&'a Node<T>>,
 }
 
 impl<T> LinkedList<T> {
@@ -52,7 +52,7 @@ impl<T> LinkedList<T> {
     }
 
     pub fn iter(&self) -> Iter<'_, T> {
-        let current= self.front.as_ref().map(|node| {
+        let current = self.front.as_ref().map(|node| {
             unsafe { node.as_ref() }
         });
         Iter { current }
@@ -67,16 +67,16 @@ impl<T> Cursor<'_, T> {
     }
 
     pub fn next(&mut self) -> Option<&mut T> {
-        self.current.map(|node| {
+        if let Some(node) = self.current {
             unsafe { self.current = node.as_ref().next }
-        });
+        };
         self.peek_mut()
     }
 
     pub fn prev(&mut self) -> Option<&mut T> {
-        self.current.map(|node| {
+        if let Some(node) = self.current {
             unsafe { self.current = node.as_ref().prev }
-        });
+        };
         self.peek_mut()
     }
 
@@ -167,5 +167,11 @@ impl<T> Drop for LinkedList<T> {
     fn drop(&mut self) {
         let mut cursor = self.cursor_front();
         while cursor.take().is_some() {}
+    }
+}
+
+impl<T> Default for LinkedList<T> {
+    fn default() -> Self {
+        Self::new()
     }
 }
