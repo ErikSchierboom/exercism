@@ -133,14 +133,15 @@ impl<T> Cursor<'_, T> {
             let node = Node { value: element, prev, next };
             let link = NonNull::new(Box::into_raw(Box::new(node)));
 
-            prev.map(|mut node| node.as_mut().next = link);
-            next.map(|mut node| node.as_mut().prev = link);
-
-            if prev.is_none() {
+            if let Some(mut node) = prev {
+                node.as_mut().next = link
+            } else {
                 self.list.front = link
             }
 
-            if next.is_none() {
+            if let Some(mut node) = next {
+                node.as_mut().prev = link
+            } else {
                 self.list.back = link
             }
         }
@@ -165,6 +166,6 @@ impl<'a, T> Iterator for Iter<'a, T> {
 impl<T> Drop for LinkedList<T> {
     fn drop(&mut self) {
         let mut cursor = self.cursor_front();
-        while let Some(_) = cursor.take() {}
+        while cursor.take().is_some() {}
     }
 }
