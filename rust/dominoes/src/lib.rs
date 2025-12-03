@@ -18,12 +18,12 @@ fn form_chain(chain: Vec<(u8, u8)>, unused: Vec<(u8, u8)>) -> Option<Vec<(u8, u8
             let unchanged = remaining.remove(i);
             let flipped = (unchanged.1, unchanged.0);
 
-            vec![unchanged, flipped]
+            [unchanged, flipped]
                 .iter()
                 .find_map(|domino| {
                     if can_chain(chain.last().unwrap(), domino) {
                         let mut new_chain = chain.clone();
-                        new_chain.push(domino.clone());
+                        new_chain.push(*domino);
                         form_chain(new_chain, remaining.clone())
                     } else {
                         None
