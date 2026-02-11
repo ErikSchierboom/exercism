@@ -9,7 +9,7 @@ Error :: enum {
 square :: proc(n: int) -> (u64, Error) {
 	if n < 1 || n > 64 do return 0, .InvalidSquare
 
-	return 1 << (u64(n) - 1), .None
+	return 1 << u64(n - 1), .None
 }
 
 // Returns the total number of squares on the board.
