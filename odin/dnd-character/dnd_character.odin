@@ -29,17 +29,13 @@ ability :: proc() -> int {
 	return score - lowest_roll
 }
 
-character :: proc() -> Character {
-	constitution := ability()
-	hitpoints := 10 + modifier(constitution)
-
-	return Character{
-		ability(),
-		ability(),
-		constitution,
-		ability(),
-		ability(),
-		ability(),
-		hitpoints
-	}
+character :: proc() -> (character: Character) {
+	character.strength := ability()
+	character.dexterity := ability()
+	character.constitution := ability()
+	character.intelligence := ability()
+	character.wisdom := ability()
+	character.charisma := ability()
+	character.hitpoints := 10 + modifier(constitution)
+	return
 }
