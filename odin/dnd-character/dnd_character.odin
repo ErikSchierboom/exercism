@@ -21,21 +21,21 @@ ability :: proc() -> int {
 	score := 0
 
 	for _ in 1..=4 {
-		roll := 1 + rand.int_max(6)
-		lowest_roll = min(roll, lowest_roll)
+		roll := rand.int_max(6) + 1
 		score += roll
+		lowest_roll = min(roll, lowest_roll)
 	}
 
 	return score - lowest_roll
 }
 
 character :: proc() -> (character: Character) {
-	character.strength := ability()
-	character.dexterity := ability()
-	character.constitution := ability()
-	character.intelligence := ability()
-	character.wisdom := ability()
-	character.charisma := ability()
-	character.hitpoints := 10 + modifier(constitution)
+	character.strength = ability()
+	character.dexterity = ability()
+	character.constitution = ability()
+	character.intelligence = ability()
+	character.wisdom = ability()
+	character.charisma = ability()
+	character.hitpoints = 10 + modifier(character.constitution)
 	return
 }
