@@ -24,7 +24,7 @@ classify :: proc(number: uint) -> Classification {
 aliquot_sum :: proc(number: uint) -> uint {
 	sum: uint = 0
 
-	for i: uint = 1; i <= number / 2; i += 1 {
+	for i in 1..=number / 2 {
 		if number % i == 0 do sum += i
 	}
 
