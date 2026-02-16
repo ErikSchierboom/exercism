@@ -4,7 +4,6 @@ import "core:strings"
 
 to_rna :: proc(dna: string) -> (rna: string, ok: bool) {
 	sb := strings.builder_make(len(rna), len(rna))
-	defer strings.builder_destroy(&sb)
 
 	for nucleotide in dna {
 		switch nucleotide {
