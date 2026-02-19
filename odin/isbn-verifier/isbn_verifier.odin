@@ -5,17 +5,17 @@ is_valid :: proc(isbn: string) -> bool {
 	checksum := 0
 
 	for c in isbn {
-		if c == '-' {
-			continue
-		} else if c == 'X' && multiplier == 1 {
-			checksum += 10
-		} else if c < '0' || c > '9' {
-			return false 
-		} else {
+		switch c {
+		case '-':
+		case '0'..='9':
 			checksum += (int(c) - '0') * multiplier
+			multiplier -= 1
+		case 'X':
+			if multiplier != 1 do return false
+			checksum += 10
+			multiplier -= 1
+		case: return false
 		}
-
-		multiplier -= 1
 	}
 
 	return multiplier == 0 && checksum % 11 == 0
