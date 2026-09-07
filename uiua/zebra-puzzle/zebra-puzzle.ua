@@ -1,40 +1,41 @@
-Permutations ← ⧅≠⊸◇⧻
-
+Permutations  ← ⧅≠∞
 Colors        ← Permutations {"Red" "Green" "Ivory" "Yellow" "Blue"}
 Nationalities ← Permutations {"Englishman" "Spaniard" "Ukrainian" "Japanese" "Norwegian"}
-Pets          ← Permutations {"Dog" "Snails" "Fox" "Horse" "Zebra"}
 Drinks        ← Permutations {"Coffee" "Tea" "Milk" "OrangeJuice" "Water"}
 Hobbies       ← Permutations {"Dancing" "Painting" "Reading" "Football" "Chess"}
-
-ValidColors ← /↥⌕ {"Ivory" "Green"}
-ValidNationalities ← ↧↧⊃(
-  =□"Norwegian"⊢⊢
-| =⊃(⊗□"Englishman"⊡0|⊗□"Red"⊡1)
-| =1⌵-⊃(⊗□"Norwegian"⊡0|⊗□"Blue"⊡1)
-)
-ValidPets ← =⊃(⊗□"Spaniard"⊡1|⊗□"Dog"⊡0)
-ValidDrinks ← ↧↧⊃(
-  =□"Milk"⊡2⊢
-| =⊃(⊗□"Green"⊡3|⊗□"Coffee"⊡0)
-| =⊃(⊗□"Ukrainian"⊡2|⊗□"Tea"⊡0)
-)
-ValidHobbies ← ↧↧↧↧↧⊃(
-  =⊃(⊗□"Dancing"⊡0|⊗□"Snails"⊡2)
-| =⊃(⊗□"Painting"⊡0|⊗□"Yellow"⊡4)
-| =1⌵-⊃(⊗□"Reading"⊡0|⊗□"Fox"⊡2)
-| =1⌵-⊃(⊗□"Painting"⊡0|⊗□"Horse"⊡2)
-| =⊃(⊗□"Football"⊡0|⊗□"OrangeJuice"⊡1)
-| =⊃(⊗□"Chess"⊡0|⊗□"Japanese"⊡3)
-)
+Pets          ← Permutations {"Dog" "Snails" "Fox" "Horse" "Zebra"}
 
 Solution ← (
-  ▽⊸≡ValidColors Colors
-  ▽⊸≡ValidNationalities /⊂⊞⊟ Nationalities
-  ▽⊸≡ValidPets /⊂⊞⊂ Pets
-  ▽⊸≡ValidDrinks /⊂⊞⊂ Drinks
-  ▽⊸≡ValidHobbies /⊂⊞⊂ Hobbies
+  Colors
+  ▽⊸≡(/↥⌕ {"Ivory" "Green"}) # 6
+  ▽⊸≡(=1˜⊗□"Blue")           # 15
+
+  Nationalities
+  ▽⊸≡(=0˜⊗□"Norwegian") # 10
+  /⊂⊞⊟
+  ▽⊸≡(=⊃(˜⊗□"Englishman"⊡0|˜⊗□"Red"⊡1)) # 2
+
+  Drinks
+  ▽⊸≡(=2˜⊗□"Milk") # 9
+  /⊂⊞⊂
+  ▽⊸≡(=⊃(˜⊗□"Green"⊡2|˜⊗□"Coffee"⊡0))  # 4
+  ▽⊸≡(=⊃(˜⊗□"Ukrainian"⊡1|˜⊗□"Tea"⊡0)) # 5
+
+  Hobbies
+  /⊂⊞⊂
+  ▽⊸≡(=⊃(˜⊗□"Yellow"⊡3|˜⊗□"Painting"⊡0))      # 8
+  ▽⊸≡(=⊃(˜⊗□"OrangeJuice"⊡1|˜⊗□"Football"⊡0)) # 13
+  ▽⊸≡(=⊃(˜⊗□"Japanese"⊡2|˜⊗□"Chess"⊡0))       # 14
+
+  Pets
+  /⊂⊞⊂
+  ▽⊸≡(=⊃(˜⊗□"Spaniard"⊡3|˜⊗□"Dog"⊡0))      # 3
+  ▽⊸≡(=1⌵-⊃(˜⊗□"Painting"⊡1|˜⊗□"Horse"⊡0)) # 12
+  ▽⊸≡(=⊃(˜⊗□"Dancing"⊡1|˜⊗□"Snails"⊡0))    # 7
+  ▽⊸≡(=1⌵-⊃(˜⊗□"Reading"⊡1|˜⊗□"Fox"⊡0))    # 11
+
   ⊢
 )
 
-DrinksWater ← °□⊡⊃(⊗□"Water"⊡1|°□⊡3) Solution
-OwnsZebra   ← °□⊡⊃(⊗□"Zebra"⊡2|°□⊡3) Solution
+DrinksWater ← °□⊡⊂3⊸(˜⊗□"Water"⊡2) Solution
+OwnsZebra   ← °□⊡⊂3⊸(˜⊗□"Zebra"⊡0) Solution
