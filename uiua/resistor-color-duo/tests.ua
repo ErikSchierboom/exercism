@@ -1,22 +1,22 @@
 ~ "resistor-color-duo.ua" ~ ResistorsValue
 
-# Brown and black
+#Brown and black
 ⍤⤙≍ 10 ResistorsValue {"brown" "black"}
 
-# Blue and grey
+#Blue and grey
 ⍤⤙≍ 68 ResistorsValue {"blue" "grey"}
 
-# Yellow and violet
+#Yellow and violet
 ⍤⤙≍ 47 ResistorsValue {"yellow" "violet"}
 
-# White and red
+#White and red
 ⍤⤙≍ 92 ResistorsValue {"white" "red"}
 
-# Orange and orange
+#Orange and orange
 ⍤⤙≍ 33 ResistorsValue {"orange" "orange"}
 
-# Ignore additional colors
+#Ignore additional colors
 ⍤⤙≍ 51 ResistorsValue {"green" "brown" "orange"}
 
-# Black and brown, one-digit
-⍤⤙≍ 1 ResistorsValue {"black" "brown"}
+#Black and brown, one-digit
+⍤⤙≍ 1  ResistorsValue {"black" "brown"}
