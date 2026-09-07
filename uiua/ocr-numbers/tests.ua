@@ -18,7 +18,7 @@ Display ← [
 ]
 ⍤⤙≍ "1" Convert Display
 
-# Unreadable but correctly sized displays return ?
+# Unreadable but correctly sized displays return `?`
 Display ← [
   "   "
   "  _"
@@ -33,7 +33,7 @@ Display ← [
   "| |"
   "   "
 ]
-⍤⤙≍ "Number of input lines is not a multiple of four" ⍣(Convert Display)
+⍤⤙≍ "Number of input lines is not a multiple of four" ⍣(Convert Display|∘)
 
 # Display with a number of columns that is not a multiple of three raises an error
 Display ← [
@@ -42,7 +42,7 @@ Display ← [
   "   |"
   "    "
 ]
-⍤⤙≍ "Number of input columns is not a multiple of three" ⍣(Convert Display)
+⍤⤙≍ "Number of input columns is not a multiple of three" ⍣(Convert Display|∘)
 
 # Recognizes 110101100
 Display ← [
@@ -53,7 +53,7 @@ Display ← [
 ]
 ⍤⤙≍ "110101100" Convert Display
 
-# Garbled numbers in a string are replaced with ?
+# Garbled numbers in a string are replaced with `?`
 Display ← [
   "       _     _           _ "
   "  |  || |  || |     || || |"
