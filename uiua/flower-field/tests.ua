@@ -1,8 +1,8 @@
 ~ "flower-field.ua" ~ Annotate
 
 # No rows
-Garden ← ""
-Expected  ← ""
+Garden   ← ""
+Expected ← ""
 ⍤⤙≍ Expected Annotate Garden
 
 # No columns
