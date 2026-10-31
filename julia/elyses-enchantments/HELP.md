@@ -10,7 +10,7 @@ $ julia runtests.jl
 
 ## Submitting your solution
 
-You can submit your solution using the `exercism submit enchantments.jl` command.
+You can submit your solution using the `exercism submit elyses-enchantments.jl` command.
 This command will upload your solution to the Exercism website and print the solution page's URL.
 
 It's possible to submit an incomplete solution which allows you to:
@@ -23,7 +23,12 @@ It's possible to submit an incomplete solution which allows you to:
 If you'd like help solving the exercise, check the following pages:
 
 - The [Julia track's documentation](https://exercism.org/docs/tracks/julia)
+- The [Julia track's programming category on the forum](https://forum.exercism.org/c/programming/julia)
 - [Exercism's programming category on the forum](https://forum.exercism.org/c/programming/5)
 - The [Frequently Asked Questions](https://exercism.org/docs/using/faqs)
 
 Should those resources not suffice, you could submit your (incomplete) solution to request mentoring.
+
+To get help if you're having trouble, we recommend that you submit your code and request mentoring :)
+
+If you don't want to do that for whatever reason, then you can find the wider Julia community channels [here](https://julialang.org/community/).
