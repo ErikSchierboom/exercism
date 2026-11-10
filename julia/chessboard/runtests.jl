@@ -1,0 +1,31 @@
+using Test
+
+include("chessboard.jl")
+
+@testset verbose = true "tests" begin
+
+    @testset "1. rank_range is a range from 1 to 8" begin
+        result = rank_range()
+        @test first(result) == 1
+        @test last(result) == 8
+        @test length(result) == 8
+        @test typeof(result) == UnitRange{Int}
+    end
+
+    @testset "2. file_range is a range from 'A' to 'H'" begin
+        result = file_range()
+        @test first(result) == 'A'
+        @test last(result) == 'H'
+        @test length(result) == 8
+        @test typeof(result) == StepRange{Char, Int}
+    end
+
+    @testset "3. ranks is a vector of integers from 1 to 8" begin
+        @test ranks() == [1, 2, 3, 4, 5, 6, 7, 8]
+    end
+
+    @testset "4. files is a vector of characters from 'A' to 'H'" begin
+        @test files() == ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
+    end
+
+end
