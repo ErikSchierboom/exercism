@@ -20,4 +20,4 @@ end
 
 remove_item(inventory, item) = delete!(inventory, item)
 
-list_inventory(inventory) = sort([kv for kv in inventory if kv[2] > 0]; by=first)
+list_inventory(inventory) = sort([item for item in inventory if item[2] > 0])
