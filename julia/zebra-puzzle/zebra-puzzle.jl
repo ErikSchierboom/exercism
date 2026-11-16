@@ -42,5 +42,5 @@ const SOLUTION = first(
         abs(pos(Fox, pets) - pos(Reading, hobbies)) == 1       # 11
 )
 
-drinkswater() = SOLUTION[2][findfirst(==(Water), SOLUTION[3])]
-ownszebra() = SOLUTION[2][findfirst(==(Zebra), SOLUTION[5])]
+drinkswater() = string(SOLUTION[2][findfirst(==(Water), SOLUTION[3])])
+ownszebra() = string(SOLUTION[2][findfirst(==(Zebra), SOLUTION[5])])
