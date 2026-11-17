@@ -23,9 +23,9 @@ function score(dice, category)
         allequal(sorted[2:5]) && return sum(sorted[2:5])
         0
     elseif category == "little straight"
-        sort(dice) == [1, 2, 3, 4, 5] ? 30 : 0
+        sort(dice) == 1:5 ? 30 : 0
     elseif category == "big straight"
-        sort(dice) == [2, 3, 4, 5, 6] ? 30 : 0
+        sort(dice) == 2:6 ? 30 : 0
     elseif category == "choice"
         sum(dice)
     elseif category == "yacht"
