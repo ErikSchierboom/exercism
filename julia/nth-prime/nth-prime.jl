@@ -13,6 +13,6 @@ function primecandidates()
 end
 
 function isprime(num)
-    r = floor(Int, sqrt(num))
-    r < 5 || all(x -> num % x != 0, 5:2:r)
+    limit = floor(Int, sqrt(num))
+    all(x -> num % x != 0, 5:2:limit)
 end
