@@ -22,13 +22,13 @@ This technique is called [RNA Interference][rnai].
 
 ## Instructions
 
-Your task is determine the RNA complement of a given DNA sequence.
+Your task is to determine the RNA complement of a given DNA sequence.
 
 Both DNA and RNA strands are a sequence of nucleotides.
 
-The four nucleotides found in DNA are adenine (**A**), cytosine (**C**), guanine (**G**) and thymine (**T**).
+The four nucleotides found in DNA are adenine (**A**), cytosine (**C**), guanine (**G**), and thymine (**T**).
 
-The four nucleotides found in RNA are adenine (**A**), cytosine (**C**), guanine (**G**) and uracil (**U**).
+The four nucleotides found in RNA are adenine (**A**), cytosine (**C**), guanine (**G**), and uracil (**U**).
 
 Given a DNA strand, its transcribed RNA strand is formed by replacing each nucleotide with its complement:
 
@@ -54,4 +54,4 @@ If you want to look at how the inputs and outputs are structured, take a look at
 
 ### Based on
 
-Hyperphysics - http://hyperphysics.phy-astr.gsu.edu/hbase/Organic/transcription.html
+Hyperphysics - https://web.archive.org/web/20220408112140/http://hyperphysics.phy-astr.gsu.edu/hbase/Organic/transcription.html
