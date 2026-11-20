@@ -3,9 +3,22 @@
 Welcome to Phone Number on Exercism's Julia Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 
+## Introduction
+
+You've joined LinkLine, a leading communications company working to ensure reliable connections for everyone.
+The team faces a big challenge: users submit phone numbers in all sorts of formats — dashes, spaces, dots, parentheses, and even prefixes.
+Some numbers are valid, while others are impossible to use.
+
+Your mission is to turn this chaos into order.
+You'll clean up valid numbers, formatting them appropriately for use in the system.
+At the same time, you'll identify and filter out any invalid entries.
+
+The success of LinkLine's operations depends on your ability to separate the useful from the unusable.
+Are you ready to take on the challenge and keep the connections running smoothly?
+
 ## Instructions
 
-Clean up user-entered phone numbers so that they can be sent SMS messages.
+Clean up phone numbers so that they can be sent SMS messages.
 
 The **North American Numbering Plan (NANP)** is a telephone numbering system used by many countries in North America like the United States, Canada or Bermuda.
 All NANP-countries share the same international country code: `1`.
@@ -38,6 +51,8 @@ should all produce the output
 
 **Note:** As this exercise only deals with telephone numbers used in NANP-countries, only 1 is considered a valid country code.
 
+## Implementation
+
 When an input is invalid your function must throw an `ArgumentError`.
 Invalid inputs include:
 - `apple`
@@ -59,4 +74,4 @@ Invalid inputs include:
 
 ### Based on
 
-Exercise by the JumpstartLab team for students at The Turing School of Software and Design. - https://turing.edu
+Exercise by the JumpstartLab team for students at The Turing School of Software and Design. - https://www.turing.edu/

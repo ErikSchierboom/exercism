@@ -8,7 +8,8 @@ function clean(phone_number)
     end
 
     length(phone_number) == 10 || throw(ArgumentError("Invalid number of digits"))
-    phone_number[1] ∈ '0':'1' && throw(ArgumentError("Invalid area code"))
-    phone_number[4] ∈ '0':'1' && throw(ArgumentError("Invalid exchange code"))
+    phone_number[1] ∈ "01" && throw(ArgumentError("Invalid area code"))
+    phone_number[4] ∈ "01" && throw(ArgumentError("Invalid exchange code"))
+
     phone_number
 end
